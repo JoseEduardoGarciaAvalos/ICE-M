@@ -1,0 +1,799 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>juego 4</name>
+    <events>
+        <include>principal</include>
+        <event-group description="Preparación del escenario" sid="570947687955799" title="inicio 4">
+            <sub-events>
+                <comment>VALORES COMUNES DE LAS PERSONAS</comment>
+                <variable comment="Ancho (en pixeles)" constant="1" name="ANCHO1" sid="200269746100550" static="0" type="number">75</variable>
+                <variable comment="Alto (en pixeles)" constant="1" name="ALTO1" sid="102069837861368" static="0" type="number">75</variable>
+                <comment>VALORES COMUNES DE LAS LINEAS (OBJETOS)</comment>
+                <variable comment="Ancho (en pixeles)" constant="1" name="ANCHO2" sid="703630606101640" static="0" type="number">3</variable>
+                <variable comment="Alto (en pixeles)" constant="1" name="ALTO2" sid="365295003437286" static="0" type="number">3</variable>
+                <event-block sid="665714392188454">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="118855742572632" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="941252233698796" type="System">
+                            <param id="0" name="Variable">juego</param>
+                            <param id="1" name="Value">4</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="482623623401565" type="System">
+                            <param id="0" name="Variable">tiempo</param>
+                            <param id="1" name="Value">floor(random(12,16))</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="410468566162296" type="System">
+                            <param id="0" name="Variable">objetivo</param>
+                            <param id="1" name="Value">&quot;Que no haya cartas&quot;</param>
+                        </action>
+                        <action id="0" name="Call function" sid="499801599745719" type="Funcion">
+                            <param id="0" name="Name">&quot;inicioGUI&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="-16" name="Wait" sid="506688631145075" type="System">
+                            <param id="0" name="Seconds">0</param>
+                        </action>
+                        <action id="0" name="Call function" sid="772478599726199" type="Funcion">
+                            <param id="0" name="Name">&quot;paso1&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="-16" name="Wait" sid="622344187576070" type="System">
+                            <param id="0" name="Seconds">0</param>
+                        </action>
+                        <action id="0" name="Call function" sid="210310970167579" type="Funcion">
+                            <param id="0" name="Name">&quot;paso2&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="-16" name="Wait" sid="371638792002975" type="System">
+                            <param id="0" name="Seconds">0</param>
+                        </action>
+                        <action id="0" name="Call function" sid="402140149293894" type="Funcion">
+                            <param id="0" name="Name">&quot;comenzoJuego&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Crear entre 6 a 12 objetos cuando inicie el lienzo (PASO 1) </comment>
+                <event-block sid="982720584603659">
+                    <conditions>
+                        <condition id="0" name="On function" sid="769186653205464" type="Funcion">
+                            <param id="0" name="Name">&quot;paso1&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="192112960236542">
+                            <conditions>
+                                <condition id="-10" name="For" sid="438591393813281" type="System">
+                                    <param id="0" name="Name">&quot;i&quot;</param>
+                                    <param id="1" name="Start index">1</param>
+                                    <param id="2" name="End index">random(6,12)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="584674704193097" type="System">
+                                    <param id="0" name="Object to create">Personas</param>
+                                    <param id="1" name="Layer">&quot;Principal&quot;</param>
+                                    <param id="2" name="X">0</param>
+                                    <param id="3" name="Y">0</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="787705872201888" type="Personas">
+                                    <param id="0" name="Width">ANCHO1*(1+0.5)</param>
+                                    <param id="1" name="Height">ALTO1*(1+0.5)</param>
+                                </action>
+                                <action id="0" name="Call function" sid="602699029411258" type="Funcion">
+                                    <param id="0" name="Name">&quot;posicionAleatoria&quot;</param>
+                                    <param id="1" name="Parameter {n}">Personas.UID{###}0{###}GUI{###}LayoutWidth-GUI{###}GUI{###}LayoutHeight-GUI</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <comment>Verificar si se solapan entre los otros objetos</comment>
+                                <event-block sid="587667822648657">
+                                    <conditions>
+                                        <condition id="-23" name="While" sid="430263180399067" type="System" />
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block any="1" sid="735480510157837">
+                                            <conditions>
+                                                <condition id="1" name="Is overlapping another object" sid="579528365521457" type="Personas">
+                                                    <param id="0" name="Object">Aliado</param>
+                                                </condition>
+                                                <condition id="1" name="Is overlapping another object" sid="269621621860863" type="Personas">
+                                                    <param id="0" name="Object">Enemigo</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="165190853711922" type="Funcion">
+                                                    <param id="0" name="Name">&quot;posicionAleatoria&quot;</param>
+                                                    <param id="1" name="Parameter {n}">Personas.UID{###}0{###}GUI{###}LayoutWidth-GUI{###}GUI{###}LayoutHeight-GUI</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="129922703913698">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="315353245295352" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="-24" name="Stop loop" sid="182670919408127" type="System" />
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="855726582971418">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-7" name="Set size" sid="803114513202977" type="Personas">
+                                            <param id="0" name="Width">ANCHO1</param>
+                                            <param id="1" name="Height">ALTO1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Crear relaciones entre los objetos cuando inicie el lienzo  (PASO 2)</comment>
+                <event-block sid="319056762944798">
+                    <conditions>
+                        <condition id="0" name="On function" sid="483324833270226" type="Funcion">
+                            <param id="0" name="Name">&quot;paso2&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="551544420833469">
+                            <conditions />
+                            <actions>
+                                <action id="28" name="Clean &amp; Add instances" sid="959475085221948" type="Grupo">
+                                    <param id="0" name="Instances">Personas</param>
+                                    <param id="1" name="Group">&quot;j4a&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Recorrer todas las instancias de los Aliados</comment>
+                        <event-block sid="336888371836639">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="898982423573088" type="System">
+                                    <param id="0" name="Object">Aliado</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="8" name="Remove instances" sid="830338114472320" type="Grupo">
+                                    <param id="0" name="Instances">Aliado</param>
+                                    <param id="1" name="Group">&quot;j4a&quot;</param>
+                                </action>
+                                <action id="17" name="Pick instances" sid="826687271634114" type="Grupo">
+                                    <param id="0" name="Group">&quot;j4a&quot;</param>
+                                    <param id="1" name="Object">Personas</param>
+                                    <param id="2" name="Operation">0</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <comment>Seleccionar a la persona más cercana con respecto al punto del Aliado en la iteración para crear una relación de doble vía</comment>
+                                <event-block sid="413283995323608">
+                                    <conditions>
+                                        <condition id="-15" name="Pick nearest/furthest" sid="724156339006966" type="Personas">
+                                            <param id="0" name="Which">0</param>
+                                            <param id="1" name="X">Aliado.X</param>
+                                            <param id="2" name="Y">Aliado.Y</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="498120854413018" type="System">
+                                            <param id="0" name="Object to create">Objeto</param>
+                                            <param id="1" name="Layer">&quot;Fondo&quot;</param>
+                                            <param id="2" name="X">0</param>
+                                            <param id="3" name="Y">0</param>
+                                        </action>
+                                        <action id="-7" name="Set size" sid="940201224855109" type="Objeto">
+                                            <param id="0" name="Width">ANCHO2</param>
+                                            <param id="1" name="Height">ALTO2</param>
+                                        </action>
+                                        <action id="2" name="Load image from URL" sid="920081783584427" type="Objeto">
+                                            <param id="0" name="URI">&quot;j4a.png&quot;</param>
+                                            <param id="1" name="Cross-origin">0</param>
+                                        </action>
+                                        <action behavior="Linea" id="2" name="Line between instances" sid="441156224172500" type="Objeto">
+                                            <param id="0" name="Start">Aliado</param>
+                                            <param id="1" name="End">Personas</param>
+                                        </action>
+                                        <action id="1" name="Add edge" sid="656488086333523" type="Grafo">
+                                            <param id="0" name="Edge">Objeto.UID</param>
+                                            <param id="1" name="Vertex A">Aliado.UID</param>
+                                            <param id="2" name="Vertex B">Personas.UID</param>
+                                            <param id="3" name="Direction">2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>Recorrer todas las instancias de los Enemigos</comment>
+                        <event-block sid="805868810144067">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="315496841635381" type="System">
+                                    <param id="0" name="Object">Enemigo</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="8" name="Remove instances" sid="389089815394861" type="Grupo">
+                                    <param id="0" name="Instances">Enemigo</param>
+                                    <param id="1" name="Group">&quot;j4a&quot;</param>
+                                </action>
+                                <action id="17" name="Pick instances" sid="302064277696025" type="Grupo">
+                                    <param id="0" name="Group">&quot;j4a&quot;</param>
+                                    <param id="1" name="Object">Personas</param>
+                                    <param id="2" name="Operation">0</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <comment>Seleccionar a la persona más cercana con respecto al punto del Enemigo en la iteración para crear una relación de doble vía</comment>
+                                <event-block sid="429717059076398">
+                                    <conditions>
+                                        <condition id="-15" name="Pick nearest/furthest" sid="267637612172185" type="Personas">
+                                            <param id="0" name="Which">0</param>
+                                            <param id="1" name="X">Enemigo.X</param>
+                                            <param id="2" name="Y">Enemigo.Y</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="211143854267125" type="System">
+                                            <param id="0" name="Object to create">Objeto</param>
+                                            <param id="1" name="Layer">&quot;Fondo&quot;</param>
+                                            <param id="2" name="X">0</param>
+                                            <param id="3" name="Y">0</param>
+                                        </action>
+                                        <action id="-7" name="Set size" sid="156448643378592" type="Objeto">
+                                            <param id="0" name="Width">ANCHO2</param>
+                                            <param id="1" name="Height">ALTO2</param>
+                                        </action>
+                                        <action id="2" name="Load image from URL" sid="123685906945780" type="Objeto">
+                                            <param id="0" name="URI">&quot;j4a.png&quot;</param>
+                                            <param id="1" name="Cross-origin">0</param>
+                                        </action>
+                                        <action behavior="Linea" id="2" name="Line between instances" sid="115852300950868" type="Objeto">
+                                            <param id="0" name="Start">Enemigo</param>
+                                            <param id="1" name="End">Personas</param>
+                                        </action>
+                                        <action id="1" name="Add edge" sid="479024720076809" type="Grafo">
+                                            <param id="0" name="Edge">Objeto.UID</param>
+                                            <param id="1" name="Vertex A">Enemigo.UID</param>
+                                            <param id="2" name="Vertex B">Personas.UID</param>
+                                            <param id="3" name="Direction">2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Crear la primera carta cuando haya cargado todo (ÚLTIMO PASO)</comment>
+                <event-block sid="223306626177350">
+                    <conditions>
+                        <condition id="0" name="On function" sid="144421272126440" type="Funcion">
+                            <param id="0" name="Name">&quot;comenzoJuego&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="837332852740896">
+                            <conditions />
+                            <actions>
+                                <action id="-41" name="Wait for signal" sid="443661262262612" type="System">
+                                    <param id="0" name="Tag">&quot;pCargado&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="285403059636880" type="Funcion">
+                                    <param id="0" name="Name">&quot;crearCarta&quot;</param>
+                                    <param id="1" name="Parameter {n}">Funcion.Call(&quot;nodoAleatorio&quot;){###}-1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="Creación, definición de propiedades y comportamientos de los objetos" sid="439683561333856" title="jugabilidad 4">
+            <sub-events>
+                <comment>VALORES BASE DE LAS CARTAS (UTILERIA)</comment>
+                <variable comment="Ancho (en pixeles)" constant="1" name="ancho" sid="394140962379235" static="0" type="number">50</variable>
+                <variable comment="Alto (en pixeles)" constant="1" name="ALTO" sid="491434117448714" static="0" type="number">31</variable>
+                <comment>Al estar en un nodo Aliado</comment>
+                <variable comment="Velocidad Máxima Inferior si está en un Aliado" constant="1" name="VMI1" sid="763123743603566" static="0" type="number">40</variable>
+                <variable comment="Velocidad Máxima Superior si está en un Aliado" constant="1" name="VMS1" sid="615901453813869" static="0" type="number">100</variable>
+                <variable comment="Aceleración Inferior si está en un Aliado" constant="1" name="AI1" sid="351683055546213" static="0" type="number">10</variable>
+                <variable comment="Aceleración Superior si está en un Aliado" constant="1" name="AS1" sid="263014327298358" static="0" type="number">20</variable>
+                <variable comment="Desaceleración Inferior si está en un Aliado" constant="1" name="DI1" sid="162059644737660" static="0" type="number">20</variable>
+                <variable comment="Desaceleración Superior si está en un Aliado" constant="1" name="DS1" sid="284704103017416" static="0" type="number">30</variable>
+                <variable comment="Velocidad Inferior si está en un Aliado" constant="1" name="VI1" sid="776580916127333" static="0" type="number">30</variable>
+                <variable comment="Velocidad Superior si está en un Aliado" constant="1" name="VS1" sid="110044843153077" static="0" type="number">40</variable>
+                <comment>Al estar en un nodo Enemigo</comment>
+                <variable comment="Velocidad Máxima Inferior si está en un Enemigo" constant="1" name="VMI2" sid="480243666378304" static="0" type="number">80</variable>
+                <variable comment="Velocidad Máxima Superior si está en un Enemigo" constant="1" name="VMS2" sid="671060403058614" static="0" type="number">200</variable>
+                <variable comment="Aceleración Inferior si está en un Enemigo" constant="1" name="AI2" sid="409461303684717" static="0" type="number">40</variable>
+                <variable comment="Aceleración Superior si está en un Enemigo" constant="1" name="AS2" sid="375082799685667" static="0" type="number">60</variable>
+                <variable comment="Desaceleración Inferior si está en un Enemigo" constant="1" name="DI2" sid="239424135362814" static="0" type="number">20</variable>
+                <variable comment="Desaceleración Superior si está en un Enemigo" constant="1" name="DS2" sid="422366942530440" static="0" type="number">40</variable>
+                <variable comment="Velocidad Inferior si está en un Enemigo" constant="1" name="VI2" sid="696616307426310" static="0" type="number">60</variable>
+                <variable comment="Velocidad Superior si está en un Enemigo" constant="1" name="VS2" sid="694685155437084" static="0" type="number">80</variable>
+                <comment>Evento disparador que se ejecuta cada vez que la carta llega al nodo destino</comment>
+                <event-block sid="940600887498126">
+                    <conditions>
+                        <condition behavior="MoverA" id="0" name="On hit target position" sid="851962137148934" type="Utileria" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="704454864066209" type="Funcion">
+                            <param id="0" name="Name">&quot;definirDificultad&quot;</param>
+                            <param id="1" name="Parameter {n}">Utileria.UID</param>
+                        </action>
+                        <action id="0" name="Call function" sid="336687162658467" type="Funcion">
+                            <param id="0" name="Name">&quot;distribuirCartas&quot;</param>
+                            <param id="1" name="Parameter {n}">Utileria.UID</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Función que crea cartas posicionandose en un nodo del grafo para luego moverse entre ellos.&#x0D;&#x0A;(Hay limite de instancias de la carta que se pueden crear)</comment>
+                <comment>&#x09;parametro 1: UID de un nodo del grafo dónde iniciará la carta</comment>
+                <comment>&#x09;parametro 2: UID de un nodo del grafo dónde se movera (-1= distribuir cartas)</comment>
+                <event-block sid="559844911056211">
+                    <conditions>
+                        <condition id="0" name="On function" sid="387725770515280" type="Funcion">
+                            <param id="0" name="Name">&quot;crearCarta&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <variable comment="0 = falso ; 1 = verdadero" constant="0" name="crear" sid="264935777297791" static="0" type="number">0</variable>
+                        <variable comment="Cantidad de cartas" constant="0" name="cartas" sid="567529754207077" static="0" type="number">0</variable>
+                        <comment>Si hay menos de  8 cartas y la dificultar es baja o si hay menos de  5 cartas y la dificultad es alta; entonces crear=1</comment>
+                        <event-block sid="506905676331683">
+                            <conditions />
+                            <actions>
+                                <action id="-9" name="Set value" sid="493019642560130" type="System">
+                                    <param id="0" name="Variable">cartas</param>
+                                    <param id="1" name="Value">Grupo.InstCnt(&quot;j4a&quot;)</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="156241109237964" type="System">
+                                    <param id="0" name="Variable">crear</param>
+                                    <param id="1" name="Value">(dificultad&lt;20 &amp;  cartas&lt;8) | (dificultad&gt;=20 &amp; cartas&lt;5)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Si se debe crear, y selecciona la instancia del 1er parametro de la función, entonces</comment>
+                        <event-block sid="304846739661271">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="573238867366346" type="System">
+                                    <param id="0" name="Variable">crear</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-14" name="Pick by unique ID" sid="423047288419939" type="Personas">
+                                    <param id="0" name="Unique ID">Funcion.Param(0)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="529368697541542" type="System">
+                                    <param id="0" name="Object to create">Utileria</param>
+                                    <param id="1" name="Layer">&quot;Principal&quot;</param>
+                                    <param id="2" name="X">0</param>
+                                    <param id="3" name="Y">0</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="587789211663928" type="Utileria">
+                                    <param id="0" name="Animation">&quot;j4a&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="349228325709086" type="Utileria">
+                                    <param id="0" name="Frame number">0</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="302294274026431" type="Utileria">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Value">5</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="480732563136579" type="Utileria">
+                                    <param id="0" name="X">Personas.X</param>
+                                    <param id="1" name="Y">Personas.Y</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="878216355984319" type="Utileria">
+                                    <param id="0" name="Width">ANCHO</param>
+                                    <param id="1" name="Height">ALTO</param>
+                                </action>
+                                <action behavior="Hash" id="1" name="Set value" sid="669969633689777" type="Utileria">
+                                    <param id="0" name="Key string">&quot;nodoActual&quot;</param>
+                                    <param id="1" name="Value">Personas.UID</param>
+                                </action>
+                                <action id="6" name="Add instances" sid="714834795029663" type="Grupo">
+                                    <param id="0" name="Instances">Utileria</param>
+                                    <param id="1" name="Group">&quot;j4a&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="217025205099051" type="Funcion">
+                                    <param id="0" name="Name">&quot;definirDificultad&quot;</param>
+                                    <param id="1" name="Parameter {n}">Utileria.UID</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <comment>Si el 2o parametro de la función es igual a -1, entonces</comment>
+                                <event-block sid="718693159514283">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="191817004220013" type="System">
+                                            <param id="0" name="First value">Funcion.Param(1)</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">-1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="702344706210244" type="Funcion">
+                                            <param id="0" name="Name">&quot;distribuirCartas&quot;</param>
+                                            <param id="1" name="Parameter {n}">Utileria.UID</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="682803635708216">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="271120747919126" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="432828247958771" type="Funcion">
+                                            <param id="0" name="Name">&quot;moverAlNodo&quot;</param>
+                                            <param id="1" name="Parameter {n}">Funcion.Param(1){###}Utileria.UID</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Función para establecer la dificultad</comment>
+                <comment>&#x09;parametro 1: UID de la carta</comment>
+                <event-block sid="847350848519049">
+                    <conditions>
+                        <condition id="0" name="On function" sid="862055860696116" type="Funcion">
+                            <param id="0" name="Name">&quot;definirDificultad&quot;</param>
+                        </condition>
+                        <condition id="-14" name="Pick by unique ID" sid="711897535351619" type="Utileria">
+                            <param id="0" name="Unique ID">Funcion.Param(0)</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <variable comment='Velocidad máxima del objeto por el  comportamiento &quot;Mover A&quot;' constant="0" name="velocidadMaxima" sid="358532550895680" static="0" type="number">0</variable>
+                        <variable comment='Aceleración del objeto por el  comportamiento &quot;Mover A&quot;' constant="0" name="aceleracion" sid="423048129650427" static="0" type="number">0</variable>
+                        <variable comment='desaceleración del objeto por el  comportamiento &quot;Mover A&quot;' constant="0" name="desaceleracion" sid="348078000471672" static="0" type="number">0</variable>
+                        <variable comment='Velocidad del objeto por el  comportamiento &quot;Mover A&quot;' constant="0" name="velocidad" sid="705089572293614" static="0" type="number">0</variable>
+                        <variable comment="El porcentaje de dificultad" constant="0" name="razon" sid="992817370290117" static="0" type="number">0</variable>
+                        <event-block sid="955234625409722">
+                            <conditions />
+                            <actions>
+                                <action id="-9" name="Set value" sid="639989293316374" type="System">
+                                    <param id="0" name="Variable">razon</param>
+                                    <param id="1" name="Value">Funcion.Call(&quot;calculoRAZON&quot;)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Si está en un Aliado, la velocidad de la carta será menor con respecto al Enemigo</comment>
+                        <event-block sid="144642104703679">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="441150777863817" type="Aliado">
+                                    <param id="0" name="Unique ID">Utileria.Hash.At(&quot;nodoActual&quot;)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="538818227338043" type="System">
+                                    <param id="0" name="Variable">velocidadMaxima</param>
+                                    <param id="1" name="Value">random(VMI1*(1+razon),VMS1*(1+razon))</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="771659543897536" type="System">
+                                    <param id="0" name="Variable">aceleracion</param>
+                                    <param id="1" name="Value">random(AI1*(1+razon),AS1*(1+razon))</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="824924333438632" type="System">
+                                    <param id="0" name="Variable">desaceleracion</param>
+                                    <param id="1" name="Value">random(DI1*(1+razon),DS1*(1+razon))</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="503994291381847" type="System">
+                                    <param id="0" name="Variable">velocidad</param>
+                                    <param id="1" name="Value">random(VI1*(1+razon),VS1*(1+razon))</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="673270608537625">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="269900093933757" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="705704268451777" type="System">
+                                    <param id="0" name="Variable">velocidadMaxima</param>
+                                    <param id="1" name="Value">random(VMI2*(1+razon),VMS2*(1+razon))</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="362896158954107" type="System">
+                                    <param id="0" name="Variable">aceleracion</param>
+                                    <param id="1" name="Value">random(AI2*(1+razon),AS2*(1+razon))</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="682717344378495" type="System">
+                                    <param id="0" name="Variable">desaceleracion</param>
+                                    <param id="1" name="Value">random(DI2*(1+razon),DS2*(1+razon))</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="674379972244597" type="System">
+                                    <param id="0" name="Variable">velocidad</param>
+                                    <param id="1" name="Value">random(VI2*(1+razon),VS2*(1+razon))</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="541474576184791">
+                            <conditions />
+                            <actions>
+                                <action behavior="MoverA" id="0" name="Set enabled" sid="426584631276461" type="Utileria">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                                <action behavior="MoverA" id="1" name="Set maximum speed" sid="698086207178639" type="Utileria">
+                                    <param id="0" name="Max speed">velocidadMaxima</param>
+                                </action>
+                                <action behavior="MoverA" id="2" name="Set acceleration" sid="600043140317869" type="Utileria">
+                                    <param id="0" name="Acceleration">aceleracion</param>
+                                </action>
+                                <action behavior="MoverA" id="3" name="Set deceleration" sid="642302678111823" type="Utileria">
+                                    <param id="0" name="Deceleration">desaceleracion</param>
+                                </action>
+                                <action behavior="MoverA" id="5" name="Set current speed" sid="450346005775450" type="Utileria">
+                                    <param id="0" name="Current speed">velocidad</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Función para distribuir las cartas, bien puede solo moverse o puede crear más de ellas, cabe aclarar que todas las cartas tomarán distintos caminos</comment>
+                <comment>&#x09;parametro 1: UID de la carta</comment>
+                <event-block sid="228028749268154">
+                    <conditions>
+                        <condition id="0" name="On function" sid="103945130623211" type="Funcion">
+                            <param id="0" name="Name">&quot;distribuirCartas&quot;</param>
+                        </condition>
+                        <condition id="-14" name="Pick by unique ID" sid="360325947900555" type="Utileria">
+                            <param id="0" name="Unique ID">Funcion.Param(0)</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <variable comment="El nodo (persona) donde se encuentra la carta (Utilieria)" constant="0" name="nodoActual" sid="819120887494712" static="0" type="number">0</variable>
+                        <variable comment="El nodo (persona) donde se irá la carta (Utilieria)" constant="0" name="nodoPróximo" sid="742564705856090" static="0" type="number">0</variable>
+                        <comment>En primer lugar, conseguir el nodoActual de la carta que se distribuirá</comment>
+                        <comment>para luego generar el grupo &quot;j4b&quot; de todos nodos vecinos del nodoActual</comment>
+                        <event-block sid="759851523828833">
+                            <conditions />
+                            <actions>
+                                <action id="-9" name="Set value" sid="458016835500210" type="System">
+                                    <param id="0" name="Variable">nodoActual</param>
+                                    <param id="1" name="Value">Utileria.Hash.At(&quot;nodoActual&quot;)</param>
+                                </action>
+                                <action id="63" name="Pick neighbor vertices" sid="111447027668749" type="Grafo">
+                                    <param id="0" name="Vertex">nodoActual</param>
+                                    <param id="1" name="Vertex">&quot;j4b&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Repetir la cantidad de nodos del grupo &quot;j4b&quot;</comment>
+                        <event-block sid="406750128714158">
+                            <conditions>
+                                <condition id="-12" name="Repeat" sid="675859960878599" type="System">
+                                    <param id="0" name="Count">Grupo.InstCnt(&quot;j4b&quot;)</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <comment>Conseguir el proximo nodo aleatoriamente y eliminarlo del grupo &quot;j4b&quot;</comment>
+                                <event-block sid="124034477677752">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="280017169380497" type="System">
+                                            <param id="0" name="Variable">nodoPróximo</param>
+                                            <param id="1" name="Value">Grupo.RandomIndex2UID(&quot;j4b&quot;)</param>
+                                        </action>
+                                        <action id="9" name="Remove instances by UID" sid="563376164118754" type="Grupo">
+                                            <param id="0" name="UID">nodoPróximo</param>
+                                            <param id="1" name="Group">&quot;j4b&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>Si es la primera iteracción siempre moverá a la carta</comment>
+                                <event-block sid="926601410335504">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="224538797695718" type="System">
+                                            <param id="0" name="First value">loopindex</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="642461460532731" type="Funcion">
+                                            <param id="0" name="Name">&quot;moverAlNodo&quot;</param>
+                                            <param id="1" name="Parameter {n}">nodoPróximo{###}Utileria.UID</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <comment>Si el nodoActual es un Aliado, entonces solo movera el mensaje (saldrá del bucle)</comment>
+                                        <event-block sid="241225025881198">
+                                            <conditions>
+                                                <condition id="-14" name="Pick by unique ID" sid="632431756766485" type="Aliado">
+                                                    <param id="0" name="Unique ID">nodoActual</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-24" name="Stop loop" sid="501511459206308" type="System" />
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <comment>Las demás iteracciones crearán otra carta</comment>
+                                <event-block sid="106870625539716">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="269053286404183" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="865029672644277" type="Funcion">
+                                            <param id="0" name="Name">&quot;crearCarta&quot;</param>
+                                            <param id="1" name="Parameter {n}">nodoActual{###}nodoPróximo</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Función para mover la carta especifica al nodo especifico </comment>
+                <comment>&#x09;parametro 1: UID del nodo del grafo donde irá la carta</comment>
+                <comment>&#x09;parametro 2: UID de la carta</comment>
+                <event-block sid="887970781455550">
+                    <conditions>
+                        <condition id="0" name="On function" sid="404058985010240" type="Funcion">
+                            <param id="0" name="Name">&quot;moverAlNodo&quot;</param>
+                        </condition>
+                        <condition id="-14" name="Pick by unique ID" sid="862334372434648" type="Personas">
+                            <param id="0" name="Unique ID">Funcion.Param(0)</param>
+                        </condition>
+                        <condition id="-14" name="Pick by unique ID" sid="100536734269926" type="Utileria">
+                            <param id="0" name="Unique ID">Funcion.Param(1)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="MoverA" id="6" name="Move to object" sid="413096757538356" type="Utileria">
+                            <param id="0" name="Target">Personas</param>
+                        </action>
+                        <action behavior="Hash" id="1" name="Set value" sid="701970460257440" type="Utileria">
+                            <param id="0" name="Key string">&quot;nodoActual&quot;</param>
+                            <param id="1" name="Value">Personas.UID</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Función que selecciona un nodo del grafo de forma aleatoria</comment>
+                <comment>&#x09;retorna: UID del nodo del grafo seleccionado de forma aleatoria</comment>
+                <event-block sid="349538133506125">
+                    <conditions>
+                        <condition id="0" name="On function" sid="334552994506019" type="Funcion">
+                            <param id="0" name="Name">&quot;nodoAleatorio&quot;</param>
+                        </condition>
+                        <condition id="5" name="Pick all vertices" sid="359665515462189" type="Grafo">
+                            <param id="0" name="Vertex">Personas</param>
+                        </condition>
+                        <condition id="-16" name="Pick random instance" sid="957964902693140" type="System">
+                            <param id="0" name="Object">Personas</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Set return value" sid="568773759842930" type="Funcion">
+                            <param id="0" name="Value">Personas.UID</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="Condiciones de derrota y controles de tiempo junto a los controles (si los hay) del jugador" sid="878967279141667" title="control 4">
+            <sub-events>
+                <comment>Si da clic sobre un mensaje, si hay muchos elegirá uno al azar para ser destruido</comment>
+                <event-block sid="801471668497726">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="692023094259014" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">Utileria</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="164243200265069" type="Utileria">
+                            <param id="0" name="Instance variable">ID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">5</param>
+                        </condition>
+                        <condition id="-16" name="Pick random instance" sid="625219653143679" type="System">
+                            <param id="0" name="Object">Utileria</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="9" name="Remove instances by UID" sid="782558140860783" type="Grupo">
+                            <param id="0" name="UID">Utileria.UID</param>
+                            <param id="1" name="Group">&quot;j4a&quot;</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="945317842468350" type="Utileria" />
+                    </actions>
+                </event-block>
+                <comment>Cada un segundo mientras no haya perdido, se descontará 1 a la variable tiempo</comment>
+                <event-block sid="514713792649596">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="826340039829630" type="System">
+                            <param id="0" name="Interval (seconds)">1.0+Funcion.Call(&quot;calculoTEMPO&quot;)</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="608630573955442" type="System">
+                            <param id="0" name="Variable">derrota</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="564079437742645" type="System">
+                            <param id="0" name="Variable">tiempo</param>
+                            <param id="1" name="Value">-1</param>
+                        </action>
+                        <action id="0" name="Call function" sid="460134960161792" type="Funcion">
+                            <param id="0" name="Name">&quot;tiempoGUI&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <variable comment="Cantidad de cartas" constant="0" name="cartas" sid="961537656690465" static="0" type="number">0</variable>
+                        <event-block sid="814847340393744">
+                            <conditions />
+                            <actions>
+                                <action id="-9" name="Set value" sid="446245745375166" type="System">
+                                    <param id="0" name="Variable">cartas</param>
+                                    <param id="1" name="Value">Grupo.InstCnt(&quot;j4a&quot;)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Si tiempo es mayor que 5 y hay menos de 3 cartas, entonces</comment>
+                        <event-block sid="454994271550998">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="317723912527454" type="System">
+                                    <param id="0" name="Variable">tiempo</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">5</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="176140296246183" type="System">
+                                    <param id="0" name="Variable">cartas</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">3</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Wait" sid="225563447631955" type="System">
+                                    <param id="0" name="Seconds">random(1.1)</param>
+                                </action>
+                                <action id="0" name="Call function" sid="836503136464196" type="Funcion">
+                                    <param id="0" name="Name">&quot;crearCarta&quot;</param>
+                                    <param id="1" name="Parameter {n}">Funcion.Call(&quot;nodoAleatorio&quot;){###}-1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Si tiempo se acabo</comment>
+                        <event-block sid="844113467362406">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="935852482833823" type="System">
+                                    <param id="0" name="Variable">tiempo</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="608432013756308" type="System">
+                                    <param id="0" name="Variable">derrota</param>
+                                    <param id="1" name="Value">cartas&gt;0?1:0</param>
+                                </action>
+                                <action id="0" name="Call function" sid="300326076993874" type="Funcion">
+                                    <param id="0" name="Name">&quot;tiempoACABADO&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

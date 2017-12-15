@@ -1,0 +1,816 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>juego 3</name>
+    <events>
+        <include>principal</include>
+        <event-group description="Preparación del escenario" sid="347373588859784" title="inicio 3">
+            <sub-events>
+                <event-block sid="975181387550261">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="667409752750508" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="939451553095289" type="System">
+                            <param id="0" name="Variable">juego</param>
+                            <param id="1" name="Value">3</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="577270546208716" type="System">
+                            <param id="0" name="Variable">tiempo</param>
+                            <param id="1" name="Value">floor(random(14,16))</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="492665699877631" type="System">
+                            <param id="0" name="Variable">objetivo</param>
+                            <param id="1" name="Value">&quot;apila 3 aliados&quot;</param>
+                        </action>
+                        <action id="0" name="Call function" sid="340256676412184" type="Funcion">
+                            <param id="0" name="Name">&quot;inicioGUI&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="-16" name="Wait" sid="793734184560004" type="System">
+                            <param id="0" name="Seconds">0</param>
+                        </action>
+                        <action id="0" name="Call function" sid="857411409755217" type="Funcion">
+                            <param id="0" name="Name">&quot;paso1&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="-16" name="Wait" sid="186442991571436" type="System">
+                            <param id="0" name="Seconds">0</param>
+                        </action>
+                        <action id="0" name="Call function" sid="233098161767282" type="Funcion">
+                            <param id="0" name="Name">&quot;comenzoJuego&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="313217545909791">
+                    <conditions>
+                        <condition id="0" name="On function" sid="918950037661666" type="Funcion">
+                            <param id="0" name="Name">&quot;paso1&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="227215726878374">
+                            <conditions />
+                            <actions>
+                                <action id="1" name="Clean group" sid="671022384885794" type="Grupo">
+                                    <param id="0" name="Group">&quot;j3a&quot;</param>
+                                </action>
+                                <action id="0" name="Add key" sid="627408993512210" type="Diccionario">
+                                    <param id="0" name="Key">&quot;x1&quot;</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="0" name="Add key" sid="649918626728957" type="Diccionario">
+                                    <param id="0" name="Key">&quot;x2&quot;</param>
+                                    <param id="1" name="Value">LayoutWidth</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Hacer que cierta utileria sea invisible</comment>
+                        <event-block sid="316302115333461">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="842481710336188" type="Utileria">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="861141909352286" type="Utileria">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">4</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action disabled="1" id="-16" name="Set opacity" sid="217296849095531" type="Utileria">
+                                    <param id="0" name="Opacity">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="760831684937937">
+                    <conditions>
+                        <condition id="0" name="On function" sid="671963731167305" type="Funcion">
+                            <param id="0" name="Name">&quot;comenzoJuego&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="307114501048090">
+                            <conditions />
+                            <actions>
+                                <action id="-41" name="Wait for signal" sid="269523780840463" type="System">
+                                    <param id="0" name="Tag">&quot;pCargado&quot;</param>
+                                </action>
+                                <action id="0" name="Play" sid="109956418979625" type="Audio">
+                                    <param id="0" name="Audio file">Ejemplo2</param>
+                                    <param id="2" name="Loop">1</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="207455424430552" type="System">
+                                    <param id="0" name="Object to create">Jugador</param>
+                                    <param id="1" name="Layer">&quot;Principal&quot;</param>
+                                    <param id="2" name="X">0</param>
+                                    <param id="3" name="Y">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="Creación, definición de propiedades y comportamientos de los objetos" sid="778563038491279" title="jugabilidad 3">
+            <sub-events>
+                <comment>VALORES COMUNES DE LAS PERSONAS</comment>
+                <variable comment="Ancho (en pixeles)" constant="1" name="ancho" sid="503973650343161" static="0" type="number">50</variable>
+                <variable comment="Alto (en pixeles)" constant="1" name="alto" sid="300058572182573" static="0" type="number">50</variable>
+                <comment>VALORES DEL JUGADOR</comment>
+                <variable comment="Ancho (en pixeles)" constant="1" name="ANCHOJ" sid="606385365015442" static="0" type="number">49</variable>
+                <variable comment="Alto (en pixeles)" constant="1" name="ALTOJ" sid="934709769891193" static="0" type="number">64</variable>
+                <comment>VALORES BASE DE LOS ALIADOS</comment>
+                <variable comment="Velocidad inferior" constant="1" name="VI1" sid="418088369409385" static="0" type="number">80</variable>
+                <variable comment="Velocidad superior" constant="1" name="VS1" sid="245906704663427" static="0" type="number">100</variable>
+                <variable comment="Aceleración inferior" constant="1" name="AI1" sid="419473373490087" static="0" type="number">10</variable>
+                <variable comment="Aceleración superior" constant="1" name="AS1" sid="771613705523907" static="0" type="number">20</variable>
+                <comment>VALORES BASE DE LOS ENEMIGOS</comment>
+                <variable comment="Velocidad inferior" constant="1" name="VI2" sid="940892033933080" static="0" type="number">100</variable>
+                <variable comment="Velocidad superior" constant="1" name="VS2" sid="771288689700615" static="0" type="number">120</variable>
+                <variable comment="Aceleración superior" constant="1" name="AI2" sid="989381923046825" static="0" type="number">15</variable>
+                <variable comment="Aceleración inferior" constant="1" name="AS2" sid="531890466348523" static="0" type="number">25</variable>
+                <comment>Función que crea una persona (Aliado/Enemigo)</comment>
+                <comment>&#x09;parametro 1: Determina si se creará un Aliado (=0), o un Enemigo (1)</comment>
+                <event-block sid="354491690191613">
+                    <conditions>
+                        <condition id="0" name="On function" sid="583099774058394" type="Funcion">
+                            <param id="0" name="Name">&quot;crearPersona&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <comment>Si el (parametro 1) = 0, entonces se creará un Aliado, con un retardo aleatorio</comment>
+                        <event-block sid="615004154399469">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="371727371255424" type="System">
+                                    <param id="0" name="First value">Funcion.Param(0)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Wait" sid="646772709156473" type="System">
+                                    <param id="0" name="Seconds">random(0.5)</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="384196255564591" type="System">
+                                    <param id="0" name="Object to create">Aliado</param>
+                                    <param id="1" name="Layer">&quot;Principal&quot;</param>
+                                    <param id="2" name="X">0</param>
+                                    <param id="3" name="Y">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Sino si el (parametro 1) = 1, entonces se creará un Enemigo, con un retardo aleatorio</comment>
+                        <event-block sid="930913964539022">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="869846024858022" type="System" />
+                                <condition id="-8" name="Compare two values" sid="959700088584992" type="System">
+                                    <param id="0" name="First value">Funcion.Param(0)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Wait" sid="640431848468720" type="System">
+                                    <param id="0" name="Seconds">random(1.1)</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="656225512483726" type="System">
+                                    <param id="0" name="Object to create">Enemigo</param>
+                                    <param id="1" name="Layer">&quot;Principal&quot;</param>
+                                    <param id="2" name="X">0</param>
+                                    <param id="3" name="Y">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Evento disparador que se ejecuta cada vez que se crea una persona (Aliado/Enemigo)</comment>
+                <event-block sid="993351080190860">
+                    <conditions>
+                        <condition id="-18" name="On created" sid="488951213725961" type="Personas" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <variable comment="Velocidad del objeto por el  comportamiento bala" constant="0" name="velocidad" sid="355180312765065" static="0" type="number">0</variable>
+                        <variable comment="Aceleración del objeto por el  comportamiento bala" constant="0" name="aceleracion" sid="161950408675844" static="0" type="number">0</variable>
+                        <variable comment="El porcentaje de dificultad" constant="0" name="razon" sid="508397122758364" static="0" type="number">0</variable>
+                        <event-block sid="525996290707095">
+                            <conditions />
+                            <actions>
+                                <action id="-9" name="Set value" sid="203908520872971" type="System">
+                                    <param id="0" name="Variable">razon</param>
+                                    <param id="1" name="Value">Funcion.Call(&quot;calculoRAZON&quot;)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Se definen las propiedades si es un Aliado</comment>
+                        <event-block sid="493410663317429">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="132640852735724" type="Aliado">
+                                    <param id="0" name="Unique ID">Personas.UID</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="213189353285167" type="System">
+                                    <param id="0" name="Variable">velocidad</param>
+                                    <param id="1" name="Value">random(VI1*(1+razon),VS1*(1+razon))</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="649259463905975" type="System">
+                                    <param id="0" name="Variable">aceleracion</param>
+                                    <param id="1" name="Value">random(AI1*(1+razon),AS1*(1+razon))</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Se definen las propiedades si es un Enemigo</comment>
+                        <event-block sid="594430908484336">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="148009758870058" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="604761198080584" type="System">
+                                    <param id="0" name="Variable">velocidad</param>
+                                    <param id="1" name="Value">random(VI2*(1+razon),VS2*(1+razon))</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="583486587632932" type="System">
+                                    <param id="0" name="Variable">aceleracion</param>
+                                    <param id="1" name="Value">random(AI2*(1+razon),AS2*(1+razon))</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Se definen las propiedades comunes (Aliado/Enemigo)</comment>
+                        <event-block sid="384968458363933">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="446413171295906" type="Actores">
+                                    <param id="0" name="Unique ID">Personas.UID</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-7" name="Set size" sid="992275131013572" type="Actores">
+                                    <param id="0" name="Width">ANCHO</param>
+                                    <param id="1" name="Height">ALTO</param>
+                                </action>
+                                <action id="0" name="Call function" sid="236286841775704" type="Funcion">
+                                    <param id="0" name="Name">&quot;posicionALEATORIA&quot;</param>
+                                    <param id="1" name="Parameter {n}">Actores.UID{###}2</param>
+                                </action>
+                                <action behavior="Bala" id="5" name="Set enabled" sid="508983390878534" type="Actores">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                                <action behavior="Bala" id="0" name="Set speed" sid="512177356953539" type="Actores">
+                                    <param id="0" name="Speed">velocidad</param>
+                                </action>
+                                <action behavior="Bala" id="1" name="Set acceleration" sid="672960686414513" type="Actores">
+                                    <param id="0" name="Acceleration">aceleracion</param>
+                                </action>
+                                <action behavior="Bala" id="3" name="Set angle of motion" sid="327272297942845" type="Actores">
+                                    <param id="0" name="Angle">90</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Evento disparador que se ejecuta cada vez que se crea al jugador</comment>
+                <event-block sid="359277458738748">
+                    <conditions>
+                        <condition id="-18" name="On created" sid="766249970393473" type="Jugador" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="760329657234874">
+                            <conditions />
+                            <actions>
+                                <action id="-7" name="Set size" sid="257129042462969" type="Jugador">
+                                    <param id="0" name="Width">ANCHOJ</param>
+                                    <param id="1" name="Height">ALTOJ</param>
+                                </action>
+                                <action id="0" name="Call function" sid="686412755451538" type="Funcion">
+                                    <param id="0" name="Name">&quot;posicionALEATORIA&quot;</param>
+                                    <param id="1" name="Parameter {n}">Jugador.UID{###}3</param>
+                                </action>
+                                <action behavior="Hash" id="1" name="Set value" sid="514823346278489" type="Jugador">
+                                    <param id="0" name="Key string">&quot;pegajoso&quot;</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Evento disparador que se ejecuta cada vez que los actores colisionan entre ellos</comment>
+                <event-block sid="125462202588021">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="978061963387720" type="Actores">
+                            <param id="0" name="Object">Actores</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <variable constant="0" name="uid" sid="113988708731559" static="0" type="number">0</variable>
+                        <comment>Seleccionar el actor con la UID mas nueva</comment>
+                        <event-block sid="525163014958495">
+                            <conditions>
+                                <condition id="-17" name="Pick top/bottom" sid="988105374213042" type="Actores">
+                                    <param id="0" name="Which">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="233434599473040" type="System">
+                                    <param id="0" name="Variable">uid</param>
+                                    <param id="1" name="Value">Actores.UID</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Seleccionar el actor con la UID mas vieja, donde el actor tiene el estado &quot;pegajoso&quot;</comment>
+                        <event-block sid="730566087190631">
+                            <conditions>
+                                <condition behavior="Hash" id="2" name="Key exists" sid="748504365263672" type="Actores">
+                                    <param id="0" name="Key string">&quot;pegajoso&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="657232465762676" type="Funcion">
+                                    <param id="0" name="Name">&quot;restructurarTorre&quot;</param>
+                                    <param id="1" name="Parameter {n}">Actores.UID{###}uid</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Función que apila un Aliado en la torre</comment>
+                <comment>&#x09;parametro 1: UID del aliado que estaba arriba de la torre</comment>
+                <comment>&#x09;parametro 2: UID del aliado que estará arriba de la torre</comment>
+                <event-block sid="851097144584961">
+                    <conditions>
+                        <condition id="0" name="On function" sid="218532207052982" type="Funcion">
+                            <param id="0" name="Name">&quot;restructurarTorre&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <variable comment="Tolerancia de separación en Y entre los objetos" constant="1" name="TOLY" sid="481124744979245" static="0" type="number">20</variable>
+                        <variable comment=" Numero - (subirá) o + (bajará) el objeto que se pegará" constant="1" name="DY" sid="126399447534828" static="0" type="number">20</variable>
+                        <variable comment="Cantidad de aliados que pueden caer de la torre" constant="1" name="N" sid="342009437941766" static="0" type="number">1</variable>
+                        <variable comment='Limite superior del objeto &quot;pegajoso&quot;' constant="0" name="ys" sid="498033568025767" static="0" type="number">0</variable>
+                        <variable comment="Calcular el limite izquierdo que puede ir el jugador" constant="0" name="x1" sid="224494585851794" static="0" type="number">0</variable>
+                        <variable comment="Calcular el limite derecho que puede ir el jugador" constant="0" name="x2" sid="124164333782198" static="0" type="number">0</variable>
+                        <variable comment="0 = falso ; 1 = verdadero" constant="0" name="seApilan" sid="391773873492893" static="0" type="number">0</variable>
+                        <variable comment="0 = falso ; 1 = verdadero" constant="0" name="seColapsa" sid="616222885927692" static="0" type="number">0</variable>
+                        <variable comment=" 0= falso (Aliado), 1 = verdadero" constant="0" name="esEnemigo" sid="503271450097066" static="0" type="number">0</variable>
+                        <comment>Seleccionar la instancia del parametro 0, el actor con el estado &quot;pegajoso&quot; (Que está arriba de la torre)</comment>
+                        <event-block sid="590034458655146">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="390618230841500" type="Actores">
+                                    <param id="0" name="Unique ID">Funcion.Param(0)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="575331942032599" type="System">
+                                    <param id="0" name="Variable">ys</param>
+                                    <param id="1" name="Value">Actores.BBoxTop</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Seleccionar la instancia del parametro 1 si es enemigo (Que ha colisionado con la punta de la torre)</comment>
+                        <event-block sid="306348058940748">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="134237498529685" type="Enemigo">
+                                    <param id="0" name="Unique ID">Funcion.Param(1)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="183188502748217" type="System">
+                                    <param id="0" name="Variable">esEnemigo</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Seleccionar la instancia del parametro 1 (Que ha colisionado con la punta de la torre)</comment>
+                        <event-block sid="682630377732169">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="528643996618290" type="Actores">
+                                    <param id="0" name="Unique ID">Funcion.Param(1)</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <variable constant="0" name="aux" sid="612188070913032" static="0" type="number">0</variable>
+                                <event-block sid="437059218423537">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="262483789681957" type="System">
+                                            <param id="0" name="Variable">aux</param>
+                                            <param id="1" name="Value">abs(Actores.BBoxBottom-ys)&lt;=TOLY </param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="327161473902860" type="System">
+                                            <param id="0" name="Variable">seApilan</param>
+                                            <param id="1" name="Value">aux=1 &amp; esEnemigo=0</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="689730787678631" type="System">
+                                            <param id="0" name="Variable">seColapsa</param>
+                                            <param id="1" name="Value">aux=1 &amp; esEnemigo=1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="374411728813393">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="644363474693882" type="System">
+                                            <param id="0" name="Variable">seApilan</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="929237109785517" type="Funcion">
+                                            <param id="0" name="Name">&quot;apilarAliado&quot;</param>
+                                            <param id="1" name="Parameter {n}">Funcion.Param(0){###}Funcion.Param(1)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="565011882951487">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="824376932215561" type="System" />
+                                        <condition id="-14" name="Compare variable" sid="156169545921866" type="System">
+                                            <param id="0" name="Variable">seColapsa</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Bala" id="5" name="Set enabled" sid="997636202227034" type="Actores">
+                                            <param id="0" name="State">0</param>
+                                        </action>
+                                        <action id="6" name="Add instances" sid="740877563846576" type="Grupo">
+                                            <param id="0" name="Instances">Actores</param>
+                                            <param id="1" name="Group">&quot;j3a&quot;</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="654483385662542">
+                                            <conditions>
+                                                <condition id="-12" name="Repeat" sid="220281025381096" type="System">
+                                                    <param id="0" name="Count">N+1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="108226421320491" type="Funcion">
+                                                    <param id="0" name="Name">&quot;colapsarPersona&quot;</param>
+                                                    <param id="1" name="Parameter {n}"></param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block any="1" sid="552844472339681">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="700859741992456" type="System">
+                                    <param id="0" name="Variable">seApilan</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="614872348504220" type="System">
+                                    <param id="0" name="Variable">seColapsa</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="935632702788492" type="System">
+                                    <param id="0" name="Variable">x1</param>
+                                    <param id="1" name="Value">Jugador.BBoxLeft</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="798018916490191" type="System">
+                                    <param id="0" name="Variable">x2</param>
+                                    <param id="1" name="Value">Jugador.BBoxRight</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <comment>Encontrar limites que puede ir el jugador</comment>
+                                <event-block sid="942807168091023">
+                                    <conditions>
+                                        <condition id="2" name="For each UID" sid="683667539242572" type="Grupo">
+                                            <param id="0" name="Variable">&quot;i&quot;</param>
+                                            <param id="1" name="Group">&quot;j3a&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="469184743044535">
+                                            <conditions>
+                                                <condition id="-14" name="Pick by unique ID" sid="833264253112684" type="Actores">
+                                                    <param id="0" name="Unique ID">Grupo.Item(&quot;i&quot;)</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="797481373041097" type="System">
+                                                    <param id="0" name="Variable">x1</param>
+                                                    <param id="1" name="Value">Actores.BBoxLeft &lt; x1 ? Actores.BBoxLeft : x1</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="740543683268856" type="System">
+                                                    <param id="0" name="Variable">x2</param>
+                                                    <param id="1" name="Value">Actores.BBoxRight &gt; x2 ? Actores.BBoxRight : x2</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="439034797551258">
+                                    <conditions />
+                                    <actions>
+                                        <action id="1" name="Set key" sid="861536615913017" type="Diccionario">
+                                            <param id="0" name="Key">&quot;x1&quot;</param>
+                                            <param id="1" name="Value">Jugador.BBoxLeft-x1</param>
+                                        </action>
+                                        <action id="1" name="Set key" sid="335561033565240" type="Diccionario">
+                                            <param id="0" name="Key">&quot;x2&quot;</param>
+                                            <param id="1" name="Value">LayoutWidth-(x2-Jugador.BBoxRight)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Función que apila un Aliado en la torre</comment>
+                <comment>&#x09;parametro 1: UID del aliado que estaba arriba de la torre</comment>
+                <comment>&#x09;parametro 2: UID del aliado que estará arriba de la torre</comment>
+                <event-block sid="253495658336522">
+                    <conditions>
+                        <condition id="0" name="On function" sid="877274871814239" type="Funcion">
+                            <param id="0" name="Name">&quot;apilarAliado&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <variable comment="Despazamiento si es - (subirá) o + (bajará) del objeto que se pegará" constant="1" name="DY" sid="819400901319006" static="0" type="number">20</variable>
+                        <variable comment='Limite superior del objeto &quot;pegajoso&quot;' constant="0" name="ys" sid="851448679156271" static="0" type="number">0</variable>
+                        <comment>El elemento que estaba arriba de la torre</comment>
+                        <event-block sid="122520253018282">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="142672435871581" type="Actores">
+                                    <param id="0" name="Unique ID">Funcion.Param(0)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="11" name="Set collisions enabled" sid="568326044570697" type="Actores">
+                                    <param id="0" name="Collisions">0</param>
+                                </action>
+                                <action behavior="Hash" id="6" name="Remove key" sid="760442093210057" type="Actores">
+                                    <param id="0" name="Key string">&quot;pegajoso&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="809772865683172" type="System">
+                                    <param id="0" name="Variable">ys</param>
+                                    <param id="1" name="Value">Actores.BBoxTop</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>El elemento que se añadirá en la torre</comment>
+                        <event-block sid="415836115899485">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="565481000959579" type="Actores">
+                                    <param id="0" name="Unique ID">Funcion.Param(1)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Bala" id="5" name="Set enabled" sid="421281843083883" type="Actores">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                                <action id="-2" name="Set Y" sid="116575452429214" type="Actores">
+                                    <param id="0" name="Y">Actores.Y + (ys-Actores.BBoxBottom) +DY</param>
+                                </action>
+                                <action behavior="Pin" id="1" name="Pin to object" sid="361026699136319" type="Actores">
+                                    <param id="0" name="Pin to">Jugador</param>
+                                </action>
+                                <action behavior="Hash" id="1" name="Set value" sid="653986837287575" type="Actores">
+                                    <param id="0" name="Key string">&quot;pegajoso&quot;</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="6" name="Add instances" sid="758884658801126" type="Grupo">
+                                    <param id="0" name="Instances">Actores</param>
+                                    <param id="1" name="Group">&quot;j3a&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Función que bota un Aliado de la torre y/o un Enemigo que quería pegarse</comment>
+                <event-block sid="888021607490284">
+                    <conditions>
+                        <condition id="0" name="On function" sid="746787907176009" type="Funcion">
+                            <param id="0" name="Name">&quot;colapsarPersona&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <comment>Si hay torre, entoces se colapsara el primero</comment>
+                        <event-block sid="561059996757746">
+                            <conditions>
+                                <condition id="5" inverted="1" name="Empty" sid="929009521052826" type="Grupo">
+                                    <param id="0" name="Group">&quot;j3a&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="22" name="Pop one instance" sid="895073421847282" type="Grupo">
+                                    <param id="0" name="Group">&quot;j3a&quot;</param>
+                                    <param id="1" name="Index">Grupo.InstCnt(&quot;j3a&quot;)-1</param>
+                                    <param id="2" name="Object">Actores</param>
+                                    <param id="3" name="Operation">1</param>
+                                </action>
+                                <action behavior="Hash" id="6" name="Remove key" sid="646079338214641" type="Actores">
+                                    <param id="0" name="Key string">&quot;pegajoso&quot;</param>
+                                </action>
+                                <action behavior="Pin" id="10" name="Unpin" sid="539951477691024" type="Actores" />
+                                <action id="11" name="Set collisions enabled" sid="299738354380687" type="Actores">
+                                    <param id="0" name="Collisions">0</param>
+                                </action>
+                                <action behavior="Fisica" id="27" name="Set enabled" sid="632072494279702" type="Actores">
+                                    <param id="0" name="Mode">1</param>
+                                </action>
+                                <action behavior="Fisica" id="21" name="Set immovable" sid="745597118107447" type="Actores">
+                                    <param id="0" name="Setting">0</param>
+                                </action>
+                                <action behavior="Fisica" id="12" name="Set world gravity" sid="879516661517981" type="Actores">
+                                    <param id="0" name="Gravity">90</param>
+                                </action>
+                                <action behavior="Fisica" id="4" name="Apply impulse towards position" sid="790993862752942" type="Actores">
+                                    <param id="0" name="Impulse">random(3,10)</param>
+                                    <param id="1" name="X">random(Actores.BBoxLeft,Actores.BBoxRight)</param>
+                                    <param id="2" name="Y">random(Actores.BBoxTop,Actores.BBoxBottom)</param>
+                                    <param id="3" name="Image point">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Si hay torre, entoces el siguiente de la torre tendrá el estado &quot;pegajoso&quot;</comment>
+                        <event-block sid="275218280168278">
+                            <conditions>
+                                <condition id="5" inverted="1" name="Empty" sid="868163018803834" type="Grupo">
+                                    <param id="0" name="Group">&quot;j3a&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="22" name="Pop one instance" sid="517964891587453" type="Grupo">
+                                    <param id="0" name="Group">&quot;j3a&quot;</param>
+                                    <param id="1" name="Index">Grupo.InstCnt(&quot;j3a&quot;)-1</param>
+                                    <param id="2" name="Object">Actores</param>
+                                    <param id="3" name="Operation">0</param>
+                                </action>
+                                <action behavior="Hash" id="1" name="Set value" sid="298221446902243" type="Actores">
+                                    <param id="0" name="Key string">&quot;pegajoso&quot;</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="11" name="Set collisions enabled" sid="439104017198786" type="Actores">
+                                    <param id="0" name="Collisions">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Entonces no hay torre</comment>
+                        <event-block sid="151959203550619">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="199604793398225" type="System" />
+                            </conditions>
+                            <actions>
+                                <action behavior="Hash" id="1" name="Set value" sid="255031047921527" type="Jugador">
+                                    <param id="0" name="Key string">&quot;pegajoso&quot;</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="11" name="Set collisions enabled" sid="415123759883664" type="Jugador">
+                                    <param id="0" name="Collisions">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="Condiciones de derrota y controles de tiempo junto a los controles (si los hay) del jugador" sid="811258852111430" title="control 3">
+            <sub-events>
+                <comment>Control del personaje</comment>
+                <event-block sid="557627041145734">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="126813884819769" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="677335311631314" type="Funcion">
+                            <param id="0" name="Name">&quot;posicionENCERRADA&quot;</param>
+                            <param id="1" name="Parameter {n}">Jugador.UID{###}1{###}Diccionario.Get(&quot;x1&quot;){###}Diccionario.Get(&quot;x2&quot;){###}448{###}448</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Cada un segundo mientras no haya perdido, se descontará 1 a la variable tiempo</comment>
+                <event-block sid="666687036303876">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="974088966181575" type="System">
+                            <param id="0" name="Interval (seconds)">1.0+Funcion.Call(&quot;calculoTEMPO&quot;)</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="860915714109604" type="System">
+                            <param id="0" name="Variable">derrota</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="450858003893656" type="System">
+                            <param id="0" name="Variable">tiempo</param>
+                            <param id="1" name="Value">-1</param>
+                        </action>
+                        <action id="0" name="Call function" sid="173396385301416" type="Funcion">
+                            <param id="0" name="Name">&quot;tiempoGUI&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <variable comment="Número de veces que recorrerá el bucle" constant="1" name="LIM" sid="917746552884700" static="0" type="number">4</variable>
+                        <variable comment=" Probabilidad que aparezca otro Aliado cuando no hay ninguno apilado" constant="0" name="P1" sid="179143324949677" static="0" type="number">0.75</variable>
+                        <variable comment=" Probabilidad que aparezca otro Aliado cuando haya N apilados" constant="0" name="P2" sid="558197155862187" static="0" type="number">0.1</variable>
+                        <variable comment=" Cantidad de Aliados apilados para la P2(x) = 0.10" constant="0" name="N" sid="961373600747881" static="0" type="number">3</variable>
+                        <variable comment=" 0= Aliado, 1 = Enemigo, otro = ninguno" constant="0" name="aux" sid="932590800379224" static="0" type="number">0</variable>
+                        <comment>Si hay tiempo, creará uno o más objetos</comment>
+                        <event-block sid="114602683844687">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="431582778372636" type="System">
+                                    <param id="0" name="Variable">tiempo</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="365660061592208">
+                                    <conditions>
+                                        <condition id="-12" name="Repeat" sid="932473104314508" type="System">
+                                            <param id="0" name="Count">LIM</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="540660301191820" type="System">
+                                            <param id="0" name="Variable">aux</param>
+                                            <param id="1" name="Value">loopindex=0?1:floor(random(2))</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <comment>La primera iteración siempre aux=1, las demás iteraciones tendrán un 50% que sea 1</comment>
+                                        <event-block sid="885666121972248">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="123653930111810" type="System">
+                                                    <param id="0" name="Variable">aux</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="17" name="Pick instances" sid="180471336771049" type="Grupo">
+                                                    <param id="0" name="Group">&quot;j3a&quot;</param>
+                                                    <param id="1" name="Object">Aliado</param>
+                                                    <param id="2" name="Operation">0</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="559517321835575" type="System">
+                                                    <param id="0" name="Variable">aux</param>
+                                                    <param id="1" name="Value">lerp(P1,P2,Aliado.PickedCount/N)&lt;=random(0,1)</param>
+                                                </action>
+                                                <action id="0" name="Call function" sid="442661891142830" type="Funcion">
+                                                    <param id="0" name="Name">&quot;crearPersona&quot;</param>
+                                                    <param id="1" name="Parameter {n}">aux</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>Si tiempo se acabo, comprobará que haya al menos 3 aliados</comment>
+                        <event-block sid="490035600085766">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="279905596378275" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="17" name="Pick instances" sid="468949669277809" type="Grupo">
+                                    <param id="0" name="Group">&quot;j3a&quot;</param>
+                                    <param id="1" name="Object">Aliado</param>
+                                    <param id="2" name="Operation">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="556086335738017" type="System">
+                                    <param id="0" name="Variable">derrota</param>
+                                    <param id="1" name="Value">Aliado.PickedCount&gt;=3?0:1</param>
+                                </action>
+                                <action id="0" name="Call function" sid="547462584282350" type="Funcion">
+                                    <param id="0" name="Name">&quot;tiempoACABADO&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

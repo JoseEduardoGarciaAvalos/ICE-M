@@ -1,0 +1,1224 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>principal</name>
+    <events>
+        <variable comment="El alto del GUI (en pixeles)" constant="1" name="GUI" sid="571679260641128" static="0" type="number">32</variable>
+        <variable comment="0 = Falso (Ninguna derrota), 1 = Verdadero (Hay derrota)" constant="0" name="derrota" sid="474886352174495" static="0" type="number">0</variable>
+        <variable comment="La dificultad de cada minijuego" constant="0" name="dificultad" sid="771022049958099" static="0" type="number">0</variable>
+        <variable comment="El tiempo del minijuego actual" constant="0" name="tiempo" sid="955310785200906" static="0" type="number">0</variable>
+        <variable comment="La vida del jugador" constant="0" name="vida" sid="115064540873346" static="0" type="number">5</variable>
+        <variable comment="El puntaje del jugador" constant="0" name="puntaje" sid="760105527158194" static="0" type="number">0</variable>
+        <variable comment="Lo que deberá hacer el jugador en el minujuego actual" constant="0" name="objetivo" sid="781138035264173" static="0" type="text"></variable>
+        <variable comment="El id del minijuego actual" constant="0" name="juego" sid="531427333430227" static="0" type="number">0</variable>
+        <variable comment="0 = falso ; 1 = verdadero (Cargado el escenario incial)" constant="0" name="cargado" sid="875523738358405" static="0" type="number">0</variable>
+        <event-group description="" sid="763631891842466" title="Datos curiosos">
+            <sub-events>
+                <comment>Las funciones no distinge entre mayusculas y minusculas, puede estár declarado como &quot;hola&quot; y hacer el llamado como &quot;HolA&quot; (también eso mismo pasa con las variables)</comment>
+                <comment>Los sprites asolapados o que han colisionado, si desea manejar uno en especifico, deberá dar &quot;pick&quot; al que está al top o bottom de la capa</comment>
+                <comment>Time scale es para detener el trabajo de todos o algunos objetos.</comment>
+                <comment>Cuidado con utilizar wait dentro de una function, es mejor no utilizarla</comment>
+                <comment></comment>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="384581551596629" title="Principal">
+            <sub-events>
+                <comment>Función para colocar un objeto en una posición aleatoria según área de la Utileria (Zona)</comment>
+                <comment>&#x09;parametro 1: UID del objeto que requiere posicionarse de forma aleatoria</comment>
+                <comment>&#x09;parametro 2: Variable de instacia ID de la Zona (Hotspot Superior- Izquierdo)</comment>
+                <comment>&#x09;parametro 3: Limite izquierdo (X1)</comment>
+                <comment>&#x09;parametro 4: Limite derecho (X2)</comment>
+                <comment>&#x09;parametro 5: Limite superior (Y1)</comment>
+                <comment>&#x09;parametro 6: Limite inferior (Y2)</comment>
+                <comment>Aclaración: los parametros del 3 al 6 son opcionales</comment>
+                <event-block sid="934040114731617">
+                    <conditions>
+                        <condition id="0" name="On function" sid="589696107249435" type="Funcion">
+                            <param id="0" name="Name">&quot;posicionALEATORIA&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <variable comment="La mitad de anchura del objeto" constant="0" name="ancho" sid="794542495771659" static="0" type="number">0</variable>
+                        <variable comment="La mitad de altura del objeto" constant="0" name="alto" sid="472247327273525" static="0" type="number">0</variable>
+                        <variable comment="Coordenada X en que aparecerá el objeto" constant="0" name="x" sid="353837211857006" static="0" type="number">0</variable>
+                        <variable comment="Coordenada Y en que aparecerá el objeto" constant="0" name="y" sid="623935746557169" static="0" type="number">0</variable>
+                        <variable comment="Limite izquierdo que puede aparecer el objeto" constant="0" name="x1" sid="995825397984272" static="0" type="number">0</variable>
+                        <variable comment="Limite derecho que puede aparecer el objeto" constant="0" name="x2" sid="201800913874718" static="0" type="number">0</variable>
+                        <variable comment="Limite superior que puede aparecer el objeto" constant="0" name="y1" sid="832509918069823" static="0" type="number">0</variable>
+                        <variable comment="Limite inferior que puede aparecer el objeto" constant="0" name="y2" sid="577621970307128" static="0" type="number">0</variable>
+                        <comment>Se le ha mandado 2 parametros</comment>
+                        <event-block sid="841967587161229">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="590808531883487" type="System">
+                                    <param id="0" name="First value">Funcion.ParamCount</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">2</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="510536092902985" type="Utileria">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">Funcion.Param(1)</param>
+                                </condition>
+                                <condition id="-16" name="Pick random instance" sid="802473393624344" type="System">
+                                    <param id="0" name="Object">Utileria</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="830716275849181" type="System">
+                                    <param id="0" name="Variable">x1</param>
+                                    <param id="1" name="Value">Utileria.BBoxLeft </param>
+                                </action>
+                                <action id="-9" name="Set value" sid="478386634004405" type="System">
+                                    <param id="0" name="Variable">x2</param>
+                                    <param id="1" name="Value">Utileria.BBoxRight </param>
+                                </action>
+                                <action id="-9" name="Set value" sid="995134265482602" type="System">
+                                    <param id="0" name="Variable">y1</param>
+                                    <param id="1" name="Value">Utileria.BBoxTop</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="215333651946752" type="System">
+                                    <param id="0" name="Variable">y2</param>
+                                    <param id="1" name="Value">Utileria.BBoxBottom</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="720230346192233">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="686557797525449" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="668458340280520" type="System">
+                                    <param id="0" name="Variable">x1</param>
+                                    <param id="1" name="Value">Funcion.Param(2)</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="514390521352967" type="System">
+                                    <param id="0" name="Variable">x2</param>
+                                    <param id="1" name="Value">Funcion.Param(3)</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="177070042574108" type="System">
+                                    <param id="0" name="Variable">y1</param>
+                                    <param id="1" name="Value">Funcion.Param(4)</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="684976740992271" type="System">
+                                    <param id="0" name="Variable">y2</param>
+                                    <param id="1" name="Value">Funcion.Param(5)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Seleccionará el actor con UID = parametro 1 y la Zona con ID = parametro 2 (si hay más Zonas lo elegirá al azar)</comment>
+                        <event-block sid="329416786287518">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="740351630698935" type="Actores">
+                                    <param id="0" name="Unique ID">Funcion.Param(0)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="769582033677556" type="System">
+                                    <param id="0" name="Variable">ancho</param>
+                                    <param id="1" name="Value">Actores.Width/2</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="172449355437755" type="System">
+                                    <param id="0" name="Variable">alto</param>
+                                    <param id="1" name="Value">Actores.Height/2</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="107366248909626" type="System">
+                                    <param id="0" name="Variable">x1</param>
+                                    <param id="1" name="Value">x1 + ancho</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="444660240364535" type="System">
+                                    <param id="0" name="Variable">x2</param>
+                                    <param id="1" name="Value">x2 - ancho</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="104574103451702" type="System">
+                                    <param id="0" name="Variable">y1</param>
+                                    <param id="1" name="Value">y1 + alto</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="986335385570736" type="System">
+                                    <param id="0" name="Variable">y2</param>
+                                    <param id="1" name="Value">y2 - alto</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <comment>Coordenada X</comment>
+                                <event-block sid="928300174509810">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="996933785859327" type="System">
+                                            <param id="0" name="Variable">x1</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Value">x2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="443091014658036" type="System">
+                                            <param id="0" name="Variable">x</param>
+                                            <param id="1" name="Value">(x1+x2)/2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="862894053747403">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="574459436883002" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="970499616839098" type="System">
+                                            <param id="0" name="Variable">x</param>
+                                            <param id="1" name="Value">random(x1,x2)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>Coordenada Y</comment>
+                                <event-block sid="633341787348603">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="325396784343352" type="System">
+                                            <param id="0" name="Variable">y1</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Value">y2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="209315678969916" type="System">
+                                            <param id="0" name="Variable">y</param>
+                                            <param id="1" name="Value">(y1+y2)/2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="802788553472456">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="372400590280822" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="890704625640746" type="System">
+                                            <param id="0" name="Variable">y</param>
+                                            <param id="1" name="Value">random(y1,y2)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="436414256146190">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-3" name="Set position" sid="876090179746748" type="Actores">
+                                            <param id="0" name="X">x</param>
+                                            <param id="1" name="Y">y</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Función para hacer que la posición de un objeto no pase entre los limites (Quede encerrado)</comment>
+                <comment>&#x09;parametro 1: UID del objeto que requiere ese comportamiento</comment>
+                <comment>&#x09;parametro 2: Input teclado=0 mouse=1</comment>
+                <comment>&#x09;parametro 3: Limite izquierdo (X1)</comment>
+                <comment>&#x09;parametro 4: Limite derecho (X2)</comment>
+                <comment>&#x09;parametro 5: Limite superior (Y1)</comment>
+                <comment>&#x09;parametro 6: Limite inferior (Y2)</comment>
+                <event-block sid="955713463912780">
+                    <conditions>
+                        <condition id="0" name="On function" sid="580451722845092" type="Funcion">
+                            <param id="0" name="Name">&quot;posicionENCERRADA&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <variable comment="La mitad de anchura del objeto" constant="0" name="ancho" sid="431048715942813" static="0" type="number">0</variable>
+                        <variable comment="La mitad de altura del objeto" constant="0" name="alto" sid="890326291598716" static="0" type="number">0</variable>
+                        <variable comment="Coordenada X del objeto" constant="0" name="x" sid="788766267979846" static="0" type="number">0</variable>
+                        <variable comment="Coordenada Y del objeto" constant="0" name="y" sid="580040862917853" static="0" type="number">0</variable>
+                        <variable comment="teclado=0 mouse=1" constant="0" name="entrada" sid="747181402618493" static="0" type="number">0</variable>
+                        <variable comment="Limite izquierdo que puede ir el objeto" constant="0" name="x1" sid="879407537050870" static="0" type="number">0</variable>
+                        <variable comment="Limite derecho que puede ir el objeto" constant="0" name="x2" sid="143873369875084" static="0" type="number">0</variable>
+                        <variable comment="Limite superior que puede ir el objeto" constant="0" name="y1" sid="706330402881186" static="0" type="number">0</variable>
+                        <variable comment="Limite inferior que puede ir el objeto" constant="0" name="y2" sid="146775446056122" static="0" type="number">0</variable>
+                        <event-block sid="679278594194292">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="188413033790506" type="Actores">
+                                    <param id="0" name="Unique ID">Funcion.Param(0)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="834429071814359" type="System">
+                                    <param id="0" name="Variable">ancho</param>
+                                    <param id="1" name="Value">Actores.Width/2</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="547677673059424" type="System">
+                                    <param id="0" name="Variable">alto</param>
+                                    <param id="1" name="Value">Actores.Height/2</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="580555156836910" type="System">
+                                    <param id="0" name="Variable">entrada</param>
+                                    <param id="1" name="Value">Funcion.Param(1)</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="531839180588625" type="System">
+                                    <param id="0" name="Variable">x1</param>
+                                    <param id="1" name="Value">Funcion.Param(2) + ancho</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="967602071076713" type="System">
+                                    <param id="0" name="Variable">x2</param>
+                                    <param id="1" name="Value">Funcion.Param(3) - ancho</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="530166356180748" type="System">
+                                    <param id="0" name="Variable">y1</param>
+                                    <param id="1" name="Value">Funcion.Param(4) + alto</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="472231899077599" type="System">
+                                    <param id="0" name="Variable">y2</param>
+                                    <param id="1" name="Value">Funcion.Param(5) - alto</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <comment>Está ocupando el teclado</comment>
+                                <event-block sid="414634018154778">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="997052845318573" type="System">
+                                            <param id="0" name="Variable">entrada</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="212105055909182" type="System">
+                                            <param id="0" name="Variable">x</param>
+                                            <param id="1" name="Value">Actores.X</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="693706961579048" type="System">
+                                            <param id="0" name="Variable">y</param>
+                                            <param id="1" name="Value">Actores.Y</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>Sino está ocupando el mouse</comment>
+                                <event-block sid="223077101300680">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="506006130460983" type="System" />
+                                        <condition id="-14" name="Compare variable" sid="762115776610784" type="System">
+                                            <param id="0" name="Variable">entrada</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="109157386567659" type="System">
+                                            <param id="0" name="Variable">x</param>
+                                            <param id="1" name="Value">Mouse.X</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="711662681808331" type="System">
+                                            <param id="0" name="Variable">y</param>
+                                            <param id="1" name="Value">Mouse.Y</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>Coordenada X</comment>
+                                <event-block sid="649172301298226">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="756855939739033" type="System">
+                                            <param id="0" name="Variable">x1</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Value">x2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="116032790059134" type="System">
+                                            <param id="0" name="Variable">x</param>
+                                            <param id="1" name="Value">(x1+x2)/2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="275032022877752">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="882679600853933" type="System" />
+                                        <condition id="-14" name="Compare variable" sid="864048717871952" type="System">
+                                            <param id="0" name="Variable">x1</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Value">x</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="103081597493382" type="System">
+                                            <param id="0" name="Variable">x</param>
+                                            <param id="1" name="Value">x1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="264607646902476">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="232890062480552" type="System" />
+                                        <condition id="-14" name="Compare variable" sid="986731408169194" type="System">
+                                            <param id="0" name="Variable">x2</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Value">x</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="409940972665140" type="System">
+                                            <param id="0" name="Variable">x</param>
+                                            <param id="1" name="Value">x2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>Coordenada Y</comment>
+                                <event-block sid="910613929172974">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="427593792371955" type="System">
+                                            <param id="0" name="Variable">y1</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Value">y2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="113444565801280" type="System">
+                                            <param id="0" name="Variable">y</param>
+                                            <param id="1" name="Value">(y1+y2)/2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="658263944230494">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="233425274970330" type="System" />
+                                        <condition id="-14" name="Compare variable" sid="631469672258757" type="System">
+                                            <param id="0" name="Variable">y1</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Value">y</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="115658411859751" type="System">
+                                            <param id="0" name="Variable">y</param>
+                                            <param id="1" name="Value">y1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="178264116744475">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="301252958779404" type="System" />
+                                        <condition id="-14" name="Compare variable" sid="448102128250291" type="System">
+                                            <param id="0" name="Variable">y2</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Value">y</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="775245874807516" type="System">
+                                            <param id="0" name="Variable">y</param>
+                                            <param id="1" name="Value">y2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="815150001380624">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-3" name="Set position" sid="178267511208720" type="Actores">
+                                            <param id="0" name="X">x</param>
+                                            <param id="1" name="Y">y</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Función para crear la UID (Barra superior)</comment>
+                <event-block sid="411666691706655">
+                    <conditions>
+                        <condition id="0" name="On function" sid="514185041297681" type="Funcion">
+                            <param id="0" name="Name">&quot;inicioGUI&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <comment>La distribución es: 4% (X3) ; 6% ; ??% ; 4% (X5)</comment>
+                        <variable comment="El ancho del 4 %" constant="0" name="ancho1" sid="404210903943982" static="0" type="number">0</variable>
+                        <variable comment="El ancho del 6 %" constant="0" name="ancho2" sid="877290740246874" static="0" type="number">0</variable>
+                        <variable comment="El ancho que sobraria" constant="0" name="ancho3" sid="302544454374426" static="0" type="number">0</variable>
+                        <variable comment="El nombre de una función" constant="1" name="FUNCION1" sid="273407111289769" static="0" type="text">utileriaGUI</variable>
+                        <variable comment="El nombre de una función" constant="1" name="FUNCION2" sid="359455698303336" static="0" type="text">textoGUI</variable>
+                        <event-block sid="800007185896606">
+                            <conditions />
+                            <actions>
+                                <action id="-9" name="Set value" sid="515832094937071" type="System">
+                                    <param id="0" name="Variable">cargado</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="0" name="Call function" sid="612113190297870" type="Funcion">
+                                    <param id="0" name="Name">&quot;inactivoGRUPO&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                                <action id="0" name="Call function" sid="761853048532717" type="Funcion">
+                                    <param id="0" name="Name">&quot;cortinaGUI&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                                <action id="3" name="Clear" sid="788554017030564" type="Diccionario" />
+                                <action id="1" name="Set size" sid="975422738620696" type="Matriz">
+                                    <param id="0" name="Width">0</param>
+                                    <param id="1" name="Height">1</param>
+                                    <param id="2" name="Depth">1</param>
+                                </action>
+                                <action id="0" name="Destroy all" sid="690425943812113" type="Grupo" />
+                                <action id="-9" name="Set value" sid="250385395398625" type="System">
+                                    <param id="0" name="Variable">ancho1</param>
+                                    <param id="1" name="Value">LayoutWidth*4/100</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="602891357811759" type="System">
+                                    <param id="0" name="Variable">ancho2</param>
+                                    <param id="1" name="Value">LayoutWidth*6/100</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="732286092641880" type="System">
+                                    <param id="0" name="Variable">ancho3</param>
+                                    <param id="1" name="Value">LayoutWidth - (ancho1 * 8 + ancho2)</param>
+                                </action>
+                                <action id="0" name="Add key" sid="502995692241601" type="Diccionario">
+                                    <param id="0" name="Key">&quot;frame&quot;</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="0" name="Add key" sid="675454750932890" type="Diccionario">
+                                    <param id="0" name="Key">&quot;x&quot;</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="0" name="Call function" sid="417073245884842" type="Funcion">
+                                    <param id="0" name="Name">FUNCION1</param>
+                                    <param id="1" name="Parameter {n}">LayoutWidth{###}GUI{###}0</param>
+                                </action>
+                                <action id="0" name="Add key" sid="889073806854922" type="Diccionario">
+                                    <param id="0" name="Key">&quot;x&quot;</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="0" name="Call function" sid="447166506075246" type="Funcion">
+                                    <param id="0" name="Name">FUNCION1</param>
+                                    <param id="1" name="Parameter {n}">ancho1{###}GUI{###}0</param>
+                                </action>
+                                <action id="0" name="Call function" sid="486005083691101" type="Funcion">
+                                    <param id="0" name="Name">FUNCION2</param>
+                                    <param id="1" name="Parameter {n}">ancho1{###}GUI{###}&quot;vidaGUI&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="135749624004489" type="Funcion">
+                                    <param id="0" name="Name">FUNCION1</param>
+                                    <param id="1" name="Parameter {n}">ancho1{###}GUI{###}0</param>
+                                </action>
+                                <action id="0" name="Call function" sid="172984329122311" type="Funcion">
+                                    <param id="0" name="Name">FUNCION2</param>
+                                    <param id="1" name="Parameter {n}">ancho2{###}GUI{###}&quot;puntajeGUI&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="413574548030517" type="Funcion">
+                                    <param id="0" name="Name">FUNCION2</param>
+                                    <param id="1" name="Parameter {n}">ancho3{###}GUI{###}&quot;objetivoGUI&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="551481147922814" type="Funcion">
+                                    <param id="0" name="Name">FUNCION1</param>
+                                    <param id="1" name="Parameter {n}">ancho1{###}GUI{###}0</param>
+                                </action>
+                                <action id="0" name="Call function" sid="479861795918157" type="Funcion">
+                                    <param id="0" name="Name">FUNCION2</param>
+                                    <param id="1" name="Parameter {n}">ancho1{###}GUI{###}&quot;dificultadGUI&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="739941670685797" type="Funcion">
+                                    <param id="0" name="Name">FUNCION1</param>
+                                    <param id="1" name="Parameter {n}">ancho1{###}GUI{###}0</param>
+                                </action>
+                                <action id="0" name="Call function" sid="440395604772717" type="Funcion">
+                                    <param id="0" name="Name">FUNCION2</param>
+                                    <param id="1" name="Parameter {n}">ancho1{###}GUI{###}&quot;tiempoGUI&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="718276791568244" type="Funcion">
+                                    <param id="0" name="Name">FUNCION1</param>
+                                    <param id="1" name="Parameter {n}">ancho1{###}GUI{###}-1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Función para crear Utileria en el GUI según el tamaño y el ID</comment>
+                <comment>&#x09;parametro 1: Ancho</comment>
+                <comment>&#x09;parametro 2: Alto</comment>
+                <comment>&#x09;parametro 3: Variable de Instancia &quot;ID&quot;</comment>
+                <event-block sid="880684236053750">
+                    <conditions>
+                        <condition id="0" name="On function" sid="474358503889717" type="Funcion">
+                            <param id="0" name="Name">&quot;utileriaGUI&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="671345147646904">
+                            <conditions />
+                            <actions>
+                                <action id="-3" name="Create object" sid="923892761744735" type="System">
+                                    <param id="0" name="Object to create">Utileria</param>
+                                    <param id="1" name="Layer">&quot;GUI&quot;</param>
+                                    <param id="2" name="X">0</param>
+                                    <param id="3" name="Y">0</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="169492511347413" type="Utileria">
+                                    <param id="0" name="Animation">&quot;GUI&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="367644590571900" type="Utileria">
+                                    <param id="0" name="Frame number">Diccionario.Get(&quot;frame&quot;)</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="254890296638137" type="Utileria">
+                                    <param id="0" name="Width">Funcion.Param(0)</param>
+                                    <param id="1" name="Height">Funcion.Param(1)</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="640786826284400" type="Utileria">
+                                    <param id="0" name="X">Diccionario.Get(&quot;x&quot;)</param>
+                                    <param id="1" name="Y">0</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="282340825566152" type="Utileria">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Value">Funcion.Param(2)</param>
+                                </action>
+                                <action id="0" name="Add key" sid="626032014523935" type="Diccionario">
+                                    <param id="0" name="Key">&quot;frame&quot;</param>
+                                    <param id="1" name="Value">Diccionario.Get(&quot;frame&quot;)+1</param>
+                                </action>
+                                <action id="0" name="Add key" sid="605439092421866" type="Diccionario">
+                                    <param id="0" name="Key">&quot;x&quot;</param>
+                                    <param id="1" name="Value">Diccionario.Get(&quot;x&quot;)+Utileria.Width</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Función para crear Texto en el GUI según el tamaño y el contenido del mensaje</comment>
+                <comment>&#x09;parametro 1: Ancho</comment>
+                <comment>&#x09;parametro 2: Alto</comment>
+                <comment>&#x09;parametro 3: Contenido del mensaje</comment>
+                <event-block sid="162316746229100">
+                    <conditions>
+                        <condition id="0" name="On function" sid="288899810169357" type="Funcion">
+                            <param id="0" name="Name">&quot;textoGUI&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="483259420718308">
+                            <conditions />
+                            <actions>
+                                <action id="-3" name="Create object" sid="480121738058627" type="System">
+                                    <param id="0" name="Object to create">Texto</param>
+                                    <param id="1" name="Layer">&quot;GUI&quot;</param>
+                                    <param id="2" name="X">0</param>
+                                    <param id="3" name="Y">0</param>
+                                </action>
+                                <action id="55" name="Set Vertical alignment" sid="626290808898211" type="Texto">
+                                    <param id="0" name="Vertical alignment">1</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="923080411279250" type="Texto">
+                                    <param id="0" name="Width">Funcion.Param(0)</param>
+                                    <param id="1" name="Height">Funcion.Param(1)</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="249043235679752" type="Texto">
+                                    <param id="0" name="X">Diccionario.Get(&quot;x&quot;)</param>
+                                    <param id="1" name="Y">0</param>
+                                </action>
+                                <action id="0" name="Add key" sid="571342930976065" type="Diccionario">
+                                    <param id="0" name="Key">Funcion.Param(2)</param>
+                                    <param id="1" name="Value">Texto.UID</param>
+                                </action>
+                                <action id="0" name="Add key" sid="505274136921523" type="Diccionario">
+                                    <param id="0" name="Key">&quot;x&quot;</param>
+                                    <param id="1" name="Value">Diccionario.Get(&quot;x&quot;)+Texto.Width</param>
+                                </action>
+                                <action id="0" name="Call function" sid="740727199897838" type="Funcion">
+                                    <param id="0" name="Name">Funcion.Param(2)</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Función para colocar la vida en el GUI</comment>
+                <event-block sid="612204148061583">
+                    <conditions>
+                        <condition id="0" name="On function" sid="727884849340383" type="Funcion">
+                            <param id="0" name="Name">&quot;vidaGUI&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="534884068959925">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="470077870836195" type="Texto">
+                                    <param id="0" name="Unique ID">Diccionario.Get(&quot;vidaGUI&quot;)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="542719997505426" type="Texto">
+                                    <param id="0" name="Text">&quot;X &quot; &amp; vida</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Función para colocar el puntaje en el GUI</comment>
+                <event-block sid="297010961788630">
+                    <conditions>
+                        <condition id="0" name="On function" sid="799492707253351" type="Funcion">
+                            <param id="0" name="Name">&quot;puntajeGUI&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="145329053553145">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="494571371148276" type="Texto">
+                                    <param id="0" name="Unique ID">Diccionario.Get(&quot;puntajeGUI&quot;)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="980666545327437" type="Texto">
+                                    <param id="0" name="Text">&quot;X &quot; &amp; puntaje</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Función para colocar el objetivo en el GUI</comment>
+                <event-block sid="652480176711492">
+                    <conditions>
+                        <condition id="0" name="On function" sid="345813594240772" type="Funcion">
+                            <param id="0" name="Name">&quot;objetivoGUI&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="571117218266975">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="657907371252826" type="Texto">
+                                    <param id="0" name="Unique ID">Diccionario.Get(&quot;objetivoGUI&quot;)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="53" name="Set horizontal alignment" sid="879318889219655" type="Texto">
+                                    <param id="0" name="Horizontal alignment">1</param>
+                                </action>
+                                <action id="0" name="Set text" sid="623988306526095" type="Texto">
+                                    <param id="0" name="Text">objetivo</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Función para colocar la dificultad en el GUI</comment>
+                <event-block sid="417715826169015">
+                    <conditions>
+                        <condition id="0" name="On function" sid="567722258002216" type="Funcion">
+                            <param id="0" name="Name">&quot;dificultadGUI&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="216659190769892">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="724111931312073" type="Texto">
+                                    <param id="0" name="Unique ID">Diccionario.Get(&quot;dificultadGUI&quot;)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="576457612598765" type="Texto">
+                                    <param id="0" name="Text">dificultad &amp; &quot;%&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Función para colocar el tiempo en el GUI</comment>
+                <event-block sid="209688644860084">
+                    <conditions>
+                        <condition id="0" name="On function" sid="182653830498598" type="Funcion">
+                            <param id="0" name="Name">&quot;tiempoGUI&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="598874431020721">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="109718821549850" type="Texto">
+                                    <param id="0" name="Unique ID">Diccionario.Get(&quot;tiempoGUI&quot;)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="446923870649319" type="Texto">
+                                    <param id="0" name="Text">(tiempo&lt;=9?&quot;0&quot;:&quot;&quot; ) &amp; tiempo &amp; &quot;s&quot;</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="551721809362195">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="565509313309831" type="System">
+                                            <param id="0" name="Variable">tiempo</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Value">4</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set font color" sid="786254123297567" type="Texto">
+                                            <param id="0" name="Color">rgb(255,0,0)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="228390926111597">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="629371065064853" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set font color" sid="492473027535262" type="Texto">
+                                            <param id="0" name="Color">rgb(0,0,0)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Función para colocar una cortina, (No tapa la barra superior)</comment>
+                <event-block sid="399754055155644">
+                    <conditions>
+                        <condition id="0" name="On function" sid="129232426064473" type="Funcion">
+                            <param id="0" name="Name">&quot;cortinaGUI&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="818185761076184">
+                            <conditions />
+                            <actions>
+                                <action id="-3" name="Create object" sid="333315270476759" type="System">
+                                    <param id="0" name="Object to create">Utileria</param>
+                                    <param id="1" name="Layer">&quot;GUI&quot;</param>
+                                    <param id="2" name="X">0</param>
+                                    <param id="3" name="Y">GUI</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="337899674778197" type="Utileria">
+                                    <param id="0" name="Animation">&quot;GUI&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="374579259467273" type="Utileria">
+                                    <param id="0" name="Frame number">0</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="680776421438097" type="Utileria">
+                                    <param id="0" name="Width">LayoutWidth</param>
+                                    <param id="1" name="Height">LayoutHeight-GUI</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="792257412156494" type="Utileria">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="595260162623876" type="System">
+                                    <param id="0" name="Object to create">Texto</param>
+                                    <param id="1" name="Layer">&quot;GUI&quot;</param>
+                                    <param id="2" name="X">0</param>
+                                    <param id="3" name="Y">0</param>
+                                </action>
+                                <action id="0" name="Set text" sid="485903316459631" type="Texto">
+                                    <param id="0" name="Text">&quot;Espere&quot;</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="600070340138813" type="Texto">
+                                    <param id="0" name="X">LayoutWidth/2-Boton.Width/2</param>
+                                    <param id="1" name="Y">LayoutHeight/2-Boton.Height/2</param>
+                                </action>
+                                <action id="-41" name="Wait for signal" sid="587675202144743" type="System">
+                                    <param id="0" name="Tag">&quot;pCargado&quot;</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="792220382231788" type="Utileria" />
+                                <action id="-9" name="Destroy" sid="286878180893122" type="Texto" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Función para calcular la razón con base a la dificultad</comment>
+                <comment>Retorna un valor númerico (decimal)</comment>
+                <event-block sid="471466326409272">
+                    <conditions>
+                        <condition id="0" name="On function" sid="323818264576866" type="Funcion">
+                            <param id="0" name="Name">&quot;calculoRAZON&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="382164384421996">
+                            <conditions />
+                            <actions>
+                                <action id="1" name="Set return value" sid="954527684768900" type="Funcion">
+                                    <param id="0" name="Value">dificultad/10</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Función para calcular el tempo de las canciones y la compesación en los segundos que se necesitan</comment>
+                <comment>Retorna un valor númerico (decimal)</comment>
+                <event-block sid="466441520712424">
+                    <conditions>
+                        <condition id="0" name="On function" sid="487956710132919" type="Funcion">
+                            <param id="0" name="Name">&quot;calculoTEMPO&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="447962555242780">
+                            <conditions />
+                            <actions>
+                                <action id="1" name="Set return value" sid="142607753430087" type="Funcion">
+                                    <param id="0" name="Value">dificultad/50</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Función que se ejecuta cuando el tiempo del minijuego se acabo o cuando haya perdido antes de tiempo</comment>
+                <event-block any="1" sid="512317607129986">
+                    <conditions>
+                        <condition id="0" name="On function" sid="838924163189493" type="Funcion">
+                            <param id="0" name="Name">&quot;tiempoACABADO&quot;</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="935174870808986" type="System">
+                            <param id="0" name="Variable">derrota</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="33" name="Stop all" sid="277708755651674" type="Audio" />
+                    </actions>
+                    <sub-events>
+                        <comment>Si perdio, entonces, que se congelen las personas y el jugador</comment>
+                        <variable comment="Calculos para la variable dificultad" constant="0" name="aux" sid="159395107890677" static="0" type="number">0</variable>
+                        <event-block sid="628202110477842">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="683136374396423" type="System">
+                                    <param id="0" name="Variable">derrota</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Add to" sid="529510627046584" type="System">
+                                    <param id="0" name="Variable">vida</param>
+                                    <param id="1" name="Value">-1</param>
+                                </action>
+                                <action id="0" name="Call function" sid="268941698563909" type="Funcion">
+                                    <param id="0" name="Name">&quot;vidaGUI&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="605649481625926">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="458198990446223" type="System">
+                                            <param id="0" name="Variable">vida</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="547260730138893" type="System">
+                                            <param id="0" name="Variable">derrota</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-3" name="Create object" sid="429727617914235" type="System">
+                                            <param id="0" name="Object to create">Boton</param>
+                                            <param id="1" name="Layer">&quot;GUI&quot;</param>
+                                            <param id="2" name="X">0</param>
+                                            <param id="3" name="Y">LayoutHeight/2</param>
+                                        </action>
+                                        <action id="-7" name="Set size" sid="626454534994646" type="Boton">
+                                            <param id="0" name="Width">128</param>
+                                            <param id="1" name="Height">32</param>
+                                        </action>
+                                        <action id="-3" name="Set position" sid="904709986460063" type="Boton">
+                                            <param id="0" name="X">LayoutWidth/2-Boton.Width/2</param>
+                                            <param id="1" name="Y">LayoutHeight/2-Boton.Height/2</param>
+                                        </action>
+                                        <action id="0" name="Set text" sid="407224455981614" type="Boton">
+                                            <param id="0" name="Text">&quot;Reiniciar&quot;</param>
+                                        </action>
+                                        <action id="2" name="Set visible" sid="946786829901617" type="Boton">
+                                            <param id="0" name="Visibility">1</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="673836573153328" type="Funcion">
+                                            <param id="0" name="Name">&quot;terminoJUEGO&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="200297880558649">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="765151409493336" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="887897285571972" type="System">
+                                            <param id="0" name="Variable">derrota</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="426988745025035" type="System">
+                                            <param id="0" name="Variable">aux</param>
+                                            <param id="1" name="Value">dificultad-1 </param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="234936187846186" type="System">
+                                            <param id="0" name="Variable">dificultad</param>
+                                            <param id="1" name="Value">aux &lt;=0? 0:aux</param>
+                                        </action>
+                                        <action id="-26" name="Restart layout" sid="503966565174072" type="System" />
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="459865519634300">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="592589621800232" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="799414016304661" type="System">
+                                    <param id="0" name="Variable">derrota</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-10" name="Add to" sid="388018519931638" type="System">
+                                    <param id="0" name="Variable">puntaje</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="593327201892228" type="System">
+                                    <param id="0" name="Variable">aux</param>
+                                    <param id="1" name="Value">dificultad+2</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="750893220271126" type="System">
+                                    <param id="0" name="Variable">dificultad</param>
+                                    <param id="1" name="Value">aux &gt;=100? 100:aux</param>
+                                </action>
+                                <action id="-26" name="Restart layout" sid="367100027442138" type="System" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="145574337855611" title="Estados del miniJuego">
+            <sub-events>
+                <comment>Podrá pausar/continuar el mini juego si está cargado, no ha perdido y dio clic en el correcta zona.</comment>
+                <event-block sid="649247592237194">
+                    <conditions>
+                        <condition id="0" name="On click" sid="363623422666604" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="466819087499265" type="System">
+                            <param id="0" name="Variable">derrota</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="296983290977262" type="System">
+                            <param id="0" name="Variable">cargado</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="7" name="Cursor is over object" sid="167828114793630" type="Mouse">
+                            <param id="0" name="Object">Utileria</param>
+                        </condition>
+                        <condition id="-17" name="Pick top/bottom" sid="925306362138906" type="Utileria">
+                            <param id="0" name="Which">0</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="587275184681124" type="Utileria">
+                            <param id="0" name="Instance variable">ID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">-1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="711115141004342" type="Funcion">
+                            <param id="0" name="Name">&quot;pcJUEGO&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Función para pausar el mini juego</comment>
+                <event-block sid="837157852791825">
+                    <conditions>
+                        <condition id="0" name="On function" sid="328775432872836" type="Funcion">
+                            <param id="0" name="Name">&quot;pausaJUEGO&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="777589643665494">
+                            <conditions />
+                            <actions>
+                                <action id="-13" name="Set time scale" sid="218779593619104" type="System">
+                                    <param id="0" name="Time scale">0</param>
+                                </action>
+                                <action id="-14" name="Set object time scale" sid="840884276545257" type="System">
+                                    <param id="0" name="Object">Personas</param>
+                                    <param id="1" name="Time scale">0</param>
+                                </action>
+                                <action id="0" name="Call function" sid="644936032656758" type="Funcion">
+                                    <param id="0" name="Name">&quot;inactivoGRUPO&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Función para continuar el mini juego</comment>
+                <event-block sid="360020428968808">
+                    <conditions>
+                        <condition id="0" name="On function" sid="698031773063711" type="Funcion">
+                            <param id="0" name="Name">&quot;continuaJUEGO&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="828746583386782">
+                            <conditions />
+                            <actions>
+                                <action id="-13" name="Set time scale" sid="211108223446787" type="System">
+                                    <param id="0" name="Time scale">1+dificultad/50</param>
+                                </action>
+                                <action id="-14" name="Set object time scale" sid="943393978710984" type="System">
+                                    <param id="0" name="Object">Personas</param>
+                                    <param id="1" name="Time scale">1.0</param>
+                                </action>
+                                <action id="0" name="Call function" sid="938630744530942" type="Funcion">
+                                    <param id="0" name="Name">&quot;activoGRUPO&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Función para pausar/continuar el mini juego</comment>
+                <event-block sid="918037257822331">
+                    <conditions>
+                        <condition id="0" name="On function" sid="589314529630671" type="Funcion">
+                            <param id="0" name="Name">&quot;pcJUEGO&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <comment>Si el grupo está activo, entonces desea detener el tiempo</comment>
+                        <event-block sid="339914524837213">
+                            <conditions>
+                                <condition id="-15" name="Is group active" sid="301761526080066" type="System">
+                                    <param id="0" name="Group name">&quot;control &quot; &amp; juego</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="485560052119067" type="Funcion">
+                                    <param id="0" name="Name">&quot;pausaJUEGO&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Sino, lo que desea es caso contario</comment>
+                        <event-block sid="792733750046335">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="785984608082801" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="815585827602849" type="Funcion">
+                                    <param id="0" name="Name">&quot;continuaJUEGO&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Función para terminar el mini juego</comment>
+                <event-block sid="932685703972151">
+                    <conditions>
+                        <condition id="0" name="On function" sid="953115998308881" type="Funcion">
+                            <param id="0" name="Name">&quot;terminoJUEGO&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="489110095297357" type="Funcion">
+                            <param id="0" name="Name">&quot;pausaJUEGO&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Función para terminar el mini juego</comment>
+                <event-block sid="238181939480064">
+                    <conditions>
+                        <condition id="0" name="On function" sid="665374788584031" type="Funcion">
+                            <param id="0" name="Name">&quot;comenzoJUEGO&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="629102777166889" type="System">
+                            <param id="0" name="Seconds">2</param>
+                        </action>
+                        <action id="-13" name="Set time scale" sid="184960857722077" type="System">
+                            <param id="0" name="Time scale">1+dificultad/50</param>
+                        </action>
+                        <action id="-14" name="Set object time scale" sid="235469855671963" type="System">
+                            <param id="0" name="Object">Personas</param>
+                            <param id="1" name="Time scale">1.0</param>
+                        </action>
+                        <action id="0" name="Call function" sid="387267995843034" type="Funcion">
+                            <param id="0" name="Name">&quot;activoGRUPO&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="-9" name="Set value" sid="513583998233908" type="System">
+                            <param id="0" name="Variable">cargado</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-42" name="Signal" sid="273489511367556" type="System">
+                            <param id="0" name="Tag">&quot;pCargado&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Función que activa los eventos contenidos de los grupos de la hoja de juego respectiva</comment>
+                <event-block sid="104836653524807">
+                    <conditions>
+                        <condition id="0" name="On function" sid="962376508256449" type="Funcion">
+                            <param id="0" name="Name">&quot;activoGRUPO&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Set group active" sid="459499079647543" type="System">
+                            <param id="0" name="Group name">&quot;jugabilidad &quot; &amp; juego</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="154897942583991" type="System">
+                            <param id="0" name="Group name">&quot;control &quot; &amp; juego</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Función que desactiva los eventos contenidos de los grupos de la hoja de juego respectiva</comment>
+                <event-block sid="706817795578160">
+                    <conditions>
+                        <condition id="0" name="On function" sid="407011555699801" type="Funcion">
+                            <param id="0" name="Name">&quot;inactivoGRUPO&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Set group active" sid="456098396843040" type="System">
+                            <param id="0" name="Group name">&quot;jugabilidad &quot; &amp; juego</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="442709986375149" type="System">
+                            <param id="0" name="Group name">&quot;control &quot; &amp; juego</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="373350934419565">
+            <conditions>
+                <condition id="0" name="On clicked" sid="649913982068380" type="Boton" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="240901017129296" type="System">
+                    <param id="0" name="Variable">vida</param>
+                    <param id="1" name="Value">5</param>
+                </action>
+                <action id="0" name="Call function" sid="796506682838698" type="Funcion">
+                    <param id="0" name="Name">&quot;continuaJUEGO&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="-26" name="Restart layout" sid="422994406444714" type="System" />
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

@@ -1,0 +1,415 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>ICE-VHM</name>
+    <description></description>
+    <version>1.0.0.0</version>
+    <author></author>
+    <author-email></author-email>
+    <author-website>http://</author-website>
+    <app-id>com.mycompany.myapp</app-id>
+    <unique-id>3itautu63o1yd</unique-id>
+    <saved-with-version>24400</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Arr" version="1">Array</plugin>
+        <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
+        <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
+        <plugin author="Scirra" id="Button" version="1">Button</plugin>
+        <plugin author="Scirra" id="Dictionary" version="1">Dictionary</plugin>
+        <plugin author="Scirra" id="Function" version="1">Function</plugin>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
+        <plugin author="Rex.Rainbow" id="Rex_Comment" version="0.100000001">Comments</plugin>
+        <plugin author="Rex.Rainbow" id="Rex_EventBalancer" version="0.100000001">Event balancer</plugin>
+        <plugin author="Rex.Rainbow" id="Rex_Graph" version="0.100000001">Graph</plugin>
+        <plugin author="Rex.Rainbow" id="Rex_Hash" version="0.5">JSON</plugin>
+        <plugin author="Rex.Rainbow" id="Rex_SysExt" version="0.109999999">SysExt</plugin>
+        <plugin author="Rex.Rainbow" id="Rex_gInstGroup" version="1">Inst Group</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+        <plugin author="Scirra" id="Tilemap" version="1">Tilemap</plugin>
+        <plugin author="Scirra" id="UserMedia" version="1">User Media</plugin>
+        <plugin author="Rex.Rainbow" id="rex_TagText" version="0.100000001">Tag Text</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
+        <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
+        <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
+        <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
+        <behavior author="Scirra" id="Physics" version="1">Physics</behavior>
+        <behavior author="Rex.Rainbow" id="Rex_Line" version="1">Line</behavior>
+        <behavior author="Rex.Rainbow" id="Rex_MoveTo" version="1">MoveTo</behavior>
+        <behavior author="Rex.Rainbow" id="Rex_Rotate" version="1">Rotate</behavior>
+        <behavior author="Rex.Rainbow" id="Rex_bHash" version="1">JSON</behavior>
+        <behavior author="Rex.Rainbow" id="Rex_pinOffsetXY" version="1">Pin offsetXY</behavior>
+        <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
+        <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
+        <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
+        <behavior author="Scirra" id="shadowcaster" version="1">Shadow Caster</behavior>
+        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
+    </used-behaviors>
+    <used-effects />
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>864</width>
+        <height>480</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">Yes</prop>
+        <prop name="Downscaling">Medium quality</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Fullscreen scaling">High quality</prop>
+        <prop name="Loader style">Construct 2 splash</prop>
+        <prop name="Orientations">Any</prop>
+        <prop name="Pause on unfocus">No</prop>
+        <prop name="Physics engine">Box2D asm.js</prop>
+        <prop name="Preload sounds">Yes</prop>
+        <prop name="Preview browser">Chrome</prop>
+        <prop name="Sampling">Linear</prop>
+        <prop name="Use high-DPI display">Yes</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-folder name="Actores">
+            <object-type name="Aliado" sid="972655528226897">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="feliz" pingpong="0" repeatcount="1" repeatto="0" sid="916773995906572" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.15" y="0.15" />
+                                <point x="0.5" y="0" />
+                                <point x="0.925" y="0.075" />
+                                <point x="1" y="0.5" />
+                                <point x="0.8875" y="0.8875" />
+                                <point x="0.5" y="0.975" />
+                                <point x="0.2" y="0.8" />
+                                <point x="0.0875" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="triste" pingpong="0" repeatcount="1" repeatto="0" sid="812938637880839" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.141026" y="0.174419" />
+                                <point x="0.5" y="0" />
+                                <point x="0.935897" y="0.104651" />
+                                <point x="1" y="0.5" />
+                                <point x="0.897436" y="0.860465" />
+                                <point x="0.5" y="0.94186" />
+                                <point x="0.192308" y="0.77907" />
+                                <point x="0.0769231" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Enemigo" sid="370965522238246">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="feliz" pingpong="0" repeatcount="1" repeatto="0" sid="539564640274444" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.22" y="0.22" />
+                                <point x="0.5" y="0.04" />
+                                <point x="0.84" y="0.16" />
+                                <point x="0.92" y="0.5" />
+                                <point x="0.81" y="0.81" />
+                                <point x="0.5" y="0.88" />
+                                <point x="0.26" y="0.74" />
+                                <point x="0.17" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="triste" pingpong="0" repeatcount="1" repeatto="0" sid="756583046954252" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.22" y="0.22" />
+                                <point x="0.5" y="0.04" />
+                                <point x="0.84" y="0.16" />
+                                <point x="0.92" y="0.5" />
+                                <point x="0.81" y="0.81" />
+                                <point x="0.5" y="0.88" />
+                                <point x="0.26" y="0.74" />
+                                <point x="0.17" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Jugador" sid="444597851567529">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="nada" pingpong="0" repeatcount="1" repeatto="0" sid="731521000129390" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="plantilla" pingpong="0" repeatcount="1" repeatto="0" sid="417865994231295" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.528572" y="0.0108695" />
+                                <point x="0.928571" y="0.510869" />
+                                <point x="0.714285" y="0.597826" />
+                                <point x="0.885714" y="0.934782" />
+                                <point x="0.1" y="0.891304" />
+                                <point x="0.314286" y="0.630435" />
+                                <point x="0.0571428" y="0.434783" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="j1a" pingpong="0" repeatcount="1" repeatto="0" sid="628712883264351" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Jose\Downloads\word.png">
+                            <collision-poly>
+                                <point x="0.528572" y="0.0108695" />
+                                <point x="0.928571" y="0.510869" />
+                                <point x="0.714285" y="0.597826" />
+                                <point x="0.885714" y="0.934782" />
+                                <point x="0.1" y="0.891304" />
+                                <point x="0.314286" y="0.630435" />
+                                <point x="0.0571428" y="0.434783" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="j2a" pingpong="0" repeatcount="1" repeatto="0" sid="528009826428567" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Trabajos\proyecto beta\Animations\helice\Default\000.png" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Utileria" sid="838236756980170">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="nodo" sid="772291697385039" type="number" />
+                    <instance-variable name="ID" sid="884563096945502" type="number" />
+                </instance-variables>
+                <animation-folder>
+                    <animation framecount="6" loop="0" name="zona" pingpong="0" repeatcount="1" repeatto="0" sid="454957061476857" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                        <frame duration="1" hotspotX="1" hotspotY="0" />
+                    </animation>
+                    <animation framecount="6" loop="0" name="GUI" pingpong="0" repeatcount="1" repeatto="0" sid="695120713624408" speed="0">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="j4a" pingpong="0" repeatcount="1" repeatto="0" sid="429685665094099" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.516129" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-folder name="Controles">
+            <object-folder name="Estructura">
+                <object-type global="1" name="Grupo" sid="729406474936763">
+                    <plugin id="Rex_gInstGroup" />
+                </object-type>
+                <object-type global="1" name="Grafo" sid="564253655551275">
+                    <plugin id="Rex_Graph" />
+                </object-type>
+                <object-type global="1" name="Diccionario" sid="260833177221927">
+                    <plugin id="Dictionary" />
+                </object-type>
+                <object-type global="1" name="Matriz" sid="139061651714248">
+                    <plugin id="Arr" />
+                </object-type>
+                <object-type global="1" name="Hash" sid="616431160304822">
+                    <plugin id="Rex_Hash" />
+                </object-type>
+            </object-folder>
+            <object-folder name="Formulario">
+                <object-type name="Boton" sid="476881019058973">
+                    <plugin id="Button" />
+                </object-type>
+                <object-type name="Texto" sid="452265767835503">
+                    <plugin id="rex_TagText" />
+                    <instance-variables>
+                        <instance-variable name="ID" sid="521707601850299" type="number" />
+                    </instance-variables>
+                </object-type>
+            </object-folder>
+            <object-folder name="Diseños" />
+            <object-folder name="Entrada">
+                <object-type name="Microfono" sid="828562010165913">
+                    <plugin id="UserMedia" />
+                </object-type>
+                <object-type name="Teclado" sid="424097628329241">
+                    <plugin id="Keyboard" />
+                </object-type>
+                <object-type name="Mouse" sid="563749994824829">
+                    <plugin id="Mouse" />
+                </object-type>
+            </object-folder>
+            <object-type name="Audio" sid="336451201142579">
+                <plugin id="Audio" />
+            </object-type>
+            <object-type name="Funcion" sid="261150128543052">
+                <plugin id="Function" />
+            </object-type>
+            <object-type name="Navegador" sid="572839853892575">
+                <plugin id="Browser" />
+            </object-type>
+            <object-type global="1" name="Hilo" sid="318057152754562">
+                <plugin id="Rex_EventBalancer" />
+            </object-type>
+            <object-type name="Comentario" sid="453443192884715">
+                <plugin id="Rex_Comment" />
+            </object-type>
+            <object-type name="Sistema" sid="982388631128098">
+                <plugin id="Rex_SysExt" />
+            </object-type>
+        </object-folder>
+        <object-folder name="Escenario">
+            <object-type name="Fondo" sid="576959565504055">
+                <plugin id="Tilemap" />
+                <texture />
+                <tiles />
+            </object-type>
+            <object-type name="Objeto" sid="609137906339381">
+                <plugin id="TiledBg" />
+                <behaviors>
+                    <behavior-type name="Linea" sid="687267959181289">
+                        <behavior id="Rex_Line" />
+                    </behavior-type>
+                </behaviors>
+                <texture />
+            </object-type>
+        </object-folder>
+    </object-folder>
+    <families>
+        <family name="Personas" plugin-id="Sprite" sid="188434103821610">
+            <members>
+                <member>Aliado</member>
+                <member>Enemigo</member>
+            </members>
+        </family>
+        <family name="Actores" plugin-id="Sprite" sid="569769673153972">
+            <members>
+                <member>Aliado</member>
+                <member>Enemigo</member>
+                <member>Jugador</member>
+                <member>Utileria</member>
+            </members>
+            <behaviors>
+                <behavior-type name="Bala" sid="706762573303993">
+                    <behavior id="Bullet" />
+                </behavior-type>
+                <behavior-type name="Sombra" sid="331073955625979">
+                    <behavior id="shadowcaster" />
+                </behavior-type>
+                <behavior-type name="Metronomo" sid="459414059908730">
+                    <behavior id="Sin" />
+                </behavior-type>
+                <behavior-type name="Solido" sid="905523567944736">
+                    <behavior id="solid" />
+                </behavior-type>
+                <behavior-type name="Destructor" sid="602626531210081">
+                    <behavior id="destroy" />
+                </behavior-type>
+                <behavior-type name="Linea" sid="758502340514162">
+                    <behavior id="Rex_Line" />
+                </behavior-type>
+                <behavior-type name="Pin" sid="750329253232862">
+                    <behavior id="Rex_pinOffsetXY" />
+                </behavior-type>
+                <behavior-type name="Parpadear" sid="493884953451060">
+                    <behavior id="Flash" />
+                </behavior-type>
+                <behavior-type name="Girar" sid="771944350255612">
+                    <behavior id="Rex_Rotate" />
+                </behavior-type>
+                <behavior-type name="Desaparecer" sid="626026123194517">
+                    <behavior id="Fade" />
+                </behavior-type>
+                <behavior-type name="Direccion" sid="626716055069025">
+                    <behavior id="EightDir" />
+                </behavior-type>
+                <behavior-type name="Desplazamiento" sid="522289568871201">
+                    <behavior id="scrollto" />
+                </behavior-type>
+                <behavior-type name="MoverA" sid="165219103792733">
+                    <behavior id="Rex_MoveTo" />
+                </behavior-type>
+                <behavior-type name="Fisica" sid="154573323203535">
+                    <behavior id="Physics" />
+                </behavior-type>
+                <behavior-type name="Hash" sid="212018227446786">
+                    <behavior id="Rex_bHash" />
+                </behavior-type>
+            </behaviors>
+        </family>
+    </families>
+    <layout-folder>
+        <layout>juego 1.xml</layout>
+        <layout>juego 2.xml</layout>
+        <layout>juego 3.xml</layout>
+        <layout>juego 4.xml</layout>
+        <layout>menu.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-sheet>juego 1.xml</event-sheet>
+        <event-sheet>juego 2.xml</event-sheet>
+        <event-sheet>juego 3.xml</event-sheet>
+        <event-sheet>juego 4.xml</event-sheet>
+        <event-sheet>menu.xml</event-sheet>
+        <event-sheet>principal.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Mouse" uid="1" />
+        <global-instance type="Teclado" uid="2" />
+        <global-instance type="Audio" uid="31">
+            <properties>
+                <timescale-audio>On (sounds and music)</timescale-audio>
+                <saveload>All</saveload>
+                <play-in-background>No</play-in-background>
+                <positioned-audio></positioned-audio>
+                <panning-model>HRTF</panning-model>
+                <distance-model>Inverse</distance-model>
+                <listener-z-height>600</listener-z-height>
+                <reference-distance>600</reference-distance>
+                <maximum-distance>10000</maximum-distance>
+                <roll-off-factor>1</roll-off-factor>
+            </properties>
+        </global-instance>
+        <global-instance type="Funcion" uid="45" />
+        <global-instance type="Navegador" uid="46" />
+        <global-instance type="Comentario" uid="0" />
+        <global-instance type="Sistema" uid="8" />
+    </global-instances>
+    <sounds-folder>
+        <file name="A2-cuervo 1.m4a" />
+        <file name="A2-cuervo 1.ogg" />
+        <file name="A2-oveja 1.m4a" />
+        <file name="A2-oveja 1.ogg" />
+        <file name="A3-rebote 4.m4a" />
+        <file name="A3-rebote 4.ogg" />
+    </sounds-folder>
+    <music-folder>
+        <file name="Ejemplo1.m4a" />
+        <file name="Ejemplo1.ogg" />
+        <file name="Ejemplo2.m4a" />
+        <file name="Ejemplo2.ogg" />
+        <file name="Ejemplo3.m4a" />
+        <file name="Ejemplo3.ogg" />
+    </music-folder>
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+        <file-folder name="juego 4" />
+        <file name="j4a.png" />
+    </files-folder>
+</c2project>
