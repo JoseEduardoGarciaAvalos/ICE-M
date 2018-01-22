@@ -3,22 +3,32 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>principal</name>
     <events>
-        <variable comment="El alto del GUI (en pixeles)" constant="1" name="GUI" sid="571679260641128" static="0" type="number">32</variable>
-        <variable comment="0 = Falso (Ninguna derrota), 1 = Verdadero (Hay derrota)" constant="0" name="derrota" sid="474886352174495" static="0" type="number">0</variable>
-        <variable comment="La dificultad de cada minijuego" constant="0" name="dificultad" sid="771022049958099" static="0" type="number">0</variable>
-        <variable comment="El tiempo del minijuego actual" constant="0" name="tiempo" sid="955310785200906" static="0" type="number">0</variable>
-        <variable comment="La vida del jugador" constant="0" name="vida" sid="115064540873346" static="0" type="number">5</variable>
-        <variable comment="El puntaje del jugador" constant="0" name="puntaje" sid="760105527158194" static="0" type="number">0</variable>
-        <variable comment="Lo que deberá hacer el jugador en el minujuego actual" constant="0" name="objetivo" sid="781138035264173" static="0" type="text"></variable>
-        <variable comment="El id del minijuego actual" constant="0" name="juego" sid="531427333430227" static="0" type="number">0</variable>
-        <variable comment="0 = falso ; 1 = verdadero (Cargado el escenario incial)" constant="0" name="cargado" sid="875523738358405" static="0" type="number">0</variable>
+        <variable comment="El alto (en pixeles) de la Interfaz de Usuario" constant="1" name="GUI" sid="571679260641128" static="0" type="number">32</variable>
+        <variable comment="Espera al Principio del juego" constant="1" name="GEI" sid="623133306478255" static="0" type="number">1</variable>
+        <variable comment="Espera al Final del juego" constant="1" name="GEF" sid="269108825230675" static="0" type="number">1</variable>
+        <variable comment="0 = Falso (Ninguna derrota), 1 = Verdadero (Hay derrota)" constant="0" name="gDerrota" sid="474886352174495" static="0" type="number">0</variable>
+        <variable comment="0 = comenzando , 1= jugando, 2= finalizando (juego), 3= termino partida" constant="0" name="gEstado" sid="494296521134888" static="0" type="number">0</variable>
+        <variable comment="La dificultad de cada minijuego" constant="0" name="gDificultad" sid="771022049958099" static="0" type="number">0</variable>
+        <variable comment="El tiempo del minijuego actual" constant="0" name="gTiempo" sid="955310785200906" static="0" type="number">0</variable>
+        <variable comment="El tiempo máximo del minijuego actual" constant="0" name="gTiempoM" sid="890493967166655" static="0" type="number">0</variable>
+        <variable comment="El tiempo proporcional del minijuego actual (0,1)" constant="0" name="gTiempoP" sid="517966155018101" static="0" type="number">0</variable>
+        <variable comment="La vida del jugador" constant="0" name="gVida" sid="115064540873346" static="0" type="number">5</variable>
+        <variable comment="El puntaje del jugador" constant="0" name="gPuntaje" sid="760105527158194" static="0" type="number">0</variable>
+        <variable comment="El id del minijuego actual" constant="0" name="gJuego" sid="531427333430227" static="0" type="number">0</variable>
+        <variable comment="Lo que deberá hacer el jugador en el minujuego actual" constant="0" name="gObjetivo" sid="781138035264173" static="0" type="text"></variable>
+        <variable comment="Secuencia de texto para los comandas del debug" constant="0" name="gDebug" sid="490309003378427" static="0" type="text"></variable>
         <event-group description="" sid="763631891842466" title="Datos curiosos">
             <sub-events>
                 <comment>Las funciones no distinge entre mayusculas y minusculas, puede estár declarado como &quot;hola&quot; y hacer el llamado como &quot;HolA&quot; (también eso mismo pasa con las variables)</comment>
                 <comment>Los sprites asolapados o que han colisionado, si desea manejar uno en especifico, deberá dar &quot;pick&quot; al que está al top o bottom de la capa</comment>
                 <comment>Time scale es para detener el trabajo de todos o algunos objetos.</comment>
-                <comment>Cuidado con utilizar wait dentro de una function, es mejor no utilizarla</comment>
-                <comment></comment>
+                <comment>Cuidado con utilizar wait dentro de una function. ya que se pierden los parametros</comment>
+                <comment>Cuidado con las animaciones, para que este correcto, tratar que el origen (Hotspot) sea el mismo entre los frames</comment>
+                <comment>Cuidado con las animaciones, sobre el poligono de colisión, si está corriendo la animacion es mejor que no haya, pero puedo colocarlo en el ultimo frame</comment>
+                <comment>Los solidos debe quedarse perpendiculares, es decir que deben de rellenarse las esquinas</comment>
+                <comment>Al crear un objeto se pierden (si las hay,) todas las pick del mismo objeto de la condicion, y no podrá hacer pick dentro de la misma función que lo creo, deberá hacerlo en otra función</comment>
+                <comment>Al destruir un objeto y solicita la cantidad de instancias de este, no estará actualizado, es decir, si era el último objeto entonces Count retornará 1</comment>
+                <comment>El comportamiento HASH tiende a borrar sus valores cuando está fuera del layout??? (FALSO)&#x0D;&#x0A;Una condición que pick un elemento, luego en las acciones hace referencia a la familia, entonces aplica las acciones a toda la familia y no al elemento</comment>
             </sub-events>
         </event-group>
         <event-group description="" sid="384581551596629" title="Principal">
@@ -427,21 +437,41 @@
                     </conditions>
                     <actions />
                     <sub-events>
-                        <comment>La distribución es: 4% (X3) ; 6% ; ??% ; 4% (X5)</comment>
+                        <comment>La distribución es: 4% (X3) ; 6% ; ??% ; 4% ; 6% ; 4% (X3)</comment>
                         <variable comment="El ancho del 4 %" constant="0" name="ancho1" sid="404210903943982" static="0" type="number">0</variable>
                         <variable comment="El ancho del 6 %" constant="0" name="ancho2" sid="877290740246874" static="0" type="number">0</variable>
                         <variable comment="El ancho que sobraria" constant="0" name="ancho3" sid="302544454374426" static="0" type="number">0</variable>
                         <variable comment="El nombre de una función" constant="1" name="FUNCION1" sid="273407111289769" static="0" type="text">utileriaGUI</variable>
                         <variable comment="El nombre de una función" constant="1" name="FUNCION2" sid="359455698303336" static="0" type="text">textoGUI</variable>
+                        <event-block sid="266254362567612">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="358945847488428" type="Secuencia">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="340718537252670" type="Secuencia" />
+                            </actions>
+                        </event-block>
                         <event-block sid="800007185896606">
                             <conditions />
                             <actions>
-                                <action id="-9" name="Set value" sid="515832094937071" type="System">
-                                    <param id="0" name="Variable">cargado</param>
+                                <action id="-9" name="Set value" sid="533782790308802" type="System">
+                                    <param id="0" name="Variable">gEstado</param>
                                     <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="804349240885237" type="System">
+                                    <param id="0" name="Variable">gTiempoM</param>
+                                    <param id="1" name="Value">gTiempo</param>
                                 </action>
                                 <action id="0" name="Call function" sid="612113190297870" type="Funcion">
                                     <param id="0" name="Name">&quot;inactivoGRUPO&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                                <action id="0" name="Call function" sid="825473405185371" type="Funcion">
+                                    <param id="0" name="Name">&quot;proporcionTIEMPO&quot;</param>
                                     <param id="1" name="Parameter {n}"></param>
                                 </action>
                                 <action id="0" name="Call function" sid="761853048532717" type="Funcion">
@@ -449,23 +479,45 @@
                                     <param id="1" name="Parameter {n}"></param>
                                 </action>
                                 <action id="3" name="Clear" sid="788554017030564" type="Diccionario" />
+                                <action id="3" name="Clear" sid="678907137459544" type="CSV" />
+                                <action id="13" name="Remove all" sid="596964916424851" type="Grafo" />
                                 <action id="1" name="Set size" sid="975422738620696" type="Matriz">
                                     <param id="0" name="Width">0</param>
                                     <param id="1" name="Height">1</param>
                                     <param id="2" name="Depth">1</param>
                                 </action>
                                 <action id="0" name="Destroy all" sid="690425943812113" type="Grupo" />
+                                <action id="4" name="Remove all patterns" sid="593677545596221" type="Patron" />
+                                <action id="34" name="Destroy task" sid="299774266778517" type="Tarea">
+                                    <param id="0" name="Task">&quot;tareas&quot;</param>
+                                </action>
+                                <action id="34" name="Destroy task" sid="639500357421197" type="Tarea">
+                                    <param id="0" name="Task">&quot;tarea1&quot;</param>
+                                </action>
+                                <action id="34" name="Destroy task" sid="961423129063073" type="Tarea">
+                                    <param id="0" name="Task">&quot;tarea2&quot;</param>
+                                </action>
+                                <action id="34" name="Destroy task" sid="358942654715256" type="Tarea">
+                                    <param id="0" name="Task">&quot;tarea3&quot;</param>
+                                </action>
+                                <action id="34" name="Destroy task" sid="783311803295998" type="Tarea">
+                                    <param id="0" name="Task">&quot;tarea4&quot;</param>
+                                </action>
+                                <action id="1" name="Set value" sid="766502285824244" type="Hash">
+                                    <param id="0" name="Key string">&quot;debug.variable.ayuda&quot;</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
                                 <action id="-9" name="Set value" sid="250385395398625" type="System">
                                     <param id="0" name="Variable">ancho1</param>
-                                    <param id="1" name="Value">LayoutWidth*4/100</param>
+                                    <param id="1" name="Value">ViewportRight(&quot;GUI&quot;)*4/100</param>
                                 </action>
                                 <action id="-9" name="Set value" sid="602891357811759" type="System">
                                     <param id="0" name="Variable">ancho2</param>
-                                    <param id="1" name="Value">LayoutWidth*6/100</param>
+                                    <param id="1" name="Value">ViewportRight(&quot;GUI&quot;)*6/100</param>
                                 </action>
                                 <action id="-9" name="Set value" sid="732286092641880" type="System">
                                     <param id="0" name="Variable">ancho3</param>
-                                    <param id="1" name="Value">LayoutWidth - (ancho1 * 8 + ancho2)</param>
+                                    <param id="1" name="Value">ViewportRight(&quot;GUI&quot;) - (ancho1 * 7 + ancho2*2)</param>
                                 </action>
                                 <action id="0" name="Add key" sid="502995692241601" type="Diccionario">
                                     <param id="0" name="Key">&quot;frame&quot;</param>
@@ -477,7 +529,7 @@
                                 </action>
                                 <action id="0" name="Call function" sid="417073245884842" type="Funcion">
                                     <param id="0" name="Name">FUNCION1</param>
-                                    <param id="1" name="Parameter {n}">LayoutWidth{###}GUI{###}0</param>
+                                    <param id="1" name="Parameter {n}">ViewportRight(&quot;GUI&quot;){###}GUI{###}0</param>
                                 </action>
                                 <action id="0" name="Add key" sid="889073806854922" type="Diccionario">
                                     <param id="0" name="Key">&quot;x&quot;</param>
@@ -509,7 +561,7 @@
                                 </action>
                                 <action id="0" name="Call function" sid="479861795918157" type="Funcion">
                                     <param id="0" name="Name">FUNCION2</param>
-                                    <param id="1" name="Parameter {n}">ancho1{###}GUI{###}&quot;dificultadGUI&quot;</param>
+                                    <param id="1" name="Parameter {n}">ancho2{###}GUI{###}&quot;dificultadGUI&quot;</param>
                                 </action>
                                 <action id="0" name="Call function" sid="739941670685797" type="Funcion">
                                     <param id="0" name="Name">FUNCION1</param>
@@ -600,6 +652,10 @@
                                     <param id="2" name="X">0</param>
                                     <param id="3" name="Y">0</param>
                                 </action>
+                                <action id="-10" name="Set value" sid="467015343986201" type="Texto">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
                                 <action id="55" name="Set Vertical alignment" sid="626290808898211" type="Texto">
                                     <param id="0" name="Vertical alignment">1</param>
                                 </action>
@@ -636,6 +692,7 @@
                     </conditions>
                     <actions />
                     <sub-events>
+                        <variable constant="0" name="aux" sid="288635411957610" static="0" type="number">0</variable>
                         <event-block sid="534884068959925">
                             <conditions>
                                 <condition id="-14" name="Pick by unique ID" sid="470077870836195" type="Texto">
@@ -643,8 +700,16 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="-9" name="Set value" sid="306701730637292" type="System">
+                                    <param id="0" name="Variable">aux</param>
+                                    <param id="1" name="Value">Hash.At(&quot;debug.variable.vida&quot;)</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="222999414585128" type="System">
+                                    <param id="0" name="Variable">gVida</param>
+                                    <param id="1" name="Value">aux = 0 ? gVida: aux</param>
+                                </action>
                                 <action id="0" name="Set text" sid="542719997505426" type="Texto">
-                                    <param id="0" name="Text">&quot;X &quot; &amp; vida</param>
+                                    <param id="0" name="Text">&quot;X &quot; &amp; gVida</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -667,7 +732,7 @@
                             </conditions>
                             <actions>
                                 <action id="0" name="Set text" sid="980666545327437" type="Texto">
-                                    <param id="0" name="Text">&quot;X &quot; &amp; puntaje</param>
+                                    <param id="0" name="Text">&quot;X &quot; &amp; gPuntaje</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -693,7 +758,7 @@
                                     <param id="0" name="Horizontal alignment">1</param>
                                 </action>
                                 <action id="0" name="Set text" sid="623988306526095" type="Texto">
-                                    <param id="0" name="Text">objetivo</param>
+                                    <param id="0" name="Text">gObjetivo</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -708,6 +773,7 @@
                     </conditions>
                     <actions />
                     <sub-events>
+                        <variable constant="0" name="aux" sid="917652814161625" static="0" type="number">0</variable>
                         <event-block sid="216659190769892">
                             <conditions>
                                 <condition id="-14" name="Pick by unique ID" sid="724111931312073" type="Texto">
@@ -715,8 +781,16 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="-9" name="Set value" sid="984958713514916" type="System">
+                                    <param id="0" name="Variable">aux</param>
+                                    <param id="1" name="Value">Hash.At(&quot;debug.variable.dificultad&quot;)</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="852737323882757" type="System">
+                                    <param id="0" name="Variable">gDificultad</param>
+                                    <param id="1" name="Value">aux = 0 ? gDificultad: aux</param>
+                                </action>
                                 <action id="0" name="Set text" sid="576457612598765" type="Texto">
-                                    <param id="0" name="Text">dificultad &amp; &quot;%&quot;</param>
+                                    <param id="0" name="Text">gDificultad &amp; &quot;%&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -731,6 +805,7 @@
                     </conditions>
                     <actions />
                     <sub-events>
+                        <variable constant="0" name="aux" sid="780253172967205" static="0" type="number">0</variable>
                         <event-block sid="598874431020721">
                             <conditions>
                                 <condition id="-14" name="Pick by unique ID" sid="109718821549850" type="Texto">
@@ -738,15 +813,27 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="-9" name="Set value" sid="168865623457452" type="System">
+                                    <param id="0" name="Variable">aux</param>
+                                    <param id="1" name="Value">Hash.At(&quot;debug.variable.tiempo&quot;)</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="800842173520975" type="System">
+                                    <param id="0" name="Variable">gTiempo</param>
+                                    <param id="1" name="Value">aux = 0 ? gTiempo: aux</param>
+                                </action>
+                                <action id="0" name="Call function" sid="556230613544457" type="Funcion">
+                                    <param id="0" name="Name">&quot;proporcionTIEMPO&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
                                 <action id="0" name="Set text" sid="446923870649319" type="Texto">
-                                    <param id="0" name="Text">(tiempo&lt;=9?&quot;0&quot;:&quot;&quot; ) &amp; tiempo &amp; &quot;s&quot;</param>
+                                    <param id="0" name="Text">(gTiempo&lt;=9?&quot;0&quot;:&quot;&quot; ) &amp; gTiempo &amp; &quot;s&quot;</param>
                                 </action>
                             </actions>
                             <sub-events>
                                 <event-block sid="551721809362195">
                                     <conditions>
                                         <condition id="-14" name="Compare variable" sid="565509313309831" type="System">
-                                            <param id="0" name="Variable">tiempo</param>
+                                            <param id="0" name="Variable">gTiempo</param>
                                             <param id="1" name="Comparison">2</param>
                                             <param id="2" name="Value">4</param>
                                         </condition>
@@ -797,8 +884,8 @@
                                     <param id="0" name="Frame number">0</param>
                                 </action>
                                 <action id="-7" name="Set size" sid="680776421438097" type="Utileria">
-                                    <param id="0" name="Width">LayoutWidth</param>
-                                    <param id="1" name="Height">LayoutHeight-GUI</param>
+                                    <param id="0" name="Width">ViewportRight(&quot;GUI&quot;)</param>
+                                    <param id="1" name="Height">ViewportBottom(&quot;GUI&quot;)-GUI</param>
                                 </action>
                                 <action id="-10" name="Set value" sid="792257412156494" type="Utileria">
                                     <param id="0" name="Instance variable">ID</param>
@@ -810,12 +897,16 @@
                                     <param id="2" name="X">0</param>
                                     <param id="3" name="Y">0</param>
                                 </action>
+                                <action id="-10" name="Set value" sid="290746661497954" type="Texto">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
                                 <action id="0" name="Set text" sid="485903316459631" type="Texto">
                                     <param id="0" name="Text">&quot;Espere&quot;</param>
                                 </action>
                                 <action id="-3" name="Set position" sid="600070340138813" type="Texto">
-                                    <param id="0" name="X">LayoutWidth/2-Boton.Width/2</param>
-                                    <param id="1" name="Y">LayoutHeight/2-Boton.Height/2</param>
+                                    <param id="0" name="X">ViewportRight(&quot;GUI&quot;)/2-Boton.Width/2</param>
+                                    <param id="1" name="Y">ViewportBottom(&quot;GUI&quot;)/2-Boton.Height/2</param>
                                 </action>
                                 <action id="-41" name="Wait for signal" sid="587675202144743" type="System">
                                     <param id="0" name="Tag">&quot;pCargado&quot;</param>
@@ -840,7 +931,7 @@
                             <conditions />
                             <actions>
                                 <action id="1" name="Set return value" sid="954527684768900" type="Funcion">
-                                    <param id="0" name="Value">dificultad/10</param>
+                                    <param id="0" name="Value">gDificultad/10</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -860,25 +951,55 @@
                             <conditions />
                             <actions>
                                 <action id="1" name="Set return value" sid="142607753430087" type="Funcion">
-                                    <param id="0" name="Value">dificultad/50</param>
+                                    <param id="0" name="Value">gDificultad/50</param>
                                 </action>
                             </actions>
                         </event-block>
                     </sub-events>
                 </event-block>
-                <comment>Función que se ejecuta cuando el tiempo del minijuego se acabo o cuando haya perdido antes de tiempo</comment>
+                <comment>Función para calcula la proporcion de tiempo que ha pasado entre (0,1) 0= inicio, 1= termino</comment>
+                <event-block sid="120527149413862">
+                    <conditions>
+                        <condition id="0" name="On function" sid="793976725129439" type="Funcion">
+                            <param id="0" name="Name">&quot;proporcionTIEMPO&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="631818809719611" type="System">
+                            <param id="0" name="Variable">gTiempoP</param>
+                            <param id="1" name="Value">1-gTiempo/gTiempoM</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Función que se ejecuta cuando haya perdido o ganado antes de tiempo y cuando el tiempo del juego se acabo.</comment>
                 <event-block any="1" sid="512317607129986">
                     <conditions>
                         <condition id="0" name="On function" sid="838924163189493" type="Funcion">
                             <param id="0" name="Name">&quot;tiempoACABADO&quot;</param>
                         </condition>
-                        <condition id="-14" name="Compare variable" sid="935174870808986" type="System">
-                            <param id="0" name="Variable">derrota</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">1</param>
+                        <condition id="0" name="On function" sid="386128409264720" type="Funcion">
+                            <param id="0" name="Name">&quot;derrotaJUEGO&quot;</param>
+                        </condition>
+                        <condition id="0" name="On function" sid="538925198295810" type="Funcion">
+                            <param id="0" name="Name">&quot;victoriaJUEGO&quot;</param>
                         </condition>
                     </conditions>
                     <actions>
+                        <action id="-9" name="Set value" sid="801383377422785" type="System">
+                            <param id="0" name="Variable">gEstado</param>
+                            <param id="1" name="Value">2</param>
+                        </action>
+                        <action id="0" name="Call function" sid="593480479695745" type="Funcion">
+                            <param id="0" name="Name">&quot;inactivoGRUPO&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="901916954659188" type="System">
+                            <param id="0" name="Group name">&quot;fin &quot; &amp; gJuego</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="218209169991756" type="System">
+                            <param id="0" name="Seconds">GEF</param>
+                        </action>
                         <action id="33" name="Stop all" sid="277708755651674" type="Audio" />
                     </actions>
                     <sub-events>
@@ -887,14 +1008,14 @@
                         <event-block sid="628202110477842">
                             <conditions>
                                 <condition id="-14" name="Compare variable" sid="683136374396423" type="System">
-                                    <param id="0" name="Variable">derrota</param>
+                                    <param id="0" name="Variable">gDerrota</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">1</param>
                                 </condition>
                             </conditions>
                             <actions>
                                 <action id="-10" name="Add to" sid="529510627046584" type="System">
-                                    <param id="0" name="Variable">vida</param>
+                                    <param id="0" name="Variable">gVida</param>
                                     <param id="1" name="Value">-1</param>
                                 </action>
                                 <action id="0" name="Call function" sid="268941698563909" type="Funcion">
@@ -906,29 +1027,25 @@
                                 <event-block sid="605649481625926">
                                     <conditions>
                                         <condition id="-14" name="Compare variable" sid="458198990446223" type="System">
-                                            <param id="0" name="Variable">vida</param>
+                                            <param id="0" name="Variable">gVida</param>
                                             <param id="1" name="Comparison">3</param>
                                             <param id="2" name="Value">0</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-9" name="Set value" sid="547260730138893" type="System">
-                                            <param id="0" name="Variable">derrota</param>
-                                            <param id="1" name="Value">0</param>
-                                        </action>
                                         <action id="-3" name="Create object" sid="429727617914235" type="System">
                                             <param id="0" name="Object to create">Boton</param>
                                             <param id="1" name="Layer">&quot;GUI&quot;</param>
                                             <param id="2" name="X">0</param>
-                                            <param id="3" name="Y">LayoutHeight/2</param>
+                                            <param id="3" name="Y">0</param>
                                         </action>
                                         <action id="-7" name="Set size" sid="626454534994646" type="Boton">
                                             <param id="0" name="Width">128</param>
                                             <param id="1" name="Height">32</param>
                                         </action>
                                         <action id="-3" name="Set position" sid="904709986460063" type="Boton">
-                                            <param id="0" name="X">LayoutWidth/2-Boton.Width/2</param>
-                                            <param id="1" name="Y">LayoutHeight/2-Boton.Height/2</param>
+                                            <param id="0" name="X">ViewportRight(&quot;GUI&quot;)/2-Boton.Width/2</param>
+                                            <param id="1" name="Y">ViewportBottom(&quot;GUI&quot;)/2-Boton.Height/2</param>
                                         </action>
                                         <action id="0" name="Set text" sid="407224455981614" type="Boton">
                                             <param id="0" name="Text">&quot;Reiniciar&quot;</param>
@@ -936,8 +1053,16 @@
                                         <action id="2" name="Set visible" sid="946786829901617" type="Boton">
                                             <param id="0" name="Visibility">1</param>
                                         </action>
+                                        <action id="-9" name="Set value" sid="230203928778830" type="System">
+                                            <param id="0" name="Variable">gEstado</param>
+                                            <param id="1" name="Value">3</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="547260730138893" type="System">
+                                            <param id="0" name="Variable">gDerrota</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
                                         <action id="0" name="Call function" sid="673836573153328" type="Funcion">
-                                            <param id="0" name="Name">&quot;terminoJUEGO&quot;</param>
+                                            <param id="0" name="Name">&quot;terminoPARTIDA&quot;</param>
                                             <param id="1" name="Parameter {n}"></param>
                                         </action>
                                     </actions>
@@ -948,15 +1073,15 @@
                                     </conditions>
                                     <actions>
                                         <action id="-9" name="Set value" sid="887897285571972" type="System">
-                                            <param id="0" name="Variable">derrota</param>
+                                            <param id="0" name="Variable">gDerrota</param>
                                             <param id="1" name="Value">0</param>
                                         </action>
                                         <action id="-9" name="Set value" sid="426988745025035" type="System">
                                             <param id="0" name="Variable">aux</param>
-                                            <param id="1" name="Value">dificultad-1 </param>
+                                            <param id="1" name="Value">gDificultad-1 </param>
                                         </action>
                                         <action id="-9" name="Set value" sid="234936187846186" type="System">
-                                            <param id="0" name="Variable">dificultad</param>
+                                            <param id="0" name="Variable">gDificultad</param>
                                             <param id="1" name="Value">aux &lt;=0? 0:aux</param>
                                         </action>
                                         <action id="-26" name="Restart layout" sid="503966565174072" type="System" />
@@ -970,19 +1095,19 @@
                             </conditions>
                             <actions>
                                 <action id="-9" name="Set value" sid="799414016304661" type="System">
-                                    <param id="0" name="Variable">derrota</param>
+                                    <param id="0" name="Variable">gDerrota</param>
                                     <param id="1" name="Value">0</param>
                                 </action>
                                 <action id="-10" name="Add to" sid="388018519931638" type="System">
-                                    <param id="0" name="Variable">puntaje</param>
+                                    <param id="0" name="Variable">gPuntaje</param>
                                     <param id="1" name="Value">1</param>
                                 </action>
                                 <action id="-9" name="Set value" sid="593327201892228" type="System">
                                     <param id="0" name="Variable">aux</param>
-                                    <param id="1" name="Value">dificultad+2</param>
+                                    <param id="1" name="Value">gDificultad+2</param>
                                 </action>
                                 <action id="-9" name="Set value" sid="750893220271126" type="System">
-                                    <param id="0" name="Variable">dificultad</param>
+                                    <param id="0" name="Variable">gDificultad</param>
                                     <param id="1" name="Value">aux &gt;=100? 100:aux</param>
                                 </action>
                                 <action id="-26" name="Restart layout" sid="367100027442138" type="System" />
@@ -994,22 +1119,12 @@
         </event-group>
         <event-group description="" sid="145574337855611" title="Estados del miniJuego">
             <sub-events>
-                <comment>Podrá pausar/continuar el mini juego si está cargado, no ha perdido y dio clic en el correcta zona.</comment>
+                <comment>Podrá pausar/continuar el mini juego si está cargado, no ha perdido y dio clic en la correcta zona.</comment>
                 <event-block sid="649247592237194">
                     <conditions>
                         <condition id="0" name="On click" sid="363623422666604" type="Mouse">
                             <param id="0" name="Mouse button">0</param>
                             <param id="1" name="Click type">0</param>
-                        </condition>
-                        <condition id="-14" name="Compare variable" sid="466819087499265" type="System">
-                            <param id="0" name="Variable">derrota</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">0</param>
-                        </condition>
-                        <condition id="-14" name="Compare variable" sid="296983290977262" type="System">
-                            <param id="0" name="Variable">cargado</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">1</param>
                         </condition>
                         <condition id="7" name="Cursor is over object" sid="167828114793630" type="Mouse">
                             <param id="0" name="Object">Utileria</param>
@@ -1021,6 +1136,16 @@
                             <param id="0" name="Instance variable">ID</param>
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">-1</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="466819087499265" type="System">
+                            <param id="0" name="Variable">gDerrota</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="930958723166465" type="System">
+                            <param id="0" name="Variable">gEstado</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -1045,8 +1170,8 @@
                                 <action id="-13" name="Set time scale" sid="218779593619104" type="System">
                                     <param id="0" name="Time scale">0</param>
                                 </action>
-                                <action id="-14" name="Set object time scale" sid="840884276545257" type="System">
-                                    <param id="0" name="Object">Personas</param>
+                                <action id="-14" name="Set object time scale" sid="344378001514163" type="System">
+                                    <param id="0" name="Object">Actores</param>
                                     <param id="1" name="Time scale">0</param>
                                 </action>
                                 <action id="0" name="Call function" sid="644936032656758" type="Funcion">
@@ -1070,10 +1195,10 @@
                             <conditions />
                             <actions>
                                 <action id="-13" name="Set time scale" sid="211108223446787" type="System">
-                                    <param id="0" name="Time scale">1+dificultad/50</param>
+                                    <param id="0" name="Time scale">1+gDificultad/50</param>
                                 </action>
                                 <action id="-14" name="Set object time scale" sid="943393978710984" type="System">
-                                    <param id="0" name="Object">Personas</param>
+                                    <param id="0" name="Object">Actores</param>
                                     <param id="1" name="Time scale">1.0</param>
                                 </action>
                                 <action id="0" name="Call function" sid="938630744530942" type="Funcion">
@@ -1097,7 +1222,7 @@
                         <event-block sid="339914524837213">
                             <conditions>
                                 <condition id="-15" name="Is group active" sid="301761526080066" type="System">
-                                    <param id="0" name="Group name">&quot;control &quot; &amp; juego</param>
+                                    <param id="0" name="Group name">&quot;control &quot; &amp; gJuego</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -1121,11 +1246,11 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <comment>Función para terminar el mini juego</comment>
+                <comment>Función para terminar una partida</comment>
                 <event-block sid="932685703972151">
                     <conditions>
                         <condition id="0" name="On function" sid="953115998308881" type="Funcion">
-                            <param id="0" name="Name">&quot;terminoJUEGO&quot;</param>
+                            <param id="0" name="Name">&quot;terminoPARTIDA&quot;</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -1144,27 +1269,37 @@
                     </conditions>
                     <actions>
                         <action id="-16" name="Wait" sid="629102777166889" type="System">
-                            <param id="0" name="Seconds">2</param>
+                            <param id="0" name="Seconds">GEI</param>
                         </action>
-                        <action id="-13" name="Set time scale" sid="184960857722077" type="System">
-                            <param id="0" name="Time scale">1+dificultad/50</param>
-                        </action>
-                        <action id="-14" name="Set object time scale" sid="235469855671963" type="System">
-                            <param id="0" name="Object">Personas</param>
-                            <param id="1" name="Time scale">1.0</param>
-                        </action>
-                        <action id="0" name="Call function" sid="387267995843034" type="Funcion">
-                            <param id="0" name="Name">&quot;activoGRUPO&quot;</param>
+                        <action id="0" name="Call function" sid="817511819455862" type="Funcion">
+                            <param id="0" name="Name">&quot;continuaJUEGO&quot;</param>
                             <param id="1" name="Parameter {n}"></param>
-                        </action>
-                        <action id="-9" name="Set value" sid="513583998233908" type="System">
-                            <param id="0" name="Variable">cargado</param>
-                            <param id="1" name="Value">1</param>
                         </action>
                         <action id="-42" name="Signal" sid="273489511367556" type="System">
                             <param id="0" name="Tag">&quot;pCargado&quot;</param>
                         </action>
+                        <action id="-9" name="Set value" sid="933591065753066" type="System">
+                            <param id="0" name="Variable">gEstado</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
                     </actions>
+                    <sub-events>
+                        <event-block sid="836646843758126">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="599202304010053" type="Utileria">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">-1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Hash" id="1" name="Set value" sid="823579336805499" type="Utileria">
+                                    <param id="0" name="Key string">&quot;habilitado&quot;</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <comment>Función que activa los eventos contenidos de los grupos de la hoja de juego respectiva</comment>
                 <event-block sid="104836653524807">
@@ -1175,11 +1310,15 @@
                     </conditions>
                     <actions>
                         <action id="-12" name="Set group active" sid="459499079647543" type="System">
-                            <param id="0" name="Group name">&quot;jugabilidad &quot; &amp; juego</param>
+                            <param id="0" name="Group name">&quot;jugabilidad &quot; &amp; gJuego</param>
                             <param id="1" name="State">1</param>
                         </action>
                         <action id="-12" name="Set group active" sid="154897942583991" type="System">
-                            <param id="0" name="Group name">&quot;control &quot; &amp; juego</param>
+                            <param id="0" name="Group name">&quot;control &quot; &amp; gJuego</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="135941884198504" type="System">
+                            <param id="0" name="Group name">&quot;fin &quot; &amp; gJuego</param>
                             <param id="1" name="State">1</param>
                         </action>
                     </actions>
@@ -1193,32 +1332,894 @@
                     </conditions>
                     <actions>
                         <action id="-12" name="Set group active" sid="456098396843040" type="System">
-                            <param id="0" name="Group name">&quot;jugabilidad &quot; &amp; juego</param>
+                            <param id="0" name="Group name">&quot;jugabilidad &quot; &amp; gJuego</param>
                             <param id="1" name="State">0</param>
                         </action>
                         <action id="-12" name="Set group active" sid="442709986375149" type="System">
-                            <param id="0" name="Group name">&quot;control &quot; &amp; juego</param>
+                            <param id="0" name="Group name">&quot;control &quot; &amp; gJuego</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="690250100758986" type="System">
+                            <param id="0" name="Group name">&quot;fin &quot; &amp; gJuego</param>
                             <param id="1" name="State">0</param>
                         </action>
                     </actions>
                 </event-block>
             </sub-events>
         </event-group>
-        <event-block sid="373350934419565">
-            <conditions>
-                <condition id="0" name="On clicked" sid="649913982068380" type="Boton" />
-            </conditions>
-            <actions>
-                <action id="-9" name="Set value" sid="240901017129296" type="System">
-                    <param id="0" name="Variable">vida</param>
-                    <param id="1" name="Value">5</param>
-                </action>
-                <action id="0" name="Call function" sid="796506682838698" type="Funcion">
-                    <param id="0" name="Name">&quot;continuaJUEGO&quot;</param>
-                    <param id="1" name="Parameter {n}"></param>
-                </action>
-                <action id="-26" name="Restart layout" sid="422994406444714" type="System" />
-            </actions>
-        </event-block>
+        <event-group description="" sid="690197493183886" title="Debug">
+            <sub-events>
+                <event-block sid="373350934419565">
+                    <conditions>
+                        <condition id="0" name="On clicked" sid="649913982068380" type="Boton" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="240901017129296" type="System">
+                            <param id="0" name="Variable">gVida</param>
+                            <param id="1" name="Value">5</param>
+                        </action>
+                        <action id="0" name="Call function" sid="796506682838698" type="Funcion">
+                            <param id="0" name="Name">&quot;continuaJUEGO&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="-26" name="Restart layout" sid="422994406444714" type="System" />
+                    </actions>
+                </event-block>
+                <event-block disabled="1" sid="258183921260173">
+                    <conditions>
+                        <condition id="1" name="On any key pressed" sid="759898933775779" type="Teclado" />
+                        <condition id="-7" name="Compare instance variable" sid="261121229450770" type="Secuencia">
+                            <param id="0" name="Instance variable">ID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Push symbol" sid="613215319371055" type="Secuencia">
+                            <param id="0" name="Symbol">Teclado.StringFromKeyCode(Teclado.LastKeyCode)</param>
+                        </action>
+                        <action id="14" name="Log" sid="540763859580428" type="Navegador">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">Teclado.StringFromKeyCode(Teclado.LastKeyCode)</param>
+                        </action>
+                        <action id="0" name="Call function" sid="961459936050259" type="Funcion">
+                            <param id="0" name="Name">&quot;comandoDEBUG&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block disabled="1" sid="176497580161614">
+                    <conditions>
+                        <condition id="0" name="On function" sid="592353772650226" type="Funcion">
+                            <param id="0" name="Name">&quot;comandoDEBUG&quot;</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="520232784650380" type="Secuencia">
+                            <param id="0" name="Instance variable">ID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block disabled="1" sid="687288599014629">
+                            <conditions>
+                                <condition id="2" inverted="1" name="Key exists" sid="844329423680549" type="Hash">
+                                    <param id="0" name="Key string">&quot;debug&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block disabled="1" sid="988204518813592">
+                                    <conditions>
+                                        <condition id="-12" name="Repeat" sid="931594068605254" type="System">
+                                            <param id="0" name="Count">20</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <variable constant="0" name="con" sid="194557415981987" static="0" type="number">0</variable>
+                                        <variable comment="Digito 1" constant="0" name="d1" sid="936089991063073" static="0" type="number">0</variable>
+                                        <variable comment="Digito 2" constant="0" name="d2" sid="784157152666189" static="0" type="number">0</variable>
+                                        <event-block disabled="1" sid="522916467551022">
+                                            <conditions />
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="964265081398871" type="System">
+                                                    <param id="0" name="Variable">con</param>
+                                                    <param id="1" name="Value">loopindex+1</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="296530671131471" type="System">
+                                                    <param id="0" name="Variable">d1</param>
+                                                    <param id="1" name="Value">con&lt;10 ? 0: Sistema.SubString(str(con), 0, 1)</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="984661905219183" type="System">
+                                                    <param id="0" name="Variable">d2</param>
+                                                    <param id="1" name="Value">con&lt;10 ? con:Sistema.SubString(str(con), 1, 2)</param>
+                                                </action>
+                                                <action id="1" name="Set value" sid="150219522845772" type="Hash">
+                                                    <param id="0" name="Key string">&quot;debug.saltar.a&quot; &amp; con</param>
+                                                    <param id="1" name="Value">d1 &amp; &quot;,&quot; &amp; d2 &amp; &quot;,J&quot;  </param>
+                                                </action>
+                                                <action id="1" name="Set value" sid="799757805078958" type="Hash">
+                                                    <param id="0" name="Key string">&quot;debug.saltar.b&quot; &amp; con</param>
+                                                    <param id="1" name="Value">&quot;numpad &quot;  &amp; d1 &amp; &quot;,numpad &quot; &amp; d2 &amp; &quot;,J&quot;  </param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block disabled="1" sid="216450966155608">
+                                    <conditions />
+                                    <actions>
+                                        <action id="1" name="Set value" sid="842191847759790" type="Hash">
+                                            <param id="0" name="Key string">&quot;debug.guardar&quot;</param>
+                                            <param id="1" name="Value">&quot;G&quot;</param>
+                                        </action>
+                                        <action id="1" name="Set value" sid="998079749379264" type="Hash">
+                                            <param id="0" name="Key string">&quot;debug.cargar&quot;</param>
+                                            <param id="1" name="Value">&quot;C&quot;</param>
+                                        </action>
+                                        <action id="1" name="Set value" sid="540140639430032" type="Hash">
+                                            <param id="0" name="Key string">&quot;debug.pausar&quot;</param>
+                                            <param id="1" name="Value">&quot;P&quot;</param>
+                                        </action>
+                                        <action id="1" name="Set value" sid="118889627276784" type="Hash">
+                                            <param id="0" name="Key string">&quot;debug.vida&quot;</param>
+                                            <param id="1" name="Value">&quot;V&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block disabled="1" sid="302777398900952">
+                            <conditions>
+                                <condition id="1" name="For each item" sid="761036319799284" type="Hash">
+                                    <param id="0" name="Key string">&quot;debug&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <variable constant="0" name="correcto" sid="131891264265016" static="0" type="number">0</variable>
+                                <variable constant="0" name="parametro" sid="572051638680743" static="0" type="number">0</variable>
+                                <variable constant="0" name="comando" sid="908133248036703" static="0" type="text"></variable>
+                                <event-block disabled="1" sid="932172833137172">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="487665542594911" type="System">
+                                            <param id="0" name="Variable">comando</param>
+                                            <param id="1" name="Value">Hash.CurKey</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block disabled="1" sid="501768850324419">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="426632494982967" type="System">
+                                            <param id="0" name="First value">Hash.ItemCnt(&quot;debug.&quot;&amp;comando)</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Second value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block disabled="1" sid="748671546157328">
+                                            <conditions>
+                                                <condition id="1" name="For each item" sid="874686280455388" type="Hash">
+                                                    <param id="0" name="Key string">&quot;debug.&quot; &amp; Hash.CurKey</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block disabled="1" sid="209731159165635">
+                                                    <conditions>
+                                                        <condition id="4" name="Is matching" sid="565460932255991" type="Secuencia">
+                                                            <param id="0" name="Pattern">Hash.CurValue</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-9" name="Set value" sid="223179529597432" type="System">
+                                                            <param id="0" name="Variable">correcto</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                        <action id="-9" name="Set value" sid="763541516619085" type="System">
+                                                            <param id="0" name="Variable">parametro</param>
+                                                            <param id="1" name="Value">Sistema.SubString(Hash.CurKey,1, len(Hash.CurKey))</param>
+                                                        </action>
+                                                        <action id="1" name="Clean buffer" sid="638548613358996" type="Secuencia" />
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block disabled="1" sid="535132492849358">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="102781835941981" type="System" />
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block disabled="1" sid="111344323510191">
+                                            <conditions>
+                                                <condition id="4" name="Is matching" sid="618864493129278" type="Secuencia">
+                                                    <param id="0" name="Pattern">Hash.CurValue</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="532196790894256" type="System">
+                                                    <param id="0" name="Variable">correcto</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action id="1" name="Clean buffer" sid="613330350974820" type="Secuencia" />
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block disabled="1" sid="971901270712302">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="455002478581419" type="System">
+                                            <param id="0" name="Variable">correcto</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block disabled="1" sid="604083132784061">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="480069911678702" type="System">
+                                                    <param id="0" name="Variable">comando</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;saltar&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="33" name="Stop all" sid="826907107453663" type="Audio" />
+                                                <action id="-25" name="Go to layout (by name)" sid="185475970272066" type="System">
+                                                    <param id="0" name="Layout">&quot;juego &quot; &amp; parametro</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block disabled="1" sid="833557005359176">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="107840103238431" type="System" />
+                                                <condition id="-14" name="Compare variable" sid="397312015436308" type="System">
+                                                    <param id="0" name="Variable">comando</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;guardar&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-36" name="Save" sid="722358278395796" type="System">
+                                                    <param id="0" name="Slot">&quot;mysave&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block disabled="1" sid="647708867645472">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="995175647269758" type="System" />
+                                                <condition id="-14" name="Compare variable" sid="881482012861496" type="System">
+                                                    <param id="0" name="Variable">comando</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;cargar&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-37" name="Load" sid="366826160819590" type="System">
+                                                    <param id="0" name="Slot">&quot;mysave&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block disabled="1" sid="431219997182109">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="879784774901699" type="System" />
+                                                <condition id="-14" name="Compare variable" sid="697848389547140" type="System">
+                                                    <param id="0" name="Variable">comando</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;vida&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block disabled="1" sid="803714766337422">
+                                                    <conditions>
+                                                        <condition id="2" name="Key exists" sid="646827917520440" type="Hash">
+                                                            <param id="0" name="Key string">&quot;codigo.vida&quot;</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions />
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="572642647852599">
+                    <conditions>
+                        <condition id="1" name="On any key pressed" sid="192439964461059" type="Teclado" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <variable constant="1" name="buffer" sid="497246978728034" static="0" type="number">10</variable>
+                        <variable constant="0" name="codigo" sid="584540610673941" static="0" type="number">0</variable>
+                        <variable constant="0" name="cantidad" sid="705238969273443" static="0" type="number">0</variable>
+                        <variable constant="0" name="bandera" sid="314911055599057" static="0" type="number">0</variable>
+                        <variable constant="0" name="secuencia" sid="315306392737643" static="0" type="text"></variable>
+                        <event-block sid="456702930227126">
+                            <conditions />
+                            <actions>
+                                <action id="-9" name="Set value" sid="495951715958170" type="System">
+                                    <param id="0" name="Variable">codigo</param>
+                                    <param id="1" name="Value">Teclado.LastKeyCode</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="315529994015669" type="System">
+                                    <param id="0" name="Variable">secuencia</param>
+                                    <param id="1" name="Value">Hash.At(&quot;debug.variable.secuencia&quot;,&quot;&quot;)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Key codigo del 0 al 9 parte alfanúmerico</comment>
+                        <event-block sid="936970800292583">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="904932721463857" type="System">
+                                    <param id="0" name="Variable">codigo</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">48</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="151120057785216" type="System">
+                                    <param id="0" name="Variable">codigo</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">57</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="183900455077602" type="System">
+                                    <param id="0" name="Variable">secuencia</param>
+                                    <param id="1" name="Value">secuencia &amp; (codigo-48)</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="469962466408560" type="System">
+                                    <param id="0" name="Variable">bandera</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Key codigo del 0 al 9 parte númerico</comment>
+                        <event-block sid="599592171996728">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="231944119985325" type="System" />
+                                <condition id="-14" name="Compare variable" sid="509127817294092" type="System">
+                                    <param id="0" name="Variable">codigo</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">96</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="769778728876239" type="System">
+                                    <param id="0" name="Variable">codigo</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">105</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="349103963635754" type="System">
+                                    <param id="0" name="Variable">secuencia</param>
+                                    <param id="1" name="Value">secuencia &amp; (codigo-105)</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="421362368468964" type="System">
+                                    <param id="0" name="Variable">bandera</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Key codigo de la a hasta la z (excepto la ñ)</comment>
+                        <event-block sid="679602077463598">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="162924535760673" type="System" />
+                                <condition id="-14" name="Compare variable" sid="863949723879562" type="System">
+                                    <param id="0" name="Variable">codigo</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">65</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="859828098583704" type="System">
+                                    <param id="0" name="Variable">codigo</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">90</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="735580118889383" type="System">
+                                    <param id="0" name="Variable">secuencia</param>
+                                    <param id="1" name="Value">secuencia &amp; Teclado.StringFromKeyCode(codigo)</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="922098141066434" type="System">
+                                    <param id="0" name="Variable">bandera</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="524828489353771">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="655659805126572" type="System">
+                                    <param id="0" name="Variable">bandera</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="184508691541402" type="System">
+                                    <param id="0" name="Variable">cantidad</param>
+                                    <param id="1" name="Value">len(secuencia)</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="955038998799845">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="266632684230434" type="System">
+                                            <param id="0" name="Variable">cantidad</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Value">BUFFER</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="404082181571193" type="System">
+                                            <param id="0" name="Variable">secuencia</param>
+                                            <param id="1" name="Value">Sistema.SubString(secuencia, 1, cantidad)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="505895276246176">
+                                    <conditions />
+                                    <actions>
+                                        <action id="1" name="Set value" sid="869681239205711" type="Hash">
+                                            <param id="0" name="Key string">&quot;debug.variable.secuencia&quot;</param>
+                                            <param id="1" name="Value">secuencia</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="258384351490525" type="Funcion">
+                                            <param id="0" name="Name">&quot;comandoDEBUG&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="596816951370845">
+                    <conditions>
+                        <condition id="0" name="On function" sid="812113026804799" type="Funcion">
+                            <param id="0" name="Name">&quot;comandoDEBUG&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="815251808950195">
+                            <conditions>
+                                <condition id="2" inverted="1" name="Key exists" sid="177953683454836" type="Hash">
+                                    <param id="0" name="Key string">&quot;debug.mascara&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <comment>Se crean las mascaras</comment>
+                                <event-block sid="157147487249727">
+                                    <conditions />
+                                    <actions>
+                                        <action id="1" name="Set value" sid="483805587186291" type="Hash">
+                                            <param id="0" name="Key string">&quot;debug.mascara.irA&quot;</param>
+                                            <param id="1" name="Value">&quot;([0-1]?\d|[2][0])J&quot;</param>
+                                        </action>
+                                        <action id="1" name="Set value" sid="582711023534634" type="Hash">
+                                            <param id="0" name="Key string">&quot;debug.mascara.ir&quot;</param>
+                                            <param id="1" name="Value">&quot;J&quot;</param>
+                                        </action>
+                                        <action id="1" name="Set value" sid="978301508476961" type="Hash">
+                                            <param id="0" name="Key string">&quot;debug.mascara.vidaA&quot;</param>
+                                            <param id="1" name="Value">&quot;\d?\dV&quot;</param>
+                                        </action>
+                                        <action id="1" name="Set value" sid="509881071661827" type="Hash">
+                                            <param id="0" name="Key string">&quot;debug.mascara.vida&quot;</param>
+                                            <param id="1" name="Value">&quot;V&quot;</param>
+                                        </action>
+                                        <action id="1" name="Set value" sid="767509261822669" type="Hash">
+                                            <param id="0" name="Key string">&quot;debug.mascara.tiempoA&quot;</param>
+                                            <param id="1" name="Value">&quot;\d?\dT&quot;</param>
+                                        </action>
+                                        <action id="1" name="Set value" sid="349687950633993" type="Hash">
+                                            <param id="0" name="Key string">&quot;debug.mascara.tiempo&quot;</param>
+                                            <param id="1" name="Value">&quot;T&quot;</param>
+                                        </action>
+                                        <action id="1" name="Set value" sid="308342121211630" type="Hash">
+                                            <param id="0" name="Key string">&quot;debug.mascara.dificultadA&quot;</param>
+                                            <param id="1" name="Value">&quot;(\d?\d|[1][0][0])D&quot;</param>
+                                        </action>
+                                        <action id="1" name="Set value" sid="399825006672084" type="Hash">
+                                            <param id="0" name="Key string">&quot;debug.mascara.dificultad&quot;</param>
+                                            <param id="1" name="Value">&quot;D&quot;</param>
+                                        </action>
+                                        <action id="1" name="Set value" sid="418284185645057" type="Hash">
+                                            <param id="0" name="Key string">&quot;debug.mascara.guardar&quot;</param>
+                                            <param id="1" name="Value">&quot;G&quot;</param>
+                                        </action>
+                                        <action id="1" name="Set value" sid="142359694339730" type="Hash">
+                                            <param id="0" name="Key string">&quot;debug.mascara.cargar&quot;</param>
+                                            <param id="1" name="Value">&quot;C&quot;</param>
+                                        </action>
+                                        <action id="1" name="Set value" sid="429017499718652" type="Hash">
+                                            <param id="0" name="Key string">&quot;debug.mascara.pausar&quot;</param>
+                                            <param id="1" name="Value">&quot;P&quot;</param>
+                                        </action>
+                                        <action id="1" name="Set value" sid="206525233606175" type="Hash">
+                                            <param id="0" name="Key string">&quot;debug.mascara.ayuda&quot;</param>
+                                            <param id="1" name="Value">&quot;A&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>Se crean las variables</comment>
+                                <event-block sid="788909969726190">
+                                    <conditions />
+                                    <actions>
+                                        <action id="1" name="Set value" sid="489600621503572" type="Hash">
+                                            <param id="0" name="Key string">&quot;debug.variable.vida&quot;</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="1" name="Set value" sid="431384993192577" type="Hash">
+                                            <param id="0" name="Key string">&quot;debug.variable.tiempo&quot;</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="1" name="Set value" sid="337770035370063" type="Hash">
+                                            <param id="0" name="Key string">&quot;debug.variable.dificultad&quot;</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="1" name="Set value" sid="239476574269288" type="Hash">
+                                            <param id="0" name="Key string">&quot;debug.variable.ayuda&quot;</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="764328250905187">
+                            <conditions>
+                                <condition id="1" name="For each item" sid="746401120127278" type="Hash">
+                                    <param id="0" name="Key string">&quot;debug.mascara&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <variable constant="0" name="parametro" sid="367606062406563" static="0" type="number">0</variable>
+                                <variable constant="0" name="comando" sid="802613717597475" static="0" type="text"></variable>
+                                <variable constant="0" name="secuencia" sid="514891451391823" static="0" type="text"></variable>
+                                <event-block sid="739856039470040">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="689998979379680" type="System">
+                                            <param id="0" name="Variable">secuencia</param>
+                                            <param id="1" name="Value">Hash.At(&quot;debug.variable.secuencia&quot;,&quot;&quot;)</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="345140569690740" type="System">
+                                            <param id="0" name="Variable">secuencia</param>
+                                            <param id="1" name="Value">RegexMatchAt(secuencia,Hash.CurValue,&quot;gi&quot;,0)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="961302687572923">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="478870546749615" type="System">
+                                            <param id="0" name="Variable">secuencia</param>
+                                            <param id="1" name="Comparison">1</param>
+                                            <param id="2" name="Value">&quot;&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="1" name="Set value" sid="383805899548244" type="Hash">
+                                            <param id="0" name="Key string">&quot;debug.variable.secuencia&quot;</param>
+                                            <param id="1" name="Value">&quot;&quot;</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="651357973920252" type="System">
+                                            <param id="0" name="Variable">comando</param>
+                                            <param id="1" name="Value">Hash.CurKey</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <variable constant="0" name="aux" sid="424545249019024" static="0" type="number">0</variable>
+                                        <event-block sid="661755974593957">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="662690540226121" type="System">
+                                                    <param id="0" name="Variable">comando</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;irA&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="33" name="Stop all" sid="892238484344793" type="Audio" />
+                                                <action id="-25" name="Go to layout (by name)" sid="562585697485701" type="System">
+                                                    <param id="0" name="Layout">&quot;juego &quot; &amp; RegexMatchAt(secuencia,&quot;\d?\d&quot;,&quot;gi&quot;,0)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="970157956685832">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="733122198037751" type="System" />
+                                                <condition id="-14" name="Compare variable" sid="410042407069333" type="System">
+                                                    <param id="0" name="Variable">comando</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;ir&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="33" name="Stop all" sid="352445128557714" type="Audio" />
+                                                <action id="-26" name="Restart layout" sid="335760975721372" type="System" />
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="318324578265456">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="561021943229124" type="System" />
+                                                <condition id="-14" name="Compare variable" sid="258823270621486" type="System">
+                                                    <param id="0" name="Variable">comando</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;vidaA&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="208292352391289" type="System">
+                                                    <param id="0" name="Variable">gVida</param>
+                                                    <param id="1" name="Value">RegexMatchAt(secuencia,&quot;\d?\d&quot;,&quot;gi&quot;,0)</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="323552184616778" type="System">
+                                                    <param id="0" name="Variable">aux</param>
+                                                    <param id="1" name="Value">Hash.At(&quot;debug.variable.vida&quot;)</param>
+                                                </action>
+                                                <action id="1" name="Set value" sid="347333670691307" type="Hash">
+                                                    <param id="0" name="Key string">&quot;debug.variable.vida&quot;</param>
+                                                    <param id="1" name="Value">aux = 0 ? 0: gVida</param>
+                                                </action>
+                                                <action id="0" name="Call function" sid="748421319010430" type="Funcion">
+                                                    <param id="0" name="Name">&quot;vidaGUI&quot;</param>
+                                                    <param id="1" name="Parameter {n}"></param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="660650341151339">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="256884530370033" type="System" />
+                                                <condition id="-14" name="Compare variable" sid="942726680010345" type="System">
+                                                    <param id="0" name="Variable">comando</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;vida&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="673485558161743" type="System">
+                                                    <param id="0" name="Variable">aux</param>
+                                                    <param id="1" name="Value">Hash.At(&quot;debug.variable.vida&quot;)</param>
+                                                </action>
+                                                <action id="1" name="Set value" sid="165245604537267" type="Hash">
+                                                    <param id="0" name="Key string">&quot;debug.variable.vida&quot;</param>
+                                                    <param id="1" name="Value">aux = 0 ? gVida: 0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="332816111906831">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="943457649353299" type="System" />
+                                                <condition id="-14" name="Compare variable" sid="393115398436741" type="System">
+                                                    <param id="0" name="Variable">comando</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;tiempoA&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="897775456953001" type="System">
+                                                    <param id="0" name="Variable">gTiempo</param>
+                                                    <param id="1" name="Value">RegexMatchAt(secuencia,&quot;\d?\d&quot;,&quot;gi&quot;,0)</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="847040592720314" type="System">
+                                                    <param id="0" name="Variable">aux</param>
+                                                    <param id="1" name="Value">Hash.At(&quot;debug.variable.tiempo&quot;)</param>
+                                                </action>
+                                                <action id="1" name="Set value" sid="491765912438350" type="Hash">
+                                                    <param id="0" name="Key string">&quot;debug.variable.tiempo&quot;</param>
+                                                    <param id="1" name="Value">aux = 0 ? 0: gTiempo</param>
+                                                </action>
+                                                <action id="0" name="Call function" sid="778244031342808" type="Funcion">
+                                                    <param id="0" name="Name">&quot;tiempoGUI&quot;</param>
+                                                    <param id="1" name="Parameter {n}"></param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="280180221528848">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="322706524755343" type="System" />
+                                                <condition id="-14" name="Compare variable" sid="941320055982729" type="System">
+                                                    <param id="0" name="Variable">comando</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;tiempo&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="501815695198074" type="System">
+                                                    <param id="0" name="Variable">aux</param>
+                                                    <param id="1" name="Value">Hash.At(&quot;debug.variable.tiempo&quot;)</param>
+                                                </action>
+                                                <action id="1" name="Set value" sid="577557970709007" type="Hash">
+                                                    <param id="0" name="Key string">&quot;debug.variable.tiempo&quot;</param>
+                                                    <param id="1" name="Value">aux = 0 ? gTiempo: 0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="829153533889772">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="168806897374238" type="System" />
+                                                <condition id="-14" name="Compare variable" sid="313628038563890" type="System">
+                                                    <param id="0" name="Variable">comando</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;dificultadA&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="539699944548924" type="System">
+                                                    <param id="0" name="Variable">gDificultad</param>
+                                                    <param id="1" name="Value">RegexMatchAt(secuencia,&quot;\d?\d&quot;,&quot;gi&quot;,0)</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="981954532421239" type="System">
+                                                    <param id="0" name="Variable">aux</param>
+                                                    <param id="1" name="Value">Hash.At(&quot;debug.variable.dificultad&quot;)</param>
+                                                </action>
+                                                <action id="1" name="Set value" sid="514293752072036" type="Hash">
+                                                    <param id="0" name="Key string">&quot;debug.variable.dificultad&quot;</param>
+                                                    <param id="1" name="Value">aux = 0 ? 0: gDificultad</param>
+                                                </action>
+                                                <action id="0" name="Call function" sid="155895788585193" type="Funcion">
+                                                    <param id="0" name="Name">&quot;dificultadGUI&quot;</param>
+                                                    <param id="1" name="Parameter {n}"></param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="304089598297063">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="671409066115039" type="System" />
+                                                <condition id="-14" name="Compare variable" sid="503503353155944" type="System">
+                                                    <param id="0" name="Variable">comando</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;dificultad&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="801973339705403" type="System">
+                                                    <param id="0" name="Variable">aux</param>
+                                                    <param id="1" name="Value">Hash.At(&quot;debug.variable.dificultad&quot;)</param>
+                                                </action>
+                                                <action id="1" name="Set value" sid="230767421771937" type="Hash">
+                                                    <param id="0" name="Key string">&quot;debug.variable.dificultad&quot;</param>
+                                                    <param id="1" name="Value">aux = 0 ? gDificultad: 0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="842884570626897">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="630617707518768" type="System" />
+                                                <condition id="-14" name="Compare variable" sid="609135572230284" type="System">
+                                                    <param id="0" name="Variable">comando</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;guardar&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-36" name="Save" sid="740047097089051" type="System">
+                                                    <param id="0" name="Slot">&quot;mysave&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="766885693151717">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="667197769868968" type="System" />
+                                                <condition id="-14" name="Compare variable" sid="717629487336897" type="System">
+                                                    <param id="0" name="Variable">comando</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;cargar&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-37" name="Load" sid="135111842606803" type="System">
+                                                    <param id="0" name="Slot">&quot;mysave&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="899641624307192">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="229842668658052" type="System" />
+                                                <condition id="-14" name="Compare variable" sid="229535027216501" type="System">
+                                                    <param id="0" name="Variable">comando</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;pausar&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="469434158650977" type="Funcion">
+                                                    <param id="0" name="Name">&quot;pcJUEGO&quot;</param>
+                                                    <param id="1" name="Parameter {n}"></param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="457997811250126">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="923867031311113" type="System" />
+                                                <condition id="-14" name="Compare variable" sid="703015833940206" type="System">
+                                                    <param id="0" name="Variable">comando</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;ayuda&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="639817771054545" type="System">
+                                                    <param id="0" name="Variable">aux</param>
+                                                    <param id="1" name="Value">Hash.At(&quot;debug.variable.ayuda&quot;)</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="879095613856335" type="System">
+                                                    <param id="0" name="Variable">aux</param>
+                                                    <param id="1" name="Value">aux = 0</param>
+                                                </action>
+                                                <action id="1" name="Set value" sid="633716041851054" type="Hash">
+                                                    <param id="0" name="Key string">&quot;debug.variable.ayuda&quot;</param>
+                                                    <param id="1" name="Value">aux</param>
+                                                </action>
+                                                <action id="14" name="Log" sid="551629502835161" type="Navegador">
+                                                    <param id="0" name="Type">0</param>
+                                                    <param id="1" name="Message">aux</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="191575274668451">
+                                                    <conditions>
+                                                        <condition id="-14" name="Compare variable" sid="635846385011453" type="System">
+                                                            <param id="0" name="Variable">aux</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">1</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-3" name="Create object" sid="107568707701485" type="System">
+                                                            <param id="0" name="Object to create">IFrame</param>
+                                                            <param id="1" name="Layer">&quot;GUI&quot;</param>
+                                                            <param id="2" name="X">200</param>
+                                                            <param id="3" name="Y">GUI</param>
+                                                        </action>
+                                                        <action id="4" name="Set CSS style" sid="746317526029293" type="IFrame">
+                                                            <param id="0" name="Property name">&quot;color&quot;</param>
+                                                            <param id="1" name="Value">&quot;rgb(0, 0, 0)&quot;</param>
+                                                        </action>
+                                                        <action id="4" name="Set CSS style" sid="182114928707776" type="IFrame">
+                                                            <param id="0" name="Property name">&quot;background-color&quot;</param>
+                                                            <param id="1" name="Value">&quot;rgb(235, 235, 235)&quot;</param>
+                                                        </action>
+                                                        <action id="4" name="Set CSS style" sid="927093064920848" type="IFrame">
+                                                            <param id="0" name="Property name">&quot;font-size&quot;</param>
+                                                            <param id="1" name="Value">&quot;30px&quot;</param>
+                                                        </action>
+                                                        <action id="-7" name="Set size" sid="459892874966173" type="IFrame">
+                                                            <param id="0" name="Width">250</param>
+                                                            <param id="1" name="Height">250</param>
+                                                        </action>
+                                                        <action id="7" name="Append HTML" sid="522117630919300" type="IFrame">
+                                                            <param id="0" name="Append HTML">&quot;&#x0D;&#x0A;COMANDOS&lt;br&gt;&#x0D;&#x0A;a = Ayuda&lt;br&gt;&#x0D;&#x0A;(x)j = ir al Juego x&lt;br&gt;&#x0D;&#x0A;j = reiniciar Juego&lt;br&gt;&#x0D;&#x0A;(x)v = establecer Vida en x&lt;br&gt;&#x0D;&#x0A;v = congelar Vida&lt;br&gt;&#x0D;&#x0A;(x)t = establecer Tiempo en x&lt;br&gt;&#x0D;&#x0A;t = congelar Tiempo&lt;br&gt;&#x0D;&#x0A;(x)d = establecer Dificultad en x&lt;br&gt;&#x0D;&#x0A;d= congelar Dificultad&lt;br&gt;&#x0D;&#x0A;g= Guardar estado actual&lt;br&gt;&#x0D;&#x0A;c= Cargar estado actual&lt;br&gt;&#x0D;&#x0A;p= Pausar estado&lt;br&gt;&#x0D;&#x0A;&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="972908165439722">
+                                                    <conditions>
+                                                        <condition id="-22" name="Else" sid="656522809602162" type="System" />
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-9" name="Destroy" sid="468583258388679" type="IFrame" />
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
     </events>
 </c2eventsheet>

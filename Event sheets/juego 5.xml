@@ -1,0 +1,764 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>juego 5</name>
+    <events>
+        <include>principal</include>
+        <event-group description="Preparación del escenario" sid="521242111167405" title="inicio 5">
+            <sub-events>
+                <comment>VALORES DEL LABERINTO</comment>
+                <variable comment="Cantidad de columnas que tendrá el laberinto" constant="1" name="COLUMNA" sid="830681121709219" static="0" type="number">20</variable>
+                <variable comment="Cantidad de filas que tendra el laberinto" constant="1" name="FILA" sid="244803266510327" static="0" type="number">11</variable>
+                <variable comment="Alto del mosaico o cuadricula (en pixeles)" constant="1" name="ALTOM" sid="270978548587725" static="0" type="number">45</variable>
+                <variable comment="Ancho del mosaico o cuadricula (en pixeles)" constant="1" name="ANCHOM" sid="261636879191620" static="0" type="number">45</variable>
+                <variable comment="Coordenara X de creación del laberinto" constant="1" name="X" sid="999328224370687" static="0" type="number">14</variable>
+                <variable comment="Coordenara Y de creación del laberinto" constant="1" name="Y" sid="739518876757059" static="0" type="number">14</variable>
+                <comment>VALORES DEL JUGADOR</comment>
+                <variable comment="Alto (en pixeles)" constant="1" name="ALTOJ" sid="769162332576051" static="0" type="number">25</variable>
+                <variable comment="Ancho (en pixeles)" constant="1" name="ANCHOJ" sid="651643697628119" static="0" type="number">25</variable>
+                <variable comment="Ancho (en pixeles)" constant="1" name="VELOCIDAD" sid="783633775903264" static="0" type="number">25</variable>
+                <variable comment="Ancho (en pixeles)" constant="1" name="ACELERACION" sid="579294960845601" static="0" type="number">25</variable>
+                <comment>VALORES DEL ENEMIGO</comment>
+                <variable comment="Alto (en pixeles)" constant="1" name="ALTOE" sid="631075269651973" static="0" type="number">25</variable>
+                <variable comment="Ancho (en pixeles)" constant="1" name="ANCHOE" sid="257419487754872" static="0" type="number">25</variable>
+                <comment>VALORES DE LA LUZ</comment>
+                <variable comment="Cantidad de segundos para que se oscurezca" constant="1" name="SEGUNDOS" sid="573347091288035" static="0" type="number">3</variable>
+                <event-block sid="404358786620839">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="990857885824414" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="911007534961915" type="System">
+                            <param id="0" name="Variable">gJuego</param>
+                            <param id="1" name="Value">5</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="643274254222202" type="System">
+                            <param id="0" name="Variable">gTiempo</param>
+                            <param id="1" name="Value">floor(random(25,30))</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="434850145196819" type="System">
+                            <param id="0" name="Variable">gObjetivo</param>
+                            <param id="1" name="Value">&quot;Encuentralos&quot;</param>
+                        </action>
+                        <action id="0" name="Call function" sid="574924783139259" type="Funcion">
+                            <param id="0" name="Name">&quot;inicioGUI&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="1" name="Generate" sid="263207021321006" type="Laberinto">
+                            <param id="0" name="Width">COLUMNA</param>
+                            <param id="1" name="Height">FILA</param>
+                            <param id="2" name="Algorithm">0</param>
+                            <param id="3" name="Seed">random(1)</param>
+                        </action>
+                        <action id="0" name="Reset board" sid="654742769760247" type="Tablero">
+                            <param id="0" name="X">COLUMNA</param>
+                            <param id="1" name="Y">FILA</param>
+                        </action>
+                        <action id="4" name="Set position offset" sid="805170539982385" type="Cuadricula">
+                            <param id="0" name="X">X</param>
+                            <param id="1" name="Y">Y</param>
+                        </action>
+                        <action id="3" name="Set cell size" sid="542110707132096" type="Cuadricula">
+                            <param id="0" name="Width">ANCHOM</param>
+                            <param id="1" name="Height">ALTOM</param>
+                        </action>
+                        <action id="24" name="Fill tiles" sid="872316625267018" type="Tablero">
+                            <param id="0" name="Tile">Utileria</param>
+                            <param id="1" name="Layer">&quot;Fondo&quot;</param>
+                        </action>
+                        <action id="-41" name="Wait for signal" sid="829460767686086" type="System">
+                            <param id="0" name="Tag">&quot;laberintoGenerado&quot;</param>
+                        </action>
+                        <action id="0" name="Add key" sid="389746780046587" type="Diccionario">
+                            <param id="0" name="Key">&quot;i&quot;</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="0" name="Add key" sid="806007648978774" type="Diccionario">
+                            <param id="0" name="Key">&quot;n&quot;</param>
+                            <param id="1" name="Value">floor(random(4,6))</param>
+                        </action>
+                        <action id="1" name="Start" sid="183367436790132" type="Hilo" />
+                        <action id="0" name="Call function" sid="281301452981066" type="Funcion">
+                            <param id="0" name="Name">&quot;comenzoJuego&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Cuando se crea la utileria, entonces hacer lo siguiente</comment>
+                <event-block sid="944316527619293">
+                    <conditions>
+                        <condition id="-18" name="On created" sid="477652198611937" type="Utileria" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="556004031125099">
+                            <conditions />
+                            <actions>
+                                <action id="-7" name="Set size" sid="511325867296807" type="Utileria">
+                                    <param id="0" name="Width">ANCHOM</param>
+                                    <param id="1" name="Height">ALTOM</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="146743756109737" type="Utileria">
+                                    <param id="0" name="Frame number">0</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="204475089411457" type="Utileria">
+                                    <param id="0" name="Animation">&quot;j5a&quot;</param>
+                                    <param id="1" name="From">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Cuando se crea al jugador, entonces hacer lo siguiente</comment>
+                <event-block sid="401686562552093">
+                    <conditions>
+                        <condition id="-18" name="On created" sid="541744653131674" type="Jugador" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="412323140153767">
+                            <conditions />
+                            <actions>
+                                <action id="-7" name="Set size" sid="676939049309382" type="Jugador">
+                                    <param id="0" name="Width">ANCHOJ</param>
+                                    <param id="1" name="Height">ALTOJ</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="747584535629452" type="Jugador">
+                                    <param id="0" name="Frame number">1</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="980468468046269" type="Jugador">
+                                    <param id="0" name="Animation">&quot;j5a&quot;</param>
+                                    <param id="1" name="From">0</param>
+                                </action>
+                                <action behavior="4Direccion" id="6" name="Set deceleration" sid="615188322791460" type="Jugador">
+                                    <param id="0" name="Deceleration">4000</param>
+                                </action>
+                                <action behavior="4Direccion" id="5" name="Set acceleration" sid="868917780973389" type="Jugador">
+                                    <param id="0" name="Acceleration">1000</param>
+                                </action>
+                                <action behavior="4Direccion" id="4" name="Set max speed" sid="658267527999449" type="Jugador">
+                                    <param id="0" name="Max Speed">2000</param>
+                                </action>
+                                <action behavior="Hash" id="1" name="Set value" sid="127216178308298" type="Jugador">
+                                    <param id="0" name="Key string">&quot;i&quot;</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Cuando se crea un enemigo, entonces hacer lo siguiente</comment>
+                <event-block sid="327181547618199">
+                    <conditions>
+                        <condition id="-18" name="On created" sid="311381388568227" type="Enemigo" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="617569272944115">
+                            <conditions />
+                            <actions>
+                                <action id="-7" name="Set size" sid="731290732113060" type="Enemigo">
+                                    <param id="0" name="Width">ANCHOE</param>
+                                    <param id="1" name="Height">ALTOE</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="811622181536306" type="Enemigo">
+                                    <param id="0" name="Frame number">0</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="858570222478306" type="Enemigo">
+                                    <param id="0" name="Animation">&quot;j5a&quot;</param>
+                                    <param id="1" name="From">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Disparador que se ejecuta cuando se ha creado el laberinto</comment>
+                <event-block sid="582331674765314">
+                    <conditions>
+                        <condition id="2" name="On completed" sid="691634371366814" type="Laberinto" />
+                    </conditions>
+                    <actions>
+                        <action id="-42" name="Signal" sid="101140289970937" type="System">
+                            <param id="0" name="Tag">&quot;laberintoGenerado&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Disparador que se ejecuta cuando el hilo se inicia</comment>
+                <event-block sid="476224367495158">
+                    <conditions>
+                        <condition id="1" name="On start" sid="792549882678662" type="Hilo" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="607992717323590">
+                            <conditions />
+                            <actions>
+                                <action id="1" name="Add loop" sid="509891294436148" type="Bucle">
+                                    <param id="0" name="Name">&quot;y&quot;</param>
+                                    <param id="1" name="Start">0</param>
+                                    <param id="2" name="End">Laberinto.MapHeight - 1</param>
+                                    <param id="3" name="Step">1</param>
+                                </action>
+                                <action id="1" name="Add loop" sid="840575032560948" type="Bucle">
+                                    <param id="0" name="Name">&quot;x&quot;</param>
+                                    <param id="1" name="Start">0</param>
+                                    <param id="2" name="End">Laberinto.MapWidth - 1</param>
+                                    <param id="3" name="Step">1</param>
+                                </action>
+                                <action id="1" name="Clean group" sid="805381339978941" type="Grupo">
+                                    <param id="0" name="Group">&quot;j5a&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Definir el texto de conteo</comment>
+                        <event-block sid="755045137856560">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="655691000746043" type="Texto">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-25" name="Move to bottom" sid="797828381324565" type="Texto" />
+                                <action id="3" name="Set font size" sid="795858988090716" type="Texto">
+                                    <param id="0" name="Size (pt)">15</param>
+                                </action>
+                                <action id="53" name="Set horizontal alignment" sid="427709732706495" type="Texto">
+                                    <param id="0" name="Horizontal alignment">2</param>
+                                </action>
+                                <action id="55" name="Set Vertical alignment" sid="173983215885440" type="Texto">
+                                    <param id="0" name="Vertical alignment">1</param>
+                                </action>
+                                <action id="4" name="Set font color" sid="159937704293622" type="Texto">
+                                    <param id="0" name="Color">&quot;rgb(255, 255, 255)&quot;</param>
+                                </action>
+                                <action id="50" name="Set font style" sid="122770547173584" type="Texto">
+                                    <param id="0" name="Style">1</param>
+                                </action>
+                                <action id="0" name="Set text" sid="707549919296453" type="Texto">
+                                    <param id="0" name="Text">Diccionario.Get(&quot;i&quot;) &amp; &quot;/&quot; &amp; Diccionario.Get(&quot;n&quot;) </param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Definir el texto de fuera luces</comment>
+                        <event-block sid="985253587952111">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="722572898997331" type="Texto">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-25" name="Move to bottom" sid="713136276103212" type="Texto" />
+                                <action id="3" name="Set font size" sid="411184602775994" type="Texto">
+                                    <param id="0" name="Size (pt)">15</param>
+                                </action>
+                                <action id="53" name="Set horizontal alignment" sid="857175739491799" type="Texto">
+                                    <param id="0" name="Horizontal alignment">2</param>
+                                </action>
+                                <action id="55" name="Set Vertical alignment" sid="538570801035466" type="Texto">
+                                    <param id="0" name="Vertical alignment">1</param>
+                                </action>
+                                <action id="4" name="Set font color" sid="211347824173149" type="Texto">
+                                    <param id="0" name="Color">&quot;rgb(255, 255, 255)&quot;</param>
+                                </action>
+                                <action id="50" name="Set font style" sid="812928365770488" type="Texto">
+                                    <param id="0" name="Style">1</param>
+                                </action>
+                                <action id="0" name="Set text" sid="888040959096719" type="Texto">
+                                    <param id="0" name="Text">&quot;Fuera luces en: &quot; &amp; SEGUNDOS &amp; &quot;s&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Disparador que se ejecuta cuando el hilo esta en proceso</comment>
+                <event-block sid="756019233475476">
+                    <conditions>
+                        <condition id="2" name="On processing" sid="995802875310691" type="Hilo" />
+                    </conditions>
+                    <actions>
+                        <action id="3" name="Next" sid="612407848950275" type="Bucle" />
+                    </actions>
+                    <sub-events>
+                        <comment>Recoger la Utileria según el orden que aparece en el laberinto</comment>
+                        <variable constant="0" name="uid" sid="550951707282552" static="0" type="number">0</variable>
+                        <event-block sid="821495855062265">
+                            <conditions />
+                            <actions>
+                                <action id="-9" name="Set value" sid="908957543707982" type="System">
+                                    <param id="0" name="Variable">uid</param>
+                                    <param id="1" name="Value">Tablero.LXYZ2UID(Bucle.loopindex(&quot;x&quot;), Bucle.loopindex(&quot;y&quot;),0)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Si se puede caminar</comment>
+                        <event-block sid="602899029508427">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="992313291842824" type="System">
+                                    <param id="0" name="First value">Laberinto.ValueAt( Bucle.loopindex(&quot;x&quot;) , Bucle.loopindex(&quot;y&quot;) )</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                                <condition id="-14" name="Pick by unique ID" sid="319513198178981" type="Utileria">
+                                    <param id="0" name="Unique ID">uid</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-7" name="Set size" sid="759861882046297" type="Utileria">
+                                    <param id="0" name="Width">ANCHOM</param>
+                                    <param id="1" name="Height">ALTOM</param>
+                                </action>
+                                <action id="6" name="Add instances" sid="864542076121600" type="Grupo">
+                                    <param id="0" name="Instances">Utileria</param>
+                                    <param id="1" name="Group">&quot;j5a&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Entonces es pared</comment>
+                        <event-block sid="986292674236060">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="448015872529183" type="System" />
+                                <condition id="-14" name="Pick by unique ID" sid="834286605244227" type="Utileria">
+                                    <param id="0" name="Unique ID">uid</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-7" name="Set size" sid="932910557618728" type="Utileria">
+                                    <param id="0" name="Width">ANCHOM</param>
+                                    <param id="1" name="Height">ALTOM</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="775161356791272" type="Utileria">
+                                    <param id="0" name="Frame number">1</param>
+                                </action>
+                                <action id="-26" name="Move to layer" sid="138055200021149" type="Utileria">
+                                    <param id="0" name="Layer">&quot;Principal&quot;</param>
+                                </action>
+                                <action behavior="Solido" id="0" name="Set enabled" sid="544019319141509" type="Utileria">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                                <action behavior="Sombra" id="0" name="Set enabled" sid="929468847961828" type="Utileria">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                                <action id="11" name="Set collisions enabled" sid="708506633004682" type="Utileria">
+                                    <param id="0" name="Collisions">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="453643487257500">
+                            <conditions>
+                                <condition id="1" inverted="1" name="Has next" sid="240542301076307" type="Bucle" />
+                            </conditions>
+                            <actions>
+                                <action id="30" name="Pop random instance" sid="145438457313539" type="Grupo">
+                                    <param id="0" name="Group">&quot;j5a&quot;</param>
+                                    <param id="1" name="Object">Utileria</param>
+                                    <param id="2" name="Operation">1</param>
+                                </action>
+                                <action id="31" name="Create chess above tile by UID" sid="659858844566008" type="Tablero">
+                                    <param id="0" name="Chess">Jugador</param>
+                                    <param id="1" name="Tile UID">Utileria.UID</param>
+                                    <param id="2" name="Logic Z">1</param>
+                                    <param id="3" name="Layer">&quot;Principal&quot;</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="574268528338960">
+                                    <conditions>
+                                        <condition id="-12" name="Repeat" sid="256811803317222" type="System">
+                                            <param id="0" name="Count">Diccionario.Get(&quot;n&quot;)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="30" name="Pop random instance" sid="645356443150215" type="Grupo">
+                                            <param id="0" name="Group">&quot;j5a&quot;</param>
+                                            <param id="1" name="Object">Utileria</param>
+                                            <param id="2" name="Operation">1</param>
+                                        </action>
+                                        <action id="-3" name="Create object" sid="185109366798994" type="System">
+                                            <param id="0" name="Object to create">Enemigo</param>
+                                            <param id="1" name="Layer">&quot;Fondo&quot;</param>
+                                            <param id="2" name="X">0</param>
+                                            <param id="3" name="Y">0</param>
+                                        </action>
+                                        <action id="31" name="Create chess above tile by UID" sid="329531179335359" type="Tablero">
+                                            <param id="0" name="Chess">Enemigo</param>
+                                            <param id="1" name="Tile UID">Utileria.UID</param>
+                                            <param id="2" name="Logic Z">1</param>
+                                            <param id="3" name="Layer">&quot;Fondo&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="726766372338376">
+                                    <conditions />
+                                    <actions>
+                                        <action id="2" name="Stop" sid="454277324233681" type="Hilo" />
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="948907525957145">
+                    <conditions>
+                        <condition id="0" name="On function" sid="756667950637705" type="Funcion">
+                            <param id="0" name="Name">&quot;comenzoJuego&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="519994537504516">
+                            <conditions />
+                            <actions>
+                                <action id="-41" name="Wait for signal" sid="846259911003690" type="System">
+                                    <param id="0" name="Tag">&quot;pCargado&quot;</param>
+                                </action>
+                                <action behavior="4Direccion" id="8" name="Set enabled" sid="358992846766876" type="Jugador">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                                <action behavior="Tiempo" id="0" name="Start timer" sid="791230315609406" type="Jugador">
+                                    <param id="0" name="Duration">1.0</param>
+                                    <param id="1" name="Type">1</param>
+                                    <param id="2" name="Tag">&quot;apagar&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Cuando el temporizador termina, las luces se apagan, solo queda el del jugador</comment>
+                <event-block sid="166440209218380">
+                    <conditions>
+                        <condition behavior="Tiempo" id="0" name="On timer" sid="607712385238465" type="Jugador">
+                            <param id="0" name="Tag">&quot;apagar&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <variable constant="0" name="i" sid="446439238277128" static="0" type="number">0</variable>
+                        <event-block sid="518817973628213">
+                            <conditions />
+                            <actions>
+                                <action id="-9" name="Set value" sid="314407259351061" type="System">
+                                    <param id="0" name="Variable">i</param>
+                                    <param id="1" name="Value">Jugador.Hash.At(&quot;i&quot;)+1</param>
+                                </action>
+                                <action behavior="Hash" id="1" name="Set value" sid="155329155609217" type="Jugador">
+                                    <param id="0" name="Key string">&quot;i&quot;</param>
+                                    <param id="1" name="Value">i</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="453521251975553">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="157219025523510" type="Texto">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="782700227482620">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="258087663990349" type="System">
+                                            <param id="0" name="Variable">i</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Value">SEGUNDOS</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set text" sid="375890456558392" type="Texto">
+                                            <param id="0" name="Text">&quot;Fuera luces en: &quot; &amp; (SEGUNDOS-i) &amp; &quot;s&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="684843023592283">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="889552577081362" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="918427952492317" type="System">
+                                            <param id="0" name="Object to create">Luz</param>
+                                            <param id="1" name="Layer">&quot;Fondo&quot;</param>
+                                            <param id="2" name="X">0</param>
+                                            <param id="3" name="Y">0</param>
+                                        </action>
+                                        <action id="-4" name="Set position to another object" sid="175782308151568" type="Luz">
+                                            <param id="0" name="Object">Jugador</param>
+                                            <param id="1" name="Image point (optional)">0</param>
+                                        </action>
+                                        <action id="0" name="Set text" sid="229850820400071" type="Texto">
+                                            <param id="0" name="Text">&quot;&quot;</param>
+                                        </action>
+                                        <action behavior="Tiempo" id="1" name="Stop timer" sid="733163611558710" type="Jugador">
+                                            <param id="0" name="Tag">&quot;apagar&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="Creación, definición de propiedades y comportamientos de los objetos" sid="873137928000217" title="jugabilidad 5">
+            <sub-events>
+                <comment>Cuando el temporizador termina, el enemigo es destruido</comment>
+                <event-block sid="797053974547179">
+                    <conditions>
+                        <condition behavior="Tiempo" id="0" name="On timer" sid="358716207823628" type="Enemigo">
+                            <param id="0" name="Tag">&quot;destruir&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="816833356857160" type="Enemigo" />
+                    </actions>
+                </event-block>
+                <comment>Evento que se ejecuta cuando el personaje colisiona con un enemigo</comment>
+                <event-block sid="270816871268573">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="743476834660829" type="Jugador">
+                            <param id="0" name="Object">Enemigo</param>
+                        </condition>
+                        <condition behavior="Hash" id="2" inverted="1" name="Key exists" sid="363362359500041" type="Enemigo">
+                            <param id="0" name="Key string">&quot;destruido&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Add key" sid="452144913784280" type="Diccionario">
+                            <param id="0" name="Key">&quot;i&quot;</param>
+                            <param id="1" name="Value">Diccionario.Get(&quot;i&quot;)+Enemigo.PickedCount</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="656144693666351">
+                            <conditions />
+                            <actions>
+                                <action behavior="Tarea" id="4" name="Set tweened property" sid="674579061946962" type="Enemigo">
+                                    <param id="0" name="Tweened property">1</param>
+                                </action>
+                                <action behavior="Tarea" id="1" name="Set duration" sid="884147796374642" type="Enemigo">
+                                    <param id="0" name="Duration">random(0.1,0.2)</param>
+                                </action>
+                                <action behavior="Tarea" id="5" name="Set easing" sid="826424159473384" type="Enemigo">
+                                    <param id="0" name="Function">0</param>
+                                </action>
+                                <action behavior="Tarea" id="3" name="Set target" sid="623269868943426" type="Enemigo">
+                                    <param id="0" name="Target is">4</param>
+                                    <param id="1" name="Relativity">1</param>
+                                    <param id="2" name="Value">-Enemigo.Width</param>
+                                </action>
+                                <action behavior="Tarea" id="3" name="Set target" sid="712058350802892" type="Enemigo">
+                                    <param id="0" name="Target is">5</param>
+                                    <param id="1" name="Relativity">1</param>
+                                    <param id="2" name="Value">0</param>
+                                </action>
+                                <action behavior="Tarea" id="6" name="Set enforce" sid="673894491752727" type="Enemigo">
+                                    <param id="0" name="Enforce mode">1</param>
+                                </action>
+                                <action behavior="Tarea" id="10" name="Start" sid="816604819292829" type="Enemigo">
+                                    <param id="0" name="Start Mode">2</param>
+                                    <param id="1" name="Force use current">0</param>
+                                </action>
+                                <action behavior="Hash" id="1" name="Set value" sid="364660625125318" type="Enemigo">
+                                    <param id="0" name="Key string">&quot;destruido&quot;</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action behavior="Tiempo" id="0" name="Start timer" sid="769014170262095" type="Enemigo">
+                                    <param id="0" name="Duration">1.0</param>
+                                    <param id="1" name="Type">0</param>
+                                    <param id="2" name="Tag">&quot;destruir&quot;</param>
+                                </action>
+                                <action id="-26" name="Move to layer" sid="226595552418457" type="Enemigo">
+                                    <param id="0" name="Layer">&quot;Principal&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Si es el último en ser encontrado, entonces ha ganado</comment>
+                        <event-block sid="253776892285386">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="520836172658065" type="System">
+                                    <param id="0" name="First value">Diccionario.Get(&quot;i&quot;)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">Diccionario.Get(&quot;n&quot;)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="725562535084124" type="Funcion">
+                                    <param id="0" name="Name">&quot;victoriaJUEGO&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Actualizar texto</comment>
+                        <event-block sid="943258185490190">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="383946768642133" type="Texto">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="760702452960612" type="Texto">
+                                    <param id="0" name="Text">Diccionario.Get(&quot;i&quot;) &amp; &quot;/&quot; &amp; Diccionario.Get(&quot;n&quot;) </param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="Condiciones de derrota y controles de tiempo junto a los controles (si los hay) del jugador" sid="573831470340339" title="control 5">
+            <sub-events>
+                <variable constant="1" name="frameV" sid="984665546424394" static="0" type="number">10</variable>
+                <comment>Si el jugador se está moviendo</comment>
+                <event-block sid="235054226994517">
+                    <conditions>
+                        <condition behavior="4Direccion" id="0" name="Is moving" sid="660905150075439" type="Jugador" />
+                    </conditions>
+                    <actions>
+                        <action id="6" name="Set speed" sid="491448892798368" type="Jugador">
+                            <param id="0" name="Speed">FRAMEV</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="407588247165740" type="Luz">
+                            <param id="0" name="Object">Jugador</param>
+                            <param id="1" name="Image point (optional)">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="913003719466188">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="157711582087879" type="Teclado">
+                                    <param id="0" name="Key">38 (Up arrow)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="7" name="Set mirrored" sid="741941372269943" type="Jugador">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="956046900814041" type="Jugador">
+                                    <param id="0" name="Animation">&quot;j5b&quot;</param>
+                                    <param id="1" name="From">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="813157931556010">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="824657839158753" type="System" />
+                                <condition id="2" name="Key is down" sid="296565527209645" type="Teclado">
+                                    <param id="0" name="Key">39 (Right arrow)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="7" name="Set mirrored" sid="575901666302552" type="Jugador">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="187704271640503" type="Jugador">
+                                    <param id="0" name="Animation">&quot;j5c&quot;</param>
+                                    <param id="1" name="From">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="412099102613119">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="275282051258148" type="System" />
+                                <condition id="2" name="Key is down" sid="860976861956734" type="Teclado">
+                                    <param id="0" name="Key">40 (Down arrow)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="7" name="Set mirrored" sid="753408935583433" type="Jugador">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="129597280017414" type="Jugador">
+                                    <param id="0" name="Animation">&quot;j5a&quot;</param>
+                                    <param id="1" name="From">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="480933076562711">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="472574384399657" type="System" />
+                                <condition id="2" name="Key is down" sid="299054725998273" type="Teclado">
+                                    <param id="0" name="Key">37 (Left arrow)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="7" name="Set mirrored" sid="804257207744825" type="Jugador">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="976942949053533" type="Jugador">
+                                    <param id="0" name="Animation">&quot;j5c&quot;</param>
+                                    <param id="1" name="From">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Si el jugador no se está moviendo</comment>
+                <event-block sid="194811664358993">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="231529820587324" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="978811611207764" type="Jugador">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                        <action id="6" name="Set speed" sid="555864252654891" type="Jugador">
+                            <param id="0" name="Speed">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Cada un segundo mientras no haya perdido, se descontará 1 a la variable tiempo</comment>
+                <event-block sid="971178362406973">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="957262560359504" type="System">
+                            <param id="0" name="Interval (seconds)">1.0+Funcion.Call(&quot;calculoTEMPO&quot;)</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="503620531766382" type="System">
+                            <param id="0" name="Variable">gDerrota</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="409265938612720" type="System">
+                            <param id="0" name="Variable">gTiempo</param>
+                            <param id="1" name="Value">-1</param>
+                        </action>
+                        <action id="0" name="Call function" sid="554282744954751" type="Funcion">
+                            <param id="0" name="Name">&quot;tiempoGUI&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <comment>Si tiempo se acabo</comment>
+                        <event-block sid="487769392941874">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="598524315659693" type="System">
+                                    <param id="0" name="Variable">gTiempo</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="814426633313551" type="System">
+                                    <param id="0" name="Variable">gDerrota</param>
+                                    <param id="1" name="Value">Diccionario.Get(&quot;i&quot;)&lt;Diccionario.Get(&quot;n&quot;)?1:0</param>
+                                </action>
+                                <action id="0" name="Call function" sid="839439440164355" type="Funcion">
+                                    <param id="0" name="Name">&quot;tiempoACABADO&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="Cierre del escenario (Eventos que continuan ejecutandose a pesar que se ha acabado el tiempo o fue derrotado)" sid="990680734295641" title="fin 5" />
+    </events>
+</c2eventsheet>

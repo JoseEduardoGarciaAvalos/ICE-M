@@ -12,15 +12,15 @@
                     </conditions>
                     <actions>
                         <action id="-9" name="Set value" sid="144173680667092" type="System">
-                            <param id="0" name="Variable">juego</param>
+                            <param id="0" name="Variable">gJuego</param>
                             <param id="1" name="Value">1</param>
                         </action>
                         <action id="-9" name="Set value" sid="347544039006187" type="System">
-                            <param id="0" name="Variable">tiempo</param>
+                            <param id="0" name="Variable">gTiempo</param>
                             <param id="1" name="Value">floor(random(12,16))</param>
                         </action>
                         <action id="-9" name="Set value" sid="639729807851031" type="System">
-                            <param id="0" name="Variable">objetivo</param>
+                            <param id="0" name="Variable">gObjetivo</param>
                             <param id="1" name="Value">&quot;protege&quot;</param>
                         </action>
                         <action id="0" name="Call function" sid="653783806866105" type="Funcion">
@@ -256,16 +256,16 @@
                                     <param id="0" name="Name">&quot;posicionALEATORIA&quot;</param>
                                     <param id="1" name="Parameter {n}">Actores.UID{###}2</param>
                                 </action>
-                                <action behavior="Bala" id="5" name="Set enabled" sid="841445977472775" type="Actores">
+                                <action behavior="BalaCaucho" id="5" name="Set enabled" sid="841445977472775" type="Actores">
                                     <param id="0" name="State">1</param>
                                 </action>
-                                <action behavior="Bala" id="0" name="Set speed" sid="543008211563625" type="Actores">
+                                <action behavior="BalaCaucho" id="0" name="Set speed" sid="543008211563625" type="Actores">
                                     <param id="0" name="Speed">velocidad</param>
                                 </action>
-                                <action behavior="Bala" id="1" name="Set acceleration" sid="108435801583936" type="Actores">
+                                <action behavior="BalaCaucho" id="1" name="Set acceleration" sid="108435801583936" type="Actores">
                                     <param id="0" name="Acceleration">aceleracion</param>
                                 </action>
-                                <action behavior="Bala" id="3" name="Set angle of motion" sid="809241053959999" type="Actores">
+                                <action behavior="BalaCaucho" id="3" name="Set angle of motion" sid="809241053959999" type="Actores">
                                     <param id="0" name="Angle">0</param>
                                 </action>
                                 <action behavior="Desaparecer" id="4" name="Set fade-out time" sid="691456109639911" type="Actores">
@@ -300,7 +300,7 @@
                                 <action behavior="Solido" id="0" name="Set enabled" sid="719262015431456" type="Jugador">
                                     <param id="0" name="State">1</param>
                                 </action>
-                                <action behavior="Direccion" id="8" name="Set enabled" sid="398340633139060" type="Jugador">
+                                <action behavior="8Direccion" id="8" name="Set enabled" sid="398340633139060" type="Jugador">
                                     <param id="0" name="State">1</param>
                                 </action>
                             </actions>
@@ -333,7 +333,7 @@
                                 </action>
                                 <action behavior="Hash" id="1" name="Set value" sid="286176288065234" type="Actores">
                                     <param id="0" name="Key string">&quot;golpeado&quot;</param>
-                                    <param id="1" name="Value">0</param>
+                                    <param id="1" name="Value">1</param>
                                 </action>
                             </actions>
                             <sub-events>
@@ -387,7 +387,7 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action behavior="Hash" id="6" name="Remove key" sid="199786133456721" type="Actores">
+                                <action behavior="Hash" id="6" name="Remove key" sid="199786133456721" type="Aliado">
                                     <param id="0" name="Key string">&quot;golpeado&quot;</param>
                                 </action>
                             </actions>
@@ -399,7 +399,7 @@
                             </conditions>
                             <actions>
                                 <action id="-9" name="Set value" sid="521421077898745" type="System">
-                                    <param id="0" name="Variable">derrota</param>
+                                    <param id="0" name="Variable">gDerrota</param>
                                     <param id="1" name="Value">1</param>
                                 </action>
                             </actions>
@@ -430,7 +430,7 @@
                     </conditions>
                     <actions>
                         <action id="-9" name="Set value" sid="984462310539371" type="System">
-                            <param id="0" name="Variable">derrota</param>
+                            <param id="0" name="Variable">gDerrota</param>
                             <param id="1" name="Value">1</param>
                         </action>
                     </actions>
@@ -439,21 +439,39 @@
                 <event-block sid="754734568890403">
                     <conditions>
                         <condition id="-1" name="Every tick" sid="293039124547354" type="System" />
-                        <condition id="-19" name="Pick all" sid="242826927094176" type="System">
-                            <param id="0" name="Object">Jugador</param>
-                        </condition>
                     </conditions>
                     <actions />
                     <sub-events>
-                        <variable comment="Limite izquierdo que puede ir el jugador" constant="0" name="x1" sid="227960746873460" static="0" type="number">60</variable>
-                        <variable comment="Limite derecho que puede ir el jugador" constant="0" name="x2" sid="860678485382049" static="0" type="number">720</variable>
-                        <event-block sid="854076943867056">
-                            <conditions />
+                        <event-block sid="854143636820999">
+                            <conditions>
+                                <condition id="-19" name="Pick all" sid="242826927094176" type="System">
+                                    <param id="0" name="Object">Jugador</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <variable comment="Limite izquierdo que puede ir el jugador" constant="0" name="x1" sid="227960746873460" static="0" type="number">60</variable>
+                                <variable comment="Limite derecho que puede ir el jugador" constant="0" name="x2" sid="860678485382049" static="0" type="number">720</variable>
+                                <event-block sid="854076943867056">
+                                    <conditions />
+                                    <actions>
+                                        <action id="0" name="Call function" sid="882940533628567" type="Funcion">
+                                            <param id="0" name="Name">&quot;posicionENCERRADA&quot;</param>
+                                            <param id="1" name="Parameter {n}">Jugador.UID{###}0{###}x1{###}x2{###}GUI{###}LayoutHeight</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="831920072213247">
+                            <conditions>
+                                <condition id="-4" name="Is outside layout" sid="847940924639007" type="Actores" />
+                                <condition behavior="Hash" id="2" name="Key exists" sid="105993304369496" type="Actores">
+                                    <param id="0" name="Key string">&quot;golpeado&quot;</param>
+                                </condition>
+                            </conditions>
                             <actions>
-                                <action id="0" name="Call function" sid="882940533628567" type="Funcion">
-                                    <param id="0" name="Name">&quot;posicionENCERRADA&quot;</param>
-                                    <param id="1" name="Parameter {n}">Jugador.UID{###}0{###}x1{###}x2{###}GUI{###}LayoutHeight</param>
-                                </action>
+                                <action id="-9" name="Destroy" sid="981434707167700" type="Actores" />
                             </actions>
                         </event-block>
                     </sub-events>
@@ -465,14 +483,14 @@
                             <param id="0" name="Interval (seconds)">1.0+Funcion.Call(&quot;calculoTEMPO&quot;)</param>
                         </condition>
                         <condition id="-14" name="Compare variable" sid="333962379700776" type="System">
-                            <param id="0" name="Variable">derrota</param>
+                            <param id="0" name="Variable">gDerrota</param>
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">0</param>
                         </condition>
                     </conditions>
                     <actions>
                         <action id="-10" name="Add to" sid="284275171932378" type="System">
-                            <param id="0" name="Variable">tiempo</param>
+                            <param id="0" name="Variable">gTiempo</param>
                             <param id="1" name="Value">-1</param>
                         </action>
                         <action id="0" name="Call function" sid="202948646710663" type="Funcion">
@@ -486,7 +504,7 @@
                         <event-block sid="275130003189618">
                             <conditions>
                                 <condition id="-14" name="Compare variable" sid="552905570016391" type="System">
-                                    <param id="0" name="Variable">tiempo</param>
+                                    <param id="0" name="Variable">gTiempo</param>
                                     <param id="1" name="Comparison">4</param>
                                     <param id="2" name="Value">0</param>
                                 </condition>
@@ -515,6 +533,22 @@
                             </actions>
                         </event-block>
                     </sub-events>
+                </event-block>
+                <comment>Cuando derrota es igual a 1</comment>
+                <event-block sid="774978037597197">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="181346640236181" type="System">
+                            <param id="0" name="Variable">gDerrota</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="491802044529266" type="Funcion">
+                            <param id="0" name="Name">&quot;derrotaJUEGO&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
                 </event-block>
             </sub-events>
         </event-group>

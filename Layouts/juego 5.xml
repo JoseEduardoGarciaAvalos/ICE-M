@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2layout>
+    <name>juego 5</name>
+    <sid>597064753181204</sid>
+    <event-sheet>juego 5</event-sheet>
+    <size>
+        <width>864</width>
+        <height>480</height>
+    </size>
+    <margins>
+        <horizontal>500</horizontal>
+        <vertical>500</vertical>
+    </margins>
+    <unbounded-scrolling>0</unbounded-scrolling>
+    <layers>
+        <layer name="Fondo" sid="418538506564275">
+            <initially-visible>1</initially-visible>
+            <background-color>255,255,255</background-color>
+            <transparent>0</transparent>
+            <parallax>
+                <x>1</x>
+                <y>1</y>
+            </parallax>
+            <zoom-rate>1</zoom-rate>
+            <opacity>1</opacity>
+            <force-own-texture>0</force-own-texture>
+            <global>0</global>
+            <use-render-cells>0</use-render-cells>
+            <blend-mode>0</blend-mode>
+            <effect-fallback>0</effect-fallback>
+            <instances />
+            <effects />
+        </layer>
+        <layer name="Principal" sid="663040962125379">
+            <initially-visible>1</initially-visible>
+            <background-color>255,255,255</background-color>
+            <transparent>1</transparent>
+            <parallax>
+                <x>1</x>
+                <y>1</y>
+            </parallax>
+            <zoom-rate>1</zoom-rate>
+            <opacity>1</opacity>
+            <force-own-texture>0</force-own-texture>
+            <global>0</global>
+            <use-render-cells>0</use-render-cells>
+            <blend-mode>0</blend-mode>
+            <effect-fallback>0</effect-fallback>
+            <instances />
+            <effects />
+        </layer>
+        <layer name="GUI" sid="746968412753345">
+            <initially-visible>1</initially-visible>
+            <background-color>255,255,255</background-color>
+            <transparent>1</transparent>
+            <parallax>
+                <x>1</x>
+                <y>1</y>
+            </parallax>
+            <zoom-rate>1</zoom-rate>
+            <opacity>1</opacity>
+            <force-own-texture>0</force-own-texture>
+            <global>0</global>
+            <use-render-cells>0</use-render-cells>
+            <blend-mode>0</blend-mode>
+            <effect-fallback>0</effect-fallback>
+            <instances>
+                <instance type="Texto" uid="62">
+                    <properties>
+                        <text>Text</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Arial,-16</font>
+                        <color>0,0,0</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                        <baseline>Top</baseline>
+                        <shift-down>13</shift-down>
+                        <force-render>No</force-render>
+                        <lock-canvas-size>No</lock-canvas-size>
+                        <background></background>
+                        <background-color></background-color>
+                    </properties>
+                    <instance-variables>
+                        <ID>1</ID>
+                    </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="Pin" />
+                        <behavior-instance type="Tiempo" />
+                        <behavior-instance type="Hash">
+                            <properties>
+                                <initial-data></initial-data>
+                                <indent>-1</indent>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>0</x>
+                        <y>448</y>
+                        <z>0</z>
+                        <width>96</width>
+                        <height>32</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Texto" uid="63">
+                    <properties>
+                        <text>Text</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Arial,-16</font>
+                        <color>0,0,0</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                        <baseline>Top</baseline>
+                        <shift-down>13</shift-down>
+                        <force-render>No</force-render>
+                        <lock-canvas-size>No</lock-canvas-size>
+                        <background></background>
+                        <background-color></background-color>
+                    </properties>
+                    <instance-variables>
+                        <ID>2</ID>
+                    </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="Pin" />
+                        <behavior-instance type="Tiempo" />
+                        <behavior-instance type="Hash">
+                            <properties>
+                                <initial-data></initial-data>
+                                <indent>-1</indent>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>640</x>
+                        <y>448</y>
+                        <z>0</z>
+                        <width>224</width>
+                        <height>32</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+            </instances>
+            <effects />
+        </layer>
+    </layers>
+    <nonworld-instances>
+        <instance type="Bucle" uid="56" />
+        <instance type="Tablero" uid="59">
+            <properties>
+                <width>64</width>
+                <height>64</height>
+                <wrap>No</wrap>
+                <infinity>No</infinity>
+            </properties>
+        </instance>
+        <instance type="Cuadricula" uid="60">
+            <properties>
+                <orientation>Orthogonal</orientation>
+                <x-at-00>0</x-at-00>
+                <y-at-00>0</y-at-00>
+                <width>32</width>
+                <height>32</height>
+                <directions>4 directions</directions>
+            </properties>
+        </instance>
+        <instance type="Laberinto" uid="61" />
+    </nonworld-instances>
+    <effects />
+</c2layout>

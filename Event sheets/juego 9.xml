@@ -1,0 +1,502 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>juego 9</name>
+    <events>
+        <include>principal</include>
+        <event-group description="Preparación del escenario" sid="107522189054050" title="inicio 9">
+            <sub-events>
+                <event-block sid="481034135272565">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="192572664467550" type="System" />
+                        <condition id="-7" name="Compare instance variable" sid="360588302797010" type="Utileria">
+                            <param id="0" name="Instance variable">ID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">10</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="259853885509867" type="Texto">
+                            <param id="0" name="Instance variable">ID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="375461487460407" type="System">
+                            <param id="0" name="Variable">gJuego</param>
+                            <param id="1" name="Value">9</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="795579164775699" type="System">
+                            <param id="0" name="Variable">gTiempo</param>
+                            <param id="1" name="Value">floor(random(8,12))</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="309835819815796" type="System">
+                            <param id="0" name="Variable">gObjetivo</param>
+                            <param id="1" name="Value">&quot;¿Si o no?&quot;</param>
+                        </action>
+                        <action id="-7" name="Scroll to position" sid="339494162160348" type="System">
+                            <param id="0" name="X">Utileria.X</param>
+                            <param id="1" name="Y">Utileria.Y</param>
+                        </action>
+                        <action id="0" name="Call function" sid="354515995531924" type="Funcion">
+                            <param id="0" name="Name">&quot;inicioGUI&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="-16" name="Wait" sid="229125506140620" type="System">
+                            <param id="0" name="Seconds">0</param>
+                        </action>
+                        <action id="2" name="Set font face" sid="968977647425216" type="Texto">
+                            <param id="0" name="Font face">&quot;Courier New&quot;</param>
+                            <param id="1" name="Style">1</param>
+                        </action>
+                        <action id="3" name="Set font size" sid="751876369030914" type="Texto">
+                            <param id="0" name="Size (pt)">16</param>
+                        </action>
+                        <action id="1" name="Request project file" sid="233547274261066" type="AJAX">
+                            <param id="0" name="Tag">&quot;j9a.csv&quot;</param>
+                            <param id="1" name="File">j9a.csv</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="416283171265528" type="System">
+                            <param id="0" name="Object to create">Secuencia</param>
+                            <param id="1" name="Layer">&quot;Principal&quot;</param>
+                            <param id="2" name="X">0</param>
+                            <param id="3" name="Y">0</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="610128692310182" type="Secuencia">
+                            <param id="0" name="Instance variable">ID</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="690329979270934" type="System">
+                            <param id="0" name="Seconds">0</param>
+                        </action>
+                        <action id="0" name="Call function" sid="742532718662826" type="Funcion">
+                            <param id="0" name="Name">&quot;comenzoJuego&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Disparador que se ejecuta cuando ha cargado el archivo</comment>
+                <event-block sid="379668867965928">
+                    <conditions>
+                        <condition id="0" name="On completed" sid="773959841559945" type="AJAX">
+                            <param id="0" name="Tag">&quot;j9a.csv&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Load table" sid="367274732395229" type="CSV">
+                            <param id="0" name="CSV string">AJAX.LastData</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <variable constant="0" name="pregunta" sid="357440351669620" static="0" type="number">0</variable>
+                        <event-block sid="526047497226297">
+                            <conditions />
+                            <actions>
+                                <action id="-9" name="Set value" sid="594351377509953" type="System">
+                                    <param id="0" name="Variable">pregunta</param>
+                                    <param id="1" name="Value">floor(random(CSV.RowCnt))</param>
+                                </action>
+                                <action id="0" name="Add key" sid="556303531873500" type="Diccionario">
+                                    <param id="0" name="Key">&quot;correcto&quot;</param>
+                                    <param id="1" name="Value">CSV.At(&quot;respuesta&quot;,pregunta)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="670598145867494">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="737737803434271" type="Texto">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="728173574115608" type="Texto">
+                                    <param id="0" name="Text">CSV.At(&quot;pregunta&quot;, pregunta)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="579545140314989">
+                    <conditions>
+                        <condition id="0" name="On function" sid="994363160546761" type="Funcion">
+                            <param id="0" name="Name">&quot;comenzoJuego&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-41" name="Wait for signal" sid="322284578829107" type="System">
+                            <param id="0" name="Tag">&quot;pCargado&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="Creación, definición de propiedades y comportamientos de los objetos " sid="235475672351746" title="jugabilidad 9">
+            <sub-events>
+                <variable comment="Espera entre la oscilacion del Si o no" constant="1" name="ESN" sid="450073928560266" static="0" type="number">0.2</variable>
+                <variable comment="Desfase de X y Y en Si y No (&lt;96)" constant="1" name="DSN" sid="945753334971981" static="0" type="number">32</variable>
+                <variable comment="Cantidad de veces que oscilara en Si o No" constant="1" name="CSN" sid="295515543019315" static="0" type="number">2</variable>
+                <event-block sid="233671258634856">
+                    <conditions>
+                        <condition id="0" name="On function" sid="232285239611886" type="Funcion">
+                            <param id="0" name="Name">&quot;compararDecision&quot;</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="276751690425836" type="Utileria">
+                            <param id="0" name="Instance variable">ID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">10</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="459831293124225" type="Secuencia">
+                            <param id="0" name="Instance variable">ID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <variable comment="Opcion del jugador" constant="0" name="opcionJ" sid="900081187390578" static="0" type="text"></variable>
+                        <variable comment="Opcion correcta" constant="0" name="opcionC" sid="407154576363753" static="0" type="text"></variable>
+                        <event-block any="1" sid="545461930439636">
+                            <conditions>
+                                <condition id="4" name="Is matching" sid="891395202800092" type="Secuencia">
+                                    <param id="0" name="Pattern">&quot;ud&quot;</param>
+                                </condition>
+                                <condition id="4" name="Is matching" sid="934269959316705" type="Secuencia">
+                                    <param id="0" name="Pattern">&quot;du&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="651640137679381" type="System">
+                                    <param id="0" name="Variable">opcionJ</param>
+                                    <param id="1" name="Value">&quot;si&quot;</param>
+                                </action>
+                                <action id="11" name="New function task" sid="419882643760952" type="Tarea">
+                                    <param id="0" name="Task">&quot;tarea1&quot;</param>
+                                    <param id="1" name="Function">&quot;moverSi&quot;</param>
+                                    <param id="2" name="Interval">ESN</param>
+                                    <param id="3" name="Repeat">1</param>
+                                </action>
+                                <action id="12" name="Set parameter" sid="392265704178371" type="Tarea">
+                                    <param id="0" name="Task">&quot;tarea1&quot;</param>
+                                    <param id="1" name="Parameter">&quot;y&quot;</param>
+                                    <param id="2" name="Start">Utileria.Y</param>
+                                    <param id="3" name="End">Utileria.Y-DSN</param>
+                                    <param id="4" name="Type">0</param>
+                                </action>
+                                <action id="11" name="New function task" sid="612548042298412" type="Tarea">
+                                    <param id="0" name="Task">&quot;tarea3&quot;</param>
+                                    <param id="1" name="Function">&quot;moverSi&quot;</param>
+                                    <param id="2" name="Interval">ESN</param>
+                                    <param id="3" name="Repeat">1</param>
+                                </action>
+                                <action id="12" name="Set parameter" sid="737759353426969" type="Tarea">
+                                    <param id="0" name="Task">&quot;tarea3&quot;</param>
+                                    <param id="1" name="Parameter">&quot;y&quot;</param>
+                                    <param id="2" name="Start">Utileria.Y</param>
+                                    <param id="3" name="End">Utileria.Y+DSN</param>
+                                    <param id="4" name="Type">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="798253633641824">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="505132964921926" type="System" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block any="1" sid="107446540785280">
+                                    <conditions>
+                                        <condition id="4" name="Is matching" sid="342217074204751" type="Secuencia">
+                                            <param id="0" name="Pattern">&quot;lr&quot;</param>
+                                        </condition>
+                                        <condition id="4" name="Is matching" sid="110447732488023" type="Secuencia">
+                                            <param id="0" name="Pattern">&quot;rl&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="997966922149270" type="System">
+                                            <param id="0" name="Variable">opcionJ</param>
+                                            <param id="1" name="Value">&quot;no&quot;</param>
+                                        </action>
+                                        <action id="11" name="New function task" sid="290693003158216" type="Tarea">
+                                            <param id="0" name="Task">&quot;tarea1&quot;</param>
+                                            <param id="1" name="Function">&quot;moverNo&quot;</param>
+                                            <param id="2" name="Interval">ESN</param>
+                                            <param id="3" name="Repeat">1</param>
+                                        </action>
+                                        <action id="12" name="Set parameter" sid="983708291074854" type="Tarea">
+                                            <param id="0" name="Task">&quot;tarea1&quot;</param>
+                                            <param id="1" name="Parameter">&quot;x&quot;</param>
+                                            <param id="2" name="Start">Utileria.X</param>
+                                            <param id="3" name="End">Utileria.X-DSN</param>
+                                            <param id="4" name="Type">0</param>
+                                        </action>
+                                        <action id="11" name="New function task" sid="318419983457688" type="Tarea">
+                                            <param id="0" name="Task">&quot;tarea3&quot;</param>
+                                            <param id="1" name="Function">&quot;moverNo&quot;</param>
+                                            <param id="2" name="Interval">ESN</param>
+                                            <param id="3" name="Repeat">1</param>
+                                        </action>
+                                        <action id="12" name="Set parameter" sid="264183973441237" type="Tarea">
+                                            <param id="0" name="Task">&quot;tarea3&quot;</param>
+                                            <param id="1" name="Parameter">&quot;x&quot;</param>
+                                            <param id="2" name="Start">Utileria.X</param>
+                                            <param id="3" name="End">Utileria.X+DSN</param>
+                                            <param id="4" name="Type">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="325489503588525">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="531737110140264" type="System">
+                                    <param id="0" name="Variable">opcionJ</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">&quot;&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="17" name="New inversed task" sid="406905050166688" type="Tarea">
+                                    <param id="0" name="Task">&quot;tarea2&quot;</param>
+                                    <param id="1" name="Inverse from">&quot;tarea1&quot;</param>
+                                </action>
+                                <action id="17" name="New inversed task" sid="856099540584476" type="Tarea">
+                                    <param id="0" name="Task">&quot;tarea4&quot;</param>
+                                    <param id="1" name="Inverse from">&quot;tarea3&quot;</param>
+                                </action>
+                                <action id="14" name="New sequence task" sid="657745884098953" type="Tarea">
+                                    <param id="0" name="Task">&quot;tareas&quot;</param>
+                                    <param id="1" name="Repeat">CSN</param>
+                                    <param id="2" name="Task {n}">&quot;tarea1&quot;{###}&quot;tarea2&quot;{###}&quot;tarea3&quot;{###}&quot;tarea4&quot;</param>
+                                </action>
+                                <action id="31" name="Start" sid="593298216623360" type="Tarea">
+                                    <param id="0" name="Task">&quot;tareas&quot;</param>
+                                    <param id="1" name="Destroy">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="693779067446334" type="System">
+                                    <param id="0" name="Variable">opcionC</param>
+                                    <param id="1" name="Value">Diccionario.Get(&quot;correcto&quot;)</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="655032753491287">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="245100965333877" type="System">
+                                            <param id="0" name="Variable">opcionJ</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">opcionC</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="5" name="Set frame" sid="488748660608897" type="Utileria">
+                                            <param id="0" name="Frame number">1</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="539993276607009" type="Funcion">
+                                            <param id="0" name="Name">&quot;victoriaJUEGO&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="143406127372015">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="982371725286206" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="5" name="Set frame" sid="489256302513747" type="Utileria">
+                                            <param id="0" name="Frame number">2</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="544621619698007" type="System">
+                                            <param id="0" name="Variable">gDerrota</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="103597765565066" type="Funcion">
+                                            <param id="0" name="Name">&quot;derrotaJUEGO&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="Condiciones de derrota y controles de tiempo junto a los controles (si los hay) del jugador" sid="884282906887268" title="control 9">
+            <sub-events>
+                <event-block sid="466756303494435">
+                    <conditions>
+                        <condition id="1" name="On any key pressed" sid="911933355572588" type="Teclado" />
+                        <condition id="-7" name="Compare instance variable" sid="862940708885840" type="Secuencia">
+                            <param id="0" name="Instance variable">ID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <variable constant="0" name="aux" sid="394390371683517" static="0" type="number">0</variable>
+                        <event-block sid="590233984439211">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="704524579983930" type="Teclado">
+                                    <param id="0" name="Key">38 (Up arrow)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Push symbol" sid="718349296718226" type="Secuencia">
+                                    <param id="0" name="Symbol">&quot;u&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="376979358957632" type="System">
+                                    <param id="0" name="Variable">aux</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="342652139621014">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="394972817299380" type="System" />
+                                <condition id="2" name="Key is down" sid="838725045757239" type="Teclado">
+                                    <param id="0" name="Key">39 (Right arrow)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Push symbol" sid="642587147881943" type="Secuencia">
+                                    <param id="0" name="Symbol">&quot;r&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="991054195205197" type="System">
+                                    <param id="0" name="Variable">aux</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="830928484021594">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="709094697268834" type="System" />
+                                <condition id="2" name="Key is down" sid="192006592712087" type="Teclado">
+                                    <param id="0" name="Key">40 (Down arrow)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Push symbol" sid="235994861800134" type="Secuencia">
+                                    <param id="0" name="Symbol">&quot;d&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="609544473012588" type="System">
+                                    <param id="0" name="Variable">aux</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="852549550837753">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="622315593756420" type="System" />
+                                <condition id="2" name="Key is down" sid="337992713315130" type="Teclado">
+                                    <param id="0" name="Key">37 (Left arrow)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Push symbol" sid="155818218632008" type="Secuencia">
+                                    <param id="0" name="Symbol">&quot;l&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="183420367998257" type="System">
+                                    <param id="0" name="Variable">aux</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="775112224644723">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="684966183275761" type="System">
+                                    <param id="0" name="Variable">aux</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="959726314503894" type="Funcion">
+                                    <param id="0" name="Name">&quot;compararDecision&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Cada un segundo mientras está jugando, se descontará 1 a la variable tiempo</comment>
+                <event-block sid="470901471797408">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="733547473470060" type="System">
+                            <param id="0" name="Interval (seconds)">1.0+Funcion.Call(&quot;calculoTEMPO&quot;)</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="820327304402258" type="System">
+                            <param id="0" name="Variable">gEstado</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="879144750678208" type="System">
+                            <param id="0" name="Variable">gTiempo</param>
+                            <param id="1" name="Value">-1</param>
+                        </action>
+                        <action id="0" name="Call function" sid="999543820947534" type="Funcion">
+                            <param id="0" name="Name">&quot;tiempoGUI&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <comment>Si el tiempo se acabo</comment>
+                        <event-block sid="110727795485104">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="584573202477147" type="System">
+                                    <param id="0" name="Variable">gTiempo</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="205825933864478" type="Utileria">
+                                    <param id="0" name="Frame number">2</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="525742815196044" type="System">
+                                    <param id="0" name="Variable">gDerrota</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="0" name="Call function" sid="741607711786424" type="Funcion">
+                                    <param id="0" name="Name">&quot;tiempoACABADO&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="Cierre del escenario (Eventos que continuan ejecutandose a pesar que se ha acabado el tiempo o fue derrotado)" sid="184999327837541" title="fin 9">
+            <sub-events>
+                <event-block sid="531853867242895">
+                    <conditions>
+                        <condition id="0" name="On function" sid="930560174482545" type="Tarea">
+                            <param id="0" name="Name">&quot;moverSi&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-6" name="Scroll to Y" sid="380120610325735" type="System">
+                            <param id="0" name="Y">Tarea.FnParam(&quot;y&quot;)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="478837782118768">
+                    <conditions>
+                        <condition id="0" name="On function" sid="113688859507277" type="Tarea">
+                            <param id="0" name="Name">&quot;moverNo&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-5" name="Scroll to X" sid="924584696968791" type="System">
+                            <param id="0" name="X">Tarea.FnParam(&quot;x&quot;)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

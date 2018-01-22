@@ -10,39 +10,66 @@
     <unique-id>3itautu63o1yd</unique-id>
     <saved-with-version>24400</saved-with-version>
     <used-plugins>
+        <plugin author="Scirra" id="AJAX" version="1">AJAX</plugin>
         <plugin author="Scirra" id="Arr" version="1">Array</plugin>
         <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
         <plugin author="Scirra" id="Button" version="1">Button</plugin>
         <plugin author="Scirra" id="Dictionary" version="1">Dictionary</plugin>
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
+        <plugin author="PlayLive" id="HTML_iFrame" version="1.419999957">HTML | iFrame</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
+        <plugin author="Scirra" id="Particles" version="1">Particles</plugin>
+        <plugin author="Rex.Rainbow" id="Rex_CSV" version="1">CSV</plugin>
         <plugin author="Rex.Rainbow" id="Rex_Comment" version="0.100000001">Comments</plugin>
         <plugin author="Rex.Rainbow" id="Rex_EventBalancer" version="0.100000001">Event balancer</plugin>
         <plugin author="Rex.Rainbow" id="Rex_Graph" version="0.100000001">Graph</plugin>
         <plugin author="Rex.Rainbow" id="Rex_Hash" version="0.5">JSON</plugin>
+        <plugin author="Rex.Rainbow" id="Rex_Layouter" version="0.100000001">Layouter</plugin>
+        <plugin author="Rex.Rainbow" id="Rex_LoopIterator" version="0.100000001">Loop iterator</plugin>
+        <plugin author="Rex.Rainbow" id="Rex_MazeGen" version="0.100000001">Maze gen</plugin>
+        <plugin author="Rex.Rainbow" id="Rex_PatternGen" version="0.100000001">Gashapon</plugin>
+        <plugin author="Rex.Rainbow" id="Rex_SLGBoard" version="0.100000001">Board</plugin>
+        <plugin author="Rex.Rainbow" id="Rex_SLGSquareTx" version="0.100000001">Square Tx</plugin>
+        <plugin author="Rex.Rainbow" id="Rex_SequenceMatcher" version="0.100000001">Sequence matcher</plugin>
         <plugin author="Rex.Rainbow" id="Rex_SysExt" version="0.109999999">SysExt</plugin>
+        <plugin author="Rex.Rainbow" id="Rex_TweenTasks" version="0.100000001">Tween tasks</plugin>
         <plugin author="Rex.Rainbow" id="Rex_gInstGroup" version="1">Inst Group</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
         <plugin author="Scirra" id="Tilemap" version="1">Tilemap</plugin>
         <plugin author="Scirra" id="UserMedia" version="1">User Media</plugin>
+        <plugin author="R0J0hound" id="c2canvas" version="2">Canvas</plugin>
         <plugin author="Rex.Rainbow" id="rex_TagText" version="0.100000001">Tag Text</plugin>
+        <plugin author="Scirra" id="shadowlight" version="1">Shadow Light</plugin>
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
+        <behavior author="Scirra" id="DragnDrop" version="1">Drag &amp; Drop</behavior>
         <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
         <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
         <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
         <behavior author="Scirra" id="Physics" version="1">Physics</behavior>
+        <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
+        <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
+        <behavior author="Rex.Rainbow" id="Rex_CameraFollower" version="1">Camera follower</behavior>
+        <behavior author="Rex.Rainbow" id="Rex_CanvasExt" version="1">Canvas Ext</behavior>
+        <behavior author="Rex.Rainbow" id="Rex_Canvas_PixelCollide" version="1">Pixel collide</behavior>
         <behavior author="Rex.Rainbow" id="Rex_Line" version="1">Line</behavior>
         <behavior author="Rex.Rainbow" id="Rex_MoveTo" version="1">MoveTo</behavior>
         <behavior author="Rex.Rainbow" id="Rex_Rotate" version="1">Rotate</behavior>
+        <behavior author="Rex.Rainbow" id="Rex_ShakeMod" version="0.100000001">Shake mod</behavior>
+        <behavior author="Rex.Rainbow" id="Rex_Spline" version="1">Spline</behavior>
+        <behavior author="Rex.Rainbow" id="Rex_bFunction2" version="1">Function2</behavior>
         <behavior author="Rex.Rainbow" id="Rex_bHash" version="1">JSON</behavior>
+        <behavior author="Rex.Rainbow" id="Rex_layouter_linear" version="1">Linear layout</behavior>
         <behavior author="Rex.Rainbow" id="Rex_pinOffsetXY" version="1">Pin offsetXY</behavior>
         <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
-        <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
+        <behavior author="Scirra" id="Timer" version="1">Timer</behavior>
+        <behavior author="Scirra" id="jumpthru" version="1">Jump-thru</behavior>
+        <behavior author="lunarray" id="lunarray_LiteTween" version="1.700000048">LiteTween</behavior>
+        <behavior author="Rex.Rainbow" id="rex_Anchor2" version="0.100000001">Anchor ratio</behavior>
         <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
         <behavior author="Scirra" id="shadowcaster" version="1">Shadow Caster</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
@@ -81,30 +108,87 @@
                     <animation framecount="1" loop="0" name="feliz" pingpong="0" repeatcount="1" repeatto="0" sid="916773995906572" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5">
                             <collision-poly>
-                                <point x="0.15" y="0.15" />
-                                <point x="0.5" y="0" />
-                                <point x="0.925" y="0.075" />
-                                <point x="1" y="0.5" />
-                                <point x="0.8875" y="0.8875" />
-                                <point x="0.5" y="0.975" />
-                                <point x="0.2" y="0.8" />
-                                <point x="0.0875" y="0.5" />
+                                <point x="0.22" y="0.22" />
+                                <point x="0.5" y="0.04" />
+                                <point x="0.84" y="0.16" />
+                                <point x="0.92" y="0.5" />
+                                <point x="0.81" y="0.81" />
+                                <point x="0.5" y="0.88" />
+                                <point x="0.26" y="0.74" />
+                                <point x="0.17" y="0.5" />
                             </collision-poly>
                         </frame>
                     </animation>
                     <animation framecount="1" loop="0" name="triste" pingpong="0" repeatcount="1" repeatto="0" sid="812938637880839" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5">
                             <collision-poly>
-                                <point x="0.141026" y="0.174419" />
-                                <point x="0.5" y="0" />
-                                <point x="0.935897" y="0.104651" />
-                                <point x="1" y="0.5" />
-                                <point x="0.897436" y="0.860465" />
-                                <point x="0.5" y="0.94186" />
-                                <point x="0.192308" y="0.77907" />
-                                <point x="0.0769231" y="0.5" />
+                                <point x="0.22" y="0.22" />
+                                <point x="0.5" y="0.04" />
+                                <point x="0.84" y="0.16" />
+                                <point x="0.92" y="0.5" />
+                                <point x="0.81" y="0.81" />
+                                <point x="0.5" y="0.88" />
+                                <point x="0.26" y="0.74" />
+                                <point x="0.17" y="0.5" />
                             </collision-poly>
                         </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="j6a" pingpong="0" repeatcount="1" repeatto="0" sid="201573878894222" speed="5">
+                        <frame duration="1" hotspotX="0.375" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="5" loop="0" name="j7a" pingpong="0" repeatcount="1" repeatto="0" sid="923703640316655" speed="0">
+                        <frame duration="1" hotspotX="0.503937" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.503937" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.503937" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.503937" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.503937" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="2" loop="0" name="j12a" pingpong="0" repeatcount="1" repeatto="0" sid="847347546805596" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="3" loop="1" name="j13a" pingpong="0" repeatcount="1" repeatto="0" sid="852999167376512" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="2" loop="1" name="j13b" pingpong="0" repeatcount="1" repeatto="0" sid="651150579013977" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="j15a" pingpong="0" repeatcount="1" repeatto="0" sid="682152905375416" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.50505" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="j15b" pingpong="0" repeatcount="1" repeatto="0" sid="104275358078528" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.50505" />
+                    </animation>
+                    <animation framecount="2" loop="0" name="j18a" pingpong="0" repeatcount="1" repeatto="0" sid="156083239781758" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="j20a" pingpong="0" repeatcount="1" repeatto="0" sid="499546916151971" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -138,6 +222,80 @@
                                 <point x="0.17" y="0.5" />
                             </collision-poly>
                         </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="nada" pingpong="0" repeatcount="1" repeatto="0" sid="490550282291335" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="j5a" pingpong="0" repeatcount="1" repeatto="0" sid="141939156998476" speed="5">
+                        <frame duration="1" hotspotX="0.471429" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="3" loop="0" name="j6a" pingpong="0" repeatcount="1" repeatto="0" sid="637050976014004" speed="0">
+                        <frame duration="1" hotspotX="0.514286" hotspotY="0.514286" />
+                        <frame duration="1" hotspotX="0.514286" hotspotY="0.514286" />
+                        <frame duration="1" hotspotX="0.514286" hotspotY="0.514286" />
+                    </animation>
+                    <animation framecount="2" loop="0" name="j10a" pingpong="0" repeatcount="1" repeatto="0" sid="182094401889252" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="5" loop="0" name="j12a" pingpong="0" repeatcount="1" repeatto="0" sid="547291847329182" speed="0">
+                        <frame duration="1" hotspotX="0.506667" hotspotY="0.506667" />
+                        <frame duration="1" hotspotX="0.506667" hotspotY="0.506667" />
+                        <frame duration="1" hotspotX="0.506667" hotspotY="0.506667" />
+                        <frame duration="1" hotspotX="0.506667" hotspotY="0.506667">
+                            <collision-poly>
+                                <point x="0" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="1" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.506667" hotspotY="0.506667">
+                            <collision-poly>
+                                <point x="0" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="1" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="2" loop="1" name="j15a" pingpong="0" repeatcount="1" repeatto="0" sid="523289349295672" speed="5">
+                        <frame duration="1" hotspotX="0.5125" hotspotY="0.494949">
+                            <image-point name="ojoI" x="0.275" y="0.50505" />
+                            <image-point name="ojoD" x="0.675" y="0.50505" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.494949">
+                            <image-point name="ojoI" x="0.2625" y="0.50505" />
+                            <image-point name="ojoD" x="0.6625" y="0.50505" />
+                        </frame>
+                    </animation>
+                    <animation framecount="2" loop="1" name="j15b" pingpong="0" repeatcount="1" repeatto="0" sid="514954484950790" speed="5">
+                        <frame duration="1" hotspotX="0.5125" hotspotY="0.494949">
+                            <image-point name="ojoI" x="0.275" y="0.50505" />
+                            <image-point name="ojoD" x="0.675" y="0.50505" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.494949">
+                            <image-point name="ojoI" x="0.2625" y="0.50505" />
+                            <image-point name="ojoD" x="0.6625" y="0.50505" />
+                        </frame>
+                    </animation>
+                    <animation framecount="2" loop="0" name="j15c" pingpong="0" repeatcount="1" repeatto="0" sid="257796253083318" speed="0">
+                        <frame duration="1" hotspotX="0.52" hotspotY="0.52" />
+                        <frame duration="1" hotspotX="0.52" hotspotY="0.52" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="j17a" pingpong="0" repeatcount="1" repeatto="0" sid="436935460296957" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="j19a" pingpong="0" repeatcount="1" repeatto="0" sid="977845715539797" speed="5">
+                        <frame duration="1" hotspotX="0.506667" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="6" loop="0" name="j20a" pingpong="0" repeatcount="1" repeatto="0" sid="246717070330062" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -176,22 +334,241 @@
                     <animation framecount="1" loop="0" name="j2a" pingpong="0" repeatcount="1" repeatto="0" sid="528009826428567" speed="0">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Trabajos\proyecto beta\Animations\helice\Default\000.png" />
                     </animation>
+                    <animation framecount="3" loop="1" name="j5a" pingpong="1" repeatcount="1" repeatto="0" sid="185516831301184" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="3" loop="1" name="j5b" pingpong="1" repeatcount="1" repeatto="0" sid="745812983208207" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="3" loop="1" name="j5c" pingpong="1" repeatcount="1" repeatto="0" sid="575047139528517" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="j6a" pingpong="0" repeatcount="1" repeatto="0" sid="244875200230639" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="2" loop="1" name="j6b" pingpong="0" repeatcount="1" repeatto="0" sid="531316896545445" speed="10">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="boca" x="0.375" y="0.55" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="boca" x="0.375" y="0.55" />
+                        </frame>
+                    </animation>
+                    <animation framecount="5" loop="0" name="j7a" pingpong="0" repeatcount="1" repeatto="0" sid="285421594743549" speed="0">
+                        <frame duration="1" hotspotX="0.503937" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.503937" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.503937" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.503937" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.503937" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="j11a" pingpong="0" repeatcount="1" repeatto="0" sid="767758980664565" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="j12a" pingpong="0" repeatcount="1" repeatto="0" sid="403836043165270" speed="0">
+                        <frame duration="1" hotspotX="0.666667" hotspotY="0.49375" />
+                    </animation>
+                    <animation framecount="4" loop="0" name="j12b" pingpong="0" repeatcount="1" repeatto="0" sid="325319757991309" speed="10">
+                        <frame duration="1" hotspotX="0.4" hotspotY="0.53125">
+                            <collision-poly>
+                                <point x="0" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="1" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.4" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="1" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.4" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="1" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.4" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.21875" y="0.731251" />
+                                <point x="1" y="0.73125" />
+                                <point x="1" y="1" />
+                                <point x="0.21875" y="1" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="4" loop="1" name="j12c" pingpong="0" repeatcount="1" repeatto="0" sid="124927382167891" speed="10">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="1" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="1" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="1" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="1" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="j13a" pingpong="0" repeatcount="1" repeatto="0" sid="945457031434193" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.509804" />
+                    </animation>
+                    <animation framecount="4" loop="0" name="j16a" pingpong="0" repeatcount="1" repeatto="0" sid="543530589660166" speed="0">
+                        <frame duration="1" hotspotX="0.05" hotspotY="0.875">
+                            <image-point name="nombre" x="0.241667" y="0.241667" />
+                            <collision-poly>
+                                <point x="0" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="1" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.05" hotspotY="0.875">
+                            <collision-poly>
+                                <point x="0" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="1" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.05" hotspotY="0.875">
+                            <collision-poly>
+                                <point x="0" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="1" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.05" hotspotY="0.875">
+                            <collision-poly>
+                                <point x="0" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="1" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="59" loop="1" name="j17a" pingpong="0" repeatcount="1" repeatto="0" sid="703765607024889" speed="25">
+                        <frame duration="1" hotspotX="0.504425" hotspotY="0.506024" />
+                        <frame duration="1" hotspotX="0.504425" hotspotY="0.506024" />
+                        <frame duration="1" hotspotX="0.504425" hotspotY="0.506024" />
+                        <frame duration="1" hotspotX="0.504425" hotspotY="0.506024" />
+                        <frame duration="1" hotspotX="0.504425" hotspotY="0.506024" />
+                        <frame duration="1" hotspotX="0.504425" hotspotY="0.506024" />
+                        <frame duration="1" hotspotX="0.504425" hotspotY="0.506024" />
+                        <frame duration="1" hotspotX="0.504425" hotspotY="0.506024" />
+                        <frame duration="1" hotspotX="0.504425" hotspotY="0.506024" />
+                        <frame duration="1" hotspotX="0.504425" hotspotY="0.506024" />
+                        <frame duration="1" hotspotX="0.504425" hotspotY="0.506024" />
+                        <frame duration="1" hotspotX="0.504425" hotspotY="0.506024" />
+                        <frame duration="1" hotspotX="0.504425" hotspotY="0.506024" />
+                        <frame duration="1" hotspotX="0.504425" hotspotY="0.506024" />
+                        <frame duration="1" hotspotX="0.504425" hotspotY="0.506024" />
+                        <frame duration="1" hotspotX="0.504425" hotspotY="0.506024" />
+                        <frame duration="1" hotspotX="0.504425" hotspotY="0.506024" />
+                        <frame duration="1" hotspotX="0.504425" hotspotY="0.506024" />
+                        <frame duration="1" hotspotX="0.504425" hotspotY="0.506024" />
+                        <frame duration="1" hotspotX="0.504425" hotspotY="0.506024" />
+                        <frame duration="1" hotspotX="0.504425" hotspotY="0.506024" />
+                        <frame duration="1" hotspotX="0.504425" hotspotY="0.506024" />
+                        <frame duration="1" hotspotX="0.504425" hotspotY="0.506024" />
+                        <frame duration="1" hotspotX="0.504425" hotspotY="0.506024" />
+                        <frame duration="1" hotspotX="0.504425" hotspotY="0.506024" />
+                        <frame duration="1" hotspotX="0.504425" hotspotY="0.506024" />
+                        <frame duration="1" hotspotX="0.504425" hotspotY="0.506024" />
+                        <frame duration="1" hotspotX="0.504425" hotspotY="0.506024" />
+                        <frame duration="1" hotspotX="0.504425" hotspotY="0.506024" />
+                        <frame duration="1" hotspotX="0.504425" hotspotY="0.506024" />
+                        <frame duration="1" hotspotX="0.504425" hotspotY="0.506024" />
+                        <frame duration="1" hotspotX="0.504425" hotspotY="0.506024" />
+                        <frame duration="1" hotspotX="0.504425" hotspotY="0.506024" />
+                        <frame duration="1" hotspotX="0.504425" hotspotY="0.506024" />
+                        <frame duration="1" hotspotX="0.504425" hotspotY="0.506024" />
+                        <frame duration="1" hotspotX="0.504425" hotspotY="0.506024" />
+                        <frame duration="1" hotspotX="0.504425" hotspotY="0.506024" />
+                        <frame duration="1" hotspotX="0.504425" hotspotY="0.506024" />
+                        <frame duration="1" hotspotX="0.504425" hotspotY="0.506024" />
+                        <frame duration="1" hotspotX="0.504425" hotspotY="0.506024" />
+                        <frame duration="1" hotspotX="0.504425" hotspotY="0.506024" />
+                        <frame duration="1" hotspotX="0.504425" hotspotY="0.506024" />
+                        <frame duration="1" hotspotX="0.504425" hotspotY="0.506024" />
+                        <frame duration="1" hotspotX="0.504425" hotspotY="0.506024" />
+                        <frame duration="1" hotspotX="0.504425" hotspotY="0.506024" />
+                        <frame duration="1" hotspotX="0.504425" hotspotY="0.506024" />
+                        <frame duration="1" hotspotX="0.504425" hotspotY="0.506024" />
+                        <frame duration="1" hotspotX="0.504425" hotspotY="0.506024" />
+                        <frame duration="1" hotspotX="0.504425" hotspotY="0.506024" />
+                        <frame duration="1" hotspotX="0.504425" hotspotY="0.506024" />
+                        <frame duration="1" hotspotX="0.504425" hotspotY="0.506024" />
+                        <frame duration="1" hotspotX="0.504425" hotspotY="0.506024" />
+                        <frame duration="1" hotspotX="0.504425" hotspotY="0.506024" />
+                        <frame duration="1" hotspotX="0.504425" hotspotY="0.506024" />
+                        <frame duration="1" hotspotX="0.504425" hotspotY="0.506024" />
+                        <frame duration="1" hotspotX="0.504425" hotspotY="0.506024" />
+                        <frame duration="1" hotspotX="0.504425" hotspotY="0.506024" />
+                        <frame duration="1" hotspotX="0.504425" hotspotY="0.506024" />
+                        <frame duration="1" hotspotX="0.504425" hotspotY="0.506024" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="j19a" pingpong="0" repeatcount="1" repeatto="0" sid="259105115587820" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
                 </animation-folder>
             </object-type>
             <object-type name="Utileria" sid="838236756980170">
                 <plugin id="Sprite" />
                 <instance-variables>
-                    <instance-variable name="nodo" sid="772291697385039" type="number" />
                     <instance-variable name="ID" sid="884563096945502" type="number" />
                 </instance-variables>
                 <animation-folder>
-                    <animation framecount="6" loop="0" name="zona" pingpong="0" repeatcount="1" repeatto="0" sid="454957061476857" speed="0">
+                    <animation framecount="1" loop="0" name="nada" pingpong="0" repeatcount="1" repeatto="0" sid="327359603633620" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="7" loop="0" name="zona" pingpong="0" repeatcount="1" repeatto="0" sid="454957061476857" speed="0">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                         <frame duration="1" hotspotX="0" hotspotY="0" />
                         <frame duration="1" hotspotX="0" hotspotY="0" />
                         <frame duration="1" hotspotX="0" hotspotY="0" />
                         <frame duration="1" hotspotX="0" hotspotY="0" />
                         <frame duration="1" hotspotX="1" hotspotY="0" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     </animation>
                     <animation framecount="6" loop="0" name="GUI" pingpong="0" repeatcount="1" repeatto="0" sid="695120713624408" speed="0">
                         <frame duration="1" hotspotX="0" hotspotY="0" />
@@ -203,6 +580,108 @@
                     </animation>
                     <animation framecount="1" loop="0" name="j4a" pingpong="0" repeatcount="1" repeatto="0" sid="429685665094099" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.516129" />
+                    </animation>
+                    <animation framecount="2" loop="0" name="j5a" pingpong="0" repeatcount="1" repeatto="0" sid="890880559485948" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="1" loop="1" name="j6a" pingpong="0" repeatcount="1" repeatto="0" sid="813051714764899" speed="6">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="5" loop="0" name="j7a" pingpong="0" repeatcount="1" repeatto="0" sid="181947022628961" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="3" loop="0" name="j9a" pingpong="0" repeatcount="1" repeatto="0" sid="886861241417524" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="6" loop="0" name="j11a" pingpong="0" repeatcount="1" repeatto="0" sid="995241923793758" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="j11b" pingpong="0" repeatcount="1" repeatto="0" sid="937908683391708" speed="5">
+                        <frame duration="1" hotspotX="0.496" hotspotY="0.36" />
+                    </animation>
+                    <animation framecount="2" loop="0" name="j13a" pingpong="0" repeatcount="1" repeatto="0" sid="558644905168342" speed="0">
+                        <frame duration="1" hotspotX="0.512195" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.512195" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="j14a" pingpong="0" repeatcount="1" repeatto="0" sid="914417490840870" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="3" loop="0" name="j14b" pingpong="0" repeatcount="1" repeatto="0" sid="730598658814629" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0" y="0" />
+                                <point x="0.428571" y="0" />
+                                <point x="0.428571" y="1" />
+                                <point x="0" y="1" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="2" loop="0" name="j16a" pingpong="0" repeatcount="1" repeatto="0" sid="372746516285136" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.035" y="0.09" />
+                                <point x="0.935" y="0.09" />
+                                <point x="0.935" y="0.945" />
+                                <point x="0.035" y="0.945" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.035" y="0.09" />
+                                <point x="0.935" y="0.09" />
+                                <point x="0.935" y="0.945" />
+                                <point x="0.035" y="0.945" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="4" loop="0" name="j17a" pingpong="0" repeatcount="1" repeatto="0" sid="865759809477194" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.500795" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="3" loop="0" name="j17b" pingpong="0" repeatcount="1" repeatto="0" sid="868970087700600" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.02" y="0.33" />
+                                <point x="0.976667" y="0.34" />
+                                <point x="0.976667" y="0.73" />
+                                <point x="0.02" y="0.72" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.0433333" y="0.46" />
+                                <point x="0.953333" y="0.46" />
+                                <point x="0.953333" y="0.73" />
+                                <point x="0.0466667" y="0.74" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.474419" hotspotY="0.484536">
+                            <collision-poly>
+                                <point x="0.0372093" y="0.371134" />
+                                <point x="0.944186" y="0.42268" />
+                                <point x="0.972093" y="0.762887" />
+                                <point x="0.0325581" y="0.71134" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="j18a" pingpong="0" repeatcount="1" repeatto="0" sid="720661124640174" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -224,6 +703,15 @@
                 <object-type global="1" name="Hash" sid="616431160304822">
                     <plugin id="Rex_Hash" />
                 </object-type>
+                <object-type global="1" name="CSV" sid="577505238581510">
+                    <plugin id="Rex_CSV" />
+                </object-type>
+                <object-type global="1" name="Secuencia" sid="543978446552942">
+                    <plugin id="Rex_SequenceMatcher" />
+                    <instance-variables>
+                        <instance-variable name="ID" sid="871745742867565" type="number" />
+                    </instance-variables>
+                </object-type>
             </object-folder>
             <object-folder name="Formulario">
                 <object-type name="Boton" sid="476881019058973">
@@ -234,9 +722,32 @@
                     <instance-variables>
                         <instance-variable name="ID" sid="521707601850299" type="number" />
                     </instance-variables>
+                    <behaviors>
+                        <behavior-type name="Pin" sid="629360680770056">
+                            <behavior id="Rex_pinOffsetXY" />
+                        </behavior-type>
+                        <behavior-type name="Tiempo" sid="685998942937788">
+                            <behavior id="Timer" />
+                        </behavior-type>
+                        <behavior-type name="Hash" sid="675913497278117">
+                            <behavior id="Rex_bHash" />
+                        </behavior-type>
+                    </behaviors>
                 </object-type>
             </object-folder>
-            <object-folder name="Diseños" />
+            <object-folder name="Diseños">
+                <object-type name="Lineal" sid="251201767277412">
+                    <plugin id="Rex_Layouter" />
+                    <behaviors>
+                        <behavior-type name="Orden" sid="649066201794890">
+                            <behavior id="Rex_layouter_linear" />
+                        </behavior-type>
+                    </behaviors>
+                </object-type>
+                <object-type name="IFrame" sid="420221490485632">
+                    <plugin id="HTML_iFrame" />
+                </object-type>
+            </object-folder>
             <object-folder name="Entrada">
                 <object-type name="Microfono" sid="828562010165913">
                     <plugin id="UserMedia" />
@@ -246,6 +757,23 @@
                 </object-type>
                 <object-type name="Mouse" sid="563749994824829">
                     <plugin id="Mouse" />
+                </object-type>
+            </object-folder>
+            <object-folder name="Generador">
+                <object-type global="1" name="Patron" sid="911762681626073">
+                    <plugin id="Rex_PatternGen" />
+                </object-type>
+                <object-type global="1" name="Tablero" sid="276939933034980">
+                    <plugin id="Rex_SLGBoard" />
+                </object-type>
+                <object-type global="1" name="Cuadricula" sid="223951668917581">
+                    <plugin id="Rex_SLGSquareTx" />
+                </object-type>
+                <object-type global="1" name="Laberinto" sid="648048737474112">
+                    <plugin id="Rex_MazeGen" />
+                </object-type>
+                <object-type name="Luz" sid="610833808927988">
+                    <plugin id="shadowlight" />
                 </object-type>
             </object-folder>
             <object-type name="Audio" sid="336451201142579">
@@ -266,8 +794,23 @@
             <object-type name="Sistema" sid="982388631128098">
                 <plugin id="Rex_SysExt" />
             </object-type>
+            <object-type global="1" name="Tarea" sid="580406986037658">
+                <plugin id="Rex_TweenTasks" />
+            </object-type>
+            <object-type name="AJAX" sid="148385643539101">
+                <plugin id="AJAX" />
+            </object-type>
+            <object-type global="1" name="Bucle" sid="590954696647151">
+                <plugin id="Rex_LoopIterator" />
+            </object-type>
         </object-folder>
         <object-folder name="Escenario">
+            <object-folder name="Particula">
+                <object-type name="pVapor" sid="732659516500793">
+                    <plugin id="Particles" />
+                    <texture original-source="C:\Users\Jose\Downloads\HUMO (6).png" />
+                </object-type>
+            </object-folder>
             <object-type name="Fondo" sid="576959565504055">
                 <plugin id="Tilemap" />
                 <texture />
@@ -278,6 +821,21 @@
                 <behaviors>
                     <behavior-type name="Linea" sid="687267959181289">
                         <behavior id="Rex_Line" />
+                    </behavior-type>
+                    <behavior-type name="Desaparecer" sid="322810128792523">
+                        <behavior id="Fade" />
+                    </behavior-type>
+                </behaviors>
+                <texture />
+            </object-type>
+            <object-type name="Canvas" sid="303594472929294">
+                <plugin id="c2canvas" />
+                <behaviors>
+                    <behavior-type name="CanvasExtra" sid="194418340030918">
+                        <behavior id="Rex_CanvasExt" />
+                    </behavior-type>
+                    <behavior-type name="Ancla" sid="806324930567673">
+                        <behavior id="rex_Anchor2" />
                     </behavior-type>
                 </behaviors>
                 <texture />
@@ -299,7 +857,10 @@
                 <member>Utileria</member>
             </members>
             <behaviors>
-                <behavior-type name="Bala" sid="706762573303993">
+                <behavior-type name="BalaCaucho" sid="706762573303993">
+                    <behavior id="Bullet" />
+                </behavior-type>
+                <behavior-type name="Bala" sid="370789803058913">
                     <behavior id="Bullet" />
                 </behavior-type>
                 <behavior-type name="Sombra" sid="331073955625979">
@@ -311,14 +872,17 @@
                 <behavior-type name="Solido" sid="905523567944736">
                     <behavior id="solid" />
                 </behavior-type>
-                <behavior-type name="Destructor" sid="602626531210081">
-                    <behavior id="destroy" />
-                </behavior-type>
                 <behavior-type name="Linea" sid="758502340514162">
                     <behavior id="Rex_Line" />
                 </behavior-type>
+                <behavior-type name="Tiempo" sid="141618520069739">
+                    <behavior id="Timer" />
+                </behavior-type>
                 <behavior-type name="Pin" sid="750329253232862">
                     <behavior id="Rex_pinOffsetXY" />
+                </behavior-type>
+                <behavior-type name="Pin2" sid="376349256077261">
+                    <behavior id="Pin" />
                 </behavior-type>
                 <behavior-type name="Parpadear" sid="493884953451060">
                     <behavior id="Flash" />
@@ -329,7 +893,10 @@
                 <behavior-type name="Desaparecer" sid="626026123194517">
                     <behavior id="Fade" />
                 </behavior-type>
-                <behavior-type name="Direccion" sid="626716055069025">
+                <behavior-type name="8Direccion" sid="626716055069025">
+                    <behavior id="EightDir" />
+                </behavior-type>
+                <behavior-type name="4Direccion" sid="175889652948615">
                     <behavior id="EightDir" />
                 </behavior-type>
                 <behavior-type name="Desplazamiento" sid="522289568871201">
@@ -338,27 +905,115 @@
                 <behavior-type name="MoverA" sid="165219103792733">
                     <behavior id="Rex_MoveTo" />
                 </behavior-type>
+                <behavior-type name="Ruta" sid="906361575632502">
+                    <behavior id="Rex_Spline" />
+                </behavior-type>
                 <behavior-type name="Fisica" sid="154573323203535">
                     <behavior id="Physics" />
                 </behavior-type>
                 <behavior-type name="Hash" sid="212018227446786">
                     <behavior id="Rex_bHash" />
                 </behavior-type>
+                <behavior-type name="PixelColision" sid="732026736768552">
+                    <behavior id="Rex_Canvas_PixelCollide" />
+                </behavior-type>
+                <behavior-type name="Ancla" sid="359438173592023">
+                    <behavior id="rex_Anchor2" />
+                </behavior-type>
+                <behavior-type name="Arrastrar" sid="305146007968660">
+                    <behavior id="DragnDrop" />
+                </behavior-type>
+                <behavior-type name="Tarea" sid="477876081765057">
+                    <behavior id="lunarray_LiteTween" />
+                </behavior-type>
+                <behavior-type name="Temblar" sid="943793772460877">
+                    <behavior id="Rex_ShakeMod" />
+                </behavior-type>
+                <behavior-type name="Plataforma" sid="519428443914047">
+                    <behavior id="Platform" />
+                </behavior-type>
+                <behavior-type name="Salto" sid="877169201450940">
+                    <behavior id="jumpthru" />
+                </behavior-type>
+                <behavior-type name="Funcion" sid="308860734969035">
+                    <behavior id="Rex_bFunction2" />
+                </behavior-type>
+                <behavior-type name="Camara" sid="765976642525628">
+                    <behavior id="Rex_CameraFollower" />
+                </behavior-type>
             </behaviors>
+        </family>
+        <family name="Particulas" plugin-id="Particles" sid="651427221306221">
+            <members>
+                <member>pVapor</member>
+            </members>
+            <instance-variables>
+                <instance-variable name="ID" sid="201940763615824" type="number" />
+            </instance-variables>
         </family>
     </families>
     <layout-folder>
-        <layout>juego 1.xml</layout>
-        <layout>juego 2.xml</layout>
-        <layout>juego 3.xml</layout>
-        <layout>juego 4.xml</layout>
-        <layout>menu.xml</layout>
+        <layout-folder name="principal">
+            <layout>menu.xml</layout>
+        </layout-folder>
+        <layout-folder name="arrastrar-mouse">
+            <layout>juego 3.xml</layout>
+            <layout>juego 7.xml</layout>
+            <layout>juego 11.xml</layout>
+            <layout>juego 15.xml</layout>
+            <layout>juego 19.xml</layout>
+        </layout-folder>
+        <layout-folder name="clic-mouse">
+            <layout>juego 4.xml</layout>
+            <layout>juego 8.xml</layout>
+            <layout>juego 12.xml</layout>
+            <layout>juego 16.xml</layout>
+            <layout>juego 20.xml</layout>
+        </layout-folder>
+        <layout-folder name="teclado">
+            <layout>juego 1.xml</layout>
+            <layout>juego 5.xml</layout>
+            <layout>juego 9.xml</layout>
+            <layout>juego 13.xml</layout>
+            <layout>juego 17.xml</layout>
+        </layout-folder>
+        <layout-folder name="microfono">
+            <layout>juego 2.xml</layout>
+            <layout>juego 6.xml</layout>
+            <layout>juego 10.xml</layout>
+            <layout>juego 14.xml</layout>
+            <layout>juego 18.xml</layout>
+        </layout-folder>
     </layout-folder>
     <event-folder>
-        <event-sheet>juego 1.xml</event-sheet>
-        <event-sheet>juego 2.xml</event-sheet>
-        <event-sheet>juego 3.xml</event-sheet>
-        <event-sheet>juego 4.xml</event-sheet>
+        <event-folder name="clic-mouse">
+            <event-sheet>juego 4.xml</event-sheet>
+            <event-sheet>juego 8.xml</event-sheet>
+            <event-sheet>juego 12.xml</event-sheet>
+            <event-sheet>juego 16.xml</event-sheet>
+            <event-sheet>juego 20.xml</event-sheet>
+        </event-folder>
+        <event-folder name="arrastrar-mouse">
+            <event-sheet>juego 3.xml</event-sheet>
+            <event-sheet>juego 19.xml</event-sheet>
+            <event-sheet>juego 15.xml</event-sheet>
+            <event-sheet>juego 7.xml</event-sheet>
+            <event-sheet>juego 11.xml</event-sheet>
+        </event-folder>
+        <event-folder name="teclado">
+            <event-sheet>juego 1.xml</event-sheet>
+            <event-sheet>juego 17.xml</event-sheet>
+            <event-sheet>juego 13.xml</event-sheet>
+            <event-sheet>juego 5.xml</event-sheet>
+            <event-sheet>juego 9.xml</event-sheet>
+        </event-folder>
+        <event-folder name="microfono">
+            <event-sheet>juego 18.xml</event-sheet>
+            <event-sheet>juego 2.xml</event-sheet>
+            <event-sheet>juego 14.xml</event-sheet>
+            <event-sheet>juego 6.xml</event-sheet>
+            <event-sheet>juego 10.xml</event-sheet>
+        </event-folder>
         <event-sheet>menu.xml</event-sheet>
         <event-sheet>principal.xml</event-sheet>
     </event-folder>
@@ -383,6 +1038,7 @@
         <global-instance type="Navegador" uid="46" />
         <global-instance type="Comentario" uid="0" />
         <global-instance type="Sistema" uid="8" />
+        <global-instance type="AJAX" uid="44" />
     </global-instances>
     <sounds-folder>
         <file name="A2-cuervo 1.m4a" />
@@ -411,5 +1067,8 @@
         </file-folder>
         <file-folder name="juego 4" />
         <file name="j4a.png" />
+        <file name="j16a.csv" />
+        <file name="j9a.csv" />
+        <file name="preguntas.csv" />
     </files-folder>
 </c2project>

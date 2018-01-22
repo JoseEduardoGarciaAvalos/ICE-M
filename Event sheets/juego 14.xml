@@ -1,0 +1,471 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>juego 14</name>
+    <events>
+        <include>principal</include>
+        <event-group description="Preparación del escenario" sid="671857015755804" title="inicio 14">
+            <sub-events>
+                <comment>VALORES DEL TERMOMETRO</comment>
+                <variable comment="Desfase en la coordenada Y para la region meta" constant="0" name="DY" sid="219730084538843" static="0" type="number">5</variable>
+                <variable comment="Desfase inferior en la altura para la region meta" constant="0" name="DAI" sid="812260895988776" static="0" type="number">-15</variable>
+                <variable comment="Desfase superior en la altura para la region meta" constant="0" name="DAS" sid="809159916685739" static="0" type="number">5</variable>
+                <comment>VALORES DEL CLIMA</comment>
+                <variable comment="Proporción del termometro para que no haya calor en la olla" constant="0" name="PO" sid="654307809710976" static="0" type="number">0.75</variable>
+                <variable comment="Proporción del termometro para que no haya humo" constant="0" name="PH" sid="970910339145919" static="0" type="number">0.7</variable>
+                <event-block sid="305236011832682">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="505629984933929" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="817275826747852" type="System">
+                            <param id="0" name="Variable">gJuego</param>
+                            <param id="1" name="Value">14</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="167376031078791" type="System">
+                            <param id="0" name="Variable">gTiempo</param>
+                            <param id="1" name="Value">floor(random(8,12))</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="135733594619283" type="System">
+                            <param id="0" name="Variable">gObjetivo</param>
+                            <param id="1" name="Value">&quot;Ni tan caliente ni frio&quot;</param>
+                        </action>
+                        <action id="0" name="Call function" sid="150314808347304" type="Funcion">
+                            <param id="0" name="Name">&quot;inicioGUI&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="-16" name="Wait" sid="937553524705221" type="System">
+                            <param id="0" name="Seconds">0</param>
+                        </action>
+                        <action id="10" name="Get media sources" sid="244843484791437" type="Microfono" />
+                        <action id="20" name="Add analyser effect" sid="206071062941660" type="Audio">
+                            <param id="0" name="Tag">&quot;mic&quot;</param>
+                            <param id="1" name="FFT size">32</param>
+                            <param id="2" name="Smoothing">0</param>
+                        </action>
+                        <action id="3" name="Request microphone" sid="277584791370670" type="Microfono">
+                            <param id="0" name="Tag">&quot;mic&quot;</param>
+                            <param id="1" name="Source">0</param>
+                        </action>
+                        <action id="0" name="Add key" sid="787631188204840" type="Diccionario">
+                            <param id="0" name="Key">&quot;frioJ&quot;</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="0" name="Call function" sid="222784183274445" type="Funcion">
+                            <param id="0" name="Name">&quot;paso1&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="-16" name="Wait" sid="434823161726777" type="System">
+                            <param id="0" name="Seconds">0</param>
+                        </action>
+                        <action id="0" name="Call function" sid="177513657155897" type="Funcion">
+                            <param id="0" name="Name">&quot;comenzoJuego&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="712374594286625">
+                    <conditions>
+                        <condition id="0" name="On function" sid="792622080358788" type="Funcion">
+                            <param id="0" name="Name">&quot;paso1&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="557956807075177">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="288923561682679" type="Utileria">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">13</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Add key" sid="420338191031669" type="Diccionario">
+                                    <param id="0" name="Key">&quot;y&quot;</param>
+                                    <param id="1" name="Value">Utileria.Y</param>
+                                </action>
+                                <action id="0" name="Add key" sid="284327146747864" type="Diccionario">
+                                    <param id="0" name="Key">&quot;alto&quot;</param>
+                                    <param id="1" name="Value">Utileria.Height</param>
+                                </action>
+                                <action id="0" name="Add key" sid="367677243591815" type="Diccionario">
+                                    <param id="0" name="Key">&quot;limite1&quot;</param>
+                                    <param id="1" name="Value">Utileria.Height*PO</param>
+                                </action>
+                                <action id="0" name="Add key" sid="768818869161680" type="Diccionario">
+                                    <param id="0" name="Key">&quot;limite2&quot;</param>
+                                    <param id="1" name="Value">Utileria.Height*PH</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="666002473397861">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="753555568340381" type="Utileria">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">15</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-2" name="Set Y" sid="205372052759631" type="Utileria">
+                                    <param id="0" name="Y">Self.Y + random(-DY,DY)</param>
+                                </action>
+                                <action id="-6" name="Set height" sid="462662987846067" type="Utileria">
+                                    <param id="0" name="Height">Self.Height + random(DAI,DAS)</param>
+                                </action>
+                                <action id="0" name="Add key" sid="569631848065427" type="Diccionario">
+                                    <param id="0" name="Key">&quot;top&quot;</param>
+                                    <param id="1" name="Value">Utileria.BBoxTop</param>
+                                </action>
+                                <action id="0" name="Add key" sid="983400260836232" type="Diccionario">
+                                    <param id="0" name="Key">&quot;bot&quot;</param>
+                                    <param id="1" name="Value">Utileria.BBoxBottom</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="369753786358955">
+                    <conditions>
+                        <condition id="0" name="On function" sid="963975970575936" type="Funcion">
+                            <param id="0" name="Name">&quot;comenzoJuego&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-41" name="Wait for signal" sid="852604353615503" type="System">
+                            <param id="0" name="Tag">&quot;pCargado&quot;</param>
+                        </action>
+                        <action id="11" name="New function task" sid="102325231007259" type="Tarea">
+                            <param id="0" name="Task">&quot;tarea1&quot;</param>
+                            <param id="1" name="Function">&quot;-calor&quot;</param>
+                            <param id="2" name="Interval">gTiempoM</param>
+                            <param id="3" name="Repeat">1</param>
+                        </action>
+                        <action id="12" name="Set parameter" sid="720799649096563" type="Tarea">
+                            <param id="0" name="Task">&quot;tarea1&quot;</param>
+                            <param id="1" name="Parameter">&quot;frioA&quot;</param>
+                            <param id="2" name="Start">0</param>
+                            <param id="3" name="End">random(0,Diccionario.Get(&quot;top&quot;) - Diccionario.Get(&quot;y&quot;))</param>
+                            <param id="4" name="Type">0</param>
+                        </action>
+                        <action id="31" name="Start" sid="945983444412473" type="Tarea">
+                            <param id="0" name="Task">&quot;tarea1&quot;</param>
+                            <param id="1" name="Destroy">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="Creación, definición de propiedades y comportamientos de los objetos " sid="843682925866867" title="jugabilidad 14">
+            <sub-events>
+                <comment>VALORES DEL CLIMA</comment>
+                <variable comment="Rojo en la olla al 100% del termometro" constant="1" name="OA" sid="102690033034744" static="0" type="number">50</variable>
+                <variable comment="Rojo en la olla al PO% del termometro" constant="1" name="OB" sid="936152236923038" static="0" type="number">0</variable>
+                <variable comment="Particulas de humo al 100% del termometro" constant="1" name="HA" sid="543674855511040" static="0" type="number">25</variable>
+                <variable comment="Particulas de humo al PH% del termometro" constant="1" name="HB" sid="572865940004335" static="0" type="number">0</variable>
+                <event-block sid="650286030673358">
+                    <conditions>
+                        <condition id="0" name="On function" sid="732313899429666" type="Funcion">
+                            <param id="0" name="Name">&quot;sincronizarCalor&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <variable constant="0" name="actual" sid="144678006272831" static="0" type="number">0</variable>
+                        <variable constant="0" name="original" sid="210645044952512" static="0" type="number">0</variable>
+                        <variable constant="0" name="limite" sid="570695517131843" static="0" type="number">0</variable>
+                        <variable constant="0" name="aux" sid="648038602348536" static="0" type="number">0</variable>
+                        <event-block sid="559274598000042">
+                            <conditions />
+                            <actions>
+                                <action id="-9" name="Set value" sid="226587314502021" type="System">
+                                    <param id="0" name="Variable">actual</param>
+                                    <param id="1" name="Value">Funcion.Param(0)</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="824041882389884" type="System">
+                                    <param id="0" name="Variable">original</param>
+                                    <param id="1" name="Value">Diccionario.Get(&quot;alto&quot;)</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="263951101277634" type="System">
+                                    <param id="0" name="Variable">limite</param>
+                                    <param id="1" name="Value">Diccionario.Get(&quot;limite1&quot;)</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="256099305741220" type="System">
+                                    <param id="0" name="Variable">aux</param>
+                                    <param id="1" name="Value">(actual - original) / (limite - original)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="473591033030611">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="202404642607349" type="System">
+                                    <param id="0" name="Variable">aux</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="107986211475898" type="Utileria">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">11</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Set opacity" sid="137769522635714" type="Utileria">
+                                    <param id="0" name="Opacity">lerp(OA,OB,aux)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="438306861773909">
+                            <conditions />
+                            <actions>
+                                <action id="-9" name="Set value" sid="121206320697977" type="System">
+                                    <param id="0" name="Variable">limite</param>
+                                    <param id="1" name="Value">Diccionario.Get(&quot;limite2&quot;)</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="681643285224177" type="System">
+                                    <param id="0" name="Variable">aux</param>
+                                    <param id="1" name="Value">(actual - original) / (limite - original)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="941523402219720">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="591756566969533" type="System">
+                                    <param id="0" name="Variable">aux</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Set rate" sid="905636033464589" type="Particulas">
+                                    <param id="0" name="Rate">lerp(HA,HB,aux)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="172725782810374">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="194797460835977" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Set rate" sid="100651492601422" type="Particulas">
+                                    <param id="0" name="Rate">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="783111363810764">
+                            <conditions />
+                            <actions>
+                                <action id="-9" name="Set value" sid="947928920469945" type="System">
+                                    <param id="0" name="Variable">aux</param>
+                                    <param id="1" name="Value">actual/original</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="840369651207106">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="448413227869744" type="Utileria">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">13</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Set opacity" sid="596168521275027" type="Utileria">
+                                    <param id="0" name="Opacity">lerp(0,100,aux)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="409669412182218">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="656521710307011" type="Utileria">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">13.1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Set opacity" sid="824691276669371" type="Utileria">
+                                    <param id="0" name="Opacity">lerp(100,0,aux)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="906774877742103">
+                    <conditions>
+                        <condition id="0" name="On function" sid="635914033355610" type="Tarea">
+                            <param id="0" name="Name">&quot;-calor&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Add key" sid="415319005026147" type="Diccionario">
+                            <param id="0" name="Key">&quot;frioA&quot;</param>
+                            <param id="1" name="Value">Tarea.FnParam(&quot;frioA&quot;)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="Condiciones de derrota y controles de tiempo junto a los controles (si los hay) del jugador" sid="825716341036675" title="control 14">
+            <sub-events>
+                <comment>Control del personaje</comment>
+                <event-block sid="225366119085843">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="136968350597496" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <variable constant="1" name="LIMITE" sid="682312321872166" static="0" type="number">-40</variable>
+                        <variable constant="0" name="fuerza" sid="637055366125085" static="0" type="number">0</variable>
+                        <variable constant="0" name="micActivo" sid="372377786019918" static="0" type="number">0</variable>
+                        <event-block sid="329235552898777">
+                            <conditions />
+                            <actions>
+                                <action id="-9" name="Set value" sid="405686284457128" type="System">
+                                    <param id="0" name="Variable">fuerza</param>
+                                    <param id="1" name="Value">Audio.AnalyserRMSLevel(&quot;mic&quot;, 0)</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="446627187998910" type="System">
+                                    <param id="0" name="Variable">micActivo</param>
+                                    <param id="1" name="Value">(LIMITE &lt; fuerza?1:0)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Se detecto actividad sobre el micrófono, entonces</comment>
+                        <event-block sid="889880508510611">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="398968802673013" type="System">
+                                    <param id="0" name="Variable">micActivo</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Add key" sid="849115430629520" type="Diccionario">
+                                    <param id="0" name="Key">&quot;frioJ&quot;</param>
+                                    <param id="1" name="Value">Diccionario.Get(&quot;frioJ&quot;) + (fuerza+40)*0.1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>No se detecto actividad sobre el micrófono, entonces</comment>
+                        <event-block sid="830129565937383">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="538957847949860" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="12" name="Remove all effects" sid="266504248368971" type="Audio">
+                                    <param id="0" name="Tag">&quot;mic&quot;</param>
+                                </action>
+                                <action id="20" name="Add analyser effect" sid="624522295413726" type="Audio">
+                                    <param id="0" name="Tag">&quot;mic&quot;</param>
+                                    <param id="1" name="FFT size">32</param>
+                                    <param id="2" name="Smoothing">0</param>
+                                </action>
+                                <action id="32" name="Add mute effect" sid="692400086516373" type="Audio">
+                                    <param id="0" name="Tag">&quot;mic&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <variable constant="0" name="frio" sid="773047730553413" static="0" type="number">0</variable>
+                        <event-block any="1" sid="105456731861031">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="557539764990343" type="Utileria">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">13</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="504591841437207" type="Utileria">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">13.1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="105669383194307" type="System">
+                                    <param id="0" name="Variable">frio</param>
+                                    <param id="1" name="Value">Diccionario.Get(&quot;frioA&quot;) + Diccionario.Get(&quot;frioJ&quot;)</param>
+                                </action>
+                                <action id="-2" name="Set Y" sid="879137103945577" type="Utileria">
+                                    <param id="0" name="Y">Diccionario.Get(&quot;y&quot;) + frio</param>
+                                </action>
+                                <action id="-6" name="Set height" sid="769452027108688" type="Utileria">
+                                    <param id="0" name="Height">Diccionario.Get(&quot;alto&quot;) - frio</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="854894135011377">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="366561821399920" type="Utileria">
+                                            <param id="0" name="Instance variable">ID</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">13</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="503881816835558" type="Funcion">
+                                            <param id="0" name="Name">&quot;sincronizarCalor&quot;</param>
+                                            <param id="1" name="Parameter {n}">Utileria.Height</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Cada un segundo mientras este jugando, se descontará 1 a la variable tiempo</comment>
+                <event-block sid="288726085293897">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="100079803750268" type="System">
+                            <param id="0" name="Interval (seconds)">1.0+Funcion.Call(&quot;calculoTEMPO&quot;)</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="203947701455630" type="System">
+                            <param id="0" name="Variable">gEstado</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="312254635100495" type="System">
+                            <param id="0" name="Variable">gTiempo</param>
+                            <param id="1" name="Value">-1</param>
+                        </action>
+                        <action id="0" name="Call function" sid="172321696019915" type="Funcion">
+                            <param id="0" name="Name">&quot;tiempoGUI&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <comment>Si el tiempo se acabo</comment>
+                        <event-block sid="170349734923978">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="400672978050692" type="System">
+                                    <param id="0" name="Variable">gTiempo</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="765645403572530" type="Utileria">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">13</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="779601923323485" type="System">
+                                    <param id="0" name="Variable">gDerrota</param>
+                                    <param id="1" name="Value">Utileria.Y &lt; Diccionario.Get(&quot;top&quot;) | Utileria.Y &gt; Diccionario.Get(&quot;bot&quot;)</param>
+                                </action>
+                                <action id="0" name="Call function" sid="215009093015603" type="Funcion">
+                                    <param id="0" name="Name">&quot;tiempoACABADO&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="Cierre del escenario (Eventos que continuan ejecutandose a pesar que se ha acabado el tiempo o fue derrotado)" sid="621582381227616" title="fin 14" />
+        <comment></comment>
+    </events>
+</c2eventsheet>

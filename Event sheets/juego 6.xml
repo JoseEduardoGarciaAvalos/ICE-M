@@ -1,0 +1,1013 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>juego 6</name>
+    <events>
+        <include>principal</include>
+        <event-group description="Preparación del escenario" sid="793339857886164" title="inicio 6">
+            <sub-events>
+                <comment>VALORES DEL ENEMIGO</comment>
+                <variable comment="Espera que aparecerá otro" constant="1" name="ESPERA" sid="337626838811145" static="0" type="number">0.05</variable>
+                <event-block sid="656373507613625">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="630088138078242" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="904751584535552" type="Enemigo" />
+                        <action id="-9" name="Set value" sid="109076163056134" type="System">
+                            <param id="0" name="Variable">gJuego</param>
+                            <param id="1" name="Value">6</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="738315052975780" type="System">
+                            <param id="0" name="Variable">gTiempo</param>
+                            <param id="1" name="Value">floor(random(15,20))</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="418928696575541" type="System">
+                            <param id="0" name="Variable">gObjetivo</param>
+                            <param id="1" name="Value">&quot;Que no resbale&quot;</param>
+                        </action>
+                        <action id="0" name="Call function" sid="286206859108310" type="Funcion">
+                            <param id="0" name="Name">&quot;inicioGUI&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="10" name="Get media sources" sid="132878638104697" type="Microfono" />
+                        <action id="20" name="Add analyser effect" sid="123184456860917" type="Audio">
+                            <param id="0" name="Tag">&quot;mic&quot;</param>
+                            <param id="1" name="FFT size">32</param>
+                            <param id="2" name="Smoothing">0</param>
+                        </action>
+                        <action id="3" name="Request microphone" sid="462540789837941" type="Microfono">
+                            <param id="0" name="Tag">&quot;mic&quot;</param>
+                            <param id="1" name="Source">0</param>
+                        </action>
+                        <action id="0" name="Call function" sid="378200328201157" type="Funcion">
+                            <param id="0" name="Name">&quot;paso1&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="0" name="Call function" sid="110830135319128" type="Funcion">
+                            <param id="0" name="Name">&quot;paso2&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="0" name="Call function" sid="627420042428261" type="Funcion">
+                            <param id="0" name="Name">&quot;comenzoJuego&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Función que crear basura</comment>
+                <comment>&#x09;Parametro 1: Número de basura que se creará</comment>
+                <event-block sid="235163518131055">
+                    <conditions>
+                        <condition id="0" name="On function" sid="715401805378252" type="Funcion">
+                            <param id="0" name="Name">&quot;crearBasura&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="492944048224009">
+                            <conditions>
+                                <condition id="-12" name="Repeat" sid="330415307153024" type="System">
+                                    <param id="0" name="Count">Funcion.Param(0)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Wait" sid="653639562550003" type="System">
+                                    <param id="0" name="Seconds">ESPERA*loopindex</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="775905851616659" type="System">
+                                    <param id="0" name="Object to create">Enemigo</param>
+                                    <param id="1" name="Layer">&quot;Principal&quot;</param>
+                                    <param id="2" name="X">0</param>
+                                    <param id="3" name="Y">0</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="743225739269705" type="Enemigo">
+                                    <param id="0" name="Frame number">0</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="757075126955659" type="Enemigo">
+                                    <param id="0" name="Animation">&quot;j6a&quot;</param>
+                                    <param id="1" name="From">0</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="245121172261914" type="Enemigo">
+                                    <param id="0" name="Frame number">floor(random(Self.AnimationFrameCount+1))</param>
+                                </action>
+                                <action behavior="Fisica" id="27" name="Set enabled" sid="645202845663143" type="Enemigo">
+                                    <param id="0" name="Mode">1</param>
+                                </action>
+                                <action behavior="Fisica" id="21" name="Set immovable" sid="819726874806707" type="Enemigo">
+                                    <param id="0" name="Setting">0</param>
+                                </action>
+                                <action behavior="Fisica" id="23" name="Enable/disable collisions" sid="140465791681186" type="Enemigo">
+                                    <param id="0" name="Object">Personas</param>
+                                    <param id="1" name="State">0</param>
+                                </action>
+                                <action behavior="Fisica" id="12" name="Set world gravity" sid="101518369445236" type="Enemigo">
+                                    <param id="0" name="Gravity">100</param>
+                                </action>
+                                <action id="0" name="Call function" sid="815246526511944" type="Funcion">
+                                    <param id="0" name="Name">&quot;posicionALEATORIA&quot;</param>
+                                    <param id="1" name="Parameter {n}">Enemigo.UID{###}2.1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Función que define al personaje y al aliado</comment>
+                <event-block sid="684511529281184">
+                    <conditions>
+                        <condition id="0" name="On function" sid="653405272781319" type="Funcion">
+                            <param id="0" name="Name">&quot;paso1&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="587561819525694">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="990377995870627" type="Utileria">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">3</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Hash" id="1" name="Set value" sid="446763588901929" type="Jugador">
+                                    <param id="0" name="Key string">&quot;x1&quot;</param>
+                                    <param id="1" name="Value">Utileria.BBoxLeft</param>
+                                </action>
+                                <action behavior="Hash" id="1" name="Set value" sid="227789184986136" type="Jugador">
+                                    <param id="0" name="Key string">&quot;x2&quot;</param>
+                                    <param id="1" name="Value">Utileria.BBoxRight</param>
+                                </action>
+                                <action behavior="Hash" id="1" name="Set value" sid="584903050489681" type="Jugador">
+                                    <param id="0" name="Key string">&quot;tarea&quot;</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="324904842158482">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="817724748569301" type="Utileria">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2.2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Hash" id="1" name="Set value" sid="901664080062814" type="Aliado">
+                                    <param id="0" name="Key string">&quot;x1&quot;</param>
+                                    <param id="1" name="Value">Utileria.BBoxLeft</param>
+                                </action>
+                                <action behavior="Hash" id="1" name="Set value" sid="633747401263557" type="Aliado">
+                                    <param id="0" name="Key string">&quot;x2&quot;</param>
+                                    <param id="1" name="Value">Utileria.BBoxRight</param>
+                                </action>
+                                <action behavior="Hash" id="1" name="Set value" sid="250142922156308" type="Aliado">
+                                    <param id="0" name="Key string">&quot;tarea&quot;</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Definir la utileria</comment>
+                <event-block sid="520134660256821">
+                    <conditions>
+                        <condition id="0" name="On function" sid="741167181823473" type="Funcion">
+                            <param id="0" name="Name">&quot;paso2&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <comment>Hacer que cierta utileria sea invisible</comment>
+                        <event-block disabled="1" sid="975295904683083">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="356665070999317" type="Utileria">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="959027103878078" type="Utileria">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">4</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action disabled="1" id="-16" name="Set opacity" sid="547838151356985" type="Utileria">
+                                    <param id="0" name="Opacity">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Hacer que la utileria con ID=1 pueda colisionar con otros objetos</comment>
+                        <event-block sid="127540117075019">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="882629575856122" type="Utileria">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">4</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Fisica" id="27" name="Set enabled" sid="473031896923505" type="Utileria">
+                                    <param id="0" name="Mode">1</param>
+                                </action>
+                                <action behavior="Fisica" id="21" name="Set immovable" sid="135404405411484" type="Utileria">
+                                    <param id="0" name="Setting">1</param>
+                                </action>
+                                <action id="11" name="Set collisions enabled" sid="644365733914908" type="Utileria">
+                                    <param id="0" name="Collisions">1</param>
+                                </action>
+                                <action behavior="Solido" id="0" name="Set enabled" sid="350176121588725" type="Utileria">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="208841194996267">
+                    <conditions>
+                        <condition id="0" name="On function" sid="758506545358870" type="Funcion">
+                            <param id="0" name="Name">&quot;comenzoJuego&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-41" name="Wait for signal" sid="666064299032279" type="System">
+                            <param id="0" name="Tag">&quot;pCargado&quot;</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="916740277860924">
+                            <conditions />
+                            <actions>
+                                <action id="0" name="Call function" sid="381415988742571" type="Funcion">
+                                    <param id="0" name="Name">&quot;crearBasura&quot;</param>
+                                    <param id="1" name="Parameter {n}">floor(random(3,7))</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="484277268560288">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="245673049251506" type="Utileria">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">3</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Plataforma" id="11" name="Set enabled" sid="686998340167645" type="Jugador">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                                <action behavior="Funcion" id="2" name="Call expression" sid="347819491584821" type="Jugador">
+                                    <param id="0" name="Expression">Jugador.Funcion.Call(&quot;definirTarea&quot;,choose(1,2))</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="392104799500938">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="565771860710925" type="Utileria">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2.2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Plataforma" id="11" name="Set enabled" sid="384070234380229" type="Aliado">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                                <action behavior="Funcion" id="2" name="Call expression" sid="156729117525503" type="Aliado">
+                                    <param id="0" name="Expression">Aliado.Funcion.Call(&quot;definirTarea&quot;,choose(1,2))</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="Creación, definición de propiedades y comportamientos de los objetos" sid="661152029782827" title="jugabilidad 6">
+            <sub-events>
+                <variable comment="Velocidad de los soplidos" constant="0" name="VELOCIDAD" sid="424474298330935" static="0" type="number">600</variable>
+                <comment>Función que crear un soplido</comment>
+                <event-block sid="204403429411772">
+                    <conditions>
+                        <condition id="0" name="On function" sid="566060091574892" type="Funcion">
+                            <param id="0" name="Name">&quot;crearSoplido&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="331561956270332">
+                            <conditions />
+                            <actions>
+                                <action id="-3" name="Create object" sid="647645066658693" type="System">
+                                    <param id="0" name="Object to create">Utileria</param>
+                                    <param id="1" name="Layer">&quot;Principal&quot;</param>
+                                    <param id="2" name="X">Jugador.ImagePointX(&quot;boca&quot;)</param>
+                                    <param id="3" name="Y">Jugador.ImagePointY(&quot;boca&quot;)</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="644960993711996" type="Utileria">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Value">10</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="397288344452360" type="Utileria">
+                                    <param id="0" name="Frame number">0</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="654508992607754" type="Utileria">
+                                    <param id="0" name="Animation">&quot;j6a&quot;</param>
+                                    <param id="1" name="From">0</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="224846441115662" type="Utileria">
+                                    <param id="0" name="Width">50</param>
+                                    <param id="1" name="Height">50</param>
+                                </action>
+                                <action id="11" name="Set collisions enabled" sid="342410280112605" type="Utileria">
+                                    <param id="0" name="Collisions">1</param>
+                                </action>
+                                <action behavior="Bala" id="5" name="Set enabled" sid="361635757554447" type="Utileria">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                                <action behavior="Bala" id="0" name="Set speed" sid="191891101433652" type="Utileria">
+                                    <param id="0" name="Speed">VELOCIDAD</param>
+                                </action>
+                                <action behavior="Bala" id="3" name="Set angle of motion" sid="987333174207371" type="Utileria">
+                                    <param id="0" name="Angle">270</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Función privada que define las tareas. (Disparador cuando se termina la tarea)</comment>
+                <comment>&#x09;Parametro 1: El número de tarea que se ejcutará</comment>
+                <event-block any="1" sid="371488152261638">
+                    <conditions>
+                        <condition behavior="Tarea" id="4" name="On tween end" sid="314502654322427" type="Aliado" />
+                        <condition behavior="Funcion" id="0" name="On function" sid="623802819173154" type="Aliado">
+                            <param id="0" name="Name">&quot;definirTarea&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <variable comment="Limite inferior que podrá recorrer" constant="0" name="x1" sid="233141256010564" static="0" type="number">0</variable>
+                        <variable comment="Limite superior que podrá recorrer" constant="0" name="x2" sid="696650191207033" static="0" type="number">0</variable>
+                        <event-block sid="463253687355788">
+                            <conditions />
+                            <actions>
+                                <action id="-9" name="Set value" sid="657238309479577" type="System">
+                                    <param id="0" name="Variable">x1</param>
+                                    <param id="1" name="Value">Aliado.Hash.At(&quot;x1&quot;)</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="534878481559215" type="System">
+                                    <param id="0" name="Variable">x2</param>
+                                    <param id="1" name="Value">Aliado.Hash.At(&quot;x2&quot;)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Definición de las tareas (Solo se debe ejecutar con la función privada)</comment>
+                        <event-block sid="957972514733042">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="485169035116964" type="System">
+                                    <param id="0" name="First value">Aliado.Hash.At(&quot;tarea&quot;)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Hash" id="1" name="Set value" sid="294895185649895" type="Aliado">
+                                    <param id="0" name="Key string">&quot;tarea&quot;</param>
+                                    <param id="1" name="Value">Aliado.Funcion.Param(0)</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="198324010580490">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="294410579662394" type="System">
+                                            <param id="0" name="First value">Aliado.Funcion.Param(0)</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Second value">2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-1" name="Set X" sid="384632400292699" type="Aliado">
+                                            <param id="0" name="X">Aliado.Funcion.Param(0) = 1 ? x1 : x2</param>
+                                        </action>
+                                        <action behavior="Tarea" id="4" name="Set tweened property" sid="999285182760116" type="Aliado">
+                                            <param id="0" name="Tweened property">0</param>
+                                        </action>
+                                        <action behavior="Tarea" id="1" name="Set duration" sid="698077775644626" type="Aliado">
+                                            <param id="0" name="Duration">gTiempo</param>
+                                        </action>
+                                        <action behavior="Tarea" id="5" name="Set easing" sid="751585156650160" type="Aliado">
+                                            <param id="0" name="Function">0</param>
+                                        </action>
+                                        <action behavior="Tarea" id="6" name="Set enforce" sid="732347452260340" type="Aliado">
+                                            <param id="0" name="Enforce mode">1</param>
+                                        </action>
+                                        <action behavior="Tarea" id="3" name="Set target" sid="932645935166232" type="Aliado">
+                                            <param id="0" name="Target is">1</param>
+                                            <param id="1" name="Relativity">1</param>
+                                            <param id="2" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="592022121420305">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="342744506587238" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Tarea" id="4" name="Set tweened property" sid="986907297753992" type="Aliado">
+                                            <param id="0" name="Tweened property">4</param>
+                                        </action>
+                                        <action behavior="Tarea" id="1" name="Set duration" sid="621855120701747" type="Aliado">
+                                            <param id="0" name="Duration">1</param>
+                                        </action>
+                                        <action behavior="Tarea" id="5" name="Set easing" sid="973647623913255" type="Aliado">
+                                            <param id="0" name="Function">0</param>
+                                        </action>
+                                        <action behavior="Tarea" id="6" name="Set enforce" sid="516418469548389" type="Aliado">
+                                            <param id="0" name="Enforce mode">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>Caminar de izquierda a derecha</comment>
+                        <event-block sid="412809798923892">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="749736191269578" type="System">
+                                    <param id="0" name="First value">Aliado.Hash.At(&quot;tarea&quot;)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="7" name="Set mirrored" sid="406136611772334" type="Aliado">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                                <action behavior="Tarea" id="3" name="Set target" sid="442514195389630" type="Aliado">
+                                    <param id="0" name="Target is">0</param>
+                                    <param id="1" name="Relativity">0</param>
+                                    <param id="2" name="Value">x2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Caminar de derecha a izquierda</comment>
+                        <event-block sid="380559964058147">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="159944532069425" type="System" />
+                                <condition id="-8" name="Compare two values" sid="354718618704719" type="System">
+                                    <param id="0" name="First value">Aliado.Hash.At(&quot;tarea&quot;)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="7" name="Set mirrored" sid="170401677088557" type="Aliado">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                                <action behavior="Tarea" id="3" name="Set target" sid="174682865090481" type="Aliado">
+                                    <param id="0" name="Target is">0</param>
+                                    <param id="1" name="Relativity">0</param>
+                                    <param id="2" name="Value">x1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Rotar en sentido anti horario (Si la basura está a la izquierda)</comment>
+                        <event-block sid="560482780631916">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="772419487378263" type="System" />
+                                <condition id="-8" name="Compare two values" sid="923400869626945" type="System">
+                                    <param id="0" name="First value">Aliado.Hash.At(&quot;tarea&quot;)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">3</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="7" name="Set mirrored" sid="955588709591869" type="Aliado">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                                <action behavior="Tarea" id="3" name="Set target" sid="888930648557855" type="Aliado">
+                                    <param id="0" name="Target is">2</param>
+                                    <param id="1" name="Relativity">1</param>
+                                    <param id="2" name="Value">90</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Rotar en sentido horario (Si la basura está a la derecha)</comment>
+                        <event-block sid="671311365121963">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="918395520213654" type="System" />
+                                <condition id="-8" name="Compare two values" sid="695137229281403" type="System">
+                                    <param id="0" name="First value">Aliado.Hash.At(&quot;tarea&quot;)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">4</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="7" name="Set mirrored" sid="827277741232978" type="Aliado">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                                <action behavior="Tarea" id="3" name="Set target" sid="751247913152587" type="Aliado">
+                                    <param id="0" name="Target is">2</param>
+                                    <param id="1" name="Relativity">1</param>
+                                    <param id="2" name="Value">-90</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="804422591073952">
+                            <conditions>
+                                <condition id="-8" inverted="1" name="Compare two values" sid="307704639127742" type="System">
+                                    <param id="0" name="First value">Aliado.Hash.At(&quot;tarea&quot;)</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Tarea" id="10" name="Start" sid="194107846073095" type="Aliado">
+                                    <param id="0" name="Start Mode">0</param>
+                                    <param id="1" name="Force use current">0</param>
+                                </action>
+                                <action behavior="Hash" id="1" name="Set value" sid="184568218149085" type="Aliado">
+                                    <param id="0" name="Key string">&quot;tarea&quot;</param>
+                                    <param id="1" name="Value">-1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Función privada que define las tareas. (Disparador cuando se termina la tarea)</comment>
+                <comment>&#x09;Parametro 1: El número de tarea que se ejcutará</comment>
+                <event-block any="1" sid="146024913760703">
+                    <conditions>
+                        <condition behavior="Tarea" id="4" name="On tween end" sid="974141413206811" type="Jugador" />
+                        <condition behavior="Funcion" id="0" name="On function" sid="218041708454253" type="Jugador">
+                            <param id="0" name="Name">&quot;definirTarea&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <variable comment="0 = falso, 1= verdadero" constant="0" name="reanudar" sid="471580012589144" static="0" type="number">0</variable>
+                        <variable comment="Limite inferior que podrá recorrer" constant="0" name="x1" sid="804243011394673" static="0" type="number">0</variable>
+                        <variable comment="Limite superior que podrá recorrer" constant="0" name="x2" sid="285528952560979" static="0" type="number">0</variable>
+                        <event-block sid="939872049815311">
+                            <conditions />
+                            <actions>
+                                <action id="-9" name="Set value" sid="219909466685012" type="System">
+                                    <param id="0" name="Variable">x1</param>
+                                    <param id="1" name="Value">Jugador.Hash.At(&quot;x1&quot;)</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="892255720569994" type="System">
+                                    <param id="0" name="Variable">x2</param>
+                                    <param id="1" name="Value">Jugador.Hash.At(&quot;x2&quot;)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Definición de las tareas (Solo se debe ejecutar con la función privada)</comment>
+                        <event-block sid="504004704257709">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="162925842178824" type="System">
+                                    <param id="0" name="First value">Jugador.Hash.At(&quot;tarea&quot;)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Hash" id="1" name="Set value" sid="699841852856314" type="Jugador">
+                                    <param id="0" name="Key string">&quot;tarea&quot;</param>
+                                    <param id="1" name="Value">Self.Funcion.Param(0)</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <variable constant="0" name="aux1" sid="631614152938051" static="0" type="number">0</variable>
+                                <variable constant="0" name="aux2" sid="697834857684782" static="0" type="number">0</variable>
+                                <event-block sid="301511448326137">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="865568616716953" type="System">
+                                            <param id="0" name="First value">Jugador.Funcion.Param(0)</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Second value">2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="804217260339913" type="System">
+                                            <param id="0" name="Variable">aux1</param>
+                                            <param id="1" name="Value">floor(random(x1,x2+1))</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="284325183384343" type="System">
+                                            <param id="0" name="Variable">aux2</param>
+                                            <param id="1" name="Value">Jugador.Funcion.Param(0) = 1 ? (aux1-x1)/(x2-x1) : (aux1-x2)/(x1-x2)</param>
+                                        </action>
+                                        <action id="-1" name="Set X" sid="626506510485909" type="Jugador">
+                                            <param id="0" name="X">Jugador.Funcion.Param(0) = 1 ? x1 : x2</param>
+                                        </action>
+                                        <action behavior="Tarea" id="4" name="Set tweened property" sid="471770264696882" type="Jugador">
+                                            <param id="0" name="Tweened property">0</param>
+                                        </action>
+                                        <action behavior="Tarea" id="1" name="Set duration" sid="304591577365096" type="Jugador">
+                                            <param id="0" name="Duration">2</param>
+                                        </action>
+                                        <action behavior="Tarea" id="5" name="Set easing" sid="451349834195636" type="Jugador">
+                                            <param id="0" name="Function">0</param>
+                                        </action>
+                                        <action behavior="Tarea" id="6" name="Set enforce" sid="810923094331399" type="Jugador">
+                                            <param id="0" name="Enforce mode">1</param>
+                                        </action>
+                                        <action behavior="Tarea" id="3" name="Set target" sid="620985117652631" type="Jugador">
+                                            <param id="0" name="Target is">1</param>
+                                            <param id="1" name="Relativity">1</param>
+                                            <param id="2" name="Value">0</param>
+                                        </action>
+                                        <action behavior="Tarea" id="15" name="Seek" sid="889247629031458" type="Jugador">
+                                            <param id="0" name="Seek to">aux2</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="273089060153586" type="System">
+                                            <param id="0" name="Variable">reanudar</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>Caminar de izquierda a derecha</comment>
+                        <event-block sid="410274825485509">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="460905696310525" type="System">
+                                    <param id="0" name="First value">Jugador.Hash.At(&quot;tarea&quot;)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="7" name="Set mirrored" sid="816739708258322" type="Jugador">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                                <action behavior="Tarea" id="3" name="Set target" sid="675735390209556" type="Jugador">
+                                    <param id="0" name="Target is">0</param>
+                                    <param id="1" name="Relativity">0</param>
+                                    <param id="2" name="Value">x2</param>
+                                </action>
+                                <action behavior="Hash" id="1" name="Set value" sid="264760943113734" type="Jugador">
+                                    <param id="0" name="Key string">&quot;tarea&quot;</param>
+                                    <param id="1" name="Value">2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Caminar de derecha a izquierda</comment>
+                        <event-block sid="632524193785306">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="980486173593784" type="System" />
+                                <condition id="-8" name="Compare two values" sid="742324910913363" type="System">
+                                    <param id="0" name="First value">Jugador.Hash.At(&quot;tarea&quot;)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="7" name="Set mirrored" sid="421642373517769" type="Jugador">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                                <action behavior="Tarea" id="3" name="Set target" sid="981833441376345" type="Jugador">
+                                    <param id="0" name="Target is">0</param>
+                                    <param id="1" name="Relativity">0</param>
+                                    <param id="2" name="Value">x1</param>
+                                </action>
+                                <action behavior="Hash" id="1" name="Set value" sid="802236678190093" type="Jugador">
+                                    <param id="0" name="Key string">&quot;tarea&quot;</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="388524573589980">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="319152318617090" type="System">
+                                    <param id="0" name="Variable">reanudar</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Tarea" id="10" name="Start" sid="624609597437242" type="Jugador">
+                                    <param id="0" name="Start Mode">1</param>
+                                    <param id="1" name="Force use current">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="930105351070068">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="420647997581407" type="System" />
+                            </conditions>
+                            <actions>
+                                <action behavior="Tarea" id="10" name="Start" sid="333076216295916" type="Jugador">
+                                    <param id="0" name="Start Mode">0</param>
+                                    <param id="1" name="Force use current">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Tiempo se ejecuta cuando el todavia está soplando</comment>
+                <event-block sid="946812700236266">
+                    <conditions>
+                        <condition behavior="Tiempo" id="0" name="On timer" sid="538201370626785" type="Jugador">
+                            <param id="0" name="Tag">&quot;soplar&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="192630125955857" type="Funcion">
+                            <param id="0" name="Name">&quot;crearSoplido&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Disparador que se ejecuta cuando la Utileria (ID &lt;&gt; 4) colisiona con el enemigo</comment>
+                <event-block sid="560716158565394">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="412262249258763" type="Utileria">
+                            <param id="0" name="Object">Enemigo</param>
+                        </condition>
+                        <condition id="-7" inverted="1" name="Compare instance variable" sid="643022256380316" type="Utileria">
+                            <param id="0" name="Instance variable">ID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">4</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="735028586666468">
+                            <conditions />
+                            <actions>
+                                <action behavior="Hash" id="1" name="Set value" sid="868901704602060" type="Enemigo">
+                                    <param id="0" name="Key string">&quot;golpeado&quot;</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action behavior="Fisica" id="12" name="Set world gravity" sid="759370361003014" type="Enemigo">
+                                    <param id="0" name="Gravity">90</param>
+                                </action>
+                                <action behavior="Fisica" id="4" name="Apply impulse towards position" sid="390597926643573" type="Enemigo">
+                                    <param id="0" name="Impulse">random(15,35)</param>
+                                    <param id="1" name="X">random(Enemigo.X-5,Enemigo.X+5)</param>
+                                    <param id="2" name="Y">Enemigo.BBoxTop</param>
+                                    <param id="3" name="Image point">0</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="909177029862257" type="Utileria" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="Condiciones de derrota y controles de tiempo junto a los controles (si los hay) del jugador" sid="771051461879643" title="control 6">
+            <sub-events>
+                <comment>Disparador que se ejecuta cuando el aliado colisiona con el enemigo</comment>
+                <event-block sid="329076973608662">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="863737964130269" type="Aliado">
+                            <param id="0" name="Object">Enemigo</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="421505777023044" type="System">
+                            <param id="0" name="Variable">gDerrota</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <variable comment="0 = falso; 1= verdadero" constant="0" name="basuraIzquierda" sid="894208246750009" static="0" type="number">0</variable>
+                        <event-block sid="479797455527120">
+                            <conditions />
+                            <actions>
+                                <action id="-9" name="Set value" sid="513650556749414" type="System">
+                                    <param id="0" name="Variable">basuraIzquierda</param>
+                                    <param id="1" name="Value">Aliado.X &gt; Enemigo.X </param>
+                                </action>
+                                <action behavior="Tarea" id="14" name="Stop" sid="101376984901717" type="Aliado">
+                                    <param id="0" name="Stop Mode">0</param>
+                                </action>
+                                <action behavior="Fisica" id="12" name="Set world gravity" sid="303056427080381" type="Enemigo">
+                                    <param id="0" name="Gravity">90</param>
+                                </action>
+                                <action behavior="Fisica" id="4" name="Apply impulse towards position" sid="425560404233283" type="Enemigo">
+                                    <param id="0" name="Impulse">random(15,35)</param>
+                                    <param id="1" name="X">basuraIzquierda ? Enemigo.BBoxLeft : Enemigo.BBoxRight</param>
+                                    <param id="2" name="Y">random(Enemigo.BBoxTop-5,Enemigo.BBoxTop+5)</param>
+                                    <param id="3" name="Image point">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="479601625841572" type="System">
+                                    <param id="0" name="Seconds">0.1</param>
+                                </action>
+                                <action behavior="Plataforma" id="7" name="Simulate control" sid="632690659469952" type="Aliado">
+                                    <param id="0" name="Control">2</param>
+                                </action>
+                                <action behavior="Hash" id="1" name="Set value" sid="220364840331066" type="Aliado">
+                                    <param id="0" name="Key string">&quot;tarea&quot;</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action behavior="Funcion" id="2" name="Call expression" sid="604822250179573" type="Aliado">
+                                    <param id="0" name="Expression">Aliado.Funcion.Call(&quot;definirTarea&quot;,basuraIzquierda ?3:4)</param>
+                                </action>
+                                <action id="0" name="Call function" sid="684049800117158" type="Funcion">
+                                    <param id="0" name="Name">&quot;derrotaJUEGO&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Control del personaje</comment>
+                <event-block sid="451141438949953">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="747964166710605" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <variable constant="1" name="LIMITE" sid="344647263582793" static="0" type="number">-40</variable>
+                        <variable constant="0" name="micActivo" sid="567496691772521" static="0" type="number">0</variable>
+                        <event-block sid="594704076492204">
+                            <conditions />
+                            <actions>
+                                <action id="-9" name="Set value" sid="850222794023790" type="System">
+                                    <param id="0" name="Variable">micActivo</param>
+                                    <param id="1" name="Value">(LIMITE &lt; Audio.AnalyserRMSLevel(&quot;mic&quot;, 0)?1:0)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Se detecto actividad sobre el micrófono, entonces</comment>
+                        <event-block sid="166502945063611">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="355516992790113" type="System">
+                                    <param id="0" name="Variable">micActivo</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="217654942958970">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="271145211094423" type="System">
+                                            <param id="0" name="First value">Jugador.AnimationName</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">&quot;j6a&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="592740391867818" type="Jugador">
+                                            <param id="0" name="Animation">&quot;j6b&quot;</param>
+                                            <param id="1" name="From">0</param>
+                                        </action>
+                                        <action behavior="Tiempo" id="0" name="Start timer" sid="930455434370736" type="Jugador">
+                                            <param id="0" name="Duration">0.18</param>
+                                            <param id="1" name="Type">1</param>
+                                            <param id="2" name="Tag">&quot;soplar&quot;</param>
+                                        </action>
+                                        <action behavior="Tarea" id="14" name="Stop" sid="401279120999291" type="Jugador">
+                                            <param id="0" name="Stop Mode">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>No se detecto actividad sobre el micrófono, entonces</comment>
+                        <event-block sid="585608892235190">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="220125547651305" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="12" name="Remove all effects" sid="610247510831590" type="Audio">
+                                    <param id="0" name="Tag">&quot;mic&quot;</param>
+                                </action>
+                                <action id="20" name="Add analyser effect" sid="374138471386609" type="Audio">
+                                    <param id="0" name="Tag">&quot;mic&quot;</param>
+                                    <param id="1" name="FFT size">32</param>
+                                    <param id="2" name="Smoothing">0</param>
+                                </action>
+                                <action id="32" name="Add mute effect" sid="286667800312220" type="Audio">
+                                    <param id="0" name="Tag">&quot;mic&quot;</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="811423499516813">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="426011862671429" type="System">
+                                            <param id="0" name="First value">Jugador.AnimationName</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">&quot;j6b&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="5" name="Set frame" sid="424564987869625" type="Jugador">
+                                            <param id="0" name="Frame number">0</param>
+                                        </action>
+                                        <action id="4" name="Set animation" sid="873470290800994" type="Jugador">
+                                            <param id="0" name="Animation">&quot;j6a&quot;</param>
+                                            <param id="1" name="From">0</param>
+                                        </action>
+                                        <action behavior="Tiempo" id="1" name="Stop timer" sid="761327218591027" type="Jugador">
+                                            <param id="0" name="Tag">&quot;soplar&quot;</param>
+                                        </action>
+                                        <action behavior="Tarea" id="10" name="Start" sid="224077316084974" type="Jugador">
+                                            <param id="0" name="Start Mode">1</param>
+                                            <param id="1" name="Force use current">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="885746571701830">
+                            <conditions>
+                                <condition behavior="Hash" id="2" name="Key exists" sid="777348328408751" type="Enemigo">
+                                    <param id="0" name="Key string">&quot;golpeado&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block any="1" sid="130222070901354">
+                                    <conditions>
+                                        <condition id="-1" name="Compare X" sid="957197666704066" type="Enemigo">
+                                            <param id="0" name="Comparison">2</param>
+                                            <param id="1" name="X co-ordinate">0</param>
+                                        </condition>
+                                        <condition id="-1" name="Compare X" sid="891555510348836" type="Enemigo">
+                                            <param id="0" name="Comparison">5</param>
+                                            <param id="1" name="X co-ordinate">LayoutWidth</param>
+                                        </condition>
+                                        <condition id="-2" name="Compare Y" sid="759119031585342" type="Enemigo">
+                                            <param id="0" name="Comparison">2</param>
+                                            <param id="1" name="Y co-ordinate">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Destroy" sid="784658538950609" type="Enemigo" />
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="164513157599834">
+                            <conditions>
+                                <condition id="-2" name="Compare Y" sid="956982213039653" type="Aliado">
+                                    <param id="0" name="Comparison">5</param>
+                                    <param id="1" name="Y co-ordinate">LayoutHeight</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="214194058513099" type="Aliado" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="883154542729374">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="222151244812434" type="Utileria">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">10</param>
+                                </condition>
+                                <condition id="-4" name="Is outside layout" sid="411717181551089" type="Utileria" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="516672208303768" type="Utileria" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Cada un segundo mientras no haya perdido, se descontará 1 a la variable tiempo</comment>
+                <event-block sid="764626829828705">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="129493022251429" type="System">
+                            <param id="0" name="Interval (seconds)">1.0+Funcion.Call(&quot;calculoTEMPO&quot;)</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="956548127162694" type="System">
+                            <param id="0" name="Variable">gDerrota</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="674203808726403" type="System">
+                            <param id="0" name="Variable">gTiempo</param>
+                            <param id="1" name="Value">-1</param>
+                        </action>
+                        <action id="0" name="Call function" sid="702243650606481" type="Funcion">
+                            <param id="0" name="Name">&quot;tiempoGUI&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <comment>Si tiempo se acabo</comment>
+                        <event-block sid="669931451328588">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="400895287633302" type="System">
+                                    <param id="0" name="Variable">gTiempo</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="501808506692728" type="Funcion">
+                                    <param id="0" name="Name">&quot;tiempoACABADO&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="Cierre del escenario (Eventos que continuan ejecutandose a pesar que se ha acabado el tiempo o fue derrotado)" sid="434649860355580" title="fin 6" />
+    </events>
+</c2eventsheet>

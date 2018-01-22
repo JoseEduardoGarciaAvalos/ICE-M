@@ -1,0 +1,464 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>juego 7</name>
+    <events>
+        <include>principal</include>
+        <event-group description="Preparación del escenario" sid="955944366567097" title="inicio 7">
+            <sub-events>
+                <event-block sid="369274585267269">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="330434984512715" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="942627160716488" type="Enemigo" />
+                        <action id="-9" name="Set value" sid="610632178253568" type="System">
+                            <param id="0" name="Variable">gJuego</param>
+                            <param id="1" name="Value">7</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="973786713561004" type="System">
+                            <param id="0" name="Variable">gTiempo</param>
+                            <param id="1" name="Value">floor(random(9,12))</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="385343142035311" type="System">
+                            <param id="0" name="Variable">gObjetivo</param>
+                            <param id="1" name="Value">&quot;Sigue el patrón&quot;</param>
+                        </action>
+                        <action id="0" name="Call function" sid="213144432966902" type="Funcion">
+                            <param id="0" name="Name">&quot;inicioGUI&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="0" name="Add key" sid="930366710805359" type="Diccionario">
+                            <param id="0" name="Key">&quot;mitad&quot;</param>
+                            <param id="1" name="Value">floor(gTiempo/2)+3</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="946320025974816">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="407309486169415" type="Utileria">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">10</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="28" name="Clean &amp; Add instances" sid="132793790021169" type="Grupo">
+                                    <param id="0" name="Instances">Utileria</param>
+                                    <param id="1" name="Group">&quot;j7a&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="906898912987489">
+                            <conditions />
+                            <actions>
+                                <action id="0" name="Call function" sid="474620561865136" type="Funcion">
+                                    <param id="0" name="Name">&quot;comenzoJuego&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="661854961130567">
+                    <conditions>
+                        <condition id="0" name="On function" sid="392318869938532" type="Funcion">
+                            <param id="0" name="Name">&quot;comenzoJuego&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-41" name="Wait for signal" sid="811248722575862" type="System">
+                            <param id="0" name="Tag">&quot;pCargado&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="Creación, definición de propiedades y comportamientos de los objetos" sid="632181271215773" title="jugabilidad 7">
+            <sub-events>
+                <comment>Función para añadir un patrón en la matriz</comment>
+                <event-block sid="627586287292255">
+                    <conditions>
+                        <condition id="0" name="On function" sid="393085524984274" type="Funcion">
+                            <param id="0" name="Name">&quot;añadirPatron&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="493049461974585">
+                            <conditions />
+                            <actions>
+                                <action id="30" name="Pop random instance" sid="192045453062778" type="Grupo">
+                                    <param id="0" name="Group">&quot;j7a&quot;</param>
+                                    <param id="1" name="Object">Utileria</param>
+                                    <param id="2" name="Operation">0</param>
+                                </action>
+                                <action id="5" name="Push" sid="591914436353436" type="Matriz">
+                                    <param id="0" name="Where">0</param>
+                                    <param id="1" name="Value">Utileria.ID</param>
+                                    <param id="2" name="Axis">0</param>
+                                </action>
+                                <action id="0" name="Call function" sid="946106721010384" type="Funcion">
+                                    <param id="0" name="Name">&quot;cambiarColor&quot;</param>
+                                    <param id="1" name="Parameter {n}">Utileria.UID</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="659004212245844" type="Aliado">
+                                    <param id="0" name="Frame number">Utileria.ID-10</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="914878438604603" type="Jugador">
+                                    <param id="0" name="Frame number">Utileria.ID-10</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <comment>Recoger la Utileria ID &gt;=10</comment>
+                                <event-block sid="302439653525901">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="367068627073250" type="Utileria">
+                                            <param id="0" name="Instance variable">ID</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">10</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-16" name="Wait" sid="591016401657465" type="System">
+                                            <param id="0" name="Seconds">0.5</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="460041318773027" type="Aliado">
+                                            <param id="0" name="Frame number">0</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="133208225483537" type="Jugador">
+                                            <param id="0" name="Frame number">0</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="491378060326163" type="Utileria">
+                                            <param id="0" name="Frame number">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Función para cambiar el color de la opción</comment>
+                <comment>&#x09;Parametro 1: UID de la utileria a cambiar, las demás vuelven a la normalidad</comment>
+                <event-block sid="931958228268982">
+                    <conditions>
+                        <condition id="0" name="On function" sid="830351636913196" type="Funcion">
+                            <param id="0" name="Name">&quot;cambiarColor&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="308870785816950">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="587536396982111" type="Utileria">
+                                    <param id="0" name="Unique ID">Funcion.Param(0)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="813107304612700" type="Utileria">
+                                    <param id="0" name="Frame number">Utileria.ID-10</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="973102666570313">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="527775137817127" type="Utileria">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">10</param>
+                                </condition>
+                                <condition id="-14" inverted="1" name="Pick by unique ID" sid="743689185988977" type="Utileria">
+                                    <param id="0" name="Unique ID">Funcion.Param(0)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="305792821214853" type="Utileria">
+                                    <param id="0" name="Frame number">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="Condiciones de derrota y controles de tiempo junto a los controles (si los hay) del jugador" sid="767548817382230" title="control 7">
+            <sub-events>
+                <comment>Si el jugador es controlable, está sobre la utileria ID&gt;=10. y esa no está seleccionada</comment>
+                <event-block sid="265828897332681">
+                    <conditions>
+                        <condition behavior="Hash" id="2" name="Key exists" sid="653099016162645" type="Jugador">
+                            <param id="0" name="Key string">&quot;controlable&quot;</param>
+                        </condition>
+                        <condition id="7" name="Cursor is over object" sid="305601087415725" type="Mouse">
+                            <param id="0" name="Object">Utileria</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="403692303736779" type="Utileria">
+                            <param id="0" name="Instance variable">ID</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">10</param>
+                        </condition>
+                        <condition behavior="Hash" id="2" inverted="1" name="Key exists" sid="919579414965762" type="Utileria">
+                            <param id="0" name="Key string">&quot;seleccionada&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="543265635058801" type="Funcion">
+                            <param id="0" name="Name">&quot;cambiarColor&quot;</param>
+                            <param id="1" name="Parameter {n}">Utileria.UID</param>
+                        </action>
+                        <action behavior="Hash" id="1" name="Set value" sid="424541080924861" type="Utileria">
+                            <param id="0" name="Key string">&quot;seleccionada&quot;</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="774081206772553">
+                            <conditions />
+                            <actions>
+                                <action id="5" name="Set frame" sid="411865289244772" type="Aliado">
+                                    <param id="0" name="Frame number">Matriz.At(0)-10</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="666941513962342" type="Jugador">
+                                    <param id="0" name="Frame number">Utileria.ID-10</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Si el patrón es correcto, sacará al frente de la matriz (Cola)</comment>
+                        <event-block sid="724349944204715">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="454289380494243" type="System">
+                                    <param id="0" name="First value">Matriz.At(0)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">Utileria.ID</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="6" name="Pop" sid="354103708728168" type="Matriz">
+                                    <param id="0" name="Where">1</param>
+                                    <param id="1" name="Axis">0</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="405428864358806">
+                                    <conditions>
+                                        <condition id="6" name="Is empty" sid="545772886899200" type="Matriz" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="476457713939618" type="Funcion">
+                                            <param id="0" name="Name">&quot;victoriaJUEGO&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="544514884854856" type="System">
+                                            <param id="0" name="Seconds">0.5</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="310889657754291" type="Utileria">
+                                            <param id="0" name="Frame number">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="228436668571088">
+                                    <conditions />
+                                    <actions>
+                                        <action behavior="Tiempo" id="0" name="Start timer" sid="316295644282711" type="Jugador">
+                                            <param id="0" name="Duration">0.5</param>
+                                            <param id="1" name="Type">0</param>
+                                            <param id="2" name="Tag">&quot;normal&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>Si el patrón no es correcto</comment>
+                        <event-block sid="191022949355568">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="468379539778557" type="System" />
+                                <condition id="-8" name="Compare two values" sid="661393358489375" type="System">
+                                    <param id="0" name="First value">Matriz.At(0)</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Second value">Utileria.ID</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="529998409707437">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="542239606733239" type="System">
+                                            <param id="0" name="Variable">gDerrota</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="328768214674015" type="Funcion">
+                                            <param id="0" name="Name">&quot;derrotaJUEGO&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="103632069634967" type="System">
+                                            <param id="0" name="Seconds">0.5</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="687944934905500" type="Utileria">
+                                            <param id="0" name="Frame number">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Si no está sobre la utileria ID&gt;=10. y esa está seleccionada</comment>
+                <event-block sid="243229677894262">
+                    <conditions>
+                        <condition id="7" inverted="1" name="Cursor is over object" sid="954667289132325" type="Mouse">
+                            <param id="0" name="Object">Utileria</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="782421891532752" type="Utileria">
+                            <param id="0" name="Instance variable">ID</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">10</param>
+                        </condition>
+                        <condition behavior="Hash" id="2" name="Key exists" sid="253831865393933" type="Utileria">
+                            <param id="0" name="Key string">&quot;seleccionada&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="420659915314375" type="Utileria">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                        <action behavior="Hash" id="6" name="Remove key" sid="707326144804268" type="Utileria">
+                            <param id="0" name="Key string">&quot;seleccionada&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Tiempo donde se volverán a las poses normales</comment>
+                <event-block sid="265665728408705">
+                    <conditions>
+                        <condition behavior="Tiempo" id="0" name="On timer" sid="766269353860030" type="Jugador">
+                            <param id="0" name="Tag">&quot;normal&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="969540146389677">
+                            <conditions />
+                            <actions>
+                                <action id="5" name="Set frame" sid="153688326594066" type="Aliado">
+                                    <param id="0" name="Frame number">0</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="962791451893540" type="Jugador">
+                                    <param id="0" name="Frame number">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Cada un segundo mientras no haya perdido, se descontará 1 a la variable tiempo</comment>
+                <event-block sid="867314476631592">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="975085199850594" type="System">
+                            <param id="0" name="Interval (seconds)">1.0+Funcion.Call(&quot;calculoTEMPO&quot;)</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="228262509074202" type="System">
+                            <param id="0" name="Variable">gDerrota</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="645291722037323" type="System">
+                            <param id="0" name="Variable">gTiempo</param>
+                            <param id="1" name="Value">-1</param>
+                        </action>
+                        <action id="0" name="Call function" sid="541047269342822" type="Funcion">
+                            <param id="0" name="Name">&quot;tiempoGUI&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <comment>Si tiempo está arriba de la mitad (Del tiempo total asignado)</comment>
+                        <event-block sid="630206504470801">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="685623986846404" type="System">
+                                    <param id="0" name="Variable">gTiempo</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">Diccionario.Get(&quot;mitad&quot;)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="217043831792083" type="Funcion">
+                                    <param id="0" name="Name">&quot;añadirPatron&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="393665764613408">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="822980713499980" type="System">
+                                            <param id="0" name="Variable">gTiempo</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">Diccionario.Get(&quot;mitad&quot;)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-16" name="Wait" sid="824428043395660" type="System">
+                                            <param id="0" name="Seconds">0.5</param>
+                                        </action>
+                                        <action behavior="Hash" id="1" name="Set value" sid="955514080619321" type="Jugador">
+                                            <param id="0" name="Key string">&quot;controlable&quot;</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="363572806785589">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="449469099944664" type="Texto">
+                                                    <param id="0" name="Instance variable">ID</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">2</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Set text" sid="245980383311257" type="Texto">
+                                                    <param id="0" name="Text">&quot;Repite el patrón&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="436915359963601">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="988199255954754" type="Utileria">
+                                                    <param id="0" name="Instance variable">ID</param>
+                                                    <param id="1" name="Comparison">5</param>
+                                                    <param id="2" name="Value">10</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="5" name="Set frame" sid="278893094812346" type="Utileria">
+                                                    <param id="0" name="Frame number">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>Si tiempo se acabo</comment>
+                        <event-block sid="960540153519819">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="571842378149475" type="System" />
+                                <condition id="-14" name="Compare variable" sid="507746545659385" type="System">
+                                    <param id="0" name="Variable">gTiempo</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="841144175105839" type="Funcion">
+                                    <param id="0" name="Name">&quot;tiempoACABADO&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="Cierre del escenario (Eventos que continuan ejecutandose a pesar que se ha acabado el tiempo o fue derrotado)" sid="494127420345076" title="fin 7" />
+    </events>
+</c2eventsheet>

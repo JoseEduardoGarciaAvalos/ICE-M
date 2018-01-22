@@ -18,15 +18,15 @@
                     </conditions>
                     <actions>
                         <action id="-9" name="Set value" sid="941252233698796" type="System">
-                            <param id="0" name="Variable">juego</param>
+                            <param id="0" name="Variable">gJuego</param>
                             <param id="1" name="Value">4</param>
                         </action>
                         <action id="-9" name="Set value" sid="482623623401565" type="System">
-                            <param id="0" name="Variable">tiempo</param>
+                            <param id="0" name="Variable">gTiempo</param>
                             <param id="1" name="Value">floor(random(12,16))</param>
                         </action>
                         <action id="-9" name="Set value" sid="410468566162296" type="System">
-                            <param id="0" name="Variable">objetivo</param>
+                            <param id="0" name="Variable">gObjetivo</param>
                             <param id="1" name="Value">&quot;Que no haya cartas&quot;</param>
                         </action>
                         <action id="0" name="Call function" sid="499801599745719" type="Funcion">
@@ -357,7 +357,7 @@
                                 </action>
                                 <action id="-9" name="Set value" sid="156241109237964" type="System">
                                     <param id="0" name="Variable">crear</param>
-                                    <param id="1" name="Value">(dificultad&lt;20 &amp;  cartas&lt;8) | (dificultad&gt;=20 &amp; cartas&lt;5)</param>
+                                    <param id="1" name="Value">(gDificultad&lt;20 &amp;  cartas&lt;8) | (gDificultad&gt;=20 &amp; cartas&lt;5)</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -721,14 +721,14 @@
                             <param id="0" name="Interval (seconds)">1.0+Funcion.Call(&quot;calculoTEMPO&quot;)</param>
                         </condition>
                         <condition id="-14" name="Compare variable" sid="608630573955442" type="System">
-                            <param id="0" name="Variable">derrota</param>
+                            <param id="0" name="Variable">gDerrota</param>
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">0</param>
                         </condition>
                     </conditions>
                     <actions>
                         <action id="-10" name="Add to" sid="564079437742645" type="System">
-                            <param id="0" name="Variable">tiempo</param>
+                            <param id="0" name="Variable">gTiempo</param>
                             <param id="1" name="Value">-1</param>
                         </action>
                         <action id="0" name="Call function" sid="460134960161792" type="Funcion">
@@ -751,7 +751,7 @@
                         <event-block sid="454994271550998">
                             <conditions>
                                 <condition id="-14" name="Compare variable" sid="317723912527454" type="System">
-                                    <param id="0" name="Variable">tiempo</param>
+                                    <param id="0" name="Variable">gTiempo</param>
                                     <param id="1" name="Comparison">4</param>
                                     <param id="2" name="Value">5</param>
                                 </condition>
@@ -775,14 +775,14 @@
                         <event-block sid="844113467362406">
                             <conditions>
                                 <condition id="-14" name="Compare variable" sid="935852482833823" type="System">
-                                    <param id="0" name="Variable">tiempo</param>
+                                    <param id="0" name="Variable">gTiempo</param>
                                     <param id="1" name="Comparison">3</param>
                                     <param id="2" name="Value">0</param>
                                 </condition>
                             </conditions>
                             <actions>
                                 <action id="-9" name="Set value" sid="608432013756308" type="System">
-                                    <param id="0" name="Variable">derrota</param>
+                                    <param id="0" name="Variable">gDerrota</param>
                                     <param id="1" name="Value">cartas&gt;0?1:0</param>
                                 </action>
                                 <action id="0" name="Call function" sid="300326076993874" type="Funcion">
@@ -793,7 +793,24 @@
                         </event-block>
                     </sub-events>
                 </event-block>
+                <comment>Cuando derrota es igual a 1</comment>
+                <event-block sid="350988299864582">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="144007629546771" type="System">
+                            <param id="0" name="Variable">gDerrota</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="207368562424627" type="Funcion">
+                            <param id="0" name="Name">&quot;derrotaJUEGO&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
             </sub-events>
         </event-group>
+        <event-group description="Cierre del escenario (Eventos que continuan ejecutandose a pesar que se ha acabado el tiempo o fue derrotado)" sid="644140970501708" title="fin 4" />
     </events>
 </c2eventsheet>

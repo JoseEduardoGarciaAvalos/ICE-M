@@ -1,0 +1,530 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>juego 8</name>
+    <events>
+        <include>principal</include>
+        <event-group description="Preparación del escenario" sid="958310146588606" title="inicio 8">
+            <sub-events>
+                <comment>VALORES DE CANVAS</comment>
+                <variable comment="Ancho inferior (en pixeles)" constant="1" name="ANCHOI" sid="965467552933727" static="0" type="number">200</variable>
+                <variable comment="Ancho superior (en pixeles)" constant="1" name="ANCHOS" sid="774995515790197" static="0" type="number">736</variable>
+                <variable comment="Alto inferior (en pixeles)" constant="1" name="ALTOI" sid="979114938358283" static="0" type="number">200</variable>
+                <variable comment="Alto superior (en pixeles)" constant="1" name="ALTOS" sid="546844075887901" static="0" type="number">352</variable>
+                <comment>VALORES DE UTILERIA (ID=2)</comment>
+                <variable comment="Ancho inferior (en pixeles)" constant="1" name="ANCHOI2" sid="961816849521556" static="0" type="number">50</variable>
+                <variable comment="Alto inferior (en pixeles)" constant="1" name="ALTOI2" sid="931462014931176" static="0" type="number">50</variable>
+                <variable comment="Tolerancia de distancia en ancho y alto" constant="1" name="TOL" sid="237116139868386" static="0" type="number">90</variable>
+                <event-block sid="146282907281214">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="399237716377098" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="426784701397828" type="System">
+                            <param id="0" name="Variable">gJuego</param>
+                            <param id="1" name="Value">8</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="200747546635889" type="System">
+                            <param id="0" name="Variable">gTiempo</param>
+                            <param id="1" name="Value">floor(random(12,16))</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="587955493890719" type="System">
+                            <param id="0" name="Variable">gObjetivo</param>
+                            <param id="1" name="Value">&quot;Que no se salgan&quot;</param>
+                        </action>
+                        <action id="0" name="Call function" sid="373657238989991" type="Funcion">
+                            <param id="0" name="Name">&quot;inicioGUI&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="-16" name="Wait" sid="476884207377046" type="System">
+                            <param id="0" name="Seconds">0</param>
+                        </action>
+                        <action id="0" name="Call function" sid="349215156600805" type="Funcion">
+                            <param id="0" name="Name">&quot;paso1&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="-16" name="Wait" sid="319424697636446" type="System">
+                            <param id="0" name="Seconds">0</param>
+                        </action>
+                        <action id="0" name="Call function" sid="892363097499642" type="Funcion">
+                            <param id="0" name="Name">&quot;paso2&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="-16" name="Wait" sid="747906438504233" type="System">
+                            <param id="0" name="Seconds">0</param>
+                        </action>
+                        <action id="0" name="Call function" sid="913600011998370" type="Funcion">
+                            <param id="0" name="Name">&quot;comenzoJuego&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Definir el canvas</comment>
+                <event-block sid="558792543056360">
+                    <conditions>
+                        <condition id="0" name="On function" sid="823770503138041" type="Funcion">
+                            <param id="0" name="Name">&quot;paso1&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="797172596932300">
+                            <conditions />
+                            <actions>
+                                <action id="-3" name="Create object" sid="861074902965329" type="System">
+                                    <param id="0" name="Object to create">Canvas</param>
+                                    <param id="1" name="Layer">&quot;Principal&quot;</param>
+                                    <param id="2" name="X">0</param>
+                                    <param id="3" name="Y">0</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="713142723560738" type="Canvas">
+                                    <param id="0" name="Width">random(ANCHOI, ANCHOS)</param>
+                                    <param id="1" name="Height">random(ALTOI,ALTOS)</param>
+                                </action>
+                                <action id="3" name="Resize canvas" sid="954195453059099" type="Canvas">
+                                    <param id="0" name="width">Canvas.Width</param>
+                                    <param id="1" name="height">Canvas.Height</param>
+                                </action>
+                                <action id="8" name="Fill canvas with color" sid="333477950474604" type="Canvas">
+                                    <param id="0" name="color">&quot;black&quot;</param>
+                                </action>
+                                <action behavior="Ancla" id="0" name="Set enabled" sid="528263642167112" type="Canvas">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                                <action behavior="Ancla" id="1" name="Set horizontal align mode" sid="393205116955316" type="Canvas">
+                                    <param id="0" name="Mode">2</param>
+                                </action>
+                                <action behavior="Ancla" id="3" name="Set vertical align mode" sid="462584552216986" type="Canvas">
+                                    <param id="0" name="Mode">2</param>
+                                </action>
+                                <action behavior="Ancla" id="2" name="Set horizontal position" sid="978904085991838" type="Canvas">
+                                    <param id="0" name="Position">0.5</param>
+                                </action>
+                                <action behavior="Ancla" id="4" name="Set vertical position" sid="991057221139875" type="Canvas">
+                                    <param id="0" name="Position">0.5</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="968098003394408" type="System">
+                                    <param id="0" name="Object to create">Utileria</param>
+                                    <param id="1" name="Layer">&quot;Principal&quot;</param>
+                                    <param id="2" name="X">0</param>
+                                    <param id="3" name="Y">0</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="866722047993256" type="Utileria">
+                                    <param id="0" name="Width">random(ANCHOI2,Canvas.Width-TOL)</param>
+                                    <param id="1" name="Height">random(ALTOI2,Canvas.Height-TOL)</param>
+                                </action>
+                                <action behavior="Ancla" id="0" name="Set enabled" sid="666013118419104" type="Utileria">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                                <action behavior="Ancla" id="1" name="Set horizontal align mode" sid="807192230627305" type="Utileria">
+                                    <param id="0" name="Mode">2</param>
+                                </action>
+                                <action behavior="Ancla" id="3" name="Set vertical align mode" sid="906951239041163" type="Utileria">
+                                    <param id="0" name="Mode">2</param>
+                                </action>
+                                <action behavior="Ancla" id="2" name="Set horizontal position" sid="977685022722356" type="Utileria">
+                                    <param id="0" name="Position">0.5</param>
+                                </action>
+                                <action behavior="Ancla" id="4" name="Set vertical position" sid="955345917801553" type="Utileria">
+                                    <param id="0" name="Position">0.5</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="553363494316451" type="Utileria">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Value">2</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="488693811788244" type="Utileria">
+                                    <param id="0" name="Animation">&quot;zona&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="392443904627148" type="Utileria">
+                                    <param id="0" name="Frame number">2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Definir la utileria</comment>
+                <event-block sid="687258032423663">
+                    <conditions>
+                        <condition id="0" name="On function" sid="891508710602079" type="Funcion">
+                            <param id="0" name="Name">&quot;paso2&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <comment>Eliminar la Utileria con ID=2 en el canvas</comment>
+                        <event-block sid="673325821959983">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="363077530194967" type="Utileria">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="CanvasExtra" id="4" name="Erase object" sid="168737484264433" type="Canvas">
+                                    <param id="0" name="object">Utileria</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Hacer que cierta utileria sea invisible</comment>
+                        <event-block sid="233841026470790">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="316079777185297" type="Utileria">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="876989284546476" type="Utileria">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">4</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Set opacity" sid="857297938327779" type="Utileria">
+                                    <param id="0" name="Opacity">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="979850636342094">
+                    <conditions>
+                        <condition id="0" name="On function" sid="769409191028160" type="Funcion">
+                            <param id="0" name="Name">&quot;comenzoJuego&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="516379897697185">
+                            <conditions />
+                            <actions>
+                                <action id="-41" name="Wait for signal" sid="559269806861361" type="System">
+                                    <param id="0" name="Tag">&quot;pCargado&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="498359686259232" type="Funcion">
+                                    <param id="0" name="Name">&quot;crearEnemigo&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="Creación, definición de propiedades y comportamientos de los objetos " sid="331520185110734" title="jugabilidad 8">
+            <sub-events>
+                <comment>VALORES COMUNES DE LOS ENEMIGOS</comment>
+                <variable comment="Ancho (en pixeles)" constant="1" name="ANCHO" sid="723984260807035" static="0" type="number">50</variable>
+                <variable comment="Alto (en pixeles)" constant="1" name="ALTO" sid="379325155802081" static="0" type="number">50</variable>
+                <variable comment="Velocidad inferior" constant="1" name="VI" sid="365453341203791" static="0" type="number">50</variable>
+                <variable comment="Velocidad superior" constant="1" name="VS" sid="358765452654074" static="0" type="number">70</variable>
+                <variable comment="Aceleración superior" constant="1" name="AI" sid="939775520922712" static="0" type="number">2</variable>
+                <variable comment="Aceleración inferior" constant="1" name="AS" sid="548215075101323" static="0" type="number">5</variable>
+                <comment>Función que crea uno o más Enemigos</comment>
+                <event-block sid="900108984109757">
+                    <conditions>
+                        <condition id="0" name="On function" sid="928500690913667" type="Funcion">
+                            <param id="0" name="Name">&quot;crearEnemigo&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <variable comment="Cantidad minima que se creará de enemigos" constant="1" name="MINIMO" sid="535941319838977" static="0" type="number">1</variable>
+                        <variable comment="La dificultad dividida por esta cantidad" constant="1" name="RAZON" sid="418959118800784" static="0" type="number">3</variable>
+                        <comment>Repetirá el bucle según dificultad (5= 1 bucle, 10= 2 bucles y así sucesivamente) Por cada bucle 50% de probabilidad que se cree otro enemigo  (Pero siempre 1)</comment>
+                        <event-block sid="168847756892681">
+                            <conditions>
+                                <condition id="-12" name="Repeat" sid="516091220233796" type="System">
+                                    <param id="0" name="Count">int(gDificultad/RAZON)+MINIMO</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block any="1" sid="454420023876253">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="673548926192962" type="System">
+                                            <param id="0" name="First value">loopindex</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Second value">MINIMO</param>
+                                        </condition>
+                                        <condition id="-8" name="Compare two values" sid="222933728141384" type="System">
+                                            <param id="0" name="First value">floor(random(2))</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="770811459316252" type="System">
+                                            <param id="0" name="Object to create">Enemigo</param>
+                                            <param id="1" name="Layer">&quot;Principal&quot;</param>
+                                            <param id="2" name="X">0</param>
+                                            <param id="3" name="Y">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Evento disparador que se ejecuta cada vez que se crea un Enemigo</comment>
+                <event-block sid="261444397690062">
+                    <conditions>
+                        <condition id="-18" name="On created" sid="776089680040106" type="Enemigo" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <variable comment="Velocidad del objeto por el  comportamiento bala" constant="0" name="velocidad" sid="667744032468330" static="0" type="number">0</variable>
+                        <variable comment="Aceleración del objeto por el  comportamiento bala" constant="0" name="aceleracion" sid="913715783813186" static="0" type="number">0</variable>
+                        <variable comment="El porcentaje de dificultad" constant="0" name="razon" sid="615797915661668" static="0" type="number">0</variable>
+                        <event-block sid="180836410683546">
+                            <conditions />
+                            <actions>
+                                <action id="-9" name="Set value" sid="576791119578525" type="System">
+                                    <param id="0" name="Variable">razon</param>
+                                    <param id="1" name="Value">Funcion.Call(&quot;calculoRAZON&quot;)</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="237466494947729" type="System">
+                                    <param id="0" name="Variable">velocidad</param>
+                                    <param id="1" name="Value">random(VI*(1+razon),VS*(1+razon))</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="283637426782850" type="System">
+                                    <param id="0" name="Variable">aceleracion</param>
+                                    <param id="1" name="Value">random(AI*(1+razon),AS*(1+razon))</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="134245107166859" type="Enemigo">
+                                    <param id="0" name="Width">ANCHO</param>
+                                    <param id="1" name="Height">ALTO</param>
+                                </action>
+                                <action id="0" name="Call function" sid="860241122587963" type="Funcion">
+                                    <param id="0" name="Name">&quot;posicionALEATORIA&quot;</param>
+                                    <param id="1" name="Parameter {n}">Enemigo.UID{###}2</param>
+                                </action>
+                                <action behavior="BalaCaucho" id="5" name="Set enabled" sid="930755788660195" type="Enemigo">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                                <action behavior="BalaCaucho" id="0" name="Set speed" sid="198689103335571" type="Enemigo">
+                                    <param id="0" name="Speed">velocidad</param>
+                                </action>
+                                <action behavior="BalaCaucho" id="1" name="Set acceleration" sid="848808869042668" type="Enemigo">
+                                    <param id="0" name="Acceleration">aceleracion</param>
+                                </action>
+                                <action behavior="BalaCaucho" id="3" name="Set angle of motion" sid="196978292696954" type="Enemigo">
+                                    <param id="0" name="Angle">random(0,360)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Evento disparador que se ejecuta cada vez un Enemigo choca con un pixel rellenado del canvas</comment>
+                <event-block sid="691206050072162">
+                    <conditions>
+                        <condition behavior="PixelColision" id="1" name="Is overlapping another canvas" sid="258853821881158" type="Enemigo">
+                            <param id="0" name="Canvas">Canvas</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="814066289403870">
+                            <conditions />
+                            <actions>
+                                <action behavior="BalaCaucho" id="3" name="Set angle of motion" sid="568388726176065" type="Enemigo">
+                                    <param id="0" name="Angle">Enemigo.PixelColision.BounceAngle</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="850279791800868" type="Enemigo">
+                                    <param id="0" name="Width">ANCHO*2</param>
+                                    <param id="1" name="Height">ALTO*2</param>
+                                </action>
+                                <action behavior="CanvasExtra" id="4" name="Erase object" sid="645111873957500" type="Canvas">
+                                    <param id="0" name="object">Enemigo</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="534953805859633" type="Enemigo">
+                                    <param id="0" name="Width">ANCHO</param>
+                                    <param id="1" name="Height">ALTO</param>
+                                </action>
+                                <action behavior="Girar" id="0" name="Set activated" sid="572947740502635" type="Enemigo">
+                                    <param id="0" name="Activated">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Si 0 = girará en el sentido horario, si es 1 entonces en el sentido anti-horario</comment>
+                        <event-block sid="399737841460395">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="945313395313852" type="System">
+                                    <param id="0" name="First value">floor(random(2))</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Girar" id="1" name="Set rotation direction" sid="597477036713167" type="Enemigo">
+                                    <param id="0" name="Direction">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="264396636542540">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="942977040724702" type="System" />
+                            </conditions>
+                            <actions>
+                                <action behavior="Girar" id="1" name="Set rotation direction" sid="341305327751062" type="Enemigo">
+                                    <param id="0" name="Direction">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Función que dibuja circulos en el canvas</comment>
+                <comment>&#x09;parametro 1: El centro X</comment>
+                <comment>&#x09;parametro 2: El centro Y</comment>
+                <event-block sid="342213938157686">
+                    <conditions>
+                        <condition id="0" name="On function" sid="165641769635241" type="Funcion">
+                            <param id="0" name="Name">&quot;dibujarCirculo&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="631269353494450">
+                            <conditions />
+                            <actions>
+                                <action id="20" name="Draw Circle" sid="868539643936905" type="Canvas">
+                                    <param id="0" name="x">Funcion.Param(0) - Canvas.X</param>
+                                    <param id="1" name="y">Funcion.Param(1) - Canvas.Y</param>
+                                    <param id="2" name="radius">random(30, 80)</param>
+                                    <param id="3" name="color">&quot;black&quot;</param>
+                                    <param id="4" name="line_width">3</param>
+                                </action>
+                                <action id="11" name="Fill Path" sid="523832577596286" type="Canvas">
+                                    <param id="0" name="color">&quot;rgba(&quot; &amp; floor(random(0,128)) &amp; &quot;,&quot; &amp; floor(random(0,128)) &amp; &quot;,&quot; &amp; floor(random(0,128)) &amp; &quot;,0.5)&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="Condiciones de derrota y controles de tiempo junto a los controles (si los hay) del jugador" sid="582091953978529" title="control 8">
+            <sub-events>
+                <comment>Control del personaje, Evento disparador que se ejecuta al soltar el clic izquierdo</comment>
+                <event-block sid="774614278800372">
+                    <conditions>
+                        <condition id="3" name="On button released" sid="744288182250808" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Tiempo" id="1" name="Stop timer" sid="851005463645125" type="Enemigo">
+                            <param id="0" name="Tag">&quot;dibujar&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Control del personaje, Evento disparador que se ejecuta al hacer el clic izquierdo</comment>
+                <event-block sid="336704793653317">
+                    <conditions>
+                        <condition id="0" name="On click" sid="446544801667961" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="336388699701823" type="Funcion">
+                            <param id="0" name="Name">&quot;dibujarCirculo&quot;</param>
+                            <param id="1" name="Parameter {n}">Mouse.X{###}Mouse.Y</param>
+                        </action>
+                        <action behavior="Tiempo" id="0" name="Start timer" sid="288661537593496" type="Enemigo">
+                            <param id="0" name="Duration">0.15</param>
+                            <param id="1" name="Type">1</param>
+                            <param id="2" name="Tag">&quot;dibujar&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Control del personaje, Evento disparador que se ejecuta cada vez que el timer es activado</comment>
+                <event-block sid="876563228258313">
+                    <conditions>
+                        <condition behavior="Tiempo" id="0" name="On timer" sid="973562807447387" type="Enemigo">
+                            <param id="0" name="Tag">&quot;dibujar&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="326165493001500" type="Funcion">
+                            <param id="0" name="Name">&quot;dibujarCirculo&quot;</param>
+                            <param id="1" name="Parameter {n}">Mouse.X{###}Mouse.Y</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Evento disparador que se ejecuta cada vez un Enemigo es destruido (Sale de la pantalla)</comment>
+                <event-block sid="689443387339398">
+                    <conditions>
+                        <condition id="-4" name="Is outside layout" sid="406451221069442" type="Enemigo" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="211984996123837" type="System">
+                            <param id="0" name="Variable">gDerrota</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Cada un segundo mientras no haya perdido, se descontará 1 a la variable tiempo</comment>
+                <event-block sid="194725305295457">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="427177620167501" type="System">
+                            <param id="0" name="Interval (seconds)">1.0+Funcion.Call(&quot;calculoTEMPO&quot;)</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="569003977456941" type="System">
+                            <param id="0" name="Variable">gDerrota</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="843169821231829" type="System">
+                            <param id="0" name="Variable">gTiempo</param>
+                            <param id="1" name="Value">-1</param>
+                        </action>
+                        <action id="0" name="Call function" sid="645711670407779" type="Funcion">
+                            <param id="0" name="Name">&quot;tiempoGUI&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <comment>Si el tiempo se acabo</comment>
+                        <event-block sid="485373618896271">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="478542876120846" type="System">
+                                    <param id="0" name="Variable">gTiempo</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="184806060881846" type="Enemigo" />
+                                <action id="0" name="Call function" sid="657689494997228" type="Funcion">
+                                    <param id="0" name="Name">&quot;tiempoACABADO&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Cuando derrota es igual a 1</comment>
+                <event-block sid="509168905789649">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="872579044326960" type="System">
+                            <param id="0" name="Variable">gDerrota</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="595112051973898" type="Funcion">
+                            <param id="0" name="Name">&quot;derrotaJUEGO&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

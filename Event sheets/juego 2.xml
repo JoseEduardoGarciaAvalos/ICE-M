@@ -12,15 +12,15 @@
                     </conditions>
                     <actions>
                         <action id="-9" name="Set value" sid="304864573821743" type="System">
-                            <param id="0" name="Variable">juego</param>
+                            <param id="0" name="Variable">gJuego</param>
                             <param id="1" name="Value">2</param>
                         </action>
                         <action id="-9" name="Set value" sid="309831289244886" type="System">
-                            <param id="0" name="Variable">tiempo</param>
+                            <param id="0" name="Variable">gTiempo</param>
                             <param id="1" name="Value">floor(random(12,16))</param>
                         </action>
                         <action id="-9" name="Set value" sid="585406827113312" type="System">
-                            <param id="0" name="Variable">objetivo</param>
+                            <param id="0" name="Variable">gObjetivo</param>
                             <param id="1" name="Value">&quot;filtra&quot;</param>
                         </action>
                         <action id="0" name="Call function" sid="972973046334239" type="Funcion">
@@ -340,7 +340,7 @@
                     </conditions>
                     <actions>
                         <action id="-9" name="Set value" sid="975686249554658" type="System">
-                            <param id="0" name="Variable">derrota</param>
+                            <param id="0" name="Variable">gDerrota</param>
                             <param id="1" name="Value">1</param>
                         </action>
                     </actions>
@@ -452,14 +452,14 @@
                             <param id="0" name="Interval (seconds)">1.0+Funcion.Call(&quot;calculoTEMPO&quot;)</param>
                         </condition>
                         <condition id="-14" name="Compare variable" sid="211423521996574" type="System">
-                            <param id="0" name="Variable">derrota</param>
+                            <param id="0" name="Variable">gDerrota</param>
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">0</param>
                         </condition>
                     </conditions>
                     <actions>
                         <action id="-10" name="Add to" sid="616826325550259" type="System">
-                            <param id="0" name="Variable">tiempo</param>
+                            <param id="0" name="Variable">gTiempo</param>
                             <param id="1" name="Value">-1</param>
                         </action>
                         <action id="0" name="Call function" sid="400109221566259" type="Funcion">
@@ -473,7 +473,7 @@
                         <event-block sid="250441266521251">
                             <conditions>
                                 <condition id="-14" name="Compare variable" sid="613547302113445" type="System">
-                                    <param id="0" name="Variable">tiempo</param>
+                                    <param id="0" name="Variable">gTiempo</param>
                                     <param id="1" name="Comparison">4</param>
                                     <param id="2" name="Value">0</param>
                                 </condition>
@@ -485,7 +485,7 @@
                                 </action>
                                 <action id="-9" name="Set value" sid="445280173507991" type="System">
                                     <param id="0" name="Variable">aux</param>
-                                    <param id="1" name="Value">(tiempo&gt;=10 | (tiempo&gt;=8 &amp; aux=1))?0:&#x0D;&#x0A;(tiempo=5 | (tiempo&lt;5 &amp; aux=1))?1:-1</param>
+                                    <param id="1" name="Value">(gTiempo&gt;=10 | (gTiempo&gt;=8 &amp; aux=1))?0:&#x0D;&#x0A;(gTiempo=5 | (gTiempo&lt;5 &amp; aux=1))?1:-1</param>
                                 </action>
                                 <action id="0" name="Call function" sid="428603009901296" type="Funcion">
                                     <param id="0" name="Name">&quot;crearPersona&quot;</param>
@@ -500,7 +500,7 @@
                             </conditions>
                             <actions>
                                 <action id="-9" name="Set value" sid="310745114728914" type="System">
-                                    <param id="0" name="Variable">derrota</param>
+                                    <param id="0" name="Variable">gDerrota</param>
                                     <param id="1" name="Value">Aliado.Count&gt;0?1:0</param>
                                 </action>
                                 <action id="0" name="Call function" sid="931133588714661" type="Funcion">
@@ -510,6 +510,22 @@
                             </actions>
                         </event-block>
                     </sub-events>
+                </event-block>
+                <comment>Cuando derrota es igual a 1</comment>
+                <event-block sid="190006040933133">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="338200930162189" type="System">
+                            <param id="0" name="Variable">gDerrota</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="619558312567945" type="Funcion">
+                            <param id="0" name="Name">&quot;derrotaJUEGO&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
                 </event-block>
             </sub-events>
         </event-group>

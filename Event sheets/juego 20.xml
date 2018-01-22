@@ -1,0 +1,398 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>juego 20</name>
+    <events>
+        <include>principal</include>
+        <event-group description="Preparación del escenario" sid="965456520244179" title="inicio 20">
+            <sub-events>
+                <comment>VALORES DE LA VENTANA (Enemigo)</comment>
+                <variable comment="Ancho inferior (en pixeles)" constant="1" name="ANCHOEI" sid="404349996560850" static="0" type="number">100</variable>
+                <variable comment="Ancho superior (en pixeles)" constant="1" name="ANCHOES" sid="579480534795718" static="0" type="number">200</variable>
+                <variable comment="Alto inferior (en pixeles)" constant="1" name="ALTOEI" sid="429314263629082" static="0" type="number">100</variable>
+                <variable comment="Alto superior (en pixeles)" constant="1" name="ALTOES" sid="177232495920720" static="0" type="number">200</variable>
+                <comment>VALORES DEL BOTON Cerrar (Aliado)</comment>
+                <variable comment="Ancho inferior (en pixeles)" constant="1" name="ANCHOAI" sid="301928557867625" static="0" type="number">10</variable>
+                <variable comment="Ancho superior (en pixeles)" constant="1" name="ANCHOAS" sid="155911430044190" static="0" type="number">20</variable>
+                <variable comment="Alto inferior (en pixeles)" constant="1" name="ALTOAI" sid="406627357993069" static="0" type="number">10</variable>
+                <variable comment="Alto superior (en pixeles)" constant="1" name="ALTOAS" sid="900742924912939" static="0" type="number">20</variable>
+                <event-block sid="500122456268333">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="169238100313660" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="247638523527011" type="System">
+                            <param id="0" name="Variable">gJuego</param>
+                            <param id="1" name="Value">20</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="152566210828240" type="System">
+                            <param id="0" name="Variable">gTiempo</param>
+                            <param id="1" name="Value">floor(random(12,16))</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="762053094355425" type="System">
+                            <param id="0" name="Variable">gObjetivo</param>
+                            <param id="1" name="Value">&quot;Cierra la publicidad&quot;</param>
+                        </action>
+                        <action id="0" name="Call function" sid="103828427878425" type="Funcion">
+                            <param id="0" name="Name">&quot;inicioGUI&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="-16" name="Wait" sid="327513486121078" type="System">
+                            <param id="0" name="Seconds">0</param>
+                        </action>
+                        <action id="0" name="Call function" sid="555202133071433" type="Funcion">
+                            <param id="0" name="Name">&quot;crearPublicidad&quot;</param>
+                            <param id="1" name="Parameter {n}">floor(random(10,15))</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="767154434979861" type="System">
+                            <param id="0" name="Seconds">0</param>
+                        </action>
+                        <action id="0" name="Call function" sid="758207320175223" type="Funcion">
+                            <param id="0" name="Name">&quot;comenzoJuego&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <comment>Hacer que cierta utileria sea invisible</comment>
+                        <event-block sid="117568524176867">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="637213013064137" type="Utileria">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="629475001164127" type="Utileria">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">10</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Set opacity" sid="569766779684634" type="Utileria">
+                                    <param id="0" name="Opacity">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Final</comment>
+                        <event-block sid="180895572447773">
+                            <conditions />
+                            <actions>
+                                <action id="-16" name="Wait" sid="992787351521050" type="System">
+                                    <param id="0" name="Seconds">0</param>
+                                </action>
+                                <action id="0" name="Call function" sid="621895635457299" type="Funcion">
+                                    <param id="0" name="Name">&quot;comenzoJuego&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Función que crea ventanas de publicidad</comment>
+                <comment>&#x09;Parametro 1: Número de ventanas que se crearán</comment>
+                <comment>&#x09;Parametro 2: La existencia de un segundo parametro hará que comience la animacion de inmediato</comment>
+                <event-block sid="737342638424015">
+                    <conditions>
+                        <condition id="0" name="On function" sid="448688831706540" type="Funcion">
+                            <param id="0" name="Name">&quot;crearPublicidad&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="255346600206745">
+                            <conditions>
+                                <condition id="-12" name="Repeat" sid="676217331348205" type="System">
+                                    <param id="0" name="Count">Funcion.Param(0)</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <variable constant="0" name="ancho" sid="389117175814173" static="0" type="number">0</variable>
+                                <variable constant="0" name="alto" sid="400645905971774" static="0" type="number">0</variable>
+                                <event-block sid="793842484690023">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="292085527623653" type="System">
+                                            <param id="0" name="Variable">ancho</param>
+                                            <param id="1" name="Value">random(ANCHOEI,ANCHOES)</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="255343570820614" type="System">
+                                            <param id="0" name="Variable">alto</param>
+                                            <param id="1" name="Value">random(ALTOEI,ALTOES)</param>
+                                        </action>
+                                        <action id="-3" name="Create object" sid="147141848080448" type="System">
+                                            <param id="0" name="Object to create">Enemigo</param>
+                                            <param id="1" name="Layer">&quot;Principal&quot;</param>
+                                            <param id="2" name="X">0</param>
+                                            <param id="3" name="Y">0</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="324204111931974" type="Enemigo">
+                                            <param id="0" name="Frame number">0</param>
+                                        </action>
+                                        <action id="4" name="Set animation" sid="349225454556706" type="Enemigo">
+                                            <param id="0" name="Animation">&quot;j20a&quot;</param>
+                                            <param id="1" name="From">0</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="722618977216816" type="Enemigo">
+                                            <param id="0" name="Frame number">floor(random(Enemigo.AnimationFrameCount))</param>
+                                        </action>
+                                        <action id="-7" name="Set size" sid="499733703562148" type="Enemigo">
+                                            <param id="0" name="Width">ancho</param>
+                                            <param id="1" name="Height">alto</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="610617573619394" type="Funcion">
+                                            <param id="0" name="Name">&quot;posicionALEATORIA&quot;</param>
+                                            <param id="1" name="Parameter {n}">Enemigo.UID{###}2</param>
+                                        </action>
+                                        <action id="-3" name="Create object" sid="950453588411099" type="System">
+                                            <param id="0" name="Object to create">Aliado</param>
+                                            <param id="1" name="Layer">&quot;Principal&quot;</param>
+                                            <param id="2" name="X">0</param>
+                                            <param id="3" name="Y">0</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="621861521616116" type="Aliado">
+                                            <param id="0" name="Frame number">0</param>
+                                        </action>
+                                        <action id="4" name="Set animation" sid="745506925887886" type="Aliado">
+                                            <param id="0" name="Animation">&quot;j20a&quot;</param>
+                                            <param id="1" name="From">0</param>
+                                        </action>
+                                        <action id="-7" name="Set size" sid="520796089831819" type="Aliado">
+                                            <param id="0" name="Width">random(ANCHOAI,ANCHOAS)</param>
+                                            <param id="1" name="Height">random(ALTOAI,ALTOAS)</param>
+                                        </action>
+                                        <action id="-16" name="Set opacity" sid="987631870122427" type="Aliado">
+                                            <param id="0" name="Opacity">0</param>
+                                        </action>
+                                        <action behavior="Hash" id="1" name="Set value" sid="458134918634303" type="Aliado">
+                                            <param id="0" name="Key string">&quot;enlace&quot;</param>
+                                            <param id="1" name="Value">Enemigo.UID</param>
+                                        </action>
+                                        <action behavior="Hash" id="1" name="Set value" sid="103583481694248" type="Enemigo">
+                                            <param id="0" name="Key string">&quot;enlace&quot;</param>
+                                            <param id="1" name="Value">Aliado.UID</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="715686504582396" type="Funcion">
+                                            <param id="0" name="Name">&quot;posicionALEATORIA&quot;</param>
+                                            <param id="1" name="Parameter {n}">Aliado.UID{###}0{###}Enemigo.BBoxLeft{###}Enemigo.BBoxRight{###}Enemigo.BBoxTop{###}Enemigo.BBoxBottom</param>
+                                        </action>
+                                        <action id="-7" name="Set size" sid="805428747622042" type="Enemigo">
+                                            <param id="0" name="Width">0</param>
+                                            <param id="1" name="Height">0</param>
+                                        </action>
+                                        <action behavior="Tarea" id="26" name="Create/Initialize tween" sid="510125150402381" type="Enemigo">
+                                            <param id="0" name="Tweened property">1</param>
+                                            <param id="1" name="Function">24</param>
+                                            <param id="2" name="Target">&quot;tamaño&quot;</param>
+                                            <param id="3" name="Duration">random(0.3,0.6)</param>
+                                            <param id="4" name="Enforce mode">1</param>
+                                        </action>
+                                        <action behavior="Tarea" id="3" name="Set target" sid="898290496017211" type="Enemigo">
+                                            <param id="0" name="Target is">4</param>
+                                            <param id="1" name="Relativity">1</param>
+                                            <param id="2" name="Value">ancho</param>
+                                        </action>
+                                        <action behavior="Tarea" id="3" name="Set target" sid="975598183868207" type="Enemigo">
+                                            <param id="0" name="Target is">5</param>
+                                            <param id="1" name="Relativity">1</param>
+                                            <param id="2" name="Value">alto</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="635318866706897">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="554577518548409" type="System">
+                                                    <param id="0" name="First value">Funcion.ParamCount</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">2</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Tarea" id="10" name="Start" sid="236235643784850" type="Enemigo">
+                                                    <param id="0" name="Start Mode">0</param>
+                                                    <param id="1" name="Force use current">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="790597470717481">
+                    <conditions>
+                        <condition id="0" name="On function" sid="616875417028538" type="Funcion">
+                            <param id="0" name="Name">&quot;comenzoJuego&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-41" name="Wait for signal" sid="835895691179714" type="System">
+                            <param id="0" name="Tag">&quot;pCargado&quot;</param>
+                        </action>
+                        <action behavior="Tarea" id="10" name="Start" sid="622268316778366" type="Enemigo">
+                            <param id="0" name="Start Mode">0</param>
+                            <param id="1" name="Force use current">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="Creación, definición de propiedades y comportamientos de los objetos " sid="981787056742721" title="jugabilidad 20">
+            <sub-events>
+                <comment>VALORES DE LA VENTANA (Enemigo)</comment>
+                <variable comment="Cantidad inferior para crear  publicidad " constant="1" name="CI" sid="860538937509603" static="0" type="number">1</variable>
+                <variable comment="Cantidad superior para crear publicidad" constant="1" name="CS" sid="779633133945764" static="0" type="number">5</variable>
+                <variable comment="Maxima cantidad que se pueden crear publicidad" constant="1" name="MC" sid="636922639784915" static="0" type="number">20</variable>
+                <comment>Evento disparador que se ejecuta al hacer el clic izquierdo en la ventana, solo toma la que está encima</comment>
+                <event-block sid="837266314276959">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="226834485976777" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">Enemigo</param>
+                        </condition>
+                        <condition id="-17" name="Pick top/bottom" sid="104259203543705" type="Enemigo">
+                            <param id="0" name="Which">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <variable comment="El porcentaje de dificultad" constant="0" name="razon" sid="257920550377423" static="0" type="number">0</variable>
+                        <variable constant="0" name="cantidad" sid="984888943702917" static="0" type="number">0</variable>
+                        <comment>Si el mouse está sobre el botón cerrar</comment>
+                        <event-block sid="540767408185179">
+                            <conditions>
+                                <condition id="7" name="Cursor is over object" sid="429991678913742" type="Mouse">
+                                    <param id="0" name="Object">Aliado</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="461198690174528" type="Enemigo" />
+                                <action id="-9" name="Destroy" sid="995696949972247" type="Aliado" />
+                            </actions>
+                            <sub-events>
+                                <event-block sid="597741259625966">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="445857367881105" type="System">
+                                            <param id="0" name="First value">Enemigo.Count</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Second value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="873661191615655" type="Funcion">
+                                            <param id="0" name="Name">&quot;victoriaJUEGO&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>Se crearán mas publicidad, si estos no rebasan MC</comment>
+                        <event-block sid="953344350765698">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="779173803440059" type="System" />
+                                <condition id="-8" name="Compare two values" sid="745574781213194" type="System">
+                                    <param id="0" name="First value">Enemigo.Count</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Second value">MC</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="909391697399169" type="System">
+                                    <param id="0" name="Variable">razon</param>
+                                    <param id="1" name="Value">Funcion.Call(&quot;calculoRAZON&quot;)</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="629282851218537" type="System">
+                                    <param id="0" name="Variable">cantidad</param>
+                                    <param id="1" name="Value">floor(random(CI*(1+razon),CS*(1+razon)))</param>
+                                </action>
+                                <action id="14" name="Log" sid="717681449714069" type="Navegador">
+                                    <param id="0" name="Type">0</param>
+                                    <param id="1" name="Message">cantidad</param>
+                                </action>
+                                <action id="14" name="Log" sid="804315573552231" type="Navegador">
+                                    <param id="0" name="Type">0</param>
+                                    <param id="1" name="Message">Enemigo.Count+cantidad&gt;MC?MC-Enemigo.Count:cantidad</param>
+                                </action>
+                                <action id="14" name="Log" sid="130724153505757" type="Navegador">
+                                    <param id="0" name="Type">0</param>
+                                    <param id="1" name="Message">&quot;------------------&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="607642260092072" type="Funcion">
+                                    <param id="0" name="Name">&quot;crearPublicidad&quot;</param>
+                                    <param id="1" name="Parameter {n}">Enemigo.Count+cantidad&gt;MC?MC-Enemigo.Count:cantidad{###}0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Evento disparador que se ejecuta cuando el progeso de la animación interpolada está en mayor que 0.6</comment>
+                <event-block sid="265447971128174">
+                    <conditions>
+                        <condition behavior="Tarea" id="8" name="On threshold" sid="547674078192676" type="Enemigo">
+                            <param id="0" name="Comparison">5</param>
+                            <param id="1" name="Value">0.6</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Set opacity" sid="642007606343815" type="Aliado">
+                            <param id="0" name="Opacity">100</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="Condiciones de derrota y controles de tiempo junto a los controles (si los hay) del jugador" sid="925126416017459" title="control 20">
+            <sub-events>
+                <comment>Cada un segundo mientras no haya perdido, se descontará 1 a la variable tiempo</comment>
+                <event-block sid="476834333639042">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="472179734429229" type="System">
+                            <param id="0" name="Interval (seconds)">1.0+Funcion.Call(&quot;calculoTEMPO&quot;)</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="895557568906565" type="System">
+                            <param id="0" name="Variable">gDerrota</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="263389707922507" type="System">
+                            <param id="0" name="Variable">gTiempo</param>
+                            <param id="1" name="Value">-1</param>
+                        </action>
+                        <action id="0" name="Call function" sid="620413531650338" type="Funcion">
+                            <param id="0" name="Name">&quot;tiempoGUI&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <comment>Si el tiempo se acabo</comment>
+                        <event-block sid="403713306687598">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="441754805680753" type="System">
+                                    <param id="0" name="Variable">gTiempo</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="617045594861165" type="System">
+                                    <param id="0" name="Variable">gDerrota</param>
+                                    <param id="1" name="Value">Enemigo.Count&gt;0</param>
+                                </action>
+                                <action id="0" name="Call function" sid="291866577198848" type="Funcion">
+                                    <param id="0" name="Name">&quot;tiempoACABADO&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="Cierre del escenario (Eventos que continuan ejecutandose a pesar que se ha acabado el tiempo o fue derrotado)" sid="940738350032780" title="fin 20" />
+    </events>
+</c2eventsheet>

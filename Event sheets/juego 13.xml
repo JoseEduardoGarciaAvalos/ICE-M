@@ -1,0 +1,667 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>juego 13</name>
+    <events>
+        <include>principal</include>
+        <event-group description="Preparación del escenario" sid="600866967438361" title="inicio 13">
+            <sub-events>
+                <variable comment="Cantidad de aliados salvados requeridos" constant="1" name="CAN" sid="319043466654513" static="0" type="number">3</variable>
+                <event-block sid="113900393961011">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="101197801129132" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="314262163210497" type="System">
+                            <param id="0" name="Variable">gJuego</param>
+                            <param id="1" name="Value">13</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="762412107559661" type="System">
+                            <param id="0" name="Variable">gTiempo</param>
+                            <param id="1" name="Value">floor(random(15,20))</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="980590741530590" type="System">
+                            <param id="0" name="Variable">gObjetivo</param>
+                            <param id="1" name="Value">&quot;Sube y Ayuda pero no te caigas&quot;</param>
+                        </action>
+                        <action id="0" name="Call function" sid="896351100608004" type="Funcion">
+                            <param id="0" name="Name">&quot;inicioGUI&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="-16" name="Wait" sid="615400724921255" type="System">
+                            <param id="0" name="Seconds">0</param>
+                        </action>
+                        <action id="0" name="Add key" sid="700281638288282" type="Diccionario">
+                            <param id="0" name="Key">&quot;i&quot;</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="0" name="Add key" sid="712152195383652" type="Diccionario">
+                            <param id="0" name="Key">&quot;n&quot;</param>
+                            <param id="1" name="Value">3</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="185353680757969">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="481672302606429" type="Utileria">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">10</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Salto" id="0" name="Set enabled" sid="286854481683710" type="Utileria">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                                <action id="11" name="Set collisions enabled" sid="814479572606821" type="Utileria">
+                                    <param id="0" name="Collisions">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Definir el texto de conteo</comment>
+                        <event-block sid="965650519604450">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="640092549915410" type="Texto">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="3" name="Set font size" sid="588890578622919" type="Texto">
+                                    <param id="0" name="Size (pt)">15</param>
+                                </action>
+                                <action id="53" name="Set horizontal alignment" sid="396895731006648" type="Texto">
+                                    <param id="0" name="Horizontal alignment">2</param>
+                                </action>
+                                <action id="55" name="Set Vertical alignment" sid="661964582241721" type="Texto">
+                                    <param id="0" name="Vertical alignment">1</param>
+                                </action>
+                                <action id="4" name="Set font color" sid="348268432806530" type="Texto">
+                                    <param id="0" name="Color">&quot;rgb(0, 0, 0)&quot;</param>
+                                </action>
+                                <action id="50" name="Set font style" sid="297276006793597" type="Texto">
+                                    <param id="0" name="Style">1</param>
+                                </action>
+                                <action id="0" name="Set text" sid="581464071164101" type="Texto">
+                                    <param id="0" name="Text">Diccionario.Get(&quot;i&quot;) &amp; &quot;/&quot; &amp; Diccionario.Get(&quot;n&quot;) </param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="742632403883471">
+                            <conditions />
+                            <actions>
+                                <action id="0" name="Call function" sid="502398092874073" type="Funcion">
+                                    <param id="0" name="Name">&quot;comenzoJuego&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Definir la utileria</comment>
+                <event-block sid="457479851374671">
+                    <conditions>
+                        <condition id="0" name="On function" sid="847647604813260" type="Funcion">
+                            <param id="0" name="Name">&quot;comenzoJuego&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-41" name="Wait for signal" sid="515754578781983" type="System">
+                            <param id="0" name="Tag">&quot;pCargado&quot;</param>
+                        </action>
+                        <action behavior="Plataforma" id="11" name="Set enabled" sid="565172535729986" type="Jugador">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action behavior="Plataforma" id="1" name="Set max speed" sid="602326270608506" type="Jugador">
+                            <param id="0" name="Max Speed">300</param>
+                        </action>
+                        <action behavior="Plataforma" id="2" name="Set acceleration" sid="853765318165626" type="Jugador">
+                            <param id="0" name="Acceleration">4000</param>
+                        </action>
+                        <action behavior="Plataforma" id="3" name="Set deceleration" sid="115813994520153" type="Jugador">
+                            <param id="0" name="Deceleration">3000</param>
+                        </action>
+                        <action behavior="Plataforma" id="4" name="Set jump strength" sid="603630130497971" type="Jugador">
+                            <param id="0" name="Jump strength">805</param>
+                        </action>
+                        <action behavior="Plataforma" id="5" name="Set gravity" sid="383589796920597" type="Jugador">
+                            <param id="0" name="Gravity">1350</param>
+                        </action>
+                        <action behavior="Plataforma" id="6" name="Set max fall speed" sid="931810771167944" type="Jugador">
+                            <param id="0" name="Max fall speed">1000</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="Creación, definición de propiedades y comportamientos de los objetos " sid="549505836068941" title="jugabilidad 13">
+            <sub-events>
+                <comment>Disparador que se ejecuta cuando el jugador colisiona con un aliado</comment>
+                <event-block sid="837843329263198">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="283565919364607" type="Jugador">
+                            <param id="0" name="Object">Aliado</param>
+                        </condition>
+                        <condition id="2" name="Is playing" sid="562646773763069" type="Aliado">
+                            <param id="0" name="Animation">&quot;j13a&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Add key" sid="137913440644767" type="Diccionario">
+                            <param id="0" name="Key">&quot;i&quot;</param>
+                            <param id="1" name="Value">Diccionario.Get(&quot;i&quot;)+1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="375224165343135">
+                            <conditions />
+                            <actions>
+                                <action id="5" name="Set frame" sid="578900698892012" type="Aliado">
+                                    <param id="0" name="Frame number">0</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="145205642447734" type="Aliado">
+                                    <param id="0" name="Animation">&quot;j13b&quot;</param>
+                                    <param id="1" name="From">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="369506718184169" type="System">
+                                    <param id="0" name="Seconds">0.1</param>
+                                </action>
+                                <action behavior="Pin2" id="0" name="Pin to object" sid="137933856391649" type="Aliado">
+                                    <param id="0" name="Pin to">Jugador</param>
+                                    <param id="1" name="Mode">3</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Actualizar texto</comment>
+                        <event-block sid="240193529762604">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="132350683114322" type="Texto">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="904341284748860" type="Texto">
+                                    <param id="0" name="Text">Diccionario.Get(&quot;i&quot;) &amp; &quot;/&quot; &amp; Diccionario.Get(&quot;n&quot;) </param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Disparador que se ejecuta cuando el jugador colisiona con la utileria (ID =10 y ha caido)</comment>
+                <event-block sid="434539477663350">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="433278568978661" type="Jugador">
+                            <param id="0" name="Object">Utileria</param>
+                        </condition>
+                        <condition behavior="Plataforma" id="2" name="Is on floor" sid="612021052361862" type="Jugador" />
+                        <condition id="-7" name="Compare instance variable" sid="628697420638339" type="Utileria">
+                            <param id="0" name="Instance variable">ID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">10</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Plataforma" id="7" name="Simulate control" sid="287713463254191" type="Jugador">
+                            <param id="0" name="Control">2</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="126838995991270">
+                            <conditions>
+                                <condition id="3" name="Compare frame" sid="331259642329914" type="Utileria">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Plataforma" id="4" name="Set jump strength" sid="612209991926792" type="Jugador">
+                                    <param id="0" name="Jump strength">805</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="952482676793517">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="802427304334649" type="System" />
+                                <condition id="3" name="Compare frame" sid="374657715147784" type="Utileria">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Plataforma" id="4" name="Set jump strength" sid="317016675238197" type="Jugador">
+                                    <param id="0" name="Jump strength">1200</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="Condiciones de derrota y controles de tiempo junto a los controles (si los hay) del jugador" sid="457865108476861" title="control 13">
+            <sub-events>
+                <comment>VALORES DE LAS PLATAFORMAS</comment>
+                <variable comment="Probabilidad que aparezcan plataformas rojas" constant="1" name="PR" sid="545755384951780" static="0" type="number">0.25</variable>
+                <variable comment="Cantidad superior para crear en tiempo alto" constant="1" name="CSTA" sid="577382648807503" static="0" type="number">3</variable>
+                <variable comment="Cantidad superior para crear en tiempo bajo" constant="1" name="CSTB" sid="956070910173668" static="0" type="number">1</variable>
+                <comment>VALORES DE LAS PLATAFORMAS</comment>
+                <variable comment=" Probabilidad que aparezca otro Aliado cuando no hay ninguno" constant="0" name="P1" sid="403994498934850" static="0" type="number">0.6</variable>
+                <variable comment=" Probabilidad que aparezca otro Aliado cuando haya N en pantalla" constant="0" name="P2" sid="410770027430677" static="0" type="number">0</variable>
+                <variable comment=" Cantidad de Aliados para la P2(x)" constant="0" name="N" sid="299166243037066" static="0" type="number">3</variable>
+                <comment>Control del jugador</comment>
+                <event-block sid="559653092808822">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="580020007156238" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <variable comment="El actual scroll en Y" constant="0" name="scroll" sid="199727896105049" static="1" type="number">999</variable>
+                        <variable comment="La siguiente plataforma en Y" constant="0" name="siguiente" sid="699868807922962" static="1" type="number">0</variable>
+                        <event-block sid="461624043433325">
+                            <conditions>
+                                <condition behavior="Hash" id="2" inverted="1" name="Key exists" sid="684501680853077" type="Jugador">
+                                    <param id="0" name="Key string">&quot;primero&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="302085892132839" type="System">
+                                    <param id="0" name="Variable">scroll</param>
+                                    <param id="1" name="Value">999</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="291861052581222" type="System">
+                                    <param id="0" name="Variable">siguiente</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action behavior="Hash" id="1" name="Set value" sid="867468978466665" type="Jugador">
+                                    <param id="0" name="Key string">&quot;primero&quot;</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="517161000769754">
+                            <conditions>
+                                <condition id="-2" name="Compare Y" sid="812378446157469" type="Jugador">
+                                    <param id="0" name="Comparison">2</param>
+                                    <param id="1" name="Y co-ordinate">scroll</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="362770379196595" type="System">
+                                    <param id="0" name="Variable">scroll</param>
+                                    <param id="1" name="Value">Jugador.Y</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="480967553044252">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="454937681339415" type="System">
+                                            <param id="0" name="First value">siguiente</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Second value">ViewportTop(&quot;Principal&quot;)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="696675705526406" type="System">
+                                            <param id="0" name="Variable">siguiente</param>
+                                            <param id="1" name="Value">ViewportTop(&quot;Principal&quot;) - random(20, 100)</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <variable constant="0" name="cantidadS" sid="841714868318467" static="0" type="number">0</variable>
+                                        <variable constant="0" name="repetir" sid="672040731495256" static="0" type="number">0</variable>
+                                        <variable constant="0" name="div" sid="785125630605428" static="0" type="number">0</variable>
+                                        <event-block sid="544512583548391">
+                                            <conditions />
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="876468655729728" type="System">
+                                                    <param id="0" name="Variable">cantidadS</param>
+                                                    <param id="1" name="Value">lerp(CSTA+1,CSTB,gTiempoP)</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="292679028887753" type="System">
+                                                    <param id="0" name="Variable">repetir</param>
+                                                    <param id="1" name="Value">floor(random(1,cantidadS))</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="100417796751831" type="System">
+                                                    <param id="0" name="Variable">div</param>
+                                                    <param id="1" name="Value">LayoutWidth/repetir</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="658491047602755">
+                                            <conditions>
+                                                <condition id="-12" name="Repeat" sid="996706844223558" type="System">
+                                                    <param id="0" name="Count">repetir</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-3" name="Create object" sid="203854619340493" type="System">
+                                                    <param id="0" name="Object to create">Utileria</param>
+                                                    <param id="1" name="Layer">&quot;Principal&quot;</param>
+                                                    <param id="2" name="X">random(div*loopindex, div*(loopindex+1))</param>
+                                                    <param id="3" name="Y">ViewportTop(&quot;Principal&quot;)</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="394939131766714" type="Utileria">
+                                                    <param id="0" name="Instance variable">ID</param>
+                                                    <param id="1" name="Value">10</param>
+                                                </action>
+                                                <action id="5" name="Set frame" sid="213049280911899" type="Utileria">
+                                                    <param id="0" name="Frame number">random(1)&lt;=PR ? 1: 0</param>
+                                                </action>
+                                                <action id="4" name="Set animation" sid="933158769586045" type="Utileria">
+                                                    <param id="0" name="Animation">&quot;j13a&quot;</param>
+                                                    <param id="1" name="From">0</param>
+                                                </action>
+                                                <action id="-7" name="Set size" sid="986718456802183" type="Utileria">
+                                                    <param id="0" name="Width">50</param>
+                                                    <param id="1" name="Height">10</param>
+                                                </action>
+                                                <action behavior="Salto" id="0" name="Set enabled" sid="201704188443612" type="Utileria">
+                                                    <param id="0" name="State">1</param>
+                                                </action>
+                                                <action id="11" name="Set collisions enabled" sid="164289734436046" type="Utileria">
+                                                    <param id="0" name="Collisions">1</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="532015827242195">
+                                                    <conditions>
+                                                        <condition id="-8" name="Compare two values" sid="346970056888290" type="System">
+                                                            <param id="0" name="First value">loopindex</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Second value">0</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions />
+                                                    <sub-events>
+                                                        <variable constant="0" name="aux" sid="586109746015162" static="0" type="number">0</variable>
+                                                        <event-block sid="168287139055350">
+                                                            <conditions />
+                                                            <actions>
+                                                                <action id="-9" name="Set value" sid="706558118650254" type="System">
+                                                                    <param id="0" name="Variable">aux</param>
+                                                                    <param id="1" name="Value">Aliado.Count&gt;N ? N : Aliado.Count</param>
+                                                                </action>
+                                                                <action id="-9" name="Set value" sid="658217005821319" type="System">
+                                                                    <param id="0" name="Variable">aux</param>
+                                                                    <param id="1" name="Value">lerp(P1,P2,aux/N)&gt;=random(1)</param>
+                                                                </action>
+                                                            </actions>
+                                                            <sub-events>
+                                                                <event-block sid="443433576703576">
+                                                                    <conditions>
+                                                                        <condition id="-14" name="Compare variable" sid="227516645807323" type="System">
+                                                                            <param id="0" name="Variable">aux</param>
+                                                                            <param id="1" name="Comparison">0</param>
+                                                                            <param id="2" name="Value">1</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions>
+                                                                        <action id="-3" name="Create object" sid="371458542042946" type="System">
+                                                                            <param id="0" name="Object to create">Aliado</param>
+                                                                            <param id="1" name="Layer">&quot;Principal&quot;</param>
+                                                                            <param id="2" name="X">Utileria.X</param>
+                                                                            <param id="3" name="Y">Utileria.Y</param>
+                                                                        </action>
+                                                                        <action id="5" name="Set frame" sid="674184096922284" type="Aliado">
+                                                                            <param id="0" name="Frame number">0</param>
+                                                                        </action>
+                                                                        <action id="4" name="Set animation" sid="853218400800934" type="Aliado">
+                                                                            <param id="0" name="Animation">&quot;j13a&quot;</param>
+                                                                            <param id="1" name="From">0</param>
+                                                                        </action>
+                                                                        <action id="-2" name="Set Y" sid="367566432410148" type="Aliado">
+                                                                            <param id="0" name="Y">Utileria.BBoxTop-Self.Height/2</param>
+                                                                        </action>
+                                                                        <action behavior="Hash" id="1" name="Set value" sid="119492887876311" type="Utileria">
+                                                                            <param id="0" name="Key string">&quot;enlace&quot;</param>
+                                                                            <param id="1" name="Value">Aliado.UID</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                            </sub-events>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="972500200900048">
+                            <conditions />
+                            <actions>
+                                <action id="-6" name="Scroll to Y" sid="912914950050990" type="System">
+                                    <param id="0" name="Y">scroll</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Eliminar las que están abajo</comment>
+                        <event-block sid="933520712311067">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="958198676270129" type="Utileria">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">10</param>
+                                </condition>
+                                <condition id="-3" inverted="1" name="Is on-screen" sid="953265216737289" type="Utileria" />
+                                <condition id="-2" name="Compare Y" sid="545692064246229" type="Utileria">
+                                    <param id="0" name="Comparison">4</param>
+                                    <param id="1" name="Y co-ordinate">ViewportBottom(&quot;Principal&quot;)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="369469825932499" type="Utileria" />
+                            </actions>
+                            <sub-events>
+                                <event-block sid="184776927076525">
+                                    <conditions>
+                                        <condition id="-11" name="For Each" sid="300244387674443" type="System">
+                                            <param id="0" name="Object">Utileria</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="825466319979800">
+                                            <conditions>
+                                                <condition id="-14" name="Pick by unique ID" sid="681142361088705" type="Aliado">
+                                                    <param id="0" name="Unique ID">Utileria.Hash.At(&quot;enlace&quot;)</param>
+                                                </condition>
+                                                <condition id="2" name="Is playing" sid="552836432178101" type="Aliado">
+                                                    <param id="0" name="Animation">&quot;j13a&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Destroy" sid="608620253402142" type="Aliado" />
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>Si el jugdor se cae</comment>
+                        <event-block sid="507287324879424">
+                            <conditions>
+                                <condition id="-3" inverted="1" name="Is on-screen" sid="898241377263300" type="Jugador" />
+                                <condition id="-2" name="Compare Y" sid="165988368797872" type="Jugador">
+                                    <param id="0" name="Comparison">4</param>
+                                    <param id="1" name="Y co-ordinate">ViewportBottom(&quot;Principal&quot;)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="491723073294766" type="System">
+                                    <param id="0" name="Variable">gEstado</param>
+                                    <param id="1" name="Value">2</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="576935918576440" type="System">
+                                    <param id="0" name="Variable">gDerrota</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="0" name="Call function" sid="150590857571220" type="Funcion">
+                                    <param id="0" name="Name">&quot;derrotaJUEGO&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Intercambiar en el eje x</comment>
+                        <event-block sid="367748699745559">
+                            <conditions>
+                                <condition id="-1" name="Compare X" sid="159179247946855" type="Jugador">
+                                    <param id="0" name="Comparison">2</param>
+                                    <param id="1" name="X co-ordinate">-10</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-1" name="Set X" sid="476048073044090" type="Jugador">
+                                    <param id="0" name="X">LayoutWidth + 9</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="190566969983972">
+                            <conditions>
+                                <condition id="-1" name="Compare X" sid="422463488485850" type="Jugador">
+                                    <param id="0" name="Comparison">4</param>
+                                    <param id="1" name="X co-ordinate">LayoutWidth + 10</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-1" name="Set X" sid="910639918305927" type="Jugador">
+                                    <param id="0" name="X">-9</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Cuando el jugador está moviendose, habrá cambio de animación espejo</comment>
+                <event-block sid="739080310344701">
+                    <conditions>
+                        <condition behavior="Plataforma" id="0" name="Is moving" sid="957929588198988" type="Jugador" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="643148256239469">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="434552632832246" type="Teclado">
+                                    <param id="0" name="Key">39 (Right arrow)</param>
+                                </condition>
+                                <condition id="-4" name="Trigger once while true" sid="616197565366729" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="7" name="Set mirrored" sid="333789579746859" type="Jugador">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="647856966563244">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="445424135116022" type="System" />
+                                <condition id="2" name="Key is down" sid="784360666431909" type="Teclado">
+                                    <param id="0" name="Key">37 (Left arrow)</param>
+                                </condition>
+                                <condition id="-4" name="Trigger once while true" sid="540327204002472" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="7" name="Set mirrored" sid="720757877450623" type="Jugador">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Cambiar la dirección de loas aliados salvados</comment>
+                <event-block sid="323435773307137">
+                    <conditions>
+                        <condition id="2" name="Is playing" sid="288844574557380" type="Aliado">
+                            <param id="0" name="Animation">&quot;j13b&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="601453819130981">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="324491461393960" type="System">
+                                    <param id="0" name="Object">Aliado</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="404606490485508">
+                                    <conditions>
+                                        <condition id="-1" name="Compare X" sid="775097068454409" type="Aliado">
+                                            <param id="0" name="Comparison">3</param>
+                                            <param id="1" name="X co-ordinate">Jugador.X</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="7" name="Set mirrored" sid="597532033467455" type="Aliado">
+                                            <param id="0" name="State">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="977242965367200">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="853961688379247" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="7" name="Set mirrored" sid="153539325010129" type="Aliado">
+                                            <param id="0" name="State">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Cada un segundo mientras este jugando, se descontará 1 a la variable tiempo</comment>
+                <event-block sid="253535947488035">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="334713628560688" type="System">
+                            <param id="0" name="Interval (seconds)">1.0+Funcion.Call(&quot;calculoTEMPO&quot;)</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="651715499096199" type="System">
+                            <param id="0" name="Variable">gEstado</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="530154901391221" type="System">
+                            <param id="0" name="Variable">gTiempo</param>
+                            <param id="1" name="Value">-1</param>
+                        </action>
+                        <action id="0" name="Call function" sid="179930904285109" type="Funcion">
+                            <param id="0" name="Name">&quot;tiempoGUI&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <comment>Si el tiempo se acabo</comment>
+                        <event-block sid="926120256449379">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="743961899347061" type="System">
+                                    <param id="0" name="Variable">gTiempo</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="920232312439195" type="System">
+                                    <param id="0" name="Variable">gDerrota</param>
+                                    <param id="1" name="Value">Diccionario.Get(&quot;i&quot;)&lt;Diccionario.Get(&quot;n&quot;)</param>
+                                </action>
+                                <action id="0" name="Call function" sid="402120347388652" type="Funcion">
+                                    <param id="0" name="Name">&quot;tiempoACABADO&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="Cierre del escenario (Eventos que continuan ejecutandose a pesar que se ha acabado el tiempo o fue derrotado)" sid="550842250311226" title="fin 13" />
+        <comment></comment>
+    </events>
+</c2eventsheet>

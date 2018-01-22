@@ -12,15 +12,15 @@
                     </conditions>
                     <actions>
                         <action id="-9" name="Set value" sid="939451553095289" type="System">
-                            <param id="0" name="Variable">juego</param>
+                            <param id="0" name="Variable">gJuego</param>
                             <param id="1" name="Value">3</param>
                         </action>
                         <action id="-9" name="Set value" sid="577270546208716" type="System">
-                            <param id="0" name="Variable">tiempo</param>
+                            <param id="0" name="Variable">gTiempo</param>
                             <param id="1" name="Value">floor(random(14,16))</param>
                         </action>
                         <action id="-9" name="Set value" sid="492665699877631" type="System">
-                            <param id="0" name="Variable">objetivo</param>
+                            <param id="0" name="Variable">gObjetivo</param>
                             <param id="1" name="Value">&quot;apila 3 aliados&quot;</param>
                         </action>
                         <action id="0" name="Call function" sid="340256676412184" type="Funcion">
@@ -263,16 +263,16 @@
                                     <param id="0" name="Name">&quot;posicionALEATORIA&quot;</param>
                                     <param id="1" name="Parameter {n}">Actores.UID{###}2</param>
                                 </action>
-                                <action behavior="Bala" id="5" name="Set enabled" sid="508983390878534" type="Actores">
+                                <action behavior="BalaCaucho" id="5" name="Set enabled" sid="508983390878534" type="Actores">
                                     <param id="0" name="State">1</param>
                                 </action>
-                                <action behavior="Bala" id="0" name="Set speed" sid="512177356953539" type="Actores">
+                                <action behavior="BalaCaucho" id="0" name="Set speed" sid="512177356953539" type="Actores">
                                     <param id="0" name="Speed">velocidad</param>
                                 </action>
-                                <action behavior="Bala" id="1" name="Set acceleration" sid="672960686414513" type="Actores">
+                                <action behavior="BalaCaucho" id="1" name="Set acceleration" sid="672960686414513" type="Actores">
                                     <param id="0" name="Acceleration">aceleracion</param>
                                 </action>
-                                <action behavior="Bala" id="3" name="Set angle of motion" sid="327272297942845" type="Actores">
+                                <action behavior="BalaCaucho" id="3" name="Set angle of motion" sid="327272297942845" type="Actores">
                                     <param id="0" name="Angle">90</param>
                                 </action>
                             </actions>
@@ -445,7 +445,7 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action behavior="Bala" id="5" name="Set enabled" sid="997636202227034" type="Actores">
+                                        <action behavior="BalaCaucho" id="5" name="Set enabled" sid="997636202227034" type="Actores">
                                             <param id="0" name="State">0</param>
                                         </action>
                                         <action id="6" name="Add instances" sid="740877563846576" type="Grupo">
@@ -582,7 +582,7 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action behavior="Bala" id="5" name="Set enabled" sid="421281843083883" type="Actores">
+                                <action behavior="BalaCaucho" id="5" name="Set enabled" sid="421281843083883" type="Actores">
                                     <param id="0" name="State">0</param>
                                 </action>
                                 <action id="-2" name="Set Y" sid="116575452429214" type="Actores">
@@ -705,6 +705,19 @@
                             <param id="1" name="Parameter {n}">Jugador.UID{###}1{###}Diccionario.Get(&quot;x1&quot;){###}Diccionario.Get(&quot;x2&quot;){###}448{###}448</param>
                         </action>
                     </actions>
+                    <sub-events>
+                        <event-block sid="818315991329855">
+                            <conditions>
+                                <condition id="-34" name="Pick by evaluate" sid="688268500876776" type="System">
+                                    <param id="0" name="Object">Actores</param>
+                                    <param id="1" name="Expression">Actores.Y&gt;LayoutHeight</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="464478161605662" type="Actores" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <comment>Cada un segundo mientras no haya perdido, se descontará 1 a la variable tiempo</comment>
                 <event-block sid="666687036303876">
@@ -713,14 +726,14 @@
                             <param id="0" name="Interval (seconds)">1.0+Funcion.Call(&quot;calculoTEMPO&quot;)</param>
                         </condition>
                         <condition id="-14" name="Compare variable" sid="860915714109604" type="System">
-                            <param id="0" name="Variable">derrota</param>
+                            <param id="0" name="Variable">gDerrota</param>
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">0</param>
                         </condition>
                     </conditions>
                     <actions>
                         <action id="-10" name="Add to" sid="450858003893656" type="System">
-                            <param id="0" name="Variable">tiempo</param>
+                            <param id="0" name="Variable">gTiempo</param>
                             <param id="1" name="Value">-1</param>
                         </action>
                         <action id="0" name="Call function" sid="173396385301416" type="Funcion">
@@ -738,7 +751,7 @@
                         <event-block sid="114602683844687">
                             <conditions>
                                 <condition id="-14" name="Compare variable" sid="431582778372636" type="System">
-                                    <param id="0" name="Variable">tiempo</param>
+                                    <param id="0" name="Variable">gTiempo</param>
                                     <param id="1" name="Comparison">4</param>
                                     <param id="2" name="Value">0</param>
                                 </condition>
@@ -799,10 +812,10 @@
                                     <param id="2" name="Operation">0</param>
                                 </action>
                                 <action id="-9" name="Set value" sid="556086335738017" type="System">
-                                    <param id="0" name="Variable">derrota</param>
+                                    <param id="0" name="Variable">gDerrota</param>
                                     <param id="1" name="Value">Aliado.PickedCount&gt;=3?0:1</param>
                                 </action>
-                                <action id="0" name="Call function" sid="547462584282350" type="Funcion">
+                                <action id="0" name="Call function" sid="835377048940347" type="Funcion">
                                     <param id="0" name="Name">&quot;tiempoACABADO&quot;</param>
                                     <param id="1" name="Parameter {n}"></param>
                                 </action>

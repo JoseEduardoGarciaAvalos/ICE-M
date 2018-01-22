@@ -1,0 +1,482 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>juego 10</name>
+    <events>
+        <include>principal</include>
+        <event-group description="Preparación del escenario" sid="510037416611185" title="inicio 10">
+            <sub-events>
+                <comment>VALORES DE LOS ENEMIGOS</comment>
+                <variable comment="Cantidad inferior que se creará" constant="1" name="CI" sid="390634355206907" static="0" type="number">5</variable>
+                <variable comment="Cantidad superior que se creará" constant="1" name="CS" sid="682949774165894" static="0" type="number">15</variable>
+                <variable comment="Vida inferior" constant="1" name="VI" sid="307967752606686" static="0" type="number">5</variable>
+                <variable comment="Vida superior" constant="1" name="VS" sid="660646368343221" static="0" type="number">20</variable>
+                <event-block sid="862713750141402">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="132361091334020" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="880059412131548" type="System">
+                            <param id="0" name="Variable">gJuego</param>
+                            <param id="1" name="Value">10</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="379939545984648" type="System">
+                            <param id="0" name="Variable">gTiempo</param>
+                            <param id="1" name="Value">floor(random(16,21))</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="883968180335591" type="System">
+                            <param id="0" name="Variable">gObjetivo</param>
+                            <param id="1" name="Value">&quot;avientalos&quot;</param>
+                        </action>
+                        <action id="0" name="Call function" sid="430017962488199" type="Funcion">
+                            <param id="0" name="Name">&quot;inicioGUI&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="10" name="Get media sources" sid="991557577975268" type="Microfono" />
+                        <action id="20" name="Add analyser effect" sid="893828094218579" type="Audio">
+                            <param id="0" name="Tag">&quot;mic&quot;</param>
+                            <param id="1" name="FFT size">32</param>
+                            <param id="2" name="Smoothing">0</param>
+                        </action>
+                        <action id="3" name="Request microphone" sid="696949966893557" type="Microfono">
+                            <param id="0" name="Tag">&quot;mic&quot;</param>
+                            <param id="1" name="Source">0</param>
+                        </action>
+                        <action id="0" name="Call function" sid="907686046891204" type="Funcion">
+                            <param id="0" name="Name">&quot;crearVirus&quot;</param>
+                            <param id="1" name="Parameter {n}">floor(random(CI,CS+1))</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="879333010382689" type="System">
+                            <param id="0" name="Seconds">0</param>
+                        </action>
+                        <action id="0" name="Call function" sid="333812806390188" type="Funcion">
+                            <param id="0" name="Name">&quot;comenzoJuego&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="534836331842710">
+                    <conditions>
+                        <condition id="0" name="On function" sid="751796365235541" type="Funcion">
+                            <param id="0" name="Name">&quot;crearVirus&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="179968742687672">
+                            <conditions>
+                                <condition id="-12" name="Repeat" sid="222861764235196" type="System">
+                                    <param id="0" name="Count">Funcion.Param(0)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="439737354316939" type="System">
+                                    <param id="0" name="Object to create">Enemigo</param>
+                                    <param id="1" name="Layer">&quot;Principal&quot;</param>
+                                    <param id="2" name="X">0</param>
+                                    <param id="3" name="Y">0</param>
+                                </action>
+                                <action behavior="Hash" id="1" name="Set value" sid="414642391891601" type="Enemigo">
+                                    <param id="0" name="Key string">&quot;vida&quot;</param>
+                                    <param id="1" name="Value">floor(random(VI,VS+1))</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="697073553719062" type="Enemigo">
+                                    <param id="0" name="Frame number">0</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="350524698746847" type="Enemigo">
+                                    <param id="0" name="Animation">&quot;j10a&quot;</param>
+                                    <param id="1" name="From">0</param>
+                                </action>
+                                <action behavior="Temblar" id="0" name="Set activated" sid="706457512278397" type="Enemigo">
+                                    <param id="0" name="Activated">1</param>
+                                </action>
+                                <action behavior="Temblar" id="13" name="Set magnitude mode" sid="625430611784057" type="Enemigo">
+                                    <param id="0" name="Mode">0</param>
+                                </action>
+                                <action behavior="Temblar" id="11" name="Set duration" sid="612039867542862" type="Enemigo">
+                                    <param id="0" name="Duration">0.3</param>
+                                </action>
+                                <action behavior="Tarea" id="26" name="Create/Initialize tween" sid="642994739399069" type="Enemigo">
+                                    <param id="0" name="Tweened property">4</param>
+                                    <param id="1" name="Function">24</param>
+                                    <param id="2" name="Target">&quot;girar&quot;</param>
+                                    <param id="3" name="Duration">1</param>
+                                    <param id="4" name="Enforce mode">0</param>
+                                </action>
+                                <action behavior="Tarea" id="3" name="Set target" sid="705772987204053" type="Enemigo">
+                                    <param id="0" name="Target is">2</param>
+                                    <param id="1" name="Relativity">1</param>
+                                    <param id="2" name="Value">45</param>
+                                </action>
+                                <action id="0" name="Call function" sid="813246160683406" type="Funcion">
+                                    <param id="0" name="Name">&quot;posicionALEATORIA&quot;</param>
+                                    <param id="1" name="Parameter {n}">Enemigo.UID{###}0{###}GUI{###}LayoutWidth{###}GUI{###}LayoutHeight</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="966010788202679">
+                    <conditions>
+                        <condition id="0" name="On function" sid="920717128661415" type="Funcion">
+                            <param id="0" name="Name">&quot;comenzoJuego&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-41" name="Wait for signal" sid="362973057141844" type="System">
+                            <param id="0" name="Tag">&quot;pCargado&quot;</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="623990235427509">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="907862827267801" type="System">
+                                    <param id="0" name="Object">Enemigo</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Wait" sid="110760383401820" type="System">
+                                    <param id="0" name="Seconds">random(0.05,0.2)*loopindex</param>
+                                </action>
+                                <action behavior="Tarea" id="10" name="Start" sid="404957592740473" type="Enemigo">
+                                    <param id="0" name="Start Mode">2</param>
+                                    <param id="1" name="Force use current">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="Creación, definición de propiedades y comportamientos de los objetos " sid="655590107687620" title="jugabilidad 10">
+            <sub-events>
+                <event-block sid="557807510935297">
+                    <conditions>
+                        <condition behavior="Tiempo" id="0" name="On timer" sid="162937917228257" type="Enemigo">
+                            <param id="0" name="Tag">&quot;volar&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <variable constant="0" name="vida" sid="470332603471838" static="0" type="number">0</variable>
+                        <event-block sid="843767691929600">
+                            <conditions />
+                            <actions>
+                                <action id="-9" name="Set value" sid="493394612222865" type="System">
+                                    <param id="0" name="Variable">vida</param>
+                                    <param id="1" name="Value">Enemigo.Hash.At(&quot;vida&quot;)</param>
+                                </action>
+                                <action id="-10" name="Add to" sid="576755609050074" type="System">
+                                    <param id="0" name="Variable">vida</param>
+                                    <param id="1" name="Value">-1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="912325193691961">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="787234012404726" type="System">
+                                    <param id="0" name="Variable">vida</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Tiempo" id="1" name="Stop timer" sid="575521547145976" type="Enemigo">
+                                    <param id="0" name="Tag">&quot;volar&quot;</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <variable comment="0 = horario, 1 = anti horario" constant="0" name="giro" sid="362113261134343" static="0" type="number">0</variable>
+                                <event-block sid="701152752397437">
+                                    <conditions>
+                                        <condition id="-15" name="Pick nearest/furthest" sid="577824690525425" type="Utileria">
+                                            <param id="0" name="Which">0</param>
+                                            <param id="1" name="X">Enemigo.X</param>
+                                            <param id="2" name="Y">Enemigo.Y</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Hash" id="6" name="Remove key" sid="118515331747641" type="Enemigo">
+                                            <param id="0" name="Key string">&quot;vida&quot;</param>
+                                        </action>
+                                        <action behavior="Tarea" id="14" name="Stop" sid="186859013680307" type="Enemigo">
+                                            <param id="0" name="Stop Mode">0</param>
+                                        </action>
+                                        <action behavior="Bala" id="5" name="Set enabled" sid="820211795618210" type="Enemigo">
+                                            <param id="0" name="State">1</param>
+                                        </action>
+                                        <action behavior="Bala" id="0" name="Set speed" sid="616325569053515" type="Enemigo">
+                                            <param id="0" name="Speed">500</param>
+                                        </action>
+                                        <action behavior="Bala" id="3" name="Set angle of motion" sid="389109025892832" type="Enemigo">
+                                            <param id="0" name="Angle">angle(Enemigo.X,Enemigo.Y,Utileria.X,Utileria.Y)</param>
+                                        </action>
+                                        <action behavior="Girar" id="0" name="Set activated" sid="716455950047673" type="Enemigo">
+                                            <param id="0" name="Activated">1</param>
+                                        </action>
+                                        <action behavior="Girar" id="2" name="Set rotation speed" sid="599774451747878" type="Enemigo">
+                                            <param id="0" name="Rotation speed">180</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="180520106517817" type="System">
+                                            <param id="0" name="Variable">giro</param>
+                                            <param id="1" name="Value">choose(0,1)</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="587077068107793">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="652406157708122" type="System">
+                                                    <param id="0" name="Variable">giro</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Girar" id="1" name="Set rotation direction" sid="880181612896534" type="Enemigo">
+                                                    <param id="0" name="Direction">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="710860243454671">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="339590982937508" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Girar" id="1" name="Set rotation direction" sid="724836436783115" type="Enemigo">
+                                                    <param id="0" name="Direction">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="755639002329807">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="607133985318146" type="System" />
+                            </conditions>
+                            <actions>
+                                <action behavior="Hash" id="1" name="Set value" sid="881296837782151" type="Enemigo">
+                                    <param id="0" name="Key string">&quot;vida&quot;</param>
+                                    <param id="1" name="Value">vida</param>
+                                </action>
+                                <action behavior="Temblar" id="2" name="Stop" sid="113491620194273" type="Enemigo" />
+                                <action id="-16" name="Wait" sid="107617389960640" type="System">
+                                    <param id="0" name="Seconds">0.1</param>
+                                </action>
+                                <action behavior="Temblar" id="1" name="Start" sid="374025082954294" type="Enemigo" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="Condiciones de derrota y controles de tiempo junto a los controles (si los hay) del jugador" sid="564512465890130" title="control 10">
+            <sub-events>
+                <comment>Control del personaje</comment>
+                <event-block sid="627399089583547">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="368696943680582" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <variable constant="1" name="LIMITE" sid="526241809366963" static="0" type="number">-40</variable>
+                        <variable constant="0" name="micActivo" sid="166563968514181" static="0" type="number">0</variable>
+                        <variable constant="0" name="aux" sid="484922847840780" static="1" type="number">0</variable>
+                        <event-block sid="346138699717995">
+                            <conditions />
+                            <actions>
+                                <action id="-9" name="Set value" sid="395859927582450" type="System">
+                                    <param id="0" name="Variable">micActivo</param>
+                                    <param id="1" name="Value">(LIMITE &lt; Audio.AnalyserRMSLevel(&quot;mic&quot;, 0)?1:0)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Se detecto actividad sobre el micrófono (Solo se lanzará una vez que haya actividad)</comment>
+                        <event-block sid="425404678553707">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="873568328767379" type="System">
+                                    <param id="0" name="Variable">micActivo</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="102786676071947">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="697143722814750" type="System">
+                                            <param id="0" name="Variable">aux</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="885471914451912" type="System">
+                                            <param id="0" name="Variable">aux</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="163497592450640">
+                                            <conditions>
+                                                <condition id="-11" name="For Each" sid="726553270322959" type="System">
+                                                    <param id="0" name="Object">Enemigo</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="747462688846463">
+                                                    <conditions>
+                                                        <condition behavior="Hash" id="2" name="Key exists" sid="287882647322572" type="Enemigo">
+                                                            <param id="0" name="Key string">&quot;vida&quot;</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-16" name="Wait" sid="234953334148820" type="System">
+                                                            <param id="0" name="Seconds">random(0.1,0.3)*loopindex</param>
+                                                        </action>
+                                                        <action id="5" name="Set frame" sid="955386517948562" type="Enemigo">
+                                                            <param id="0" name="Frame number">1</param>
+                                                        </action>
+                                                        <action behavior="Temblar" id="1" name="Start" sid="875905722134368" type="Enemigo" />
+                                                        <action behavior="Tiempo" id="0" name="Start timer" sid="642653949416685" type="Enemigo">
+                                                            <param id="0" name="Duration">random(0.1,0.3)</param>
+                                                            <param id="1" name="Type">1</param>
+                                                            <param id="2" name="Tag">&quot;volar&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>No se detecto actividad sobre el micrófono, (Solo se lanzará una vez que no haya actividad)</comment>
+                        <event-block sid="983634715856616">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="439542935938731" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="12" name="Remove all effects" sid="361439795760278" type="Audio">
+                                    <param id="0" name="Tag">&quot;mic&quot;</param>
+                                </action>
+                                <action id="20" name="Add analyser effect" sid="576881480618310" type="Audio">
+                                    <param id="0" name="Tag">&quot;mic&quot;</param>
+                                    <param id="1" name="FFT size">32</param>
+                                    <param id="2" name="Smoothing">0</param>
+                                </action>
+                                <action id="32" name="Add mute effect" sid="376209544816215" type="Audio">
+                                    <param id="0" name="Tag">&quot;mic&quot;</param>
+                                </action>
+                                <action behavior="Tiempo" id="1" name="Stop timer" sid="881414383890406" type="Enemigo">
+                                    <param id="0" name="Tag">&quot;volar&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="949628151324403" type="System">
+                                    <param id="0" name="Variable">aux</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="876260395821102">
+                                    <conditions>
+                                        <condition behavior="Hash" id="2" name="Key exists" sid="272606668413637" type="Enemigo">
+                                            <param id="0" name="Key string">&quot;vida&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="5" name="Set frame" sid="404245957977666" type="Enemigo">
+                                            <param id="0" name="Frame number">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="174886609134817">
+                            <conditions>
+                                <condition id="-4" name="Is outside layout" sid="644307028757670" type="Enemigo" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="803045490236734" type="Enemigo" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="592582415126611">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="456360085329866" type="System">
+                            <param id="0" name="Interval (seconds)">1.0+Funcion.Call(&quot;calculoTEMPO&quot;)</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="332857872640019" type="System">
+                            <param id="0" name="Variable">gDerrota</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="200291635960471" type="System">
+                            <param id="0" name="Variable">gTiempo</param>
+                            <param id="1" name="Value">-1</param>
+                        </action>
+                        <action id="0" name="Call function" sid="232618607084372" type="Funcion">
+                            <param id="0" name="Name">&quot;tiempoGUI&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <comment>Si hay tiempo</comment>
+                        <event-block sid="374467028627442">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="942227169732004" type="System">
+                                    <param id="0" name="Variable">gTiempo</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="285356077707816">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="784586382649356" type="System">
+                                            <param id="0" name="First value">Enemigo.Count</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="532912490414142" type="Funcion">
+                                            <param id="0" name="Name">&quot;victoriaJUEGO&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>Si el tiempo se acabo</comment>
+                        <event-block sid="545491519815815">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="196627258829759" type="System" />
+                                <condition id="-14" name="Compare variable" sid="902629397944826" type="System">
+                                    <param id="0" name="Variable">gTiempo</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="129615183754137" type="System">
+                                    <param id="0" name="Variable">gDerrota</param>
+                                    <param id="1" name="Value">Enemigo.Count&gt;0?1:0</param>
+                                </action>
+                                <action id="0" name="Call function" sid="841497507509977" type="Funcion">
+                                    <param id="0" name="Name">&quot;tiempoACABADO&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>
