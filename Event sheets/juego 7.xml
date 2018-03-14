@@ -85,6 +85,7 @@
                     </conditions>
                     <actions />
                     <sub-events>
+                        <variable constant="0" name="opcion" sid="245867436797286" static="0" type="number">0</variable>
                         <event-block sid="493049461974585">
                             <conditions />
                             <actions>
@@ -102,11 +103,15 @@
                                     <param id="0" name="Name">&quot;cambiarColor&quot;</param>
                                     <param id="1" name="Parameter {n}">Utileria.UID</param>
                                 </action>
+                                <action id="-9" name="Set value" sid="449451938497216" type="System">
+                                    <param id="0" name="Variable">opcion</param>
+                                    <param id="1" name="Value">Utileria.ID-10</param>
+                                </action>
                                 <action id="5" name="Set frame" sid="659004212245844" type="Aliado">
-                                    <param id="0" name="Frame number">Utileria.ID-10</param>
+                                    <param id="0" name="Frame number">opcion</param>
                                 </action>
                                 <action id="5" name="Set frame" sid="914878438604603" type="Jugador">
-                                    <param id="0" name="Frame number">Utileria.ID-10</param>
+                                    <param id="0" name="Frame number">opcion</param>
                                 </action>
                             </actions>
                             <sub-events>
@@ -183,6 +188,7 @@
         </event-group>
         <event-group description="Condiciones de derrota y controles de tiempo junto a los controles (si los hay) del jugador" sid="767548817382230" title="control 7">
             <sub-events>
+                <variable comment="Tiempo para que las personas vuelvan a su pose normal (en segundos)" constant="0" name="T1" sid="634462708489742" static="0" type="number">0.5</variable>
                 <comment>Si el jugador es controlable, está sobre la utileria ID&gt;=10. y esa no está seleccionada</comment>
                 <event-block sid="265828897332681">
                     <conditions>
@@ -260,7 +266,7 @@
                                     <conditions />
                                     <actions>
                                         <action behavior="Tiempo" id="0" name="Start timer" sid="316295644282711" type="Jugador">
-                                            <param id="0" name="Duration">0.5</param>
+                                            <param id="0" name="Duration">T1</param>
                                             <param id="1" name="Type">0</param>
                                             <param id="2" name="Tag">&quot;normal&quot;</param>
                                         </action>
@@ -352,8 +358,8 @@
                 <comment>Cada un segundo mientras no haya perdido, se descontará 1 a la variable tiempo</comment>
                 <event-block sid="867314476631592">
                     <conditions>
-                        <condition id="-6" name="Every X seconds" sid="975085199850594" type="System">
-                            <param id="0" name="Interval (seconds)">1.0+Funcion.Call(&quot;calculoTEMPO&quot;)</param>
+                        <condition behavior="Tiempo" id="0" name="On timer" sid="594291691805302" type="Reloj">
+                            <param id="0" name="Tag">&quot;global&quot;</param>
                         </condition>
                         <condition id="-14" name="Compare variable" sid="228262509074202" type="System">
                             <param id="0" name="Variable">gDerrota</param>
@@ -449,8 +455,12 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="0" name="Call function" sid="841144175105839" type="Funcion">
-                                    <param id="0" name="Name">&quot;tiempoACABADO&quot;</param>
+                                <action id="-9" name="Set value" sid="290417367308686" type="System">
+                                    <param id="0" name="Variable">gDerrota</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="0" name="Call function" sid="234189849160195" type="Funcion">
+                                    <param id="0" name="Name">&quot;derrotaJUEGO&quot;</param>
                                     <param id="1" name="Parameter {n}"></param>
                                 </action>
                             </actions>

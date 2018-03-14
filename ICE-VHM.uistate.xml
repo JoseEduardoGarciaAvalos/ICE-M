@@ -10,8 +10,9 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <display name="HTML5" />
     </configurations>
     <open-tabs>
-        <layout active="1" order="1">juego 1</layout>
+        <layout order="2">juego 10</layout>
         <event-sheet order="0">principal</event-sheet>
+        <event-sheet active="1" order="1">juego 10</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -19,33 +20,33 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <property expanded="0" name="Window Size" />
         <property expanded="1" name="Configuration Settings" />
     </properties>
-    <families-expanded root="0">
+    <families-expanded root="1">
         <family expanded="0" name="Personas" />
-        <family expanded="1" name="Actores" />
+        <family expanded="0" name="Actores" />
         <family expanded="0" name="Particulas" />
     </families-expanded>
     <folders-expanded>
         <folder expanded="1" path="object-folder/" />
         <folder expanded="1" path="object-folder/Actores/" />
-        <folder expanded="1" path="object-folder/Controles/" />
+        <folder expanded="0" path="object-folder/Controles/" />
         <folder expanded="0" path="object-folder/Controles/Estructura/" />
-        <folder expanded="0" path="object-folder/Controles/Formulario/" />
-        <folder expanded="1" path="object-folder/Controles/Diseños/" />
+        <folder expanded="1" path="object-folder/Controles/Formulario/" />
+        <folder expanded="0" path="object-folder/Controles/Diseños/" />
         <folder expanded="0" path="object-folder/Controles/Entrada/" />
-        <folder expanded="0" path="object-folder/Controles/Generador/" />
-        <folder expanded="1" path="object-folder/Escenario/" />
+        <folder expanded="1" path="object-folder/Controles/Generador/" />
+        <folder expanded="0" path="object-folder/Escenario/" />
         <folder expanded="1" path="object-folder/Escenario/Particula/" />
         <folder expanded="1" path="layout-folder/" />
-        <folder expanded="1" path="layout-folder/principal/" />
+        <folder expanded="0" path="layout-folder/principal/" />
         <folder expanded="0" path="layout-folder/arrastrar-mouse/" />
         <folder expanded="0" path="layout-folder/clic-mouse/" />
         <folder expanded="0" path="layout-folder/teclado/" />
-        <folder expanded="0" path="layout-folder/microfono/" />
+        <folder expanded="1" path="layout-folder/microfono/" />
         <folder expanded="1" path="event-folder/" />
         <folder expanded="0" path="event-folder/clic-mouse/" />
         <folder expanded="0" path="event-folder/arrastrar-mouse/" />
         <folder expanded="0" path="event-folder/teclado/" />
-        <folder expanded="0" path="event-folder/microfono/" />
+        <folder expanded="1" path="event-folder/microfono/" />
         <folder expanded="1" path="file-folder/" />
         <folder expanded="0" path="sound-folder/" />
         <folder expanded="0" path="music-folder/" />
@@ -55,5 +56,6 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/Enemigo/" />
         <folder expanded="1" path="animation-folder/Jugador/" />
         <folder expanded="1" path="animation-folder/Utileria/" />
+        <folder expanded="1" path="animation-folder/Reloj/" />
     </folders-expanded>
 </c2uistate>
