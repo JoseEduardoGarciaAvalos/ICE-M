@@ -200,187 +200,23 @@
                 <plugin id="Sprite" />
                 <animation-folder>
                     <animation-folder name="Ivania">
-                        <animation framecount="15" loop="0" name="j10a" pingpong="0" repeatcount="1" repeatto="0" sid="182094401889252" speed="0">
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC-Dell\Desktop\Juego 10\Mesa de trabajo 3.png">
-                                <collision-poly>
-                                    <point x="0.39" y="0.39" />
-                                    <point x="0.5" y="0.28" />
-                                    <point x="0.85" y="0.15" />
-                                    <point x="0.47" y="0.5" />
-                                    <point x="0.48" y="0.48" />
-                                    <point x="0.5" y="0.3" />
-                                    <point x="0.06" y="0.94" />
-                                    <point x="0.25" y="0.5" />
-                                </collision-poly>
-                            </frame>
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC-Dell\Desktop\Juego 10\Mesa de trabajo 7.png">
-                                <collision-poly>
-                                    <point x="0.19" y="0.19" />
-                                    <point x="0.5" y="0.03" />
-                                    <point x="0.79" y="0.21" />
-                                    <point x="1" y="0.5" />
-                                    <point x="0.87" y="0.87" />
-                                    <point x="0.5" y="0.77" />
-                                    <point x="0.06" y="0.94" />
-                                    <point x="0.02" y="0.5" />
-                                </collision-poly>
-                            </frame>
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC-Dell\Desktop\Juego 10\Mesa de trabajo 9.png">
-                                <collision-poly>
-                                    <point x="0.16" y="0.16" />
-                                    <point x="0.5" y="0" />
-                                    <point x="0.85" y="0.15" />
-                                    <point x="1" y="0.5" />
-                                    <point x="0.86" y="0.86" />
-                                    <point x="0.5" y="1" />
-                                    <point x="0.14" y="0.86" />
-                                    <point x="0" y="0.5" />
-                                </collision-poly>
-                            </frame>
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC-Dell\Desktop\Juego 10\Mesa de trabajo 10.png">
-                                <collision-poly>
-                                    <point x="0.15" y="0.15" />
-                                    <point x="0.5" y="0" />
-                                    <point x="0.86" y="0.14" />
-                                    <point x="1" y="0.5" />
-                                    <point x="0.85" y="0.85" />
-                                    <point x="0.5" y="0.98" />
-                                    <point x="0.1" y="0.9" />
-                                    <point x="0" y="0.5" />
-                                </collision-poly>
-                            </frame>
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC-Dell\Desktop\Juego 10\Mesa de trabajo 11.png">
-                                <collision-poly>
-                                    <point x="0.16" y="0.16" />
-                                    <point x="0.5" y="0.2" />
-                                    <point x="0.93" y="0.07" />
-                                    <point x="0.64" y="0.5" />
-                                    <point x="0.61" y="0.61" />
-                                    <point x="0.5" y="0.93" />
-                                    <point x="0.09" y="0.91" />
-                                    <point x="0.03" y="0.5" />
-                                </collision-poly>
-                            </frame>
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC-Dell\Desktop\Juego 10\Mesa de trabajo 12.png">
-                                <collision-poly>
-                                    <point x="0.09" y="0.09" />
-                                    <point x="0.5" y="0.05" />
-                                    <point x="0.66" y="0.34" />
-                                    <point x="0.94" y="0.5" />
-                                    <point x="0.87" y="0.87" />
-                                    <point x="0.5" y="0.81" />
-                                    <point x="0.36" y="0.64" />
-                                    <point x="0.04" y="0.5" />
-                                </collision-poly>
-                            </frame>
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC-Dell\Desktop\Juego 10\Mesa de trabajo 13.png">
-                                <collision-poly>
-                                    <point x="0.17" y="0.17" />
-                                    <point x="0.5" y="0.02" />
-                                    <point x="0.86" y="0.14" />
-                                    <point x="1" y="0.5" />
-                                    <point x="0.92" y="0.92" />
-                                    <point x="0.5" y="1" />
-                                    <point x="0.13" y="0.87" />
-                                    <point x="0" y="0.5" />
-                                </collision-poly>
-                            </frame>
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC-Dell\Desktop\Juego 10\Mesa de trabajo 14.png">
-                                <collision-poly>
-                                    <point x="0.11" y="0.11" />
-                                    <point x="0.5" y="0.05" />
-                                    <point x="0.89" y="0.11" />
-                                    <point x="0.65" y="0.5" />
-                                    <point x="0.61" y="0.61" />
-                                    <point x="0.5" y="1" />
-                                    <point x="0.18" y="0.82" />
-                                    <point x="0" y="0.5" />
-                                </collision-poly>
-                            </frame>
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC-Dell\Desktop\Juego 10\Mesa de trabajo 15.png">
-                                <collision-poly>
-                                    <point x="0.16" y="0.16" />
-                                    <point x="0.5" y="0.01" />
-                                    <point x="0.9" y="0.1" />
-                                    <point x="1" y="0.5" />
-                                    <point x="0.93" y="0.93" />
-                                    <point x="0.5" y="1" />
-                                    <point x="0.12" y="0.88" />
-                                    <point x="0" y="0.5" />
-                                </collision-poly>
-                            </frame>
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC-Dell\Desktop\Juego 10\Mesa de trabajo 16.png">
-                                <collision-poly>
-                                    <point x="0.15" y="0.15" />
-                                    <point x="0.5" y="0" />
-                                    <point x="0.9" y="0.1" />
-                                    <point x="1" y="0.5" />
-                                    <point x="0.92" y="0.92" />
-                                    <point x="0.5" y="1" />
-                                    <point x="0.12" y="0.88" />
-                                    <point x="0" y="0.5" />
-                                </collision-poly>
-                            </frame>
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC-Dell\Desktop\Juego 10\Mesa de trabajo 17.png">
-                                <collision-poly>
-                                    <point x="0.14" y="0.14" />
-                                    <point x="0.5" y="0" />
-                                    <point x="0.89" y="0.11" />
-                                    <point x="0.99" y="0.5" />
-                                    <point x="0.91" y="0.91" />
-                                    <point x="0.5" y="1" />
-                                    <point x="0.11" y="0.89" />
-                                    <point x="0" y="0.5" />
-                                </collision-poly>
-                            </frame>
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC-Dell\Desktop\Juego 10\Mesa de trabajo 19.png">
-                                <collision-poly>
-                                    <point x="0.15" y="0.15" />
-                                    <point x="0.5" y="0" />
-                                    <point x="0.9" y="0.1" />
-                                    <point x="1" y="0.5" />
-                                    <point x="0.92" y="0.92" />
-                                    <point x="0.5" y="1" />
-                                    <point x="0.12" y="0.88" />
-                                    <point x="0" y="0.5" />
-                                </collision-poly>
-                            </frame>
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC-Dell\Desktop\Juego 10\Mesa de trabajo 18.png">
-                                <collision-poly>
-                                    <point x="0.17" y="0.17" />
-                                    <point x="0.5" y="0.01" />
-                                    <point x="0.9" y="0.1" />
-                                    <point x="1" y="0.5" />
-                                    <point x="0.93" y="0.93" />
-                                    <point x="0.5" y="1" />
-                                    <point x="0.13" y="0.87" />
-                                    <point x="0.01" y="0.5" />
-                                </collision-poly>
-                            </frame>
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC-Dell\Desktop\Juego 10\Mesa de trabajo 20.png">
-                                <collision-poly>
-                                    <point x="0.15" y="0.15" />
-                                    <point x="0.5" y="0.12" />
-                                    <point x="0.84" y="0.16" />
-                                    <point x="0.86" y="0.5" />
-                                    <point x="0.62" y="0.62" />
-                                    <point x="0.5" y="0.93" />
-                                    <point x="0.32" y="0.68" />
-                                    <point x="0.15" y="0.5" />
-                                </collision-poly>
-                            </frame>
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC-Dell\Desktop\Juego 10\Mesa de trabajo 21.png">
-                                <collision-poly>
-                                    <point x="0.17" y="0.17" />
-                                    <point x="0.5" y="0.01" />
-                                    <point x="0.9" y="0.1" />
-                                    <point x="1" y="0.5" />
-                                    <point x="0.91" y="0.91" />
-                                    <point x="0.5" y="0.97" />
-                                    <point x="0.15" y="0.85" />
-                                    <point x="0.02" y="0.5" />
-                                </collision-poly>
-                            </frame>
+                        <animation framecount="16" loop="0" name="j10a" pingpong="0" repeatcount="1" repeatto="0" sid="112186120228806" speed="0">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC-Dell\Desktop\Juego 10\Mesa de trabajo 3.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC-Dell\Desktop\Juego 10\Mesa de trabajo 7.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC-Dell\Desktop\Juego 10\Mesa de trabajo 8.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC-Dell\Desktop\Juego 10\Mesa de trabajo 9.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC-Dell\Desktop\Juego 10\Mesa de trabajo 10.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC-Dell\Desktop\Juego 10\Mesa de trabajo 11.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC-Dell\Desktop\Juego 10\Mesa de trabajo 12.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC-Dell\Desktop\Juego 10\Mesa de trabajo 13.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC-Dell\Desktop\Juego 10\Mesa de trabajo 14.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC-Dell\Desktop\Juego 10\Mesa de trabajo 15.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC-Dell\Desktop\Juego 10\Mesa de trabajo 16.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC-Dell\Desktop\Juego 10\Mesa de trabajo 17.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC-Dell\Desktop\Juego 10\Mesa de trabajo 18.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC-Dell\Desktop\Juego 10\Mesa de trabajo 19.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC-Dell\Desktop\Juego 10\Mesa de trabajo 20.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC-Dell\Desktop\Juego 10\Mesa de trabajo 21.png" />
                         </animation>
                     </animation-folder>
                     <animation-folder name="Eduardo">
