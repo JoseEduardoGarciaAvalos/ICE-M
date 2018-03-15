@@ -82,10 +82,10 @@
                                 </action>
                                 <action id="4" name="Set animation" sid="350524698746847" type="Enemigo">
                                     <param id="0" name="Animation">&quot;j10a&quot;</param>
-                                    <param id="1" name="From">0</param>
+                                    <param id="1" name="From">1</param>
                                 </action>
                                 <action id="5" name="Set frame" sid="697073553719062" type="Enemigo">
-                                    <param id="0" name="Frame number">choose(0,Enemigo.AnimationFrameCount-1)</param>
+                                    <param id="0" name="Frame number">floor(random(0,Enemigo.AnimationFrameCount))</param>
                                 </action>
                                 <action behavior="Temblar" id="0" name="Set activated" sid="706457512278397" type="Enemigo">
                                     <param id="0" name="Activated">1</param>
@@ -106,7 +106,7 @@
                                 <action behavior="Tarea" id="3" name="Set target" sid="705772987204053" type="Enemigo">
                                     <param id="0" name="Target is">2</param>
                                     <param id="1" name="Relativity">1</param>
-                                    <param id="2" name="Value">45</param>
+                                    <param id="2" name="Value">choose(45,-45)</param>
                                 </action>
                                 <action id="0" name="Call function" sid="813246160683406" type="Funcion">
                                     <param id="0" name="Name">&quot;posicionALEATORIA&quot;</param>
@@ -149,6 +149,12 @@
                     <actions>
                         <action id="-41" name="Wait for signal" sid="362973057141844" type="System">
                             <param id="0" name="Tag">&quot;pCargado&quot;</param>
+                        </action>
+                        <action id="0" name="Play" sid="152209778944164" type="Audio">
+                            <param id="0" name="Audio file">C3-musica de miedo 2</param>
+                            <param id="2" name="Loop">1</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
                         </action>
                     </actions>
                     <sub-events>
@@ -527,6 +533,12 @@
                             <param id="0" name="Start Mode">0</param>
                             <param id="1" name="Force use current">0</param>
                         </action>
+                        <action id="0" name="Play" sid="362969819776898" type="Audio">
+                            <param id="0" name="Audio file">A3-tono ascendiendo 1</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
                     </actions>
                 </event-block>
                 <comment>Se ejecutará siempre cuando haya perdido y que este finalizando el juego</comment>
@@ -551,6 +563,12 @@
                         <action behavior="Tarea" id="10" name="Start" sid="493523942603990" type="Jugador">
                             <param id="0" name="Start Mode">0</param>
                             <param id="1" name="Force use current">0</param>
+                        </action>
+                        <action id="0" name="Play" sid="928889058245366" type="Audio">
+                            <param id="0" name="Audio file">A3-tono ascendiendo 1 revertido</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
                         </action>
                     </actions>
                 </event-block>
