@@ -1548,25 +1548,12 @@
                             <param id="0" name="Object">Aliado</param>
                         </condition>
                     </conditions>
-                    <actions />
-                    <sub-events>
-                        <event-block sid="941903551944111">
-                            <conditions />
-                            <actions>
-                                <action id="-9" name="Set value" sid="396031963697898" type="System">
-                                    <param id="0" name="Variable">gDerrota</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                                <action id="5" name="Set frame" sid="306878372938205" type="Aliado">
-                                    <param id="0" name="Frame number">0</param>
-                                </action>
-                                <action id="4" name="Set animation" sid="119791768227360" type="Aliado">
-                                    <param id="0" name="Animation">&quot;j15b&quot;</param>
-                                    <param id="1" name="From">0</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
+                    <actions>
+                        <action id="-9" name="Set value" sid="396031963697898" type="System">
+                            <param id="0" name="Variable">gDerrota</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
                 </event-block>
                 <comment>Control del jugador, seguimiento en ojos de enemigos y temblor al estar sobre ellos</comment>
                 <event-block sid="559711799224060">
@@ -1722,7 +1709,60 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="Cierre del escenario (Eventos que continuan ejecutandose a pesar que se ha acabado el tiempo o fue derrotado)" sid="355235875740475" title="fin 15" />
+        <event-group description="Cierre del escenario (Eventos que continuan ejecutandose a pesar que se ha acabado el tiempo o fue derrotado)" sid="355235875740475" title="fin 15">
+            <sub-events>
+                <comment>Se ejecutará siempre cuando no haya perdido y que este finalizando el juego</comment>
+                <event-block sid="511729056660122">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="282249175147931" type="System">
+                            <param id="0" name="Variable">gDerrota</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="303252729921133" type="System">
+                            <param id="0" name="Variable">gEstado</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="809878506066884" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="898252146297537" type="Aliado">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="822506470255257" type="Aliado">
+                            <param id="0" name="Animation">&quot;j15b&quot;</param>
+                            <param id="1" name="From">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Se ejecutará siempre cuando haya perdido y que este finalizando el juego</comment>
+                <event-block sid="800128890106878">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="987190559787884" type="System">
+                            <param id="0" name="Variable">gDerrota</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="509026518207940" type="System">
+                            <param id="0" name="Variable">gEstado</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="879616430092989" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="111351711900371" type="Aliado">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="580498563129265" type="Aliado">
+                            <param id="0" name="Animation">&quot;j15c&quot;</param>
+                            <param id="1" name="From">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
         <comment>INFORMACIÓN DE LAS UTILERIAS SEGÚN ID&#x0D;&#x0A;0.1 = Zona de colisión para el control del giro del fuego&#x09;&#x09;amarillo transparente&#x0D;&#x0A;1 =   control del giro del fuego&#x09;&#x09;&#x09;&#x09;verde&#x0D;&#x0A;5 = Zona de ruta (para hacer mover el fuego)&#x09;&#x09;&#x09;morado</comment>
     </events>
 </c2eventsheet>

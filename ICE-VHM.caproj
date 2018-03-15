@@ -105,6 +105,23 @@
             <object-type name="Aliado" sid="972655528226897">
                 <plugin id="Sprite" />
                 <animation-folder>
+                    <animation-folder name="Eduardo">
+                        <animation framecount="3" loop="1" name="j15a" pingpong="1" repeatcount="1" repeatto="0" sid="682152905375416" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 15\J_j15a-1.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 15\J_j15a-2.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 15\J_j15a-3.png" />
+                        </animation>
+                        <animation framecount="3" loop="1" name="j15b" pingpong="0" repeatcount="1" repeatto="0" sid="104275358078528" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 15\J_j15b-1.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 15\J_j15b-2.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 15\J_j15b-3.png" />
+                        </animation>
+                        <animation framecount="3" loop="1" name="j15c" pingpong="0" repeatcount="1" repeatto="0" sid="772130106412852" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 15\J_j15c-1.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 15\J_j15c-2.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 15\J_j15c-3.png" />
+                        </animation>
+                    </animation-folder>
                     <animation framecount="1" loop="0" name="feliz" pingpong="0" repeatcount="1" repeatto="0" sid="916773995906572" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5">
                             <collision-poly>
@@ -169,12 +186,6 @@
                                 <point x="1" y="0" />
                             </collision-poly>
                         </frame>
-                    </animation>
-                    <animation framecount="1" loop="0" name="j15a" pingpong="0" repeatcount="1" repeatto="0" sid="682152905375416" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.50505" />
-                    </animation>
-                    <animation framecount="1" loop="0" name="j15b" pingpong="0" repeatcount="1" repeatto="0" sid="104275358078528" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.50505" />
                     </animation>
                     <animation framecount="2" loop="0" name="j18a" pingpong="0" repeatcount="1" repeatto="0" sid="156083239781758" speed="0">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
@@ -372,6 +383,40 @@
                             </frame>
                         </animation>
                     </animation-folder>
+                    <animation-folder name="Eduardo">
+                        <animation framecount="3" loop="1" name="j15a" pingpong="0" repeatcount="1" repeatto="0" sid="523289349295672" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.50505" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 15\Fuego 1.png">
+                                <image-point name="ojoI" x="0.275" y="0.50505" />
+                                <image-point name="ojoD" x="0.675" y="0.50505" />
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.50505" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 15\Fuego 2.png">
+                                <image-point name="ojoI" x="0.275" y="0.50505" />
+                                <image-point name="ojoD" x="0.675" y="0.50505" />
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.50505" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 15\Fuego 3.png">
+                                <image-point name="ojoI" x="0.275" y="0.50505" />
+                                <image-point name="ojoD" x="0.675" y="0.50505" />
+                            </frame>
+                        </animation>
+                        <animation framecount="3" loop="1" name="j15b" pingpong="0" repeatcount="1" repeatto="0" sid="514954484950790" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.50505" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 15\E_j15b-1.png">
+                                <image-point name="ojoI" x="0.275" y="0.50505" />
+                                <image-point name="ojoD" x="0.675" y="0.50505" />
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.50505" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 15\E_j15b-2.png">
+                                <image-point name="ojoI" x="0.275" y="0.50505" />
+                                <image-point name="ojoD" x="0.675" y="0.50505" />
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.50505" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 15\E_j15b-3.png">
+                                <image-point name="ojoI" x="0.275" y="0.50505" />
+                                <image-point name="ojoD" x="0.675" y="0.50505" />
+                            </frame>
+                        </animation>
+                        <animation framecount="2" loop="0" name="j15c" pingpong="0" repeatcount="1" repeatto="0" sid="257796253083318" speed="0">
+                            <frame duration="1" hotspotX="0.52" hotspotY="0.52" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 15\E_j15c-1.png" />
+                            <frame duration="1" hotspotX="0.52" hotspotY="0.52" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 15\E_j15c-2.png" />
+                        </animation>
+                    </animation-folder>
                     <animation framecount="1" loop="0" name="feliz" pingpong="0" repeatcount="1" repeatto="0" sid="539564640274444" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5">
                             <collision-poly>
@@ -431,30 +476,6 @@
                                 <point x="0" y="1" />
                             </collision-poly>
                         </frame>
-                    </animation>
-                    <animation framecount="2" loop="1" name="j15a" pingpong="0" repeatcount="1" repeatto="0" sid="523289349295672" speed="5">
-                        <frame duration="1" hotspotX="0.5125" hotspotY="0.494949">
-                            <image-point name="ojoI" x="0.275" y="0.50505" />
-                            <image-point name="ojoD" x="0.675" y="0.50505" />
-                        </frame>
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.494949">
-                            <image-point name="ojoI" x="0.2625" y="0.50505" />
-                            <image-point name="ojoD" x="0.6625" y="0.50505" />
-                        </frame>
-                    </animation>
-                    <animation framecount="2" loop="1" name="j15b" pingpong="0" repeatcount="1" repeatto="0" sid="514954484950790" speed="5">
-                        <frame duration="1" hotspotX="0.5125" hotspotY="0.494949">
-                            <image-point name="ojoI" x="0.275" y="0.50505" />
-                            <image-point name="ojoD" x="0.675" y="0.50505" />
-                        </frame>
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.494949">
-                            <image-point name="ojoI" x="0.2625" y="0.50505" />
-                            <image-point name="ojoD" x="0.6625" y="0.50505" />
-                        </frame>
-                    </animation>
-                    <animation framecount="2" loop="0" name="j15c" pingpong="0" repeatcount="1" repeatto="0" sid="257796253083318" speed="0">
-                        <frame duration="1" hotspotX="0.52" hotspotY="0.52" />
-                        <frame duration="1" hotspotX="0.52" hotspotY="0.52" />
                     </animation>
                     <animation framecount="1" loop="0" name="j17a" pingpong="0" repeatcount="1" repeatto="0" sid="436935460296957" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
