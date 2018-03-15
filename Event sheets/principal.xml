@@ -5,7 +5,7 @@
     <events>
         <variable comment="El alto (en pixeles) de la Interfaz de Usuario" constant="1" name="GUI" sid="571679260641128" static="0" type="number">32</variable>
         <variable comment="Espera al Principio del juego" constant="1" name="GEI" sid="623133306478255" static="0" type="number">1</variable>
-        <variable comment="Espera al Final del juego" constant="1" name="GEF" sid="269108825230675" static="0" type="number">1</variable>
+        <variable comment="Espera al Final del juego" constant="1" name="GEF" sid="269108825230675" static="0" type="number">2</variable>
         <variable comment="0 = Falso (Ninguna derrota), 1 = Verdadero (Hay derrota)" constant="0" name="gDerrota" sid="474886352174495" static="0" type="number">0</variable>
         <variable comment="0 = comenzando , 1= jugando, 2= finalizando (juego), 3= termino partida" constant="0" name="gEstado" sid="494296521134888" static="0" type="number">0</variable>
         <variable comment="La dificultad de cada minijuego" constant="0" name="gDificultad" sid="771022049958099" static="0" type="number">0</variable>
@@ -29,8 +29,9 @@
                 <comment>Al crear un objeto se pierden (si las hay,) todas las pick del mismo objeto de la condicion, y no podrá hacer pick dentro de la misma función que lo creo, deberá hacerlo en otra función</comment>
                 <comment>Al destruir un objeto y solicita la cantidad de instancias de este, no estará actualizado, es decir, si era el último objeto entonces Count retornará 1</comment>
                 <comment>El comportamiento HASH tiende a borrar sus valores cuando está fuera del layout??? (FALSO)&#x0D;&#x0A;Una condición que pick un elemento, luego en las acciones hace referencia a la familia, entonces aplica las acciones a toda la familia y no al elemento</comment>
-                <comment>EL plugin MICROFONO no sirve en red LAN</comment>
+                <comment>EL plugin MICROFONO no sirve en red LAN en chrome, deberá estar en HTTPS</comment>
                 <comment>EL comportamiento TWEENTEEN para la posición, deberán fijar tanto x como y</comment>
+                <comment>EL incremento en la música se aprecia mejor en Chrome</comment>
             </sub-events>
         </event-group>
         <event-group description="" sid="384581551596629" title="Principal">

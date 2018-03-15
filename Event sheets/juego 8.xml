@@ -68,9 +68,21 @@
                     </conditions>
                     <actions />
                     <sub-events>
+                        <variable constant="0" name="ancho1" sid="135579740092436" static="0" type="number">0</variable>
+                        <variable constant="0" name="ancho2" sid="241536701554989" static="0" type="number">0</variable>
+                        <variable constant="0" name="alto1" sid="246327094437636" static="0" type="number">0</variable>
+                        <variable constant="0" name="alto2" sid="144868665259423" static="0" type="number">0</variable>
                         <event-block sid="797172596932300">
                             <conditions />
                             <actions>
+                                <action id="-9" name="Set value" sid="112639222974260" type="System">
+                                    <param id="0" name="Variable">ancho1</param>
+                                    <param id="1" name="Value">random(ANCHOS, ANCHOS)</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="433150830384696" type="System">
+                                    <param id="0" name="Variable">alto1</param>
+                                    <param id="1" name="Value">random(ALTOS,ALTOS)</param>
+                                </action>
                                 <action id="-3" name="Create object" sid="861074902965329" type="System">
                                     <param id="0" name="Object to create">Canvas</param>
                                     <param id="1" name="Layer">&quot;Principal&quot;</param>
@@ -78,15 +90,26 @@
                                     <param id="3" name="Y">0</param>
                                 </action>
                                 <action id="-7" name="Set size" sid="713142723560738" type="Canvas">
-                                    <param id="0" name="Width">random(ANCHOI, ANCHOS)</param>
-                                    <param id="1" name="Height">random(ALTOI,ALTOS)</param>
+                                    <param id="0" name="Width">ancho1</param>
+                                    <param id="1" name="Height">alto1</param>
                                 </action>
                                 <action id="3" name="Resize canvas" sid="954195453059099" type="Canvas">
                                     <param id="0" name="width">Canvas.Width</param>
                                     <param id="1" name="height">Canvas.Height</param>
                                 </action>
-                                <action id="8" name="Fill canvas with color" sid="333477950474604" type="Canvas">
+                                <action disabled="1" id="8" name="Fill canvas with color" sid="333477950474604" type="Canvas">
                                     <param id="0" name="color">&quot;black&quot;</param>
+                                </action>
+                                <action disabled="1" id="-3" name="Set position" sid="194217072275938" type="Aliado">
+                                    <param id="0" name="X">Canvas.Width/2</param>
+                                    <param id="1" name="Y">Canvas.Height/2</param>
+                                </action>
+                                <action disabled="1" id="-7" name="Set size" sid="245505319611096" type="Aliado">
+                                    <param id="0" name="Width">Canvas.Width</param>
+                                    <param id="1" name="Height">Canvas.Height</param>
+                                </action>
+                                <action disabled="1" id="4" name="Paste Object" sid="926857321388803" type="Canvas">
+                                    <param id="0" name="object">Aliado</param>
                                 </action>
                                 <action behavior="Ancla" id="0" name="Set enabled" sid="528263642167112" type="Canvas">
                                     <param id="0" name="State">1</param>
@@ -103,6 +126,14 @@
                                 <action behavior="Ancla" id="4" name="Set vertical position" sid="991057221139875" type="Canvas">
                                     <param id="0" name="Position">0.5</param>
                                 </action>
+                                <action id="-9" name="Set value" sid="744478175423968" type="System">
+                                    <param id="0" name="Variable">ancho2</param>
+                                    <param id="1" name="Value">random(ANCHOI2,Canvas.Width-TOL)</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="713323356792950" type="System">
+                                    <param id="0" name="Variable">alto2</param>
+                                    <param id="1" name="Value">random(ALTOI2,Canvas.Height-TOL)</param>
+                                </action>
                                 <action id="-3" name="Create object" sid="968098003394408" type="System">
                                     <param id="0" name="Object to create">Utileria</param>
                                     <param id="1" name="Layer">&quot;Principal&quot;</param>
@@ -110,8 +141,8 @@
                                     <param id="3" name="Y">0</param>
                                 </action>
                                 <action id="-7" name="Set size" sid="866722047993256" type="Utileria">
-                                    <param id="0" name="Width">random(ANCHOI2,Canvas.Width-TOL)</param>
-                                    <param id="1" name="Height">random(ALTOI2,Canvas.Height-TOL)</param>
+                                    <param id="0" name="Width">ancho2</param>
+                                    <param id="1" name="Height">alto2</param>
                                 </action>
                                 <action behavior="Ancla" id="0" name="Set enabled" sid="666013118419104" type="Utileria">
                                     <param id="0" name="State">1</param>
@@ -139,6 +170,7 @@
                                 <action id="5" name="Set frame" sid="392443904627148" type="Utileria">
                                     <param id="0" name="Frame number">2</param>
                                 </action>
+                                <action disabled="1" id="-9" name="Destroy" sid="534202530662641" type="Aliado" />
                             </actions>
                         </event-block>
                     </sub-events>
@@ -202,6 +234,12 @@
                             <actions>
                                 <action id="-41" name="Wait for signal" sid="559269806861361" type="System">
                                     <param id="0" name="Tag">&quot;pCargado&quot;</param>
+                                </action>
+                                <action id="0" name="Play" sid="608450523061916" type="Audio">
+                                    <param id="0" name="Audio file">C3-musica de accion 3</param>
+                                    <param id="2" name="Loop">1</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                 </action>
                                 <action id="0" name="Call function" sid="498359686259232" type="Funcion">
                                     <param id="0" name="Name">&quot;crearEnemigo&quot;</param>
@@ -296,6 +334,13 @@
                                 <action id="-7" name="Set size" sid="134245107166859" type="Enemigo">
                                     <param id="0" name="Width">ANCHO</param>
                                     <param id="1" name="Height">ALTO</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="662647744535806" type="Enemigo">
+                                    <param id="0" name="Animation">&quot;j10a&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="201363221512434" type="Enemigo">
+                                    <param id="0" name="Frame number">floor(random(0,Enemigo.AnimationFrameCount))</param>
                                 </action>
                                 <action id="0" name="Call function" sid="860241122587963" type="Funcion">
                                     <param id="0" name="Name">&quot;posicionALEATORIA&quot;</param>

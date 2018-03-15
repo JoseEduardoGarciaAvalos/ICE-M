@@ -1001,6 +1001,12 @@
                         <action id="-41" name="Wait for signal" sid="665629228663955" type="System">
                             <param id="0" name="Tag">&quot;pCargado&quot;</param>
                         </action>
+                        <action id="0" name="Play" sid="443317705089754" type="Audio">
+                            <param id="0" name="Audio file">C3-musica de miedo 3</param>
+                            <param id="2" name="Loop">1</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
                     </actions>
                     <sub-events>
                         <comment>Hacer que la utileria con ID=5 empiece la ruta</comment>
