@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>juego 1</name>
     <events>
+        <comment>PROTEGE</comment>
         <include>principal</include>
         <event-group description="Preparación del escenario" sid="880428325528974" title="inicio 1">
             <sub-events>
@@ -18,10 +19,6 @@
                         <action id="-9" name="Set value" sid="347544039006187" type="System">
                             <param id="0" name="Variable">gTiempo</param>
                             <param id="1" name="Value">floor(random(12,16))</param>
-                        </action>
-                        <action id="-9" name="Set value" sid="639729807851031" type="System">
-                            <param id="0" name="Variable">gObjetivo</param>
-                            <param id="1" name="Value">&quot;protege&quot;</param>
                         </action>
                         <action id="0" name="Call function" sid="653783806866105" type="Funcion">
                             <param id="0" name="Name">&quot;inicioGUI&quot;</param>
@@ -66,7 +63,7 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action disabled="1" id="-16" name="Set opacity" sid="663611410724170" type="Utileria">
+                                <action id="-16" name="Set opacity" sid="663611410724170" type="Utileria">
                                     <param id="0" name="Opacity">0</param>
                                 </action>
                             </actions>
@@ -109,6 +106,23 @@
                                     <param id="3" name="Y">0</param>
                                 </action>
                             </actions>
+                            <sub-events>
+                                <event-block sid="523507661836438">
+                                    <conditions>
+                                        <condition id="5" inverted="1" name="Is tag playing" sid="506200460079910" type="Audio">
+                                            <param id="0" name="Tag">&quot;L&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="939190890317879" type="Audio">
+                                            <param id="0" name="Audio file">A3-tono ascendiendo 1</param>
+                                            <param id="2" name="Loop">1</param>
+                                            <param id="3" name="Volume">gAudioLoop</param>
+                                            <param id="1" name="Tag (optional)">&quot;L&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                     </sub-events>
                 </event-block>
@@ -479,8 +493,8 @@
                 <comment>Cada un segundo mientras no haya perdido, se descontará 1 a la variable tiempo</comment>
                 <event-block sid="632092330463461">
                     <conditions>
-                        <condition id="-6" name="Every X seconds" sid="560415383181997" type="System">
-                            <param id="0" name="Interval (seconds)">1.0+Funcion.Call(&quot;calculoTEMPO&quot;)</param>
+                        <condition behavior="Tiempo" id="0" name="On timer" sid="473797545597713" type="zreloj">
+                            <param id="0" name="Tag">&quot;global&quot;</param>
                         </condition>
                         <condition id="-14" name="Compare variable" sid="333962379700776" type="System">
                             <param id="0" name="Variable">gDerrota</param>

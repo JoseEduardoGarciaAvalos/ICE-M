@@ -1,0 +1,900 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>test</name>
+    <events>
+        <include>principal</include>
+        <event-group description="Preparación del escenario" sid="642890591816729" title="inicio 0">
+            <sub-events>
+                <event-block sid="423786169860013">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="457241193269891" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="719458704251543" type="System">
+                            <param id="0" name="Variable">gJuego</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="452020026560671" type="System">
+                            <param id="0" name="Variable">gTiempo</param>
+                            <param id="1" name="Value">floor(random(20,30))</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="799257614669909" type="System">
+                            <param id="0" name="Variable">gObjetivo</param>
+                            <param id="1" name="Value">&quot;pregunta&quot;</param>
+                        </action>
+                        <action id="0" name="Call function" sid="109140619962097" type="Funcion">
+                            <param id="0" name="Name">&quot;inicioGUI&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="478091658363516">
+                    <conditions>
+                        <condition id="0" name="On function" sid="114701678185423" type="Funcion">
+                            <param id="0" name="Name">&quot;inicioGUI&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="235943874116960">
+                            <conditions />
+                            <actions>
+                                <action id="-41" name="Wait for signal" sid="436918304833973" type="System">
+                                    <param id="0" name="Tag">&quot;pArchivo&quot;</param>
+                                </action>
+                                <action id="0" name="Add key" sid="862532809542891" type="Diccionario">
+                                    <param id="0" name="Key">&quot;etapa&quot;</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="0" name="Call function" sid="963479233144708" type="Funcion">
+                                    <param id="0" name="Name">&quot;definioTest&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                                <action id="-16" name="Wait" sid="515618880665546" type="System">
+                                    <param id="0" name="Seconds">0</param>
+                                </action>
+                                <action id="0" name="Call function" sid="779608535140218" type="Funcion">
+                                    <param id="0" name="Name">&quot;mostrarPregunta&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                                <action id="0" name="Call function" sid="894986892140531" type="Funcion">
+                                    <param id="0" name="Name">&quot;comenzoJuego&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="372602284572895">
+                    <conditions>
+                        <condition id="0" name="On function" sid="708344098238443" type="Funcion">
+                            <param id="0" name="Name">&quot;comenzoJuego&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-41" name="Wait for signal" sid="569818490373837" type="System">
+                            <param id="0" name="Tag">&quot;pCargado&quot;</param>
+                        </action>
+                        <action id="0" name="Call function" sid="443950803135970" type="Funcion">
+                            <param id="0" name="Name">&quot;iniciaTAREA&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;testEntrar&quot;{###}0</param>
+                        </action>
+                        <action id="0" name="Set visible" sid="260020186364001" type="IFrame">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="0" name="Play" sid="861222695364118" type="Audio">
+                            <param id="0" name="Audio file">C3-musica de carrera 4</param>
+                            <param id="2" name="Loop">1</param>
+                            <param id="3" name="Volume">gAudioLoop</param>
+                            <param id="1" name="Tag (optional)">&quot;L&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="158645239335528">
+                    <conditions>
+                        <condition id="0" name="On function" sid="478338710552737" type="Funcion">
+                            <param id="0" name="Name">&quot;mostrarPregunta&quot;</param>
+                        </condition>
+                        <condition id="-13" name="Pick nth instance" sid="150373284436671" type="System">
+                            <param id="0" name="Object">CSV</param>
+                            <param id="1" name="Instance">0</param>
+                        </condition>
+                        <condition id="-13" name="Pick nth instance" sid="332836821709563" type="System">
+                            <param id="0" name="Object">Patron</param>
+                            <param id="1" name="Instance">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="6" name="Set HTML" sid="605074931314672" type="IFrame">
+                            <param id="0" name="Set HTML">Hash.At(&quot;juego.archivo.test&quot;)</param>
+                        </action>
+                        <action id="1" name="Load table" sid="300613016454690" type="CSV">
+                            <param id="0" name="CSV string">Hash.At(&quot;juego.archivo.preguntas&quot;)</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <variable comment="Id de la pregunta que se presenta" constant="0" name="idP" sid="370298750745669" static="0" type="number">0</variable>
+                        <variable comment="Opciones separadas por ;" constant="0" name="opciones" sid="494744236030159" static="0" type="text"></variable>
+                        <variable comment="Cantidad de opciones" constant="0" name="canO" sid="819556073246606" static="0" type="number">0</variable>
+                        <variable comment="Id de las respuestas separadas por ;" constant="0" name="idR" sid="634893487758021" static="0" type="text"></variable>
+                        <variable comment="Cantidad de respuestas" constant="0" name="canR" sid="698283020793142" static="0" type="number">0</variable>
+                        <event-block sid="387857130890348">
+                            <conditions />
+                            <actions>
+                                <action id="-9" name="Set value" sid="386744442603317" type="System">
+                                    <param id="0" name="Variable">idP</param>
+                                    <param id="1" name="Value">floor(random(CSV.RowCnt))</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="834314076904930" type="System">
+                                    <param id="0" name="Variable">opciones</param>
+                                    <param id="1" name="Value">CSV.At(&quot;opcion&quot;,idP)</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="999088299724296" type="System">
+                                    <param id="0" name="Variable">canO</param>
+                                    <param id="1" name="Value">tokencount(opciones,&quot;;&quot;)</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="406949689849845" type="System">
+                                    <param id="0" name="Variable">idR</param>
+                                    <param id="1" name="Value">CSV.At(&quot;respuesta&quot;,idP)</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="731599329720170" type="System">
+                                    <param id="0" name="Variable">canR</param>
+                                    <param id="1" name="Value">tokencount(idR,&quot;;&quot;)</param>
+                                </action>
+                                <action id="0" name="Add key" sid="656305325883024" type="Diccionario">
+                                    <param id="0" name="Key">&quot;canR&quot;</param>
+                                    <param id="1" name="Value">canR</param>
+                                </action>
+                                <action id="0" name="Add key" sid="619540056133347" type="Diccionario">
+                                    <param id="0" name="Key">&quot;canO&quot;</param>
+                                    <param id="1" name="Value">canO</param>
+                                </action>
+                                <action id="24" name="Get elements" sid="182749841759514" type="IFrame">
+                                    <param id="0" name="ID/Class">&quot;c2_PREGUNTA&quot;</param>
+                                    <param id="1" name="Set">CSV.At(&quot;pregunta&quot;,idP)</param>
+                                    <param id="2" name="Append">&quot;&quot;</param>
+                                </action>
+                                <action disabled="1" id="14" name="Log" sid="579646219605316" type="Navegador">
+                                    <param id="0" name="Type">0</param>
+                                    <param id="1" name="Message">&quot;Cantidad de respuestas &quot; &amp; canR</param>
+                                </action>
+                                <action disabled="1" id="14" name="Log" sid="931582536571221" type="Navegador">
+                                    <param id="0" name="Type">0</param>
+                                    <param id="1" name="Message">&quot;ID de respuestas &quot; &amp; idR</param>
+                                </action>
+                                <action id="24" name="Get elements" sid="976800361047868" type="IFrame">
+                                    <param id="0" name="ID/Class">&quot;.c2_RESPUESTA&quot;</param>
+                                    <param id="1" name="Set">&quot; &quot;</param>
+                                    <param id="2" name="Append">&quot;&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Recorrera la cantidad de opciones, para añadir en el patrón</comment>
+                        <comment>El diccionario Z, guardará el texto de las opciones según el id del archivo preguntas.csv</comment>
+                        <event-block sid="121790899203381">
+                            <conditions>
+                                <condition id="-12" name="Repeat" sid="686550330065598" type="System">
+                                    <param id="0" name="Count">canO</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="2" name="Set pattern" sid="811744676837709" type="Patron">
+                                    <param id="0" name="Pattern">(loopindex+1)&amp;&quot;&quot;</param>
+                                    <param id="1" name="Count">1</param>
+                                </action>
+                                <action id="0" name="Add key" sid="479465997606551" type="Diccionario">
+                                    <param id="0" name="Key">&quot;Z&quot;&amp;(loopindex+1)</param>
+                                    <param id="1" name="Value">tokenat(opciones,loopindex,&quot;;&quot;)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Recorrera la cantidad de opciones</comment>
+                        <event-block sid="738693304685802">
+                            <conditions>
+                                <condition id="-12" name="Repeat" sid="845664985087703" type="System">
+                                    <param id="0" name="Count">canO</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <variable comment="objeto en HTML" constant="0" name="texto" sid="260155325883789" static="0" type="text"></variable>
+                                <variable comment="Id de opciones" constant="0" name="id" sid="132234288785814" static="0" type="number">0</variable>
+                                <event-block sid="339549089612597">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="178129525625298" type="System">
+                                            <param id="0" name="Variable">id</param>
+                                            <param id="1" name="Value">Patron.Pattern</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="772779631028610" type="System">
+                                            <param id="0" name="Variable">texto</param>
+                                            <param id="1" name="Value">Diccionario.Get(&quot;Z&quot;&amp;id)</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="882626180761889" type="System">
+                                            <param id="0" name="Variable">texto</param>
+                                            <param id="1" name="Value">&quot;&lt;div onclick=&apos;C2(&quot;&quot;&quot;&amp;id&amp;&quot;&quot;&quot;)&apos; class=&apos;c2_&quot;&amp;id&amp;&quot;&apos;&gt; &lt;div class=&apos;c2_BOTON&apos;&gt;&quot;&amp;texto&amp;&quot;&lt;/div&gt;&lt;/div&gt;&quot;</param>
+                                        </action>
+                                        <action id="24" name="Get elements" sid="533604386015927" type="IFrame">
+                                            <param id="0" name="ID/Class">&quot;.c2_RESPUESTA&quot;</param>
+                                            <param id="1" name="Set">&quot;&quot;</param>
+                                            <param id="2" name="Append">texto</param>
+                                        </action>
+                                        <action id="5" name="Push" sid="834113040070284" type="Matriz">
+                                            <param id="0" name="Where">0</param>
+                                            <param id="1" name="Value">id</param>
+                                            <param id="2" name="Axis">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>El diccionario A, guardará el id de la opcion o las opciones correctas</comment>
+                        <comment>Si es solo una respuesta</comment>
+                        <event-block sid="494143803164946">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="511745033762516" type="System">
+                                    <param id="0" name="Variable">canR</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Add key" sid="151320746104822" type="Diccionario">
+                                    <param id="0" name="Key">&quot;A&quot;</param>
+                                    <param id="1" name="Value">idR</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Sino se guardarán las respuestas en llaves del diccionario</comment>
+                        <event-block sid="210874067873984">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="731212503646186" type="System" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="474905437646016">
+                                    <conditions>
+                                        <condition id="-12" name="Repeat" sid="470047661485909" type="System">
+                                            <param id="0" name="Count">canR</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Add key" sid="469171823905160" type="Diccionario">
+                                            <param id="0" name="Key">&quot;A&quot;&amp;tokenat(idR,loopindex,&quot;;&quot;)</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="117887401501593">
+                            <conditions />
+                            <actions>
+                                <action disabled="1" id="14" name="Log" sid="305743201100562" type="Navegador">
+                                    <param id="0" name="Type">0</param>
+                                    <param id="1" name="Message">IFrame.HTML</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Función para crear el test</comment>
+                <event-block sid="248245584632651">
+                    <conditions>
+                        <condition id="0" name="On function" sid="158940343746415" type="Funcion">
+                            <param id="0" name="Name">&quot;definioTest&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="422001141297140">
+                            <conditions />
+                            <actions>
+                                <action id="0" name="Call function" sid="935811906804280" type="Funcion">
+                                    <param id="0" name="Name">&quot;cargaGUI&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;juego.archivo.GUI test&quot;{###}2{###}2{###}&quot;A;B&quot;</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="217868647690699" type="System">
+                                    <param id="0" name="Seconds">0</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="329408047780722">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="750450384494567" type="zmosaico">
+                                            <param id="0" name="Instance variable">ID</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">100</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="870740034155082">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="853216693618278" type="zgui">
+                                                    <param id="0" name="Instance variable">ID</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">100</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-29" name="Move to object" sid="547696444040814" type="zmosaico">
+                                                    <param id="0" name="Where">1</param>
+                                                    <param id="1" name="Object">zgui</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="Creación, definición de propiedades y comportamientos de los objetos " sid="122935904147811" title="jugabilidad 0">
+            <sub-events>
+                <comment>Función para evaluar la pregunta</comment>
+                <event-block sid="224673088639208">
+                    <conditions>
+                        <condition id="0" name="On function" sid="772220004230781" type="Funcion">
+                            <param id="0" name="Name">&quot;evaluarTest&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Set key" sid="318325956201041" type="Diccionario">
+                            <param id="0" name="Key">&quot;etapa&quot;</param>
+                            <param id="1" name="Value">2</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <variable constant="0" name="victoria" sid="343843669512535" static="0" type="number">0</variable>
+                        <comment>Si solo hay una respuesta, entonces</comment>
+                        <event-block sid="274404159126103">
+                            <conditions>
+                                <condition id="0" name="Compare value" sid="930132724215456" type="Diccionario">
+                                    <param id="0" name="Key">&quot;canR&quot;</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="294798436081267" type="System">
+                                    <param id="0" name="Variable">victoria</param>
+                                    <param id="1" name="Value">Diccionario.Get(&quot;A&quot;) = Diccionario.Get(&quot;B&quot;)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="546051123951678">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="487792650475956" type="System" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <variable constant="0" name="canO" sid="521315405550530" static="0" type="number">0</variable>
+                                <variable constant="0" name="secuencia" sid="843547372399780" static="0" type="text"></variable>
+                                <event-block sid="707190993064830">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="629881343115734" type="System">
+                                            <param id="0" name="Variable">canO</param>
+                                            <param id="1" name="Value">Diccionario.Get(&quot;canO&quot;)</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="699896099648115" type="System">
+                                            <param id="0" name="Variable">victoria</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="814662101838316">
+                                    <conditions>
+                                        <condition id="-12" name="Repeat" sid="386281404500446" type="System">
+                                            <param id="0" name="Count">canO</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <variable constant="0" name="i" sid="714137751395866" static="0" type="number">0</variable>
+                                        <event-block sid="212232701174453">
+                                            <conditions />
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="112439847730153" type="System">
+                                                    <param id="0" name="Variable">i</param>
+                                                    <param id="1" name="Value">loopindex+1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <comment>Si existe la opcion</comment>
+                                        <event-block sid="342210846630538">
+                                            <conditions>
+                                                <condition id="3" name="Has key" sid="501057605488460" type="Diccionario">
+                                                    <param id="0" name="Key">&quot;A&quot;&amp;i</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <comment>pero el jugador no lo selecciono, entonces</comment>
+                                                <event-block sid="359488850724417">
+                                                    <conditions>
+                                                        <condition id="3" inverted="1" name="Has key" sid="309375487519144" type="Diccionario">
+                                                            <param id="0" name="Key">&quot;B&quot;&amp;i</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action disabled="1" id="14" name="Log" sid="388376058225856" type="Navegador">
+                                                            <param id="0" name="Type">0</param>
+                                                            <param id="1" name="Message">&quot;No selecciono B&quot; &amp; i</param>
+                                                        </action>
+                                                        <action id="-9" name="Set value" sid="667339302284931" type="System">
+                                                            <param id="0" name="Variable">victoria</param>
+                                                            <param id="1" name="Value">0</param>
+                                                        </action>
+                                                        <action id="-10" name="Add to" sid="160325028178994" type="System">
+                                                            <param id="0" name="Variable">canO</param>
+                                                            <param id="1" name="Value">&quot;1,&quot;</param>
+                                                        </action>
+                                                        <action id="-24" name="Stop loop" sid="939419229406448" type="System" />
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="731693502119738">
+                                                    <conditions>
+                                                        <condition id="-22" name="Else" sid="743441209160997" type="System" />
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-10" name="Add to" sid="743032671495846" type="System">
+                                                            <param id="0" name="Variable">canO</param>
+                                                            <param id="1" name="Value">&quot;0,&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <comment>No es la respuesta esa opcion</comment>
+                                        <event-block sid="597893078304931">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="279061905679391" type="System" />
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <comment>pero el jugador si la selecciono, entonces</comment>
+                                                <event-block sid="175606850297686">
+                                                    <conditions>
+                                                        <condition id="3" name="Has key" sid="567031598748526" type="Diccionario">
+                                                            <param id="0" name="Key">&quot;B&quot;&amp;i</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action disabled="1" id="14" name="Log" sid="638951530323291" type="Navegador">
+                                                            <param id="0" name="Type">0</param>
+                                                            <param id="1" name="Message">&quot;No era B&quot; &amp; i</param>
+                                                        </action>
+                                                        <action id="-9" name="Set value" sid="506865808480089" type="System">
+                                                            <param id="0" name="Variable">victoria</param>
+                                                            <param id="1" name="Value">0</param>
+                                                        </action>
+                                                        <action id="-10" name="Add to" sid="777086420640616" type="System">
+                                                            <param id="0" name="Variable">canO</param>
+                                                            <param id="1" name="Value">&quot;2,&quot;</param>
+                                                        </action>
+                                                        <action id="-24" name="Stop loop" sid="719545680263424" type="System" />
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="437580485814034">
+                                                    <conditions>
+                                                        <condition id="-22" name="Else" sid="717150604565912" type="System" />
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-10" name="Add to" sid="805713575277436" type="System">
+                                                            <param id="0" name="Variable">canO</param>
+                                                            <param id="1" name="Value">&quot;0,&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="104524330293115">
+                            <conditions />
+                            <actions>
+                                <action id="-9" name="Set value" sid="630201134908084" type="System">
+                                    <param id="0" name="Variable">gDerrota</param>
+                                    <param id="1" name="Value">victoria = 0</param>
+                                </action>
+                                <action disabled="1" id="14" name="Log" sid="206170333910444" type="Navegador">
+                                    <param id="0" name="Type">0</param>
+                                    <param id="1" name="Message">&quot;La victoria es &quot; &amp; victoria</param>
+                                </action>
+                                <action id="0" name="Call function" sid="926000965468451" type="Funcion">
+                                    <param id="0" name="Name">&quot;finTest&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Control de las opciones que el jugador elige</comment>
+                <event-block sid="423374284483925">
+                    <conditions>
+                        <condition id="3" name="On C2 Function" sid="246947574880931" type="IFrame" />
+                        <condition id="0" name="Compare value" sid="457650612348338" type="Diccionario">
+                            <param id="0" name="Key">&quot;etapa&quot;</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <variable comment="El valor del evento click" constant="0" name="C2" sid="910985531394916" static="0" type="text"></variable>
+                        <event-block sid="273499489905738">
+                            <conditions />
+                            <actions>
+                                <action id="-9" name="Set value" sid="846823024385159" type="System">
+                                    <param id="0" name="Variable">C2</param>
+                                    <param id="1" name="Value">&quot;B&quot;&amp;IFrame.C2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Si solo hay una respuesta, entonces</comment>
+                        <event-block sid="335393204973246">
+                            <conditions>
+                                <condition id="0" name="Compare value" sid="318308526412883" type="Diccionario">
+                                    <param id="0" name="Key">&quot;canR&quot;</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Add key" sid="456742203133558" type="Diccionario">
+                                    <param id="0" name="Key">&quot;B&quot;</param>
+                                    <param id="1" name="Value">IFrame.C2</param>
+                                </action>
+                                <action disabled="1" id="14" name="Log" sid="767758333372284" type="Navegador">
+                                    <param id="0" name="Type">0</param>
+                                    <param id="1" name="Message">&quot;Ha seleccionado &quot; &amp; Diccionario.Get(&quot;B&quot;)</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="431354719974950">
+                                    <conditions>
+                                        <condition id="-12" name="Repeat" sid="215388031717242" type="System">
+                                            <param id="0" name="Count">Diccionario.Get(&quot;canO&quot;)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <variable comment="Id de opciones" constant="0" name="id" sid="417755626610410" static="0" type="number">0</variable>
+                                        <variable comment="objeto en HTML" constant="0" name="texto" sid="541928669811059" static="0" type="text"></variable>
+                                        <variable comment="Si se agrega la clase seleccionado" constant="0" name="aux" sid="451330077212255" static="0" type="text"></variable>
+                                        <event-block sid="653299797740780">
+                                            <conditions />
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="789558935570978" type="System">
+                                                    <param id="0" name="Variable">id</param>
+                                                    <param id="1" name="Value">loopindex+1</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="140238434330715" type="System">
+                                                    <param id="0" name="Variable">texto</param>
+                                                    <param id="1" name="Value">Diccionario.Get(&quot;Z&quot;&amp;id)</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="636837366383401" type="System">
+                                                    <param id="0" name="Variable">aux</param>
+                                                    <param id="1" name="Value">id = int(IFrame.C2) ? &quot;c2_SELECCIONADO&quot;:&quot;&quot;</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="225341199688306" type="System">
+                                                    <param id="0" name="Variable">texto</param>
+                                                    <param id="1" name="Value">&quot;&lt;div class=&apos;c2_BOTON &quot;&amp;aux&amp;&quot;&apos;&gt;&quot;&amp;texto&amp;&quot;&lt;/div&gt;&quot;</param>
+                                                </action>
+                                                <action id="24" name="Get elements" sid="677193693437601" type="IFrame">
+                                                    <param id="0" name="ID/Class">&quot;c2_&quot;&amp;id</param>
+                                                    <param id="1" name="Set">texto</param>
+                                                    <param id="2" name="Append">&quot;&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="479488225130115">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="847758606861005" type="System" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <variable comment="objeto en HTML" constant="0" name="texto" sid="681592906687498" static="0" type="text"></variable>
+                                <event-block sid="753638904305838">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="337101531642612" type="System">
+                                            <param id="0" name="Variable">texto</param>
+                                            <param id="1" name="Value">Diccionario.Get(&quot;Z&quot;&amp;IFrame.C2)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>Existe la llave, entonces</comment>
+                                <event-block sid="827603407216119">
+                                    <conditions>
+                                        <condition id="3" name="Has key" sid="319166716180320" type="Diccionario">
+                                            <param id="0" name="Key">C2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="2" name="Delete key" sid="152002478448385" type="Diccionario">
+                                            <param id="0" name="Key">C2</param>
+                                        </action>
+                                        <action disabled="1" id="14" name="Log" sid="862774547126213" type="Navegador">
+                                            <param id="0" name="Type">0</param>
+                                            <param id="1" name="Message">&quot;MENOS &quot;&amp; C2</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="669705956039939" type="System">
+                                            <param id="0" name="Variable">texto</param>
+                                            <param id="1" name="Value">&quot;&lt;div class=&apos;c2_BOTON&apos;&gt;&quot;&amp;texto&amp;&quot;&lt;/div&gt;&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="657132091280277">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="966683889567814" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Add key" sid="791688267977045" type="Diccionario">
+                                            <param id="0" name="Key">C2</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action disabled="1" id="14" name="Log" sid="896179066099636" type="Navegador">
+                                            <param id="0" name="Type">0</param>
+                                            <param id="1" name="Message">&quot;MAS &quot;&amp; C2 &amp;&quot; - &quot; &amp; Diccionario.Get(C2)</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="305131902490454" type="System">
+                                            <param id="0" name="Variable">texto</param>
+                                            <param id="1" name="Value">&quot;&lt;div class=&apos;c2_BOTON  c2_SELECCIONADO&apos;&gt;&quot;&amp;texto&amp;&quot;&lt;/div&gt;&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="496919295580741">
+                                    <conditions />
+                                    <actions>
+                                        <action id="24" name="Get elements" sid="373387003800369" type="IFrame">
+                                            <param id="0" name="ID/Class">&quot;c2_&quot;&amp;IFrame.C2</param>
+                                            <param id="1" name="Set">texto</param>
+                                            <param id="2" name="Append">&quot;&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="Condiciones de derrota y controles de tiempo junto a los controles (si los hay) del jugador" sid="351709525652819" title="control 0">
+            <sub-events>
+                <comment>Eventos del mouse</comment>
+                <event-block sid="485312049605961">
+                    <conditions>
+                        <condition id="0" name="On click" sid="210725856989481" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                        </condition>
+                        <condition id="7" name="Cursor is over object" sid="917934687805735" type="Mouse">
+                            <param id="0" name="Object">zgui</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <comment>Si le dio clic en el botón &quot;continuar&quot;</comment>
+                        <event-block sid="853313912659386">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="145712814774777" type="zgui">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">100</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="594824835803304">
+                                    <conditions>
+                                        <condition id="0" name="Compare value" sid="874128377031509" type="Diccionario">
+                                            <param id="0" name="Key">&quot;etapa&quot;</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="511016384074514" type="Funcion">
+                                            <param id="0" name="Name">&quot;evaluarTest&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="551328536386993">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="381834840867274" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="785818726515656" type="Funcion">
+                                            <param id="0" name="Name">&quot;iniciaTAREA&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;testSalir&quot;{###}0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Cada un segundo mientras no haya perdido, se descontará 1 a la variable tiempo</comment>
+                <event-block sid="691033704340422">
+                    <conditions>
+                        <condition behavior="Tiempo" id="0" name="On timer" sid="840564056216117" type="zreloj">
+                            <param id="0" name="Tag">&quot;global&quot;</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="350899272348703" type="System">
+                            <param id="0" name="Variable">gDerrota</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="0" name="Compare value" sid="829982602355187" type="Diccionario">
+                            <param id="0" name="Key">&quot;etapa&quot;</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="758103395417876" type="System">
+                            <param id="0" name="Variable">gTiempo</param>
+                            <param id="1" name="Value">-1</param>
+                        </action>
+                        <action id="0" name="Call function" sid="400569325648376" type="Funcion">
+                            <param id="0" name="Name">&quot;tiempoGUI&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <comment>Si tiempo se acabo</comment>
+                        <event-block sid="855107451780686">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="881257702387482" type="System">
+                                    <param id="0" name="Variable">gTiempo</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="749548772319720" type="Funcion">
+                                    <param id="0" name="Name">&quot;evaluarTest&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="Cierre del escenario (Eventos que continuan ejecutandose a pesar que se ha acabado el tiempo o fue derrotado)" sid="717505046609568" title="fin 0">
+            <sub-events>
+                <comment>Función que se ejecuta cuando termina el test</comment>
+                <event-block sid="514001143533170">
+                    <conditions>
+                        <condition id="0" name="On function" sid="940318874487885" type="Funcion">
+                            <param id="0" name="Name">&quot;finTest&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <comment>Si perdio</comment>
+                        <event-block sid="898050596060803">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="279826633625586" type="System">
+                                    <param id="0" name="Variable">gDerrota</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="24" name="Get elements" sid="252617536336449" type="IFrame">
+                                    <param id="0" name="ID/Class">&quot;.c2_TITULO3&quot;</param>
+                                    <param id="1" name="Set">&quot;Tus respuestas&quot;</param>
+                                    <param id="2" name="Append">&quot;&quot;</param>
+                                </action>
+                                <action id="24" name="Get elements" sid="917332729209881" type="IFrame">
+                                    <param id="0" name="ID/Class">&quot;.c2_COLUMNA&quot;</param>
+                                    <param id="1" name="Set">&quot;&quot;</param>
+                                    <param id="2" name="Append">&quot;&lt;td&gt;&lt;div class=&apos;c2_TITULO3&apos;&gt;Respuestas correctas&lt;/div&gt;&lt;div class=&apos;c2_COMPROBACION&apos;&gt;&quot;</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="501269892602859">
+                                    <conditions>
+                                        <condition id="-12" name="Repeat" sid="321785646187018" type="System">
+                                            <param id="0" name="Count">Diccionario.Get(&quot;canO&quot;)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <variable comment="Id de opciones" constant="0" name="id" sid="397648561056573" static="0" type="number">0</variable>
+                                        <variable comment="Si se agrega la clase seleccionado" constant="0" name="aux" sid="240621601507331" static="0" type="text"></variable>
+                                        <variable comment="objeto en HTML" constant="0" name="texto" sid="882304297491671" static="0" type="text"></variable>
+                                        <event-block sid="606648837024549">
+                                            <conditions />
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="319118401156162" type="System">
+                                                    <param id="0" name="Variable">id</param>
+                                                    <param id="1" name="Value">Matriz.At(loopindex)</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="795322248843008" type="System">
+                                                    <param id="0" name="Variable">texto</param>
+                                                    <param id="1" name="Value">Diccionario.Get(&quot;Z&quot;&amp;id)</param>
+                                                </action>
+                                                <action disabled="1" id="14" name="Log" sid="400387053118271" type="Navegador">
+                                                    <param id="0" name="Type">0</param>
+                                                    <param id="1" name="Message">(Diccionario.Get(&quot;A&quot;&amp;id)=1 &amp; Diccionario.Get(&quot;canR&quot;) &gt;1) &amp; &quot; , &quot; &amp; int(Diccionario.Get(&quot;A&quot;)) = id</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="566268372160096" type="System">
+                                                    <param id="0" name="Variable">aux</param>
+                                                    <param id="1" name="Value">(Diccionario.Get(&quot;A&quot;&amp;id)=1 &amp; Diccionario.Get(&quot;canR&quot;) &gt;1) | int(Diccionario.Get(&quot;A&quot;)) = id ? &quot;c2_SELECCIONADO&quot;:&quot;&quot;</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="689895597429113" type="System">
+                                                    <param id="0" name="Variable">texto</param>
+                                                    <param id="1" name="Value">&quot;&lt;div class=&apos;c2_BOTON &quot;&amp;aux&amp;&quot;&apos;&gt;&quot;&amp;texto&amp;&quot;&lt;/div&gt;&quot;</param>
+                                                </action>
+                                                <action id="24" name="Get elements" sid="207967150760656" type="IFrame">
+                                                    <param id="0" name="ID/Class">&quot;.c2_COMPROBACION&quot;</param>
+                                                    <param id="1" name="Set">&quot;&quot;</param>
+                                                    <param id="2" name="Append">texto</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="886694322759410">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="365814103736178" type="System">
+                                            <param id="0" name="Variable">gObjetivo</param>
+                                            <param id="1" name="Value">&quot;Has fallado&quot;</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="340622921354457" type="Funcion">
+                                            <param id="0" name="Name">&quot;objetivoGUI&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>Si gano</comment>
+                        <event-block sid="292147912855606">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="388957681209839" type="System" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="750466373213685">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="607682610944603" type="System">
+                                            <param id="0" name="Variable">gObjetivo</param>
+                                            <param id="1" name="Value">&quot;Has ganado&quot;</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="143049561632397" type="Funcion">
+                                            <param id="0" name="Name">&quot;objetivoGUI&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="832487898559521" type="Funcion">
+                                            <param id="0" name="Name">&quot;iniciaTAREA&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;testSalir&quot;{###}0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

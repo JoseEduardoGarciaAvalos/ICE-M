@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>juego 15</name>
     <events>
+        <comment>JUEGO DEL FUEGO Y EL PAPEL</comment>
         <include>principal</include>
         <event-group description="Preparación del escenario" sid="803949572505419" title="inicio 15">
             <sub-events>
@@ -17,12 +18,12 @@
                 <variable comment="Ancho de los ojos (en pixeles)" constant="1" name="ANCHOE2" sid="521577181047906" static="0" type="number">25</variable>
                 <variable comment="Alto de los ojos (en pixeles)" constant="1" name="ALTOE2" sid="586044762038712" static="0" type="number">25</variable>
                 <variable comment="Vida minima" constant="1" name="VI" sid="832946654489018" static="0" type="number">3</variable>
-                <variable comment="Vida maxima" constant="1" name="VS" sid="125586892517266" static="0" type="number">7</variable>
+                <variable comment="Vida maxima" constant="1" name="VS" sid="125586892517266" static="0" type="number">5</variable>
                 <variable comment="Cantidad mínima que se pueden crear" constant="1" name="CI" sid="619575028150792" static="0" type="number">2</variable>
-                <variable comment="Cantidad máxima que se pueden crear" constant="1" name="CS" sid="136765245743949" static="0" type="number">6</variable>
+                <variable comment="Cantidad máxima que se pueden crear" constant="1" name="CS" sid="136765245743949" static="0" type="number">5</variable>
                 <variable comment="Velocidad mínima" constant="1" name="SI" sid="208854342592517" static="0" type="number">100</variable>
                 <variable comment="Velocidad maxima" constant="1" name="SS" sid="983731515432291" static="0" type="number">200</variable>
-                <variable comment="Puntos mínimos que puede tener la ruta" constant="1" name="RI" sid="171102048652901" static="0" type="number">2</variable>
+                <variable comment="Puntos mínimos que puede tener la ruta" constant="1" name="RI" sid="171102048652901" static="0" type="number">3</variable>
                 <variable comment="Puntos máximos que puede tener la ruta" constant="1" name="RS" sid="216137208827593" static="0" type="number">5</variable>
                 <comment>VALORES DE USADOS</comment>
                 <event-block sid="264350805501141">
@@ -37,10 +38,6 @@
                         <action id="-9" name="Set value" sid="130459111829559" type="System">
                             <param id="0" name="Variable">gTiempo</param>
                             <param id="1" name="Value">floor(random(8,12))</param>
-                        </action>
-                        <action id="-9" name="Set value" sid="853900272789618" type="System">
-                            <param id="0" name="Variable">gObjetivo</param>
-                            <param id="1" name="Value">&quot;Que no se queme, puedes marearlos&quot;</param>
                         </action>
                         <action id="0" name="Call function" sid="427902879918470" type="Funcion">
                             <param id="0" name="Name">&quot;inicioGUI&quot;</param>
@@ -506,10 +503,6 @@
                                             <param id="1" name="Layer">&quot;Principal&quot;</param>
                                             <param id="2" name="X">0</param>
                                             <param id="3" name="Y">0</param>
-                                        </action>
-                                        <action id="-10" name="Set value" sid="613008181812831" type="Secuencia">
-                                            <param id="0" name="Instance variable">ID</param>
-                                            <param id="1" name="Value">1</param>
                                         </action>
                                         <action behavior="Hash" id="1" name="Set value" sid="732111918474745" type="Enemigo">
                                             <param id="0" name="Key string">&quot;enlaceS&quot;</param>
@@ -1001,12 +994,6 @@
                         <action id="-41" name="Wait for signal" sid="665629228663955" type="System">
                             <param id="0" name="Tag">&quot;pCargado&quot;</param>
                         </action>
-                        <action id="0" name="Play" sid="443317705089754" type="Audio">
-                            <param id="0" name="Audio file">C3-musica de miedo 3</param>
-                            <param id="2" name="Loop">1</param>
-                            <param id="3" name="Volume">0</param>
-                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                        </action>
                     </actions>
                     <sub-events>
                         <comment>Hacer que la utileria con ID=5 empiece la ruta</comment>
@@ -1020,6 +1007,21 @@
                             </conditions>
                             <actions>
                                 <action behavior="Ruta" id="11" name="Start" sid="512125833702702" type="Utileria" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="858834277790583">
+                            <conditions>
+                                <condition id="5" inverted="1" name="Is tag playing" sid="208719987718798" type="Audio">
+                                    <param id="0" name="Tag">&quot;L&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="443317705089754" type="Audio">
+                                    <param id="0" name="Audio file">C3-musica de miedo 3</param>
+                                    <param id="2" name="Loop">1</param>
+                                    <param id="3" name="Volume">gAudioLoop</param>
+                                    <param id="1" name="Tag (optional)">&quot;L&quot;</param>
+                                </action>
                             </actions>
                         </event-block>
                     </sub-events>
@@ -1659,10 +1661,10 @@
                 <comment>Cada un segundo mientras no haya perdido, se descontará 1 a la variable tiempo</comment>
                 <event-block sid="740296387496055">
                     <conditions>
-                        <condition id="-6" name="Every X seconds" sid="795080769618421" type="System">
-                            <param id="0" name="Interval (seconds)">1.0+Funcion.Call(&quot;calculoTEMPO&quot;)</param>
+                        <condition behavior="Tiempo" id="0" name="On timer" sid="349822182452721" type="zreloj">
+                            <param id="0" name="Tag">&quot;global&quot;</param>
                         </condition>
-                        <condition id="-14" name="Compare variable" sid="924355746276203" type="System">
+                        <condition id="-14" name="Compare variable" sid="543687994178427" type="System">
                             <param id="0" name="Variable">gDerrota</param>
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">0</param>

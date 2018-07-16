@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>juego 3</name>
     <events>
+        <comment>APILAR</comment>
         <include>principal</include>
         <event-group description="Preparación del escenario" sid="347373588859784" title="inicio 3">
             <sub-events>
@@ -18,10 +19,6 @@
                         <action id="-9" name="Set value" sid="577270546208716" type="System">
                             <param id="0" name="Variable">gTiempo</param>
                             <param id="1" name="Value">floor(random(14,16))</param>
-                        </action>
-                        <action id="-9" name="Set value" sid="492665699877631" type="System">
-                            <param id="0" name="Variable">gObjetivo</param>
-                            <param id="1" name="Value">&quot;apila 3 aliados&quot;</param>
                         </action>
                         <action id="0" name="Call function" sid="340256676412184" type="Funcion">
                             <param id="0" name="Name">&quot;inicioGUI&quot;</param>
@@ -82,7 +79,7 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action disabled="1" id="-16" name="Set opacity" sid="217296849095531" type="Utileria">
+                                <action id="-16" name="Set opacity" sid="217296849095531" type="Utileria">
                                     <param id="0" name="Opacity">0</param>
                                 </action>
                             </actions>
@@ -103,12 +100,6 @@
                                 <action id="-41" name="Wait for signal" sid="269523780840463" type="System">
                                     <param id="0" name="Tag">&quot;pCargado&quot;</param>
                                 </action>
-                                <action id="0" name="Play" sid="109956418979625" type="Audio">
-                                    <param id="0" name="Audio file">Ejemplo2</param>
-                                    <param id="2" name="Loop">1</param>
-                                    <param id="3" name="Volume">0</param>
-                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                                </action>
                                 <action id="-3" name="Create object" sid="207455424430552" type="System">
                                     <param id="0" name="Object to create">Jugador</param>
                                     <param id="1" name="Layer">&quot;Principal&quot;</param>
@@ -116,6 +107,59 @@
                                     <param id="3" name="Y">0</param>
                                 </action>
                             </actions>
+                            <sub-events>
+                                <event-block sid="386988490811901">
+                                    <conditions>
+                                        <condition id="5" inverted="1" name="Is tag playing" sid="344837059267566" type="Audio">
+                                            <param id="0" name="Tag">&quot;L&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="418967305427005" type="Audio">
+                                            <param id="0" name="Audio file">C3-musica de carrera 3</param>
+                                            <param id="2" name="Loop">1</param>
+                                            <param id="3" name="Volume">gAudioLoop</param>
+                                            <param id="1" name="Tag (optional)">&quot;L&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="333404469568597">
+                                    <conditions>
+                                        <condition id="-13" name="Pick nth instance" sid="851647455767665" type="System">
+                                            <param id="0" name="Object">Tarea</param>
+                                            <param id="1" name="Instance">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="11" name="New function task" sid="211964302549754" type="Tarea">
+                                            <param id="0" name="Task">&quot;tarea1&quot;</param>
+                                            <param id="1" name="Function">&quot;-color&quot;</param>
+                                            <param id="2" name="Interval">2</param>
+                                            <param id="3" name="Repeat">1</param>
+                                        </action>
+                                        <action id="12" name="Set parameter" sid="630581320806169" type="Tarea">
+                                            <param id="0" name="Task">&quot;tarea1&quot;</param>
+                                            <param id="1" name="Parameter">&quot;color&quot;</param>
+                                            <param id="2" name="Start">0</param>
+                                            <param id="3" name="End">100</param>
+                                            <param id="4" name="Type">0</param>
+                                        </action>
+                                        <action id="17" name="New inversed task" sid="606754310442503" type="Tarea">
+                                            <param id="0" name="Task">&quot;tarea2&quot;</param>
+                                            <param id="1" name="Inverse from">&quot;tarea1&quot;</param>
+                                        </action>
+                                        <action id="14" name="New sequence task" sid="196909048070967" type="Tarea">
+                                            <param id="0" name="Task">&quot;tareas&quot;</param>
+                                            <param id="1" name="Repeat">0</param>
+                                            <param id="2" name="Task {n}">&quot;tarea1&quot;{###}&quot;tarea2&quot;</param>
+                                        </action>
+                                        <action id="31" name="Start" sid="943669052065192" type="Tarea">
+                                            <param id="0" name="Task">&quot;tareas&quot;</param>
+                                            <param id="1" name="Destroy">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                     </sub-events>
                 </event-block>
@@ -289,6 +333,10 @@
                         <event-block sid="760329657234874">
                             <conditions />
                             <actions>
+                                <action id="4" name="Set animation" sid="208433663050416" type="Jugador">
+                                    <param id="0" name="Animation">&quot;j3a&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
                                 <action id="-7" name="Set size" sid="257129042462969" type="Jugador">
                                     <param id="0" name="Width">ANCHOJ</param>
                                     <param id="1" name="Height">ALTOJ</param>
@@ -722,8 +770,8 @@
                 <comment>Cada un segundo mientras no haya perdido, se descontará 1 a la variable tiempo</comment>
                 <event-block sid="666687036303876">
                     <conditions>
-                        <condition id="-6" name="Every X seconds" sid="974088966181575" type="System">
-                            <param id="0" name="Interval (seconds)">1.0+Funcion.Call(&quot;calculoTEMPO&quot;)</param>
+                        <condition behavior="Tiempo" id="0" name="On timer" sid="905245350923092" type="zreloj">
+                            <param id="0" name="Tag">&quot;global&quot;</param>
                         </condition>
                         <condition id="-14" name="Compare variable" sid="860915714109604" type="System">
                             <param id="0" name="Variable">gDerrota</param>
@@ -822,6 +870,27 @@
                             </actions>
                         </event-block>
                     </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="Cierre del escenario (Eventos que continuan ejecutandose a pesar que se ha acabado el tiempo o fue derrotado)" sid="727885351414464" title="fin 3">
+            <sub-events>
+                <event-block sid="849565299979950">
+                    <conditions>
+                        <condition id="0" name="On function" sid="168939212858452" type="Tarea">
+                            <param id="0" name="Name">&quot;-color&quot;</param>
+                        </condition>
+                        <condition id="-13" name="Pick nth instance" sid="635018744134318" type="System">
+                            <param id="0" name="Object">Tarea</param>
+                            <param id="1" name="Instance">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-34" name="Set layer background color" sid="542243142810297" type="System">
+                            <param id="0" name="Layer">&quot;Fondo&quot;</param>
+                            <param id="1" name="Color">rgb(155 + Tarea.FnParam(&quot;color&quot;), 204, 255)</param>
+                        </action>
+                    </actions>
                 </event-block>
             </sub-events>
         </event-group>

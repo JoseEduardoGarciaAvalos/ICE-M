@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>juego 18</name>
     <events>
+        <comment>SILENCIO</comment>
         <include>principal</include>
         <event-group description="Preparación del escenario" sid="338230375601268" title="inicio 18">
             <sub-events>
@@ -19,23 +20,9 @@
                             <param id="0" name="Variable">gTiempo</param>
                             <param id="1" name="Value">floor(random(6,11))</param>
                         </action>
-                        <action id="-9" name="Set value" sid="695208482804340" type="System">
-                            <param id="0" name="Variable">gObjetivo</param>
-                            <param id="1" name="Value">&quot;Silencio&quot;</param>
-                        </action>
                         <action id="0" name="Call function" sid="977901359139411" type="Funcion">
                             <param id="0" name="Name">&quot;inicioGUI&quot;</param>
                             <param id="1" name="Parameter {n}"></param>
-                        </action>
-                        <action id="10" name="Get media sources" sid="586778758044808" type="Microfono" />
-                        <action id="20" name="Add analyser effect" sid="467747623310616" type="Audio">
-                            <param id="0" name="Tag">&quot;mic&quot;</param>
-                            <param id="1" name="FFT size">32</param>
-                            <param id="2" name="Smoothing">0</param>
-                        </action>
-                        <action id="3" name="Request microphone" sid="296231695511082" type="Microfono">
-                            <param id="0" name="Tag">&quot;mic&quot;</param>
-                            <param id="1" name="Source">0</param>
                         </action>
                     </actions>
                     <sub-events>
@@ -87,6 +74,10 @@
                         <action id="-41" name="Wait for signal" sid="832250992816584" type="System">
                             <param id="0" name="Tag">&quot;pCargado&quot;</param>
                         </action>
+                        <action id="0" name="Call function" sid="495953626146762" type="Funcion">
+                            <param id="0" name="Name">&quot;activoMICRO&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
                     </actions>
                 </event-block>
             </sub-events>
@@ -94,159 +85,156 @@
         <event-group description="Creación, definición de propiedades y comportamientos de los objetos " sid="353788811228968" title="jugabilidad 18" />
         <event-group description="Condiciones de derrota y controles de tiempo junto a los controles (si los hay) del jugador" sid="433126235652619" title="control 18">
             <sub-events>
-                <comment>Control del personaje</comment>
-                <event-block sid="856388756223805">
+                <comment>Se detecto actividad sobre el micrófono, entonces</comment>
+                <event-block sid="832729005986289">
                     <conditions>
-                        <condition id="-1" name="Every tick" sid="837668036057410" type="System" />
+                        <condition id="-14" name="Compare variable" sid="611381178024855" type="System">
+                            <param id="0" name="Variable">gMicActivo</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="602345010213266" type="System" />
                     </conditions>
-                    <actions />
+                    <actions>
+                        <action id="-9" name="Set value" sid="771883218819890" type="System">
+                            <param id="0" name="Variable">gDerrota</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="0" name="Call function" sid="816771757326701" type="Funcion">
+                            <param id="0" name="Name">&quot;derrotaJUEGO&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action behavior="Temblar" id="0" name="Set activated" sid="110694586037670" type="Aliado">
+                            <param id="0" name="Activated">1</param>
+                        </action>
+                        <action behavior="Temblar" id="13" name="Set magnitude mode" sid="304843502425867" type="Aliado">
+                            <param id="0" name="Mode">0</param>
+                        </action>
+                        <action behavior="Temblar" id="11" name="Set duration" sid="728988633073924" type="Aliado">
+                            <param id="0" name="Duration">0.5</param>
+                        </action>
+                    </actions>
                     <sub-events>
-                        <variable constant="1" name="LIMITE" sid="975011864496786" static="0" type="number">-40</variable>
-                        <variable constant="0" name="micActivo" sid="910451722524855" static="0" type="number">0</variable>
-                        <event-block sid="759763699859556">
-                            <conditions />
-                            <actions>
-                                <action id="-9" name="Set value" sid="122479023797593" type="System">
-                                    <param id="0" name="Variable">micActivo</param>
-                                    <param id="1" name="Value">(LIMITE &lt; Audio.AnalyserRMSLevel(&quot;mic&quot;, 0)?1:0)</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <comment>Se detecto actividad sobre el micrófono, entonces</comment>
-                        <event-block sid="652020455369519">
+                        <comment>Mostrar el mensaje</comment>
+                        <event-block sid="164525028620467">
                             <conditions>
-                                <condition id="-14" name="Compare variable" sid="532720506230941" type="System">
-                                    <param id="0" name="Variable">micActivo</param>
+                                <condition id="-7" name="Compare instance variable" sid="505258143389882" type="Texto">
+                                    <param id="0" name="Instance variable">ID</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">1</param>
                                 </condition>
+                                <condition id="-7" name="Compare instance variable" sid="133547649551480" type="Utileria">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">11</param>
+                                </condition>
                             </conditions>
                             <actions>
-                                <action id="-9" name="Set value" sid="423180353592911" type="System">
-                                    <param id="0" name="Variable">gDerrota</param>
-                                    <param id="1" name="Value">1</param>
+                                <action behavior="Hash" id="1" name="Set value" sid="762793819633702" type="Utileria">
+                                    <param id="0" name="Key string">&quot;ancho&quot;</param>
+                                    <param id="1" name="Value">Self.Width</param>
                                 </action>
-                                <action id="0" name="Call function" sid="592125479226476" type="Funcion">
-                                    <param id="0" name="Name">&quot;derrotaJUEGO&quot;</param>
-                                    <param id="1" name="Parameter {n}"></param>
+                                <action behavior="Hash" id="1" name="Set value" sid="384430219585541" type="Utileria">
+                                    <param id="0" name="Key string">&quot;alto&quot;</param>
+                                    <param id="1" name="Value">Self.Height</param>
                                 </action>
-                                <action behavior="Temblar" id="0" name="Set activated" sid="952997131562139" type="Aliado">
-                                    <param id="0" name="Activated">1</param>
+                                <action id="-7" name="Set size" sid="688420999561458" type="Utileria">
+                                    <param id="0" name="Width">0</param>
+                                    <param id="1" name="Height">0</param>
                                 </action>
-                                <action behavior="Temblar" id="13" name="Set magnitude mode" sid="327273959140630" type="Aliado">
-                                    <param id="0" name="Mode">0</param>
+                                <action id="-16" name="Set opacity" sid="505282427493204" type="Utileria">
+                                    <param id="0" name="Opacity">100</param>
                                 </action>
-                                <action behavior="Temblar" id="11" name="Set duration" sid="785287164068467" type="Aliado">
-                                    <param id="0" name="Duration">0.5</param>
+                                <action behavior="Tarea" id="26" name="Create/Initialize tween" sid="918694747444104" type="Utileria">
+                                    <param id="0" name="Tweened property">1</param>
+                                    <param id="1" name="Function">24</param>
+                                    <param id="2" name="Target">&quot;aparecer&quot;</param>
+                                    <param id="3" name="Duration">0.5</param>
+                                    <param id="4" name="Enforce mode">1</param>
+                                </action>
+                                <action behavior="Tarea" id="3" name="Set target" sid="438819084488639" type="Utileria">
+                                    <param id="0" name="Target is">4</param>
+                                    <param id="1" name="Relativity">0</param>
+                                    <param id="2" name="Value">self.Hash.At(&quot;ancho&quot;)</param>
+                                </action>
+                                <action behavior="Tarea" id="3" name="Set target" sid="283080009749541" type="Utileria">
+                                    <param id="0" name="Target is">5</param>
+                                    <param id="1" name="Relativity">0</param>
+                                    <param id="2" name="Value">self.Hash.At(&quot;alto&quot;)</param>
+                                </action>
+                                <action behavior="Tarea" id="10" name="Start" sid="110781141198456" type="Utileria">
+                                    <param id="0" name="Start Mode">0</param>
+                                    <param id="1" name="Force use current">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="570392521582418" type="System">
+                                    <param id="0" name="Seconds">0.4</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="618121623837482" type="Texto">
+                                    <param id="0" name="Opacity">100</param>
                                 </action>
                             </actions>
-                            <sub-events>
-                                <comment>Mostrar el mensaje</comment>
-                                <event-block sid="167153828859288">
-                                    <conditions>
-                                        <condition id="-7" name="Compare instance variable" sid="955631073584806" type="Texto">
-                                            <param id="0" name="Instance variable">ID</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">1</param>
-                                        </condition>
-                                        <condition id="-7" name="Compare instance variable" sid="841621852182950" type="Utileria">
-                                            <param id="0" name="Instance variable">ID</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">11</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action behavior="Hash" id="1" name="Set value" sid="422982162217344" type="Utileria">
-                                            <param id="0" name="Key string">&quot;ancho&quot;</param>
-                                            <param id="1" name="Value">Self.Width</param>
-                                        </action>
-                                        <action behavior="Hash" id="1" name="Set value" sid="136517327378238" type="Utileria">
-                                            <param id="0" name="Key string">&quot;alto&quot;</param>
-                                            <param id="1" name="Value">Self.Height</param>
-                                        </action>
-                                        <action id="-7" name="Set size" sid="951099499270152" type="Utileria">
-                                            <param id="0" name="Width">0</param>
-                                            <param id="1" name="Height">0</param>
-                                        </action>
-                                        <action id="-16" name="Set opacity" sid="833868921624545" type="Utileria">
-                                            <param id="0" name="Opacity">100</param>
-                                        </action>
-                                        <action behavior="Tarea" id="26" name="Create/Initialize tween" sid="628899430317790" type="Utileria">
-                                            <param id="0" name="Tweened property">1</param>
-                                            <param id="1" name="Function">24</param>
-                                            <param id="2" name="Target">&quot;aparecer&quot;</param>
-                                            <param id="3" name="Duration">0.5</param>
-                                            <param id="4" name="Enforce mode">1</param>
-                                        </action>
-                                        <action behavior="Tarea" id="3" name="Set target" sid="375892700989221" type="Utileria">
-                                            <param id="0" name="Target is">4</param>
-                                            <param id="1" name="Relativity">0</param>
-                                            <param id="2" name="Value">self.Hash.At(&quot;ancho&quot;)</param>
-                                        </action>
-                                        <action behavior="Tarea" id="3" name="Set target" sid="759348818580054" type="Utileria">
-                                            <param id="0" name="Target is">5</param>
-                                            <param id="1" name="Relativity">0</param>
-                                            <param id="2" name="Value">self.Hash.At(&quot;alto&quot;)</param>
-                                        </action>
-                                        <action behavior="Tarea" id="10" name="Start" sid="934224675654901" type="Utileria">
-                                            <param id="0" name="Start Mode">0</param>
-                                            <param id="1" name="Force use current">0</param>
-                                        </action>
-                                        <action id="-16" name="Wait" sid="651468228742441" type="System">
-                                            <param id="0" name="Seconds">0.4</param>
-                                        </action>
-                                        <action id="-16" name="Set opacity" sid="344457664566194" type="Texto">
-                                            <param id="0" name="Opacity">100</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <comment>Temblar los aliados con desfase entre ellos</comment>
-                                <event-block sid="731525950704960">
-                                    <conditions>
-                                        <condition id="-11" name="For Each" sid="100565923245298" type="System">
-                                            <param id="0" name="Object">Aliado</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-16" name="Wait" sid="549846559770125" type="System">
-                                            <param id="0" name="Seconds">random(0,0.3)*loopindex</param>
-                                        </action>
-                                        <action id="5" name="Set frame" sid="341178545768127" type="Aliado">
-                                            <param id="0" name="Frame number">1</param>
-                                        </action>
-                                        <action behavior="Temblar" id="1" name="Start" sid="354972966313862" type="Aliado" />
-                                    </actions>
-                                </event-block>
-                            </sub-events>
                         </event-block>
-                        <comment>No se detecto actividad sobre el micrófono, entonces</comment>
-                        <event-block sid="172790028252977">
+                        <event-block sid="215355330873587">
                             <conditions>
-                                <condition id="-22" name="Else" sid="783226768079124" type="System" />
+                                <condition id="-7" name="Compare instance variable" sid="775599317459132" type="Texto">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="335551875875422" type="Utileria">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">12</param>
+                                </condition>
                             </conditions>
                             <actions>
-                                <action id="12" name="Remove all effects" sid="226132225210433" type="Audio">
-                                    <param id="0" name="Tag">&quot;mic&quot;</param>
+                                <action id="-16" name="Set opacity" sid="436791987520620" type="Texto">
+                                    <param id="0" name="Opacity">0</param>
                                 </action>
-                                <action id="20" name="Add analyser effect" sid="479126054440632" type="Audio">
-                                    <param id="0" name="Tag">&quot;mic&quot;</param>
-                                    <param id="1" name="FFT size">32</param>
-                                    <param id="2" name="Smoothing">0</param>
+                                <action id="-16" name="Set opacity" sid="534311587649707" type="Utileria">
+                                    <param id="0" name="Opacity">0</param>
                                 </action>
-                                <action id="32" name="Add mute effect" sid="159204455046487" type="Audio">
-                                    <param id="0" name="Tag">&quot;mic&quot;</param>
+                            </actions>
+                        </event-block>
+                        <comment>Temblar los aliados con desfase entre ellos</comment>
+                        <event-block sid="123966586958258">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="475526668238501" type="System">
+                                    <param id="0" name="Object">Aliado</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Wait" sid="486289581437369" type="System">
+                                    <param id="0" name="Seconds">random(0,0.3)*loopindex</param>
                                 </action>
+                                <action id="5" name="Set frame" sid="586725977370166" type="Aliado">
+                                    <param id="0" name="Frame number">1</param>
+                                </action>
+                                <action behavior="Temblar" id="1" name="Start" sid="460131546329087" type="Aliado" />
                             </actions>
                         </event-block>
                     </sub-events>
                 </event-block>
+                <comment>No se detecto actividad sobre el micrófono, entonces</comment>
+                <event-block sid="762437470564706">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="961228067492275" type="System" />
+                        <condition id="-4" name="Trigger once while true" sid="918154339607168" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="530768343306049" type="Funcion">
+                            <param id="0" name="Name">&quot;ajustoMICRO&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
                 <comment>Cada un segundo mientras no haya perdido, se descontará 1 a la variable tiempo</comment>
                 <event-block sid="312249662937327">
                     <conditions>
-                        <condition id="-6" name="Every X seconds" sid="719637727611312" type="System">
-                            <param id="0" name="Interval (seconds)">1.0+Funcion.Call(&quot;calculoTEMPO&quot;)</param>
+                        <condition behavior="Tiempo" id="0" name="On timer" sid="391660209081172" type="zreloj">
+                            <param id="0" name="Tag">&quot;global&quot;</param>
                         </condition>
-                        <condition id="-14" name="Compare variable" sid="235729382558054" type="System">
+                        <condition id="-14" name="Compare variable" sid="378208808715886" type="System">
                             <param id="0" name="Variable">gDerrota</param>
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">0</param>

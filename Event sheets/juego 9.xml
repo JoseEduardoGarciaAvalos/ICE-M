@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>juego 9</name>
     <events>
+        <comment>COMPUTADORA INTELIGENTE</comment>
         <include>principal</include>
         <event-group description="Preparación del escenario" sid="107522189054050" title="inicio 9">
             <sub-events>
@@ -28,10 +29,6 @@
                         <action id="-9" name="Set value" sid="795579164775699" type="System">
                             <param id="0" name="Variable">gTiempo</param>
                             <param id="1" name="Value">floor(random(8,12))</param>
-                        </action>
-                        <action id="-9" name="Set value" sid="309835819815796" type="System">
-                            <param id="0" name="Variable">gObjetivo</param>
-                            <param id="1" name="Value">&quot;¿Si o no?&quot;</param>
                         </action>
                         <action id="-7" name="Scroll to position" sid="339494162160348" type="System">
                             <param id="0" name="X">Utileria.X</param>
@@ -61,10 +58,6 @@
                             <param id="2" name="X">0</param>
                             <param id="3" name="Y">0</param>
                         </action>
-                        <action id="-10" name="Set value" sid="610128692310182" type="Secuencia">
-                            <param id="0" name="Instance variable">ID</param>
-                            <param id="1" name="Value">1</param>
-                        </action>
                         <action id="-16" name="Wait" sid="690329979270934" type="System">
                             <param id="0" name="Seconds">0</param>
                         </action>
@@ -79,6 +72,10 @@
                     <conditions>
                         <condition id="0" name="On completed" sid="773959841559945" type="AJAX">
                             <param id="0" name="Tag">&quot;j9a.csv&quot;</param>
+                        </condition>
+                        <condition id="-13" name="Pick nth instance" sid="605937746720705" type="System">
+                            <param id="0" name="Object">CSV</param>
+                            <param id="1" name="Instance">0</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -128,6 +125,23 @@
                             <param id="0" name="Tag">&quot;pCargado&quot;</param>
                         </action>
                     </actions>
+                    <sub-events>
+                        <event-block sid="891320522303455">
+                            <conditions>
+                                <condition id="5" inverted="1" name="Is tag playing" sid="199377111502806" type="Audio">
+                                    <param id="0" name="Tag">&quot;L&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="544495215247728" type="Audio">
+                                    <param id="0" name="Audio file">C3-musica de circo 4</param>
+                                    <param id="2" name="Loop">1</param>
+                                    <param id="3" name="Volume">gAudioLoop</param>
+                                    <param id="1" name="Tag (optional)">&quot;L&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
         </event-group>
@@ -146,10 +160,9 @@
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">10</param>
                         </condition>
-                        <condition id="-7" name="Compare instance variable" sid="459831293124225" type="Secuencia">
-                            <param id="0" name="Instance variable">ID</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">1</param>
+                        <condition id="-13" name="Pick nth instance" sid="185449755830617" type="System">
+                            <param id="0" name="Object">Tarea</param>
+                            <param id="1" name="Instance">0</param>
                         </condition>
                     </conditions>
                     <actions />
@@ -272,7 +285,7 @@
                                 </action>
                                 <action id="31" name="Start" sid="593298216623360" type="Tarea">
                                     <param id="0" name="Task">&quot;tareas&quot;</param>
-                                    <param id="1" name="Destroy">0</param>
+                                    <param id="1" name="Destroy">1</param>
                                 </action>
                                 <action id="-9" name="Set value" sid="693779067446334" type="System">
                                     <param id="0" name="Variable">opcionC</param>
@@ -327,11 +340,6 @@
                 <event-block sid="466756303494435">
                     <conditions>
                         <condition id="1" name="On any key pressed" sid="911933355572588" type="Teclado" />
-                        <condition id="-7" name="Compare instance variable" sid="862940708885840" type="Secuencia">
-                            <param id="0" name="Instance variable">ID</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">1</param>
-                        </condition>
                     </conditions>
                     <actions />
                     <sub-events>
@@ -423,8 +431,13 @@
                 <comment>Cada un segundo mientras está jugando, se descontará 1 a la variable tiempo</comment>
                 <event-block sid="470901471797408">
                     <conditions>
-                        <condition id="-6" name="Every X seconds" sid="733547473470060" type="System">
-                            <param id="0" name="Interval (seconds)">1.0+Funcion.Call(&quot;calculoTEMPO&quot;)</param>
+                        <condition behavior="Tiempo" id="0" name="On timer" sid="274725487912885" type="zreloj">
+                            <param id="0" name="Tag">&quot;global&quot;</param>
+                        </condition>
+                        <condition disabled="1" id="-14" name="Compare variable" sid="536592794858008" type="System">
+                            <param id="0" name="Variable">gDerrota</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
                         </condition>
                         <condition id="-14" name="Compare variable" sid="820327304402258" type="System">
                             <param id="0" name="Variable">gEstado</param>
@@ -450,6 +463,11 @@
                                     <param id="0" name="Variable">gTiempo</param>
                                     <param id="1" name="Comparison">3</param>
                                     <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="163062050301511" type="Utileria">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">10</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -477,6 +495,10 @@
                         <condition id="0" name="On function" sid="930560174482545" type="Tarea">
                             <param id="0" name="Name">&quot;moverSi&quot;</param>
                         </condition>
+                        <condition id="-13" name="Pick nth instance" sid="711760391833806" type="System">
+                            <param id="0" name="Object">Tarea</param>
+                            <param id="1" name="Instance">0</param>
+                        </condition>
                     </conditions>
                     <actions>
                         <action id="-6" name="Scroll to Y" sid="380120610325735" type="System">
@@ -488,6 +510,10 @@
                     <conditions>
                         <condition id="0" name="On function" sid="113688859507277" type="Tarea">
                             <param id="0" name="Name">&quot;moverNo&quot;</param>
+                        </condition>
+                        <condition id="-13" name="Pick nth instance" sid="966643594145734" type="System">
+                            <param id="0" name="Object">Tarea</param>
+                            <param id="1" name="Instance">0</param>
                         </condition>
                     </conditions>
                     <actions>

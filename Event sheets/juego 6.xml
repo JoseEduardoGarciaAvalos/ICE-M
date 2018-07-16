@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>juego 6</name>
     <events>
+        <comment>PERSONA CAMINANDO CERCA DE BASURA QUE LE HARÁ RESBALAR</comment>
         <include>principal</include>
         <event-group description="Preparación del escenario" sid="793339857886164" title="inicio 6">
             <sub-events>
@@ -22,23 +23,9 @@
                             <param id="0" name="Variable">gTiempo</param>
                             <param id="1" name="Value">floor(random(15,20))</param>
                         </action>
-                        <action id="-9" name="Set value" sid="418928696575541" type="System">
-                            <param id="0" name="Variable">gObjetivo</param>
-                            <param id="1" name="Value">&quot;Que no resbale&quot;</param>
-                        </action>
                         <action id="0" name="Call function" sid="286206859108310" type="Funcion">
                             <param id="0" name="Name">&quot;inicioGUI&quot;</param>
                             <param id="1" name="Parameter {n}"></param>
-                        </action>
-                        <action id="10" name="Get media sources" sid="132878638104697" type="Microfono" />
-                        <action id="20" name="Add analyser effect" sid="123184456860917" type="Audio">
-                            <param id="0" name="Tag">&quot;mic&quot;</param>
-                            <param id="1" name="FFT size">32</param>
-                            <param id="2" name="Smoothing">0</param>
-                        </action>
-                        <action id="3" name="Request microphone" sid="462540789837941" type="Microfono">
-                            <param id="0" name="Tag">&quot;mic&quot;</param>
-                            <param id="1" name="Source">0</param>
                         </action>
                         <action id="0" name="Call function" sid="378200328201157" type="Funcion">
                             <param id="0" name="Name">&quot;paso1&quot;</param>
@@ -178,7 +165,7 @@
                     <actions />
                     <sub-events>
                         <comment>Hacer que cierta utileria sea invisible</comment>
-                        <event-block disabled="1" sid="975295904683083">
+                        <event-block sid="975295904683083">
                             <conditions>
                                 <condition id="-7" name="Compare instance variable" sid="356665070999317" type="Utileria">
                                     <param id="0" name="Instance variable">ID</param>
@@ -233,8 +220,27 @@
                         <action id="-41" name="Wait for signal" sid="666064299032279" type="System">
                             <param id="0" name="Tag">&quot;pCargado&quot;</param>
                         </action>
+                        <action id="0" name="Call function" sid="184262891279284" type="Funcion">
+                            <param id="0" name="Name">&quot;activoMICRO&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
                     </actions>
                     <sub-events>
+                        <event-block sid="113839203448133">
+                            <conditions>
+                                <condition id="5" inverted="1" name="Is tag playing" sid="490617510757274" type="Audio">
+                                    <param id="0" name="Tag">&quot;L&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="271858198212881" type="Audio">
+                                    <param id="0" name="Audio file">A3-tono ascendiendo 1</param>
+                                    <param id="2" name="Loop">1</param>
+                                    <param id="3" name="Volume">gAudioLoop</param>
+                                    <param id="1" name="Tag (optional)">&quot;L&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
                         <event-block sid="916740277860924">
                             <conditions />
                             <actions>
@@ -817,22 +823,11 @@
                     </conditions>
                     <actions />
                     <sub-events>
-                        <variable constant="1" name="LIMITE" sid="344647263582793" static="0" type="number">-40</variable>
-                        <variable constant="0" name="micActivo" sid="567496691772521" static="0" type="number">0</variable>
-                        <event-block sid="594704076492204">
-                            <conditions />
-                            <actions>
-                                <action id="-9" name="Set value" sid="850222794023790" type="System">
-                                    <param id="0" name="Variable">micActivo</param>
-                                    <param id="1" name="Value">(LIMITE &lt; Audio.AnalyserRMSLevel(&quot;mic&quot;, 0)?1:0)</param>
-                                </action>
-                            </actions>
-                        </event-block>
                         <comment>Se detecto actividad sobre el micrófono, entonces</comment>
                         <event-block sid="166502945063611">
                             <conditions>
                                 <condition id="-14" name="Compare variable" sid="355516992790113" type="System">
-                                    <param id="0" name="Variable">micActivo</param>
+                                    <param id="0" name="Variable">gMicActivo</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">1</param>
                                 </condition>
@@ -870,16 +865,9 @@
                                 <condition id="-22" name="Else" sid="220125547651305" type="System" />
                             </conditions>
                             <actions>
-                                <action id="12" name="Remove all effects" sid="610247510831590" type="Audio">
-                                    <param id="0" name="Tag">&quot;mic&quot;</param>
-                                </action>
-                                <action id="20" name="Add analyser effect" sid="374138471386609" type="Audio">
-                                    <param id="0" name="Tag">&quot;mic&quot;</param>
-                                    <param id="1" name="FFT size">32</param>
-                                    <param id="2" name="Smoothing">0</param>
-                                </action>
-                                <action id="32" name="Add mute effect" sid="286667800312220" type="Audio">
-                                    <param id="0" name="Tag">&quot;mic&quot;</param>
+                                <action id="0" name="Call function" sid="466082196935008" type="Funcion">
+                                    <param id="0" name="Name">&quot;ajustoMICRO&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
                                 </action>
                             </actions>
                             <sub-events>
@@ -968,8 +956,8 @@
                 <comment>Cada un segundo mientras no haya perdido, se descontará 1 a la variable tiempo</comment>
                 <event-block sid="764626829828705">
                     <conditions>
-                        <condition id="-6" name="Every X seconds" sid="129493022251429" type="System">
-                            <param id="0" name="Interval (seconds)">1.0+Funcion.Call(&quot;calculoTEMPO&quot;)</param>
+                        <condition behavior="Tiempo" id="0" name="On timer" sid="151641107684838" type="zreloj">
+                            <param id="0" name="Tag">&quot;global&quot;</param>
                         </condition>
                         <condition id="-14" name="Compare variable" sid="956548127162694" type="System">
                             <param id="0" name="Variable">gDerrota</param>

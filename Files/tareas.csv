@@ -1,0 +1,29 @@
+,id,ambito,duracion,pausa1,pausa2,funcion,objetivo,inicio,final,info
+A1,-50,1,1,1,1,Y,128,9,5,ayuda
+B1,-51,1,1,1,1,Y,224,9,5,audio
+A2,-52,1,1,1,1,Y,320,9,5,creditos
+B2,-53,1,1,1,1,Y,-128,5,2,abandonar
+A3,-54,1,1,-0.5,-0.2,Y,"-417
+",1,1,"iframe pausa"
+B3,-55,1,0.55,0,-1,Y,480,-5,-5,cortina
+C1,-10,0,1,0,0,X,449,4,-4,"cortina 2 izq"
+C2,-11,0,1,0,0,X,-449,4,-4,"cortina 2 der"
+C3,999,0,1,0,0,ScrollX,870,5,5,
+X1,1,0,2,1,1,Y,192,9,5,micro/teclado
+Y1,2,0,2,1,1,Y,192,9,5,mouse
+X2,3,0,2,1,1,Y,288,9,5,remix
+Y2,4,0,2,1,1,Y,288,9,5,personalizado
+X3,5,0,1.5,1,1,Y,-128,5,2,principal
+Y3,6,0,1.5,1,1,Y,-128,5,2,ranking
+X4,7,0,1.5,1,1,Y,-128,5,2,principal
+Y4,8,0,2,1,1,Y,224,9,5,continuar
+Y5,9,0,1,1,1,Y,224,9,5,propio
+X5,20,0,1,1,1,Y,320,9,5,global
+Y6,10,0,1,-0.5,-0.2,Y,"-417
+",1,1,"iframe per."
+X6,11,0,1,-0.5,-0.2,Y,"-417
+",1,1,"iframe ran."
+C4,-30,1,1.2,0,0,Opacidad,100,1,1,"text. objetivo"
+C5,-12,0,1.2,0,0,Y,192,9,5,ronda
+M1,101,0,1,-0.5,-0.2,X,576,1,1,"iframe test"
+M2,100,0,1,1,1,Y,-128,5,2,"continuar test"

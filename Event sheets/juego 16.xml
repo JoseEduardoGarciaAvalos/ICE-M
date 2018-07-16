@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>juego 16</name>
     <events>
+        <comment>PIEDRA, PAPEL O TIJERA</comment>
         <include>principal</include>
         <event-group description="Preparación del escenario" sid="703043029151549" title="inicio 16">
             <sub-events>
@@ -22,10 +23,6 @@
                         <action id="-9" name="Set value" sid="896065098233873" type="System">
                             <param id="0" name="Variable">gTiempo</param>
                             <param id="1" name="Value">floor(random(6,11))</param>
-                        </action>
-                        <action id="-9" name="Set value" sid="551474297401756" type="System">
-                            <param id="0" name="Variable">gObjetivo</param>
-                            <param id="1" name="Value">&quot;Toma la mejor decisión&quot;</param>
                         </action>
                         <action id="0" name="Call function" sid="799217645742718" type="Funcion">
                             <param id="0" name="Name">&quot;inicioGUI&quot;</param>
@@ -274,6 +271,10 @@
                         <condition id="0" name="On function" sid="390316052823490" type="Funcion">
                             <param id="0" name="Name">&quot;crearBaraja&quot;</param>
                         </condition>
+                        <condition id="-13" name="Pick nth instance" sid="103840884430518" type="System">
+                            <param id="0" name="Object">Patron</param>
+                            <param id="1" name="Instance">0</param>
+                        </condition>
                     </conditions>
                     <actions />
                     <sub-events>
@@ -470,6 +471,10 @@
                         <condition id="0" name="On completed" sid="760568385666033" type="AJAX">
                             <param id="0" name="Tag">&quot;j16a.csv&quot;</param>
                         </condition>
+                        <condition id="-13" name="Pick nth instance" sid="487060267961130" type="System">
+                            <param id="0" name="Object">CSV</param>
+                            <param id="1" name="Instance">0</param>
+                        </condition>
                     </conditions>
                     <actions>
                         <action id="1" name="Load table" sid="571822710310411" type="CSV">
@@ -496,6 +501,21 @@
                         </action>
                     </actions>
                     <sub-events>
+                        <event-block sid="390145226034060">
+                            <conditions>
+                                <condition id="5" inverted="1" name="Is tag playing" sid="703029652553056" type="Audio">
+                                    <param id="0" name="Tag">&quot;L&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="776136869080800" type="Audio">
+                                    <param id="0" name="Audio file">A3-tono ascendiendo 1</param>
+                                    <param id="2" name="Loop">1</param>
+                                    <param id="3" name="Volume">gAudioLoop</param>
+                                    <param id="1" name="Tag (optional)">&quot;L&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
                         <comment>Comenzar animación y seleccionar 1 al azar</comment>
                         <event-block sid="508601540536355">
                             <conditions>
@@ -569,7 +589,16 @@
                         </event-block>
                         <comment>Encontrar la selección del oponente (Prevenir que no haya empate) y definir el resultado</comment>
                         <event-block sid="418243181822661">
-                            <conditions />
+                            <conditions>
+                                <condition id="-13" name="Pick nth instance" sid="902573966396120" type="System">
+                                    <param id="0" name="Object">Patron</param>
+                                    <param id="1" name="Instance">0</param>
+                                </condition>
+                                <condition id="-13" name="Pick nth instance" sid="386729402998308" type="System">
+                                    <param id="0" name="Object">CSV</param>
+                                    <param id="1" name="Instance">0</param>
+                                </condition>
+                            </conditions>
                             <actions>
                                 <action id="3" name="Remove pattern" sid="953061957552054" type="Patron">
                                     <param id="0" name="Pattern">seleccionJ</param>
@@ -1037,8 +1066,8 @@
                 <comment>Cada un segundo mientras no haya perdido, se descontará 1 a la variable tiempo</comment>
                 <event-block sid="835479324572101">
                     <conditions>
-                        <condition id="-6" name="Every X seconds" sid="461805047821847" type="System">
-                            <param id="0" name="Interval (seconds)">1.0+Funcion.Call(&quot;calculoTEMPO&quot;)</param>
+                        <condition behavior="Tiempo" id="0" name="On timer" sid="712981557664255" type="zreloj">
+                            <param id="0" name="Tag">&quot;global&quot;</param>
                         </condition>
                         <condition id="-14" name="Compare variable" sid="455365012272064" type="System">
                             <param id="0" name="Variable">gDerrota</param>
@@ -1093,6 +1122,17 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="Cierre del escenario (Eventos que continuan ejecutandose a pesar que se ha acabado el tiempo o fue derrotado)" sid="941502487694517" title="fin 16" />
+        <event-group description="Cierre del escenario (Eventos que continuan ejecutandose a pesar que se ha acabado el tiempo o fue derrotado)" sid="941502487694517" title="fin 16">
+            <sub-events>
+                <event-block sid="710129846456061">
+                    <conditions>
+                        <condition disabled="1" id="-6" name="Every X seconds" sid="461805047821847" type="System">
+                            <param id="0" name="Interval (seconds)">1.0+Funcion.Call(&quot;calculoTEMPO&quot;)</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                </event-block>
+            </sub-events>
+        </event-group>
     </events>
 </c2eventsheet>

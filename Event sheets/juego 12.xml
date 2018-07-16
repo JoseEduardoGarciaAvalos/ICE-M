@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>juego 12</name>
     <events>
+        <comment>PATINADORA</comment>
         <include>principal</include>
         <event-group description="Preparación del escenario" sid="137619344575171" title="inicio 12">
             <sub-events>
@@ -38,10 +39,6 @@
                         <action id="-9" name="Set value" sid="674903870762474" type="System">
                             <param id="0" name="Variable">gTiempo</param>
                             <param id="1" name="Value">floor(random(8,12))</param>
-                        </action>
-                        <action id="-9" name="Set value" sid="279291602476490" type="System">
-                            <param id="0" name="Variable">gObjetivo</param>
-                            <param id="1" name="Value">&quot;Que no se caiga por los bloques de hielo que puedes romper&quot;</param>
                         </action>
                         <action id="0" name="Call function" sid="493620664597588" type="Funcion">
                             <param id="0" name="Name">&quot;inicioGUI&quot;</param>
@@ -619,6 +616,21 @@
                         </action>
                     </actions>
                     <sub-events>
+                        <event-block sid="103243537179270">
+                            <conditions>
+                                <condition id="5" inverted="1" name="Is tag playing" sid="685512002921568" type="Audio">
+                                    <param id="0" name="Tag">&quot;L&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="169646710417283" type="Audio">
+                                    <param id="0" name="Audio file">A3-tono ascendiendo 1</param>
+                                    <param id="2" name="Loop">1</param>
+                                    <param id="3" name="Volume">gAudioLoop</param>
+                                    <param id="1" name="Tag (optional)">&quot;L&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
                         <comment>Recoger utileria (ID = 0.3 y 5), recorrerlo en el orden ID ascedente y en cada bucle hacer la espera necesaria</comment>
                         <event-block sid="657746011332568">
                             <conditions>
@@ -814,7 +826,12 @@
                             </sub-events>
                         </event-block>
                         <event-block sid="534625558336076">
-                            <conditions />
+                            <conditions>
+                                <condition id="-13" name="Pick nth instance" sid="921711282053764" type="System">
+                                    <param id="0" name="Object">Tarea</param>
+                                    <param id="1" name="Instance">0</param>
+                                </condition>
+                            </conditions>
                             <actions>
                                 <action id="11" name="New function task" sid="153747377717538" type="Tarea">
                                     <param id="0" name="Task">&quot;tarea1&quot;</param>
@@ -986,8 +1003,8 @@
                 <comment>Cada un segundo mientras no haya perdido, se descontará 1 a la variable tiempo</comment>
                 <event-block sid="526712934410966">
                     <conditions>
-                        <condition id="-6" name="Every X seconds" sid="497426703880972" type="System">
-                            <param id="0" name="Interval (seconds)">1.0+Funcion.Call(&quot;calculoTEMPO&quot;)</param>
+                        <condition behavior="Tiempo" id="0" name="On timer" sid="867336330800050" type="zreloj">
+                            <param id="0" name="Tag">&quot;global&quot;</param>
                         </condition>
                         <condition id="-14" name="Compare variable" sid="118333357693532" type="System">
                             <param id="0" name="Variable">gDerrota</param>
@@ -1055,6 +1072,10 @@
                     <conditions>
                         <condition id="0" name="On function" sid="198630061922906" type="Tarea">
                             <param id="0" name="Name">&quot;-velocidad&quot;</param>
+                        </condition>
+                        <condition id="-13" name="Pick nth instance" sid="988023366336283" type="System">
+                            <param id="0" name="Object">Tarea</param>
+                            <param id="1" name="Instance">0</param>
                         </condition>
                     </conditions>
                     <actions>

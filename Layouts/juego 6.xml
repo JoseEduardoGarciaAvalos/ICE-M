@@ -1439,21 +1439,6 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Microfono" uid="70">
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>288</x>
-                        <y>-160</y>
-                        <z>0</z>
-                        <width>320</width>
-                        <height>32</height>
-                        <depth>0</depth>
-                        <hotspotX>0</hotspotX>
-                        <hotspotY>0</hotspotY>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
                 <instance type="Aliado" uid="71">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>

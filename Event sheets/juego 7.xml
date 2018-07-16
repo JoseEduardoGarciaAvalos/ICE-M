@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>juego 7</name>
     <events>
+        <comment>LAS PORRISTAS</comment>
         <include>principal</include>
         <event-group description="Preparación del escenario" sid="955944366567097" title="inicio 7">
             <sub-events>
@@ -19,10 +20,6 @@
                         <action id="-9" name="Set value" sid="973786713561004" type="System">
                             <param id="0" name="Variable">gTiempo</param>
                             <param id="1" name="Value">floor(random(9,12))</param>
-                        </action>
-                        <action id="-9" name="Set value" sid="385343142035311" type="System">
-                            <param id="0" name="Variable">gObjetivo</param>
-                            <param id="1" name="Value">&quot;Sigue el patrón&quot;</param>
                         </action>
                         <action id="0" name="Call function" sid="213144432966902" type="Funcion">
                             <param id="0" name="Name">&quot;inicioGUI&quot;</param>
@@ -70,13 +67,24 @@
                         <action id="-41" name="Wait for signal" sid="811248722575862" type="System">
                             <param id="0" name="Tag">&quot;pCargado&quot;</param>
                         </action>
-                        <action id="0" name="Play" sid="158209907577051" type="Audio">
-                            <param id="0" name="Audio file">C3-musica de circo 5</param>
-                            <param id="2" name="Loop">1</param>
-                            <param id="3" name="Volume">0</param>
-                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                        </action>
                     </actions>
+                    <sub-events>
+                        <event-block sid="586386371465837">
+                            <conditions>
+                                <condition id="5" inverted="1" name="Is tag playing" sid="900648891270967" type="Audio">
+                                    <param id="0" name="Tag">&quot;L&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="871749794253857" type="Audio">
+                                    <param id="0" name="Audio file">C3-musica de circo 5</param>
+                                    <param id="2" name="Loop">1</param>
+                                    <param id="3" name="Volume">gAudioLoop</param>
+                                    <param id="1" name="Tag (optional)">&quot;L&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
         </event-group>
@@ -364,7 +372,7 @@
                 <comment>Cada un segundo mientras no haya perdido, se descontará 1 a la variable tiempo</comment>
                 <event-block sid="867314476631592">
                     <conditions>
-                        <condition behavior="Tiempo" id="0" name="On timer" sid="594291691805302" type="Reloj">
+                        <condition behavior="Tiempo" id="0" name="On timer" sid="594291691805302" type="zreloj">
                             <param id="0" name="Tag">&quot;global&quot;</param>
                         </condition>
                         <condition id="-14" name="Compare variable" sid="228262509074202" type="System">

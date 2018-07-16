@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>juego 2</name>
     <events>
+        <comment>MOLINO DE VIENTO</comment>
         <include>principal</include>
         <event-group description="Preparación del escenario" sid="664272082615923" title="inicio 2">
             <sub-events>
@@ -18,10 +19,6 @@
                         <action id="-9" name="Set value" sid="309831289244886" type="System">
                             <param id="0" name="Variable">gTiempo</param>
                             <param id="1" name="Value">floor(random(12,16))</param>
-                        </action>
-                        <action id="-9" name="Set value" sid="585406827113312" type="System">
-                            <param id="0" name="Variable">gObjetivo</param>
-                            <param id="1" name="Value">&quot;filtra&quot;</param>
                         </action>
                         <action id="0" name="Call function" sid="972973046334239" type="Funcion">
                             <param id="0" name="Name">&quot;inicioGUI&quot;</param>
@@ -54,16 +51,6 @@
                         <event-block sid="179128851868935">
                             <conditions />
                             <actions>
-                                <action id="10" name="Get media sources" sid="519750905384856" type="Microfono" />
-                                <action id="20" name="Add analyser effect" sid="156787319834690" type="Audio">
-                                    <param id="0" name="Tag">&quot;mic&quot;</param>
-                                    <param id="1" name="FFT size">32</param>
-                                    <param id="2" name="Smoothing">0</param>
-                                </action>
-                                <action id="3" name="Request microphone" sid="942253674401067" type="Microfono">
-                                    <param id="0" name="Tag">&quot;mic&quot;</param>
-                                    <param id="1" name="Source">0</param>
-                                </action>
                                 <action id="-9" name="Destroy" sid="652604517287227" type="Fondo" />
                             </actions>
                         </event-block>
@@ -82,7 +69,7 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action disabled="1" id="-16" name="Set opacity" sid="497162647300915" type="Utileria">
+                                <action id="-16" name="Set opacity" sid="497162647300915" type="Utileria">
                                     <param id="0" name="Opacity">0</param>
                                 </action>
                             </actions>
@@ -141,7 +128,28 @@
                                     <param id="2" name="X">0</param>
                                     <param id="3" name="Y">0</param>
                                 </action>
+                                <action id="0" name="Call function" sid="516486915171439" type="Funcion">
+                                    <param id="0" name="Name">&quot;activoMICRO&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
                             </actions>
+                            <sub-events>
+                                <event-block sid="908051003580710">
+                                    <conditions>
+                                        <condition id="5" inverted="1" name="Is tag playing" sid="116097844382487" type="Audio">
+                                            <param id="0" name="Tag">&quot;L&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="827948900933537" type="Audio">
+                                            <param id="0" name="Audio file">C3-musica de selva 2</param>
+                                            <param id="2" name="Loop">1</param>
+                                            <param id="3" name="Volume">gAudioLoop</param>
+                                            <param id="1" name="Tag (optional)">&quot;L&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                     </sub-events>
                 </event-block>
@@ -154,7 +162,7 @@
                 <variable comment="Alto (en pixeles)" constant="1" name="ALTO" sid="892957426752530" static="0" type="number">100</variable>
                 <comment>VALORES DEL JUGADOR</comment>
                 <variable comment="Ancho (en pixeles)" constant="1" name="ANCHOJ" sid="248228297402361" static="0" type="number">224</variable>
-                <variable comment="Alto (en pixeles)" constant="1" name="ALTOJ" sid="310673876118194" static="0" type="number">5</variable>
+                <variable comment="Alto (en pixeles)" constant="1" name="ALTOJ" sid="310673876118194" static="0" type="number">36</variable>
                 <comment>VALORES BASE DE LOS ALIADOS</comment>
                 <variable comment="Gravedad inferior" constant="1" name="GI1" sid="790348828919757" static="0" type="number">65</variable>
                 <variable comment="Gravedad superior" constant="1" name="GS1" sid="261714075288112" static="0" type="number">80</variable>
@@ -184,13 +192,27 @@
                                 <action id="-16" name="Wait" sid="198240581339831" type="System">
                                     <param id="0" name="Seconds">Random(0.6)</param>
                                 </action>
-                                <action id="-3" name="Create object" sid="476780179111580" type="System">
-                                    <param id="0" name="Object to create">Aliado</param>
-                                    <param id="1" name="Layer">&quot;Principal&quot;</param>
-                                    <param id="2" name="X">0</param>
-                                    <param id="3" name="Y">0</param>
-                                </action>
                             </actions>
+                            <sub-events>
+                                <event-block sid="688063937142188">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="969304736745364" type="System">
+                                            <param id="0" name="Variable">gDerrota</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="476780179111580" type="System">
+                                            <param id="0" name="Object to create">Aliado</param>
+                                            <param id="1" name="Layer">&quot;Principal&quot;</param>
+                                            <param id="2" name="X">0</param>
+                                            <param id="3" name="Y">0</param>
+                                        </action>
+                                        <action id="-25" name="Move to bottom" sid="110401599041353" type="Aliado" />
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                         <comment>Sino si el (parametro 1) = 1, entonces se creará un Enemigo, con un retardo aleatorio</comment>
                         <event-block sid="788891106335417">
@@ -206,13 +228,27 @@
                                 <action id="-16" name="Wait" sid="355608179062549" type="System">
                                     <param id="0" name="Seconds">Random(1.1)</param>
                                 </action>
-                                <action id="-3" name="Create object" sid="439568944151547" type="System">
-                                    <param id="0" name="Object to create">Enemigo</param>
-                                    <param id="1" name="Layer">&quot;Principal&quot;</param>
-                                    <param id="2" name="X">0</param>
-                                    <param id="3" name="Y">0</param>
-                                </action>
                             </actions>
+                            <sub-events>
+                                <event-block sid="930006564566814">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="983392339040816" type="System">
+                                            <param id="0" name="Variable">gDerrota</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="439568944151547" type="System">
+                                            <param id="0" name="Object to create">Enemigo</param>
+                                            <param id="1" name="Layer">&quot;Principal&quot;</param>
+                                            <param id="2" name="X">0</param>
+                                            <param id="3" name="Y">0</param>
+                                        </action>
+                                        <action id="-25" name="Move to bottom" sid="201029309817538" type="Enemigo" />
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                     </sub-events>
                 </event-block>
@@ -331,11 +367,8 @@
                 <comment>Si un enemigo colisiona con la Utileria, , entonces ha perdido</comment>
                 <event-block sid="434993856789144">
                     <conditions>
-                        <condition id="0" name="On collision with another object" sid="685217241769377" type="Personas">
+                        <condition id="0" name="On collision with another object" sid="685217241769377" type="Enemigo">
                             <param id="0" name="Object">Utileria</param>
-                        </condition>
-                        <condition id="-14" name="Pick by unique ID" sid="501074360177829" type="Enemigo">
-                            <param id="0" name="Unique ID">Personas.UID</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -343,31 +376,34 @@
                             <param id="0" name="Variable">gDerrota</param>
                             <param id="1" name="Value">1</param>
                         </action>
+                        <action id="0" name="Call function" sid="296598653376633" type="Funcion">
+                            <param id="0" name="Name">&quot;derrotaJUEGO&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="923744652074900">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="898358605049741" type="Aliado">
+                            <param id="0" name="Object">Utileria</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="648294963503772" type="Aliado" />
                     </actions>
                 </event-block>
                 <comment>Control del personaje</comment>
-                <event-block sid="476383099811314">
+                <event-block sid="991754714430657">
                     <conditions>
-                        <condition id="-1" name="Every tick" sid="777939657006605" type="System" />
+                        <condition id="-1" name="Every tick" sid="605698536113323" type="System" />
                     </conditions>
                     <actions />
                     <sub-events>
-                        <variable constant="1" name="LIMITE" sid="271859276638889" static="0" type="number">-40</variable>
-                        <variable constant="0" name="micActivo" sid="216703100408407" static="0" type="number">0</variable>
-                        <event-block sid="946039978672784">
-                            <conditions />
-                            <actions>
-                                <action id="-9" name="Set value" sid="309128973963779" type="System">
-                                    <param id="0" name="Variable">micActivo</param>
-                                    <param id="1" name="Value">(LIMITE &lt; Audio.AnalyserRMSLevel(&quot;mic&quot;, 0)?1:0)</param>
-                                </action>
-                            </actions>
-                        </event-block>
                         <comment>Se detecto actividad sobre el micrófono, entonces</comment>
                         <event-block sid="462957330746916">
                             <conditions>
                                 <condition id="-14" name="Compare variable" sid="897014311946578" type="System">
-                                    <param id="0" name="Variable">micActivo</param>
+                                    <param id="0" name="Variable">gMicActivo</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">1</param>
                                 </condition>
@@ -402,16 +438,9 @@
                                 <condition id="-22" name="Else" sid="525516640712073" type="System" />
                             </conditions>
                             <actions>
-                                <action id="12" name="Remove all effects" sid="127466690036256" type="Audio">
-                                    <param id="0" name="Tag">&quot;mic&quot;</param>
-                                </action>
-                                <action id="20" name="Add analyser effect" sid="118189112062078" type="Audio">
-                                    <param id="0" name="Tag">&quot;mic&quot;</param>
-                                    <param id="1" name="FFT size">32</param>
-                                    <param id="2" name="Smoothing">0</param>
-                                </action>
-                                <action id="32" name="Add mute effect" sid="531523568330878" type="Audio">
-                                    <param id="0" name="Tag">&quot;mic&quot;</param>
+                                <action id="0" name="Call function" sid="307772590891556" type="Funcion">
+                                    <param id="0" name="Name">&quot;ajustoMICRO&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
                                 </action>
                             </actions>
                             <sub-events>
@@ -448,8 +477,8 @@
                 <comment>Cada un segundo mientras no haya perdido, se descontará 1 a la variable tiempo</comment>
                 <event-block sid="637639561161045">
                     <conditions>
-                        <condition id="-6" name="Every X seconds" sid="298958659293387" type="System">
-                            <param id="0" name="Interval (seconds)">1.0+Funcion.Call(&quot;calculoTEMPO&quot;)</param>
+                        <condition behavior="Tiempo" id="0" name="On timer" sid="322899043306590" type="zreloj">
+                            <param id="0" name="Tag">&quot;global&quot;</param>
                         </condition>
                         <condition id="-14" name="Compare variable" sid="211423521996574" type="System">
                             <param id="0" name="Variable">gDerrota</param>
@@ -492,6 +521,44 @@
                                     <param id="1" name="Parameter {n}">aux</param>
                                 </action>
                             </actions>
+                            <sub-events>
+                                <event-block sid="535640016773157">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="805084087909991" type="System">
+                                            <param id="0" name="Variable">gTiempo</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">7</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="200429456287970" type="System">
+                                            <param id="0" name="Object to create">Utileria</param>
+                                            <param id="1" name="Layer">&quot;Principal&quot;</param>
+                                            <param id="2" name="X">800</param>
+                                            <param id="3" name="Y">400</param>
+                                        </action>
+                                        <action id="11" name="Set collisions enabled" sid="558307988077722" type="Utileria">
+                                            <param id="0" name="Collisions">0</param>
+                                        </action>
+                                        <action id="4" name="Set animation" sid="455024761405850" type="Utileria">
+                                            <param id="0" name="Animation">&quot;j2a&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="729530021760932" type="Utileria">
+                                            <param id="0" name="Frame number">1</param>
+                                        </action>
+                                        <action behavior="Parpadear" id="0" name="Flash" sid="925751615492372" type="Utileria">
+                                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                                            <param id="2" name="Duration">2</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="908303625850706" type="System">
+                                            <param id="0" name="Seconds">2</param>
+                                        </action>
+                                        <action id="-9" name="Destroy" sid="910545744234140" type="Utileria" />
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                         <comment>Si tiempo se acabo, comprobará que no haya aliados</comment>
                         <event-block sid="891296475617367">
@@ -510,22 +577,6 @@
                             </actions>
                         </event-block>
                     </sub-events>
-                </event-block>
-                <comment>Cuando derrota es igual a 1</comment>
-                <event-block sid="190006040933133">
-                    <conditions>
-                        <condition id="-14" name="Compare variable" sid="338200930162189" type="System">
-                            <param id="0" name="Variable">gDerrota</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">1</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="0" name="Call function" sid="619558312567945" type="Funcion">
-                            <param id="0" name="Name">&quot;derrotaJUEGO&quot;</param>
-                            <param id="1" name="Parameter {n}"></param>
-                        </action>
-                    </actions>
                 </event-block>
             </sub-events>
         </event-group>
