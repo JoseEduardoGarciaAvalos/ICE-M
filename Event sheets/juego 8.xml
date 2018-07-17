@@ -614,5 +614,19 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <event-group description="Cierre del escenario (Eventos que continuan ejecutandose a pesar que se ha acabado el tiempo o fue derrotado)" sid="850831034703482" title="fin 8" />
+        <comment>Función que ayuda a detener el timer de las burbujas que se crean</comment>
+        <event-block sid="838382421157122">
+            <conditions>
+                <condition id="0" name="On function" sid="641973215056191" type="Funcion">
+                    <param id="0" name="Name">&quot;pcJUEGO&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Tiempo" id="1" name="Stop timer" sid="581870369935668" type="Enemigo">
+                    <param id="0" name="Tag">&quot;dibujar&quot;</param>
+                </action>
+            </actions>
+        </event-block>
     </events>
 </c2eventsheet>

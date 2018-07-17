@@ -210,6 +210,13 @@
                                             <param id="3" name="Y">0</param>
                                         </action>
                                         <action id="-25" name="Move to bottom" sid="110401599041353" type="Aliado" />
+                                        <action id="4" name="Set animation" sid="703789033904662" type="Aliado">
+                                            <param id="0" name="Animation">&quot;j2a&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="607512959261145" type="Aliado">
+                                            <param id="0" name="Frame number">random(Self.AnimationFrameCount)</param>
+                                        </action>
                                     </actions>
                                 </event-block>
                             </sub-events>
@@ -246,6 +253,13 @@
                                             <param id="3" name="Y">0</param>
                                         </action>
                                         <action id="-25" name="Move to bottom" sid="201029309817538" type="Enemigo" />
+                                        <action id="4" name="Set animation" sid="734107142329070" type="Enemigo">
+                                            <param id="0" name="Animation">&quot;j2a&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="839105396929464" type="Enemigo">
+                                            <param id="0" name="Frame number">random(Self.AnimationFrameCount)</param>
+                                        </action>
                                     </actions>
                                 </event-block>
                             </sub-events>

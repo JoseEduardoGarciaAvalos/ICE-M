@@ -168,8 +168,8 @@
         <event-group description="Creación, definición de propiedades y comportamientos de los objetos" sid="778563038491279" title="jugabilidad 3">
             <sub-events>
                 <comment>VALORES COMUNES DE LAS PERSONAS</comment>
-                <variable comment="Ancho (en pixeles)" constant="1" name="ancho" sid="503973650343161" static="0" type="number">50</variable>
-                <variable comment="Alto (en pixeles)" constant="1" name="alto" sid="300058572182573" static="0" type="number">50</variable>
+                <variable comment="Ancho (en pixeles)" constant="1" name="ANCHO" sid="503973650343161" static="0" type="number">100</variable>
+                <variable comment="Alto (en pixeles)" constant="1" name="ALTO" sid="300058572182573" static="0" type="number">100</variable>
                 <comment>VALORES DEL JUGADOR</comment>
                 <variable comment="Ancho (en pixeles)" constant="1" name="ANCHOJ" sid="606385365015442" static="0" type="number">49</variable>
                 <variable comment="Alto (en pixeles)" constant="1" name="ALTOJ" sid="934709769891193" static="0" type="number">64</variable>
@@ -206,13 +206,34 @@
                                 <action id="-16" name="Wait" sid="646772709156473" type="System">
                                     <param id="0" name="Seconds">random(0.5)</param>
                                 </action>
-                                <action id="-3" name="Create object" sid="384196255564591" type="System">
-                                    <param id="0" name="Object to create">Aliado</param>
-                                    <param id="1" name="Layer">&quot;Principal&quot;</param>
-                                    <param id="2" name="X">0</param>
-                                    <param id="3" name="Y">0</param>
-                                </action>
                             </actions>
+                            <sub-events>
+                                <event-block sid="301070610444650">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="796281000110591" type="System">
+                                            <param id="0" name="Variable">gDerrota</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="384196255564591" type="System">
+                                            <param id="0" name="Object to create">Aliado</param>
+                                            <param id="1" name="Layer">&quot;Principal&quot;</param>
+                                            <param id="2" name="X">0</param>
+                                            <param id="3" name="Y">0</param>
+                                        </action>
+                                        <action id="-25" name="Move to bottom" sid="281328817938780" type="Aliado" />
+                                        <action id="4" name="Set animation" sid="995220024164074" type="Aliado">
+                                            <param id="0" name="Animation">&quot;j2a&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="545506606185496" type="Aliado">
+                                            <param id="0" name="Frame number">random(Self.AnimationFrameCount)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                         <comment>Sino si el (parametro 1) = 1, entonces se creará un Enemigo, con un retardo aleatorio</comment>
                         <event-block sid="930913964539022">
@@ -228,13 +249,34 @@
                                 <action id="-16" name="Wait" sid="640431848468720" type="System">
                                     <param id="0" name="Seconds">random(1.1)</param>
                                 </action>
-                                <action id="-3" name="Create object" sid="656225512483726" type="System">
-                                    <param id="0" name="Object to create">Enemigo</param>
-                                    <param id="1" name="Layer">&quot;Principal&quot;</param>
-                                    <param id="2" name="X">0</param>
-                                    <param id="3" name="Y">0</param>
-                                </action>
                             </actions>
+                            <sub-events>
+                                <event-block sid="409548271591008">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="652113832338658" type="System">
+                                            <param id="0" name="Variable">gDerrota</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="656225512483726" type="System">
+                                            <param id="0" name="Object to create">Enemigo</param>
+                                            <param id="1" name="Layer">&quot;Principal&quot;</param>
+                                            <param id="2" name="X">0</param>
+                                            <param id="3" name="Y">0</param>
+                                        </action>
+                                        <action id="-25" name="Move to bottom" sid="551823267332605" type="Enemigo" />
+                                        <action id="4" name="Set animation" sid="924852833592167" type="Enemigo">
+                                            <param id="0" name="Animation">&quot;j2a&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="260931062632124" type="Enemigo">
+                                            <param id="0" name="Frame number">random(Self.AnimationFrameCount)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                     </sub-events>
                 </event-block>
@@ -367,7 +409,7 @@
                         <event-block sid="525163014958495">
                             <conditions>
                                 <condition id="-17" name="Pick top/bottom" sid="988105374213042" type="Actores">
-                                    <param id="0" name="Which">0</param>
+                                    <param id="0" name="Which">1</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -385,6 +427,10 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action disabled="1" id="14" name="Log" sid="356373997445650" type="Navegador">
+                                    <param id="0" name="Type">0</param>
+                                    <param id="1" name="Message">Actores.UID &amp; &quot; colisiono con &quot; &amp; uid</param>
+                                </action>
                                 <action id="0" name="Call function" sid="657232465762676" type="Funcion">
                                     <param id="0" name="Name">&quot;restructurarTorre&quot;</param>
                                     <param id="1" name="Parameter {n}">Actores.UID{###}uid</param>
@@ -454,6 +500,10 @@
                                 <event-block sid="437059218423537">
                                     <conditions />
                                     <actions>
+                                        <action disabled="1" id="14" name="Log" sid="752233187977117" type="Navegador">
+                                            <param id="0" name="Type">0</param>
+                                            <param id="1" name="Message">&quot;HOLA &quot; &amp; abs(Actores.BBoxBottom-ys)</param>
+                                        </action>
                                         <action id="-9" name="Set value" sid="262483789681957" type="System">
                                             <param id="0" name="Variable">aux</param>
                                             <param id="1" name="Value">abs(Actores.BBoxBottom-ys)&lt;=TOLY </param>

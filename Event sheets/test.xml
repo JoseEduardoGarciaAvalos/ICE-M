@@ -765,6 +765,12 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="0" name="Play" sid="868843037756686" type="Audio">
+                                    <param id="0" name="Audio file">A3-timbre</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">gAudioNoLoop</param>
+                                    <param id="1" name="Tag (optional)">&quot;N&quot;</param>
+                                </action>
                                 <action id="0" name="Call function" sid="749548772319720" type="Funcion">
                                     <param id="0" name="Name">&quot;evaluarTest&quot;</param>
                                     <param id="1" name="Parameter {n}"></param>

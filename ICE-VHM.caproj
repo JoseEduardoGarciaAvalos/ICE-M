@@ -110,9 +110,253 @@
                 <plugin id="Sprite" />
                 <animation-folder>
                     <animation-folder name="Eduardo">
-                        <animation framecount="2" loop="0" name="j18a" pingpong="0" repeatcount="1" repeatto="0" sid="156083239781758" speed="0">
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.502092" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 18\estudiante leyendo.png" />
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.502092" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 18\estudiante riendo.png" />
+                        <animation framecount="20" loop="0" name="j2a" pingpong="0" repeatcount="1" repeatto="0" sid="256721430213517" speed="0">
+                            <frame duration="1" hotspotX="0.507042" hotspotY="0.5" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 2\avatar a1.png">
+                                <collision-poly>
+                                    <point x="0.15493" y="0.157143" />
+                                    <point x="0.492958" y="0.0142857" />
+                                    <point x="0.84507" y="0.157143" />
+                                    <point x="0.985915" y="0.5" />
+                                    <point x="0.84507" y="0.842857" />
+                                    <point x="0.492958" y="0.985714" />
+                                    <point x="0.15493" y="0.842857" />
+                                    <point x="0.0140845" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.507042" hotspotY="0.5" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 2\avatar a2.png">
+                                <collision-poly>
+                                    <point x="0.15493" y="0.157143" />
+                                    <point x="0.492958" y="0.0142857" />
+                                    <point x="0.84507" y="0.157143" />
+                                    <point x="0.985915" y="0.5" />
+                                    <point x="0.84507" y="0.842857" />
+                                    <point x="0.492958" y="0.985714" />
+                                    <point x="0.15493" y="0.842857" />
+                                    <point x="0.0140845" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.507042" hotspotY="0.5" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 2\avatar a3.png">
+                                <collision-poly>
+                                    <point x="0.15493" y="0.157143" />
+                                    <point x="0.492958" y="0.0142857" />
+                                    <point x="0.84507" y="0.157143" />
+                                    <point x="0.985915" y="0.5" />
+                                    <point x="0.84507" y="0.842857" />
+                                    <point x="0.492958" y="0.985714" />
+                                    <point x="0.15493" y="0.842857" />
+                                    <point x="0.0140845" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.507042" hotspotY="0.5" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 2\avatar a4.png">
+                                <collision-poly>
+                                    <point x="0.15493" y="0.157143" />
+                                    <point x="0.492958" y="0.0142857" />
+                                    <point x="0.84507" y="0.157143" />
+                                    <point x="0.985915" y="0.5" />
+                                    <point x="0.84507" y="0.842857" />
+                                    <point x="0.492958" y="0.985714" />
+                                    <point x="0.15493" y="0.842857" />
+                                    <point x="0.0140845" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.507042" hotspotY="0.5" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 2\avatar a5.png">
+                                <collision-poly>
+                                    <point x="0.15493" y="0.157143" />
+                                    <point x="0.492958" y="0.0142857" />
+                                    <point x="0.84507" y="0.157143" />
+                                    <point x="0.985915" y="0.5" />
+                                    <point x="0.84507" y="0.842857" />
+                                    <point x="0.492958" y="0.985714" />
+                                    <point x="0.15493" y="0.842857" />
+                                    <point x="0.0140845" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.507042" hotspotY="0.5" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 2\avatar a6.png">
+                                <collision-poly>
+                                    <point x="0.15493" y="0.157143" />
+                                    <point x="0.492958" y="0.0142857" />
+                                    <point x="0.84507" y="0.157143" />
+                                    <point x="0.985915" y="0.5" />
+                                    <point x="0.84507" y="0.842857" />
+                                    <point x="0.492958" y="0.985714" />
+                                    <point x="0.15493" y="0.842857" />
+                                    <point x="0.0140845" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.507042" hotspotY="0.5" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 2\avatar a7.png">
+                                <collision-poly>
+                                    <point x="0.15493" y="0.157143" />
+                                    <point x="0.492958" y="0.0142857" />
+                                    <point x="0.84507" y="0.157143" />
+                                    <point x="0.985915" y="0.5" />
+                                    <point x="0.84507" y="0.842857" />
+                                    <point x="0.492958" y="0.985714" />
+                                    <point x="0.15493" y="0.842857" />
+                                    <point x="0.0140845" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.507042" hotspotY="0.5" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 2\avatar a8.png">
+                                <collision-poly>
+                                    <point x="0.15493" y="0.157143" />
+                                    <point x="0.492958" y="0.0142857" />
+                                    <point x="0.84507" y="0.157143" />
+                                    <point x="0.985915" y="0.5" />
+                                    <point x="0.84507" y="0.842857" />
+                                    <point x="0.492958" y="0.985714" />
+                                    <point x="0.15493" y="0.842857" />
+                                    <point x="0.0140845" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.507042" hotspotY="0.5" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 2\avatar a9.png">
+                                <collision-poly>
+                                    <point x="0.15493" y="0.157143" />
+                                    <point x="0.492958" y="0.0142857" />
+                                    <point x="0.84507" y="0.157143" />
+                                    <point x="0.985915" y="0.5" />
+                                    <point x="0.84507" y="0.842857" />
+                                    <point x="0.492958" y="0.985714" />
+                                    <point x="0.15493" y="0.842857" />
+                                    <point x="0.0140845" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.507042" hotspotY="0.5" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 2\avatar a10.png">
+                                <collision-poly>
+                                    <point x="0.15493" y="0.157143" />
+                                    <point x="0.492958" y="0.0142857" />
+                                    <point x="0.84507" y="0.157143" />
+                                    <point x="0.985915" y="0.5" />
+                                    <point x="0.84507" y="0.842857" />
+                                    <point x="0.492958" y="0.985714" />
+                                    <point x="0.15493" y="0.842857" />
+                                    <point x="0.0140845" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.507042" hotspotY="0.5" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 2\avatar a11.png">
+                                <collision-poly>
+                                    <point x="0.15493" y="0.157143" />
+                                    <point x="0.492958" y="0.0142857" />
+                                    <point x="0.84507" y="0.157143" />
+                                    <point x="0.985915" y="0.5" />
+                                    <point x="0.84507" y="0.842857" />
+                                    <point x="0.492958" y="0.985714" />
+                                    <point x="0.15493" y="0.842857" />
+                                    <point x="0.0140845" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.507042" hotspotY="0.5" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 2\avatar a12.png">
+                                <collision-poly>
+                                    <point x="0.15493" y="0.157143" />
+                                    <point x="0.492958" y="0.0142857" />
+                                    <point x="0.84507" y="0.157143" />
+                                    <point x="0.985915" y="0.5" />
+                                    <point x="0.84507" y="0.842857" />
+                                    <point x="0.492958" y="0.985714" />
+                                    <point x="0.15493" y="0.842857" />
+                                    <point x="0.0140845" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.507042" hotspotY="0.5" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 2\avatar a13.png">
+                                <collision-poly>
+                                    <point x="0.15493" y="0.157143" />
+                                    <point x="0.492958" y="0.0142857" />
+                                    <point x="0.84507" y="0.157143" />
+                                    <point x="0.985915" y="0.5" />
+                                    <point x="0.84507" y="0.842857" />
+                                    <point x="0.492958" y="0.985714" />
+                                    <point x="0.15493" y="0.842857" />
+                                    <point x="0.0140845" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.507042" hotspotY="0.5" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 2\avatar a14.png">
+                                <collision-poly>
+                                    <point x="0.15493" y="0.157143" />
+                                    <point x="0.492958" y="0.0142857" />
+                                    <point x="0.84507" y="0.157143" />
+                                    <point x="0.985915" y="0.5" />
+                                    <point x="0.84507" y="0.842857" />
+                                    <point x="0.492958" y="0.985714" />
+                                    <point x="0.15493" y="0.842857" />
+                                    <point x="0.0140845" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.507042" hotspotY="0.5" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 2\avatar a15.png">
+                                <collision-poly>
+                                    <point x="0.15493" y="0.157143" />
+                                    <point x="0.492958" y="0.0142857" />
+                                    <point x="0.84507" y="0.157143" />
+                                    <point x="0.985915" y="0.5" />
+                                    <point x="0.84507" y="0.842857" />
+                                    <point x="0.492958" y="0.985714" />
+                                    <point x="0.15493" y="0.842857" />
+                                    <point x="0.0140845" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.507042" hotspotY="0.5" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 2\avatar a16.png">
+                                <collision-poly>
+                                    <point x="0.15493" y="0.157143" />
+                                    <point x="0.492958" y="0.0142857" />
+                                    <point x="0.84507" y="0.157143" />
+                                    <point x="0.985915" y="0.5" />
+                                    <point x="0.84507" y="0.842857" />
+                                    <point x="0.492958" y="0.985714" />
+                                    <point x="0.15493" y="0.842857" />
+                                    <point x="0.0140845" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.507042" hotspotY="0.5" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 2\avatar a17.png">
+                                <collision-poly>
+                                    <point x="0.15493" y="0.157143" />
+                                    <point x="0.492958" y="0.0142857" />
+                                    <point x="0.84507" y="0.157143" />
+                                    <point x="0.985915" y="0.5" />
+                                    <point x="0.84507" y="0.842857" />
+                                    <point x="0.492958" y="0.985714" />
+                                    <point x="0.15493" y="0.842857" />
+                                    <point x="0.0140845" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.507042" hotspotY="0.5" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 2\avatar a18.png">
+                                <collision-poly>
+                                    <point x="0.15493" y="0.157143" />
+                                    <point x="0.492958" y="0.0142857" />
+                                    <point x="0.84507" y="0.157143" />
+                                    <point x="0.985915" y="0.5" />
+                                    <point x="0.84507" y="0.842857" />
+                                    <point x="0.492958" y="0.985714" />
+                                    <point x="0.15493" y="0.842857" />
+                                    <point x="0.0140845" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.507042" hotspotY="0.5" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 2\avatar a19.png">
+                                <collision-poly>
+                                    <point x="0.15493" y="0.157143" />
+                                    <point x="0.492958" y="0.0142857" />
+                                    <point x="0.84507" y="0.157143" />
+                                    <point x="0.985915" y="0.5" />
+                                    <point x="0.84507" y="0.842857" />
+                                    <point x="0.492958" y="0.985714" />
+                                    <point x="0.15493" y="0.842857" />
+                                    <point x="0.0140845" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.507042" hotspotY="0.5" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 2\avatar a20.png">
+                                <collision-poly>
+                                    <point x="0.15493" y="0.157143" />
+                                    <point x="0.492958" y="0.0142857" />
+                                    <point x="0.84507" y="0.157143" />
+                                    <point x="0.985915" y="0.5" />
+                                    <point x="0.84507" y="0.842857" />
+                                    <point x="0.492958" y="0.985714" />
+                                    <point x="0.15493" y="0.842857" />
+                                    <point x="0.0140845" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="4" loop="0" name="j8a" pingpong="0" repeatcount="1" repeatto="0" sid="574195719583004" speed="0">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 8\j8a-1.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 8\j8a-2.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 8\j8a-3.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 8\j8a-4.png" />
                         </animation>
                         <animation framecount="3" loop="1" name="j15a" pingpong="1" repeatcount="1" repeatto="0" sid="682152905375416" speed="5">
                             <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 15\J_j15a-1.png" />
@@ -129,11 +373,9 @@
                             <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 15\J_j15c-2.png" />
                             <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 15\J_j15c-3.png" />
                         </animation>
-                        <animation framecount="4" loop="0" name="j8a" pingpong="0" repeatcount="1" repeatto="0" sid="574195719583004" speed="0">
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 8\j8a-1.png" />
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 8\j8a-2.png" />
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 8\j8a-3.png" />
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 8\j8a-4.png" />
+                        <animation framecount="2" loop="0" name="j18a" pingpong="0" repeatcount="1" repeatto="0" sid="156083239781758" speed="0">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.502092" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 18\estudiante leyendo.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.502092" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 18\estudiante riendo.png" />
                         </animation>
                     </animation-folder>
                     <animation framecount="1" loop="0" name="feliz" pingpong="0" repeatcount="1" repeatto="0" sid="916773995906572" speed="5">
@@ -230,6 +472,248 @@
                         </animation>
                     </animation-folder>
                     <animation-folder name="Eduardo">
+                        <animation framecount="20" loop="0" name="j2a" pingpong="0" repeatcount="1" repeatto="0" sid="963139619239591" speed="0">
+                            <frame duration="1" hotspotX="0.507042" hotspotY="0.5" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 2\avatar e1.png">
+                                <collision-poly>
+                                    <point x="0.15493" y="0.157143" />
+                                    <point x="0.492958" y="0.0142857" />
+                                    <point x="0.84507" y="0.157143" />
+                                    <point x="0.985915" y="0.5" />
+                                    <point x="0.84507" y="0.842857" />
+                                    <point x="0.492958" y="0.985714" />
+                                    <point x="0.15493" y="0.842857" />
+                                    <point x="0.0140845" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.507042" hotspotY="0.5" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 2\avatar e2.png">
+                                <collision-poly>
+                                    <point x="0.15493" y="0.157143" />
+                                    <point x="0.492958" y="0.0142857" />
+                                    <point x="0.84507" y="0.157143" />
+                                    <point x="0.985915" y="0.5" />
+                                    <point x="0.84507" y="0.842857" />
+                                    <point x="0.492958" y="0.985714" />
+                                    <point x="0.15493" y="0.842857" />
+                                    <point x="0.0140845" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.507042" hotspotY="0.5" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 2\avatar e3.png">
+                                <collision-poly>
+                                    <point x="0.15493" y="0.157143" />
+                                    <point x="0.492958" y="0.0142857" />
+                                    <point x="0.84507" y="0.157143" />
+                                    <point x="0.985915" y="0.5" />
+                                    <point x="0.84507" y="0.842857" />
+                                    <point x="0.492958" y="0.985714" />
+                                    <point x="0.15493" y="0.842857" />
+                                    <point x="0.0140845" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.507042" hotspotY="0.5" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 2\avatar e4.png">
+                                <collision-poly>
+                                    <point x="0.15493" y="0.157143" />
+                                    <point x="0.492958" y="0.0142857" />
+                                    <point x="0.84507" y="0.157143" />
+                                    <point x="0.985915" y="0.5" />
+                                    <point x="0.84507" y="0.842857" />
+                                    <point x="0.492958" y="0.985714" />
+                                    <point x="0.15493" y="0.842857" />
+                                    <point x="0.0140845" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.507042" hotspotY="0.5" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 2\avatar e5.png">
+                                <collision-poly>
+                                    <point x="0.15493" y="0.157143" />
+                                    <point x="0.492958" y="0.0142857" />
+                                    <point x="0.84507" y="0.157143" />
+                                    <point x="0.985915" y="0.5" />
+                                    <point x="0.84507" y="0.842857" />
+                                    <point x="0.492958" y="0.985714" />
+                                    <point x="0.15493" y="0.842857" />
+                                    <point x="0.0140845" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.507042" hotspotY="0.5" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 2\avatar e6.png">
+                                <collision-poly>
+                                    <point x="0.15493" y="0.157143" />
+                                    <point x="0.492958" y="0.0142857" />
+                                    <point x="0.84507" y="0.157143" />
+                                    <point x="0.985915" y="0.5" />
+                                    <point x="0.84507" y="0.842857" />
+                                    <point x="0.492958" y="0.985714" />
+                                    <point x="0.15493" y="0.842857" />
+                                    <point x="0.0140845" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.507042" hotspotY="0.5" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 2\avatar e7.png">
+                                <collision-poly>
+                                    <point x="0.15493" y="0.157143" />
+                                    <point x="0.492958" y="0.0142857" />
+                                    <point x="0.84507" y="0.157143" />
+                                    <point x="0.985915" y="0.5" />
+                                    <point x="0.84507" y="0.842857" />
+                                    <point x="0.492958" y="0.985714" />
+                                    <point x="0.15493" y="0.842857" />
+                                    <point x="0.0140845" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.507042" hotspotY="0.5" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 2\avatar e8.png">
+                                <collision-poly>
+                                    <point x="0.15493" y="0.157143" />
+                                    <point x="0.492958" y="0.0142857" />
+                                    <point x="0.84507" y="0.157143" />
+                                    <point x="0.985915" y="0.5" />
+                                    <point x="0.84507" y="0.842857" />
+                                    <point x="0.492958" y="0.985714" />
+                                    <point x="0.15493" y="0.842857" />
+                                    <point x="0.0140845" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.507042" hotspotY="0.5" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 2\avatar e9.png">
+                                <collision-poly>
+                                    <point x="0.15493" y="0.157143" />
+                                    <point x="0.492958" y="0.0142857" />
+                                    <point x="0.84507" y="0.157143" />
+                                    <point x="0.985915" y="0.5" />
+                                    <point x="0.84507" y="0.842857" />
+                                    <point x="0.492958" y="0.985714" />
+                                    <point x="0.15493" y="0.842857" />
+                                    <point x="0.0140845" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.507042" hotspotY="0.5" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 2\avatar e10.png">
+                                <collision-poly>
+                                    <point x="0.15493" y="0.157143" />
+                                    <point x="0.492958" y="0.0142857" />
+                                    <point x="0.84507" y="0.157143" />
+                                    <point x="0.985915" y="0.5" />
+                                    <point x="0.84507" y="0.842857" />
+                                    <point x="0.492958" y="0.985714" />
+                                    <point x="0.15493" y="0.842857" />
+                                    <point x="0.0140845" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.507042" hotspotY="0.5" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 2\avatar e11.png">
+                                <collision-poly>
+                                    <point x="0.15493" y="0.157143" />
+                                    <point x="0.492958" y="0.0142857" />
+                                    <point x="0.84507" y="0.157143" />
+                                    <point x="0.985915" y="0.5" />
+                                    <point x="0.84507" y="0.842857" />
+                                    <point x="0.492958" y="0.985714" />
+                                    <point x="0.15493" y="0.842857" />
+                                    <point x="0.0140845" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.507042" hotspotY="0.5" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 2\avatar e12.png">
+                                <collision-poly>
+                                    <point x="0.15493" y="0.157143" />
+                                    <point x="0.492958" y="0.0142857" />
+                                    <point x="0.84507" y="0.157143" />
+                                    <point x="0.985915" y="0.5" />
+                                    <point x="0.84507" y="0.842857" />
+                                    <point x="0.492958" y="0.985714" />
+                                    <point x="0.15493" y="0.842857" />
+                                    <point x="0.0140845" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.507042" hotspotY="0.5" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 2\avatar e13.png">
+                                <collision-poly>
+                                    <point x="0.15493" y="0.157143" />
+                                    <point x="0.492958" y="0.0142857" />
+                                    <point x="0.84507" y="0.157143" />
+                                    <point x="0.985915" y="0.5" />
+                                    <point x="0.84507" y="0.842857" />
+                                    <point x="0.492958" y="0.985714" />
+                                    <point x="0.15493" y="0.842857" />
+                                    <point x="0.0140845" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.507042" hotspotY="0.5" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 2\avatar e14.png">
+                                <collision-poly>
+                                    <point x="0.15493" y="0.157143" />
+                                    <point x="0.492958" y="0.0142857" />
+                                    <point x="0.84507" y="0.157143" />
+                                    <point x="0.985915" y="0.5" />
+                                    <point x="0.84507" y="0.842857" />
+                                    <point x="0.492958" y="0.985714" />
+                                    <point x="0.15493" y="0.842857" />
+                                    <point x="0.0140845" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.507042" hotspotY="0.5" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 2\avatar e15.png">
+                                <collision-poly>
+                                    <point x="0.15493" y="0.157143" />
+                                    <point x="0.492958" y="0.0142857" />
+                                    <point x="0.84507" y="0.157143" />
+                                    <point x="0.985915" y="0.5" />
+                                    <point x="0.84507" y="0.842857" />
+                                    <point x="0.492958" y="0.985714" />
+                                    <point x="0.15493" y="0.842857" />
+                                    <point x="0.0140845" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.507042" hotspotY="0.5" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 2\avatar e16.png">
+                                <collision-poly>
+                                    <point x="0.15493" y="0.157143" />
+                                    <point x="0.492958" y="0.0142857" />
+                                    <point x="0.84507" y="0.157143" />
+                                    <point x="0.985915" y="0.5" />
+                                    <point x="0.84507" y="0.842857" />
+                                    <point x="0.492958" y="0.985714" />
+                                    <point x="0.15493" y="0.842857" />
+                                    <point x="0.0140845" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.507042" hotspotY="0.5" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 2\avatar e17.png">
+                                <collision-poly>
+                                    <point x="0.15493" y="0.157143" />
+                                    <point x="0.492958" y="0.0142857" />
+                                    <point x="0.84507" y="0.157143" />
+                                    <point x="0.985915" y="0.5" />
+                                    <point x="0.84507" y="0.842857" />
+                                    <point x="0.492958" y="0.985714" />
+                                    <point x="0.15493" y="0.842857" />
+                                    <point x="0.0140845" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.507042" hotspotY="0.5" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 2\avatar e18.png">
+                                <collision-poly>
+                                    <point x="0.15493" y="0.157143" />
+                                    <point x="0.492958" y="0.0142857" />
+                                    <point x="0.84507" y="0.157143" />
+                                    <point x="0.985915" y="0.5" />
+                                    <point x="0.84507" y="0.842857" />
+                                    <point x="0.492958" y="0.985714" />
+                                    <point x="0.15493" y="0.842857" />
+                                    <point x="0.0140845" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.507042" hotspotY="0.5" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 2\avatar e19.png">
+                                <collision-poly>
+                                    <point x="0.15493" y="0.157143" />
+                                    <point x="0.492958" y="0.0142857" />
+                                    <point x="0.84507" y="0.157143" />
+                                    <point x="0.985915" y="0.5" />
+                                    <point x="0.84507" y="0.842857" />
+                                    <point x="0.492958" y="0.985714" />
+                                    <point x="0.15493" y="0.842857" />
+                                    <point x="0.0140845" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.507042" hotspotY="0.5" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 2\avatar e20.png">
+                                <collision-poly>
+                                    <point x="0.15493" y="0.157143" />
+                                    <point x="0.492958" y="0.0142857" />
+                                    <point x="0.84507" y="0.157143" />
+                                    <point x="0.985915" y="0.5" />
+                                    <point x="0.84507" y="0.842857" />
+                                    <point x="0.492958" y="0.985714" />
+                                    <point x="0.15493" y="0.842857" />
+                                    <point x="0.0140845" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
                         <animation framecount="3" loop="1" name="j15a" pingpong="0" repeatcount="1" repeatto="0" sid="523289349295672" speed="5">
                             <frame duration="1" hotspotX="0.5" hotspotY="0.50505" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 15\Fuego 1.png">
                                 <image-point name="ojoI" x="0.275" y="0.50505" />
@@ -653,6 +1137,10 @@
                             <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 2\colina.png" />
                             <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 2\advertencia.png" />
                         </animation>
+                        <animation framecount="2" loop="0" name="j4a" pingpong="0" repeatcount="1" repeatto="0" sid="429685665094099" speed="0">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.516129" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 4\mensaje.png" />
+                            <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 4\collage.png" />
+                        </animation>
                         <animation framecount="5" loop="0" name="j9a" pingpong="0" repeatcount="1" repeatto="0" sid="886861241417524" speed="0">
                             <frame duration="1" hotspotX="0.501229" hotspotY="0.5" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 9\monitor normal.png" />
                             <frame duration="1" hotspotX="0.501229" hotspotY="0.5" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 9\monitor feliz.png" />
@@ -685,9 +1173,6 @@
                         <frame duration="1" hotspotX="0" hotspotY="0" />
                         <frame duration="1" hotspotX="0" hotspotY="0" />
                         <frame duration="1" hotspotX="0" hotspotY="0" />
-                    </animation>
-                    <animation framecount="1" loop="0" name="j4a" pingpong="0" repeatcount="1" repeatto="0" sid="429685665094099" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.516129" />
                     </animation>
                     <animation framecount="2" loop="0" name="j5a" pingpong="0" repeatcount="1" repeatto="0" sid="890880559485948" speed="0">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
@@ -1271,6 +1756,12 @@
             <file name="A3-tapon 4.ogg" />
             <file name="A3-tono ascendiendo 6.m4a" />
             <file name="A3-tono ascendiendo 6.ogg" />
+            <file name="A1-niños alegres.m4a" />
+            <file name="A1-niños alegres.ogg" />
+            <file name="A3-reloj.m4a" />
+            <file name="A3-reloj.ogg" />
+            <file name="A3-timbre.m4a" />
+            <file name="A3-timbre.ogg" />
         </sound-folder>
     </sounds-folder>
     <music-folder>

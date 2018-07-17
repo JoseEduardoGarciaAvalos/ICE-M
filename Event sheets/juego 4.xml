@@ -129,6 +129,39 @@
                                         </action>
                                     </actions>
                                 </event-block>
+                                <event-block sid="260672861287511">
+                                    <conditions>
+                                        <condition id="-14" name="Pick by unique ID" sid="226200715514679" type="Enemigo">
+                                            <param id="0" name="Unique ID">Personas.UID</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="943926528481324" type="Enemigo">
+                                            <param id="0" name="Animation">&quot;j2a&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="870610090632224" type="Enemigo">
+                                            <param id="0" name="Frame number">random(Self.AnimationFrameCount)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="455278378891506">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="305849891205936" type="System" />
+                                        <condition id="-14" name="Pick by unique ID" sid="425284542523003" type="Aliado">
+                                            <param id="0" name="Unique ID">Personas.UID</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="763422301311198" type="Aliado">
+                                            <param id="0" name="Animation">&quot;j2a&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="834018937226347" type="Aliado">
+                                            <param id="0" name="Frame number">random(Self.AnimationFrameCount)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
                             </sub-events>
                         </event-block>
                     </sub-events>
@@ -304,6 +337,18 @@
                                     </actions>
                                 </event-block>
                             </sub-events>
+                        </event-block>
+                        <event-block sid="946969303394607">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="697160869790348" type="Utileria">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">11</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-24" name="Move to top" sid="749560467199667" type="Utileria" />
+                            </actions>
                         </event-block>
                     </sub-events>
                 </event-block>
