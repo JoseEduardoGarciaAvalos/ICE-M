@@ -1,4 +1,4 @@
-﻿/* Estilos del test */
+/* Estilos del test */
 .c2_linea {
     height: 2px;
     background-color: white;
@@ -117,4 +117,16 @@
 }
 .c2_titulo4 td{
     padding-left: 5px;
+}
+/*Para la ayuda*/
+.c2_filaTitulo{
+    background: #568abd;
+    text-align: center;
+}
+.c2_columnaImagen{
+    width: 30%;
+    text-align: center;
+}
+.c2_viñeta{
+    margin-left: 5%;
 }
