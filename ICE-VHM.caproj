@@ -109,6 +109,13 @@
             <object-type name="Aliado" sid="972655528226897">
                 <plugin id="Sprite" />
                 <animation-folder>
+                    <animation-folder name="Ivania">
+                        <animation framecount="3" loop="0" name="j7a" pingpong="0" repeatcount="1" repeatto="0" sid="923703640316655" speed="0">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 7\Porrista 1.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 7\Porrista 2.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 7\Porrista 3.png" />
+                        </animation>
+                    </animation-folder>
                     <animation-folder name="Eduardo">
                         <animation framecount="1" loop="0" name="feliz" pingpong="0" repeatcount="1" repeatto="0" sid="916773995906572" speed="5">
                             <frame duration="1" hotspotX="0.5" hotspotY="0.5">
@@ -408,13 +415,6 @@
                     </animation>
                     <animation framecount="1" loop="0" name="j6a" pingpong="0" repeatcount="1" repeatto="0" sid="201573878894222" speed="5">
                         <frame duration="1" hotspotX="0.375" hotspotY="0.5" />
-                    </animation>
-                    <animation framecount="3" loop="0" name="j7a" pingpong="0" repeatcount="1" repeatto="0" sid="923703640316655" speed="0">
-                        <frame duration="1" hotspotX="0.503937" hotspotY="0.5">
-                            <image-point name="papel" x="0.125984" y="0.508" />
-                        </frame>
-                        <frame duration="1" hotspotX="0.503937" hotspotY="0.5" />
-                        <frame duration="1" hotspotX="0.503937" hotspotY="0.5" />
                     </animation>
                     <animation framecount="2" loop="0" name="j12a" pingpong="0" repeatcount="1" repeatto="0" sid="847347546805596" speed="0">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
@@ -853,6 +853,11 @@
                                 </collision-poly>
                             </frame>
                         </animation>
+                        <animation framecount="3" loop="0" name="j7a" pingpong="0" repeatcount="1" repeatto="0" sid="285421594743549" speed="0">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 7\Porrista 1.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 7\Porrista 2.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 7\Porrista 3.png" />
+                        </animation>
                     </animation-folder>
                     <animation-folder name="Eduardo">
                         <animation framecount="1" loop="0" name="j2a" pingpong="0" repeatcount="1" repeatto="0" sid="528009826428567" speed="0">
@@ -940,13 +945,6 @@
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5">
                             <image-point name="boca" x="0.375" y="0.55" />
                         </frame>
-                    </animation>
-                    <animation framecount="3" loop="0" name="j7a" pingpong="0" repeatcount="1" repeatto="0" sid="285421594743549" speed="0">
-                        <frame duration="1" hotspotX="0.503937" hotspotY="0.5">
-                            <image-point name="papel" x="0.133858" y="0.504" />
-                        </frame>
-                        <frame duration="1" hotspotX="0.503937" hotspotY="0.5" />
-                        <frame duration="1" hotspotX="0.503937" hotspotY="0.5" />
                     </animation>
                     <animation framecount="1" loop="0" name="j11a" pingpong="0" repeatcount="1" repeatto="0" sid="767758980664565" speed="5">
                         <frame duration="1" hotspotX="0" hotspotY="0.5" />
@@ -1132,6 +1130,16 @@
                     <instance-variable name="ID" sid="884563096945502" type="number" />
                 </instance-variables>
                 <animation-folder>
+                    <animation-folder name="Ivania">
+                        <animation framecount="3" loop="0" name="j7a" pingpong="0" repeatcount="1" repeatto="0" sid="181947022628961" speed="0">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 7\Inactivo.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 7\Me gusta.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 7\No me gusta.png" />
+                        </animation>
+                        <animation framecount="1" loop="0" name="j7b" pingpong="0" repeatcount="1" repeatto="0" sid="713001930335287" speed="0">
+                            <frame duration="1" hotspotX="0" hotspotY="0" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 7\Cancha.png" />
+                        </animation>
+                    </animation-folder>
                     <animation-folder name="Eduardo">
                         <animation framecount="2" loop="0" name="j2a" pingpong="0" repeatcount="1" repeatto="0" sid="861775481893718" speed="0">
                             <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 2\colina.png" />
@@ -1181,11 +1189,6 @@
                     <animation framecount="1" loop="1" name="j6a" pingpong="0" repeatcount="1" repeatto="0" sid="813051714764899" speed="6">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     </animation>
-                    <animation framecount="3" loop="0" name="j7a" pingpong="0" repeatcount="1" repeatto="0" sid="181947022628961" speed="0">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                    </animation>
                     <animation framecount="6" loop="0" name="j11a" pingpong="0" repeatcount="1" repeatto="0" sid="995241923793758" speed="0">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
@@ -1207,7 +1210,7 @@
                     <animation framecount="3" loop="0" name="j14b" pingpong="0" repeatcount="1" repeatto="0" sid="730598658814629" speed="0">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <frame duration="1" hotspotX="3.07143" hotspotY="2.02632">
                             <collision-poly>
                                 <point x="0" y="0" />
                                 <point x="0.428571" y="0" />
