@@ -447,7 +447,6 @@
                         <variable comment="indice que se colocará en el CSV" constant="0" name="indice" sid="766057717880292" static="0" type="text"></variable>
                         <variable comment="nick del usuario" constant="0" name="nick" sid="883234153266193" static="0" type="text"></variable>
                         <variable comment="indice correlativo" constant="0" name="can" sid="503375655423618" static="0" type="number">0</variable>
-                        <variable comment="Cantidad de registros que permanecera disponible" constant="1" name="N" sid="633520327313045" static="0" type="number">2</variable>
                         <comment>Especificar las rutas</comment>
                         <event-block sid="712649545826805">
                             <conditions>

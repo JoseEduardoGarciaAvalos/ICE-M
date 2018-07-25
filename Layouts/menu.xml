@@ -321,6 +321,9 @@
                     <instance-variables>
                         <ID>0</ID>
                     </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="Tiempo" />
+                    </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
