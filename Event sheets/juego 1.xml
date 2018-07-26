@@ -115,7 +115,7 @@
                                     </conditions>
                                     <actions>
                                         <action id="0" name="Play" sid="939190890317879" type="Audio">
-                                            <param id="0" name="Audio file">A3-tono ascendiendo 1</param>
+                                            <param id="0" name="Audio file">C3-musica de accion 1</param>
                                             <param id="2" name="Loop">1</param>
                                             <param id="3" name="Volume">gAudioLoop</param>
                                             <param id="1" name="Tag (optional)">&quot;L&quot;</param>
@@ -169,13 +169,34 @@
                                 <action id="-16" name="Wait" sid="504252589068693" type="System">
                                     <param id="0" name="Seconds">Random(0.5)</param>
                                 </action>
-                                <action id="-3" name="Create object" sid="165345687929668" type="System">
-                                    <param id="0" name="Object to create">Aliado</param>
-                                    <param id="1" name="Layer">&quot;Principal&quot;</param>
-                                    <param id="2" name="X">0</param>
-                                    <param id="3" name="Y">0</param>
-                                </action>
                             </actions>
+                            <sub-events>
+                                <event-block sid="198502251095863">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="211174078788068" type="System">
+                                            <param id="0" name="Variable">gDerrota</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="156972379160643" type="System">
+                                            <param id="0" name="Object to create">Aliado</param>
+                                            <param id="1" name="Layer">&quot;Principal&quot;</param>
+                                            <param id="2" name="X">0</param>
+                                            <param id="3" name="Y">0</param>
+                                        </action>
+                                        <action id="-25" name="Move to bottom" sid="903820211211020" type="Aliado" />
+                                        <action id="4" name="Set animation" sid="753300408433176" type="Aliado">
+                                            <param id="0" name="Animation">&quot;j2a&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="543904495458784" type="Aliado">
+                                            <param id="0" name="Frame number">random(Self.AnimationFrameCount)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                         <comment>Sino si el (parametro 1) = 1, entonces se creará un Enemigo, con un retardo aleatorio</comment>
                         <event-block sid="547815949494599">
@@ -191,13 +212,34 @@
                                 <action id="-16" name="Wait" sid="326811735662699" type="System">
                                     <param id="0" name="Seconds">Random(0.6)</param>
                                 </action>
-                                <action id="-3" name="Create object" sid="256335939623833" type="System">
-                                    <param id="0" name="Object to create">Enemigo</param>
-                                    <param id="1" name="Layer">&quot;Principal&quot;</param>
-                                    <param id="2" name="X">0</param>
-                                    <param id="3" name="Y">0</param>
-                                </action>
                             </actions>
+                            <sub-events>
+                                <event-block sid="548192897654415">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="973666959650978" type="System">
+                                            <param id="0" name="Variable">gDerrota</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="388403611475085" type="System">
+                                            <param id="0" name="Object to create">Enemigo</param>
+                                            <param id="1" name="Layer">&quot;Principal&quot;</param>
+                                            <param id="2" name="X">0</param>
+                                            <param id="3" name="Y">0</param>
+                                        </action>
+                                        <action id="-25" name="Move to bottom" sid="485370453943574" type="Enemigo" />
+                                        <action id="4" name="Set animation" sid="844083197829050" type="Enemigo">
+                                            <param id="0" name="Animation">&quot;j2a&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="718363533256406" type="Enemigo">
+                                            <param id="0" name="Frame number">random(Self.AnimationFrameCount)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                     </sub-events>
                 </event-block>
@@ -338,7 +380,7 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="4" name="Set animation" sid="693943374883033" type="Actores">
+                                <action disabled="1" id="4" name="Set animation" sid="693943374883033" type="Actores">
                                     <param id="0" name="Animation">&quot;triste&quot;</param>
                                     <param id="1" name="From">1</param>
                                 </action>

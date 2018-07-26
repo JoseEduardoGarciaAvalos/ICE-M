@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <c2project>
     <name>ICE-VHM</name>
     <description>Súper Juego</description>
@@ -399,7 +399,15 @@
                             <frame duration="1" hotspotX="0.5" hotspotY="0.502092" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 18\estudiante riendo.png" />
                         </animation>
                     </animation-folder>
-                    <animation framecount="1" loop="0" name="triste" pingpong="0" repeatcount="1" repeatto="0" sid="812938637880839" speed="5">
+                    <animation-folder name="Claudia">
+                        <animation framecount="1" loop="0" name="j6a" pingpong="0" repeatcount="1" repeatto="0" sid="201573878894222" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC8\Desktop\mis juegos\juego 6\Mesa de trabajo 1.png" />
+                        </animation>
+                        <animation framecount="1" loop="0" name="j20a" pingpong="0" repeatcount="1" repeatto="0" sid="499546916151971" speed="5">
+                            <frame duration="1" hotspotX="0.518519" hotspotY="0.518519" original-source="C:\Users\PC8\Desktop\juego 20\cerrar.png" />
+                        </animation>
+                    </animation-folder>
+                    <animation framecount="1" loop="0" name="feliz" pingpong="0" repeatcount="1" repeatto="0" sid="916773995906572" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5">
                             <collision-poly>
                                 <point x="0.22" y="0.22" />
@@ -413,8 +421,19 @@
                             </collision-poly>
                         </frame>
                     </animation>
-                    <animation framecount="1" loop="0" name="j6a" pingpong="0" repeatcount="1" repeatto="0" sid="201573878894222" speed="5">
-                        <frame duration="1" hotspotX="0.375" hotspotY="0.5" />
+                    <animation framecount="1" loop="0" name="triste" pingpong="0" repeatcount="1" repeatto="0" sid="812938637880839" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.22" y="0.22" />
+                                <point x="0.5" y="0.04" />
+                                <point x="0.84" y="0.16" />
+                                <point x="0.92" y="0.5" />
+                                <point x="0.81" y="0.81" />
+                                <point x="0.5" y="0.88" />
+                                <point x="0.26" y="0.74" />
+                                <point x="0.17" y="0.5" />
+                            </collision-poly>
+                        </frame>
                     </animation>
                     <animation framecount="2" loop="0" name="j12a" pingpong="0" repeatcount="1" repeatto="0" sid="847347546805596" speed="0">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
@@ -442,9 +461,6 @@
                                 <point x="1" y="0" />
                             </collision-poly>
                         </frame>
-                    </animation>
-                    <animation framecount="1" loop="0" name="j20a" pingpong="0" repeatcount="1" repeatto="0" sid="499546916151971" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -747,6 +763,23 @@
                             <frame duration="1" hotspotX="0.52" hotspotY="0.52" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 15\E_j15c-2.png" />
                         </animation>
                     </animation-folder>
+                    <animation-folder name="Claudia">
+                        <animation framecount="5" loop="0" name="j20a" pingpong="0" repeatcount="1" repeatto="0" sid="246717070330062" speed="0">
+                            <frame duration="1" hotspotX="0.500747" hotspotY="0.5" original-source="C:\Users\PC8\Desktop\juego 20\p1.png" />
+                            <frame duration="1" hotspotX="0.500747" hotspotY="0.5" original-source="C:\Users\PC8\Desktop\juego 20\p2.png" />
+                            <frame duration="1" hotspotX="0.500747" hotspotY="0.5" original-source="C:\Users\PC8\Desktop\juego 20\p3.png" />
+                            <frame duration="1" hotspotX="0.500747" hotspotY="0.5" original-source="C:\Users\PC8\Desktop\juego 20\p4.png" />
+                            <frame duration="1" hotspotX="0.500747" hotspotY="0.5" original-source="C:\Users\PC8\Desktop\juego 20\p5.png" />
+                        </animation>
+                        <animation framecount="6" loop="0" name="j6a" pingpong="0" repeatcount="1" repeatto="0" sid="637050976014004" speed="0">
+                            <frame duration="1" hotspotX="0.514286" hotspotY="0.514286" original-source="C:\Users\PC8\Desktop\mis juegos\juego 6\basura 1.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.514286" original-source="C:\Users\PC8\Desktop\mis juegos\juego 6\basura 2.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.514286" original-source="C:\Users\PC8\Desktop\mis juegos\juego 6\basura 3.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.514286" original-source="C:\Users\PC8\Desktop\mis juegos\juego 6\basura 4.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.514286" original-source="C:\Users\PC8\Desktop\mis juegos\juego 6\basura 5.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.514286" original-source="C:\Users\PC8\Desktop\mis juegos\juego 6\basura 6.png" />
+                        </animation>
+                    </animation-folder>
                     <animation framecount="1" loop="0" name="feliz" pingpong="0" repeatcount="1" repeatto="0" sid="539564640274444" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5">
                             <collision-poly>
@@ -781,11 +814,6 @@
                     <animation framecount="1" loop="0" name="j5a" pingpong="0" repeatcount="1" repeatto="0" sid="141939156998476" speed="5">
                         <frame duration="1" hotspotX="0.471429" hotspotY="0.5" />
                     </animation>
-                    <animation framecount="3" loop="0" name="j6a" pingpong="0" repeatcount="1" repeatto="0" sid="637050976014004" speed="0">
-                        <frame duration="1" hotspotX="0.514286" hotspotY="0.514286" />
-                        <frame duration="1" hotspotX="0.514286" hotspotY="0.514286" />
-                        <frame duration="1" hotspotX="0.514286" hotspotY="0.514286" />
-                    </animation>
                     <animation framecount="5" loop="0" name="j12a" pingpong="0" repeatcount="1" repeatto="0" sid="547291847329182" speed="0">
                         <frame duration="1" hotspotX="0.506667" hotspotY="0.506667" />
                         <frame duration="1" hotspotX="0.506667" hotspotY="0.506667" />
@@ -812,14 +840,6 @@
                     </animation>
                     <animation framecount="1" loop="0" name="j19a" pingpong="0" repeatcount="1" repeatto="0" sid="977845715539797" speed="5">
                         <frame duration="1" hotspotX="0.506667" hotspotY="0.5" />
-                    </animation>
-                    <animation framecount="6" loop="0" name="j20a" pingpong="0" repeatcount="1" repeatto="0" sid="246717070330062" speed="0">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -877,6 +897,37 @@
                                     <point x="0.932143" y="0" />
                                     <point x="0.5" y="0.967391" />
                                 </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                    <animation-folder name="Claudia">
+                        <animation framecount="1" loop="0" name="j1a" pingpong="0" repeatcount="1" repeatto="0" sid="628712883264351" speed="0">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC8\Desktop\juego 1\escudo.png" />
+                        </animation>
+                        <animation framecount="3" loop="1" name="j5a" pingpong="1" repeatcount="1" repeatto="0" sid="185516831301184" speed="0">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC8\Desktop\juego 5\avatar 4.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC8\Desktop\juego 5\avatar 5.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC8\Desktop\juego 5\avatar 6.png" />
+                        </animation>
+                        <animation framecount="3" loop="1" name="j5b" pingpong="1" repeatcount="1" repeatto="0" sid="745812983208207" speed="0">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC8\Desktop\juego 5\avatar 7.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC8\Desktop\juego 5\avatar 8.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC8\Desktop\juego 5\avatar 9.png" />
+                        </animation>
+                        <animation framecount="3" loop="1" name="j5c" pingpong="1" repeatcount="1" repeatto="0" sid="575047139528517" speed="0">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC8\Desktop\juego 5\avatar 1.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC8\Desktop\juego 5\avatar 2.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC8\Desktop\juego 5\avatar 3.png" />
+                        </animation>
+                        <animation framecount="1" loop="0" name="j6a" pingpong="0" repeatcount="1" repeatto="0" sid="244875200230639" speed="0">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC8\Desktop\mis juegos\juego 6\Mesa de trabajo 3.png" />
+                        </animation>
+                        <animation framecount="2" loop="1" name="j6b" pingpong="0" repeatcount="1" repeatto="0" sid="531316896545445" speed="10">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC8\Desktop\mis juegos\juego 6\soplo 1.png">
+                                <image-point name="boca" x="0.5" y="0.5" />
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC8\Desktop\mis juegos\juego 6\soplo 2.png">
+                                <image-point name="boca" x="0.5" y="0.5" />
                             </frame>
                         </animation>
                     </animation-folder>
@@ -1160,6 +1211,36 @@
                             <frame duration="1" hotspotX="0.500664" hotspotY="0.501945" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 18\grito.png" />
                             <frame duration="1" hotspotX="0.500707" hotspotY="0.502994" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 18\pensamiento.png" />
                             <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 18\biblioteca.png" />
+                        </animation>
+                    </animation-folder>
+                    <animation-folder name="claudia">
+                        <animation framecount="2" loop="0" name="j5a" pingpong="0" repeatcount="1" repeatto="0" sid="890880559485948" speed="0">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Liss\Desktop\mis juegos\juego 5\laberinto.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Liss\Desktop\mis juegos\juego 5\fondo.png" />
+                        </animation>
+                        <animation framecount="1" loop="1" name="j6a" pingpong="0" repeatcount="1" repeatto="0" sid="813051714764899" speed="6">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                        <animation framecount="1" loop="0" name="j6b" pingpong="0" repeatcount="1" repeatto="0" sid="251953777805042" speed="5">
+                            <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\PC8\Desktop\mis juegos\juego 6\fondo.png" />
+                        </animation>
+                        <animation framecount="1" loop="0" name="j14a" pingpong="0" repeatcount="1" repeatto="0" sid="914417490840870" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC8\Desktop\mis juegos\juego 14\sopa.png" />
+                        </animation>
+                        <animation framecount="3" loop="0" name="j14b" pingpong="0" repeatcount="1" repeatto="0" sid="730598658814629" speed="0">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC8\Desktop\mis juegos\juego 14\termometro 2.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC8\Desktop\mis juegos\juego 14\termometro 1.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <collision-poly>
+                                    <point x="0" y="0" />
+                                    <point x="0.428571" y="0" />
+                                    <point x="0.428571" y="1" />
+                                    <point x="0" y="1" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="1" loop="0" name="j14c" pingpong="0" repeatcount="1" repeatto="0" sid="874297133665648" speed="5">
+                            <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\PC8\Desktop\mis juegos\juego 14\fondo.png" />
                         </animation>
                     </animation-folder>
                     <animation framecount="1" loop="0" name="nada" pingpong="0" repeatcount="1" repeatto="0" sid="327359603633620" speed="5">
@@ -3652,6 +3733,16 @@
             </music-folder>
             <file name="C3-musica de circo 7.m4a" />
             <file name="C3-musica de circo 7.ogg" />
+        </music-folder>
+        <music-folder name="Claudia">
+            <file name="C3-musica de circo 8.m4a" />
+            <file name="C3-musica de circo 8.ogg" />
+            <file name="C3-musica de accion 1.m4a" />
+            <file name="C3-musica de accion 1.ogg" />
+            <file name="C3-musica de carrera 1.m4a" />
+            <file name="C3-musica de carrera 1.ogg" />
+            <file name="C3-musica de selva 1.m4a" />
+            <file name="C3-musica de selva 1.ogg" />
         </music-folder>
     </music-folder>
     <files-folder>

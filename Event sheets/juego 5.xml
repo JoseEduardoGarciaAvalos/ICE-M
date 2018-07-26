@@ -430,7 +430,7 @@
                                     </conditions>
                                     <actions>
                                         <action id="0" name="Play" sid="503103295313110" type="Audio">
-                                            <param id="0" name="Audio file">A3-tono ascendiendo 1</param>
+                                            <param id="0" name="Audio file">C3-musica de carrera 1</param>
                                             <param id="2" name="Loop">1</param>
                                             <param id="3" name="Volume">gAudioLoop</param>
                                             <param id="1" name="Tag (optional)">&quot;L&quot;</param>
