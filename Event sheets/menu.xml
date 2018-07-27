@@ -59,6 +59,7 @@
                                         <action id="-9" name="Destroy" sid="982184375548875" type="Particulas" />
                                         <action id="-9" name="Destroy" sid="359010470615491" type="IFrame" />
                                         <action id="-9" name="Destroy" sid="215950324645308" type="Microfono" />
+                                        <action id="-9" name="Destroy" sid="711288989547250" type="zgui" />
                                         <action id="0" name="Call function" sid="338395949953003" type="Funcion">
                                             <param id="0" name="Name">&quot;inactivoGRUPO&quot;</param>
                                             <param id="1" name="Parameter {n}"></param>

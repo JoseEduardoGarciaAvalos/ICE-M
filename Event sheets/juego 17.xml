@@ -241,6 +241,10 @@
                                 <action behavior="Bala" id="0" name="Set speed" sid="684290894270353" type="Utileria">
                                     <param id="0" name="Speed">random(100,150)</param>
                                 </action>
+                                <action id="-29" name="Move to object" sid="523487021071894" type="Utileria">
+                                    <param id="0" name="Where">0</param>
+                                    <param id="1" name="Object">Jugador</param>
+                                </action>
                             </actions>
                             <sub-events>
                                 <event-block sid="545636717431069">
