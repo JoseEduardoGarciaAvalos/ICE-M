@@ -1617,11 +1617,20 @@
                     </conditions>
                     <actions />
                     <sub-events>
+                        <event-block sid="581668713560506">
+                            <conditions />
+                            <actions />
+                        </event-block>
                         <comment>No este corriendo la tarea &quot;menuSalir&quot; ni que este fuera de la pantalla</comment>
                         <event-block sid="679735266786963">
                             <conditions>
                                 <condition id="51" inverted="1" name="Is task running" sid="110635746438946" type="Tarea">
                                     <param id="0" name="Name">&quot;menuSalir&quot;</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="615159312034855" type="System">
+                                    <param id="0" name="First value">zgui.PickedCount</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">1</param>
                                 </condition>
                                 <condition id="-3" name="Is on-screen" sid="171777122717200" type="zgui" />
                             </conditions>
@@ -1718,6 +1727,10 @@
                                             <param id="0" name="Variable">audio</param>
                                             <param id="1" name="Value">1</param>
                                         </action>
+                                        <action disabled="1" id="14" name="Log" sid="256447339489268" type="Navegador">
+                                            <param id="0" name="Type">0</param>
+                                            <param id="1" name="Message">&quot;CLIC MOUSE&quot;</param>
+                                        </action>
                                     </actions>
                                     <sub-events>
                                         <comment>niños</comment>
@@ -1773,6 +1786,10 @@
                                         <action id="-9" name="Set value" sid="235870533228574" type="System">
                                             <param id="0" name="Variable">audio</param>
                                             <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action disabled="1" id="14" name="Log" sid="408467445037562" type="Navegador">
+                                            <param id="0" name="Type">0</param>
+                                            <param id="1" name="Message">&quot;REMIX&quot;</param>
                                         </action>
                                     </actions>
                                     <sub-events>

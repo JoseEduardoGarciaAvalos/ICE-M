@@ -11,7 +11,7 @@
                 <variable comment="Ancho (en pixeles)" constant="1" name="ANCHOP" sid="245061699334526" static="0" type="number">60</variable>
                 <variable comment="Alto (en pixeles)" constant="1" name="ALTOP" sid="146955012090725" static="0" type="number">160</variable>
                 <variable comment="Cantidad inferior que se puede crear" constant="1" name="CPI" sid="955173463389392" static="0" type="number">3</variable>
-                <variable comment="Cantidad superior que se puede crear" constant="1" name="CPS" sid="519747195093320" static="0" type="number">6</variable>
+                <variable comment="Cantidad superior que se puede crear" constant="1" name="CPS" sid="519747195093320" static="0" type="number">9</variable>
                 <comment>VALORES DE LA FOTO</comment>
                 <variable comment="Ancho (en pixeles)" constant="1" name="ANCHOF" sid="674968271204172" static="0" type="number">250</variable>
                 <variable comment="Alto (en pixeles)" constant="1" name="ALTOF" sid="621298254528680" static="0" type="number">250</variable>
@@ -36,56 +36,6 @@
                         </action>
                         <action id="0" name="Call function" sid="911109802395854" type="Funcion">
                             <param id="0" name="Name">&quot;inicioGUI&quot;</param>
-                            <param id="1" name="Parameter {n}"></param>
-                        </action>
-                        <action id="1" name="Set blend mode" sid="827891865581183" type="Jugador">
-                            <param id="0" name="Blend mode">8</param>
-                        </action>
-                        <action id="-16" name="Set opacity" sid="468634943286122" type="Jugador">
-                            <param id="0" name="Opacity">0</param>
-                        </action>
-                        <action behavior="Orden" id="2" name="Set alignment" sid="244612598496236" type="Lineal">
-                            <param id="0" name="Alignment">1</param>
-                        </action>
-                        <action behavior="Orden" id="3" name="Set spacing" sid="314867682040575" type="Lineal">
-                            <param id="0" name="Spacing">60+20</param>
-                        </action>
-                        <action id="0" name="Add key" sid="104079133820341" type="Diccionario">
-                            <param id="0" name="Key">&quot;anchoP&quot;</param>
-                            <param id="1" name="Value">ANCHOP</param>
-                        </action>
-                        <action id="0" name="Add key" sid="145763745327696" type="Diccionario">
-                            <param id="0" name="Key">&quot;altoP&quot;</param>
-                            <param id="1" name="Value">ALTOP</param>
-                        </action>
-                        <action id="0" name="Add key" sid="443367566335128" type="Diccionario">
-                            <param id="0" name="Key">&quot;fallasN&quot;</param>
-                            <param id="1" name="Value">floor(random(CFI,CFS+1))</param>
-                        </action>
-                        <action id="0" name="Add key" sid="779269453275502" type="Diccionario">
-                            <param id="0" name="Key">&quot;fallasP&quot;</param>
-                            <param id="1" name="Value">PF</param>
-                        </action>
-                        <action id="0" name="Add key" sid="656586352977662" type="Diccionario">
-                            <param id="0" name="Key">&quot;fallas&quot;</param>
-                            <param id="1" name="Value">0</param>
-                        </action>
-                        <action id="0" name="Add key" sid="440559560357034" type="Diccionario">
-                            <param id="0" name="Key">&quot;espera&quot;</param>
-                            <param id="1" name="Value">EL</param>
-                        </action>
-                        <action id="-16" name="Wait" sid="956384809030187" type="System">
-                            <param id="0" name="Seconds">0</param>
-                        </action>
-                        <action id="0" name="Call function" sid="509857971653424" type="Funcion">
-                            <param id="0" name="Name">&quot;crearSospechosos&quot;</param>
-                            <param id="1" name="Parameter {n}">floor(random(CPI,CPS+1))</param>
-                        </action>
-                        <action id="-16" name="Wait" sid="430541377838214" type="System">
-                            <param id="0" name="Seconds">0</param>
-                        </action>
-                        <action id="0" name="Call function" sid="157647201846840" type="Funcion">
-                            <param id="0" name="Name">&quot;paso1&quot;</param>
                             <param id="1" name="Parameter {n}"></param>
                         </action>
                         <action id="-16" name="Wait" sid="361476339533223" type="System">
@@ -146,12 +96,12 @@
                                             <param id="0" name="Instance variable">ID</param>
                                             <param id="1" name="Value">51</param>
                                         </action>
-                                        <action id="5" name="Set frame" sid="502111670636029" type="Utileria">
-                                            <param id="0" name="Frame number">Diccionario.Get(&quot;correcto&quot;)-10</param>
-                                        </action>
                                         <action id="4" name="Set animation" sid="773722667317134" type="Utileria">
                                             <param id="0" name="Animation">&quot;j11a&quot;</param>
-                                            <param id="1" name="From">0</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="502111670636029" type="Utileria">
+                                            <param id="0" name="Frame number">Diccionario.Get(&quot;correcto&quot;)-10</param>
                                         </action>
                                         <action id="-7" name="Set size" sid="657744419089415" type="Utileria">
                                             <param id="0" name="Width">ANCHOP</param>
@@ -343,63 +293,120 @@
                         </action>
                     </actions>
                     <sub-events>
-                        <event-block sid="569590374134396">
-                            <conditions>
-                                <condition id="5" inverted="1" name="Is tag playing" sid="401078501217114" type="Audio">
-                                    <param id="0" name="Tag">&quot;L&quot;</param>
-                                </condition>
-                            </conditions>
+                        <event-block sid="669685625472503">
+                            <conditions />
                             <actions>
-                                <action id="0" name="Play" sid="645966824196263" type="Audio">
-                                    <param id="0" name="Audio file">A3-tono ascendiendo 1</param>
-                                    <param id="2" name="Loop">1</param>
-                                    <param id="3" name="Volume">gAudioLoop</param>
-                                    <param id="1" name="Tag (optional)">&quot;L&quot;</param>
+                                <action id="1" name="Set blend mode" sid="827891865581183" type="Jugador">
+                                    <param id="0" name="Blend mode">8</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="468634943286122" type="Jugador">
+                                    <param id="0" name="Opacity">0</param>
+                                </action>
+                                <action behavior="Orden" id="2" name="Set alignment" sid="244612598496236" type="Lineal">
+                                    <param id="0" name="Alignment">1</param>
+                                </action>
+                                <action behavior="Orden" id="3" name="Set spacing" sid="314867682040575" type="Lineal">
+                                    <param id="0" name="Spacing">60+20</param>
+                                </action>
+                                <action id="0" name="Add key" sid="104079133820341" type="Diccionario">
+                                    <param id="0" name="Key">&quot;anchoP&quot;</param>
+                                    <param id="1" name="Value">ANCHOP</param>
+                                </action>
+                                <action id="0" name="Add key" sid="145763745327696" type="Diccionario">
+                                    <param id="0" name="Key">&quot;altoP&quot;</param>
+                                    <param id="1" name="Value">ALTOP</param>
+                                </action>
+                                <action id="0" name="Add key" sid="443367566335128" type="Diccionario">
+                                    <param id="0" name="Key">&quot;fallasN&quot;</param>
+                                    <param id="1" name="Value">floor(random(CFI,CFS+1))</param>
+                                </action>
+                                <action id="0" name="Add key" sid="779269453275502" type="Diccionario">
+                                    <param id="0" name="Key">&quot;fallasP&quot;</param>
+                                    <param id="1" name="Value">PF</param>
+                                </action>
+                                <action id="0" name="Add key" sid="656586352977662" type="Diccionario">
+                                    <param id="0" name="Key">&quot;fallas&quot;</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="0" name="Add key" sid="440559560357034" type="Diccionario">
+                                    <param id="0" name="Key">&quot;espera&quot;</param>
+                                    <param id="1" name="Value">EL</param>
+                                </action>
+                                <action id="0" name="Call function" sid="509857971653424" type="Funcion">
+                                    <param id="0" name="Name">&quot;crearSospechosos&quot;</param>
+                                    <param id="1" name="Parameter {n}">floor(random(CPI,CPS+1))</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="430541377838214" type="System">
+                                    <param id="0" name="Seconds">0</param>
+                                </action>
+                                <action id="0" name="Call function" sid="157647201846840" type="Funcion">
+                                    <param id="0" name="Name">&quot;paso1&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                                <action id="-16" name="Wait" sid="457504205752099" type="System">
+                                    <param id="0" name="Seconds">0</param>
                                 </action>
                             </actions>
-                        </event-block>
-                        <event-block sid="970472024085730">
-                            <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="555187954553476" type="Utileria">
-                                    <param id="0" name="Instance variable">ID</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">50</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action behavior="Hash" id="1" name="Set value" sid="478663548522995" type="Utileria">
-                                    <param id="0" name="Key string">&quot;tarea&quot;</param>
-                                    <param id="1" name="Value">0</param>
-                                </action>
-                                <action behavior="Funcion" id="2" name="Call expression" sid="908681143159592" type="Utileria">
-                                    <param id="0" name="Expression">Self.Funcion.Call(&quot;definirTarea&quot;,3)</param>
-                                </action>
-                                <action id="-16" name="Wait" sid="257295450229830" type="System">
-                                    <param id="0" name="Seconds">EF</param>
-                                </action>
-                                <action behavior="Hash" id="1" name="Set value" sid="162249510375295" type="Utileria">
-                                    <param id="0" name="Key string">&quot;tarea&quot;</param>
-                                    <param id="1" name="Value">0</param>
-                                </action>
-                                <action behavior="Funcion" id="2" name="Call expression" sid="948417796733446" type="Utileria">
-                                    <param id="0" name="Expression">Self.Funcion.Call(&quot;definirTarea&quot;,4)</param>
-                                </action>
-                                <action behavior="Hash" id="1" name="Set value" sid="524626357841848" type="Jugador">
-                                    <param id="0" name="Key string">&quot;controlable&quot;</param>
-                                    <param id="1" name="Value">0</param>
-                                </action>
-                                <action id="-22" name="Set angle toward position" sid="643503484144777" type="Jugador">
-                                    <param id="0" name="X">LayoutWidth/2</param>
-                                    <param id="1" name="Y">LayoutHeight</param>
-                                </action>
-                                <action behavior="Hash" id="1" name="Set value" sid="355012690145622" type="Jugador">
-                                    <param id="0" name="Key string">&quot;tarea&quot;</param>
-                                    <param id="1" name="Value">0</param>
-                                </action>
-                                <action behavior="Funcion" id="2" name="Call expression" sid="230837042835422" type="Jugador">
-                                    <param id="0" name="Expression">Self.Funcion.Call(&quot;definirTarea&quot;,1)</param>
-                                </action>
-                            </actions>
+                            <sub-events>
+                                <event-block sid="569590374134396">
+                                    <conditions>
+                                        <condition id="5" inverted="1" name="Is tag playing" sid="401078501217114" type="Audio">
+                                            <param id="0" name="Tag">&quot;L&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="645966824196263" type="Audio">
+                                            <param id="0" name="Audio file">C3-musica de miedo 1</param>
+                                            <param id="2" name="Loop">1</param>
+                                            <param id="3" name="Volume">gAudioLoop</param>
+                                            <param id="1" name="Tag (optional)">&quot;L&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="970472024085730">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="555187954553476" type="Utileria">
+                                            <param id="0" name="Instance variable">ID</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">50</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Hash" id="1" name="Set value" sid="478663548522995" type="Utileria">
+                                            <param id="0" name="Key string">&quot;tarea&quot;</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action behavior="Funcion" id="2" name="Call expression" sid="908681143159592" type="Utileria">
+                                            <param id="0" name="Expression">Self.Funcion.Call(&quot;definirTarea&quot;,3)</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="257295450229830" type="System">
+                                            <param id="0" name="Seconds">EF</param>
+                                        </action>
+                                        <action behavior="Hash" id="1" name="Set value" sid="162249510375295" type="Utileria">
+                                            <param id="0" name="Key string">&quot;tarea&quot;</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action behavior="Funcion" id="2" name="Call expression" sid="948417796733446" type="Utileria">
+                                            <param id="0" name="Expression">Self.Funcion.Call(&quot;definirTarea&quot;,4)</param>
+                                        </action>
+                                        <action behavior="Hash" id="1" name="Set value" sid="524626357841848" type="Jugador">
+                                            <param id="0" name="Key string">&quot;controlable&quot;</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-22" name="Set angle toward position" sid="643503484144777" type="Jugador">
+                                            <param id="0" name="X">LayoutWidth/2</param>
+                                            <param id="1" name="Y">LayoutHeight</param>
+                                        </action>
+                                        <action behavior="Hash" id="1" name="Set value" sid="355012690145622" type="Jugador">
+                                            <param id="0" name="Key string">&quot;tarea&quot;</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action behavior="Funcion" id="2" name="Call expression" sid="230837042835422" type="Jugador">
+                                            <param id="0" name="Expression">Self.Funcion.Call(&quot;definirTarea&quot;,1)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                     </sub-events>
                 </event-block>

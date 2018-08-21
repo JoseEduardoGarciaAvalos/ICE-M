@@ -22,7 +22,7 @@
                         </action>
                         <action id="-9" name="Set value" sid="896065098233873" type="System">
                             <param id="0" name="Variable">gTiempo</param>
-                            <param id="1" name="Value">floor(random(6,11))</param>
+                            <param id="1" name="Value">floor(random(9,14))</param>
                         </action>
                         <action id="0" name="Call function" sid="799217645742718" type="Funcion">
                             <param id="0" name="Name">&quot;inicioGUI&quot;</param>
@@ -52,6 +52,9 @@
                         <action id="0" name="Call function" sid="341373148299505" type="Funcion">
                             <param id="0" name="Name">&quot;crearBaraja&quot;</param>
                             <param id="1" name="Parameter {n}">OPCION</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="773998110582385" type="System">
+                            <param id="0" name="Seconds">0</param>
                         </action>
                     </actions>
                     <sub-events>
@@ -106,8 +109,8 @@
                                     <param id="3" name="Y">0</param>
                                 </action>
                                 <action id="-7" name="Set size" sid="605890226715830" type="Texto">
-                                    <param id="0" name="Width">20</param>
-                                    <param id="1" name="Height">20</param>
+                                    <param id="0" name="Width">100</param>
+                                    <param id="1" name="Height">100</param>
                                 </action>
                                 <action id="-4" name="Set position to another object" sid="260087591803188" type="Texto">
                                     <param id="0" name="Object">Jugador</param>
@@ -127,7 +130,7 @@
                                 </action>
                                 <action id="-9" name="Set value" sid="892351987153264" type="System">
                                     <param id="0" name="Variable">desfase</param>
-                                    <param id="1" name="Value">0.2</param>
+                                    <param id="1" name="Value">0.8</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -509,7 +512,7 @@
                             </conditions>
                             <actions>
                                 <action id="0" name="Play" sid="776136869080800" type="Audio">
-                                    <param id="0" name="Audio file">A3-tono ascendiendo 1</param>
+                                    <param id="0" name="Audio file">C3-musica de invierno 2</param>
                                     <param id="2" name="Loop">1</param>
                                     <param id="3" name="Volume">gAudioLoop</param>
                                     <param id="1" name="Tag (optional)">&quot;L&quot;</param>

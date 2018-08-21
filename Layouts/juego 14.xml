@@ -29,7 +29,7 @@
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
             <instances>
-                <instance type="Utileria" uid="145">
+                <instance type="Utileria" uid="1">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>j14c</initial-animation>
@@ -783,10 +783,10 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>256</x>
-                        <y>106</y>
+                        <y>96</y>
                         <z>0</z>
                         <width>384</width>
-                        <height>342</height>
+                        <height>320</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
@@ -1947,14 +1947,14 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>96</x>
-                        <y>256</y>
+                        <x>64</x>
+                        <y>224</y>
                         <z>0</z>
-                        <width>64</width>
-                        <height>31.999998093</height>
+                        <width>32</width>
+                        <height>96</height>
                         <depth>0</depth>
-                        <hotspotX>3.071428537</hotspotX>
-                        <hotspotY>2.026315689</hotspotY>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>

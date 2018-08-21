@@ -83,6 +83,10 @@
                                 <action id="0" name="Set text" sid="581464071164101" type="Texto">
                                     <param id="0" name="Text">Diccionario.Get(&quot;i&quot;) &amp; &quot;/&quot; &amp; Diccionario.Get(&quot;n&quot;) </param>
                                 </action>
+                                <action id="-25" name="Move to bottom" sid="316466837814408" type="Texto" />
+                                <action id="-15" name="Set visible" sid="916497012523118" type="Texto">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
                             </actions>
                         </event-block>
                         <event-block sid="742632403883471">
@@ -138,7 +142,7 @@
                             </conditions>
                             <actions>
                                 <action id="0" name="Play" sid="433058381981276" type="Audio">
-                                    <param id="0" name="Audio file">A3-tono ascendiendo 1</param>
+                                    <param id="0" name="Audio file">C3-musica de circo 6</param>
                                     <param id="2" name="Loop">1</param>
                                     <param id="3" name="Volume">gAudioLoop</param>
                                     <param id="1" name="Tag (optional)">&quot;L&quot;</param>
@@ -661,6 +665,9 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action behavior="Plataforma" id="11" name="Set enabled" sid="536077194115881" type="Jugador">
+                                    <param id="0" name="State">0</param>
+                                </action>
                                 <action id="-9" name="Set value" sid="920232312439195" type="System">
                                     <param id="0" name="Variable">gDerrota</param>
                                     <param id="1" name="Value">Diccionario.Get(&quot;i&quot;)&lt;Diccionario.Get(&quot;n&quot;)</param>

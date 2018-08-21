@@ -101,6 +101,10 @@
                                 <action id="0" name="Set text" sid="272124687160506" type="Texto">
                                     <param id="0" name="Text">Diccionario.Get(&quot;i&quot;) &amp; &quot;/&quot; &amp; Diccionario.Get(&quot;n&quot;) </param>
                                 </action>
+                                <action id="-26" name="Move to layer" sid="224425942997618" type="Texto">
+                                    <param id="0" name="Layer">&quot;GUI&quot;</param>
+                                </action>
+                                <action id="-25" name="Move to bottom" sid="584399130862929" type="Texto" />
                             </actions>
                         </event-block>
                         <comment>Definir las propiedades del jugador</comment>
@@ -173,7 +177,7 @@
                             </conditions>
                             <actions>
                                 <action id="0" name="Play" sid="327136990779543" type="Audio">
-                                    <param id="0" name="Audio file">A3-tono ascendiendo 1</param>
+                                    <param id="0" name="Audio file">C3-musica de villano 1</param>
                                     <param id="2" name="Loop">1</param>
                                     <param id="3" name="Volume">gAudioLoop</param>
                                     <param id="1" name="Tag (optional)">&quot;L&quot;</param>

@@ -77,7 +77,9 @@
         <behavior author="Scirra" id="shadowcaster" version="1">Shadow Caster</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
-    <used-effects />
+    <used-effects>
+        <effect author="Viktor Korsun" id="water">Water</effect>
+    </used-effects>
     <configurations>
         <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
     </configurations>
@@ -114,6 +116,19 @@
                             <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 7\Porrista 1.png" />
                             <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 7\Porrista 2.png" />
                             <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 7\Porrista 3.png" />
+                        </animation>
+                        <animation framecount="2" loop="0" name="j12a" pingpong="0" repeatcount="1" repeatto="0" sid="847347546805596" speed="0">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\OneDrive\Tesis\APLICACIÓN\PROCESO\MINIJUEGOS\Juego 12\juez 1.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\OneDrive\Tesis\APLICACIÓN\PROCESO\MINIJUEGOS\Juego 12\juez 2.png" />
+                        </animation>
+                        <animation framecount="3" loop="1" name="j13a" pingpong="0" repeatcount="1" repeatto="0" sid="852999167376512" speed="5">
+                            <frame duration="1" hotspotX="0.509804" hotspotY="0.5" original-source="G:\OneDrive\Tesis\APLICACIÓN\PROCESO\MINIJUEGOS\Juego 13\pato llorando 1.png" />
+                            <frame duration="1" hotspotX="0.509804" hotspotY="0.5" original-source="G:\OneDrive\Tesis\APLICACIÓN\PROCESO\MINIJUEGOS\Juego 13\pato llorando 2.png" />
+                            <frame duration="1" hotspotX="0.509804" hotspotY="0.5" original-source="G:\OneDrive\Tesis\APLICACIÓN\PROCESO\MINIJUEGOS\Juego 13\pato llorando 3.png" />
+                        </animation>
+                        <animation framecount="2" loop="1" name="j13b" pingpong="0" repeatcount="1" repeatto="0" sid="651150579013977" speed="5">
+                            <frame duration="1" hotspotX="0.509804" hotspotY="0.5" original-source="G:\OneDrive\Tesis\APLICACIÓN\PROCESO\MINIJUEGOS\Juego 13\pato volando 1.png" />
+                            <frame duration="1" hotspotX="0.509804" hotspotY="0.5" original-source="G:\OneDrive\Tesis\APLICACIÓN\PROCESO\MINIJUEGOS\Juego 13\pato volando 2.png" />
                         </animation>
                     </animation-folder>
                     <animation-folder name="Eduardo">
@@ -435,33 +450,6 @@
                             </collision-poly>
                         </frame>
                     </animation>
-                    <animation framecount="2" loop="0" name="j12a" pingpong="0" repeatcount="1" repeatto="0" sid="847347546805596" speed="0">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                    </animation>
-                    <animation framecount="3" loop="1" name="j13a" pingpong="0" repeatcount="1" repeatto="0" sid="852999167376512" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                    </animation>
-                    <animation framecount="2" loop="1" name="j13b" pingpong="0" repeatcount="1" repeatto="0" sid="651150579013977" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                            <collision-poly>
-                                <point x="1" y="1" />
-                                <point x="0" y="1" />
-                                <point x="0" y="0" />
-                                <point x="1" y="0" />
-                            </collision-poly>
-                        </frame>
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                            <collision-poly>
-                                <point x="1" y="1" />
-                                <point x="0" y="1" />
-                                <point x="0" y="0" />
-                                <point x="1" y="0" />
-                            </collision-poly>
-                        </frame>
-                    </animation>
                 </animation-folder>
             </object-type>
             <object-type name="Enemigo" sid="370965522238246">
@@ -485,6 +473,30 @@
                             <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC-Dell\Desktop\Juego 10\Mesa de trabajo 19.png" />
                             <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC-Dell\Desktop\Juego 10\Mesa de trabajo 20.png" />
                             <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC-Dell\Desktop\Juego 10\Mesa de trabajo 21.png" />
+                        </animation>
+                        <animation framecount="5" loop="0" name="j12a" pingpong="0" repeatcount="1" repeatto="0" sid="547291847329182" speed="0">
+                            <frame duration="1" hotspotX="0.506667" hotspotY="0.506667" original-source="G:\OneDrive\Tesis\APLICACIÓN\PROCESO\MINIJUEGOS\Juego 12\hielo 1.png" />
+                            <frame duration="1" hotspotX="0.506667" hotspotY="0.506667" original-source="G:\OneDrive\Tesis\APLICACIÓN\PROCESO\MINIJUEGOS\Juego 12\hielo 2.png" />
+                            <frame duration="1" hotspotX="0.506667" hotspotY="0.506667" original-source="G:\OneDrive\Tesis\APLICACIÓN\PROCESO\MINIJUEGOS\Juego 12\hielo 3.png" />
+                            <frame duration="1" hotspotX="0.506667" hotspotY="0.506667" original-source="G:\OneDrive\Tesis\APLICACIÓN\PROCESO\MINIJUEGOS\Juego 12\hielo 4.png">
+                                <collision-poly>
+                                    <point x="0" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0" y="1" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.506667" hotspotY="0.506667">
+                                <collision-poly>
+                                    <point x="0" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0" y="1" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="1" loop="0" name="j17a" pingpong="0" repeatcount="1" repeatto="0" sid="436935460296957" speed="5">
+                            <frame duration="1" hotspotX="0.516129" hotspotY="0.5" original-source="G:\OneDrive\Tesis\APLICACIÓN\PROCESO\MINIJUEGOS\Juego 17\agua.png" />
                         </animation>
                     </animation-folder>
                     <animation-folder name="Eduardo">
@@ -764,12 +776,8 @@
                         </animation>
                     </animation-folder>
                     <animation-folder name="Claudia">
-                        <animation framecount="5" loop="0" name="j20a" pingpong="0" repeatcount="1" repeatto="0" sid="246717070330062" speed="0">
-                            <frame duration="1" hotspotX="0.500747" hotspotY="0.5" original-source="C:\Users\PC8\Desktop\juego 20\p1.png" />
-                            <frame duration="1" hotspotX="0.500747" hotspotY="0.5" original-source="C:\Users\PC8\Desktop\juego 20\p2.png" />
-                            <frame duration="1" hotspotX="0.500747" hotspotY="0.5" original-source="C:\Users\PC8\Desktop\juego 20\p3.png" />
-                            <frame duration="1" hotspotX="0.500747" hotspotY="0.5" original-source="C:\Users\PC8\Desktop\juego 20\p4.png" />
-                            <frame duration="1" hotspotX="0.500747" hotspotY="0.5" original-source="C:\Users\PC8\Desktop\juego 20\p5.png" />
+                        <animation framecount="1" loop="0" name="j5a" pingpong="0" repeatcount="1" repeatto="0" sid="141939156998476" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="\\jose-pc\G\OneDrive\Tesis\APLICACIÓN\PROCESO\MINIJUEGOS\juego 5\pieza.png" />
                         </animation>
                         <animation framecount="6" loop="0" name="j6a" pingpong="0" repeatcount="1" repeatto="0" sid="637050976014004" speed="0">
                             <frame duration="1" hotspotX="0.514286" hotspotY="0.514286" original-source="C:\Users\PC8\Desktop\mis juegos\juego 6\basura 1.png" />
@@ -778,6 +786,16 @@
                             <frame duration="1" hotspotX="0.5" hotspotY="0.514286" original-source="C:\Users\PC8\Desktop\mis juegos\juego 6\basura 4.png" />
                             <frame duration="1" hotspotX="0.5" hotspotY="0.514286" original-source="C:\Users\PC8\Desktop\mis juegos\juego 6\basura 5.png" />
                             <frame duration="1" hotspotX="0.5" hotspotY="0.514286" original-source="C:\Users\PC8\Desktop\mis juegos\juego 6\basura 6.png" />
+                        </animation>
+                        <animation framecount="1" loop="0" name="j19a" pingpong="0" repeatcount="1" repeatto="0" sid="977845715539797" speed="5">
+                            <frame duration="1" hotspotX="0.506667" hotspotY="0.5" original-source="\\jose-pc\G\OneDrive\Tesis\APLICACIÓN\PROCESO\MINIJUEGOS\Juego 19\galleta.png" />
+                        </animation>
+                        <animation framecount="5" loop="0" name="j20a" pingpong="0" repeatcount="1" repeatto="0" sid="246717070330062" speed="0">
+                            <frame duration="1" hotspotX="0.500747" hotspotY="0.5" original-source="C:\Users\PC8\Desktop\juego 20\p1.png" />
+                            <frame duration="1" hotspotX="0.500747" hotspotY="0.5" original-source="C:\Users\PC8\Desktop\juego 20\p2.png" />
+                            <frame duration="1" hotspotX="0.500747" hotspotY="0.5" original-source="C:\Users\PC8\Desktop\juego 20\p3.png" />
+                            <frame duration="1" hotspotX="0.500747" hotspotY="0.5" original-source="C:\Users\PC8\Desktop\juego 20\p4.png" />
+                            <frame duration="1" hotspotX="0.500747" hotspotY="0.5" original-source="C:\Users\PC8\Desktop\juego 20\p5.png" />
                         </animation>
                     </animation-folder>
                     <animation framecount="1" loop="0" name="feliz" pingpong="0" repeatcount="1" repeatto="0" sid="539564640274444" speed="5">
@@ -811,42 +829,17 @@
                     <animation framecount="1" loop="0" name="nada" pingpong="0" repeatcount="1" repeatto="0" sid="490550282291335" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     </animation>
-                    <animation framecount="1" loop="0" name="j5a" pingpong="0" repeatcount="1" repeatto="0" sid="141939156998476" speed="5">
-                        <frame duration="1" hotspotX="0.471429" hotspotY="0.5" />
-                    </animation>
-                    <animation framecount="5" loop="0" name="j12a" pingpong="0" repeatcount="1" repeatto="0" sid="547291847329182" speed="0">
-                        <frame duration="1" hotspotX="0.506667" hotspotY="0.506667" />
-                        <frame duration="1" hotspotX="0.506667" hotspotY="0.506667" />
-                        <frame duration="1" hotspotX="0.506667" hotspotY="0.506667" />
-                        <frame duration="1" hotspotX="0.506667" hotspotY="0.506667">
-                            <collision-poly>
-                                <point x="0" y="1" />
-                                <point x="0" y="1" />
-                                <point x="0" y="1" />
-                                <point x="0" y="1" />
-                            </collision-poly>
-                        </frame>
-                        <frame duration="1" hotspotX="0.506667" hotspotY="0.506667">
-                            <collision-poly>
-                                <point x="0" y="1" />
-                                <point x="0" y="1" />
-                                <point x="0" y="1" />
-                                <point x="0" y="1" />
-                            </collision-poly>
-                        </frame>
-                    </animation>
-                    <animation framecount="1" loop="0" name="j17a" pingpong="0" repeatcount="1" repeatto="0" sid="436935460296957" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                    </animation>
-                    <animation framecount="1" loop="0" name="j19a" pingpong="0" repeatcount="1" repeatto="0" sid="977845715539797" speed="5">
-                        <frame duration="1" hotspotX="0.506667" hotspotY="0.5" />
-                    </animation>
                 </animation-folder>
             </object-type>
             <object-type name="Jugador" sid="444597851567529">
                 <plugin id="Sprite" />
                 <animation-folder>
                     <animation-folder name="Ivania">
+                        <animation framecount="3" loop="0" name="j7a" pingpong="0" repeatcount="1" repeatto="0" sid="285421594743549" speed="0">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 7\Porrista 1.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 7\Porrista 2.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 7\Porrista 3.png" />
+                        </animation>
                         <animation framecount="2" loop="0" name="j10a" pingpong="0" repeatcount="1" repeatto="0" sid="319115048974480" speed="0">
                             <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC-Dell\Desktop\Juego 10\Mesa de trabajo 1.png">
                                 <collision-poly>
@@ -873,10 +866,404 @@
                                 </collision-poly>
                             </frame>
                         </animation>
-                        <animation framecount="3" loop="0" name="j7a" pingpong="0" repeatcount="1" repeatto="0" sid="285421594743549" speed="0">
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 7\Porrista 1.png" />
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 7\Porrista 2.png" />
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 7\Porrista 3.png" />
+                        <animation framecount="1" loop="0" name="j11a" pingpong="0" repeatcount="1" repeatto="0" sid="767758980664565" speed="5">
+                            <frame duration="1" hotspotX="0" hotspotY="0.5" original-source="G:\OneDrive\Tesis\APLICACIÓN\PROCESO\MINIJUEGOS\Juego 11\luz.png" />
+                        </animation>
+                        <animation framecount="1" loop="0" name="j12a" pingpong="0" repeatcount="1" repeatto="0" sid="403836043165270" speed="0">
+                            <frame duration="1" hotspotX="0.661538" hotspotY="0.49375" original-source="G:\OneDrive\Tesis\APLICACIÓN\PROCESO\MINIJUEGOS\Juego 12\patinadora normal.png" />
+                        </animation>
+                        <animation framecount="4" loop="0" name="j12b" pingpong="0" repeatcount="1" repeatto="0" sid="325319757991309" speed="10">
+                            <frame duration="1" hotspotX="0.397516" hotspotY="0.53125" original-source="G:\OneDrive\Tesis\APLICACIÓN\PROCESO\MINIJUEGOS\Juego 12\patinadora cayendo 1.png">
+                                <collision-poly>
+                                    <point x="0" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0" y="1" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.397516" hotspotY="0.53125" original-source="G:\OneDrive\Tesis\APLICACIÓN\PROCESO\MINIJUEGOS\Juego 12\patinadora cayendo 2.png">
+                                <collision-poly>
+                                    <point x="0" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0" y="1" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.397516" hotspotY="0.53125" original-source="G:\OneDrive\Tesis\APLICACIÓN\PROCESO\MINIJUEGOS\Juego 12\patinadora cayendo 3.png">
+                                <collision-poly>
+                                    <point x="0" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0" y="1" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.397516" hotspotY="0.53125" original-source="G:\OneDrive\Tesis\APLICACIÓN\PROCESO\MINIJUEGOS\Juego 12\patinadora cayendo 4.png">
+                                <collision-poly>
+                                    <point x="0.21875" y="0.731251" />
+                                    <point x="1" y="0.73125" />
+                                    <point x="1" y="1" />
+                                    <point x="0.21875" y="1" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="4" loop="1" name="j12c" pingpong="0" repeatcount="1" repeatto="0" sid="124927382167891" speed="10">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\OneDrive\Tesis\APLICACIÓN\PROCESO\MINIJUEGOS\Juego 12\patinadora girando 1.png">
+                                <collision-poly>
+                                    <point x="0" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0" y="1" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.503106" hotspotY="0.5" original-source="G:\OneDrive\Tesis\APLICACIÓN\PROCESO\MINIJUEGOS\Juego 12\patinadora girando 2.png">
+                                <collision-poly>
+                                    <point x="0" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0" y="1" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.503106" hotspotY="0.5" original-source="G:\OneDrive\Tesis\APLICACIÓN\PROCESO\MINIJUEGOS\Juego 12\patinadora girando 3.png">
+                                <collision-poly>
+                                    <point x="0" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0" y="1" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.503106" hotspotY="0.5" original-source="G:\OneDrive\Tesis\APLICACIÓN\PROCESO\MINIJUEGOS\Juego 12\patinadora girando 4.png">
+                                <collision-poly>
+                                    <point x="0" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0" y="1" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="1" loop="0" name="j13a" pingpong="0" repeatcount="1" repeatto="0" sid="945457031434193" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\OneDrive\Tesis\APLICACIÓN\PROCESO\MINIJUEGOS\Juego 13\gato.png" />
+                        </animation>
+                        <animation framecount="40" loop="1" name="j17a" pingpong="0" repeatcount="1" repeatto="0" sid="703765607024889" speed="25">
+                            <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00000.png">
+                                <collision-poly>
+                                    <point x="0.110526" y="0.34" />
+                                    <point x="0.91579" y="0.34" />
+                                    <point x="0.915789" y="1" />
+                                    <point x="0.115789" y="1" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00001.png">
+                                <collision-poly>
+                                    <point x="0.110526" y="0.34" />
+                                    <point x="0.91579" y="0.34" />
+                                    <point x="0.915789" y="1" />
+                                    <point x="0.115789" y="1" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00002.png">
+                                <collision-poly>
+                                    <point x="0.110526" y="0.34" />
+                                    <point x="0.91579" y="0.34" />
+                                    <point x="0.915789" y="1" />
+                                    <point x="0.115789" y="1" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00003.png">
+                                <collision-poly>
+                                    <point x="0.110526" y="0.34" />
+                                    <point x="0.91579" y="0.34" />
+                                    <point x="0.915789" y="1" />
+                                    <point x="0.115789" y="1" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00004.png">
+                                <collision-poly>
+                                    <point x="0.110526" y="0.34" />
+                                    <point x="0.91579" y="0.34" />
+                                    <point x="0.915789" y="1" />
+                                    <point x="0.115789" y="1" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00005.png">
+                                <collision-poly>
+                                    <point x="0.110526" y="0.34" />
+                                    <point x="0.91579" y="0.34" />
+                                    <point x="0.915789" y="1" />
+                                    <point x="0.115789" y="1" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00006.png">
+                                <collision-poly>
+                                    <point x="0.110526" y="0.34" />
+                                    <point x="0.91579" y="0.34" />
+                                    <point x="0.915789" y="1" />
+                                    <point x="0.115789" y="1" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00007.png">
+                                <collision-poly>
+                                    <point x="0.110526" y="0.34" />
+                                    <point x="0.91579" y="0.34" />
+                                    <point x="0.915789" y="1" />
+                                    <point x="0.115789" y="1" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00008.png">
+                                <collision-poly>
+                                    <point x="0.110526" y="0.34" />
+                                    <point x="0.91579" y="0.34" />
+                                    <point x="0.915789" y="1" />
+                                    <point x="0.115789" y="1" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00009.png">
+                                <collision-poly>
+                                    <point x="0.110526" y="0.34" />
+                                    <point x="0.91579" y="0.34" />
+                                    <point x="0.915789" y="1" />
+                                    <point x="0.115789" y="1" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00010.png">
+                                <collision-poly>
+                                    <point x="0.110526" y="0.34" />
+                                    <point x="0.91579" y="0.34" />
+                                    <point x="0.915789" y="1" />
+                                    <point x="0.115789" y="1" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00011.png">
+                                <collision-poly>
+                                    <point x="0.110526" y="0.34" />
+                                    <point x="0.91579" y="0.34" />
+                                    <point x="0.915789" y="1" />
+                                    <point x="0.115789" y="1" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00012.png">
+                                <collision-poly>
+                                    <point x="0.110526" y="0.34" />
+                                    <point x="0.91579" y="0.34" />
+                                    <point x="0.915789" y="1" />
+                                    <point x="0.115789" y="1" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00013.png">
+                                <collision-poly>
+                                    <point x="0.110526" y="0.34" />
+                                    <point x="0.91579" y="0.34" />
+                                    <point x="0.915789" y="1" />
+                                    <point x="0.115789" y="1" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00014.png">
+                                <collision-poly>
+                                    <point x="0.110526" y="0.34" />
+                                    <point x="0.91579" y="0.34" />
+                                    <point x="0.915789" y="1" />
+                                    <point x="0.115789" y="1" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00015.png">
+                                <collision-poly>
+                                    <point x="0.110526" y="0.34" />
+                                    <point x="0.91579" y="0.34" />
+                                    <point x="0.915789" y="1" />
+                                    <point x="0.115789" y="1" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00016.png">
+                                <collision-poly>
+                                    <point x="0.110526" y="0.34" />
+                                    <point x="0.91579" y="0.34" />
+                                    <point x="0.915789" y="1" />
+                                    <point x="0.115789" y="1" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00017.png">
+                                <collision-poly>
+                                    <point x="0.110526" y="0.34" />
+                                    <point x="0.91579" y="0.34" />
+                                    <point x="0.915789" y="1" />
+                                    <point x="0.115789" y="1" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00018.png">
+                                <collision-poly>
+                                    <point x="0.110526" y="0.34" />
+                                    <point x="0.91579" y="0.34" />
+                                    <point x="0.915789" y="1" />
+                                    <point x="0.115789" y="1" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00019.png">
+                                <collision-poly>
+                                    <point x="0.110526" y="0.34" />
+                                    <point x="0.91579" y="0.34" />
+                                    <point x="0.915789" y="1" />
+                                    <point x="0.115789" y="1" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00020.png">
+                                <collision-poly>
+                                    <point x="0.110526" y="0.34" />
+                                    <point x="0.91579" y="0.34" />
+                                    <point x="0.915789" y="1" />
+                                    <point x="0.115789" y="1" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00021.png">
+                                <collision-poly>
+                                    <point x="0.110526" y="0.34" />
+                                    <point x="0.91579" y="0.34" />
+                                    <point x="0.915789" y="1" />
+                                    <point x="0.115789" y="1" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00022.png">
+                                <collision-poly>
+                                    <point x="0.110526" y="0.34" />
+                                    <point x="0.91579" y="0.34" />
+                                    <point x="0.915789" y="1" />
+                                    <point x="0.115789" y="1" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00023.png">
+                                <collision-poly>
+                                    <point x="0.110526" y="0.34" />
+                                    <point x="0.91579" y="0.34" />
+                                    <point x="0.915789" y="1" />
+                                    <point x="0.115789" y="1" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00024.png">
+                                <collision-poly>
+                                    <point x="0.110526" y="0.34" />
+                                    <point x="0.91579" y="0.34" />
+                                    <point x="0.915789" y="1" />
+                                    <point x="0.115789" y="1" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00025.png">
+                                <collision-poly>
+                                    <point x="0.110526" y="0.34" />
+                                    <point x="0.91579" y="0.34" />
+                                    <point x="0.915789" y="1" />
+                                    <point x="0.115789" y="1" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00026.png">
+                                <collision-poly>
+                                    <point x="0.110526" y="0.34" />
+                                    <point x="0.91579" y="0.34" />
+                                    <point x="0.915789" y="1" />
+                                    <point x="0.115789" y="1" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00027.png">
+                                <collision-poly>
+                                    <point x="0.110526" y="0.34" />
+                                    <point x="0.91579" y="0.34" />
+                                    <point x="0.915789" y="1" />
+                                    <point x="0.115789" y="1" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00028.png">
+                                <collision-poly>
+                                    <point x="0.110526" y="0.34" />
+                                    <point x="0.91579" y="0.34" />
+                                    <point x="0.915789" y="1" />
+                                    <point x="0.115789" y="1" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00029.png">
+                                <collision-poly>
+                                    <point x="0.110526" y="0.34" />
+                                    <point x="0.91579" y="0.34" />
+                                    <point x="0.915789" y="1" />
+                                    <point x="0.115789" y="1" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00030.png">
+                                <collision-poly>
+                                    <point x="0.110526" y="0.34" />
+                                    <point x="0.91579" y="0.34" />
+                                    <point x="0.915789" y="1" />
+                                    <point x="0.115789" y="1" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00031.png">
+                                <collision-poly>
+                                    <point x="0.110526" y="0.34" />
+                                    <point x="0.91579" y="0.34" />
+                                    <point x="0.915789" y="1" />
+                                    <point x="0.115789" y="1" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00032.png">
+                                <collision-poly>
+                                    <point x="0.110526" y="0.34" />
+                                    <point x="0.91579" y="0.34" />
+                                    <point x="0.915789" y="1" />
+                                    <point x="0.115789" y="1" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00033.png">
+                                <collision-poly>
+                                    <point x="0.110526" y="0.34" />
+                                    <point x="0.91579" y="0.34" />
+                                    <point x="0.915789" y="1" />
+                                    <point x="0.115789" y="1" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00034.png">
+                                <collision-poly>
+                                    <point x="0.110526" y="0.34" />
+                                    <point x="0.91579" y="0.34" />
+                                    <point x="0.915789" y="1" />
+                                    <point x="0.115789" y="1" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00035.png">
+                                <collision-poly>
+                                    <point x="0.110526" y="0.34" />
+                                    <point x="0.91579" y="0.34" />
+                                    <point x="0.915789" y="1" />
+                                    <point x="0.115789" y="1" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00036.png">
+                                <collision-poly>
+                                    <point x="0.110526" y="0.34" />
+                                    <point x="0.91579" y="0.34" />
+                                    <point x="0.915789" y="1" />
+                                    <point x="0.115789" y="1" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00037.png">
+                                <collision-poly>
+                                    <point x="0.110526" y="0.34" />
+                                    <point x="0.91579" y="0.34" />
+                                    <point x="0.915789" y="1" />
+                                    <point x="0.115789" y="1" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00038.png">
+                                <collision-poly>
+                                    <point x="0.110526" y="0.34" />
+                                    <point x="0.91579" y="0.34" />
+                                    <point x="0.915789" y="1" />
+                                    <point x="0.115789" y="1" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00039.png">
+                                <collision-poly>
+                                    <point x="0.110526" y="0.34" />
+                                    <point x="0.91579" y="0.34" />
+                                    <point x="0.915789" y="1" />
+                                    <point x="0.115789" y="1" />
+                                </collision-poly>
+                            </frame>
                         </animation>
                     </animation-folder>
                     <animation-folder name="Eduardo">
@@ -902,7 +1289,15 @@
                     </animation-folder>
                     <animation-folder name="Claudia">
                         <animation framecount="1" loop="0" name="j1a" pingpong="0" repeatcount="1" repeatto="0" sid="628712883264351" speed="0">
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC8\Desktop\juego 1\escudo.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC8\Desktop\juego 1\escudo.png">
+                                <collision-poly>
+                                    <point x="0" y="0" />
+                                    <point x="1" y="0" />
+                                    <point x="1" y="0.69" />
+                                    <point x="0.465" y="1" />
+                                    <point x="0" y="0.7" />
+                                </collision-poly>
+                            </frame>
                         </animation>
                         <animation framecount="3" loop="1" name="j5a" pingpong="1" repeatcount="1" repeatto="0" sid="185516831301184" speed="0">
                             <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC8\Desktop\juego 5\avatar 4.png" />
@@ -930,21 +1325,48 @@
                                 <image-point name="boca" x="0.5" y="0.5" />
                             </frame>
                         </animation>
+                        <animation framecount="4" loop="0" name="j16a" pingpong="0" repeatcount="1" repeatto="0" sid="543530589660166" speed="0">
+                            <frame duration="1" hotspotX="0.0477941" hotspotY="0.914894" original-source="\\jose-pc\G\OneDrive\Tesis\APLICACIÓN\PROCESO\MINIJUEGOS\juego 16\piedra.png">
+                                <image-point name="nombre" x="0.25" y="0.226064" />
+                                <collision-poly>
+                                    <point x="0" y="0.99734" />
+                                    <point x="6.98492e-010" y="1" />
+                                    <point x="0.00551471" y="1" />
+                                    <point x="0" y="1" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.0477941" hotspotY="0.914894" original-source="\\jose-pc\G\OneDrive\Tesis\APLICACIÓN\PROCESO\MINIJUEGOS\juego 16\papel.png">
+                                <image-point name="nombre" x="0.25" y="0.226064" />
+                                <collision-poly>
+                                    <point x="0" y="0.99734" />
+                                    <point x="6.98492e-010" y="1" />
+                                    <point x="0.00551471" y="1" />
+                                    <point x="0" y="1" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.0477941" hotspotY="0.914894" original-source="\\jose-pc\G\OneDrive\Tesis\APLICACIÓN\PROCESO\MINIJUEGOS\juego 16\tijera.png">
+                                <image-point name="nombre" x="0.25" y="0.226064" />
+                                <collision-poly>
+                                    <point x="0" y="0.99734" />
+                                    <point x="6.98492e-010" y="1" />
+                                    <point x="0.00551471" y="1" />
+                                    <point x="0" y="1" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.0477941" hotspotY="0.914894" original-source="\\jose-pc\G\OneDrive\Tesis\APLICACIÓN\PROCESO\MINIJUEGOS\juego 16\pulgar.png">
+                                <image-point name="nombre" x="0.25" y="0.226064" />
+                                <collision-poly>
+                                    <point x="0" y="0.99734" />
+                                    <point x="6.98492e-010" y="1" />
+                                    <point x="0.00551471" y="1" />
+                                    <point x="0" y="1" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="1" loop="0" name="j19a" pingpong="0" repeatcount="1" repeatto="0" sid="259105115587820" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
                     </animation-folder>
-                    <animation framecount="1" loop="0" name="nada" pingpong="0" repeatcount="1" repeatto="0" sid="731521000129390" speed="0">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS\molino.png">
-                            <collision-poly>
-                                <point x="0.478723" y="0.483871" />
-                                <point x="0.5" y="0.0537634" />
-                                <point x="0.776596" y="0.225806" />
-                                <point x="0.787234" y="0.494624" />
-                                <point x="0.553191" y="0.548387" />
-                                <point x="0.5" y="0.591398" />
-                                <point x="0.446809" y="0.548387" />
-                                <point x="0.414894" y="0.494624" />
-                            </collision-poly>
-                        </frame>
-                    </animation>
                     <animation framecount="1" loop="0" name="plantilla" pingpong="0" repeatcount="1" repeatto="0" sid="417865994231295" speed="0">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5">
                             <collision-poly>
@@ -958,441 +1380,19 @@
                             </collision-poly>
                         </frame>
                     </animation>
-                    <animation framecount="1" loop="0" name="j1a" pingpong="0" repeatcount="1" repeatto="0" sid="628712883264351" speed="0">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Jose\Downloads\word.png">
+                    <animation framecount="1" loop="0" name="nada" pingpong="0" repeatcount="1" repeatto="0" sid="731521000129390" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS\molino.png">
                             <collision-poly>
-                                <point x="0.528572" y="0.0108695" />
-                                <point x="0.928571" y="0.510869" />
-                                <point x="0.714285" y="0.597826" />
-                                <point x="0.885714" y="0.934782" />
-                                <point x="0.1" y="0.891304" />
-                                <point x="0.314286" y="0.630435" />
-                                <point x="0.0571428" y="0.434783" />
+                                <point x="0.478723" y="0.483871" />
+                                <point x="0.5" y="0.0537634" />
+                                <point x="0.776596" y="0.225806" />
+                                <point x="0.787234" y="0.494624" />
+                                <point x="0.553191" y="0.548387" />
+                                <point x="0.5" y="0.591398" />
+                                <point x="0.446809" y="0.548387" />
+                                <point x="0.414894" y="0.494624" />
                             </collision-poly>
                         </frame>
-                    </animation>
-                    <animation framecount="3" loop="1" name="j5a" pingpong="1" repeatcount="1" repeatto="0" sid="185516831301184" speed="0">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                    </animation>
-                    <animation framecount="3" loop="1" name="j5b" pingpong="1" repeatcount="1" repeatto="0" sid="745812983208207" speed="0">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                    </animation>
-                    <animation framecount="3" loop="1" name="j5c" pingpong="1" repeatcount="1" repeatto="0" sid="575047139528517" speed="0">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                    </animation>
-                    <animation framecount="1" loop="0" name="j6a" pingpong="0" repeatcount="1" repeatto="0" sid="244875200230639" speed="0">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                    </animation>
-                    <animation framecount="2" loop="1" name="j6b" pingpong="0" repeatcount="1" repeatto="0" sid="531316896545445" speed="10">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                            <image-point name="boca" x="0.375" y="0.55" />
-                        </frame>
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                            <image-point name="boca" x="0.375" y="0.55" />
-                        </frame>
-                    </animation>
-                    <animation framecount="1" loop="0" name="j11a" pingpong="0" repeatcount="1" repeatto="0" sid="767758980664565" speed="5">
-                        <frame duration="1" hotspotX="0" hotspotY="0.5" />
-                    </animation>
-                    <animation framecount="1" loop="0" name="j12a" pingpong="0" repeatcount="1" repeatto="0" sid="403836043165270" speed="0">
-                        <frame duration="1" hotspotX="0.666667" hotspotY="0.49375" />
-                    </animation>
-                    <animation framecount="4" loop="0" name="j12b" pingpong="0" repeatcount="1" repeatto="0" sid="325319757991309" speed="10">
-                        <frame duration="1" hotspotX="0.4" hotspotY="0.53125">
-                            <collision-poly>
-                                <point x="0" y="1" />
-                                <point x="0" y="1" />
-                                <point x="0" y="1" />
-                                <point x="0" y="1" />
-                            </collision-poly>
-                        </frame>
-                        <frame duration="1" hotspotX="0.4" hotspotY="0.5">
-                            <collision-poly>
-                                <point x="0" y="1" />
-                                <point x="0" y="1" />
-                                <point x="0" y="1" />
-                                <point x="0" y="1" />
-                            </collision-poly>
-                        </frame>
-                        <frame duration="1" hotspotX="0.4" hotspotY="0.5">
-                            <collision-poly>
-                                <point x="0" y="1" />
-                                <point x="0" y="1" />
-                                <point x="0" y="1" />
-                                <point x="0" y="1" />
-                            </collision-poly>
-                        </frame>
-                        <frame duration="1" hotspotX="0.4" hotspotY="0.5">
-                            <collision-poly>
-                                <point x="0.21875" y="0.731251" />
-                                <point x="1" y="0.73125" />
-                                <point x="1" y="1" />
-                                <point x="0.21875" y="1" />
-                            </collision-poly>
-                        </frame>
-                    </animation>
-                    <animation framecount="4" loop="1" name="j12c" pingpong="0" repeatcount="1" repeatto="0" sid="124927382167891" speed="10">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                            <collision-poly>
-                                <point x="0" y="1" />
-                                <point x="0" y="1" />
-                                <point x="0" y="1" />
-                                <point x="0" y="1" />
-                            </collision-poly>
-                        </frame>
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                            <collision-poly>
-                                <point x="0" y="1" />
-                                <point x="0" y="1" />
-                                <point x="0" y="1" />
-                                <point x="0" y="1" />
-                            </collision-poly>
-                        </frame>
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                            <collision-poly>
-                                <point x="0" y="1" />
-                                <point x="0" y="1" />
-                                <point x="0" y="1" />
-                                <point x="0" y="1" />
-                            </collision-poly>
-                        </frame>
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                            <collision-poly>
-                                <point x="0" y="1" />
-                                <point x="0" y="1" />
-                                <point x="0" y="1" />
-                                <point x="0" y="1" />
-                            </collision-poly>
-                        </frame>
-                    </animation>
-                    <animation framecount="1" loop="0" name="j13a" pingpong="0" repeatcount="1" repeatto="0" sid="945457031434193" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.509804" />
-                    </animation>
-                    <animation framecount="4" loop="0" name="j16a" pingpong="0" repeatcount="1" repeatto="0" sid="543530589660166" speed="0">
-                        <frame duration="1" hotspotX="0.05" hotspotY="0.875">
-                            <image-point name="nombre" x="0.241667" y="0.241667" />
-                            <collision-poly>
-                                <point x="0" y="1" />
-                                <point x="0" y="1" />
-                                <point x="0" y="1" />
-                                <point x="0" y="1" />
-                            </collision-poly>
-                        </frame>
-                        <frame duration="1" hotspotX="0.05" hotspotY="0.875">
-                            <collision-poly>
-                                <point x="0" y="1" />
-                                <point x="0" y="1" />
-                                <point x="0" y="1" />
-                                <point x="0" y="1" />
-                            </collision-poly>
-                        </frame>
-                        <frame duration="1" hotspotX="0.05" hotspotY="0.875">
-                            <collision-poly>
-                                <point x="0" y="1" />
-                                <point x="0" y="1" />
-                                <point x="0" y="1" />
-                                <point x="0" y="1" />
-                            </collision-poly>
-                        </frame>
-                        <frame duration="1" hotspotX="0.05" hotspotY="0.875">
-                            <collision-poly>
-                                <point x="0" y="1" />
-                                <point x="0" y="1" />
-                                <point x="0" y="1" />
-                                <point x="0" y="1" />
-                            </collision-poly>
-                        </frame>
-                    </animation>
-                    <animation framecount="40" loop="1" name="j17a" pingpong="0" repeatcount="1" repeatto="0" sid="703765607024889" speed="25">
-                        <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00000.png">
-                            <collision-poly>
-                                <point x="0.110526" y="0.34" />
-                                <point x="0.91579" y="0.34" />
-                                <point x="0.463158" y="0.87" />
-                            </collision-poly>
-                        </frame>
-                        <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00001.png">
-                            <collision-poly>
-                                <point x="0.110526" y="0.34" />
-                                <point x="0.91579" y="0.34" />
-                                <point x="0.463158" y="0.87" />
-                            </collision-poly>
-                        </frame>
-                        <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00002.png">
-                            <collision-poly>
-                                <point x="0.110526" y="0.34" />
-                                <point x="0.91579" y="0.34" />
-                                <point x="0.463158" y="0.87" />
-                            </collision-poly>
-                        </frame>
-                        <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00003.png">
-                            <collision-poly>
-                                <point x="0.110526" y="0.34" />
-                                <point x="0.91579" y="0.34" />
-                                <point x="0.463158" y="0.87" />
-                            </collision-poly>
-                        </frame>
-                        <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00004.png">
-                            <collision-poly>
-                                <point x="0.110526" y="0.34" />
-                                <point x="0.91579" y="0.34" />
-                                <point x="0.463158" y="0.87" />
-                            </collision-poly>
-                        </frame>
-                        <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00005.png">
-                            <collision-poly>
-                                <point x="0.110526" y="0.34" />
-                                <point x="0.91579" y="0.34" />
-                                <point x="0.463158" y="0.87" />
-                            </collision-poly>
-                        </frame>
-                        <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00006.png">
-                            <collision-poly>
-                                <point x="0.110526" y="0.34" />
-                                <point x="0.91579" y="0.34" />
-                                <point x="0.463158" y="0.87" />
-                            </collision-poly>
-                        </frame>
-                        <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00007.png">
-                            <collision-poly>
-                                <point x="0.110526" y="0.34" />
-                                <point x="0.91579" y="0.34" />
-                                <point x="0.463158" y="0.87" />
-                            </collision-poly>
-                        </frame>
-                        <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00008.png">
-                            <collision-poly>
-                                <point x="0.110526" y="0.34" />
-                                <point x="0.91579" y="0.34" />
-                                <point x="0.463158" y="0.87" />
-                            </collision-poly>
-                        </frame>
-                        <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00009.png">
-                            <collision-poly>
-                                <point x="0.110526" y="0.34" />
-                                <point x="0.91579" y="0.34" />
-                                <point x="0.463158" y="0.87" />
-                            </collision-poly>
-                        </frame>
-                        <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00010.png">
-                            <collision-poly>
-                                <point x="0.110526" y="0.34" />
-                                <point x="0.91579" y="0.34" />
-                                <point x="0.463158" y="0.87" />
-                            </collision-poly>
-                        </frame>
-                        <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00011.png">
-                            <collision-poly>
-                                <point x="0.110526" y="0.34" />
-                                <point x="0.91579" y="0.34" />
-                                <point x="0.463158" y="0.87" />
-                            </collision-poly>
-                        </frame>
-                        <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00012.png">
-                            <collision-poly>
-                                <point x="0.110526" y="0.34" />
-                                <point x="0.91579" y="0.34" />
-                                <point x="0.463158" y="0.87" />
-                            </collision-poly>
-                        </frame>
-                        <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00013.png">
-                            <collision-poly>
-                                <point x="0.110526" y="0.34" />
-                                <point x="0.91579" y="0.34" />
-                                <point x="0.463158" y="0.87" />
-                            </collision-poly>
-                        </frame>
-                        <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00014.png">
-                            <collision-poly>
-                                <point x="0.110526" y="0.34" />
-                                <point x="0.91579" y="0.34" />
-                                <point x="0.463158" y="0.87" />
-                            </collision-poly>
-                        </frame>
-                        <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00015.png">
-                            <collision-poly>
-                                <point x="0.110526" y="0.34" />
-                                <point x="0.91579" y="0.34" />
-                                <point x="0.463158" y="0.87" />
-                            </collision-poly>
-                        </frame>
-                        <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00016.png">
-                            <collision-poly>
-                                <point x="0.110526" y="0.34" />
-                                <point x="0.91579" y="0.34" />
-                                <point x="0.463158" y="0.87" />
-                            </collision-poly>
-                        </frame>
-                        <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00017.png">
-                            <collision-poly>
-                                <point x="0.110526" y="0.34" />
-                                <point x="0.91579" y="0.34" />
-                                <point x="0.463158" y="0.87" />
-                            </collision-poly>
-                        </frame>
-                        <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00018.png">
-                            <collision-poly>
-                                <point x="0.110526" y="0.34" />
-                                <point x="0.91579" y="0.34" />
-                                <point x="0.463158" y="0.87" />
-                            </collision-poly>
-                        </frame>
-                        <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00019.png">
-                            <collision-poly>
-                                <point x="0.110526" y="0.34" />
-                                <point x="0.91579" y="0.34" />
-                                <point x="0.463158" y="0.87" />
-                            </collision-poly>
-                        </frame>
-                        <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00020.png">
-                            <collision-poly>
-                                <point x="0.110526" y="0.34" />
-                                <point x="0.91579" y="0.34" />
-                                <point x="0.463158" y="0.87" />
-                            </collision-poly>
-                        </frame>
-                        <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00021.png">
-                            <collision-poly>
-                                <point x="0.110526" y="0.34" />
-                                <point x="0.91579" y="0.34" />
-                                <point x="0.463158" y="0.87" />
-                            </collision-poly>
-                        </frame>
-                        <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00022.png">
-                            <collision-poly>
-                                <point x="0.110526" y="0.34" />
-                                <point x="0.91579" y="0.34" />
-                                <point x="0.463158" y="0.87" />
-                            </collision-poly>
-                        </frame>
-                        <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00023.png">
-                            <collision-poly>
-                                <point x="0.110526" y="0.34" />
-                                <point x="0.91579" y="0.34" />
-                                <point x="0.463158" y="0.87" />
-                            </collision-poly>
-                        </frame>
-                        <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00024.png">
-                            <collision-poly>
-                                <point x="0.110526" y="0.34" />
-                                <point x="0.91579" y="0.34" />
-                                <point x="0.463158" y="0.87" />
-                            </collision-poly>
-                        </frame>
-                        <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00025.png">
-                            <collision-poly>
-                                <point x="0.110526" y="0.34" />
-                                <point x="0.91579" y="0.34" />
-                                <point x="0.463158" y="0.87" />
-                            </collision-poly>
-                        </frame>
-                        <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00026.png">
-                            <collision-poly>
-                                <point x="0.110526" y="0.34" />
-                                <point x="0.91579" y="0.34" />
-                                <point x="0.463158" y="0.87" />
-                            </collision-poly>
-                        </frame>
-                        <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00027.png">
-                            <collision-poly>
-                                <point x="0.110526" y="0.34" />
-                                <point x="0.91579" y="0.34" />
-                                <point x="0.463158" y="0.87" />
-                            </collision-poly>
-                        </frame>
-                        <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00028.png">
-                            <collision-poly>
-                                <point x="0.110526" y="0.34" />
-                                <point x="0.91579" y="0.34" />
-                                <point x="0.463158" y="0.87" />
-                            </collision-poly>
-                        </frame>
-                        <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00029.png">
-                            <collision-poly>
-                                <point x="0.110526" y="0.34" />
-                                <point x="0.91579" y="0.34" />
-                                <point x="0.463158" y="0.87" />
-                            </collision-poly>
-                        </frame>
-                        <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00030.png">
-                            <collision-poly>
-                                <point x="0.110526" y="0.34" />
-                                <point x="0.91579" y="0.34" />
-                                <point x="0.463158" y="0.87" />
-                            </collision-poly>
-                        </frame>
-                        <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00031.png">
-                            <collision-poly>
-                                <point x="0.110526" y="0.34" />
-                                <point x="0.91579" y="0.34" />
-                                <point x="0.463158" y="0.87" />
-                            </collision-poly>
-                        </frame>
-                        <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00032.png">
-                            <collision-poly>
-                                <point x="0.110526" y="0.34" />
-                                <point x="0.91579" y="0.34" />
-                                <point x="0.463158" y="0.87" />
-                            </collision-poly>
-                        </frame>
-                        <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00033.png">
-                            <collision-poly>
-                                <point x="0.110526" y="0.34" />
-                                <point x="0.91579" y="0.34" />
-                                <point x="0.463158" y="0.87" />
-                            </collision-poly>
-                        </frame>
-                        <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00034.png">
-                            <collision-poly>
-                                <point x="0.110526" y="0.34" />
-                                <point x="0.91579" y="0.34" />
-                                <point x="0.463158" y="0.87" />
-                            </collision-poly>
-                        </frame>
-                        <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00035.png">
-                            <collision-poly>
-                                <point x="0.110526" y="0.34" />
-                                <point x="0.91579" y="0.34" />
-                                <point x="0.463158" y="0.87" />
-                            </collision-poly>
-                        </frame>
-                        <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00036.png">
-                            <collision-poly>
-                                <point x="0.110526" y="0.34" />
-                                <point x="0.91579" y="0.34" />
-                                <point x="0.463158" y="0.87" />
-                            </collision-poly>
-                        </frame>
-                        <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00037.png">
-                            <collision-poly>
-                                <point x="0.110526" y="0.34" />
-                                <point x="0.91579" y="0.34" />
-                                <point x="0.463158" y="0.87" />
-                            </collision-poly>
-                        </frame>
-                        <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00038.png">
-                            <collision-poly>
-                                <point x="0.110526" y="0.34" />
-                                <point x="0.91579" y="0.34" />
-                                <point x="0.463158" y="0.87" />
-                            </collision-poly>
-                        </frame>
-                        <frame duration="1" hotspotX="0.505263" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\Frames angel\entorno_00039.png">
-                            <collision-poly>
-                                <point x="0.110526" y="0.34" />
-                                <point x="0.91579" y="0.34" />
-                                <point x="0.463158" y="0.87" />
-                            </collision-poly>
-                        </frame>
-                    </animation>
-                    <animation framecount="1" loop="0" name="j19a" pingpong="0" repeatcount="1" repeatto="0" sid="259105115587820" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -1410,6 +1410,72 @@
                         </animation>
                         <animation framecount="1" loop="0" name="j7b" pingpong="0" repeatcount="1" repeatto="0" sid="713001930335287" speed="0">
                             <frame duration="1" hotspotX="0" hotspotY="0" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 7\Cancha.png" />
+                        </animation>
+                        <animation framecount="10" loop="0" name="j11a" pingpong="0" repeatcount="1" repeatto="0" sid="995241923793758" speed="0">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\OneDrive\Tesis\APLICACIÓN\PROCESO\MINIJUEGOS\Juego 11\sospechoso 1.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\OneDrive\Tesis\APLICACIÓN\PROCESO\MINIJUEGOS\Juego 11\sospechoso 2.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\OneDrive\Tesis\APLICACIÓN\PROCESO\MINIJUEGOS\Juego 11\sospechoso 3.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\OneDrive\Tesis\APLICACIÓN\PROCESO\MINIJUEGOS\Juego 11\sospechoso 4.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\OneDrive\Tesis\APLICACIÓN\PROCESO\MINIJUEGOS\Juego 11\sospechoso 5.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\OneDrive\Tesis\APLICACIÓN\PROCESO\MINIJUEGOS\Juego 11\sospechoso 6.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\OneDrive\Tesis\APLICACIÓN\PROCESO\MINIJUEGOS\Juego 11\sospechoso 7.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\OneDrive\Tesis\APLICACIÓN\PROCESO\MINIJUEGOS\Juego 11\sospechoso 8.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\OneDrive\Tesis\APLICACIÓN\PROCESO\MINIJUEGOS\Juego 11\sospechoso 9.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\OneDrive\Tesis\APLICACIÓN\PROCESO\MINIJUEGOS\Juego 11\sospechoso 10.png" />
+                        </animation>
+                        <animation framecount="1" loop="0" name="j11b" pingpong="0" repeatcount="1" repeatto="0" sid="937908683391708" speed="5">
+                            <frame duration="1" hotspotX="0.496" hotspotY="0.34" original-source="G:\OneDrive\Tesis\APLICACIÓN\PROCESO\MINIJUEGOS\Juego 11\evidencia.png" />
+                        </animation>
+                        <animation framecount="1" loop="0" name="j12a" pingpong="0" repeatcount="1" repeatto="0" sid="815453521087984" speed="5">
+                            <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Tesis\APLICACIÓN\PROCESO\MINIJUEGOS\Juego 12\pancarta.png" />
+                        </animation>
+                        <animation framecount="6" loop="1" name="j12b" pingpong="0" repeatcount="1" repeatto="0" sid="659999966110709" speed="0">
+                            <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Tesis\APLICACIÓN\PROCESO\MINIJUEGOS\Juego 12\publico 1.png" />
+                            <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Tesis\APLICACIÓN\PROCESO\MINIJUEGOS\Juego 12\publico 2.png" />
+                            <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Tesis\APLICACIÓN\PROCESO\MINIJUEGOS\Juego 12\publico 3.png" />
+                            <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Tesis\APLICACIÓN\PROCESO\MINIJUEGOS\Juego 12\publico 4.png" />
+                            <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Tesis\APLICACIÓN\PROCESO\MINIJUEGOS\Juego 12\publico 5.png" />
+                            <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Tesis\APLICACIÓN\PROCESO\MINIJUEGOS\Juego 12\publico 6.png" />
+                        </animation>
+                        <animation framecount="2" loop="0" name="j13a" pingpong="0" repeatcount="1" repeatto="0" sid="558644905168342" speed="0">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\OneDrive\Tesis\APLICACIÓN\PROCESO\MINIJUEGOS\Juego 13\plataforma 1.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\OneDrive\Tesis\APLICACIÓN\PROCESO\MINIJUEGOS\Juego 13\plataforma 2.png" />
+                        </animation>
+                        <animation framecount="8" loop="0" name="j17a" pingpong="0" repeatcount="1" repeatto="0" sid="865759809477194" speed="0">
+                            <frame duration="1" hotspotX="0" hotspotY="1" original-source="G:\OneDrive\Tesis\APLICACIÓN\PROCESO\MINIJUEGOS\Juego 17\piso.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\cesped.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\pino.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\volcan.png" />
+                            <frame duration="1" hotspotX="0.501661" hotspotY="0.5" original-source="G:\OneDrive\Tesis\APLICACIÓN\PROCESO\MINIJUEGOS\Juego 17\montaña.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\campo.png" />
+                            <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Tesis\APLICACIÓN\PROCESO\MINIJUEGOS\Juego 17\alambrado.png" />
+                            <frame duration="1" hotspotX="0" hotspotY="0" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\poste.png" />
+                        </animation>
+                        <animation framecount="3" loop="0" name="j17b" pingpong="0" repeatcount="1" repeatto="0" sid="868970087700600" speed="0">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\nube 1.png">
+                                <collision-poly>
+                                    <point x="0.0233333" y="0.35" />
+                                    <point x="0.983333" y="0.33" />
+                                    <point x="0.986667" y="0.67" />
+                                    <point x="0.0166667" y="0.65" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\nube 2.png">
+                                <collision-poly>
+                                    <point x="0.0433333" y="0.49" />
+                                    <point x="0.97" y="0.49" />
+                                    <point x="0.966667" y="0.73" />
+                                    <point x="0.0466667" y="0.72" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\nube 3.png">
+                                <collision-poly>
+                                    <point x="0.0462963" y="0.520408" />
+                                    <point x="0.907407" y="0.520408" />
+                                    <point x="0.912037" y="0.816327" />
+                                    <point x="0.037037" y="0.857143" />
+                                </collision-poly>
+                            </frame>
                         </animation>
                     </animation-folder>
                     <animation-folder name="Eduardo">
@@ -1434,10 +1500,10 @@
                             <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\Trabajos\Recursos sobre los mini juegos\Juego 18\biblioteca.png" />
                         </animation>
                     </animation-folder>
-                    <animation-folder name="claudia">
+                    <animation-folder name="Claudia">
                         <animation framecount="2" loop="0" name="j5a" pingpong="0" repeatcount="1" repeatto="0" sid="890880559485948" speed="0">
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Liss\Desktop\mis juegos\juego 5\laberinto.png" />
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Liss\Desktop\mis juegos\juego 5\fondo.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\OneDrive\Tesis\APLICACIÓN\PROCESO\MINIJUEGOS\juego 5\laberinto.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\OneDrive\Tesis\APLICACIÓN\PROCESO\MINIJUEGOS\juego 5\fondo.png" />
                         </animation>
                         <animation framecount="1" loop="1" name="j6a" pingpong="0" repeatcount="1" repeatto="0" sid="813051714764899" speed="6">
                             <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
@@ -1446,12 +1512,12 @@
                             <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\PC8\Desktop\mis juegos\juego 6\fondo.png" />
                         </animation>
                         <animation framecount="1" loop="0" name="j14a" pingpong="0" repeatcount="1" repeatto="0" sid="914417490840870" speed="5">
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC8\Desktop\mis juegos\juego 14\sopa.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                         </animation>
                         <animation framecount="3" loop="0" name="j14b" pingpong="0" repeatcount="1" repeatto="0" sid="730598658814629" speed="0">
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC8\Desktop\mis juegos\juego 14\termometro 2.png" />
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC8\Desktop\mis juegos\juego 14\termometro 1.png" />
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" hotspotX="0" hotspotY="0">
                                 <collision-poly>
                                     <point x="0" y="0" />
                                     <point x="0.428571" y="0" />
@@ -1462,6 +1528,24 @@
                         </animation>
                         <animation framecount="1" loop="0" name="j14c" pingpong="0" repeatcount="1" repeatto="0" sid="874297133665648" speed="5">
                             <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\PC8\Desktop\mis juegos\juego 14\fondo.png" />
+                        </animation>
+                        <animation framecount="2" loop="0" name="j16a" pingpong="0" repeatcount="1" repeatto="0" sid="372746516285136" speed="0">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <collision-poly>
+                                    <point x="0.035" y="0.09" />
+                                    <point x="0.935" y="0.09" />
+                                    <point x="0.935" y="0.945" />
+                                    <point x="0.035" y="0.945" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <collision-poly>
+                                    <point x="0.035" y="0.09" />
+                                    <point x="0.935" y="0.09" />
+                                    <point x="0.935" y="0.945" />
+                                    <point x="0.035" y="0.945" />
+                                </collision-poly>
+                            </frame>
                         </animation>
                     </animation-folder>
                     <animation framecount="1" loop="0" name="nada" pingpong="0" repeatcount="1" repeatto="0" sid="327359603633620" speed="5">
@@ -1483,97 +1567,6 @@
                         <frame duration="1" hotspotX="0" hotspotY="0" />
                         <frame duration="1" hotspotX="0" hotspotY="0" />
                         <frame duration="1" hotspotX="0" hotspotY="0" />
-                    </animation>
-                    <animation framecount="2" loop="0" name="j5a" pingpong="0" repeatcount="1" repeatto="0" sid="890880559485948" speed="0">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                    </animation>
-                    <animation framecount="1" loop="1" name="j6a" pingpong="0" repeatcount="1" repeatto="0" sid="813051714764899" speed="6">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                    </animation>
-                    <animation framecount="6" loop="0" name="j11a" pingpong="0" repeatcount="1" repeatto="0" sid="995241923793758" speed="0">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                    </animation>
-                    <animation framecount="1" loop="0" name="j11b" pingpong="0" repeatcount="1" repeatto="0" sid="937908683391708" speed="5">
-                        <frame duration="1" hotspotX="0.496" hotspotY="0.36" />
-                    </animation>
-                    <animation framecount="2" loop="0" name="j13a" pingpong="0" repeatcount="1" repeatto="0" sid="558644905168342" speed="0">
-                        <frame duration="1" hotspotX="0.512195" hotspotY="0.5" />
-                        <frame duration="1" hotspotX="0.512195" hotspotY="0.5" />
-                    </animation>
-                    <animation framecount="1" loop="0" name="j14a" pingpong="0" repeatcount="1" repeatto="0" sid="914417490840870" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                    </animation>
-                    <animation framecount="3" loop="0" name="j14b" pingpong="0" repeatcount="1" repeatto="0" sid="730598658814629" speed="0">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                        <frame duration="1" hotspotX="3.07143" hotspotY="2.02632">
-                            <collision-poly>
-                                <point x="0" y="0" />
-                                <point x="0.428571" y="0" />
-                                <point x="0.428571" y="1" />
-                                <point x="0" y="1" />
-                            </collision-poly>
-                        </frame>
-                    </animation>
-                    <animation framecount="2" loop="0" name="j16a" pingpong="0" repeatcount="1" repeatto="0" sid="372746516285136" speed="0">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                            <collision-poly>
-                                <point x="0.035" y="0.09" />
-                                <point x="0.935" y="0.09" />
-                                <point x="0.935" y="0.945" />
-                                <point x="0.035" y="0.945" />
-                            </collision-poly>
-                        </frame>
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                            <collision-poly>
-                                <point x="0.035" y="0.09" />
-                                <point x="0.935" y="0.09" />
-                                <point x="0.935" y="0.945" />
-                                <point x="0.035" y="0.945" />
-                            </collision-poly>
-                        </frame>
-                    </animation>
-                    <animation framecount="8" loop="0" name="j17a" pingpong="0" repeatcount="1" repeatto="0" sid="865759809477194" speed="0">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\piso.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\cesped.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\pino.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\volcan.png" />
-                        <frame duration="1" hotspotX="0.501661" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\montaña.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\campo.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.504348" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\alambrado.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\poste.png" />
-                    </animation>
-                    <animation framecount="3" loop="0" name="j17b" pingpong="0" repeatcount="1" repeatto="0" sid="868970087700600" speed="0">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\nube 1.png">
-                            <collision-poly>
-                                <point x="0.0233333" y="0.35" />
-                                <point x="0.983333" y="0.33" />
-                                <point x="0.986667" y="0.67" />
-                                <point x="0.0166667" y="0.65" />
-                            </collision-poly>
-                        </frame>
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\nube 2.png">
-                            <collision-poly>
-                                <point x="0.0433333" y="0.49" />
-                                <point x="0.97" y="0.49" />
-                                <point x="0.966667" y="0.73" />
-                                <point x="0.0466667" y="0.72" />
-                            </collision-poly>
-                        </frame>
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\nube 3.png">
-                            <collision-poly>
-                                <point x="0.0462963" y="0.520408" />
-                                <point x="0.907407" y="0.520408" />
-                                <point x="0.912037" y="0.816327" />
-                                <point x="0.037037" y="0.857143" />
-                            </collision-poly>
-                        </frame>
                     </animation>
                 </animation-folder>
             </object-type>
@@ -1765,6 +1758,19 @@
                 </behaviors>
                 <texture />
             </object-type>
+            <object-type name="Agua" sid="541387309848372">
+                <plugin id="Sprite" />
+                <effects>
+                    <effect-type name="Water">
+                        <effect id="water" />
+                    </effect-type>
+                </effects>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="162127378203044" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="1" />
+                    </animation>
+                </animation-folder>
+            </object-type>
         </object-folder>
         <object-folder name="Globales">
             <object-type global="1" name="zreloj" sid="132212003196814">
@@ -1802,21 +1808,175 @@
                         <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS\icono puntacion.png" />
                         <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS\icono tiempo.png" />
                         <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS\icono vida.png" />
-                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS\boton abandonar.png" />
-                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS\boton audio.png" />
-                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS\boton ayuda.png" />
-                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS\boton continuar.png" />
-                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS\boton creditos.png" />
-                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS\boton global.png" />
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS\boton abandonar.png">
+                            <collision-poly>
+                                <point x="0.375" y="0.822917" />
+                                <point x="0.375885" y="0.972656" />
+                                <point x="0.0154777" y="0.972004" />
+                                <point x="0.0159198" y="0.0442708" />
+                                <point x="0.373821" y="0.046875" />
+                                <point x="0.37441" y="0.182292" />
+                                <point x="1" y="0.1875" />
+                                <point x="1" y="0.828125" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS\boton audio.png">
+                            <collision-poly>
+                                <point x="0.375" y="0.822917" />
+                                <point x="0.375885" y="0.972656" />
+                                <point x="0.0154777" y="0.972004" />
+                                <point x="0.0159198" y="0.0442708" />
+                                <point x="0.373821" y="0.046875" />
+                                <point x="0.37441" y="0.182292" />
+                                <point x="1" y="0.1875" />
+                                <point x="1" y="0.828125" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS\boton ayuda.png">
+                            <collision-poly>
+                                <point x="0.375" y="0.822917" />
+                                <point x="0.375885" y="0.972656" />
+                                <point x="0.0154777" y="0.972004" />
+                                <point x="0.0159198" y="0.0442708" />
+                                <point x="0.373821" y="0.046875" />
+                                <point x="0.37441" y="0.182292" />
+                                <point x="1" y="0.1875" />
+                                <point x="1" y="0.828125" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS\boton continuar.png">
+                            <collision-poly>
+                                <point x="0.375" y="0.822917" />
+                                <point x="0.375885" y="0.972656" />
+                                <point x="0.0154777" y="0.972004" />
+                                <point x="0.0159198" y="0.0442708" />
+                                <point x="0.373821" y="0.046875" />
+                                <point x="0.37441" y="0.182292" />
+                                <point x="1" y="0.1875" />
+                                <point x="1" y="0.828125" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS\boton creditos.png">
+                            <collision-poly>
+                                <point x="0.375" y="0.822917" />
+                                <point x="0.375885" y="0.972656" />
+                                <point x="0.0154777" y="0.972004" />
+                                <point x="0.0159198" y="0.0442708" />
+                                <point x="0.373821" y="0.046875" />
+                                <point x="0.37441" y="0.182292" />
+                                <point x="1" y="0.1875" />
+                                <point x="1" y="0.828125" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS\boton global.png">
+                            <collision-poly>
+                                <point x="0.375" y="0.822917" />
+                                <point x="0.375885" y="0.972656" />
+                                <point x="0.0154777" y="0.972004" />
+                                <point x="0.0159198" y="0.0442708" />
+                                <point x="0.373821" y="0.046875" />
+                                <point x="0.37441" y="0.182292" />
+                                <point x="1" y="0.1875" />
+                                <point x="1" y="0.828125" />
+                            </collision-poly>
+                        </frame>
                         <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS\boton menu.png" />
-                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS\boton microfono.png" />
-                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS\boton mouse.png" />
-                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS\boton personalizado.png" />
-                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS\boton principal.png" />
-                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS\boton propio.png" />
-                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS\boton ranking.png" />
-                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS\boton remix.png" />
-                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS\boton teclado.png" />
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS\boton microfono.png">
+                            <collision-poly>
+                                <point x="0.375" y="0.822917" />
+                                <point x="0.375885" y="0.972656" />
+                                <point x="0.0154777" y="0.972004" />
+                                <point x="0.0159198" y="0.0442708" />
+                                <point x="0.373821" y="0.046875" />
+                                <point x="0.37441" y="0.182292" />
+                                <point x="1" y="0.1875" />
+                                <point x="1" y="0.828125" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS\boton mouse.png">
+                            <collision-poly>
+                                <point x="0.375" y="0.822917" />
+                                <point x="0.375885" y="0.972656" />
+                                <point x="0.0154777" y="0.972004" />
+                                <point x="0.0159198" y="0.0442708" />
+                                <point x="0.373821" y="0.046875" />
+                                <point x="0.37441" y="0.182292" />
+                                <point x="1" y="0.1875" />
+                                <point x="1" y="0.828125" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS\boton personalizado.png">
+                            <collision-poly>
+                                <point x="0.375" y="0.822917" />
+                                <point x="0.375885" y="0.972656" />
+                                <point x="0.0154777" y="0.972004" />
+                                <point x="0.0159198" y="0.0442708" />
+                                <point x="0.373821" y="0.046875" />
+                                <point x="0.37441" y="0.182292" />
+                                <point x="1" y="0.1875" />
+                                <point x="1" y="0.828125" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS\boton principal.png">
+                            <collision-poly>
+                                <point x="0.375" y="0.822917" />
+                                <point x="0.375885" y="0.972656" />
+                                <point x="0.0154777" y="0.972004" />
+                                <point x="0.0159198" y="0.0442708" />
+                                <point x="0.373821" y="0.046875" />
+                                <point x="0.37441" y="0.182292" />
+                                <point x="1" y="0.1875" />
+                                <point x="1" y="0.828125" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS\boton propio.png">
+                            <collision-poly>
+                                <point x="0.375" y="0.822917" />
+                                <point x="0.375885" y="0.972656" />
+                                <point x="0.0154777" y="0.972004" />
+                                <point x="0.0159198" y="0.0442708" />
+                                <point x="0.373821" y="0.046875" />
+                                <point x="0.37441" y="0.182292" />
+                                <point x="1" y="0.1875" />
+                                <point x="1" y="0.828125" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS\boton ranking.png">
+                            <collision-poly>
+                                <point x="0.375" y="0.822917" />
+                                <point x="0.375885" y="0.972656" />
+                                <point x="0.0154777" y="0.972004" />
+                                <point x="0.0159198" y="0.0442708" />
+                                <point x="0.373821" y="0.046875" />
+                                <point x="0.37441" y="0.182292" />
+                                <point x="1" y="0.1875" />
+                                <point x="1" y="0.828125" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS\boton remix.png">
+                            <collision-poly>
+                                <point x="0.375" y="0.822917" />
+                                <point x="0.375885" y="0.972656" />
+                                <point x="0.0154777" y="0.972004" />
+                                <point x="0.0159198" y="0.0442708" />
+                                <point x="0.373821" y="0.046875" />
+                                <point x="0.37441" y="0.182292" />
+                                <point x="1" y="0.1875" />
+                                <point x="1" y="0.828125" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS\boton teclado.png">
+                            <collision-poly>
+                                <point x="0.375" y="0.822917" />
+                                <point x="0.375885" y="0.972656" />
+                                <point x="0.0154777" y="0.972004" />
+                                <point x="0.0159198" y="0.0442708" />
+                                <point x="0.373821" y="0.046875" />
+                                <point x="0.37441" y="0.182292" />
+                                <point x="1" y="0.1875" />
+                                <point x="1" y="0.828125" />
+                            </collision-poly>
+                        </frame>
                         <frame duration="1" hotspotX="0" hotspotY="0" />
                         <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS\contenedor boton.png" />
                         <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS\figura inhabilitado.png" />
@@ -1830,15 +1990,6 @@
                         </frame>
                         <frame duration="1" hotspotX="0" hotspotY="1" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS\dialogo.png">
                             <image-point name="texto" x="0.0849934" y="0.241245" />
-                            <collision-poly>
-                                <point x="0.0796813" y="0.233463" />
-                                <point x="0.499336" y="0.0272374" />
-                                <point x="0.924303" y="0.22179" />
-                                <point x="0.974768" y="0.498054" />
-                                <point x="0.881806" y="0.653696" />
-                                <point x="0" y="1" />
-                                <point x="0.0358566" y="0.498054" />
-                            </collision-poly>
                         </frame>
                     </animation>
                     <animation framecount="102" loop="0" name="Avatar1" pingpong="0" repeatcount="1" repeatto="0" sid="533715932008125" speed="25">
@@ -3932,6 +4083,14 @@
             <file name="C3-musica de circo 5.ogg" />
             <file name="C3-musica de miedo 2.m4a" />
             <file name="C3-musica de miedo 2.ogg" />
+            <file name="C3-musica de invierno 1.m4a" />
+            <file name="C3-musica de invierno 1.ogg" />
+            <file name="C3-musica de circo 6.m4a" />
+            <file name="C3-musica de circo 6.ogg" />
+            <file name="C3-musica de circo 2.m4a" />
+            <file name="C3-musica de circo 2.ogg" />
+            <file name="C3-musica de miedo 1.m4a" />
+            <file name="C3-musica de miedo 1.ogg" />
         </music-folder>
         <music-folder name="Eduardo">
             <file name="C3-musica de miedo 3.m4a" />
@@ -3968,6 +4127,12 @@
             <file name="C3-musica de carrera 1.ogg" />
             <file name="C3-musica de selva 1.m4a" />
             <file name="C3-musica de selva 1.ogg" />
+            <file name="C3-musica de circo 3.m4a" />
+            <file name="C3-musica de circo 3.ogg" />
+            <file name="C3-musica de invierno 2.m4a" />
+            <file name="C3-musica de invierno 2.ogg" />
+            <file name="C3-musica de villano 1.m4a" />
+            <file name="C3-musica de villano 1.ogg" />
         </music-folder>
     </music-folder>
     <files-folder>
@@ -4050,6 +4215,25 @@
         </file-folder>
         <file-folder name="Ivania">
             <file name="j10a.gif" />
+            <file name="j7.html" />
+            <file name="j7a.png" />
+            <file name="j7b.png" />
+            <file name="j11.html" />
+            <file name="j11a.png" />
+            <file name="j11b.png" />
+            <file name="j12.html" />
+            <file name="j12a.gif" />
+            <file name="j12b.png" />
+        </file-folder>
+        <file-folder name="Claudia">
+            <file name="j1.html" />
+            <file name="j5.html" />
+            <file name="j6.html" />
+            <file name="j14.html" />
+            <file name="j16.html" />
+            <file name="j19.html" />
+            <file name="j20.html" />
+            <file name="j6a.gif" />
         </file-folder>
     </files-folder>
 </c2project>

@@ -624,7 +624,7 @@
                             </conditions>
                             <actions>
                                 <action id="0" name="Play" sid="169646710417283" type="Audio">
-                                    <param id="0" name="Audio file">A3-tono ascendiendo 1</param>
+                                    <param id="0" name="Audio file">C3-musica de circo 2</param>
                                     <param id="2" name="Loop">1</param>
                                     <param id="3" name="Volume">gAudioLoop</param>
                                     <param id="1" name="Tag (optional)">&quot;L&quot;</param>
@@ -1230,6 +1230,22 @@
                             <param id="1" name="Parameter {n}"></param>
                         </action>
                     </actions>
+                    <sub-events>
+                        <event-block sid="241269138671345">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="197297866305804" type="Utileria">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">22</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="6" name="Set speed" sid="328851925499422" type="Utileria">
+                                    <param id="0" name="Speed">5</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <comment>Se ejecuta cada vez que el jugador se suporpone con un enemigo</comment>
                 <event-block sid="807470539226163">

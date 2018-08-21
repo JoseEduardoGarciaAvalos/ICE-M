@@ -582,6 +582,9 @@
                                 <condition id="-22" name="Else" sid="405682224584752" type="System" />
                             </conditions>
                             <actions>
+                                <action behavior="8Direccion" id="8" name="Set enabled" sid="287293291102093" type="Jugador">
+                                    <param id="0" name="State">0</param>
+                                </action>
                                 <action id="0" name="Call function" sid="794470908354998" type="Funcion">
                                     <param id="0" name="Name">&quot;tiempoACABADO&quot;</param>
                                     <param id="1" name="Parameter {n}"></param>

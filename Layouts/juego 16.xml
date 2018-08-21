@@ -15,7 +15,7 @@
     <layers>
         <layer name="Fondo" sid="674355946447150">
             <initially-visible>1</initially-visible>
-            <background-color>255,255,255</background-color>
+            <background-color>0,153,153</background-color>
             <transparent>0</transparent>
             <parallax>
                 <x>1</x>
@@ -65,10 +65,10 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>0</x>
+                        <x>84</x>
                         <y>352</y>
                         <z>0</z>
-                        <width>864</width>
+                        <width>770</width>
                         <height>128</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
@@ -295,14 +295,14 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>-32</x>
-                        <y>352</y>
+                        <x>-56</x>
+                        <y>343</y>
                         <z>0</z>
                         <width>544</width>
                         <height>376</height>
                         <depth>0</depth>
-                        <hotspotX>0.050000001</hotspotX>
-                        <hotspotY>0.875</hotspotY>
+                        <hotspotX>0.047794119</hotspotX>
+                        <hotspotY>0.914893627</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -525,14 +525,247 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>928</x>
-                        <y>352</y>
+                        <x>924</x>
+                        <y>346</y>
                         <z>0</z>
                         <width>-544</width>
                         <height>376</height>
                         <depth>0</depth>
-                        <hotspotX>0.050000001</hotspotX>
-                        <hotspotY>0.875</hotspotY>
+                        <hotspotX>0.047794119</hotspotX>
+                        <hotspotY>0.914893627</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Utileria" uid="176">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>j18a</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Disabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <ID>4</ID>
+                    </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="BalaCaucho">
+                            <properties>
+                                <speed>400</speed>
+                                <acceleration>0</acceleration>
+                                <gravity>0</gravity>
+                                <bounce-off-solids>Yes</bounce-off-solids>
+                                <set-angle>No</set-angle>
+                                <initial-state>Disabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="Bala">
+                            <properties>
+                                <speed>400</speed>
+                                <acceleration>0</acceleration>
+                                <gravity>0</gravity>
+                                <bounce-off-solids>No</bounce-off-solids>
+                                <set-angle>No</set-angle>
+                                <initial-state>Disabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="Sombra">
+                            <properties>
+                                <initial-state>Disabled</initial-state>
+                                <height>100</height>
+                                <tag></tag>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="Metronomo">
+                            <properties>
+                                <active-on-start>No</active-on-start>
+                                <movement>Horizontal</movement>
+                                <wave>Sine</wave>
+                                <period>4</period>
+                                <period-random>0</period-random>
+                                <period-offset>0</period-offset>
+                                <period-offset-random>0</period-offset-random>
+                                <magnitude>50</magnitude>
+                                <magnitude-random>0</magnitude-random>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="Solido">
+                            <properties>
+                                <initial-state>Disabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="Linea" />
+                        <behavior-instance type="Tiempo" />
+                        <behavior-instance type="Pin" />
+                        <behavior-instance type="Pin2" />
+                        <behavior-instance type="Parpadear" />
+                        <behavior-instance type="Girar">
+                            <properties>
+                                <activated>No</activated>
+                                <direction>Clockwise</direction>
+                                <speed>180</speed>
+                                <acceleration>0</acceleration>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="Desaparecer">
+                            <properties>
+                                <active-at-start>No</active-at-start>
+                                <fade-in-time>0</fade-in-time>
+                                <wait-time>0</wait-time>
+                                <fade-out-time>1</fade-out-time>
+                                <destroy>After fade out</destroy>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="8Direccion">
+                            <properties>
+                                <max-speed>200</max-speed>
+                                <acceleration>600</acceleration>
+                                <deceleration>500</deceleration>
+                                <directions>8 directions</directions>
+                                <set-angle>No</set-angle>
+                                <default-controls>Yes</default-controls>
+                                <initial-state>Disabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="4Direccion">
+                            <properties>
+                                <max-speed>200</max-speed>
+                                <acceleration>600</acceleration>
+                                <deceleration>500</deceleration>
+                                <directions>4 directions</directions>
+                                <set-angle>No</set-angle>
+                                <default-controls>Yes</default-controls>
+                                <initial-state>Disabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="Desplazamiento">
+                            <properties>
+                                <initial-state>Disabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="MoverA">
+                            <properties>
+                                <activated>No</activated>
+                                <max-speed>400</max-speed>
+                                <acceleration>0</acceleration>
+                                <deceleration>0</deceleration>
+                                <stop-by-solid>No</stop-by-solid>
+                                <continued-mode>No</continued-mode>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="Ruta">
+                            <properties>
+                                <activated>No</activated>
+                                <speed>400</speed>
+                                <set-angle>Yes</set-angle>
+                                <looping>No</looping>
+                                <tension>0.5</tension>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="Fisica">
+                            <properties>
+                                <immovable>No</immovable>
+                                <collision-mask>Use collision polygon</collision-mask>
+                                <prevent-rotation>No</prevent-rotation>
+                                <density>1</density>
+                                <friction>0.5</friction>
+                                <elasticity>0.2</elasticity>
+                                <linear-damping>0</linear-damping>
+                                <angular-damping>0.01</angular-damping>
+                                <bullet>No</bullet>
+                                <initial-state>Disabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="Hash">
+                            <properties>
+                                <initial-data></initial-data>
+                                <indent>-1</indent>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="PixelColision">
+                            <properties>
+                                <sample-rate>0.01</sample-rate>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="Ancla">
+                            <properties>
+                                <horizontal-align-mode>Left edge</horizontal-align-mode>
+                                <horizontal-position>0</horizontal-position>
+                                <vertical-align-mode>Top edge</vertical-align-mode>
+                                <vertical-position>0</vertical-position>
+                                <initial-state>Disabled</initial-state>
+                                <set-once>No</set-once>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="Arrastrar">
+                            <properties>
+                                <axes>Both</axes>
+                                <initial-state>Disabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="Tarea">
+                            <properties>
+                                <active-on-start>No</active-on-start>
+                                <tweened-property>Position</tweened-property>
+                                <function>EaseOutBounce</function>
+                                <target>100,100</target>
+                                <target-mode>Absolute</target-mode>
+                                <duration>2.5</duration>
+                                <enforce-mode>Enforce</enforce-mode>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="Temblar">
+                            <properties>
+                                <activated>No</activated>
+                                <mode>Effect</mode>
+                                <duration>0.5</duration>
+                                <magnitude>10</magnitude>
+                                <magnitude-mode>Decay</magnitude-mode>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="Plataforma">
+                            <properties>
+                                <max-speed>330</max-speed>
+                                <acceleration>1500</acceleration>
+                                <deceleration>1500</deceleration>
+                                <jump-strength>650</jump-strength>
+                                <gravity>1500</gravity>
+                                <max-fall-speed>1000</max-fall-speed>
+                                <double-jump>Disabled</double-jump>
+                                <jump-sustain>0</jump-sustain>
+                                <default-controls>Yes</default-controls>
+                                <initial-state>Disabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="Salto">
+                            <properties>
+                                <initial-state>Disabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="Funcion">
+                            <properties>
+                                <debug-mode>Off</debug-mode>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="Camara">
+                            <properties>
+                                <type>Follower</type>
+                                <activated>No</activated>
+                                <x>1</x>
+                                <y>1</y>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>452</x>
+                        <y>268</y>
+                        <z>0</z>
+                        <width>384</width>
+                        <height>160</height>
+                        <depth>0</depth>
+                        <hotspotX>0.500663996</hotspotX>
+                        <hotspotY>0.501945496</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -543,8 +776,8 @@
                         <initial-visibility>Visible</initial-visibility>
                         <font>Arial,-16</font>
                         <color>0,0,0</color>
-                        <horizontal-alignment>Left</horizontal-alignment>
-                        <vertical-alignment>Top</vertical-alignment>
+                        <horizontal-alignment>Center</horizontal-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
                         <hotspot>Top-left</hotspot>
                         <wrapping>Word</wrapping>
                         <line-height>0</line-height>
@@ -571,11 +804,11 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>352</x>
-                        <y>64</y>
+                        <x>318</x>
+                        <y>192</y>
                         <z>0</z>
-                        <width>160</width>
-                        <height>30</height>
+                        <width>256</width>
+                        <height>158</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>

@@ -3176,6 +3176,21 @@
                                         </event-block>
                                     </sub-events>
                                 </event-block>
+                                <event-block sid="227525089542919">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="704157393272314" type="Texto">
+                                            <param id="0" name="Instance variable">ID</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-26" name="Move to layer" sid="610153504004313" type="Texto">
+                                            <param id="0" name="Layer">&quot;GUI&quot;</param>
+                                        </action>
+                                        <action id="-25" name="Move to bottom" sid="286703062985955" type="Texto" />
+                                    </actions>
+                                </event-block>
                             </sub-events>
                         </event-block>
                     </sub-events>
@@ -3387,6 +3402,21 @@
                                         </action>
                                     </actions>
                                 </event-block>
+                                <event-block sid="447030101530482">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="258239639917797" type="Texto">
+                                            <param id="0" name="Instance variable">ID</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-26" name="Move to layer" sid="183223235065275" type="Texto">
+                                            <param id="0" name="Layer">&quot;GUI&quot;</param>
+                                        </action>
+                                        <action id="-25" name="Move to bottom" sid="626957922421805" type="Texto" />
+                                    </actions>
+                                </event-block>
                             </sub-events>
                         </event-block>
                         <comment>Cuando la tarea de &quot;pausaSalir&quot; termina, entonces continua el juego, se quita la pausa y se borra los objetos del menu pausa</comment>
@@ -3521,6 +3551,18 @@
                                         <action id="-42" name="Signal" sid="793279239346583" type="System">
                                             <param id="0" name="Tag">&quot;pTerminado&quot;</param>
                                         </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="174557228317595">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="230146266030906" type="Texto">
+                                            <param id="0" name="Instance variable">ID</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Destroy" sid="788056153045489" type="Texto" />
                                     </actions>
                                 </event-block>
                             </sub-events>
@@ -7377,6 +7419,18 @@
                                 <action id="-25" name="Move to bottom" sid="305771649490040" type="Objeto" />
                             </actions>
                         </event-block>
+                        <event-block sid="305538897761619">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="866594695304099" type="Texto">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="122683642291441" type="Texto" />
+                            </actions>
+                        </event-block>
                     </sub-events>
                 </event-block>
                 <comment>Función para comenzar una partida</comment>
@@ -8643,7 +8697,7 @@
                                                 </condition>
                                             </conditions>
                                             <actions>
-                                                <action id="33" name="Stop all" sid="866019840459855" type="Audio" />
+                                                <action disabled="1" id="33" name="Stop all" sid="866019840459855" type="Audio" />
                                             </actions>
                                             <sub-events>
                                                 <variable constant="0" name="id" sid="135706344009787" static="0" type="text"></variable>
@@ -8677,10 +8731,31 @@
                                                 <event-block sid="163751836655636">
                                                     <conditions>
                                                         <condition id="-22" name="Else" sid="516151025893379" type="System" />
+                                                        <condition id="-13" name="Pick nth instance" sid="144617556983512" type="System">
+                                                            <param id="0" name="Object">Patron</param>
+                                                            <param id="1" name="Instance">1</param>
+                                                        </condition>
                                                     </conditions>
                                                     <actions>
-                                                        <action id="-25" name="Go to layout (by name)" sid="607853541537539" type="System">
+                                                        <action disabled="1" id="-25" name="Go to layout (by name)" sid="607853541537539" type="System">
                                                             <param id="0" name="Layout">&quot;juego &quot; &amp; id</param>
+                                                        </action>
+                                                        <action id="4" name="Remove all patterns" sid="622175212530586" type="Patron" />
+                                                        <action id="2" name="Set pattern" sid="317273880248470" type="Patron">
+                                                            <param id="0" name="Pattern">id</param>
+                                                            <param id="1" name="Count">1</param>
+                                                        </action>
+                                                        <action id="-9" name="Set value" sid="937844646827140" type="System">
+                                                            <param id="0" name="Variable">gSecuencia</param>
+                                                            <param id="1" name="Value">id</param>
+                                                        </action>
+                                                        <action id="-9" name="Set value" sid="987513500459033" type="System">
+                                                            <param id="0" name="Variable">gDerrota</param>
+                                                            <param id="1" name="Value">0</param>
+                                                        </action>
+                                                        <action id="0" name="Call function" sid="167585002844865" type="Funcion">
+                                                            <param id="0" name="Name">&quot;tiempoACABADO&quot;</param>
+                                                            <param id="1" name="Parameter {n}"></param>
                                                         </action>
                                                     </actions>
                                                 </event-block>

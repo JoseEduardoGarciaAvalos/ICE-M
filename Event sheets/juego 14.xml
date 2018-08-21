@@ -8,8 +8,8 @@
         <event-group description="Preparación del escenario" sid="671857015755804" title="inicio 14">
             <sub-events>
                 <comment>VALORES DEL TERMOMETRO</comment>
-                <variable comment="Desfase en la coordenada Y para la region meta" constant="0" name="DY" sid="219730084538843" static="0" type="number">5</variable>
-                <variable comment="Desfase inferior en la altura para la region meta" constant="0" name="DAI" sid="812260895988776" static="0" type="number">-15</variable>
+                <variable comment="Desfase en la coordenada Y para la region meta" constant="0" name="DY" sid="219730084538843" static="0" type="number">10</variable>
+                <variable comment="Desfase inferior en la altura para la region meta" constant="0" name="DAI" sid="812260895988776" static="0" type="number">-50</variable>
                 <variable comment="Desfase superior en la altura para la region meta" constant="0" name="DAS" sid="809159916685739" static="0" type="number">5</variable>
                 <comment>VALORES DEL CLIMA</comment>
                 <variable comment="Proporción del termometro para que no haya calor en la olla" constant="0" name="PO" sid="654307809710976" static="0" type="number">0.75</variable>
@@ -158,7 +158,7 @@
                             </conditions>
                             <actions>
                                 <action id="0" name="Play" sid="893351020103004" type="Audio">
-                                    <param id="0" name="Audio file">A3-tono ascendiendo 1</param>
+                                    <param id="0" name="Audio file">C3-musica de circo 3</param>
                                     <param id="2" name="Loop">1</param>
                                     <param id="3" name="Volume">gAudioLoop</param>
                                     <param id="1" name="Tag (optional)">&quot;L&quot;</param>

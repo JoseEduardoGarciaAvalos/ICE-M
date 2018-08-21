@@ -437,6 +437,21 @@
                                         </action>
                                     </actions>
                                 </event-block>
+                                <event-block sid="370358774690053">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="893249023104854" type="Texto">
+                                            <param id="0" name="Instance variable">ID</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-26" name="Move to layer" sid="524328925075597" type="Texto">
+                                            <param id="0" name="Layer">&quot;GUI&quot;</param>
+                                        </action>
+                                        <action id="-25" name="Move to bottom" sid="156093599672490" type="Texto" />
+                                    </actions>
+                                </event-block>
                             </sub-events>
                         </event-block>
                     </sub-events>
@@ -759,6 +774,9 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action behavior="4Direccion" id="8" name="Set enabled" sid="423803933349667" type="Jugador">
+                                    <param id="0" name="State">0</param>
+                                </action>
                                 <action id="-9" name="Set value" sid="814426633313551" type="System">
                                     <param id="0" name="Variable">gDerrota</param>
                                     <param id="1" name="Value">Diccionario.Get(&quot;i&quot;)&lt;Diccionario.Get(&quot;n&quot;)?1:0</param>

@@ -88,6 +88,101 @@
                                 </action>
                             </actions>
                         </event-block>
+                        <variable constant="0" name="id" sid="433555318095196" static="0" type="number">0</variable>
+                        <event-block sid="737058547001884">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="884172806339701" type="Utileria">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">19</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-1" name="Set X" sid="200225534285281" type="Utileria">
+                                    <param id="0" name="X">random(0,LayoutHeight-50)</param>
+                                </action>
+                                <action id="-5" name="Set width" sid="829800843025726" type="Utileria">
+                                    <param id="0" name="Width">random(50,256)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="870675226745756">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="504658654465490" type="Utileria">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">21</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="313573888923777" type="System">
+                                    <param id="0" name="Variable">id</param>
+                                    <param id="1" name="Value">Utileria.UID</param>
+                                </action>
+                                <action id="-1" name="Set X" sid="220904290635730" type="Utileria">
+                                    <param id="0" name="X">random(0,LayoutHeight-50)</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="346509039917561" type="Utileria">
+                                    <param id="0" name="Width">random(200,500)</param>
+                                    <param id="1" name="Height">random(100,224)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="859760406131395">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="810246203907314" type="Utileria">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">22</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-1" name="Set X" sid="676989044518023" type="Utileria">
+                                    <param id="0" name="X">random(144,LayoutHeight-144)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="346890829527736">
+                            <conditions>
+                                <condition id="-23" name="While" sid="855597603983602" type="System" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="770948509895553">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="191549813245043" type="Utileria">
+                                            <param id="0" name="Instance variable">ID</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">20</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-1" name="Set X" sid="707553686222352" type="Utileria">
+                                            <param id="0" name="X">random(0,LayoutHeight-50)</param>
+                                        </action>
+                                        <action id="-7" name="Set size" sid="431705000462405" type="Utileria">
+                                            <param id="0" name="Width">random(200,500)</param>
+                                            <param id="1" name="Height">random(180,224)</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="881023181025464">
+                                            <conditions>
+                                                <condition id="-14" name="Pick by unique ID" sid="634638213326249" type="Actores">
+                                                    <param id="0" name="Unique ID">id</param>
+                                                </condition>
+                                                <condition id="1" inverted="1" name="Is overlapping another object" sid="919134245958479" type="Actores">
+                                                    <param id="0" name="Object">Utileria</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-24" name="Stop loop" sid="864182867464146" type="System" />
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
                         <event-block sid="434073236161122">
                             <conditions />
                             <actions>
@@ -119,7 +214,7 @@
                             </conditions>
                             <actions>
                                 <action id="0" name="Play" sid="586345588223465" type="Audio">
-                                    <param id="0" name="Audio file">A3-tono ascendiendo 1</param>
+                                    <param id="0" name="Audio file">C3-musica de invierno 1</param>
                                     <param id="2" name="Loop">1</param>
                                     <param id="3" name="Volume">gAudioLoop</param>
                                     <param id="1" name="Tag (optional)">&quot;L&quot;</param>
@@ -135,9 +230,36 @@
                                     <param id="2" name="Tag">&quot;nubes&quot;</param>
                                 </action>
                                 <action behavior="Tiempo" id="0" name="Start timer" sid="471446735120203" type="Jugador">
-                                    <param id="0" name="Duration">0.2</param>
+                                    <param id="0" name="Duration">random(0.2,1.2)</param>
                                     <param id="1" name="Type">1</param>
                                     <param id="2" name="Tag">&quot;llover&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="154534595681303">
+                            <conditions>
+                                <condition id="-13" name="Pick nth instance" sid="632990365493478" type="System">
+                                    <param id="0" name="Object">Tarea</param>
+                                    <param id="1" name="Instance">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="11" name="New function task" sid="993955275104745" type="Tarea">
+                                    <param id="0" name="Task">&quot;tarea1&quot;</param>
+                                    <param id="1" name="Function">&quot;-agua&quot;</param>
+                                    <param id="2" name="Interval">gTiempoM</param>
+                                    <param id="3" name="Repeat">1</param>
+                                </action>
+                                <action id="12" name="Set parameter" sid="617902873851716" type="Tarea">
+                                    <param id="0" name="Task">&quot;tarea1&quot;</param>
+                                    <param id="1" name="Parameter">&quot;agua&quot;</param>
+                                    <param id="2" name="Start">0</param>
+                                    <param id="3" name="End">random(1.5*32,10*32)</param>
+                                    <param id="4" name="Type">0</param>
+                                </action>
+                                <action id="31" name="Start" sid="959312765026855" type="Tarea">
+                                    <param id="0" name="Task">&quot;tarea1&quot;</param>
+                                    <param id="1" name="Destroy">0</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -147,6 +269,22 @@
         </event-group>
         <event-group description="Creación, definición de propiedades y comportamientos de los objetos " sid="798525246031822" title="jugabilidad 17">
             <sub-events>
+                <event-block sid="891485543570413">
+                    <conditions>
+                        <condition id="0" name="On function" sid="871790720818675" type="Tarea">
+                            <param id="0" name="Name">&quot;-agua&quot;</param>
+                        </condition>
+                        <condition id="-13" name="Pick nth instance" sid="677997341968135" type="System">
+                            <param id="0" name="Object">Tarea</param>
+                            <param id="1" name="Instance">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-6" name="Set height" sid="546301245708165" type="Agua">
+                            <param id="0" name="Height">Self.Height + Tarea.FnParam(&quot;agua&quot;,&quot;delta&quot;)</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <comment>Si está sobre una nube, podrá bajar de ella</comment>
                 <event-block sid="629391075438247">
                     <conditions>
@@ -339,10 +477,13 @@
         <event-group description="Condiciones de derrota y controles de tiempo junto a los controles (si los hay) del jugador" sid="278536281754817" title="control 17">
             <sub-events>
                 <comment>Disparador que se ejecuta cuando el jugador colisiona con el enemigo</comment>
-                <event-block sid="594098376501311">
+                <event-block any="1" sid="594098376501311">
                     <conditions>
                         <condition id="0" name="On collision with another object" sid="262381038818437" type="Jugador">
                             <param id="0" name="Object">Enemigo</param>
+                        </condition>
+                        <condition id="0" name="On collision with another object" sid="779005938933284" type="Jugador">
+                            <param id="0" name="Object">Agua</param>
                         </condition>
                     </conditions>
                     <actions />

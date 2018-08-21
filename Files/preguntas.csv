@@ -1,4 +1,14 @@
 ﻿,pregunta,opcion,respuesta
-1,"¿Cuál es el día que sigue después de domingo?",lunes;martes;miércoles,1
-2,"¿Cuánto son 2 + 2?",6;4;3,2
-3,"¿Cuáles son verbos?",nadar;sur;comer,1;3
+1,¿Qué es SPAM?,Correo electrónico masivo no solicitado;Es un video;Es parte de la computadora,1
+2,¿Con quién puedo compartir la dirección del correo electrónico?,"Maestros, amigos y familiares;Con personas en internet;Con niños desconocidos",1
+3,¿En un correo SPAM debo de llenar formularios donde pidan datos personales?,"Sí, siempre hay que llenarlos;Nunca hay que dar datos personales a desconocidos;Solo llenar formulario cortos",2
+4,¿Los padres de familia deben de saber que sus hijos tienen cuenta de correo electrónico?,No porque tendrán supervisados a sus hijos;Sí porque dan consejos acerca del buen uso;Ninguna de las anteriores,2
+5,¿Dónde se recopilan las direcciones de correos electrónicos para enviar SPAM?,"Centros educativos públicos y privados; Ciber café;páginas webs, foros, cadenas de correos, listas de correo y chats",3
+6,¿Qué se debe hacer con los correos SPAM?,Leerlo y no responder;No leerlo y eliminarlos porque puede tener virus.;Almacenarnos en la bandeja de entrada,2
+7,¿En la actualidad porque medios se envían mensajes SPAM?,Correos electrónicos;Por teléfonos móviles;La 1 y 2 son correctas. ,3
+8,¿Qué tipo de SPAM puede ser más peligroso?,Ofertas de juguetes;Imágenes de animales;Virus informáticos ,3
+9,¿Una de las formas de evitar un correo SPAM es?,Cerrando siempre nuestro correo.;Nunca responder correos electrónicos a desconocidos;Leer los correos y luego borrarlos.,2
+10,¿Por qué no se debe de responder a los correos SPAM?,"Son difíciles de responder;Al responder pueden tener acceso a nuestra información personal;Si responder, pero con mensajes cortos",2
+11,¿Un antivirus evita que recibas mensajes SPAM?,"No evitan recibir correos spam:Sí, hay antivirus que evitan esos correos",2
+12,¿Qué es un troll en internet?,Sucede cuando una persona que publica mensajes provocadores logrando que las mismas  personas se enfaden y se enfrenten entre sí.;Sucede cuando una persona que publica mensajes alentadores logrando que las otras  personas se respeten y sean amigos entre sí.;Sucede cuando una persona que publica mensajes que no le interesan a nadie.;Sucede cuando una persona es expulsada de una comunidad (por ejemplo Facebook) porque no cumplió con las normas de respeto o código de conducta.,1
+13,"¿Cuáles de los siguientes datos son muy sensibles y deberán ser muy bien pensados antes de compartir en medios digitales, como el internet?",Nombre.;Tarjeta de crédito.;Números de teléfonos.;Fotos y videos de la mascota.;Fotos y videos de mis amigos.,2;3;5
