@@ -17,7 +17,7 @@
     color: black;
     line-height: 1;
     font-family: "Segoe UI", Arial, Helvetica, sans-serif !important;
-    font-size:13px;
+    font-size: 17px;
     padding: 0 20px;
 }
 
@@ -27,7 +27,7 @@
 }
 
 .c2_TITULO3 {
-    font-size:13px;
+    font-size: 13px;
     text-align: center;
 }
 
@@ -55,7 +55,7 @@
     color: black;
     line-height: 2;
     font-family: "Segoe UI", Arial, Helvetica, sans-serif !important;
-    font-size:15px;
+    font-size: 17px;
     width: auto;
     margin: 5px;
 }
@@ -70,7 +70,7 @@
 }
 
 .c2_titulo1 {
-    font-size: 20px;
+    font-size: 22px;
     text-align: center;
 }
 
@@ -126,6 +126,13 @@
 .c2_columnaImagen{
     width: 30%;
     text-align: center;
+}
+.c2_columnaImagen2{
+    width: 100%;
+    text-align: center;
+}
+.c2_columnaTexto{
+    width: 70%;
 }
 .c2_viñeta{
     margin-left: 5%;

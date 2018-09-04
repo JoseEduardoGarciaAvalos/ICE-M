@@ -273,7 +273,7 @@
                             <actions>
                                 <action id="-9" name="Set value" sid="750669241318292" type="System">
                                     <param id="0" name="Variable">mitad</param>
-                                    <param id="1" name="Value">LayoutWidth/2</param>
+                                    <param id="1" name="Value">int(LayoutWidth/2) + 2</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -285,11 +285,48 @@
                                     <param id="2" name="Value">0</param>
                                 </condition>
                             </conditions>
-                            <actions>
-                                <action id="-5" name="Scroll to X" sid="557011862544435" type="System">
-                                    <param id="0" name="X">-mitad</param>
-                                </action>
-                            </actions>
+                            <actions />
+                            <sub-events>
+                                <comment>TEMA CONSTRUCCION</comment>
+                                <event-block sid="414465752394396">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="714216431254925" type="System">
+                                            <param id="0" name="Variable">gPuntaje</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="1" name="Set value" sid="198283711601281" type="Hash">
+                                            <param id="0" name="Key string">&quot;ranking.espera&quot;</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="528326660751772" type="Funcion">
+                                            <param id="0" name="Name">&quot;iniciaTAREA&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;scrollIzquierda&quot;{###}0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="773072607541089">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="370470337967297" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-5" name="Scroll to X" sid="557011862544435" type="System">
+                                            <param id="0" name="X">-mitad</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>TEMA TEATRO</comment>
+                                <event-block sid="146147666023010">
+                                    <conditions />
+                                    <actions>
+                                        <action disabled="1" id="-5" name="Scroll to X" sid="396529756848395" type="System">
+                                            <param id="0" name="X">-mitad</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                         <event-block sid="521012721566167">
                             <conditions>
@@ -1917,6 +1954,13 @@
                                                     <param id="0" name="Variable">audio</param>
                                                     <param id="1" name="Value">1</param>
                                                 </action>
+                                                <action id="0" name="Call function" sid="239967466688605" type="Funcion">
+                                                    <param id="0" name="Name">&quot;iniciaTAREA&quot;</param>
+                                                    <param id="1" name="Parameter {n}">&quot;scrollIzquierda&quot;{###}0</param>
+                                                </action>
+                                                <action id="-16" name="Wait" sid="876341105698631" type="System">
+                                                    <param id="0" name="Seconds">1</param>
+                                                </action>
                                                 <action id="0" name="Call function" sid="960357390365237" type="Funcion">
                                                     <param id="0" name="Name">&quot;comenzoPARTIDA&quot;</param>
                                                     <param id="1" name="Parameter {n}"></param>
@@ -2172,6 +2216,9 @@
                             <param id="0" name="Name">&quot;objetivoGUI&quot;</param>
                             <param id="1" name="Parameter {n}"></param>
                         </action>
+                        <action id="6" name="Remove key" sid="417314082570893" type="Hash">
+                            <param id="0" name="Key string">&quot;ranking.espera&quot;</param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="862182798625102">
@@ -2204,6 +2251,9 @@
                         <condition id="-22" name="Else" sid="509242556232210" type="System" />
                         <condition id="2" inverted="1" name="Key exists" sid="477310708028174" type="Hash">
                             <param id="0" name="Key string">&quot;juego.pausa.estado&quot;</param>
+                        </condition>
+                        <condition id="2" inverted="1" name="Key exists" sid="905055522918057" type="Hash">
+                            <param id="0" name="Key string">&quot;ranking.espera&quot;</param>
                         </condition>
                         <condition id="-8" name="Compare two values" sid="643141594850591" type="System">
                             <param id="0" name="First value">scrollx</param>

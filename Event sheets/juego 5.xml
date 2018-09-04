@@ -791,6 +791,27 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="Cierre del escenario (Eventos que continuan ejecutandose a pesar que se ha acabado el tiempo o fue derrotado)" sid="990680734295641" title="fin 5" />
+        <event-group description="Cierre del escenario (Eventos que continuan ejecutandose a pesar que se ha acabado el tiempo o fue derrotado)" sid="990680734295641" title="fin 5">
+            <sub-events>
+                <event-block any="1" sid="251060265967184">
+                    <conditions>
+                        <condition id="0" name="On function" sid="719431695078873" type="Funcion">
+                            <param id="0" name="Name">&quot;tiempoACABADO&quot;</param>
+                        </condition>
+                        <condition id="0" name="On function" sid="657084719392030" type="Funcion">
+                            <param id="0" name="Name">&quot;derrotaJUEGO&quot;</param>
+                        </condition>
+                        <condition id="0" name="On function" sid="319368533553223" type="Funcion">
+                            <param id="0" name="Name">&quot;victoriaJUEGO&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="4Direccion" id="8" name="Set enabled" sid="178568911879280" type="Jugador">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
     </events>
 </c2eventsheet>

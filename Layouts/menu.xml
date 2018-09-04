@@ -1235,36 +1235,6 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Lineal" uid="37">
-                    <properties>
-                        <pin-mode>None</pin-mode>
-                        <hotspot>Top-left</hotspot>
-                    </properties>
-                    <behavior-instances>
-                        <behavior-instance type="Orden">
-                            <properties>
-                                <mode>Fix</mode>
-                                <direction>Left to right</direction>
-                                <alignment>Start</alignment>
-                                <spacing>40</spacing>
-                            </properties>
-                        </behavior-instance>
-                    </behavior-instances>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>160</x>
-                        <y>992</y>
-                        <z>0</z>
-                        <width>64</width>
-                        <height>64</height>
-                        <depth>0</depth>
-                        <hotspotX>0</hotspotX>
-                        <hotspotY>0</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
                 <instance type="Luz" uid="58">
                     <properties>
                         <light-height>0</light-height>
@@ -1652,6 +1622,36 @@
                         <y>224</y>
                         <z>0</z>
                         <width>320</width>
+                        <height>32</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Lineal" uid="37">
+                    <properties>
+                        <pin-mode>None</pin-mode>
+                        <hotspot>Top-left</hotspot>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="Orden">
+                            <properties>
+                                <mode>Fix</mode>
+                                <direction>Left to right</direction>
+                                <alignment>Start</alignment>
+                                <spacing>40</spacing>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>160</x>
+                        <y>992</y>
+                        <z>0</z>
+                        <width>32</width>
                         <height>32</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>

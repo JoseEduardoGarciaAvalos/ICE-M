@@ -18,3 +18,7 @@ function c2_cambioLista() {
     var lista = document.getElementById("c2_iDispositivo");
     C2("c2_iDispositivo;"+lista.value);
 }
+function c2_cambioRadio(id) {
+    valor = document.querySelector('input[name='+id+']:checked');
+    C2(id+";"+valor.value);
+}

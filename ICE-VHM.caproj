@@ -1300,19 +1300,82 @@
                             </frame>
                         </animation>
                         <animation framecount="3" loop="1" name="j5a" pingpong="1" repeatcount="1" repeatto="0" sid="185516831301184" speed="0">
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC8\Desktop\juego 5\avatar 4.png" />
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC8\Desktop\juego 5\avatar 5.png" />
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC8\Desktop\juego 5\avatar 6.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC8\Desktop\juego 5\avatar 4.png">
+                                <collision-poly>
+                                    <point x="0.27" y="0.35" />
+                                    <point x="0.7" y="0.35" />
+                                    <point x="0.7" y="0.92" />
+                                    <point x="0.27" y="0.91" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC8\Desktop\juego 5\avatar 5.png">
+                                <collision-poly>
+                                    <point x="0.27" y="0.35" />
+                                    <point x="0.7" y="0.35" />
+                                    <point x="0.7" y="0.92" />
+                                    <point x="0.27" y="0.91" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC8\Desktop\juego 5\avatar 6.png">
+                                <collision-poly>
+                                    <point x="0.27" y="0.35" />
+                                    <point x="0.7" y="0.35" />
+                                    <point x="0.7" y="0.92" />
+                                    <point x="0.27" y="0.91" />
+                                </collision-poly>
+                            </frame>
                         </animation>
                         <animation framecount="3" loop="1" name="j5b" pingpong="1" repeatcount="1" repeatto="0" sid="745812983208207" speed="0">
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC8\Desktop\juego 5\avatar 7.png" />
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC8\Desktop\juego 5\avatar 8.png" />
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC8\Desktop\juego 5\avatar 9.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC8\Desktop\juego 5\avatar 7.png">
+                                <collision-poly>
+                                    <point x="0.27" y="0.35" />
+                                    <point x="0.7" y="0.35" />
+                                    <point x="0.7" y="0.91" />
+                                    <point x="0.27" y="0.91" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC8\Desktop\juego 5\avatar 8.png">
+                                <collision-poly>
+                                    <point x="0.27" y="0.35" />
+                                    <point x="0.7" y="0.35" />
+                                    <point x="0.7" y="0.91" />
+                                    <point x="0.27" y="0.91" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC8\Desktop\juego 5\avatar 9.png">
+                                <collision-poly>
+                                    <point x="0.27" y="0.35" />
+                                    <point x="0.7" y="0.35" />
+                                    <point x="0.7" y="0.91" />
+                                    <point x="0.27" y="0.91" />
+                                </collision-poly>
+                            </frame>
                         </animation>
                         <animation framecount="3" loop="1" name="j5c" pingpong="1" repeatcount="1" repeatto="0" sid="575047139528517" speed="0">
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC8\Desktop\juego 5\avatar 1.png" />
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC8\Desktop\juego 5\avatar 2.png" />
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC8\Desktop\juego 5\avatar 3.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC8\Desktop\juego 5\avatar 1.png">
+                                <collision-poly>
+                                    <point x="0.27" y="0.35" />
+                                    <point x="0.7" y="0.35" />
+                                    <point x="0.7" y="0.91" />
+                                    <point x="0.27" y="0.91" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC8\Desktop\juego 5\avatar 2.png">
+                                <collision-poly>
+                                    <point x="0.27" y="0.35" />
+                                    <point x="0.7" y="0.35" />
+                                    <point x="0.7" y="0.91" />
+                                    <point x="0.27" y="0.91" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC8\Desktop\juego 5\avatar 3.png">
+                                <collision-poly>
+                                    <point x="0.27" y="0.35" />
+                                    <point x="0.7" y="0.35" />
+                                    <point x="0.7" y="0.91" />
+                                    <point x="0.27" y="0.91" />
+                                </collision-poly>
+                            </frame>
                         </animation>
                         <animation framecount="1" loop="0" name="j6a" pingpong="0" repeatcount="1" repeatto="0" sid="244875200230639" speed="0">
                             <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PC8\Desktop\mis juegos\juego 6\Mesa de trabajo 3.png" />
@@ -1804,183 +1867,134 @@
                     </behavior-type>
                 </behaviors>
                 <animation-folder>
-                    <animation framecount="23" loop="0" name="GUI" pingpong="0" repeatcount="1" repeatto="0" sid="763179032963021" speed="0">
+                    <animation framecount="24" loop="0" name="GUI" pingpong="0" repeatcount="1" repeatto="0" sid="763179032963021" speed="0">
                         <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS\icono puntacion.png" />
                         <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS\icono tiempo.png" />
                         <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS\icono vida.png" />
-                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS\boton abandonar.png">
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="H:\OneDrive\Personal\proyecto GUI\- RECURSOS v2\boton abandonar.png">
                             <collision-poly>
-                                <point x="0.375" y="0.822917" />
-                                <point x="0.375885" y="0.972656" />
                                 <point x="0.0154777" y="0.972004" />
-                                <point x="0.0159198" y="0.0442708" />
-                                <point x="0.373821" y="0.046875" />
-                                <point x="0.37441" y="0.182292" />
-                                <point x="1" y="0.1875" />
-                                <point x="1" y="0.828125" />
+                                <point x="0.143278" y="0" />
+                                <point x="0.976415" y="0.0104166" />
+                                <point x="0.834905" y="1" />
                             </collision-poly>
                         </frame>
-                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS\boton audio.png">
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="H:\OneDrive\Personal\proyecto GUI\- RECURSOS v2\boton audio.png">
                             <collision-poly>
-                                <point x="0.375" y="0.822917" />
-                                <point x="0.375885" y="0.972656" />
                                 <point x="0.0154777" y="0.972004" />
-                                <point x="0.0159198" y="0.0442708" />
-                                <point x="0.373821" y="0.046875" />
-                                <point x="0.37441" y="0.182292" />
-                                <point x="1" y="0.1875" />
-                                <point x="1" y="0.828125" />
+                                <point x="0.143278" y="0" />
+                                <point x="0.976415" y="0.0104166" />
+                                <point x="0.834905" y="1" />
                             </collision-poly>
                         </frame>
-                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS\boton ayuda.png">
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="H:\OneDrive\Personal\proyecto GUI\- RECURSOS v2\boton ayuda.png">
                             <collision-poly>
-                                <point x="0.375" y="0.822917" />
-                                <point x="0.375885" y="0.972656" />
                                 <point x="0.0154777" y="0.972004" />
-                                <point x="0.0159198" y="0.0442708" />
-                                <point x="0.373821" y="0.046875" />
-                                <point x="0.37441" y="0.182292" />
-                                <point x="1" y="0.1875" />
-                                <point x="1" y="0.828125" />
+                                <point x="0.143278" y="0" />
+                                <point x="0.976415" y="0.0104166" />
+                                <point x="0.834905" y="1" />
                             </collision-poly>
                         </frame>
-                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS\boton continuar.png">
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="H:\OneDrive\Personal\proyecto GUI\- RECURSOS v2\boton continuar.png">
                             <collision-poly>
-                                <point x="0.375" y="0.822917" />
-                                <point x="0.375885" y="0.972656" />
                                 <point x="0.0154777" y="0.972004" />
-                                <point x="0.0159198" y="0.0442708" />
-                                <point x="0.373821" y="0.046875" />
-                                <point x="0.37441" y="0.182292" />
-                                <point x="1" y="0.1875" />
-                                <point x="1" y="0.828125" />
+                                <point x="0.143278" y="0" />
+                                <point x="0.976415" y="0.0104166" />
+                                <point x="0.834905" y="1" />
                             </collision-poly>
                         </frame>
-                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS\boton creditos.png">
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS v2\boton creditos.png">
                             <collision-poly>
-                                <point x="0.375" y="0.822917" />
-                                <point x="0.375885" y="0.972656" />
                                 <point x="0.0154777" y="0.972004" />
-                                <point x="0.0159198" y="0.0442708" />
-                                <point x="0.373821" y="0.046875" />
-                                <point x="0.37441" y="0.182292" />
-                                <point x="1" y="0.1875" />
-                                <point x="1" y="0.828125" />
+                                <point x="0.143278" y="0" />
+                                <point x="0.976415" y="0.0104166" />
+                                <point x="0.834905" y="1" />
                             </collision-poly>
                         </frame>
-                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS\boton global.png">
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="H:\OneDrive\Personal\proyecto GUI\- RECURSOS v2\boton global.png">
                             <collision-poly>
-                                <point x="0.375" y="0.822917" />
-                                <point x="0.375885" y="0.972656" />
                                 <point x="0.0154777" y="0.972004" />
-                                <point x="0.0159198" y="0.0442708" />
-                                <point x="0.373821" y="0.046875" />
-                                <point x="0.37441" y="0.182292" />
-                                <point x="1" y="0.1875" />
-                                <point x="1" y="0.828125" />
+                                <point x="0.143278" y="0" />
+                                <point x="0.976415" y="0.0104166" />
+                                <point x="0.834905" y="1" />
                             </collision-poly>
                         </frame>
-                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS\boton menu.png" />
-                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS\boton microfono.png">
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS v2\boton menu.png">
                             <collision-poly>
-                                <point x="0.375" y="0.822917" />
-                                <point x="0.375885" y="0.972656" />
                                 <point x="0.0154777" y="0.972004" />
-                                <point x="0.0159198" y="0.0442708" />
-                                <point x="0.373821" y="0.046875" />
-                                <point x="0.37441" y="0.182292" />
-                                <point x="1" y="0.1875" />
-                                <point x="1" y="0.828125" />
+                                <point x="0.143278" y="0" />
+                                <point x="0.976415" y="0.0104166" />
+                                <point x="0.834905" y="1" />
                             </collision-poly>
                         </frame>
-                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS\boton mouse.png">
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS v2\boton microfono.png">
                             <collision-poly>
-                                <point x="0.375" y="0.822917" />
-                                <point x="0.375885" y="0.972656" />
-                                <point x="0.0154777" y="0.972004" />
-                                <point x="0.0159198" y="0.0442708" />
-                                <point x="0.373821" y="0.046875" />
-                                <point x="0.37441" y="0.182292" />
-                                <point x="1" y="0.1875" />
-                                <point x="1" y="0.828125" />
+                                <point x="0" y="0" />
+                                <point x="0.5" y="0" />
+                                <point x="0.501953" y="0.498432" />
+                                <point x="0" y="0.498433" />
                             </collision-poly>
                         </frame>
-                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS\boton personalizado.png">
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS v2\pergamino grande.png">
                             <collision-poly>
-                                <point x="0.375" y="0.822917" />
-                                <point x="0.375885" y="0.972656" />
-                                <point x="0.0154777" y="0.972004" />
-                                <point x="0.0159198" y="0.0442708" />
-                                <point x="0.373821" y="0.046875" />
-                                <point x="0.37441" y="0.182292" />
-                                <point x="1" y="0.1875" />
-                                <point x="1" y="0.828125" />
+                                <point x="1" y="0" />
+                                <point x="0.5" y="0" />
+                                <point x="0.501953" y="0.498432" />
+                                <point x="1" y="0.498433" />
                             </collision-poly>
                         </frame>
-                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS\boton principal.png">
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS v2\boton personalizado.png">
                             <collision-poly>
-                                <point x="0.375" y="0.822917" />
-                                <point x="0.375885" y="0.972656" />
-                                <point x="0.0154777" y="0.972004" />
-                                <point x="0.0159198" y="0.0442708" />
-                                <point x="0.373821" y="0.046875" />
-                                <point x="0.37441" y="0.182292" />
-                                <point x="1" y="0.1875" />
-                                <point x="1" y="0.828125" />
+                                <point x="1" y="1" />
+                                <point x="0.5" y="1" />
+                                <point x="0.501953" y="0.498432" />
+                                <point x="1" y="0.498433" />
                             </collision-poly>
                         </frame>
-                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS\boton propio.png">
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="H:\OneDrive\Personal\proyecto GUI\- RECURSOS v2\boton principal.png">
                             <collision-poly>
-                                <point x="0.375" y="0.822917" />
-                                <point x="0.375885" y="0.972656" />
                                 <point x="0.0154777" y="0.972004" />
-                                <point x="0.0159198" y="0.0442708" />
-                                <point x="0.373821" y="0.046875" />
-                                <point x="0.37441" y="0.182292" />
-                                <point x="1" y="0.1875" />
-                                <point x="1" y="0.828125" />
+                                <point x="0.143278" y="0" />
+                                <point x="0.976415" y="0.0104166" />
+                                <point x="0.834905" y="1" />
                             </collision-poly>
                         </frame>
-                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS\boton ranking.png">
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="H:\OneDrive\Personal\proyecto GUI\- RECURSOS v2\boton propio.png">
                             <collision-poly>
-                                <point x="0.375" y="0.822917" />
-                                <point x="0.375885" y="0.972656" />
                                 <point x="0.0154777" y="0.972004" />
-                                <point x="0.0159198" y="0.0442708" />
-                                <point x="0.373821" y="0.046875" />
-                                <point x="0.37441" y="0.182292" />
-                                <point x="1" y="0.1875" />
-                                <point x="1" y="0.828125" />
+                                <point x="0.143278" y="0" />
+                                <point x="0.976415" y="0.0104166" />
+                                <point x="0.834905" y="1" />
                             </collision-poly>
                         </frame>
-                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS\boton remix.png">
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="H:\OneDrive\Personal\proyecto GUI\- RECURSOS v2\boton ranking.png">
                             <collision-poly>
-                                <point x="0.375" y="0.822917" />
-                                <point x="0.375885" y="0.972656" />
                                 <point x="0.0154777" y="0.972004" />
-                                <point x="0.0159198" y="0.0442708" />
-                                <point x="0.373821" y="0.046875" />
-                                <point x="0.37441" y="0.182292" />
-                                <point x="1" y="0.1875" />
-                                <point x="1" y="0.828125" />
+                                <point x="0.143278" y="0" />
+                                <point x="0.976415" y="0.0104166" />
+                                <point x="0.834905" y="1" />
                             </collision-poly>
                         </frame>
-                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS\boton teclado.png">
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS v2\boton remix.png">
                             <collision-poly>
-                                <point x="0.375" y="0.822917" />
-                                <point x="0.375885" y="0.972656" />
-                                <point x="0.0154777" y="0.972004" />
-                                <point x="0.0159198" y="0.0442708" />
-                                <point x="0.373821" y="0.046875" />
-                                <point x="0.37441" y="0.182292" />
-                                <point x="1" y="0.1875" />
-                                <point x="1" y="0.828125" />
+                                <point x="0" y="1" />
+                                <point x="0.5" y="1" />
+                                <point x="0.501953" y="0.498432" />
+                                <point x="0" y="0.498433" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS v2\boton teclado.png">
+                            <collision-poly>
+                                <point x="0" y="0" />
+                                <point x="0.5" y="0" />
+                                <point x="0.501953" y="0.498432" />
+                                <point x="0" y="0.498433" />
                             </collision-poly>
                         </frame>
                         <frame duration="1" hotspotX="0" hotspotY="0" />
                         <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS\contenedor boton.png" />
                         <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS\figura inhabilitado.png" />
-                        <frame duration="1" hotspotX="0.489362" hotspotY="0.526316" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS\molino.png">
+                        <frame duration="1" hotspotX="0.488889" hotspotY="0.526984" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS v2\molino.png">
                             <collision-poly>
                                 <point x="1" y="1" />
                                 <point x="1" y="1" />
@@ -1990,6 +2004,13 @@
                         </frame>
                         <frame duration="1" hotspotX="0" hotspotY="1" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS\dialogo.png">
                             <image-point name="texto" x="0.0849934" y="0.241245" />
+                        </frame>
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS v2\pergamino grande.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
                         </frame>
                     </animation>
                     <animation framecount="102" loop="0" name="Avatar1" pingpong="0" repeatcount="1" repeatto="0" sid="533715932008125" speed="25">
@@ -4195,6 +4216,8 @@
             <file name="GUI pausa.csv" />
             <file name="GUI salto.csv" />
             <file name="tareas.csv" />
+            <file name="muro de ladrillos.png" />
+            <file name="cerca.png" />
         </file-folder>
         <file-folder name="Eduardo">
             <file name="j2.html" />
@@ -4224,6 +4247,14 @@
             <file name="j12.html" />
             <file name="j12a.gif" />
             <file name="j12b.png" />
+            <file name="j13.html" />
+            <file name="j13a.png" />
+            <file name="j13b.png" />
+            <file name="j17.html" />
+            <file name="j17a.gif" />
+            <file name="j17b.png" />
+            <file name="j10.html" />
+            <file name="j10b.png" />
         </file-folder>
         <file-folder name="Claudia">
             <file name="j1.html" />
@@ -4234,6 +4265,16 @@
             <file name="j19.html" />
             <file name="j20.html" />
             <file name="j6a.gif" />
+            <file name="j20b.png" />
+            <file name="j20a.gif" />
+            <file name="j19b.png" />
+            <file name="j19a.png" />
+            <file name="j16a.png" />
+            <file name="j14b.png" />
+            <file name="j14a.png" />
+            <file name="j5b.png" />
+            <file name="j6b.png" />
+            <file name="j5a.png" />
         </file-folder>
     </files-folder>
 </c2project>

@@ -227,6 +227,9 @@
                         <action id="-41" name="Wait for signal" sid="835895691179714" type="System">
                             <param id="0" name="Tag">&quot;pCargado&quot;</param>
                         </action>
+                        <action id="-16" name="Wait" sid="558551571150101" type="System">
+                            <param id="0" name="Seconds">0.5</param>
+                        </action>
                         <action behavior="Tarea" id="10" name="Start" sid="622268316778366" type="Enemigo">
                             <param id="0" name="Start Mode">0</param>
                             <param id="1" name="Force use current">0</param>
@@ -272,30 +275,43 @@
                     </conditions>
                     <actions />
                     <sub-events>
+                        <variable constant="0" name="enlace" sid="787240977742871" static="0" type="number">0</variable>
                         <variable comment="El porcentaje de dificultad" constant="0" name="razon" sid="257920550377423" static="0" type="number">0</variable>
                         <variable constant="0" name="cantidad" sid="984888943702917" static="0" type="number">0</variable>
+                        <event-block sid="780355023249885">
+                            <conditions />
+                            <actions>
+                                <action id="-9" name="Set value" sid="557820478104631" type="System">
+                                    <param id="0" name="Variable">enlace</param>
+                                    <param id="1" name="Value">int(Enemigo.Hash.At(&quot;enlace&quot;))</param>
+                                </action>
+                            </actions>
+                        </event-block>
                         <comment>Si el mouse está sobre el botón cerrar</comment>
-                        <event-block sid="540767408185179">
+                        <event-block sid="702053112517009">
                             <conditions>
-                                <condition id="7" name="Cursor is over object" sid="429991678913742" type="Mouse">
+                                <condition id="-14" name="Pick by unique ID" sid="561709480249941" type="Aliado">
+                                    <param id="0" name="Unique ID">enlace</param>
+                                </condition>
+                                <condition id="7" name="Cursor is over object" sid="147115905021805" type="Mouse">
                                     <param id="0" name="Object">Aliado</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-9" name="Destroy" sid="461198690174528" type="Enemigo" />
-                                <action id="-9" name="Destroy" sid="995696949972247" type="Aliado" />
+                                <action id="-9" name="Destroy" sid="794615129960828" type="Enemigo" />
+                                <action id="-9" name="Destroy" sid="189198131318981" type="Aliado" />
                             </actions>
                             <sub-events>
-                                <event-block sid="597741259625966">
+                                <event-block sid="313430357955805">
                                     <conditions>
-                                        <condition id="-8" name="Compare two values" sid="445857367881105" type="System">
+                                        <condition id="-8" name="Compare two values" sid="844429664839577" type="System">
                                             <param id="0" name="First value">Enemigo.Count</param>
                                             <param id="1" name="Comparison">3</param>
                                             <param id="2" name="Second value">1</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="0" name="Call function" sid="873661191615655" type="Funcion">
+                                        <action id="0" name="Call function" sid="349518286925716" type="Funcion">
                                             <param id="0" name="Name">&quot;victoriaJUEGO&quot;</param>
                                             <param id="1" name="Parameter {n}"></param>
                                         </action>
@@ -306,7 +322,7 @@
                         <comment>Se crearán mas publicidad, si estos no rebasan MC</comment>
                         <event-block sid="953344350765698">
                             <conditions>
-                                <condition id="-22" name="Else" sid="779173803440059" type="System" />
+                                <condition id="-22" name="Else" sid="293068018779543" type="System" />
                                 <condition id="-8" name="Compare two values" sid="745574781213194" type="System">
                                     <param id="0" name="First value">Enemigo.Count</param>
                                     <param id="1" name="Comparison">3</param>
@@ -322,15 +338,15 @@
                                     <param id="0" name="Variable">cantidad</param>
                                     <param id="1" name="Value">floor(random(CI*(1+razon),CS*(1+razon)))</param>
                                 </action>
-                                <action id="14" name="Log" sid="717681449714069" type="Navegador">
+                                <action disabled="1" id="14" name="Log" sid="717681449714069" type="Navegador">
                                     <param id="0" name="Type">0</param>
                                     <param id="1" name="Message">cantidad</param>
                                 </action>
-                                <action id="14" name="Log" sid="804315573552231" type="Navegador">
+                                <action disabled="1" id="14" name="Log" sid="804315573552231" type="Navegador">
                                     <param id="0" name="Type">0</param>
                                     <param id="1" name="Message">Enemigo.Count+cantidad&gt;MC?MC-Enemigo.Count:cantidad</param>
                                 </action>
-                                <action id="14" name="Log" sid="130724153505757" type="Navegador">
+                                <action disabled="1" id="14" name="Log" sid="130724153505757" type="Navegador">
                                     <param id="0" name="Type">0</param>
                                     <param id="1" name="Message">&quot;------------------&quot;</param>
                                 </action>

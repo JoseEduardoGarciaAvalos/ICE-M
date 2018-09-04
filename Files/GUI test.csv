@@ -1,4 +1,4 @@
 ,tipo,x,y,id,ancho,alto,especial,info
-A1,1,608,480,100,212,96,6,continuar
-B1,3,726,544,100,20,480,madera.png,
-A2,4,-578,64,101,576,384,,iframe
+A1,1,658,384,100,212,96,6,continuar
+B1,3,726,544,100,0,0,madera.png,
+A2,4,110,491,101,400,300,,iframe
