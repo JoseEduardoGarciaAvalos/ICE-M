@@ -6196,7 +6196,7 @@
                                 <variable comment="Coordenada x superior inicial" constant="1" name="XI" sid="818592883531098" static="0" type="number">0</variable>
                                 <variable comment="Coordenada x inferior inicial" constant="1" name="XS" sid="580118476759146" static="0" type="number">400</variable>
                                 <variable comment="Coordenada y constante inicial" constant="1" name="YC" sid="372175301183214" static="0" type="number">320</variable>
-                                <variable comment="Conjunto de frases cuando gana" constant="1" name="TXT1" sid="268113425614484" static="0" type="text">¡Felicidades!;Bravo;Que chivo va vos</variable>
+                                <variable comment="Conjunto de frases cuando gana" constant="1" name="TXT1" sid="268113425614484" static="0" type="text">¡Felicidades!;Bravo;Estupendo</variable>
                                 <variable comment="Conjunto de frases cuando pierde" constant="1" name="TXT2" sid="105374251153353" static="0" type="text">¡No te rindas!;Animo;La próxima ganarás</variable>
                                 <variable constant="0" name="ancho" sid="162490751544787" static="0" type="number">0</variable>
                                 <variable constant="0" name="alto" sid="274014052921268" static="0" type="number">0</variable>
@@ -6747,6 +6747,10 @@
                                 <action id="0" name="Call function" sid="808005473458218" type="Funcion">
                                     <param id="0" name="Name">&quot;iniciaTAREA&quot;</param>
                                     <param id="1" name="Parameter {n}">&quot;rondaEntrar&quot;{###}0</param>
+                                </action>
+                                <action id="0" name="Call function" sid="354338250328563" type="Funcion">
+                                    <param id="0" name="Name">&quot;terminaVICTORIA&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
                                 </action>
                                 <action id="-16" name="Wait" sid="934053231040008" type="System">
                                     <param id="0" name="Seconds">GEI</param>
