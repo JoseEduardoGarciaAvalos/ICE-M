@@ -165,6 +165,12 @@
                                 </event-block>
                             </sub-events>
                         </event-block>
+                        <event-block sid="259481195406149">
+                            <conditions />
+                            <actions>
+                                <action id="-24" name="Move to top" sid="162675154580416" type="zRAPIDO" />
+                            </actions>
+                        </event-block>
                     </sub-events>
                 </event-block>
                 <comment>Detectará la primera interacción con el usuario</comment>
@@ -2274,7 +2280,7 @@
                         </action>
                         <action id="-9" name="Set value" sid="823063301140595" type="System">
                             <param id="0" name="Variable">gObjetivo</param>
-                            <param id="1" name="Value">&quot;Principal&quot;</param>
+                            <param id="1" name="Value">&quot;Inicio&quot;</param>
                         </action>
                         <action id="0" name="Call function" sid="503971498035903" type="Funcion">
                             <param id="0" name="Name">&quot;objetivoGUI&quot;</param>

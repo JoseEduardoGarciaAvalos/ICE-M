@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <c2project>
-    <name>ICE-VHM</name>
+    <name>Minijuegos</name>
     <description>Súper Juego</description>
     <version>1.0.0.0</version>
     <author></author>
@@ -95,7 +95,7 @@
         <prop name="Clear background">Yes</prop>
         <prop name="Downscaling">Medium quality</prop>
         <prop name="Enable WebGL">On</prop>
-        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Fullscreen in browser">Scale outer</prop>
         <prop name="Fullscreen scaling">High quality</prop>
         <prop name="Loader style">Progress bar only</prop>
         <prop name="Orientations">Any</prop>
@@ -1504,7 +1504,7 @@
                             <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\OneDrive\Tesis\APLICACIÓN\PROCESO\MINIJUEGOS\Juego 13\plataforma 1.png" />
                             <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="G:\OneDrive\Tesis\APLICACIÓN\PROCESO\MINIJUEGOS\Juego 13\plataforma 2.png" />
                         </animation>
-                        <animation framecount="8" loop="0" name="j17a" pingpong="0" repeatcount="1" repeatto="0" sid="865759809477194" speed="0">
+                        <animation framecount="9" loop="0" name="j17a" pingpong="0" repeatcount="1" repeatto="0" sid="865759809477194" speed="0">
                             <frame duration="1" hotspotX="0" hotspotY="1" original-source="G:\OneDrive\Tesis\APLICACIÓN\PROCESO\MINIJUEGOS\Juego 17\piso.png" />
                             <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\cesped.png" />
                             <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\pino.png" />
@@ -1513,6 +1513,7 @@
                             <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\campo.png" />
                             <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Tesis\APLICACIÓN\PROCESO\MINIJUEGOS\Juego 17\alambrado.png" />
                             <frame duration="1" hotspotX="0" hotspotY="0" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\poste.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                         </animation>
                         <animation framecount="3" loop="0" name="j17b" pingpong="0" repeatcount="1" repeatto="0" sid="868970087700600" speed="0">
                             <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Trabajos\Recursos sobre los mini juegos\Juego 17\nube 1.png">
@@ -1867,7 +1868,7 @@
                     </behavior-type>
                 </behaviors>
                 <animation-folder>
-                    <animation framecount="24" loop="0" name="GUI" pingpong="0" repeatcount="1" repeatto="0" sid="763179032963021" speed="0">
+                    <animation framecount="25" loop="0" name="GUI" pingpong="0" repeatcount="1" repeatto="0" sid="763179032963021" speed="0">
                         <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS\icono puntacion.png" />
                         <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS\icono tiempo.png" />
                         <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS\icono vida.png" />
@@ -2012,6 +2013,7 @@
                                 <point x="1" y="0" />
                             </collision-poly>
                         </frame>
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
                     </animation>
                     <animation framecount="102" loop="0" name="Avatar1" pingpong="0" repeatcount="1" repeatto="0" sid="533715932008125" speed="25">
                         <frame duration="1" hotspotX="0" hotspotY="0" original-source="G:\OneDrive\Personal\proyecto GUI\- RECURSOS\Avatar entre rondas\entorno\entorno_00000.png">
@@ -3861,6 +3863,15 @@
                     <instance-variable name="ID" sid="541688087367247" type="number" />
                 </instance-variables>
                 <texture />
+            </object-type>
+            <object-type global="1" name="zRAPIDO" sid="970500964281160">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="551242825036760" speed="0">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                        <frame duration="1" hotspotX="0.500697" hotspotY="0.5" original-source="C:\Users\Android\Downloads\titulo 2.png" />
+                    </animation>
+                </animation-folder>
             </object-type>
         </object-folder>
     </object-folder>

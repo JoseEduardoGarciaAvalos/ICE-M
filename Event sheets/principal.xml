@@ -1122,7 +1122,7 @@
                     </conditions>
                     <actions />
                     <sub-events>
-                        <comment>Si está en el área de niños</comment>
+                        <comment>Si está en el área de niños y soporta la media</comment>
                         <event-block sid="966311737215503">
                             <conditions>
                                 <condition id="-14" name="Compare variable" sid="346374504760599" type="System">
@@ -1131,23 +1131,29 @@
                                     <param id="2" name="Value">0</param>
                                 </condition>
                             </conditions>
-                            <actions>
-                                <action id="-3" name="Create object" sid="383913117889219" type="System">
-                                    <param id="0" name="Object to create">Microfono</param>
-                                    <param id="1" name="Layer">0</param>
-                                    <param id="2" name="X">0</param>
-                                    <param id="3" name="Y">0</param>
-                                </action>
-                                <action id="20" name="Add analyser effect" sid="822123062991747" type="Audio">
-                                    <param id="0" name="Tag">&quot;mic&quot;</param>
-                                    <param id="1" name="FFT size">32</param>
-                                    <param id="2" name="Smoothing">0</param>
-                                </action>
-                                <action id="32" name="Add mute effect" sid="785157235622396" type="Audio">
-                                    <param id="0" name="Tag">&quot;mic&quot;</param>
-                                </action>
-                                <action id="10" name="Get media sources" sid="200653253535177" type="Microfono" />
-                            </actions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="470269877269093">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="383913117889219" type="System">
+                                            <param id="0" name="Object to create">Microfono</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="X">0</param>
+                                            <param id="3" name="Y">0</param>
+                                        </action>
+                                        <action id="20" name="Add analyser effect" sid="822123062991747" type="Audio">
+                                            <param id="0" name="Tag">&quot;mic&quot;</param>
+                                            <param id="1" name="FFT size">32</param>
+                                            <param id="2" name="Smoothing">0</param>
+                                        </action>
+                                        <action id="32" name="Add mute effect" sid="785157235622396" type="Audio">
+                                            <param id="0" name="Tag">&quot;mic&quot;</param>
+                                        </action>
+                                        <action id="10" name="Get media sources" sid="200653253535177" type="Microfono" />
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                     </sub-events>
                 </event-block>
@@ -2896,6 +2902,13 @@
                                         <action id="0" name="Set text" sid="174050447341273" type="zetiqueta">
                                             <param id="0" name="Text">gObjetivo</param>
                                         </action>
+                                        <action id="3" name="Set font size" sid="700120745405385" type="zetiqueta">
+                                            <param id="0" name="Size (pt)">12</param>
+                                        </action>
+                                        <action id="2" name="Set font face" sid="458157273939114" type="zetiqueta">
+                                            <param id="0" name="Font face">&quot;Arial&quot;</param>
+                                            <param id="1" name="Style">1</param>
+                                        </action>
                                     </actions>
                                 </event-block>
                             </sub-events>
@@ -3438,6 +3451,12 @@
                                             </sub-events>
                                         </event-block>
                                     </sub-events>
+                                </event-block>
+                                <event-block sid="656916306675673">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-24" name="Move to top" sid="394907108676575" type="zRAPIDO" />
+                                    </actions>
                                 </event-block>
                             </sub-events>
                         </event-block>
@@ -8202,7 +8221,7 @@
                                 <event-block sid="375160619936591">
                                     <conditions />
                                     <actions>
-                                        <action id="14" name="Log" sid="155756104852917" type="Navegador">
+                                        <action disabled="1" id="14" name="Log" sid="155756104852917" type="Navegador">
                                             <param id="0" name="Type">0</param>
                                             <param id="1" name="Message">IFrame.C2</param>
                                         </action>
@@ -8612,6 +8631,11 @@
                                                     <conditions>
                                                         <condition id="2" inverted="1" name="Advanced audio supported" sid="402282791323429" type="Audio" />
                                                         <condition id="2" inverted="1" name="Supports user media" sid="694185031138312" type="Microfono" />
+                                                        <condition id="-14" name="Compare variable" sid="666359218872736" type="System">
+                                                            <param id="0" name="Variable">gMicTipo</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">-2</param>
+                                                        </condition>
                                                     </conditions>
                                                     <actions>
                                                         <action id="-9" name="Set value" sid="509072621208979" type="System">

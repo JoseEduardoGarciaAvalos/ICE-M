@@ -464,10 +464,10 @@
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">10</param>
                                 </condition>
-                                <condition id="-3" inverted="1" name="Is on-screen" sid="953265216737289" type="Utileria" />
+                                <condition disabled="1" id="-3" inverted="1" name="Is on-screen" sid="953265216737289" type="Utileria" />
                                 <condition id="-2" name="Compare Y" sid="545692064246229" type="Utileria">
                                     <param id="0" name="Comparison">4</param>
-                                    <param id="1" name="Y co-ordinate">ViewportBottom(&quot;Principal&quot;)</param>
+                                    <param id="1" name="Y co-ordinate">ViewportBottom(&quot;Principal&quot;)-90</param>
                                 </condition>
                             </conditions>
                             <actions>
