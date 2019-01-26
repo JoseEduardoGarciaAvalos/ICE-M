@@ -41,6 +41,60 @@
                         <action id="-16" name="Wait" sid="361476339533223" type="System">
                             <param id="0" name="Seconds">0</param>
                         </action>
+                        <action id="0" name="Add key" sid="411992699310472" type="Diccionario">
+                            <param id="0" name="Key">&quot;xTouch&quot;</param>
+                            <param id="1" name="Value">384</param>
+                        </action>
+                        <action id="5" name="Push" sid="518038433076569" type="Matriz">
+                            <param id="0" name="Where">0</param>
+                            <param id="1" name="Value">&quot;A&quot;</param>
+                            <param id="2" name="Axis">0</param>
+                        </action>
+                        <action id="5" name="Push" sid="582095507867897" type="Matriz">
+                            <param id="0" name="Where">0</param>
+                            <param id="1" name="Value">&quot;B&quot;</param>
+                            <param id="2" name="Axis">0</param>
+                        </action>
+                        <action id="5" name="Push" sid="586081729978243" type="Matriz">
+                            <param id="0" name="Where">0</param>
+                            <param id="1" name="Value">&quot;C&quot;</param>
+                            <param id="2" name="Axis">0</param>
+                        </action>
+                        <action id="5" name="Push" sid="819300970953969" type="Matriz">
+                            <param id="0" name="Where">0</param>
+                            <param id="1" name="Value">&quot;D&quot;</param>
+                            <param id="2" name="Axis">0</param>
+                        </action>
+                        <action id="5" name="Push" sid="460698504933028" type="Matriz">
+                            <param id="0" name="Where">0</param>
+                            <param id="1" name="Value">&quot;E&quot;</param>
+                            <param id="2" name="Axis">0</param>
+                        </action>
+                        <action id="5" name="Push" sid="831216763945328" type="Matriz">
+                            <param id="0" name="Where">0</param>
+                            <param id="1" name="Value">&quot;F&quot;</param>
+                            <param id="2" name="Axis">0</param>
+                        </action>
+                        <action id="5" name="Push" sid="301406518042827" type="Matriz">
+                            <param id="0" name="Where">0</param>
+                            <param id="1" name="Value">&quot;G&quot;</param>
+                            <param id="2" name="Axis">0</param>
+                        </action>
+                        <action id="5" name="Push" sid="443866545933538" type="Matriz">
+                            <param id="0" name="Where">0</param>
+                            <param id="1" name="Value">&quot;H&quot;</param>
+                            <param id="2" name="Axis">0</param>
+                        </action>
+                        <action id="5" name="Push" sid="872311974702092" type="Matriz">
+                            <param id="0" name="Where">0</param>
+                            <param id="1" name="Value">&quot;I&quot;</param>
+                            <param id="2" name="Axis">0</param>
+                        </action>
+                        <action id="5" name="Push" sid="612932027485108" type="Matriz">
+                            <param id="0" name="Where">0</param>
+                            <param id="1" name="Value">&quot;J&quot;</param>
+                            <param id="2" name="Axis">0</param>
+                        </action>
                         <action id="0" name="Call function" sid="601076219561028" type="Funcion">
                             <param id="0" name="Name">&quot;comenzoJuego&quot;</param>
                             <param id="1" name="Parameter {n}"></param>
@@ -220,6 +274,18 @@
                                         </action>
                                         <action id="3" name="Add instances" sid="785137733015716" type="Lineal">
                                             <param id="0" name="Instances">Utileria</param>
+                                        </action>
+                                        <action behavior="Hash" id="1" name="Set value" sid="730067593900398" type="Utileria">
+                                            <param id="0" name="Key string">&quot;numero&quot;</param>
+                                            <param id="1" name="Value">Matriz.Front</param>
+                                        </action>
+                                        <action id="6" name="Pop" sid="747402342041046" type="Matriz">
+                                            <param id="0" name="Where">1</param>
+                                            <param id="1" name="Axis">0</param>
+                                        </action>
+                                        <action id="14" name="Log" sid="112969661879949" type="Navegador">
+                                            <param id="0" name="Type">0</param>
+                                            <param id="1" name="Message">Utileria.Hash.At(&quot;numero&quot;)</param>
                                         </action>
                                         <action id="6" name="Add instances" sid="607909502686200" type="Grupo">
                                             <param id="0" name="Instances">Utileria</param>
@@ -429,44 +495,7 @@
                         </action>
                     </actions>
                 </event-block>
-                <comment>Si el jugador es controlable, está sobre la utileria ID [10,50). y esa no está seleccionada</comment>
-                <event-block sid="880778054702471">
-                    <conditions>
-                        <condition behavior="Hash" id="2" name="Key exists" sid="284092257287535" type="Jugador">
-                            <param id="0" name="Key string">&quot;controlable&quot;</param>
-                        </condition>
-                        <condition id="7" name="Cursor is over object" sid="614539341087702" type="Mouse">
-                            <param id="0" name="Object">Utileria</param>
-                        </condition>
-                        <condition id="-7" name="Compare instance variable" sid="778888614556287" type="Utileria">
-                            <param id="0" name="Instance variable">ID</param>
-                            <param id="1" name="Comparison">5</param>
-                            <param id="2" name="Value">10</param>
-                        </condition>
-                        <condition id="-7" name="Compare instance variable" sid="135087674845297" type="Utileria">
-                            <param id="0" name="Instance variable">ID</param>
-                            <param id="1" name="Comparison">2</param>
-                            <param id="2" name="Value">50</param>
-                        </condition>
-                        <condition behavior="Hash" id="2" inverted="1" name="Key exists" sid="763003687036346" type="Utileria">
-                            <param id="0" name="Key string">&quot;seleccionada&quot;</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action behavior="Hash" id="1" name="Set value" sid="142939108064929" type="Utileria">
-                            <param id="0" name="Key string">&quot;seleccionada&quot;</param>
-                            <param id="1" name="Value">0</param>
-                        </action>
-                        <action behavior="Hash" id="1" name="Set value" sid="151296228910980" type="Utileria">
-                            <param id="0" name="Key string">&quot;tarea&quot;</param>
-                            <param id="1" name="Value">0</param>
-                        </action>
-                        <action behavior="Funcion" id="2" name="Call expression" sid="844364018263648" type="Utileria">
-                            <param id="0" name="Expression">Self.Funcion.Call(&quot;definirTarea&quot;,1)</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <comment>Si no está sobre la utileria ID[10,50). y esa está seleccionada</comment>
+                <comment>Jugador controlable, y pick utileria</comment>
                 <event-block sid="677153174583495">
                     <conditions>
                         <condition behavior="Hash" id="2" name="Key exists" sid="986930569403692" type="Jugador">
@@ -482,36 +511,192 @@
                             <param id="1" name="Comparison">2</param>
                             <param id="2" name="Value">50</param>
                         </condition>
-                        <condition behavior="Hash" id="2" name="Key exists" sid="277925442233141" type="Utileria">
-                            <param id="0" name="Key string">&quot;seleccionada&quot;</param>
-                        </condition>
                     </conditions>
                     <actions />
                     <sub-events>
+                        <comment>Si no está sobre la utileria ID[10,50). y esa está seleccionada</comment>
                         <event-block sid="635787126794454">
                             <conditions>
-                                <condition id="-11" name="For Each" sid="289038164003603" type="System">
-                                    <param id="0" name="Object">Utileria</param>
+                                <condition behavior="Hash" id="2" name="Key exists" sid="277925442233141" type="Utileria">
+                                    <param id="0" name="Key string">&quot;seleccionada&quot;</param>
                                 </condition>
                             </conditions>
                             <actions />
                             <sub-events>
-                                <event-block sid="222553915444829">
+                                <event-block sid="322290853900519">
                                     <conditions>
-                                        <condition id="7" inverted="1" name="Cursor is over object" sid="872448542868798" type="Mouse">
+                                        <condition id="-11" name="For Each" sid="289038164003603" type="System">
+                                            <param id="0" name="Object">Utileria</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <variable constant="0" name="numSospechoso" sid="350508928329526" static="0" type="number">0</variable>
+                                        <event-block sid="222553915444829">
+                                            <conditions>
+                                                <condition id="-14" inverted="1" name="Compare variable" sid="521723313158657" type="System">
+                                                    <param id="0" name="Variable">gMovil</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </condition>
+                                                <condition id="7" inverted="1" name="Cursor is over object" sid="872448542868798" type="Mouse">
+                                                    <param id="0" name="Object">Utileria</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Hash" id="6" name="Remove key" sid="592769537029471" type="Utileria">
+                                                    <param id="0" name="Key string">&quot;seleccionada&quot;</param>
+                                                </action>
+                                                <action behavior="Hash" id="1" name="Set value" sid="666972302520485" type="Utileria">
+                                                    <param id="0" name="Key string">&quot;tarea&quot;</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                                <action behavior="Funcion" id="2" name="Call expression" sid="774448668125629" type="Utileria">
+                                                    <param id="0" name="Expression">Self.Funcion.Call(&quot;definirTarea&quot;,2)</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="402804473596440" type="System">
+                                                    <param id="0" name="Variable">numSospechoso</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="212511931696534">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="200350600080532" type="System" />
+                                                <condition id="-14" name="Compare variable" sid="579121646432864" type="System">
+                                                    <param id="0" name="Variable">gMovil</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </condition>
+                                                <condition id="4" inverted="1" name="Is touching object" sid="579462138765314" type="Tocar">
+                                                    <param id="0" name="Object">Utileria</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Hash" id="6" name="Remove key" sid="184654653614313" type="Utileria">
+                                                    <param id="0" name="Key string">&quot;seleccionada&quot;</param>
+                                                </action>
+                                                <action behavior="Hash" id="1" name="Set value" sid="698703744169420" type="Utileria">
+                                                    <param id="0" name="Key string">&quot;tarea&quot;</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                                <action behavior="Funcion" id="2" name="Call expression" sid="459428993182355" type="Utileria">
+                                                    <param id="0" name="Expression">Self.Funcion.Call(&quot;definirTarea&quot;,2)</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="373006962849748" type="System">
+                                                    <param id="0" name="Variable">numSospechoso</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="934550002324315">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="531725320206315" type="System">
+                                                    <param id="0" name="Variable">numSospechoso</param>
+                                                    <param id="1" name="Comparison">1</param>
+                                                    <param id="2" name="Value">0</param>
+                                                </condition>
+                                                <condition id="-7" name="Compare instance variable" sid="601670046122631" type="Texto">
+                                                    <param id="0" name="Instance variable">ID</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">20</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Set text" sid="174916538346797" type="Texto">
+                                                    <param id="0" name="Text">&quot;Ningún sospechoso seleccionado&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>Si el jugador es controlable, está sobre la utileria ID [10,50). y esa no está seleccionada</comment>
+                        <event-block sid="756884211437413">
+                            <conditions>
+                                <condition behavior="Hash" id="2" inverted="1" name="Key exists" sid="592570797197211" type="Utileria">
+                                    <param id="0" name="Key string">&quot;seleccionada&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <variable constant="0" name="numSospechoso" sid="559560931406387" static="0" type="text"></variable>
+                                <event-block sid="924678444780629">
+                                    <conditions>
+                                        <condition id="-14" inverted="1" name="Compare variable" sid="620462734780070" type="System">
+                                            <param id="0" name="Variable">gMovil</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                        <condition id="7" name="Cursor is over object" sid="768148804945771" type="Mouse">
                                             <param id="0" name="Object">Utileria</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action behavior="Hash" id="6" name="Remove key" sid="592769537029471" type="Utileria">
+                                        <action behavior="Hash" id="1" name="Set value" sid="212636454431954" type="Utileria">
                                             <param id="0" name="Key string">&quot;seleccionada&quot;</param>
+                                            <param id="1" name="Value">0</param>
                                         </action>
-                                        <action behavior="Hash" id="1" name="Set value" sid="666972302520485" type="Utileria">
+                                        <action behavior="Hash" id="1" name="Set value" sid="623071807442790" type="Utileria">
                                             <param id="0" name="Key string">&quot;tarea&quot;</param>
                                             <param id="1" name="Value">0</param>
                                         </action>
-                                        <action behavior="Funcion" id="2" name="Call expression" sid="774448668125629" type="Utileria">
-                                            <param id="0" name="Expression">Self.Funcion.Call(&quot;definirTarea&quot;,2)</param>
+                                        <action behavior="Funcion" id="2" name="Call expression" sid="134919932145590" type="Utileria">
+                                            <param id="0" name="Expression">Self.Funcion.Call(&quot;definirTarea&quot;,1)</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="282823250660521" type="System">
+                                            <param id="0" name="Variable">numSospechoso</param>
+                                            <param id="1" name="Value">Utileria.Hash.At(&quot;numero&quot;)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="344625472037121">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="707387980182369" type="System" />
+                                        <condition id="-14" name="Compare variable" sid="177810885452638" type="System">
+                                            <param id="0" name="Variable">gMovil</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                        <condition id="4" name="Is touching object" sid="416085946707088" type="Tocar">
+                                            <param id="0" name="Object">Utileria</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Hash" id="1" name="Set value" sid="281705389659901" type="Utileria">
+                                            <param id="0" name="Key string">&quot;seleccionada&quot;</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action behavior="Hash" id="1" name="Set value" sid="662439085900418" type="Utileria">
+                                            <param id="0" name="Key string">&quot;tarea&quot;</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action behavior="Funcion" id="2" name="Call expression" sid="852225211484234" type="Utileria">
+                                            <param id="0" name="Expression">Self.Funcion.Call(&quot;definirTarea&quot;,1)</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="749605026012299" type="System">
+                                            <param id="0" name="Variable">numSospechoso</param>
+                                            <param id="1" name="Value">Utileria.Hash.At(&quot;numero&quot;)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="322229715501202">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="504884347754473" type="System">
+                                            <param id="0" name="Variable">numSospechoso</param>
+                                            <param id="1" name="Comparison">1</param>
+                                            <param id="2" name="Value">&quot;&quot;</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="149148798521771" type="Texto">
+                                            <param id="0" name="Instance variable">ID</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">20</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set text" sid="778642252668484" type="Texto">
+                                            <param id="0" name="Text">&quot;Seleccionado sospechoso &quot; &amp; numSospechoso</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -559,12 +744,62 @@
                                     <param id="0" name="Key string">&quot;controlable&quot;</param>
                                 </condition>
                             </conditions>
-                            <actions>
-                                <action id="-22" name="Set angle toward position" sid="105800432655719" type="Jugador">
-                                    <param id="0" name="X">Mouse.X</param>
-                                    <param id="1" name="Y">Mouse.Y</param>
-                                </action>
-                            </actions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="858443085784756">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="852328757559536" type="System">
+                                            <param id="0" name="Variable">gMovil</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="978441915103737">
+                                            <conditions>
+                                                <condition id="2" name="Is in touch" sid="959100467464327" type="Tocar" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="-22" name="Set angle toward position" sid="143277170730222" type="Jugador">
+                                                    <param id="0" name="X">Tocar.X</param>
+                                                    <param id="1" name="Y">Tocar.Y</param>
+                                                </action>
+                                                <action id="0" name="Add key" sid="237084495209911" type="Diccionario">
+                                                    <param id="0" name="Key">&quot;xTouch&quot;</param>
+                                                    <param id="1" name="Value">Tocar.X</param>
+                                                </action>
+                                                <action id="0" name="Add key" sid="575153946438255" type="Diccionario">
+                                                    <param id="0" name="Key">&quot;yTouch&quot;</param>
+                                                    <param id="1" name="Value">Tocar.Y</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="522094409219752">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="640850215712807" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="-22" name="Set angle toward position" sid="957717069942632" type="Jugador">
+                                                    <param id="0" name="X">Diccionario.Get(&quot;xTouch&quot;)</param>
+                                                    <param id="1" name="Y">Diccionario.Get(&quot;yTouch&quot;)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="786952379416902">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="565140683760240" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-22" name="Set angle toward position" sid="105800432655719" type="Jugador">
+                                            <param id="0" name="X">Mouse.X</param>
+                                            <param id="1" name="Y">Mouse.Y</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                     </sub-events>
                 </event-block>
@@ -635,7 +870,7 @@
                                             <param id="0" name="Key">&quot;fallas&quot;</param>
                                             <param id="1" name="Value">Diccionario.Get(&quot;fallas&quot;)+1</param>
                                         </action>
-                                        <action id="14" name="Log" sid="774233896917749" type="Navegador">
+                                        <action disabled="1" id="14" name="Log" sid="774233896917749" type="Navegador">
                                             <param id="0" name="Type">0</param>
                                             <param id="1" name="Message">&quot;FALLA&quot;</param>
                                         </action>

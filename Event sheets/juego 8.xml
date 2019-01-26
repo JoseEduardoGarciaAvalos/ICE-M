@@ -501,6 +501,11 @@
                         <condition id="3" name="On button released" sid="744288182250808" type="Mouse">
                             <param id="0" name="Mouse button">0</param>
                         </condition>
+                        <condition id="-14" inverted="1" name="Compare variable" sid="491620946538312" type="System">
+                            <param id="0" name="Variable">gMovil</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
                     </conditions>
                     <actions>
                         <action behavior="Tiempo" id="1" name="Stop timer" sid="851005463645125" type="Enemigo">
@@ -508,25 +513,78 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="233614662287999">
+                    <conditions>
+                        <condition id="1" name="On any touch end" sid="864085802506916" type="Tocar" />
+                        <condition id="-14" name="Compare variable" sid="880083815841146" type="System">
+                            <param id="0" name="Variable">gMovil</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Tiempo" id="1" name="Stop timer" sid="589839336214817" type="Enemigo">
+                            <param id="0" name="Tag">&quot;dibujar&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <comment>Control del personaje, Evento disparador que se ejecuta al hacer el clic izquierdo</comment>
-                <event-block sid="336704793653317">
+                <event-block sid="933247363570938">
                     <conditions>
                         <condition id="0" name="On click" sid="446544801667961" type="Mouse">
                             <param id="0" name="Mouse button">0</param>
                             <param id="1" name="Click type">0</param>
                         </condition>
+                        <condition id="-14" inverted="1" name="Compare variable" sid="548187714546607" type="System">
+                            <param id="0" name="Variable">gMovil</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
                     </conditions>
-                    <actions>
-                        <action id="0" name="Call function" sid="336388699701823" type="Funcion">
-                            <param id="0" name="Name">&quot;dibujarCirculo&quot;</param>
-                            <param id="1" name="Parameter {n}">Mouse.X{###}Mouse.Y</param>
-                        </action>
-                        <action behavior="Tiempo" id="0" name="Start timer" sid="288661537593496" type="Enemigo">
-                            <param id="0" name="Duration">0.15</param>
-                            <param id="1" name="Type">1</param>
-                            <param id="2" name="Tag">&quot;dibujar&quot;</param>
-                        </action>
-                    </actions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="837640751380781">
+                            <conditions />
+                            <actions>
+                                <action behavior="Tiempo" id="0" name="Start timer" sid="288661537593496" type="Enemigo">
+                                    <param id="0" name="Duration">0.15</param>
+                                    <param id="1" name="Type">1</param>
+                                    <param id="2" name="Tag">&quot;dibujar&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="588046621283337" type="Funcion">
+                                    <param id="0" name="Name">&quot;dibujarCirculo&quot;</param>
+                                    <param id="1" name="Parameter {n}">Mouse.X{###}Mouse.Y</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="336704793653317">
+                    <conditions>
+                        <condition id="0" name="On any touch start" sid="973443079934080" type="Tocar" />
+                        <condition id="-14" name="Compare variable" sid="299867392251647" type="System">
+                            <param id="0" name="Variable">gMovil</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="627699569924897">
+                            <conditions />
+                            <actions>
+                                <action behavior="Tiempo" id="0" name="Start timer" sid="925516807748994" type="Enemigo">
+                                    <param id="0" name="Duration">0.15</param>
+                                    <param id="1" name="Type">1</param>
+                                    <param id="2" name="Tag">&quot;dibujar&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="543612666178157" type="Funcion">
+                                    <param id="0" name="Name">&quot;dibujarCirculo&quot;</param>
+                                    <param id="1" name="Parameter {n}">Tocar.X{###}Tocar.Y</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <comment>Control del personaje, Evento disparador que se ejecuta cada vez que el timer es activado</comment>
                 <event-block sid="876563228258313">
@@ -535,12 +593,35 @@
                             <param id="0" name="Tag">&quot;dibujar&quot;</param>
                         </condition>
                     </conditions>
-                    <actions>
-                        <action id="0" name="Call function" sid="326165493001500" type="Funcion">
-                            <param id="0" name="Name">&quot;dibujarCirculo&quot;</param>
-                            <param id="1" name="Parameter {n}">Mouse.X{###}Mouse.Y</param>
-                        </action>
-                    </actions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="911458035998603">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="567532322611459" type="System">
+                                    <param id="0" name="Variable">gMovil</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="919406745927171" type="Funcion">
+                                    <param id="0" name="Name">&quot;dibujarCirculo&quot;</param>
+                                    <param id="1" name="Parameter {n}">Tocar.X{###}Tocar.Y</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="218905351667533">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="964185818267767" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="326165493001500" type="Funcion">
+                                    <param id="0" name="Name">&quot;dibujarCirculo&quot;</param>
+                                    <param id="1" name="Parameter {n}">Mouse.X{###}Mouse.Y</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <comment>Evento disparador que se ejecuta cada vez un Enemigo es destruido (Sale de la pantalla)</comment>
                 <event-block sid="689443387339398">

@@ -357,7 +357,7 @@
         <event-group description="Creación, definición de propiedades y comportamientos de los objetos" sid="439683561333856" title="jugabilidad 4">
             <sub-events>
                 <comment>VALORES BASE DE LAS CARTAS (UTILERIA)</comment>
-                <variable comment="Ancho (en pixeles)" constant="1" name="ancho" sid="394140962379235" static="0" type="number">50</variable>
+                <variable comment="Ancho (en pixeles)" constant="1" name="ANCHO" sid="394140962379235" static="0" type="number">50</variable>
                 <variable comment="Alto (en pixeles)" constant="1" name="ALTO" sid="491434117448714" static="0" type="number">31</variable>
                 <comment>Al estar en un nodo Aliado</comment>
                 <variable comment="Velocidad Máxima Inferior si está en un Aliado" constant="1" name="VMI1" sid="763123743603566" static="0" type="number">40</variable>
@@ -457,6 +457,9 @@
                                 <action id="-7" name="Set size" sid="878216355984319" type="Utileria">
                                     <param id="0" name="Width">ANCHO</param>
                                     <param id="1" name="Height">ALTO</param>
+                                </action>
+                                <action id="9" name="Set scale" sid="516144123080267" type="Utileria">
+                                    <param id="0" name="Scale">gMovil = 1 ? 1.5: 1</param>
                                 </action>
                                 <action behavior="Hash" id="1" name="Set value" sid="669969633689777" type="Utileria">
                                     <param id="0" name="Key string">&quot;nodoActual&quot;</param>
@@ -748,30 +751,98 @@
         </event-group>
         <event-group description="Condiciones de derrota y controles de tiempo junto a los controles (si los hay) del jugador" sid="878967279141667" title="control 4">
             <sub-events>
-                <comment>Si da clic sobre un mensaje, si hay muchos elegirá uno al azar para ser destruido</comment>
-                <event-block sid="801471668497726">
+                <comment>Disparadores de la interfaz de entrada (Mouse o pantalla táctil)</comment>
+                <event-block sid="387781341884184">
                     <conditions>
-                        <condition id="6" name="On object clicked" sid="692023094259014" type="Mouse">
+                        <condition id="6" name="On object clicked" sid="660440249543992" type="Mouse">
                             <param id="0" name="Mouse button">0</param>
                             <param id="1" name="Click type">0</param>
                             <param id="2" name="Object clicked">Utileria</param>
                         </condition>
-                        <condition id="-7" name="Compare instance variable" sid="164243200265069" type="Utileria">
-                            <param id="0" name="Instance variable">ID</param>
+                        <condition id="-14" inverted="1" name="Compare variable" sid="707587615417935" type="System">
+                            <param id="0" name="Variable">gMovil</param>
                             <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">5</param>
-                        </condition>
-                        <condition id="-16" name="Pick random instance" sid="625219653143679" type="System">
-                            <param id="0" name="Object">Utileria</param>
+                            <param id="2" name="Value">1</param>
                         </condition>
                     </conditions>
-                    <actions>
-                        <action id="9" name="Remove instances by UID" sid="782558140860783" type="Grupo">
-                            <param id="0" name="UID">Utileria.UID</param>
-                            <param id="1" name="Group">&quot;j4a&quot;</param>
-                        </action>
-                        <action id="-9" name="Destroy" sid="945317842468350" type="Utileria" />
-                    </actions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="505673299909378">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="164243200265069" type="Utileria">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">5</param>
+                                </condition>
+                                <condition id="-16" name="Pick random instance" sid="625219653143679" type="System">
+                                    <param id="0" name="Object">Utileria</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="206518775470945" type="Funcion">
+                                    <param id="0" name="Name">&quot;interactuarBoton&quot;</param>
+                                    <param id="1" name="Parameter {n}">Utileria.UID</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="780800453045378">
+                    <conditions>
+                        <condition id="101" name="On touch released at object" sid="110319588194050" type="Tocar">
+                            <param id="0" name="Object">Utileria</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="620938298330304" type="System">
+                            <param id="0" name="Variable">gMovil</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="672708294715696">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="530614643595497" type="Utileria">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">5</param>
+                                </condition>
+                                <condition id="-16" name="Pick random instance" sid="567744525727480" type="System">
+                                    <param id="0" name="Object">Utileria</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="461770763764773" type="Funcion">
+                                    <param id="0" name="Name">&quot;interactuarBoton&quot;</param>
+                                    <param id="1" name="Parameter {n}">Utileria.UID</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="120579316485378">
+                    <conditions>
+                        <condition id="0" name="On function" sid="185323913251545" type="Funcion">
+                            <param id="0" name="Name">&quot;interactuarBoton&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="801471668497726">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="578776571491128" type="Utileria">
+                                    <param id="0" name="Unique ID">Funcion.Param(0)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="9" name="Remove instances by UID" sid="782558140860783" type="Grupo">
+                                    <param id="0" name="UID">Utileria.UID</param>
+                                    <param id="1" name="Group">&quot;j4a&quot;</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="945317842468350" type="Utileria" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <comment>Cada un segundo mientras no haya perdido, se descontará 1 a la variable tiempo</comment>
                 <event-block sid="514713792649596">

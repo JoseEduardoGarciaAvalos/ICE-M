@@ -25,6 +25,7 @@
         <variable comment="Decibeles  [-20,0]" constant="0" name="gMicrofono" sid="473377100759916" static="0" type="number">-5</variable>
         <variable comment="0 = desactivado, 1 = activado" constant="0" name="gMicActivo" sid="586682301394846" static="0" type="number">0</variable>
         <variable comment="-2= no asignado, -1 = ninguno, Dispositivos" constant="0" name="gMicTipo" sid="670904612445963" static="0" type="number">-2</variable>
+        <variable comment="0 = No lo es, 1 = Es un mobil" constant="0" name="gMovil" sid="868978118798205" static="0" type="number">0</variable>
         <comment>m=1, carga juegos para adolescentes</comment>
         <comment>IVANIA= 7, 10, 11, 12, 13, 17</comment>
         <comment>CLAUDIA= 1, 5, 6, 14, 16, 19, 20</comment>
@@ -732,12 +733,14 @@
                 </event-group>
                 <event-group description="" inactive="1" sid="142419521425942" title="Micro2">
                     <sub-events>
+                        <comment>Compatibilidad para pantallas táctiles</comment>
                         <comment>Si la tecla espaciadora se presiona, se disparará una sola vez</comment>
-                        <event-block sid="543931925484186">
+                        <event-block any="1" sid="543931925484186">
                             <conditions>
                                 <condition id="0" name="On key pressed" sid="863606044446740" type="Teclado">
                                     <param id="0" name="Key">32 (Barra Espaciadora)</param>
                                 </condition>
+                                <condition id="31" name="On detecting start" sid="675487911428133" type="Deslizar" />
                             </conditions>
                             <actions>
                                 <action id="-9" name="Set value" sid="949353743257139" type="System">
@@ -747,11 +750,12 @@
                             </actions>
                         </event-block>
                         <comment>Si la tecla espaciadora se suelta, se disparará una sola vez</comment>
-                        <event-block sid="623462063431257">
+                        <event-block any="1" sid="623462063431257">
                             <conditions>
                                 <condition id="3" name="On key released" sid="861153519964198" type="Teclado">
                                     <param id="0" name="Key">32 (Barra Espaciadora)</param>
                                 </condition>
+                                <condition id="32" name="On detecting end" sid="863625632926099" type="Deslizar" />
                             </conditions>
                             <actions>
                                 <action id="-9" name="Set value" sid="778805640147060" type="System">
@@ -874,48 +878,23 @@
                     </conditions>
                     <actions />
                     <sub-events>
-                        <variable constant="0" name="aux" sid="886251038413825" static="0" type="text"></variable>
+                        <variable constant="0" name="hayPermiso" sid="687616685069275" static="0" type="number">1</variable>
                         <event-block sid="265788171467931">
                             <conditions>
-                                <condition id="-8" name="Compare two values" sid="798308215787624" type="System">
-                                    <param id="0" name="First value">Microfono.AudioSourceCount</param>
+                                <condition id="-8" name="Compare two values" sid="692713062111234" type="System">
+                                    <param id="0" name="First value">Microfono.AudioSourceLabelAt(0)</param>
                                     <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Second value">0</param>
+                                    <param id="2" name="Second value">&quot;&quot;</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-9" name="Set value" sid="282243241425714" type="System">
-                                    <param id="0" name="Variable">aux</param>
-                                    <param id="1" name="Value">&quot;selected&quot;</param>
-                                </action>
                                 <action id="-9" name="Set value" sid="978025957415996" type="System">
-                                    <param id="0" name="Variable">gMicTipo</param>
-                                    <param id="1" name="Value">-1</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <comment>Esta condición solo será verdadera una sola vez, al inciar este juego</comment>
-                        <event-block sid="146868270645016">
-                            <conditions>
-                                <condition id="-22" name="Else" sid="113280667049370" type="System" />
-                                <condition id="-14" name="Compare variable" sid="366365928418746" type="System">
-                                    <param id="0" name="Variable">gMicTipo</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">-2</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-9" name="Set value" sid="844101082982118" type="System">
-                                    <param id="0" name="Variable">gMicTipo</param>
+                                    <param id="0" name="Variable">hayPermiso</param>
                                     <param id="1" name="Value">0</param>
                                 </action>
-                                <action id="3" name="Request microphone" sid="918211364395267" type="Microfono">
-                                    <param id="0" name="Tag">&quot;mic&quot;</param>
-                                    <param id="1" name="Source">gMicTipo</param>
-                                </action>
                             </actions>
                         </event-block>
-                        <comment>este iframe corresponde a la GUI pausa</comment>
+                        <comment>este iframe corresponde a la GUI pausa del audio</comment>
                         <event-block sid="217215211022635">
                             <conditions>
                                 <condition id="-7" name="Compare instance variable" sid="359141896212698" type="IFrame">
@@ -924,45 +903,123 @@
                                     <param id="2" name="Value">-54</param>
                                 </condition>
                             </conditions>
-                            <actions>
-                                <action id="24" name="Get elements" sid="569066571790620" type="IFrame">
-                                    <param id="0" name="ID/Class">&quot;#c2_iDispositivo&quot;</param>
-                                    <param id="1" name="Set">&quot;&lt;option &quot;&amp;aux&amp;&quot; value=&apos;-1&apos;&gt;Ninguno (Usar tecla espacio)&lt;/option&gt;&quot;</param>
-                                    <param id="2" name="Append">&quot;&quot;</param>
-                                </action>
-                            </actions>
+                            <actions />
                             <sub-events>
-                                <event-block sid="682514583629805">
+                                <event-block sid="166145168207198">
                                     <conditions>
-                                        <condition id="-12" name="Repeat" sid="371167621817700" type="System">
-                                            <param id="0" name="Count">Microfono.AudioSourceCount</param>
+                                        <condition id="-14" name="Compare variable" sid="811778614444651" type="System">
+                                            <param id="0" name="Variable">hayPermiso</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
                                         </condition>
                                     </conditions>
-                                    <actions />
+                                    <actions>
+                                        <action id="24" name="Get elements" sid="442201530370541" type="IFrame">
+                                            <param id="0" name="ID/Class">&quot;#c2_iDispositivo&quot;</param>
+                                            <param id="1" name="Set">&quot;&lt;option value=&apos;-1&apos;&gt;Ninguno (Usar tecla espacio)&lt;/option&gt;&quot;</param>
+                                            <param id="2" name="Append">&quot;&quot;</param>
+                                        </action>
+                                    </actions>
                                     <sub-events>
-                                        <variable constant="0" name="nombre" sid="502555987748855" static="0" type="text"></variable>
-                                        <variable constant="0" name="aux2" sid="687616685069275" static="0" type="text"></variable>
-                                        <event-block sid="950665552619785">
-                                            <conditions />
-                                            <actions>
-                                                <action id="-9" name="Set value" sid="624938966263799" type="System">
-                                                    <param id="0" name="Variable">nombre</param>
-                                                    <param id="1" name="Value">&quot;Micrófono &quot; &amp; (loopindex+1) &amp; &quot; (&quot; &amp; Microfono.AudioSourceLabelAt(loopindex) &amp; &quot;)&quot;</param>
-                                                </action>
-                                                <action id="-9" name="Set value" sid="917411740515533" type="System">
-                                                    <param id="0" name="Variable">aux2</param>
-                                                    <param id="1" name="Value">(loopindex=gMicTipo ? &quot;selected&quot;:&quot;&quot;)</param>
-                                                </action>
-                                                <action id="24" name="Get elements" sid="202380496025985" type="IFrame">
-                                                    <param id="0" name="ID/Class">&quot;#c2_iDispositivo&quot;</param>
-                                                    <param id="1" name="Set">&quot;&quot;</param>
-                                                    <param id="2" name="Append">&quot;&lt;option &quot;&amp;aux2&amp;&quot; value=&apos;&quot;&amp;loopindex&amp;&quot;&apos;&gt;&quot;&amp;nombre&amp;&quot;&lt;/option&gt;&quot;</param>
-                                                </action>
-                                            </actions>
+                                        <event-block sid="399243589242822">
+                                            <conditions>
+                                                <condition id="-12" name="Repeat" sid="439567687561551" type="System">
+                                                    <param id="0" name="Count">Microfono.AudioSourceCount</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <variable constant="0" name="nombre" sid="536024041708812" static="0" type="text"></variable>
+                                                <variable constant="0" name="aux" sid="966758169536691" static="0" type="text"></variable>
+                                                <event-block sid="619576588201496">
+                                                    <conditions />
+                                                    <actions>
+                                                        <action id="-9" name="Set value" sid="166886753508876" type="System">
+                                                            <param id="0" name="Variable">nombre</param>
+                                                            <param id="1" name="Value">&quot;Micrófono &quot; &amp; (loopindex+1) &amp; &quot; (&quot; &amp; Microfono.AudioSourceLabelAt(loopindex) &amp; &quot;)&quot;</param>
+                                                        </action>
+                                                        <action id="-9" name="Set value" sid="336342073466075" type="System">
+                                                            <param id="0" name="Variable">aux</param>
+                                                            <param id="1" name="Value">(loopindex=gMicTipo ? &quot;selected&quot;:&quot;&quot;)</param>
+                                                        </action>
+                                                        <action id="24" name="Get elements" sid="515409855439035" type="IFrame">
+                                                            <param id="0" name="ID/Class">&quot;#c2_iDispositivo&quot;</param>
+                                                            <param id="1" name="Set">&quot;&quot;</param>
+                                                            <param id="2" name="Append">&quot;&lt;option &quot;&amp;aux&amp;&quot; value=&apos;&quot;&amp;loopindex&amp;&quot;&apos;&gt;&quot;&amp;nombre&amp;&quot;&lt;/option&gt;&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
                                         </event-block>
                                     </sub-events>
                                 </event-block>
+                                <event-block sid="851038751608584">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="892825541940306" type="System" />
+                                        <condition id="2" name="Key exists" sid="848904529920958" type="Hash">
+                                            <param id="0" name="Key string">&quot;juego.microfono.bandera1&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="6" name="Remove key" sid="480125390384273" type="Hash">
+                                            <param id="0" name="Key string">&quot;juego.microfono.bandera1&quot;</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="855416381065186" type="System">
+                                            <param id="0" name="Variable">gMicTipo</param>
+                                            <param id="1" name="Value">-1</param>
+                                        </action>
+                                        <action id="7" name="Append HTML" sid="123365817502344" type="IFrame">
+                                            <param id="0" name="Append HTML">&quot;(No se tiene permiso para usar el micrófono)&quot;</param>
+                                        </action>
+                                        <action id="24" name="Get elements" sid="274937093305568" type="IFrame">
+                                            <param id="0" name="ID/Class">&quot;.c2_filaMicroE&quot;</param>
+                                            <param id="1" name="Set">&quot; &quot;</param>
+                                            <param id="2" name="Append">&quot;&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
                             </sub-events>
+                        </event-block>
+                        <comment>Esta condición solo será verdadera una sola vez, (Se solicita el recurso del microfono)</comment>
+                        <event-block sid="659265139414173">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="974280354085677" type="System" />
+                                <condition id="-8" name="Compare two values" sid="479141286930305" type="System">
+                                    <param id="0" name="First value">Microfono.AudioSourceCount</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="3" name="Request microphone" sid="918211364395267" type="Microfono">
+                                    <param id="0" name="Tag">&quot;mic&quot;</param>
+                                    <param id="1" name="Source">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Función que verifica los permisos en el micro</comment>
+                <event-block sid="797990076865115">
+                    <conditions>
+                        <condition id="0" name="On function" sid="861197602902471" type="Funcion">
+                            <param id="0" name="Name">&quot;verificoMICRO&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="112468115716158">
+                            <conditions />
+                            <actions>
+                                <action id="14" name="Log" sid="178636015069090" type="Navegador">
+                                    <param id="0" name="Type">0</param>
+                                    <param id="1" name="Message">&quot;ENTRO 0&quot;</param>
+                                </action>
+                                <action id="3" name="Request microphone" sid="689913212843738" type="Microfono">
+                                    <param id="0" name="Tag">&quot;mic&quot;</param>
+                                    <param id="1" name="Source">0</param>
+                                </action>
+                            </actions>
                         </event-block>
                     </sub-events>
                 </event-block>
@@ -1150,10 +1207,283 @@
                                         <action id="32" name="Add mute effect" sid="785157235622396" type="Audio">
                                             <param id="0" name="Tag">&quot;mic&quot;</param>
                                         </action>
+                                        <action id="-9" name="Set value" sid="427752469822262" type="System">
+                                            <param id="0" name="Variable">gMicTipo</param>
+                                            <param id="1" name="Value">-1</param>
+                                        </action>
                                         <action id="10" name="Get media sources" sid="200653253535177" type="Microfono" />
                                     </actions>
                                 </event-block>
                             </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Si el micro es bloqueado por el usuario o por el explorador</comment>
+                <event-block sid="553097132739345">
+                    <conditions>
+                        <condition id="1" name="On media request declined" sid="378817154746847" type="Microfono" />
+                    </conditions>
+                    <actions>
+                        <action id="14" name="Log" sid="637532876385071" type="Navegador">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;Micro denegado&quot;</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="782136865781762" type="System">
+                            <param id="0" name="Variable">gMicTipo</param>
+                            <param id="1" name="Value">-1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Si el micro es permitido por el usuario o por el explorador</comment>
+                <event-block sid="434226295774683">
+                    <conditions>
+                        <condition id="0" name="On media request approved" sid="653799849370603" type="Microfono" />
+                    </conditions>
+                    <actions>
+                        <action id="14" name="Log" sid="247284041886428" type="Navegador">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;Micro permitido&quot;</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="392972545682926" type="System">
+                            <param id="0" name="Variable">gMicTipo</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" inactive="1" sid="258931808675870" title="Jostick">
+            <sub-events>
+                <event-block sid="362144243709365">
+                    <conditions>
+                        <condition id="11" name="Up arrow is down" sid="382879903373671" type="Deslizar" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="750755610733746">
+                            <conditions />
+                            <actions>
+                                <action id="1" name="Simulate keyboard event" sid="585560967456230" type="SimuladorEntrada">
+                                    <param id="0" name="Key">38 (Up arrow)</param>
+                                    <param id="1" name="Event type">0</param>
+                                </action>
+                                <action id="1" name="Simulate keyboard event" sid="524995672364488" type="SimuladorEntrada">
+                                    <param id="0" name="Key">40 (Down arrow)</param>
+                                    <param id="1" name="Event type">1</param>
+                                </action>
+                                <action id="1" name="Simulate keyboard event" sid="215980823533223" type="SimuladorEntrada">
+                                    <param id="0" name="Key">37 (Left arrow)</param>
+                                    <param id="1" name="Event type">1</param>
+                                </action>
+                                <action id="1" name="Simulate keyboard event" sid="887484438823256" type="SimuladorEntrada">
+                                    <param id="0" name="Key">39 (Right arrow)</param>
+                                    <param id="1" name="Event type">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="976728207225090">
+                    <conditions>
+                        <condition id="12" name="Down arrow is down" sid="900354260742926" type="Deslizar" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="577557155552945">
+                            <conditions />
+                            <actions>
+                                <action id="1" name="Simulate keyboard event" sid="808681169746934" type="SimuladorEntrada">
+                                    <param id="0" name="Key">40 (Down arrow)</param>
+                                    <param id="1" name="Event type">0</param>
+                                </action>
+                                <action id="1" name="Simulate keyboard event" sid="552830057062181" type="SimuladorEntrada">
+                                    <param id="0" name="Key">38 (Up arrow)</param>
+                                    <param id="1" name="Event type">1</param>
+                                </action>
+                                <action id="1" name="Simulate keyboard event" sid="330223714911721" type="SimuladorEntrada">
+                                    <param id="0" name="Key">37 (Left arrow)</param>
+                                    <param id="1" name="Event type">1</param>
+                                </action>
+                                <action id="1" name="Simulate keyboard event" sid="332214523249325" type="SimuladorEntrada">
+                                    <param id="0" name="Key">39 (Right arrow)</param>
+                                    <param id="1" name="Event type">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="308745015642030">
+                    <conditions>
+                        <condition id="13" name="Left arrow is down" sid="694012848882106" type="Deslizar" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="645844422222299">
+                            <conditions />
+                            <actions>
+                                <action id="1" name="Simulate keyboard event" sid="945396615882558" type="SimuladorEntrada">
+                                    <param id="0" name="Key">37 (Left arrow)</param>
+                                    <param id="1" name="Event type">0</param>
+                                </action>
+                                <action id="1" name="Simulate keyboard event" sid="213350748443250" type="SimuladorEntrada">
+                                    <param id="0" name="Key">38 (Up arrow)</param>
+                                    <param id="1" name="Event type">1</param>
+                                </action>
+                                <action id="1" name="Simulate keyboard event" sid="577333605155744" type="SimuladorEntrada">
+                                    <param id="0" name="Key">40 (Down arrow)</param>
+                                    <param id="1" name="Event type">1</param>
+                                </action>
+                                <action id="1" name="Simulate keyboard event" sid="761930540528384" type="SimuladorEntrada">
+                                    <param id="0" name="Key">39 (Right arrow)</param>
+                                    <param id="1" name="Event type">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="273591584173428">
+                    <conditions>
+                        <condition id="14" name="Right arrow is down" sid="997217072441024" type="Deslizar" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="782710308956688">
+                            <conditions />
+                            <actions>
+                                <action id="1" name="Simulate keyboard event" sid="488720066716796" type="SimuladorEntrada">
+                                    <param id="0" name="Key">39 (Right arrow)</param>
+                                    <param id="1" name="Event type">0</param>
+                                </action>
+                                <action id="1" name="Simulate keyboard event" sid="268607376677015" type="SimuladorEntrada">
+                                    <param id="0" name="Key">38 (Up arrow)</param>
+                                    <param id="1" name="Event type">1</param>
+                                </action>
+                                <action id="1" name="Simulate keyboard event" sid="874320435697066" type="SimuladorEntrada">
+                                    <param id="0" name="Key">40 (Down arrow)</param>
+                                    <param id="1" name="Event type">1</param>
+                                </action>
+                                <action id="1" name="Simulate keyboard event" sid="158489071027253" type="SimuladorEntrada">
+                                    <param id="0" name="Key">37 (Left arrow)</param>
+                                    <param id="1" name="Event type">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="816199632368909">
+                    <conditions>
+                        <condition id="31" name="On detecting start" sid="991414681119765" type="Deslizar" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="270549344416313">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="435258319370787" type="System">
+                                    <param id="0" name="Variable">gJuego</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="959105010291491" type="StickBase">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="572123584773347" type="StickBase">
+                                    <param id="0" name="X">Deslizar.OX</param>
+                                    <param id="1" name="Y">Deslizar.OY</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="476903930765760" type="Stick">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="-4" name="Set position to another object" sid="342991049766057" type="Stick">
+                                    <param id="0" name="Object">StickBase</param>
+                                    <param id="1" name="Image point (optional)">0</param>
+                                </action>
+                                <action id="-24" name="Move to top" sid="251473528719352" type="StickBase" />
+                                <action id="-24" name="Move to top" sid="535814225185046" type="Stick" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="677499861191443">
+                    <conditions>
+                        <condition id="33" name="Is in detecting" sid="682005077904228" type="Deslizar" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <variable constant="0" name="x1" sid="955834096365490" static="0" type="number">0</variable>
+                        <variable constant="0" name="x2" sid="276695305314737" static="0" type="number">0</variable>
+                        <variable constant="0" name="y1" sid="865936014316788" static="0" type="number">0</variable>
+                        <variable constant="0" name="y2" sid="385748091232249" static="0" type="number">0</variable>
+                        <variable constant="0" name="distancia" sid="223516707434067" static="0" type="number">0</variable>
+                        <variable constant="0" name="angulo" sid="124833233078020" static="0" type="number">0</variable>
+                        <event-block sid="707635829650195">
+                            <conditions />
+                            <actions>
+                                <action id="-9" name="Set value" sid="888371531536037" type="System">
+                                    <param id="0" name="Variable">x1</param>
+                                    <param id="1" name="Value">Deslizar.OX</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="166101469225703" type="System">
+                                    <param id="0" name="Variable">x2</param>
+                                    <param id="1" name="Value">Deslizar.CurrX</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="280085335524219" type="System">
+                                    <param id="0" name="Variable">y1</param>
+                                    <param id="1" name="Value">Deslizar.OY</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="967633709307425" type="System">
+                                    <param id="0" name="Variable">y2</param>
+                                    <param id="1" name="Value">Deslizar.CurrY</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="669258692181756" type="System">
+                                    <param id="0" name="Variable">distancia</param>
+                                    <param id="1" name="Value">distance(x1,y1,x2,y2)</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="348124073940548" type="System">
+                                    <param id="0" name="Variable">angulo</param>
+                                    <param id="1" name="Value">angle(x1,y1,x2,y2)</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="548093149124373" type="Stick">
+                                    <param id="0" name="X">x1+min(50,distancia) * cos(angulo)</param>
+                                    <param id="1" name="Y">y1+min(50,distancia) * sin(angulo)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="985562685829054">
+                    <conditions>
+                        <condition id="32" name="On detecting end" sid="331864005035885" type="Deslizar" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="177880138694249">
+                            <conditions />
+                            <actions>
+                                <action id="-15" name="Set visible" sid="501332347742586" type="Stick">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="927867537045981" type="StickBase">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="1" name="Simulate keyboard event" sid="616511238793941" type="SimuladorEntrada">
+                                    <param id="0" name="Key">38 (Up arrow)</param>
+                                    <param id="1" name="Event type">1</param>
+                                </action>
+                                <action id="1" name="Simulate keyboard event" sid="166221370549428" type="SimuladorEntrada">
+                                    <param id="0" name="Key">40 (Down arrow)</param>
+                                    <param id="1" name="Event type">1</param>
+                                </action>
+                                <action id="1" name="Simulate keyboard event" sid="666373930217855" type="SimuladorEntrada">
+                                    <param id="0" name="Key">37 (Left arrow)</param>
+                                    <param id="1" name="Event type">1</param>
+                                </action>
+                                <action id="1" name="Simulate keyboard event" sid="787794634342923" type="SimuladorEntrada">
+                                    <param id="0" name="Key">39 (Right arrow)</param>
+                                    <param id="1" name="Event type">1</param>
+                                </action>
+                            </actions>
                         </event-block>
                     </sub-events>
                 </event-block>
@@ -1436,16 +1766,74 @@
                                             <param id="2" name="Value">1</param>
                                         </condition>
                                     </conditions>
-                                    <actions>
-                                        <action id="-9" name="Set value" sid="862732027805116" type="System">
-                                            <param id="0" name="Variable">x</param>
-                                            <param id="1" name="Value">Mouse.X</param>
-                                        </action>
-                                        <action id="-9" name="Set value" sid="839233714720411" type="System">
-                                            <param id="0" name="Variable">y</param>
-                                            <param id="1" name="Value">Mouse.Y</param>
-                                        </action>
-                                    </actions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="294498181990900">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="818299567629068" type="System">
+                                                    <param id="0" name="Variable">gMovil</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="907335312513508">
+                                                    <conditions>
+                                                        <condition id="2" name="Is in touch" sid="487362727166917" type="Tocar" />
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-9" name="Set value" sid="470867845715063" type="System">
+                                                            <param id="0" name="Variable">x</param>
+                                                            <param id="1" name="Value">Tocar.X</param>
+                                                        </action>
+                                                        <action id="-9" name="Set value" sid="618560753911290" type="System">
+                                                            <param id="0" name="Variable">y</param>
+                                                            <param id="1" name="Value">Tocar.Y</param>
+                                                        </action>
+                                                        <action id="0" name="Add key" sid="979622947881692" type="Diccionario">
+                                                            <param id="0" name="Key">&quot;xTouch&quot;</param>
+                                                            <param id="1" name="Value">x</param>
+                                                        </action>
+                                                        <action id="0" name="Add key" sid="316827318204178" type="Diccionario">
+                                                            <param id="0" name="Key">&quot;yTouch&quot;</param>
+                                                            <param id="1" name="Value">y</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="804140918389288">
+                                                    <conditions>
+                                                        <condition id="-22" name="Else" sid="680694220098791" type="System" />
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-9" name="Set value" sid="328500711230450" type="System">
+                                                            <param id="0" name="Variable">x</param>
+                                                            <param id="1" name="Value">Diccionario.Get(&quot;xTouch&quot;)</param>
+                                                        </action>
+                                                        <action id="-9" name="Set value" sid="746964477245781" type="System">
+                                                            <param id="0" name="Variable">y</param>
+                                                            <param id="1" name="Value">Diccionario.Get(&quot;yTouch&quot;)</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-block sid="963937626463960">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="829847040617864" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="210432289117018" type="System">
+                                                    <param id="0" name="Variable">x</param>
+                                                    <param id="1" name="Value">Mouse.X</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="841423222988564" type="System">
+                                                    <param id="0" name="Variable">y</param>
+                                                    <param id="1" name="Value">Mouse.Y</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
                                 </event-block>
                                 <comment>Coordenada X</comment>
                                 <event-block sid="382632111217953">
@@ -1755,6 +2143,19 @@
                                     <param id="1" name="Parameter {n}"></param>
                                 </action>
                             </actions>
+                            <sub-events>
+                                <event-block sid="252390429808408">
+                                    <conditions>
+                                        <condition id="-20" name="Is on mobile device" sid="123461643433397" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="455872478928938" type="System">
+                                            <param id="0" name="Variable">gMovil</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                         <comment>se reordenaran si esta de nuevo en el menu</comment>
                         <event-block sid="821879184485635">
@@ -5715,6 +6116,11 @@
                                             <param id="1" name="Comparison">0</param>
                                             <param id="2" name="Second value">0</param>
                                         </condition>
+                                        <condition id="-14" inverted="1" name="Compare variable" sid="798227904718267" type="System">
+                                            <param id="0" name="Variable">gMovil</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
                                     </conditions>
                                     <actions>
                                         <action id="-9" name="Set value" sid="956059283259056" type="System">
@@ -5854,6 +6260,28 @@
                             </conditions>
                             <actions />
                             <sub-events>
+                                <variable constant="0" name="aux" sid="869984014839693" static="0" type="number">2</variable>
+                                <event-block sid="224973805652511">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="640995098340971" type="System">
+                                            <param id="0" name="Variable">gMovil</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="430670052624134">
+                                            <conditions />
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="503550674140182" type="System">
+                                                    <param id="0" name="Variable">aux</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
                                 <event-block sid="179755779234949">
                                     <conditions>
                                         <condition id="-8" name="Compare two values" sid="859712197529756" type="System">
@@ -5908,7 +6336,7 @@
                                                             <param id="0" name="Spray cone">180</param>
                                                         </action>
                                                         <action id="1" name="Set rate" sid="884702168776222" type="Particulas">
-                                                            <param id="0" name="Rate">2</param>
+                                                            <param id="0" name="Rate">aux</param>
                                                         </action>
                                                         <action id="4" name="Set speed" sid="918395971142211" type="Particulas">
                                                             <param id="0" name="Speed">200</param>
@@ -6731,6 +7159,27 @@
                     <actions />
                     <sub-events>
                         <variable constant="0" name="aux" sid="554308299663603" static="0" type="number">0</variable>
+                        <event-block sid="278308518754456">
+                            <conditions />
+                            <actions>
+                                <action id="1" name="Simulate keyboard event" sid="457595295957372" type="SimuladorEntrada">
+                                    <param id="0" name="Key">38 (Up arrow)</param>
+                                    <param id="1" name="Event type">1</param>
+                                </action>
+                                <action id="1" name="Simulate keyboard event" sid="180931505960937" type="SimuladorEntrada">
+                                    <param id="0" name="Key">40 (Down arrow)</param>
+                                    <param id="1" name="Event type">1</param>
+                                </action>
+                                <action id="1" name="Simulate keyboard event" sid="717146426053876" type="SimuladorEntrada">
+                                    <param id="0" name="Key">37 (Left arrow)</param>
+                                    <param id="1" name="Event type">1</param>
+                                </action>
+                                <action id="1" name="Simulate keyboard event" sid="382421473189853" type="SimuladorEntrada">
+                                    <param id="0" name="Key">39 (Right arrow)</param>
+                                    <param id="1" name="Event type">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
                         <event-block sid="816108150807351">
                             <conditions>
                                 <condition id="-7" name="Compare instance variable" sid="610363597607854" type="zetiqueta">
@@ -6874,6 +7323,48 @@
                                             <param id="1" name="Parameter {n}"></param>
                                         </action>
                                     </actions>
+                                    <sub-events>
+                                        <event-block any="1" sid="374833287984125">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="649929627101925" type="System">
+                                                    <param id="0" name="Variable">gJuego</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">0</param>
+                                                </condition>
+                                                <condition id="-14" name="Compare variable" sid="701290535658094" type="System">
+                                                    <param id="0" name="Variable">gJuego</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </condition>
+                                                <condition id="-14" name="Compare variable" sid="867216336036937" type="System">
+                                                    <param id="0" name="Variable">gJuego</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">5</param>
+                                                </condition>
+                                                <condition id="-14" name="Compare variable" sid="623899234793087" type="System">
+                                                    <param id="0" name="Variable">gJuego</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">9</param>
+                                                </condition>
+                                                <condition id="-14" name="Compare variable" sid="590167268358380" type="System">
+                                                    <param id="0" name="Variable">gJuego</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">13</param>
+                                                </condition>
+                                                <condition id="-14" name="Compare variable" sid="938340651177900" type="System">
+                                                    <param id="0" name="Variable">gJuego</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">17</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-12" name="Set group active" sid="416275098593886" type="System">
+                                                    <param id="0" name="Group name">&quot;Jostick&quot;</param>
+                                                    <param id="1" name="State">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
                                 </event-block>
                             </sub-events>
                         </event-block>
@@ -7182,6 +7673,57 @@
                                 </action>
                             </actions>
                             <sub-events>
+                                <event-block sid="767367034321115">
+                                    <conditions />
+                                    <actions>
+                                        <action disabled="1" id="1" name="Cancel" sid="596407150811255" type="Deslizar" />
+                                        <action id="-15" name="Set visible" sid="907651363070993" type="Stick">
+                                            <param id="0" name="Visibility">0</param>
+                                        </action>
+                                        <action id="-15" name="Set visible" sid="645084836346640" type="StickBase">
+                                            <param id="0" name="Visibility">0</param>
+                                        </action>
+                                        <action id="-12" name="Set group active" sid="495868613911099" type="System">
+                                            <param id="0" name="Group name">&quot;Jostick&quot;</param>
+                                            <param id="1" name="State">0</param>
+                                        </action>
+                                        <action id="1" name="Simulate keyboard event" sid="790106184261272" type="SimuladorEntrada">
+                                            <param id="0" name="Key">38 (Up arrow)</param>
+                                            <param id="1" name="Event type">0</param>
+                                        </action>
+                                        <action id="1" name="Simulate keyboard event" sid="544751719882683" type="SimuladorEntrada">
+                                            <param id="0" name="Key">40 (Down arrow)</param>
+                                            <param id="1" name="Event type">0</param>
+                                        </action>
+                                        <action id="1" name="Simulate keyboard event" sid="908083497569693" type="SimuladorEntrada">
+                                            <param id="0" name="Key">37 (Left arrow)</param>
+                                            <param id="1" name="Event type">0</param>
+                                        </action>
+                                        <action id="1" name="Simulate keyboard event" sid="297186709940531" type="SimuladorEntrada">
+                                            <param id="0" name="Key">39 (Right arrow)</param>
+                                            <param id="1" name="Event type">0</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="583683550236554" type="System">
+                                            <param id="0" name="Seconds">0.1</param>
+                                        </action>
+                                        <action id="1" name="Simulate keyboard event" sid="167698244052092" type="SimuladorEntrada">
+                                            <param id="0" name="Key">38 (Up arrow)</param>
+                                            <param id="1" name="Event type">1</param>
+                                        </action>
+                                        <action id="1" name="Simulate keyboard event" sid="535820613561182" type="SimuladorEntrada">
+                                            <param id="0" name="Key">40 (Down arrow)</param>
+                                            <param id="1" name="Event type">1</param>
+                                        </action>
+                                        <action id="1" name="Simulate keyboard event" sid="547739369031176" type="SimuladorEntrada">
+                                            <param id="0" name="Key">37 (Left arrow)</param>
+                                            <param id="1" name="Event type">1</param>
+                                        </action>
+                                        <action id="1" name="Simulate keyboard event" sid="964378963615066" type="SimuladorEntrada">
+                                            <param id="0" name="Key">39 (Right arrow)</param>
+                                            <param id="1" name="Event type">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
                                 <event-block sid="812656014744841">
                                     <conditions />
                                     <actions>
@@ -7381,6 +7923,10 @@
                                 <action id="6" name="Remove key" sid="347652135404697" type="Hash">
                                     <param id="0" name="Key string">&quot;temporal.hayMicro&quot;</param>
                                 </action>
+                                <action id="0" name="Call function" sid="900146730233352" type="Funcion">
+                                    <param id="0" name="Name">&quot;verificoMICRO&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
                                 <action id="0" name="Call function" sid="960154269162552" type="Funcion">
                                     <param id="0" name="Name">&quot;activoMICRO&quot;</param>
                                     <param id="1" name="Parameter {n}"></param>
@@ -7409,7 +7955,7 @@
                     </conditions>
                     <actions />
                     <sub-events>
-                        <comment>Si hay pausa</comment>
+                        <comment>Si desea pausar</comment>
                         <event-block sid="119609629923145">
                             <conditions>
                                 <condition id="2" inverted="1" name="Key exists" sid="747718252361552" type="Hash">
@@ -7451,6 +7997,10 @@
                                 <action id="0" name="Call function" sid="230054410202971" type="Funcion">
                                     <param id="0" name="Name">&quot;continuaTAREA&quot;</param>
                                     <param id="1" name="Parameter {n}">&quot;objetivoPausa&quot;{###}1</param>
+                                </action>
+                                <action id="0" name="Call function" sid="208511307332379" type="Funcion">
+                                    <param id="0" name="Name">&quot;desbloqueoPantalla&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
                                 </action>
                             </actions>
                             <sub-events>
@@ -7518,6 +8068,29 @@
                                         </action>
                                     </actions>
                                 </event-block>
+                                <event-block sid="933239559864596">
+                                    <conditions>
+                                        <condition id="-15" name="Is group active" sid="869096371798816" type="System">
+                                            <param id="0" name="Group name">&quot;Jostick&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="1" name="Set value" sid="930381253926294" type="Hash">
+                                            <param id="0" name="Key string">&quot;juego.pausa.jostick&quot;</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-15" name="Set visible" sid="271706075299738" type="Stick">
+                                            <param id="0" name="Visibility">0</param>
+                                        </action>
+                                        <action id="-15" name="Set visible" sid="815258843246968" type="StickBase">
+                                            <param id="0" name="Visibility">0</param>
+                                        </action>
+                                        <action id="-12" name="Set group active" sid="426208302448861" type="System">
+                                            <param id="0" name="Group name">&quot;Jostick&quot;</param>
+                                            <param id="1" name="State">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
                             </sub-events>
                         </event-block>
                         <comment>Sino, lo que desea es caso contario</comment>
@@ -7544,6 +8117,39 @@
                                     <param id="1" name="Parameter {n}">&quot;pausaSalir&quot;{###}1</param>
                                 </action>
                             </actions>
+                            <sub-events>
+                                <event-block sid="798275118744574">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="787321487048535" type="System">
+                                            <param id="0" name="Variable">gJuego</param>
+                                            <param id="1" name="Comparison">1</param>
+                                            <param id="2" name="Value">-1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="922246203047512" type="Funcion">
+                                            <param id="0" name="Name">&quot;bloqueoPantalla&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="659469152411978">
+                                    <conditions>
+                                        <condition id="2" name="Key exists" sid="604672284516727" type="Hash">
+                                            <param id="0" name="Key string">&quot;juego.pausa.jostick&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="6" name="Remove key" sid="898430877408174" type="Hash">
+                                            <param id="0" name="Key string">&quot;juego.pausa.jostick&quot;</param>
+                                        </action>
+                                        <action id="-12" name="Set group active" sid="723862749142306" type="System">
+                                            <param id="0" name="Group name">&quot;Jostick&quot;</param>
+                                            <param id="1" name="State">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                     </sub-events>
                 </event-block>
@@ -7744,6 +8350,10 @@
                             <param id="0" name="Type">0</param>
                             <param id="1" name="Message">&quot;SECUENCIA &quot; &amp; gSecuencia</param>
                         </action>
+                        <action id="0" name="Call function" sid="897579478698582" type="Funcion">
+                            <param id="0" name="Name">&quot;bloqueoPantalla&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
                     </actions>
                     <sub-events>
                         <event-block any="1" sid="649738695363880">
@@ -7901,6 +8511,10 @@
                                     <param id="0" name="Key string">&quot;temporal.gMicTipo&quot;</param>
                                     <param id="1" name="Value">gMicTipo</param>
                                 </action>
+                                <action id="1" name="Set value" sid="956236838257114" type="Hash">
+                                    <param id="0" name="Key string">&quot;temporal.gMovil&quot;</param>
+                                    <param id="1" name="Value">gMovil</param>
+                                </action>
                                 <action id="1" name="Set value" sid="127065608388093" type="Hash">
                                     <param id="0" name="Key string">&quot;juego.antiguo&quot;</param>
                                     <param id="1" name="Value">-99</param>
@@ -7925,6 +8539,10 @@
                                 <action id="-9" name="Set value" sid="114420090645163" type="System">
                                     <param id="0" name="Variable">gMicTipo</param>
                                     <param id="1" name="Value">Hash.At(&quot;temporal.gMicTipo&quot;)</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="113634832242900" type="System">
+                                    <param id="0" name="Variable">gMovil</param>
+                                    <param id="1" name="Value">Hash.At(&quot;temporal.gMovil&quot;)</param>
                                 </action>
                                 <action id="6" name="Remove key" sid="813254483076124" type="Hash">
                                     <param id="0" name="Key string">&quot;temporal&quot;</param>
@@ -8001,184 +8619,239 @@
         </event-group>
         <event-group description="" sid="556889156110741" title="Eventos pausa">
             <sub-events>
-                <event-block sid="664582516921536">
+                <comment>Disparadores de la interfaz de entrada (Mouse o pantalla táctil)</comment>
+                <event-block sid="958919514020706">
                     <conditions>
                         <condition id="6" name="On object clicked" sid="487394360692538" type="Mouse">
                             <param id="0" name="Mouse button">0</param>
                             <param id="1" name="Click type">0</param>
                             <param id="2" name="Object clicked">zgui</param>
                         </condition>
-                        <condition id="-2" name="Compare Y" sid="448795777357290" type="zgui">
-                            <param id="0" name="Comparison">5</param>
-                            <param id="1" name="Y co-ordinate">0</param>
+                        <condition id="-14" inverted="1" name="Compare variable" sid="546411015365517" type="System">
+                            <param id="0" name="Variable">gMovil</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
                         </condition>
-                        <condition id="-14" name="Compare variable" sid="603972284792065" type="System">
-                            <param id="0" name="Variable">gJuego</param>
-                            <param id="1" name="Comparison">1</param>
-                            <param id="2" name="Value">0</param>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="223010875839731" type="Funcion">
+                            <param id="0" name="Name">&quot;interactuoBoton&quot;</param>
+                            <param id="1" name="Parameter {n}">zgui.UID</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="751202245142489">
+                    <conditions>
+                        <condition id="101" name="On touch released at object" sid="212304733994180" type="Tocar">
+                            <param id="0" name="Object">zgui</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="155853510153168" type="System">
+                            <param id="0" name="Variable">gMovil</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="855038913725610" type="Funcion">
+                            <param id="0" name="Name">&quot;interactuoBoton&quot;</param>
+                            <param id="1" name="Parameter {n}">zgui.UID</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Acciones cuando le da clic o toca el boton menu o pausa</comment>
+                <event-block sid="946015796885828">
+                    <conditions>
+                        <condition id="0" name="On function" sid="216225163688617" type="Funcion">
+                            <param id="0" name="Name">&quot;interactuoBoton&quot;</param>
                         </condition>
                     </conditions>
                     <actions />
                     <sub-events>
-                        <event-block sid="853471072865480">
+                        <event-block sid="664582516921536">
                             <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="843136454550942" type="zgui">
-                                    <param id="0" name="Instance variable">ID</param>
-                                    <param id="1" name="Comparison">3</param>
-                                    <param id="2" name="Value">-50</param>
+                                <condition id="-14" name="Pick by unique ID" sid="337492980395621" type="zgui">
+                                    <param id="0" name="Unique ID">Funcion.Param(0)</param>
+                                </condition>
+                                <condition id="-2" name="Compare Y" sid="448795777357290" type="zgui">
+                                    <param id="0" name="Comparison">5</param>
+                                    <param id="1" name="Y co-ordinate">0</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="603972284792065" type="System">
+                                    <param id="0" name="Variable">gJuego</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">0</param>
                                 </condition>
                             </conditions>
                             <actions />
                             <sub-events>
-                                <comment>TEMA CONSTRUCCION (LAS TAREAS &quot;EXTRA&quot;)</comment>
-                                <event-block sid="682097091451698">
+                                <event-block sid="853471072865480">
                                     <conditions>
-                                        <condition id="-7" name="Compare instance variable" sid="977596633440746" type="zgui">
+                                        <condition id="-7" name="Compare instance variable" sid="843136454550942" type="zgui">
                                             <param id="0" name="Instance variable">ID</param>
-                                            <param id="1" name="Comparison">5</param>
-                                            <param id="2" name="Value">-52</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Value">-50</param>
                                         </condition>
                                     </conditions>
-                                    <actions>
-                                        <action disabled="1" id="0" name="Call function" sid="704262799600767" type="Funcion">
-                                            <param id="0" name="Name">&quot;permutaOPCIONES&quot;</param>
-                                            <param id="1" name="Parameter {n}">&quot;N&quot;{###}1{###}&quot;juego.pausa&quot;{###}Zgui.ID</param>
-                                        </action>
-                                        <action id="0" name="Call function" sid="577345923605296" type="Funcion">
-                                            <param id="0" name="Name">&quot;permutaOPCIONES&quot;</param>
-                                            <param id="1" name="Parameter {n}">&quot;EXTRA&quot;{###}1{###}&quot;juego.pausa&quot;{###}Zgui.ID</param>
-                                        </action>
-                                    </actions>
+                                    <actions />
                                     <sub-events>
-                                        <event-block sid="750222693483212">
+                                        <comment>TEMA CONSTRUCCION (LAS TAREAS &quot;EXTRA&quot;)</comment>
+                                        <event-block sid="682097091451698">
                                             <conditions>
-                                                <condition id="-7" name="Compare instance variable" sid="873318999982145" type="IFrame">
-                                                    <param id="0" name="Instance variable">VID</param>
-                                                    <param id="1" name="Comparison">0</param>
-                                                    <param id="2" name="Value">-54</param>
+                                                <condition id="-7" name="Compare instance variable" sid="977596633440746" type="zgui">
+                                                    <param id="0" name="Instance variable">ID</param>
+                                                    <param id="1" name="Comparison">5</param>
+                                                    <param id="2" name="Value">-52</param>
                                                 </condition>
                                             </conditions>
                                             <actions>
-                                                <action id="9" name="Scroll Top" sid="794387444480776" type="IFrame" />
+                                                <action disabled="1" id="0" name="Call function" sid="704262799600767" type="Funcion">
+                                                    <param id="0" name="Name">&quot;permutaOPCIONES&quot;</param>
+                                                    <param id="1" name="Parameter {n}">&quot;N&quot;{###}1{###}&quot;juego.pausa&quot;{###}Zgui.ID</param>
+                                                </action>
+                                                <action id="0" name="Call function" sid="577345923605296" type="Funcion">
+                                                    <param id="0" name="Name">&quot;permutaOPCIONES&quot;</param>
+                                                    <param id="1" name="Parameter {n}">&quot;EXTRA&quot;{###}1{###}&quot;juego.pausa&quot;{###}Zgui.ID</param>
+                                                </action>
                                             </actions>
                                             <sub-events>
-                                                <event-block sid="815479452092065">
+                                                <event-block sid="750222693483212">
                                                     <conditions>
-                                                        <condition id="-7" name="Compare instance variable" sid="177146258146345" type="zgui">
-                                                            <param id="0" name="Instance variable">ID</param>
+                                                        <condition id="-7" name="Compare instance variable" sid="873318999982145" type="IFrame">
+                                                            <param id="0" name="Instance variable">VID</param>
                                                             <param id="1" name="Comparison">0</param>
-                                                            <param id="2" name="Value">-50</param>
+                                                            <param id="2" name="Value">-54</param>
                                                         </condition>
                                                     </conditions>
                                                     <actions>
-                                                        <action id="1" name="Set value" sid="957429265361162" type="Hash">
-                                                            <param id="0" name="Key string">&quot;juego.pausa.iframe&quot;</param>
-                                                            <param id="1" name="Value">&quot;ayuda&quot;</param>
-                                                        </action>
-                                                        <action id="8" name="Load content" sid="112981937913070" type="IFrame">
-                                                            <param id="0" name="URL">&quot;j&quot;&amp;gJuego&amp;&quot;.html&quot;</param>
-                                                            <param id="1" name="POST Data (Optional)">&quot;&quot;</param>
-                                                        </action>
+                                                        <action id="9" name="Scroll Top" sid="794387444480776" type="IFrame" />
                                                     </actions>
+                                                    <sub-events>
+                                                        <event-block sid="815479452092065">
+                                                            <conditions>
+                                                                <condition id="-7" name="Compare instance variable" sid="177146258146345" type="zgui">
+                                                                    <param id="0" name="Instance variable">ID</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Value">-50</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="1" name="Set value" sid="957429265361162" type="Hash">
+                                                                    <param id="0" name="Key string">&quot;juego.pausa.iframe&quot;</param>
+                                                                    <param id="1" name="Value">&quot;ayuda&quot;</param>
+                                                                </action>
+                                                                <action id="8" name="Load content" sid="112981937913070" type="IFrame">
+                                                                    <param id="0" name="URL">&quot;j&quot;&amp;gJuego&amp;&quot;.html&quot;</param>
+                                                                    <param id="1" name="POST Data (Optional)">&quot;&quot;</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                        <event-block sid="970557939319544">
+                                                            <conditions>
+                                                                <condition id="-7" name="Compare instance variable" sid="929255080392270" type="zgui">
+                                                                    <param id="0" name="Instance variable">ID</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Value">-51</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="1" name="Set value" sid="274510071743327" type="Hash">
+                                                                    <param id="0" name="Key string">&quot;juego.pausa.iframe&quot;</param>
+                                                                    <param id="1" name="Value">&quot;audio&quot;</param>
+                                                                </action>
+                                                                <action id="8" name="Load content" sid="196921339431130" type="IFrame">
+                                                                    <param id="0" name="URL">&quot;audio.html&quot;</param>
+                                                                    <param id="1" name="POST Data (Optional)">&quot;&quot;</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                        <event-block sid="609238513357852">
+                                                            <conditions>
+                                                                <condition id="-7" name="Compare instance variable" sid="924650991614397" type="zgui">
+                                                                    <param id="0" name="Instance variable">ID</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Value">-52</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="1" name="Set value" sid="465924744001812" type="Hash">
+                                                                    <param id="0" name="Key string">&quot;juego.pausa.iframe&quot;</param>
+                                                                    <param id="1" name="Value">&quot;creditos&quot;</param>
+                                                                </action>
+                                                                <action id="8" name="Load content" sid="331309364768407" type="IFrame">
+                                                                    <param id="0" name="URL">&quot;creditos.html&quot;</param>
+                                                                    <param id="1" name="POST Data (Optional)">&quot;&quot;</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
                                                 </event-block>
-                                                <event-block sid="970557939319544">
+                                                <event-block sid="581155146429145">
                                                     <conditions>
-                                                        <condition id="-7" name="Compare instance variable" sid="929255080392270" type="zgui">
-                                                            <param id="0" name="Instance variable">ID</param>
+                                                        <condition id="-7" name="Compare instance variable" sid="383805326595746" type="IFrame">
+                                                            <param id="0" name="Instance variable">VID</param>
                                                             <param id="1" name="Comparison">0</param>
-                                                            <param id="2" name="Value">-51</param>
+                                                            <param id="2" name="Value">-60</param>
                                                         </condition>
                                                     </conditions>
                                                     <actions>
-                                                        <action id="1" name="Set value" sid="274510071743327" type="Hash">
-                                                            <param id="0" name="Key string">&quot;juego.pausa.iframe&quot;</param>
-                                                            <param id="1" name="Value">&quot;audio&quot;</param>
+                                                        <action id="24" name="Get elements" sid="508578092953200" type="IFrame">
+                                                            <param id="0" name="ID/Class">&quot;#c2_audio2&quot;</param>
+                                                            <param id="1" name="Set">&quot;&lt;source src=&apos;A3-tono ascendiendo 6.ogg&apos; type=&apos;audio/ogg&apos;&gt;&#x0D;&#x0A;  &lt;source src=&apos;A3-tono ascendiendo 6.m4a&apos; type=&apos;audio/mp4&apos;&gt;&quot;</param>
+                                                            <param id="2" name="Append">&quot;&quot;</param>
                                                         </action>
-                                                        <action id="8" name="Load content" sid="196921339431130" type="IFrame">
-                                                            <param id="0" name="URL">&quot;audio.html&quot;</param>
-                                                            <param id="1" name="POST Data (Optional)">&quot;&quot;</param>
-                                                        </action>
-                                                    </actions>
-                                                </event-block>
-                                                <event-block sid="609238513357852">
-                                                    <conditions>
-                                                        <condition id="-7" name="Compare instance variable" sid="924650991614397" type="zgui">
-                                                            <param id="0" name="Instance variable">ID</param>
-                                                            <param id="1" name="Comparison">0</param>
-                                                            <param id="2" name="Value">-52</param>
-                                                        </condition>
-                                                    </conditions>
-                                                    <actions>
-                                                        <action id="1" name="Set value" sid="465924744001812" type="Hash">
-                                                            <param id="0" name="Key string">&quot;juego.pausa.iframe&quot;</param>
-                                                            <param id="1" name="Value">&quot;creditos&quot;</param>
-                                                        </action>
-                                                        <action id="8" name="Load content" sid="331309364768407" type="IFrame">
-                                                            <param id="0" name="URL">&quot;creditos.html&quot;</param>
-                                                            <param id="1" name="POST Data (Optional)">&quot;&quot;</param>
+                                                        <action id="21" name="Execute Javascript" sid="217194094446519" type="IFrame">
+                                                            <param id="0" name="Javascript">&quot;var aux = document.getElementById(&apos;c2_audio2&apos;);&#x0D;&#x0A; aux.load(); aux.play();&quot;</param>
                                                         </action>
                                                     </actions>
                                                 </event-block>
                                             </sub-events>
                                         </event-block>
-                                        <event-block sid="581155146429145">
+                                        <event-block sid="542540215257716">
                                             <conditions>
-                                                <condition id="-7" name="Compare instance variable" sid="383805326595746" type="IFrame">
-                                                    <param id="0" name="Instance variable">VID</param>
+                                                <condition id="-22" name="Else" sid="884725982634618" type="System" />
+                                                <condition id="-7" name="Compare instance variable" sid="986746180359541" type="zgui">
+                                                    <param id="0" name="Instance variable">ID</param>
                                                     <param id="1" name="Comparison">0</param>
-                                                    <param id="2" name="Value">-60</param>
+                                                    <param id="2" name="Value">-53</param>
                                                 </condition>
                                             </conditions>
                                             <actions>
-                                                <action id="24" name="Get elements" sid="508578092953200" type="IFrame">
-                                                    <param id="0" name="ID/Class">&quot;#c2_audio2&quot;</param>
-                                                    <param id="1" name="Set">&quot;&lt;source src=&apos;A3-tono ascendiendo 6.ogg&apos; type=&apos;audio/ogg&apos;&gt;&#x0D;&#x0A;  &lt;source src=&apos;A3-tono ascendiendo 6.m4a&apos; type=&apos;audio/mp4&apos;&gt;&quot;</param>
-                                                    <param id="2" name="Append">&quot;&quot;</param>
-                                                </action>
-                                                <action id="21" name="Execute Javascript" sid="217194094446519" type="IFrame">
-                                                    <param id="0" name="Javascript">&quot;var aux = document.getElementById(&apos;c2_audio2&apos;);&#x0D;&#x0A; aux.load(); aux.play();&quot;</param>
+                                                <action id="0" name="Call function" sid="992041571758948" type="Funcion">
+                                                    <param id="0" name="Name">&quot;abandonoPARTIDA&quot;</param>
+                                                    <param id="1" name="Parameter {n}"></param>
                                                 </action>
                                             </actions>
                                         </event-block>
                                     </sub-events>
                                 </event-block>
-                                <event-block sid="542540215257716">
+                                <event-block sid="522939590219119">
                                     <conditions>
-                                        <condition id="-22" name="Else" sid="884725982634618" type="System" />
-                                        <condition id="-7" name="Compare instance variable" sid="986746180359541" type="zgui">
+                                        <condition id="-22" name="Else" sid="659509992510977" type="System" />
+                                        <condition disabled="1" id="2" inverted="1" name="Key exists" sid="804790101879285" type="Hash">
+                                            <param id="0" name="Key string">&quot;tocar.pausa&quot;</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="226964179867799" type="zgui">
                                             <param id="0" name="Instance variable">ID</param>
                                             <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">-53</param>
+                                            <param id="2" name="Value">-1</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="0" name="Call function" sid="992041571758948" type="Funcion">
-                                            <param id="0" name="Name">&quot;abandonoPARTIDA&quot;</param>
+                                        <action disabled="1" id="10" name="Add to" sid="749309775340116" type="Hash">
+                                            <param id="0" name="Key string">&quot;tocar.pausa&quot;</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="981872020861133" type="Funcion">
+                                            <param id="0" name="Name">&quot;pcJUEGO&quot;</param>
                                             <param id="1" name="Parameter {n}"></param>
                                         </action>
                                     </actions>
                                 </event-block>
                             </sub-events>
                         </event-block>
-                        <event-block sid="522939590219119">
-                            <conditions>
-                                <condition id="-22" name="Else" sid="659509992510977" type="System" />
-                                <condition id="-7" name="Compare instance variable" sid="226964179867799" type="zgui">
-                                    <param id="0" name="Instance variable">ID</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">-1</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Call function" sid="981872020861133" type="Funcion">
-                                    <param id="0" name="Name">&quot;pcJUEGO&quot;</param>
-                                    <param id="1" name="Parameter {n}"></param>
-                                </action>
-                            </actions>
-                        </event-block>
                     </sub-events>
                 </event-block>
-                <comment>Si la tecla enter se presiona entrará o saldrá de la pausa</comment>
+                <comment>Si la tecla enter se presiona entrará o saldrá de la pausa (No debe ser la pantalla del ranking para guardar el puntaje = es por el movil)</comment>
                 <event-block sid="233403680661127">
                     <conditions>
                         <condition id="0" name="On key pressed" sid="490247737172701" type="Teclado">
@@ -8191,6 +8864,16 @@
                         </condition>
                         <condition id="2" name="Key exists" sid="193162972190623" type="Hash">
                             <param id="0" name="Key string">&quot;juego.pausa&quot;</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="704136770700475" type="System">
+                            <param id="0" name="Variable">gPantalla</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="655050574408869" type="System">
+                            <param id="0" name="Variable">gPuntaje</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -8624,38 +9307,53 @@
                                                     <param id="2" name="Value">0</param>
                                                 </condition>
                                             </conditions>
-                                            <actions />
+                                            <actions>
+                                                <action id="24" name="Get elements" sid="820684475787716" type="IFrame">
+                                                    <param id="0" name="ID/Class">&quot;#c2_iDispositivo&quot;</param>
+                                                    <param id="1" name="Set">&quot;&lt;option value=&apos;-1&apos;&gt;Ninguno (Usar tecla espacio)&lt;/option&gt;&quot;</param>
+                                                    <param id="2" name="Append">&quot;&quot;</param>
+                                                </action>
+                                            </actions>
                                             <sub-events>
-                                                <comment>Si no soporta el audio avanzado o el microfono, entonces</comment>
-                                                <event-block any="1" sid="367036649651630">
+                                                <event-block any="1" sid="371083465255288">
                                                     <conditions>
-                                                        <condition id="2" inverted="1" name="Advanced audio supported" sid="402282791323429" type="Audio" />
-                                                        <condition id="2" inverted="1" name="Supports user media" sid="694185031138312" type="Microfono" />
-                                                        <condition id="-14" name="Compare variable" sid="666359218872736" type="System">
+                                                        <condition id="2" inverted="1" name="Advanced audio supported" sid="679079896755203" type="Audio" />
+                                                        <condition id="2" inverted="1" name="Supports user media" sid="431382305201792" type="Microfono" />
+                                                        <condition id="-14" name="Compare variable" sid="624897595872078" type="System">
                                                             <param id="0" name="Variable">gMicTipo</param>
                                                             <param id="1" name="Comparison">0</param>
                                                             <param id="2" name="Value">-2</param>
                                                         </condition>
                                                     </conditions>
                                                     <actions>
-                                                        <action id="-9" name="Set value" sid="509072621208979" type="System">
+                                                        <action id="-9" name="Set value" sid="785059285974407" type="System">
                                                             <param id="0" name="Variable">gMicTipo</param>
                                                             <param id="1" name="Value">-1</param>
                                                         </action>
-                                                        <action id="24" name="Get elements" sid="943441589030046" type="IFrame">
-                                                            <param id="0" name="ID/Class">&quot;#c2_iDispositivo&quot;</param>
-                                                            <param id="1" name="Set">&quot;&lt;option value=&apos;-1&apos;&gt;Ninguno (Usar tecla espacio)&lt;/option&gt;&quot;</param>
+                                                        <action id="24" name="Get elements" sid="120347267893795" type="IFrame">
+                                                            <param id="0" name="ID/Class">&quot;.c2_filaMicroE&quot;</param>
+                                                            <param id="1" name="Set">&quot; &quot;</param>
                                                             <param id="2" name="Append">&quot;&quot;</param>
+                                                        </action>
+                                                        <action id="7" name="Append HTML" sid="302284992643759" type="IFrame">
+                                                            <param id="0" name="Append HTML">&quot;(No hay micrófono o no es compatible)&quot;</param>
+                                                        </action>
+                                                        <action id="14" name="Log" sid="376816014992510" type="Navegador">
+                                                            <param id="0" name="Type">0</param>
+                                                            <param id="1" name="Message">&quot;ENTRO A&quot;</param>
                                                         </action>
                                                     </actions>
                                                 </event-block>
-                                                <comment>obtiene los recursos para poder mostrarlos en el iframe (vea el disparador del grupo microfono)</comment>
-                                                <event-block sid="522868619822661">
+                                                <event-block sid="204085627383381">
                                                     <conditions>
-                                                        <condition id="-22" name="Else" sid="636488854437971" type="System" />
+                                                        <condition id="-22" name="Else" sid="602313831481174" type="System" />
                                                     </conditions>
                                                     <actions>
-                                                        <action id="10" name="Get media sources" sid="412882657837128" type="Microfono" />
+                                                        <action id="1" name="Set value" sid="971869035148767" type="Hash">
+                                                            <param id="0" name="Key string">&quot;juego.microfono.bandera1&quot;</param>
+                                                            <param id="1" name="Value">0</param>
+                                                        </action>
+                                                        <action id="10" name="Get media sources" sid="743434875340240" type="Microfono" />
                                                     </actions>
                                                 </event-block>
                                             </sub-events>
@@ -8735,6 +9433,67 @@
                         </event-block>
                     </sub-events>
                 </event-group>
+            </sub-events>
+        </event-group>
+        <comment>Bloquear la pantalla, para los moviles o pantallas pequeñas</comment>
+        <event-group description="" sid="533039722066601" title="Bloqueo">
+            <sub-events>
+                <event-block sid="921761521918241">
+                    <conditions>
+                        <condition id="0" name="On function" sid="296170517111375" type="Funcion">
+                            <param id="0" name="Name">&quot;bloqueoPantalla&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="577737718450810">
+                            <conditions />
+                            <actions>
+                                <action id="-3" name="Create object" sid="951165004552538" type="System">
+                                    <param id="0" name="Object to create">IFrame</param>
+                                    <param id="1" name="Layer">0</param>
+                                    <param id="2" name="X">0</param>
+                                    <param id="3" name="Y">0</param>
+                                </action>
+                                <action id="0" name="Set visible" sid="649824972927534" type="IFrame">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="21" name="Execute Javascript" sid="143376186890374" type="IFrame">
+                                    <param id="0" name="Javascript">&quot;document.getElementById(&apos;c2canvas&apos;).classList.add(&apos;c2_Bloqueo&apos;);&quot;</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="633328741500549" type="IFrame" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="785391065839437">
+                    <conditions>
+                        <condition id="0" name="On function" sid="975514173117105" type="Funcion">
+                            <param id="0" name="Name">&quot;desbloqueoPantalla&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="359548582758786">
+                            <conditions />
+                            <actions>
+                                <action id="-3" name="Create object" sid="247462723727671" type="System">
+                                    <param id="0" name="Object to create">IFrame</param>
+                                    <param id="1" name="Layer">0</param>
+                                    <param id="2" name="X">0</param>
+                                    <param id="3" name="Y">0</param>
+                                </action>
+                                <action id="0" name="Set visible" sid="969052761584129" type="IFrame">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="21" name="Execute Javascript" sid="270174317857467" type="IFrame">
+                                    <param id="0" name="Javascript">&quot;document.getElementById(&apos;c2canvas&apos;).classList.remove(&apos;c2_Bloqueo&apos;);&quot;</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="555191168028570" type="IFrame" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
             </sub-events>
         </event-group>
         <comment>Digitar &quot;DEBUG&quot; para empezar a activar los otros comandos</comment>
@@ -9818,6 +10577,26 @@
                             </sub-events>
                         </event-block>
                     </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <comment>Correcciones sobre pulsaciones sin querer de usuario</comment>
+        <event-group description="" sid="589683614631906" title="Sincronizacion">
+            <sub-events>
+                <event-block any="1" disabled="1" sid="481738865002210">
+                    <conditions>
+                        <condition id="31" name="On task done" sid="863265622497695" type="Tarea">
+                            <param id="0" name="Name">&quot;pausaEntrar&quot;</param>
+                        </condition>
+                        <condition id="31" name="On task done" sid="418591711021537" type="Tarea">
+                            <param id="0" name="Name">&quot;pausaSalir&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="6" name="Remove key" sid="229776622372836" type="Hash">
+                            <param id="0" name="Key string">&quot;tocar.pausa&quot;</param>
+                        </action>
+                    </actions>
                 </event-block>
             </sub-events>
         </event-group>

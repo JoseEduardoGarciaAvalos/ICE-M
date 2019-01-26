@@ -1578,12 +1578,62 @@
                                     <param id="2" name="Value">1</param>
                                 </condition>
                             </conditions>
-                            <actions>
-                                <action id="-22" name="Set angle toward position" sid="212337078921003" type="Utileria">
-                                    <param id="0" name="X">Mouse.X</param>
-                                    <param id="1" name="Y">Mouse.Y</param>
-                                </action>
-                            </actions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="238943851263794">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="254840614543666" type="System">
+                                            <param id="0" name="Variable">gMovil</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="659808254057677">
+                                            <conditions>
+                                                <condition id="2" name="Is in touch" sid="368522131290037" type="Tocar" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="-22" name="Set angle toward position" sid="868089007657640" type="Utileria">
+                                                    <param id="0" name="X">Tocar.X</param>
+                                                    <param id="1" name="Y">Tocar.Y</param>
+                                                </action>
+                                                <action id="0" name="Add key" sid="805256452528117" type="Diccionario">
+                                                    <param id="0" name="Key">&quot;xTouch&quot;</param>
+                                                    <param id="1" name="Value">Tocar.X</param>
+                                                </action>
+                                                <action id="0" name="Add key" sid="360867105707025" type="Diccionario">
+                                                    <param id="0" name="Key">&quot;yTouch&quot;</param>
+                                                    <param id="1" name="Value">Tocar.Y</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="652777579512358">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="717310328631955" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="-22" name="Set angle toward position" sid="163645984881581" type="Utileria">
+                                                    <param id="0" name="X">Diccionario.Get(&quot;xTouch&quot;)</param>
+                                                    <param id="1" name="Y">Diccionario.Get(&quot;yTouch&quot;)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="234344963691471">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="341307688892133" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-22" name="Set angle toward position" sid="212337078921003" type="Utileria">
+                                            <param id="0" name="X">Mouse.X</param>
+                                            <param id="1" name="Y">Mouse.Y</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                         <event-block sid="844712195859664">
                             <conditions>
@@ -1595,15 +1645,62 @@
                                 </condition>
                                 <condition id="11" name="Collisions enabled" sid="654698860488635" type="Enemigo" />
                             </conditions>
-                            <actions>
-                                <action id="-22" name="Set angle toward position" sid="725275934563855" type="Enemigo">
-                                    <param id="0" name="X">Mouse.X</param>
-                                    <param id="1" name="Y">Mouse.Y</param>
-                                </action>
-                            </actions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="238917145488037">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="145181479998342" type="System">
+                                            <param id="0" name="Variable">gMovil</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="485395019323396">
+                                            <conditions>
+                                                <condition id="2" name="Is in touch" sid="843649408935808" type="Tocar" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="-22" name="Set angle toward position" sid="707378415997436" type="Enemigo">
+                                                    <param id="0" name="X">Tocar.X</param>
+                                                    <param id="1" name="Y">Tocar.Y</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="173981563075299">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="616244564789107" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="-22" name="Set angle toward position" sid="409622835076005" type="Enemigo">
+                                                    <param id="0" name="X">Diccionario.Get(&quot;xTouch&quot;)</param>
+                                                    <param id="1" name="Y">Diccionario.Get(&quot;yTouch&quot;)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="244748828540191">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="334416029977451" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-22" name="Set angle toward position" sid="725275934563855" type="Enemigo">
+                                            <param id="0" name="X">Mouse.X</param>
+                                            <param id="1" name="Y">Mouse.Y</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                         <event-block sid="562684133120178">
                             <conditions>
+                                <condition id="-14" inverted="1" name="Compare variable" sid="395773408839441" type="System">
+                                    <param id="0" name="Variable">gMovil</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
                                 <condition id="7" name="Cursor is over object" sid="492065110950446" type="Mouse">
                                     <param id="0" name="Object">Enemigo</param>
                                 </condition>
@@ -1648,6 +1745,66 @@
                                                     </conditions>
                                                     <actions>
                                                         <action id="1" name="Clean buffer" sid="624834437656410" type="Secuencia" />
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="602728325149561">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="387825954696654" type="System" />
+                                <condition id="-14" name="Compare variable" sid="485724493171217" type="System">
+                                    <param id="0" name="Variable">gMovil</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="4" name="Is touching object" sid="999916769437398" type="Tocar">
+                                    <param id="0" name="Object">Enemigo</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="752914304040653">
+                                    <conditions>
+                                        <condition id="-11" name="For Each" sid="874903041502304" type="System">
+                                            <param id="0" name="Object">Enemigo</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="268153906303242">
+                                            <conditions>
+                                                <condition behavior="Hash" id="2" name="Key exists" sid="211908934530111" type="Enemigo">
+                                                    <param id="0" name="Key string">&quot;vida&quot;</param>
+                                                </condition>
+                                                <condition id="11" name="Collisions enabled" sid="334143962169722" type="Enemigo" />
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Tiempo" id="1" name="Stop timer" sid="705671105849786" type="Enemigo">
+                                                    <param id="0" name="Tag">&quot;borrarSecuencia&quot;</param>
+                                                </action>
+                                                <action behavior="Temblar" id="1" name="Start" sid="307847684692453" type="Enemigo" />
+                                                <action behavior="Hash" id="1" name="Set value" sid="715326529581151" type="Enemigo">
+                                                    <param id="0" name="Key string">&quot;giro&quot;</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                                <action id="0" name="Call function" sid="534731399854333" type="Funcion">
+                                                    <param id="0" name="Name">&quot;interpolarFuego&quot;</param>
+                                                    <param id="1" name="Parameter {n}">Enemigo.UID</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="796690249229584">
+                                                    <conditions>
+                                                        <condition id="-14" name="Pick by unique ID" sid="577868194212263" type="Secuencia">
+                                                            <param id="0" name="Unique ID">Enemigo.Hash.At(&quot;enlaceS&quot;)</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="1" name="Clean buffer" sid="492696602414728" type="Secuencia" />
                                                     </actions>
                                                 </event-block>
                                             </sub-events>

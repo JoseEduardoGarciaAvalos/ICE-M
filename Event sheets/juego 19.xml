@@ -202,95 +202,144 @@
                     </actions>
                 </event-block>
                 <comment>Evento que se ejecuta cuando el mouse está sobre el enemigo, y no está en el proceso de ser destruido</comment>
-                <event-block sid="787439457567322">
-                    <conditions>
-                        <condition id="7" name="Cursor is over object" sid="888627883894575" type="Mouse">
-                            <param id="0" name="Object">Enemigo</param>
-                        </condition>
-                        <condition behavior="Hash" id="2" inverted="1" name="Key exists" sid="310718454132563" type="Enemigo">
-                            <param id="0" name="Key string">&quot;destruido&quot;</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="0" name="Add key" sid="644934388797755" type="Diccionario">
-                            <param id="0" name="Key">&quot;i&quot;</param>
-                            <param id="1" name="Value">Diccionario.Get(&quot;i&quot;)+Enemigo.PickedCount</param>
-                        </action>
-                    </actions>
+                <event-block sid="853291720670387">
+                    <conditions />
+                    <actions />
                     <sub-events>
-                        <event-block sid="497572958541464">
-                            <conditions />
-                            <actions>
-                                <action behavior="Tarea" id="4" name="Set tweened property" sid="940564254408591" type="Enemigo">
-                                    <param id="0" name="Tweened property">1</param>
-                                </action>
-                                <action behavior="Tarea" id="1" name="Set duration" sid="233006242040287" type="Enemigo">
-                                    <param id="0" name="Duration">random(0.1,0.2)</param>
-                                </action>
-                                <action behavior="Tarea" id="5" name="Set easing" sid="601251771410910" type="Enemigo">
-                                    <param id="0" name="Function">0</param>
-                                </action>
-                                <action behavior="Tarea" id="3" name="Set target" sid="843721758702156" type="Enemigo">
-                                    <param id="0" name="Target is">4</param>
-                                    <param id="1" name="Relativity">1</param>
-                                    <param id="2" name="Value">-Enemigo.Width</param>
-                                </action>
-                                <action behavior="Tarea" id="3" name="Set target" sid="616808944640691" type="Enemigo">
-                                    <param id="0" name="Target is">5</param>
-                                    <param id="1" name="Relativity">1</param>
-                                    <param id="2" name="Value">0</param>
-                                </action>
-                                <action behavior="Tarea" id="6" name="Set enforce" sid="837461895750286" type="Enemigo">
-                                    <param id="0" name="Enforce mode">1</param>
-                                </action>
-                                <action behavior="Tarea" id="10" name="Start" sid="397907295316839" type="Enemigo">
-                                    <param id="0" name="Start Mode">2</param>
-                                    <param id="1" name="Force use current">0</param>
-                                </action>
-                                <action behavior="Hash" id="1" name="Set value" sid="966796843724929" type="Enemigo">
-                                    <param id="0" name="Key string">&quot;destruido&quot;</param>
-                                    <param id="1" name="Value">0</param>
-                                </action>
-                                <action behavior="Tiempo" id="0" name="Start timer" sid="981852881117287" type="Enemigo">
-                                    <param id="0" name="Duration">1.0</param>
-                                    <param id="1" name="Type">0</param>
-                                    <param id="2" name="Tag">&quot;destruir&quot;</param>
-                                </action>
-                                <action id="-26" name="Move to layer" sid="380802134743599" type="Enemigo">
-                                    <param id="0" name="Layer">&quot;Principal&quot;</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <comment>Si es el último en ser encontrado, entonces ha ganado</comment>
-                        <event-block sid="537703136535533">
+                        <variable constant="0" name="ban" sid="252867424183092" static="0" type="number">-1</variable>
+                        <event-block sid="459863744764199">
                             <conditions>
-                                <condition id="-8" name="Compare two values" sid="290139367733490" type="System">
-                                    <param id="0" name="First value">Diccionario.Get(&quot;i&quot;)</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Second value">Diccionario.Get(&quot;n&quot;)</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Call function" sid="797024939221584" type="Funcion">
-                                    <param id="0" name="Name">&quot;victoriaJUEGO&quot;</param>
-                                    <param id="1" name="Parameter {n}"></param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <comment>Actualizar texto</comment>
-                        <event-block sid="536782419347792">
-                            <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="979759097646861" type="Texto">
-                                    <param id="0" name="Instance variable">ID</param>
+                                <condition id="-14" inverted="1" name="Compare variable" sid="840998322267606" type="System">
+                                    <param id="0" name="Variable">gMovil</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">1</param>
                                 </condition>
+                                <condition id="7" name="Cursor is over object" sid="687809201899542" type="Mouse">
+                                    <param id="0" name="Object">Enemigo</param>
+                                </condition>
                             </conditions>
                             <actions>
-                                <action id="0" name="Set text" sid="921101783754294" type="Texto">
-                                    <param id="0" name="Text">Diccionario.Get(&quot;i&quot;) &amp; &quot;/&quot; &amp; Diccionario.Get(&quot;n&quot;) </param>
+                                <action id="-9" name="Set value" sid="442786200172823" type="System">
+                                    <param id="0" name="Variable">ban</param>
+                                    <param id="1" name="Value">Enemigo.UID</param>
                                 </action>
                             </actions>
+                        </event-block>
+                        <event-block sid="268471739326834">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="652900245460733" type="System" />
+                                <condition id="-14" name="Compare variable" sid="487357754425662" type="System">
+                                    <param id="0" name="Variable">gMovil</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="4" name="Is touching object" sid="640465496848016" type="Tocar">
+                                    <param id="0" name="Object">Enemigo</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="722949722128645" type="System">
+                                    <param id="0" name="Variable">ban</param>
+                                    <param id="1" name="Value">Enemigo.UID</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="787439457567322">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="156199659706465" type="System">
+                                    <param id="0" name="Variable">ban</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">-1</param>
+                                </condition>
+                                <condition id="-14" name="Pick by unique ID" sid="248894571354536" type="Enemigo">
+                                    <param id="0" name="Unique ID">ban</param>
+                                </condition>
+                                <condition behavior="Hash" id="2" inverted="1" name="Key exists" sid="310718454132563" type="Enemigo">
+                                    <param id="0" name="Key string">&quot;destruido&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Add key" sid="644934388797755" type="Diccionario">
+                                    <param id="0" name="Key">&quot;i&quot;</param>
+                                    <param id="1" name="Value">Diccionario.Get(&quot;i&quot;)+Enemigo.PickedCount</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="497572958541464">
+                                    <conditions />
+                                    <actions>
+                                        <action behavior="Tarea" id="4" name="Set tweened property" sid="940564254408591" type="Enemigo">
+                                            <param id="0" name="Tweened property">1</param>
+                                        </action>
+                                        <action behavior="Tarea" id="1" name="Set duration" sid="233006242040287" type="Enemigo">
+                                            <param id="0" name="Duration">random(0.1,0.2)</param>
+                                        </action>
+                                        <action behavior="Tarea" id="5" name="Set easing" sid="601251771410910" type="Enemigo">
+                                            <param id="0" name="Function">0</param>
+                                        </action>
+                                        <action behavior="Tarea" id="3" name="Set target" sid="843721758702156" type="Enemigo">
+                                            <param id="0" name="Target is">4</param>
+                                            <param id="1" name="Relativity">1</param>
+                                            <param id="2" name="Value">-Enemigo.Width</param>
+                                        </action>
+                                        <action behavior="Tarea" id="3" name="Set target" sid="616808944640691" type="Enemigo">
+                                            <param id="0" name="Target is">5</param>
+                                            <param id="1" name="Relativity">1</param>
+                                            <param id="2" name="Value">0</param>
+                                        </action>
+                                        <action behavior="Tarea" id="6" name="Set enforce" sid="837461895750286" type="Enemigo">
+                                            <param id="0" name="Enforce mode">1</param>
+                                        </action>
+                                        <action behavior="Tarea" id="10" name="Start" sid="397907295316839" type="Enemigo">
+                                            <param id="0" name="Start Mode">2</param>
+                                            <param id="1" name="Force use current">0</param>
+                                        </action>
+                                        <action behavior="Hash" id="1" name="Set value" sid="966796843724929" type="Enemigo">
+                                            <param id="0" name="Key string">&quot;destruido&quot;</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action behavior="Tiempo" id="0" name="Start timer" sid="981852881117287" type="Enemigo">
+                                            <param id="0" name="Duration">1.0</param>
+                                            <param id="1" name="Type">0</param>
+                                            <param id="2" name="Tag">&quot;destruir&quot;</param>
+                                        </action>
+                                        <action id="-26" name="Move to layer" sid="380802134743599" type="Enemigo">
+                                            <param id="0" name="Layer">&quot;Principal&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>Si es el último en ser encontrado, entonces ha ganado</comment>
+                                <event-block sid="537703136535533">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="290139367733490" type="System">
+                                            <param id="0" name="First value">Diccionario.Get(&quot;i&quot;)</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">Diccionario.Get(&quot;n&quot;)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="797024939221584" type="Funcion">
+                                            <param id="0" name="Name">&quot;victoriaJUEGO&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>Actualizar texto</comment>
+                                <event-block sid="536782419347792">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="979759097646861" type="Texto">
+                                            <param id="0" name="Instance variable">ID</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set text" sid="921101783754294" type="Texto">
+                                            <param id="0" name="Text">Diccionario.Get(&quot;i&quot;) &amp; &quot;/&quot; &amp; Diccionario.Get(&quot;n&quot;) </param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                     </sub-events>
                 </event-block>

@@ -22,9 +22,13 @@
         <plugin author="Scirra" id="LocalStorage" version="1">Local storage</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="Particles" version="1">Particles</plugin>
+        <plugin author="Rex.Rainbow" id="Rex_ArrowKey" version="0.100000001">Dragging to ArrowKey</plugin>
         <plugin author="Rex.Rainbow" id="Rex_CSV" version="1">CSV</plugin>
         <plugin author="Rex.Rainbow" id="Rex_Comment" version="0.100000001">Comments</plugin>
         <plugin author="Rex.Rainbow" id="Rex_EventBalancer" version="0.100000001">Event balancer</plugin>
+        <plugin author="Rex.Rainbow" id="Rex_FirebaseAPIV3" version="1">Firebase API v3</plugin>
+        <plugin author="Rex.Rainbow" id="Rex_Firebase_Authentication" version="0.100000001">Authentication</plugin>
+        <plugin author="Rex.Rainbow" id="Rex_Firebase_Leaderboard" version="0.100000001">Leader board</plugin>
         <plugin author="Rex.Rainbow" id="Rex_Graph" version="0.100000001">Graph</plugin>
         <plugin author="Rex.Rainbow" id="Rex_Hash" version="0.5">JSON</plugin>
         <plugin author="Rex.Rainbow" id="Rex_Layouter" version="0.100000001">Layouter</plugin>
@@ -35,6 +39,7 @@
         <plugin author="Rex.Rainbow" id="Rex_SLGBoard" version="0.100000001">Board</plugin>
         <plugin author="Rex.Rainbow" id="Rex_SLGSquareTx" version="0.100000001">Square Tx</plugin>
         <plugin author="Rex.Rainbow" id="Rex_SequenceMatcher" version="0.100000001">Sequence matcher</plugin>
+        <plugin author="Rex.Rainbow" id="Rex_SimulateInput" version="0.100000001">Simulate key event</plugin>
         <plugin author="Rex.Rainbow" id="Rex_SysExt" version="0.109999999">SysExt</plugin>
         <plugin author="Rex.Rainbow" id="Rex_TweenTasks" version="0.100000001">Tween tasks</plugin>
         <plugin author="Rex.Rainbow" id="Rex_gInstGroup" version="1">Inst Group</plugin>
@@ -44,6 +49,7 @@
         <plugin author="Scirra" id="UserMedia" version="1">User Media</plugin>
         <plugin author="R0J0hound" id="c2canvas" version="2">Canvas</plugin>
         <plugin author="Rex.Rainbow" id="rex_TagText" version="0.100000001">Tag Text</plugin>
+        <plugin author="Rex.Rainbow" id="rex_TouchWrap" version="0.100000001">Touch wrap</plugin>
         <plugin author="Scirra" id="shadowlight" version="1">Shadow Light</plugin>
     </used-plugins>
     <used-behaviors>
@@ -102,7 +108,7 @@
         <prop name="Pause on unfocus">No</prop>
         <prop name="Physics engine">Box2D asm.js</prop>
         <prop name="Preload sounds">Yes</prop>
-        <prop name="Preview browser">Chrome</prop>
+        <prop name="Preview browser">(default)</prop>
         <prop name="Sampling">Linear</prop>
         <prop name="Use high-DPI display">Yes</prop>
     </configuration-settings>
@@ -1726,6 +1732,47 @@
                 </object-type>
                 <object-type name="Luz" sid="610833808927988">
                     <plugin id="shadowlight" />
+                </object-type>
+            </object-folder>
+            <object-folder name="Jostick">
+                <object-type name="SimuladorEntrada" sid="640988696390171">
+                    <plugin id="Rex_SimulateInput" />
+                </object-type>
+                <object-type name="Tocar" sid="943876187808282">
+                    <plugin id="rex_TouchWrap" />
+                </object-type>
+                <object-type name="Deslizar" sid="570476148256501">
+                    <plugin id="Rex_ArrowKey" />
+                </object-type>
+                <object-type global="1" name="StickBase" sid="627967530502546">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="924530984001887" speed="0">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type global="1" name="Stick" sid="538780245564005">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="844204623565057" speed="0">
+                            <frame duration="1" hotspotX="0.504673" hotspotY="0.504673" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+            </object-folder>
+            <object-folder name="Ranking">
+                <object-type global="1" name="Autentificacion" sid="504029308804894">
+                    <plugin id="Rex_Firebase_Authentication" />
+                </object-type>
+                <object-type global="1" name="API" sid="897450941304930">
+                    <plugin id="Rex_FirebaseAPIV3" />
+                </object-type>
+                <object-type global="1" name="Ranking" sid="632197592711774">
+                    <plugin id="Rex_Firebase_Leaderboard" />
+                    <instance-variables>
+                        <instance-variable name="aux" sid="962412955629899" type="number" />
+                    </instance-variables>
                 </object-type>
             </object-folder>
             <object-type name="Audio" sid="336451201142579">
@@ -4084,6 +4131,21 @@
         <global-instance type="AJAX" uid="158" />
         <global-instance type="Nickname" uid="169" />
         <global-instance type="LocalStorage" uid="170" />
+        <global-instance type="SimuladorEntrada" uid="102" />
+        <global-instance type="Tocar" uid="201">
+            <properties>
+                <use-mouse-input>No</use-mouse-input>
+                <enable>Yes</enable>
+            </properties>
+        </global-instance>
+        <global-instance type="Deslizar" uid="203">
+            <properties>
+                <directions>8 directions</directions>
+                <sensitivity>50</sensitivity>
+                <reset-origin>No</reset-origin>
+                <touched-layer>2</touched-layer>
+            </properties>
+        </global-instance>
     </global-instances>
     <sounds-folder>
         <sound-folder name="Ivania">
@@ -4108,49 +4170,7 @@
             <file name="A3-timbre.m4a" />
             <file name="A3-timbre.ogg" />
         </sound-folder>
-    </sounds-folder>
-    <music-folder>
-        <music-folder name="Ivania">
-            <file name="C3-musica de circo 5.m4a" />
-            <file name="C3-musica de circo 5.ogg" />
-            <file name="C3-musica de miedo 2.m4a" />
-            <file name="C3-musica de miedo 2.ogg" />
-            <file name="C3-musica de invierno 1.m4a" />
-            <file name="C3-musica de invierno 1.ogg" />
-            <file name="C3-musica de circo 6.m4a" />
-            <file name="C3-musica de circo 6.ogg" />
-            <file name="C3-musica de circo 2.m4a" />
-            <file name="C3-musica de circo 2.ogg" />
-            <file name="C3-musica de miedo 1.m4a" />
-            <file name="C3-musica de miedo 1.ogg" />
-        </music-folder>
-        <music-folder name="Eduardo">
-            <file name="C3-musica de miedo 3.m4a" />
-            <file name="C3-musica de miedo 3.ogg" />
-            <file name="C3-musica de accion 3.m4a" />
-            <file name="C3-musica de accion 3.ogg" />
-            <file name="C3-musica de carrera 3.m4a" />
-            <file name="C3-musica de carrera 3.ogg" />
-            <file name="C3-musica de accion 4.m4a" />
-            <file name="C3-musica de accion 4.ogg" />
-            <file name="C3-musica de circo 4.m4a" />
-            <file name="C3-musica de circo 4.ogg" />
-            <file name="C3-musica de selva 2.m4a" />
-            <file name="C3-musica de selva 2.ogg" />
-        </music-folder>
-        <music-folder name="Principal">
-            <music-folder name="pausa">
-                <file name="C3-musica de carrera 2.m4a" />
-                <file name="C3-musica de carrera 2.ogg" />
-            </music-folder>
-            <music-folder name="test">
-                <file name="C3-musica de carrera 4.m4a" />
-                <file name="C3-musica de carrera 4.ogg" />
-            </music-folder>
-            <file name="C3-musica de circo 7.m4a" />
-            <file name="C3-musica de circo 7.ogg" />
-        </music-folder>
-        <music-folder name="Claudia">
+        <sound-folder name="Claudia Loop">
             <file name="C3-musica de circo 8.m4a" />
             <file name="C3-musica de circo 8.ogg" />
             <file name="C3-musica de accion 1.m4a" />
@@ -4165,8 +4185,45 @@
             <file name="C3-musica de invierno 2.ogg" />
             <file name="C3-musica de villano 1.m4a" />
             <file name="C3-musica de villano 1.ogg" />
-        </music-folder>
-    </music-folder>
+        </sound-folder>
+        <sound-folder name="Eduardo Loop">
+            <file name="C3-musica de miedo 3.m4a" />
+            <file name="C3-musica de miedo 3.ogg" />
+            <file name="C3-musica de accion 3.m4a" />
+            <file name="C3-musica de accion 3.ogg" />
+            <file name="C3-musica de carrera 3.m4a" />
+            <file name="C3-musica de carrera 3.ogg" />
+            <file name="C3-musica de accion 4.m4a" />
+            <file name="C3-musica de accion 4.ogg" />
+            <file name="C3-musica de circo 4.m4a" />
+            <file name="C3-musica de circo 4.ogg" />
+            <file name="C3-musica de selva 2.m4a" />
+            <file name="C3-musica de selva 2.ogg" />
+        </sound-folder>
+        <sound-folder name="Ivania Loop">
+            <file name="C3-musica de circo 5.m4a" />
+            <file name="C3-musica de circo 5.ogg" />
+            <file name="C3-musica de miedo 2.m4a" />
+            <file name="C3-musica de miedo 2.ogg" />
+            <file name="C3-musica de invierno 1.m4a" />
+            <file name="C3-musica de invierno 1.ogg" />
+            <file name="C3-musica de circo 6.m4a" />
+            <file name="C3-musica de circo 6.ogg" />
+            <file name="C3-musica de circo 2.m4a" />
+            <file name="C3-musica de circo 2.ogg" />
+            <file name="C3-musica de miedo 1.m4a" />
+            <file name="C3-musica de miedo 1.ogg" />
+        </sound-folder>
+        <sound-folder name="Principal Loop">
+            <file name="C3-musica de circo 7.m4a" />
+            <file name="C3-musica de circo 7.ogg" />
+            <file name="C3-musica de carrera 4.m4a" />
+            <file name="C3-musica de carrera 4.ogg" />
+            <file name="C3-musica de carrera 2.m4a" />
+            <file name="C3-musica de carrera 2.ogg" />
+        </sound-folder>
+    </sounds-folder>
+    <music-folder />
     <files-folder>
         <file-folder name="Icons">
             <file name="icon-16.png" />

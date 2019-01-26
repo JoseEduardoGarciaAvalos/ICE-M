@@ -13,10 +13,10 @@
                 <variable comment="Alto inferior (en pixeles)" constant="1" name="ALTOEI" sid="429314263629082" static="0" type="number">100</variable>
                 <variable comment="Alto superior (en pixeles)" constant="1" name="ALTOES" sid="177232495920720" static="0" type="number">200</variable>
                 <comment>VALORES DEL BOTON Cerrar (Aliado)</comment>
-                <variable comment="Ancho inferior (en pixeles)" constant="1" name="ANCHOAI" sid="301928557867625" static="0" type="number">10</variable>
-                <variable comment="Ancho superior (en pixeles)" constant="1" name="ANCHOAS" sid="155911430044190" static="0" type="number">20</variable>
-                <variable comment="Alto inferior (en pixeles)" constant="1" name="ALTOAI" sid="406627357993069" static="0" type="number">10</variable>
-                <variable comment="Alto superior (en pixeles)" constant="1" name="ALTOAS" sid="900742924912939" static="0" type="number">20</variable>
+                <variable comment="Ancho inferior (en pixeles)" constant="0" name="ANCHOAI" sid="301928557867625" static="0" type="number">15</variable>
+                <variable comment="Ancho superior (en pixeles)" constant="0" name="ANCHOAS" sid="155911430044190" static="0" type="number">30</variable>
+                <variable comment="Alto inferior (en pixeles)" constant="0" name="ALTOAI" sid="406627357993069" static="0" type="number">15</variable>
+                <variable comment="Alto superior (en pixeles)" constant="0" name="ALTOAS" sid="900742924912939" static="0" type="number">30</variable>
                 <event-block sid="500122456268333">
                     <conditions>
                         <condition id="-2" name="On start of layout" sid="169238100313660" type="System" />
@@ -39,12 +39,12 @@
                         </action>
                         <action id="0" name="Call function" sid="555202133071433" type="Funcion">
                             <param id="0" name="Name">&quot;crearPublicidad&quot;</param>
-                            <param id="1" name="Parameter {n}">floor(random(10,15))</param>
+                            <param id="1" name="Parameter {n}">floor(random(8,12))</param>
                         </action>
-                        <action id="-16" name="Wait" sid="767154434979861" type="System">
+                        <action id="-16" name="Wait" sid="992787351521050" type="System">
                             <param id="0" name="Seconds">0</param>
                         </action>
-                        <action id="0" name="Call function" sid="758207320175223" type="Funcion">
+                        <action id="0" name="Call function" sid="621895635457299" type="Funcion">
                             <param id="0" name="Name">&quot;comenzoJuego&quot;</param>
                             <param id="1" name="Parameter {n}"></param>
                         </action>
@@ -70,19 +70,6 @@
                                 </action>
                             </actions>
                         </event-block>
-                        <comment>Final</comment>
-                        <event-block sid="180895572447773">
-                            <conditions />
-                            <actions>
-                                <action id="-16" name="Wait" sid="992787351521050" type="System">
-                                    <param id="0" name="Seconds">0</param>
-                                </action>
-                                <action id="0" name="Call function" sid="621895635457299" type="Funcion">
-                                    <param id="0" name="Name">&quot;comenzoJuego&quot;</param>
-                                    <param id="1" name="Parameter {n}"></param>
-                                </action>
-                            </actions>
-                        </event-block>
                     </sub-events>
                 </event-block>
                 <comment>Función que crea ventanas de publicidad</comment>
@@ -96,6 +83,33 @@
                     </conditions>
                     <actions />
                     <sub-events>
+                        <event-block disabled="1" sid="955193264477962">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="745934210934607" type="System">
+                                    <param id="0" name="Variable">gMovil</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="250458215834701" type="System">
+                                    <param id="0" name="Variable">ANCHOAI</param>
+                                    <param id="1" name="Value">45</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="108026435072340" type="System">
+                                    <param id="0" name="Variable">ANCHOAS</param>
+                                    <param id="1" name="Value">55</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="250145546714517" type="System">
+                                    <param id="0" name="Variable">ALTOAI</param>
+                                    <param id="1" name="Value">45</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="466494585122797" type="System">
+                                    <param id="0" name="Variable">ALTOAS</param>
+                                    <param id="1" name="Value">55</param>
+                                </action>
+                            </actions>
+                        </event-block>
                         <event-block sid="255346600206745">
                             <conditions>
                                 <condition id="-12" name="Repeat" sid="676217331348205" type="System">
@@ -157,6 +171,9 @@
                                         <action id="-7" name="Set size" sid="520796089831819" type="Aliado">
                                             <param id="0" name="Width">random(ANCHOAI,ANCHOAS)</param>
                                             <param id="1" name="Height">random(ALTOAI,ALTOAS)</param>
+                                        </action>
+                                        <action id="9" name="Set scale" sid="198316427339229" type="Aliado">
+                                            <param id="0" name="Scale">gMovil = 1 ? 2.5: 1</param>
                                         </action>
                                         <action id="-16" name="Set opacity" sid="987631870122427" type="Aliado">
                                             <param id="0" name="Opacity">0</param>
@@ -261,100 +278,208 @@
                 <variable comment="Cantidad inferior para crear  publicidad " constant="1" name="CI" sid="860538937509603" static="0" type="number">1</variable>
                 <variable comment="Cantidad superior para crear publicidad" constant="1" name="CS" sid="779633133945764" static="0" type="number">5</variable>
                 <variable comment="Maxima cantidad que se pueden crear publicidad" constant="1" name="MC" sid="636922639784915" static="0" type="number">20</variable>
-                <comment>Evento disparador que se ejecuta al hacer el clic izquierdo en la ventana, solo toma la que está encima</comment>
-                <event-block sid="837266314276959">
+                <comment>Disparadores de la interfaz de entrada (Mouse o pantalla táctil)</comment>
+                <event-block sid="947786010656256">
                     <conditions>
-                        <condition id="6" name="On object clicked" sid="226834485976777" type="Mouse">
+                        <condition id="6" name="On object clicked" sid="884042382417157" type="Mouse">
                             <param id="0" name="Mouse button">0</param>
                             <param id="1" name="Click type">0</param>
                             <param id="2" name="Object clicked">Enemigo</param>
                         </condition>
-                        <condition id="-17" name="Pick top/bottom" sid="104259203543705" type="Enemigo">
-                            <param id="0" name="Which">0</param>
+                        <condition id="-14" inverted="1" name="Compare variable" sid="205628903821812" type="System">
+                            <param id="0" name="Variable">gMovil</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
                         </condition>
                     </conditions>
                     <actions />
                     <sub-events>
-                        <variable constant="0" name="enlace" sid="787240977742871" static="0" type="number">0</variable>
-                        <variable comment="El porcentaje de dificultad" constant="0" name="razon" sid="257920550377423" static="0" type="number">0</variable>
-                        <variable constant="0" name="cantidad" sid="984888943702917" static="0" type="number">0</variable>
-                        <event-block sid="780355023249885">
-                            <conditions />
-                            <actions>
-                                <action id="-9" name="Set value" sid="557820478104631" type="System">
-                                    <param id="0" name="Variable">enlace</param>
-                                    <param id="1" name="Value">int(Enemigo.Hash.At(&quot;enlace&quot;))</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <comment>Si el mouse está sobre el botón cerrar</comment>
-                        <event-block sid="702053112517009">
+                        <event-block sid="818697367004615">
                             <conditions>
-                                <condition id="-14" name="Pick by unique ID" sid="561709480249941" type="Aliado">
-                                    <param id="0" name="Unique ID">enlace</param>
-                                </condition>
-                                <condition id="7" name="Cursor is over object" sid="147115905021805" type="Mouse">
-                                    <param id="0" name="Object">Aliado</param>
+                                <condition id="-17" name="Pick top/bottom" sid="104259203543705" type="Enemigo">
+                                    <param id="0" name="Which">0</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-9" name="Destroy" sid="794615129960828" type="Enemigo" />
-                                <action id="-9" name="Destroy" sid="189198131318981" type="Aliado" />
+                                <action id="0" name="Call function" sid="206358486304090" type="Funcion">
+                                    <param id="0" name="Name">&quot;interactuarBoton&quot;</param>
+                                    <param id="1" name="Parameter {n}">Enemigo.UID</param>
+                                </action>
                             </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="503318530156032">
+                    <conditions>
+                        <condition id="101" name="On touch released at object" sid="892610812477205" type="Tocar">
+                            <param id="0" name="Object">Enemigo</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="574298807811703" type="System">
+                            <param id="0" name="Variable">gMovil</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="860572601159962">
+                            <conditions>
+                                <condition id="-17" name="Pick top/bottom" sid="454378056644517" type="Enemigo">
+                                    <param id="0" name="Which">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="972922802446016" type="Funcion">
+                                    <param id="0" name="Name">&quot;interactuarBoton&quot;</param>
+                                    <param id="1" name="Parameter {n}">Enemigo.UID</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="886893392183002">
+                    <conditions>
+                        <condition id="0" name="On function" sid="964270610133302" type="Funcion">
+                            <param id="0" name="Name">&quot;interactuarBoton&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="837266314276959">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="352286971429472" type="Enemigo">
+                                    <param id="0" name="Unique ID">Funcion.Param(0)</param>
+                                </condition>
+                            </conditions>
+                            <actions />
                             <sub-events>
-                                <event-block sid="313430357955805">
-                                    <conditions>
-                                        <condition id="-8" name="Compare two values" sid="844429664839577" type="System">
-                                            <param id="0" name="First value">Enemigo.Count</param>
-                                            <param id="1" name="Comparison">3</param>
-                                            <param id="2" name="Second value">1</param>
-                                        </condition>
-                                    </conditions>
+                                <variable constant="0" name="enlace" sid="787240977742871" static="0" type="number">0</variable>
+                                <variable comment="El porcentaje de dificultad" constant="0" name="razon" sid="257920550377423" static="0" type="number">0</variable>
+                                <variable constant="0" name="cantidad" sid="984888943702917" static="0" type="number">0</variable>
+                                <event-block sid="780355023249885">
+                                    <conditions />
                                     <actions>
-                                        <action id="0" name="Call function" sid="349518286925716" type="Funcion">
-                                            <param id="0" name="Name">&quot;victoriaJUEGO&quot;</param>
-                                            <param id="1" name="Parameter {n}"></param>
+                                        <action id="-9" name="Set value" sid="557820478104631" type="System">
+                                            <param id="0" name="Variable">enlace</param>
+                                            <param id="1" name="Value">int(Enemigo.Hash.At(&quot;enlace&quot;))</param>
                                         </action>
                                     </actions>
+                                    <sub-events>
+                                        <comment>Si el mouse está sobre el botón cerrar</comment>
+                                        <event-block sid="702053112517009">
+                                            <conditions>
+                                                <condition id="-14" inverted="1" name="Compare variable" sid="979801155056619" type="System">
+                                                    <param id="0" name="Variable">gMovil</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </condition>
+                                                <condition id="7" name="Cursor is over object" sid="147115905021805" type="Mouse">
+                                                    <param id="0" name="Object">Aliado</param>
+                                                </condition>
+                                                <condition id="-14" name="Pick by unique ID" sid="561709480249941" type="Aliado">
+                                                    <param id="0" name="Unique ID">enlace</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Destroy" sid="794615129960828" type="Enemigo" />
+                                                <action id="-9" name="Destroy" sid="189198131318981" type="Aliado" />
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="313430357955805">
+                                                    <conditions>
+                                                        <condition id="-8" name="Compare two values" sid="844429664839577" type="System">
+                                                            <param id="0" name="First value">Enemigo.Count</param>
+                                                            <param id="1" name="Comparison">3</param>
+                                                            <param id="2" name="Second value">1</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Call function" sid="349518286925716" type="Funcion">
+                                                            <param id="0" name="Name">&quot;victoriaJUEGO&quot;</param>
+                                                            <param id="1" name="Parameter {n}"></param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <comment>Compatibilidad con pantalls táctiles</comment>
+                                        <event-block sid="706682231969632">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="791371611113800" type="System" />
+                                                <condition id="-14" name="Compare variable" sid="125555488723104" type="System">
+                                                    <param id="0" name="Variable">gMovil</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </condition>
+                                                <condition id="4" name="Is touching object" sid="647153206172451" type="Tocar">
+                                                    <param id="0" name="Object">Aliado</param>
+                                                </condition>
+                                                <condition id="-14" name="Pick by unique ID" sid="525186841479386" type="Aliado">
+                                                    <param id="0" name="Unique ID">enlace</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Destroy" sid="759625973480200" type="Enemigo" />
+                                                <action id="-9" name="Destroy" sid="316768267306454" type="Aliado" />
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="560633302167969">
+                                                    <conditions>
+                                                        <condition id="-8" name="Compare two values" sid="466988115685297" type="System">
+                                                            <param id="0" name="First value">Enemigo.Count</param>
+                                                            <param id="1" name="Comparison">3</param>
+                                                            <param id="2" name="Second value">1</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Call function" sid="930064418878961" type="Funcion">
+                                                            <param id="0" name="Name">&quot;victoriaJUEGO&quot;</param>
+                                                            <param id="1" name="Parameter {n}"></param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <comment>Se crearán mas publicidad, si estos no rebasan MC</comment>
+                                        <event-block sid="953344350765698">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="293068018779543" type="System" />
+                                                <condition id="-8" name="Compare two values" sid="745574781213194" type="System">
+                                                    <param id="0" name="First value">Enemigo.Count</param>
+                                                    <param id="1" name="Comparison">3</param>
+                                                    <param id="2" name="Second value">MC</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="909391697399169" type="System">
+                                                    <param id="0" name="Variable">razon</param>
+                                                    <param id="1" name="Value">Funcion.Call(&quot;calculoRAZON&quot;)</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="629282851218537" type="System">
+                                                    <param id="0" name="Variable">cantidad</param>
+                                                    <param id="1" name="Value">floor(random(CI*(1+razon),CS*(1+razon)))</param>
+                                                </action>
+                                                <action disabled="1" id="14" name="Log" sid="717681449714069" type="Navegador">
+                                                    <param id="0" name="Type">0</param>
+                                                    <param id="1" name="Message">cantidad</param>
+                                                </action>
+                                                <action disabled="1" id="14" name="Log" sid="804315573552231" type="Navegador">
+                                                    <param id="0" name="Type">0</param>
+                                                    <param id="1" name="Message">Enemigo.Count+cantidad&gt;MC?MC-Enemigo.Count:cantidad</param>
+                                                </action>
+                                                <action disabled="1" id="14" name="Log" sid="130724153505757" type="Navegador">
+                                                    <param id="0" name="Type">0</param>
+                                                    <param id="1" name="Message">&quot;------------------&quot;</param>
+                                                </action>
+                                                <action id="0" name="Call function" sid="607642260092072" type="Funcion">
+                                                    <param id="0" name="Name">&quot;crearPublicidad&quot;</param>
+                                                    <param id="1" name="Parameter {n}">Enemigo.Count+cantidad&gt;MC?MC-Enemigo.Count:cantidad{###}0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
                                 </event-block>
                             </sub-events>
-                        </event-block>
-                        <comment>Se crearán mas publicidad, si estos no rebasan MC</comment>
-                        <event-block sid="953344350765698">
-                            <conditions>
-                                <condition id="-22" name="Else" sid="293068018779543" type="System" />
-                                <condition id="-8" name="Compare two values" sid="745574781213194" type="System">
-                                    <param id="0" name="First value">Enemigo.Count</param>
-                                    <param id="1" name="Comparison">3</param>
-                                    <param id="2" name="Second value">MC</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-9" name="Set value" sid="909391697399169" type="System">
-                                    <param id="0" name="Variable">razon</param>
-                                    <param id="1" name="Value">Funcion.Call(&quot;calculoRAZON&quot;)</param>
-                                </action>
-                                <action id="-9" name="Set value" sid="629282851218537" type="System">
-                                    <param id="0" name="Variable">cantidad</param>
-                                    <param id="1" name="Value">floor(random(CI*(1+razon),CS*(1+razon)))</param>
-                                </action>
-                                <action disabled="1" id="14" name="Log" sid="717681449714069" type="Navegador">
-                                    <param id="0" name="Type">0</param>
-                                    <param id="1" name="Message">cantidad</param>
-                                </action>
-                                <action disabled="1" id="14" name="Log" sid="804315573552231" type="Navegador">
-                                    <param id="0" name="Type">0</param>
-                                    <param id="1" name="Message">Enemigo.Count+cantidad&gt;MC?MC-Enemigo.Count:cantidad</param>
-                                </action>
-                                <action disabled="1" id="14" name="Log" sid="130724153505757" type="Navegador">
-                                    <param id="0" name="Type">0</param>
-                                    <param id="1" name="Message">&quot;------------------&quot;</param>
-                                </action>
-                                <action id="0" name="Call function" sid="607642260092072" type="Funcion">
-                                    <param id="0" name="Name">&quot;crearPublicidad&quot;</param>
-                                    <param id="1" name="Parameter {n}">Enemigo.Count+cantidad&gt;MC?MC-Enemigo.Count:cantidad{###}0</param>
-                                </action>
-                            </actions>
                         </event-block>
                     </sub-events>
                 </event-block>

@@ -858,139 +858,185 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <comment>Evento disparador que se ejecuta al hacer el clic izquierdo en un Enemigo</comment>
-                <event-block sid="647965300032408">
+                <comment>Disparadores de la interfaz de entrada (Mouse o pantalla táctil)</comment>
+                <event-block sid="136458675794463">
                     <conditions>
-                        <condition id="6" name="On object clicked" sid="286351100872538" type="Mouse">
+                        <condition id="6" name="On object clicked" sid="498798928795972" type="Mouse">
                             <param id="0" name="Mouse button">0</param>
                             <param id="1" name="Click type">0</param>
                             <param id="2" name="Object clicked">Enemigo</param>
                         </condition>
+                        <condition id="-14" inverted="1" name="Compare variable" sid="278135672648045" type="System">
+                            <param id="0" name="Variable">gMovil</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
                     </conditions>
                     <actions>
-                        <action behavior="Hash" id="10" name="Add to" sid="830852658354786" type="Enemigo">
-                            <param id="0" name="Key string">&quot;vida&quot;</param>
-                            <param id="1" name="Value">-1</param>
-                        </action>
-                        <action id="5" name="Set frame" sid="407657111513813" type="Enemigo">
-                            <param id="0" name="Frame number">Self.AnimationFrame+1</param>
+                        <action id="0" name="Call function" sid="217320923560841" type="Funcion">
+                            <param id="0" name="Name">&quot;interactuarBoton&quot;</param>
+                            <param id="1" name="Parameter {n}">Enemigo.UID</param>
                         </action>
                     </actions>
+                </event-block>
+                <event-block sid="405365031270001">
+                    <conditions>
+                        <condition id="101" name="On touch released at object" sid="223359518044277" type="Tocar">
+                            <param id="0" name="Object">Enemigo</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="506724594099456" type="System">
+                            <param id="0" name="Variable">gMovil</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="695528584569472" type="Funcion">
+                            <param id="0" name="Name">&quot;interactuarBoton&quot;</param>
+                            <param id="1" name="Parameter {n}">Enemigo.UID</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="911772566164909">
+                    <conditions>
+                        <condition id="0" name="On function" sid="717942067551400" type="Funcion">
+                            <param id="0" name="Name">&quot;interactuarBoton&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
                     <sub-events>
-                        <event-block sid="396218212875799">
+                        <event-block sid="172928834973043">
                             <conditions>
-                                <condition id="-8" name="Compare two values" sid="635929686339443" type="System">
-                                    <param id="0" name="First value">Enemigo.Hash.At(&quot;vida&quot;)</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Second value">0</param>
+                                <condition id="-14" name="Pick by unique ID" sid="394612712894897" type="Enemigo">
+                                    <param id="0" name="Unique ID">Funcion.Param(0)</param>
                                 </condition>
                             </conditions>
-                            <actions />
+                            <actions>
+                                <action behavior="Hash" id="10" name="Add to" sid="830852658354786" type="Enemigo">
+                                    <param id="0" name="Key string">&quot;vida&quot;</param>
+                                    <param id="1" name="Value">-1</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="407657111513813" type="Enemigo">
+                                    <param id="0" name="Frame number">Self.AnimationFrame+1</param>
+                                </action>
+                            </actions>
                             <sub-events>
-                                <event-block sid="491900339765820">
+                                <event-block sid="396218212875799">
                                     <conditions>
-                                        <condition id="-14" name="Pick by unique ID" sid="655093878384827" type="Utileria">
-                                            <param id="0" name="Unique ID">Enemigo.Hash.At(&quot;enlace&quot;)</param>
+                                        <condition id="-8" name="Compare two values" sid="635929686339443" type="System">
+                                            <param id="0" name="First value">Enemigo.Hash.At(&quot;vida&quot;)</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">0</param>
                                         </condition>
                                     </conditions>
-                                    <actions>
-                                        <action id="-9" name="Destroy" sid="156986090964683" type="Utileria" />
-                                    </actions>
-                                </event-block>
-                                <event-block sid="212099161723735">
-                                    <conditions />
-                                    <actions>
-                                        <action id="3" name="Start" sid="744681361122364" type="Enemigo">
-                                            <param id="0" name="From">0</param>
-                                        </action>
-                                        <action id="6" name="Set speed" sid="582423516186496" type="Enemigo">
-                                            <param id="0" name="Speed">15</param>
-                                        </action>
-                                        <action id="-16" name="Wait" sid="773366747715233" type="System">
-                                            <param id="0" name="Seconds">0.5</param>
-                                        </action>
-                                        <action id="-9" name="Destroy" sid="667624770282902" type="Enemigo" />
-                                    </actions>
-                                </event-block>
-                                <event-block sid="654646984834202">
-                                    <conditions>
-                                        <condition id="-8" name="Compare two values" sid="305112929514360" type="System">
-                                            <param id="0" name="First value">Enemigo.Count</param>
-                                            <param id="1" name="Comparison">3</param>
-                                            <param id="2" name="Second value">1</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="5" name="Set frame" sid="902544455485764" type="Jugador">
-                                            <param id="0" name="Frame number">0</param>
-                                        </action>
-                                        <action id="4" name="Set animation" sid="231092065147052" type="Jugador">
-                                            <param id="0" name="Animation">&quot;j12c&quot;</param>
-                                            <param id="1" name="From">0</param>
-                                        </action>
-                                        <action id="28" name="Clean &amp; Add instances" sid="994546326622833" type="Grupo">
-                                            <param id="0" name="Instances">Aliado</param>
-                                            <param id="1" name="Group">&quot;j12a&quot;</param>
-                                        </action>
-                                        <action id="13" name="Shuffle" sid="978095888039909" type="Grupo">
-                                            <param id="0" name="Group">&quot;j12a&quot;</param>
-                                        </action>
-                                        <action id="0" name="Call function" sid="320415842482314" type="Funcion">
-                                            <param id="0" name="Name">&quot;victoriaJUEGO&quot;</param>
-                                            <param id="1" name="Parameter {n}"></param>
-                                        </action>
-                                    </actions>
+                                    <actions />
                                     <sub-events>
-                                        <event-block sid="101177359318605">
+                                        <event-block sid="491900339765820">
                                             <conditions>
-                                                <condition id="2" name="For each UID" sid="979966784681065" type="Grupo">
-                                                    <param id="0" name="Variable">&quot;i&quot;</param>
-                                                    <param id="1" name="Group">&quot;j12a&quot;</param>
+                                                <condition id="-14" name="Pick by unique ID" sid="655093878384827" type="Utileria">
+                                                    <param id="0" name="Unique ID">Enemigo.Hash.At(&quot;enlace&quot;)</param>
                                                 </condition>
                                             </conditions>
-                                            <actions />
+                                            <actions>
+                                                <action id="-9" name="Destroy" sid="156986090964683" type="Utileria" />
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="212099161723735">
+                                            <conditions />
+                                            <actions>
+                                                <action id="3" name="Start" sid="744681361122364" type="Enemigo">
+                                                    <param id="0" name="From">0</param>
+                                                </action>
+                                                <action id="6" name="Set speed" sid="582423516186496" type="Enemigo">
+                                                    <param id="0" name="Speed">15</param>
+                                                </action>
+                                                <action id="-16" name="Wait" sid="773366747715233" type="System">
+                                                    <param id="0" name="Seconds">0.5</param>
+                                                </action>
+                                                <action id="-9" name="Destroy" sid="667624770282902" type="Enemigo" />
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="654646984834202">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="305112929514360" type="System">
+                                                    <param id="0" name="First value">Enemigo.Count</param>
+                                                    <param id="1" name="Comparison">3</param>
+                                                    <param id="2" name="Second value">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="5" name="Set frame" sid="902544455485764" type="Jugador">
+                                                    <param id="0" name="Frame number">0</param>
+                                                </action>
+                                                <action id="4" name="Set animation" sid="231092065147052" type="Jugador">
+                                                    <param id="0" name="Animation">&quot;j12c&quot;</param>
+                                                    <param id="1" name="From">0</param>
+                                                </action>
+                                                <action id="28" name="Clean &amp; Add instances" sid="994546326622833" type="Grupo">
+                                                    <param id="0" name="Instances">Aliado</param>
+                                                    <param id="1" name="Group">&quot;j12a&quot;</param>
+                                                </action>
+                                                <action id="13" name="Shuffle" sid="978095888039909" type="Grupo">
+                                                    <param id="0" name="Group">&quot;j12a&quot;</param>
+                                                </action>
+                                                <action id="0" name="Call function" sid="320415842482314" type="Funcion">
+                                                    <param id="0" name="Name">&quot;victoriaJUEGO&quot;</param>
+                                                    <param id="1" name="Parameter {n}"></param>
+                                                </action>
+                                            </actions>
                                             <sub-events>
-                                                <event-block sid="301064550082174">
+                                                <event-block sid="101177359318605">
                                                     <conditions>
-                                                        <condition id="-14" name="Pick by unique ID" sid="585497076873436" type="Aliado">
-                                                            <param id="0" name="Unique ID">Grupo.Item(&quot;i&quot;)</param>
+                                                        <condition id="2" name="For each UID" sid="979966784681065" type="Grupo">
+                                                            <param id="0" name="Variable">&quot;i&quot;</param>
+                                                            <param id="1" name="Group">&quot;j12a&quot;</param>
                                                         </condition>
                                                     </conditions>
-                                                    <actions>
-                                                        <action id="-16" name="Wait" sid="438850354006729" type="System">
-                                                            <param id="0" name="Seconds">random(0,0.5)*Grupo.Index(&quot;i&quot;)</param>
-                                                        </action>
-                                                        <action id="5" name="Set frame" sid="181741617872993" type="Aliado">
-                                                            <param id="0" name="Frame number">0</param>
-                                                        </action>
-                                                        <action id="6" name="Set speed" sid="689809005251774" type="Aliado">
-                                                            <param id="0" name="Speed">8</param>
-                                                        </action>
-                                                        <action id="3" name="Start" sid="220324842329249" type="Aliado">
-                                                            <param id="0" name="From">0</param>
-                                                        </action>
-                                                        <action behavior="Tarea" id="26" name="Create/Initialize tween" sid="502605934837465" type="Aliado">
-                                                            <param id="0" name="Tweened property">0</param>
-                                                            <param id="1" name="Function">2</param>
-                                                            <param id="2" name="Target">&quot;y&quot;</param>
-                                                            <param id="3" name="Duration">0.2</param>
-                                                            <param id="4" name="Enforce mode">1</param>
-                                                        </action>
-                                                        <action behavior="Tarea" id="3" name="Set target" sid="851840761179165" type="Aliado">
-                                                            <param id="0" name="Target is">1</param>
-                                                            <param id="1" name="Relativity">0</param>
-                                                            <param id="2" name="Value">Aliado.Y-10</param>
-                                                        </action>
-                                                        <action behavior="Tarea" id="3" name="Set target" sid="562805430456545" type="Aliado">
-                                                            <param id="0" name="Target is">0</param>
-                                                            <param id="1" name="Relativity">1</param>
-                                                            <param id="2" name="Value">0</param>
-                                                        </action>
-                                                        <action behavior="Tarea" id="10" name="Start" sid="166171930175629" type="Aliado">
-                                                            <param id="0" name="Start Mode">0</param>
-                                                            <param id="1" name="Force use current">0</param>
-                                                        </action>
-                                                    </actions>
+                                                    <actions />
+                                                    <sub-events>
+                                                        <event-block sid="301064550082174">
+                                                            <conditions>
+                                                                <condition id="-14" name="Pick by unique ID" sid="585497076873436" type="Aliado">
+                                                                    <param id="0" name="Unique ID">Grupo.Item(&quot;i&quot;)</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="-16" name="Wait" sid="438850354006729" type="System">
+                                                                    <param id="0" name="Seconds">random(0,0.5)*Grupo.Index(&quot;i&quot;)</param>
+                                                                </action>
+                                                                <action id="5" name="Set frame" sid="181741617872993" type="Aliado">
+                                                                    <param id="0" name="Frame number">0</param>
+                                                                </action>
+                                                                <action id="6" name="Set speed" sid="689809005251774" type="Aliado">
+                                                                    <param id="0" name="Speed">8</param>
+                                                                </action>
+                                                                <action id="3" name="Start" sid="220324842329249" type="Aliado">
+                                                                    <param id="0" name="From">0</param>
+                                                                </action>
+                                                                <action behavior="Tarea" id="26" name="Create/Initialize tween" sid="502605934837465" type="Aliado">
+                                                                    <param id="0" name="Tweened property">0</param>
+                                                                    <param id="1" name="Function">2</param>
+                                                                    <param id="2" name="Target">&quot;y&quot;</param>
+                                                                    <param id="3" name="Duration">0.2</param>
+                                                                    <param id="4" name="Enforce mode">1</param>
+                                                                </action>
+                                                                <action behavior="Tarea" id="3" name="Set target" sid="851840761179165" type="Aliado">
+                                                                    <param id="0" name="Target is">1</param>
+                                                                    <param id="1" name="Relativity">0</param>
+                                                                    <param id="2" name="Value">Aliado.Y-10</param>
+                                                                </action>
+                                                                <action behavior="Tarea" id="3" name="Set target" sid="562805430456545" type="Aliado">
+                                                                    <param id="0" name="Target is">0</param>
+                                                                    <param id="1" name="Relativity">1</param>
+                                                                    <param id="2" name="Value">0</param>
+                                                                </action>
+                                                                <action behavior="Tarea" id="10" name="Start" sid="166171930175629" type="Aliado">
+                                                                    <param id="0" name="Start Mode">0</param>
+                                                                    <param id="1" name="Force use current">0</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
                                                 </event-block>
                                             </sub-events>
                                         </event-block>

@@ -837,51 +837,97 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <comment>Evento disparador que se ejecuta al hacer el clic izquierdo en una opción</comment>
-                <event-block sid="340588858950873">
+                <comment>Disparadores de la interfaz de entrada (Mouse o pantalla táctil)</comment>
+                <event-block sid="669529425643318">
                     <conditions>
-                        <condition id="6" name="On object clicked" sid="182696951342952" type="Mouse">
+                        <condition id="6" name="On object clicked" sid="104222346708385" type="Mouse">
                             <param id="0" name="Mouse button">0</param>
                             <param id="1" name="Click type">0</param>
                             <param id="2" name="Object clicked">Utileria</param>
                         </condition>
-                        <condition id="-7" name="Compare instance variable" sid="179741768627643" type="Utileria">
-                            <param id="0" name="Instance variable">ID</param>
-                            <param id="1" name="Comparison">5</param>
-                            <param id="2" name="Value">10</param>
+                        <condition id="-14" inverted="1" name="Compare variable" sid="647799785462053" type="System">
+                            <param id="0" name="Variable">gMovil</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="5" name="Set frame" sid="678000171680628" type="Utileria">
-                            <param id="0" name="Frame number">1</param>
+                        <action id="0" name="Call function" sid="150016495686932" type="Funcion">
+                            <param id="0" name="Name">&quot;interactuarBoton&quot;</param>
+                            <param id="1" name="Parameter {n}">Utileria.UID</param>
                         </action>
                     </actions>
+                </event-block>
+                <event-block sid="909273666767393">
+                    <conditions>
+                        <condition id="101" name="On touch released at object" sid="386303033244529" type="Tocar">
+                            <param id="0" name="Object">Utileria</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="889264154730902" type="System">
+                            <param id="0" name="Variable">gMovil</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="424454226780466" type="Funcion">
+                            <param id="0" name="Name">&quot;interactuarBoton&quot;</param>
+                            <param id="1" name="Parameter {n}">Utileria.UID</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="722895347039783">
+                    <conditions>
+                        <condition id="0" name="On function" sid="708996950326618" type="Funcion">
+                            <param id="0" name="Name">&quot;interactuarBoton&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
                     <sub-events>
-                        <variable comment="uid de la opcion que selecciono" constant="0" name="aux" sid="216359902403538" static="0" type="number">0</variable>
-                        <event-block sid="375294133497012">
-                            <conditions />
-                            <actions>
-                                <action id="-9" name="Set value" sid="793979009848290" type="System">
-                                    <param id="0" name="Variable">aux</param>
-                                    <param id="1" name="Value">Utileria.ID</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="781399439080381">
+                        <event-block sid="340588858950873">
                             <conditions>
-                                <condition id="-19" name="Pick all" sid="249525727179107" type="System">
-                                    <param id="0" name="Object">Utileria</param>
+                                <condition id="-14" name="Pick by unique ID" sid="379246865808623" type="Utileria">
+                                    <param id="0" name="Unique ID">Funcion.Param(0)</param>
                                 </condition>
-                                <condition id="-34" name="Pick by evaluate" sid="339913664416575" type="System">
-                                    <param id="0" name="Object">Utileria</param>
-                                    <param id="1" name="Expression">Utileria.ID&gt;=10 &amp; Utileria.ID&lt;&gt;aux</param>
+                                <condition id="-7" name="Compare instance variable" sid="179741768627643" type="Utileria">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">10</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="5" name="Set frame" sid="936077867467608" type="Utileria">
-                                    <param id="0" name="Frame number">0</param>
+                                <action id="5" name="Set frame" sid="678000171680628" type="Utileria">
+                                    <param id="0" name="Frame number">1</param>
                                 </action>
                             </actions>
+                            <sub-events>
+                                <variable comment="uid de la opcion que selecciono" constant="0" name="aux" sid="216359902403538" static="0" type="number">0</variable>
+                                <event-block sid="375294133497012">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="793979009848290" type="System">
+                                            <param id="0" name="Variable">aux</param>
+                                            <param id="1" name="Value">Utileria.ID</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="781399439080381">
+                                    <conditions>
+                                        <condition id="-19" name="Pick all" sid="249525727179107" type="System">
+                                            <param id="0" name="Object">Utileria</param>
+                                        </condition>
+                                        <condition id="-34" name="Pick by evaluate" sid="339913664416575" type="System">
+                                            <param id="0" name="Object">Utileria</param>
+                                            <param id="1" name="Expression">Utileria.ID&gt;=10 &amp; Utileria.ID&lt;&gt;aux</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="5" name="Set frame" sid="936077867467608" type="Utileria">
+                                            <param id="0" name="Frame number">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                     </sub-events>
                 </event-block>

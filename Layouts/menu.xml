@@ -1511,7 +1511,7 @@
                         <javascript-import></javascript-import>
                     </properties>
                     <instance-variables>
-                        <VID>0</VID>
+                        <VID>1000</VID>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -1548,6 +1548,50 @@
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="StickBase" uid="204">
+                    <properties>
+                        <initial-visibility>Invisible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Disabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>-256</x>
+                        <y>992</y>
+                        <z>0</z>
+                        <width>169</width>
+                        <height>169</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>-0.000003213</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Stick" uid="205">
+                    <properties>
+                        <initial-visibility>Invisible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Disabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>-256</x>
+                        <y>992</y>
+                        <z>0</z>
+                        <width>70</width>
+                        <height>70</height>
+                        <depth>0</depth>
+                        <hotspotX>0.504672885</hotspotX>
+                        <hotspotY>0.504672885</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -1719,6 +1763,31 @@
             <properties>
                 <buffer-length>10</buffer-length>
             </properties>
+        </instance>
+        <instance type="Autentificacion" uid="222">
+            <properties>
+                <domain></domain>
+            </properties>
+        </instance>
+        <instance type="API" uid="223">
+            <properties>
+                <api-key>AIzaSyA3ixYw84m7yD7q75j4VBreFOpZWcMzFuw</api-key>
+                <auth-domain>ice-vhm.firebaseapp.com</auth-domain>
+                <database-url>https://ice-vhm.firebaseio.com</database-url>
+                <storage-bucket>ice-vhm.appspot.com</storage-bucket>
+                <log>No</log>
+            </properties>
+        </instance>
+        <instance type="Ranking" uid="224">
+            <properties>
+                <domain></domain>
+                <id>ranking</id>
+                <order>Large to small</order>
+                <update>Auto</update>
+            </properties>
+            <instance-variables>
+                <aux>0</aux>
+            </instance-variables>
         </instance>
     </nonworld-instances>
     <effects />
