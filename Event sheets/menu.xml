@@ -426,7 +426,7 @@
                             </conditions>
                             <actions>
                                 <action id="0" name="Play" sid="935431885843871" type="Audio">
-                                    <param id="0" name="Audio file">A3-tono ascendiendo 6</param>
+                                    <param id="0" name="Audio file">a3-tono ascendiendo 6</param>
                                     <param id="2" name="Loop">0</param>
                                     <param id="3" name="Volume">gAudioNoLoop</param>
                                     <param id="1" name="Tag (optional)">&quot;N&quot;</param>
@@ -444,7 +444,7 @@
                             </conditions>
                             <actions>
                                 <action id="0" name="Play" sid="381947185030014" type="Audio">
-                                    <param id="0" name="Audio file">A3-tapon 4</param>
+                                    <param id="0" name="Audio file">a3-tapon 4</param>
                                     <param id="2" name="Loop">0</param>
                                     <param id="3" name="Volume">gAudioNoLoop</param>
                                     <param id="1" name="Tag (optional)">&quot;N&quot;</param>
@@ -462,7 +462,7 @@
                             </conditions>
                             <actions>
                                 <action id="0" name="Play" sid="932604375510892" type="Audio">
-                                    <param id="0" name="Audio file">C3-musica de circo 7</param>
+                                    <param id="0" name="Audio file">c3-musica de circo 7</param>
                                     <param id="2" name="Loop">1</param>
                                     <param id="3" name="Volume">gAudioLoop</param>
                                     <param id="1" name="Tag (optional)">&quot;L&quot;</param>
@@ -480,7 +480,7 @@
                             </conditions>
                             <actions>
                                 <action id="0" name="Play" sid="929094389312204" type="Audio">
-                                    <param id="0" name="Audio file">A3-desplazamiento 1 revertido</param>
+                                    <param id="0" name="Audio file">a3-desplazamiento 1 revertido</param>
                                     <param id="2" name="Loop">0</param>
                                     <param id="3" name="Volume">gAudioNoLoop</param>
                                     <param id="1" name="Tag (optional)">&quot;N&quot;</param>
@@ -498,7 +498,7 @@
                             </conditions>
                             <actions>
                                 <action id="0" name="Play" sid="754307406596738" type="Audio">
-                                    <param id="0" name="Audio file">A3-desplazamiento 1</param>
+                                    <param id="0" name="Audio file">a3-desplazamiento 1</param>
                                     <param id="2" name="Loop">0</param>
                                     <param id="3" name="Volume">gAudioNoLoop</param>
                                     <param id="1" name="Tag (optional)">&quot;N&quot;</param>
@@ -973,7 +973,7 @@
                                     <param id="1" name="Value">0</param>
                                 </action>
                                 <action id="8" name="Load content" sid="354969855945329" type="IFrame">
-                                    <param id="0" name="URL">&quot;rankingTabla.html&quot;</param>
+                                    <param id="0" name="URL">&quot;rankingtabla.html&quot;</param>
                                     <param id="1" name="POST Data (Optional)">&quot;&quot;</param>
                                 </action>
                             </actions>
@@ -1076,7 +1076,7 @@
                                     </conditions>
                                     <actions>
                                         <action id="8" name="Load content" sid="637545653201122" type="IFrame">
-                                            <param id="0" name="URL">&quot;rankingEntrada.html&quot;</param>
+                                            <param id="0" name="URL">&quot;rankingentrada.html&quot;</param>
                                             <param id="1" name="POST Data (Optional)">&quot;&quot;</param>
                                         </action>
                                         <action id="19" name="Include Javascript file" sid="179795027568986" type="IFrame">
@@ -1657,7 +1657,7 @@
                                     </conditions>
                                     <actions>
                                         <action id="8" name="Load content" sid="907478212530506" type="IFrame">
-                                            <param id="0" name="URL">&quot;rankingTabla.html&quot;</param>
+                                            <param id="0" name="URL">&quot;rankingtabla.html&quot;</param>
                                             <param id="1" name="POST Data (Optional)">&quot;&quot;</param>
                                         </action>
                                     </actions>
@@ -2406,7 +2406,7 @@
                                                     </conditions>
                                                     <actions>
                                                         <action id="8" name="Load content" sid="676575596563726" type="IFrame">
-                                                            <param id="0" name="URL">&quot;rankingTabla.html&quot;</param>
+                                                            <param id="0" name="URL">&quot;rankingtabla.html&quot;</param>
                                                             <param id="1" name="POST Data (Optional)">&quot;&quot;</param>
                                                         </action>
                                                     </actions>

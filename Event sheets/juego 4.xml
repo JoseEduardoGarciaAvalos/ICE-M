@@ -329,7 +329,7 @@
                                     </conditions>
                                     <actions>
                                         <action id="0" name="Play" sid="873568301517259" type="Audio">
-                                            <param id="0" name="Audio file">C3-musica de accion 4</param>
+                                            <param id="0" name="Audio file">c3-musica de accion 4</param>
                                             <param id="2" name="Loop">1</param>
                                             <param id="3" name="Volume">gAudioLoop</param>
                                             <param id="1" name="Tag (optional)">&quot;L&quot;</param>

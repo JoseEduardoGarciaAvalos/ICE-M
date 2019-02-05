@@ -3409,7 +3409,7 @@
                                                     </conditions>
                                                     <actions>
                                                         <action id="0" name="Play" sid="300871827145934" type="Audio">
-                                                            <param id="0" name="Audio file">A3-reloj</param>
+                                                            <param id="0" name="Audio file">a3-reloj</param>
                                                             <param id="2" name="Loop">0</param>
                                                             <param id="3" name="Volume">gAudioNoLoop</param>
                                                             <param id="1" name="Tag (optional)">&quot;N&quot;</param>
@@ -7395,7 +7395,7 @@
                             </conditions>
                             <actions>
                                 <action id="0" name="Play" sid="624749535985033" type="Audio">
-                                    <param id="0" name="Audio file">A3-timbre</param>
+                                    <param id="0" name="Audio file">a3-timbre</param>
                                     <param id="2" name="Loop">0</param>
                                     <param id="3" name="Volume">gAudioNoLoop</param>
                                     <param id="1" name="Tag (optional)">&quot;N&quot;</param>
@@ -7500,7 +7500,7 @@
                                     <param id="0" name="Seconds">1.0</param>
                                 </action>
                                 <action id="0" name="Play" sid="202498790877352" type="Audio">
-                                    <param id="0" name="Audio file">A1-niños alegres</param>
+                                    <param id="0" name="Audio file">a1-niños alegres</param>
                                     <param id="2" name="Loop">0</param>
                                     <param id="3" name="Volume">gAudioNoLoop</param>
                                     <param id="1" name="Tag (optional)">&quot;N&quot;</param>
@@ -8052,10 +8052,10 @@
                                             <param id="1" name="Value">-60</param>
                                         </action>
                                         <action id="6" name="Set HTML" sid="465271041155567" type="IFrame">
-                                            <param id="0" name="Set HTML">&quot;&lt;audio autoplay loop id=&apos;c2_audio&apos;&gt;&#x0D;&#x0A;  &lt;source src=&apos;C3-musica de carrera 2.ogg&apos; type=&apos;audio/ogg&apos;&gt;&#x0D;&#x0A;  &lt;source src=&apos;C3-musica de carrera 2.m4a&apos; type=&apos;audio/mp4&apos;&gt;&#x0D;&#x0A;&lt;/audio&gt;&quot;</param>
+                                            <param id="0" name="Set HTML">&quot;&lt;audio autoplay loop id=&apos;c2_audio&apos;&gt;&#x0D;&#x0A;  &lt;source src=&apos;c3-musica de carrera 2.ogg&apos; type=&apos;audio/ogg&apos;&gt;&#x0D;&#x0A;  &lt;source src=&apos;c3-musica de carrera 2.m4a&apos; type=&apos;audio/mp4&apos;&gt;&#x0D;&#x0A;&lt;/audio&gt;&quot;</param>
                                         </action>
                                         <action id="7" name="Append HTML" sid="101169354142277" type="IFrame">
-                                            <param id="0" name="Append HTML">&quot;&lt;audio autoplay id=&apos;c2_audio2&apos;&gt;&#x0D;&#x0A;  &lt;source src=&apos;A3-tono ascendiendo 6.ogg&apos; type=&apos;audio/ogg&apos;&gt;&#x0D;&#x0A;  &lt;source src=&apos;A3-tono ascendiendo 6.m4a&apos; type=&apos;audio/mp4&apos;&gt;&#x0D;&#x0A;&lt;/audio&gt;&quot;</param>
+                                            <param id="0" name="Append HTML">&quot;&lt;audio autoplay id=&apos;c2_audio2&apos;&gt;&#x0D;&#x0A;  &lt;source src=&apos;a3-tono ascendiendo 6.ogg&apos; type=&apos;audio/ogg&apos;&gt;&#x0D;&#x0A;  &lt;source src=&apos;a3-tono ascendiendo 6.m4a&apos; type=&apos;audio/mp4&apos;&gt;&#x0D;&#x0A;&lt;/audio&gt;&quot;</param>
                                         </action>
                                         <action id="19" name="Include Javascript file" sid="182757145096044" type="IFrame">
                                             <param id="0" name="Javascript file">&quot;eventos.js&quot;</param>
@@ -8106,7 +8106,7 @@
                             <actions>
                                 <action id="24" name="Get elements" sid="990314509854194" type="IFrame">
                                     <param id="0" name="ID/Class">&quot;#c2_audio2&quot;</param>
-                                    <param id="1" name="Set">&quot;&lt;source src=&apos;A3-tono ascendiendo 6.ogg&apos; type=&apos;audio/ogg&apos;&gt;&#x0D;&#x0A;  &lt;source src=&apos;A3-tono ascendiendo 6.m4a&apos; type=&apos;audio/mp4&apos;&gt;&quot;</param>
+                                    <param id="1" name="Set">&quot;&lt;source src=&apos;a3-tono ascendiendo 6.ogg&apos; type=&apos;audio/ogg&apos;&gt;&#x0D;&#x0A;  &lt;source src=&apos;a3-tono ascendiendo 6.m4a&apos; type=&apos;audio/mp4&apos;&gt;&quot;</param>
                                     <param id="2" name="Append">&quot;&quot;</param>
                                 </action>
                                 <action id="21" name="Execute Javascript" sid="706511210727307" type="IFrame">
@@ -8796,7 +8796,7 @@
                                                     <actions>
                                                         <action id="24" name="Get elements" sid="508578092953200" type="IFrame">
                                                             <param id="0" name="ID/Class">&quot;#c2_audio2&quot;</param>
-                                                            <param id="1" name="Set">&quot;&lt;source src=&apos;A3-tono ascendiendo 6.ogg&apos; type=&apos;audio/ogg&apos;&gt;&#x0D;&#x0A;  &lt;source src=&apos;A3-tono ascendiendo 6.m4a&apos; type=&apos;audio/mp4&apos;&gt;&quot;</param>
+                                                            <param id="1" name="Set">&quot;&lt;source src=&apos;a3-tono ascendiendo 6.ogg&apos; type=&apos;audio/ogg&apos;&gt;&#x0D;&#x0A;  &lt;source src=&apos;a3-tono ascendiendo 6.m4a&apos; type=&apos;audio/mp4&apos;&gt;&quot;</param>
                                                             <param id="2" name="Append">&quot;&quot;</param>
                                                         </action>
                                                         <action id="21" name="Execute Javascript" sid="217194094446519" type="IFrame">

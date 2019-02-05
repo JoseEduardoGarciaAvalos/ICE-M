@@ -151,7 +151,7 @@
                             </conditions>
                             <actions>
                                 <action id="0" name="Play" sid="880811915683700" type="Audio">
-                                    <param id="0" name="Audio file">C3-musica de miedo 2</param>
+                                    <param id="0" name="Audio file">c3-musica de miedo 2</param>
                                     <param id="2" name="Loop">1</param>
                                     <param id="3" name="Volume">gAudioLoop</param>
                                     <param id="1" name="Tag (optional)">&quot;L&quot;</param>
@@ -516,7 +516,7 @@
                             <param id="1" name="Force use current">0</param>
                         </action>
                         <action id="0" name="Play" sid="362969819776898" type="Audio">
-                            <param id="0" name="Audio file">A3-tono ascendiendo 1</param>
+                            <param id="0" name="Audio file">a3-tono ascendiendo 1</param>
                             <param id="2" name="Loop">0</param>
                             <param id="3" name="Volume">gAudioNoLoop</param>
                             <param id="1" name="Tag (optional)">&quot;N&quot;</param>
@@ -547,7 +547,7 @@
                             <param id="1" name="Force use current">0</param>
                         </action>
                         <action id="0" name="Play" sid="928889058245366" type="Audio">
-                            <param id="0" name="Audio file">A3-tono ascendiendo 1 revertido</param>
+                            <param id="0" name="Audio file">a3-tono ascendiendo 1 revertido</param>
                             <param id="2" name="Loop">0</param>
                             <param id="3" name="Volume">gAudioNoLoop</param>
                             <param id="1" name="Tag (optional)">&quot;N&quot;</param>

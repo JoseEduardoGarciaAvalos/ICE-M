@@ -84,7 +84,7 @@
                             <param id="0" name="Visibility">1</param>
                         </action>
                         <action id="0" name="Play" sid="861222695364118" type="Audio">
-                            <param id="0" name="Audio file">C3-musica de carrera 4</param>
+                            <param id="0" name="Audio file">c3-musica de carrera 4</param>
                             <param id="2" name="Loop">1</param>
                             <param id="3" name="Volume">gAudioLoop</param>
                             <param id="1" name="Tag (optional)">&quot;L&quot;</param>
@@ -808,7 +808,7 @@
                             </conditions>
                             <actions>
                                 <action id="0" name="Play" sid="868843037756686" type="Audio">
-                                    <param id="0" name="Audio file">A3-timbre</param>
+                                    <param id="0" name="Audio file">a3-timbre</param>
                                     <param id="2" name="Loop">0</param>
                                     <param id="3" name="Volume">gAudioNoLoop</param>
                                     <param id="1" name="Tag (optional)">&quot;N&quot;</param>
